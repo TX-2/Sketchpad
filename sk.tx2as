@@ -1,0 +1,471 @@
+[meta file_name=102726903-05-01-acc.pdf pdf_page=22 doc_page=20]
+
+ 200002|
+I2@arr@		JPQ FRESH START
+		JPQ STARTS
+ 200050|
+		JPQ 47FIXL
+		JPQ 47LOSTPEN
+I52@arr@	hJMP BLOCKMAKER
+		hJMP GETBLOCKER
+ 200066|
+		hJMP READIT
+ ORIGIN|
+FRESH START@arr@
+		CSQ@sub_4@@sub_0@ [opcode not mentioned in the handbook?]
+		MOVEIN AFFB@arr@AFFB
+		hLDE NAFFB
+		STE AFFB
+		RSX @sub_alpha@ AFFB
+		LDA @sub_alpha@ NLIST
+		STA @sub_alpha@ LIST
+		[@sub_alpha@ may also be @sub_0@ on the next line.]
+		[May be possible to deduce from octal representation.]
+		@sup_minus@@sup_1@JPX @sub_alpha@ #-2
+ 
+[meta file_name=102726903-05-01-acc.pdf pdf_page=23 doc_page=21]
+[Handwritten: "BUILD"]
+[Handwritten: "RDTX2=200126"]
+
+STARTS@arr@	RXF @sub_4@@sub_7@ 47START
+		DPX ATBITS
+		MKZ MOVINGDONE
+		DPX 0
+		DPX 1
+		DPX 2
+		DPX 47TABLE
+		[Assuming that symbol before address is junk otnl.]
+		[Otherwise it would be some unknown syntax.]
+		[Unless it's * for deferred address, but it does not look like *.]
+		RXF @sub_5@@sub_4@ 200040 
+		RXF @sub_6@@sub_5@ KEYSTART
+		RXF @sub_7@@sub_6@ START76
+		MKZ MOVED
+		MKZ DESIGNATED
+		JPD #
+47START@arr@
+		CSQ@sub_4@@sub_7@
+47FIXL@arr@	DPX PAGE1 				[Clear *PAGE1]
+		hRSX @sub_4@@sub_7@ ATBITS 		[X_47 = R(*ATBITS)]
+		SXD @sub_4@@sub_7@ 1 			[if X_47 != 1 skip to JPQ 47LITEIT]
+		JPQ #+2              			[else skip past it]
+		JPQ 47LITEIT 
+		@sup_2@DPX @sub_?@ PAGE1 		[Load X_? into L(PAGE1)]
+		RSX @sub_?@ ATBITS+1
+		RSX @sub_alpha@@sub_pipe@@sub_alpha@ LIST+TYPE
+		SXD @sub_alpha@ LINES-LIST
+		MKN @sub_1@@sub_dot@@sub_6@ PAGE1
+		SXD @sub_alpha@ CIRCLES-LIST
+		MKN @sub_1@@sub_dot@@sub_6@ PAGE1
+		SXD @sub_alpha@ SCALERS-LIST
+		MKN @sub_1@@sub_dot@@sub_?@ PAGE1
+47FIXL1@arr@
+		SXD @sub_alpha@ POINTS-LIST
+		MKN @sub_1@@sub_dot@@sub_5@ PAGE1
+		SXD @sub_alpha@ TPVALS-LIST
+		MKN @sub_1@@sub_dot@@sub_5@ PAGE1
+		SXD @sub_alpha@ INSTANCES-LIST
+		MKN @sub_1@@sub_dot@@sub_4@ PAGE1
+		SXD @sub_alpha@ TEXTS-LIST
+		MKN @sub_1@@sub_dot@@sub_?@ PAGE1
+		SXD @sub_alpha@ NUMBERS-LIST
+		MKN @sub_1@@sub_dot@@sub_?@ PAGE1
+		RSX @sub_alpha@@sub_pipe@@sub_alpha@ LIST+TYPE
+		SXD @sub_alpha@ CONSTRAINTS-LIST
+		MKN @sub_1@@sub_dot@@sub_?@ PAGE1
+		RSX @sub_alpha@ ATBITS+1
+		RSX @sub_alpha@@sub_pipe@@sub_alpha@ LIST+ATATAP
+		SXD @sub_alpha@ 0
+		JPQ #+2
+		MKN @sub_1@@sub_dot@@sub_1@ PAGE1
+		RSX @sub_alpha@ ATBITS+1
+		RSX @sub_alpha@@sub_pipe@@sub_alpha@ LIST+VORD
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=24 doc_page=22]
+
+		SXD @sub_alpha@ FIXEDS-LIST
+		MKN @sub_1@@sub_dot@@sub_7@ PAGE1
+		@sup_2@ RSX @sub_alpha@ PAGE1
+47LITEIT@arr@
+		MOVEB@times@DESIGNATED@arr@22@times@PAGE1
+		hLDE PAGE1
+		@sup_3@STE 47LITE1
+47LITE1@arr@
+		@sup_1@IOS @sub_7@@sub_5@ 30777
+47EIR@arr@	  
+		hLDE SWITCH
+		hSTE SWITCH1
+		SED SWITCH2
+		JPQ 47TSD
+		hCOM SWITCH2
+		hITE SWITCH1
+		STE 47BUT
+		MOVE|SWITCH1@arr@SWITCH2
+		hLDE 47BUT
+		SED { 0}
+47TSD@arr@	JPD #
+47BOTH@arr@	hRSX @sub_4@@sub_7@ 47TABLE
+		hLDE 47BUT
+		hSTE @sub_4@@sub_7@ 47TABLE+1
+		hINX @sub_4@@sub_7@ 1
+		DPX @sub_4@@sub_7@ 47TABLE
+		JPQ 47TSD
+47LOSTPEN@arr@
+		SKZ @sub_4@@sub_dot@@sub_?@ SWITCH	**HOLD
+		JPQ 47TSD
+		MOVE|{ 40}@arr@47BUT
+		JPQ 47BOTH
+47TABLE@arr@
+		0
+ 47TABLE+20|
+READIT@arr@	@sup_1@STE READITEX
+		REX @sub_alpha@ 0
+		hSXL @sub_alpha@ *47TABLE
+		hJPQ ALLREAD
+		LDA @sub_?@ 47TABLE+1
+		STA 76BUT
+		INX @sub_?@ 1
+		DPX @sub_?@ 76TABLE
+PAGE1D@arr@	SKZ @sub_1@@sub_dot@@sub_6@ 76BUT
+		hJPQ STOPMOVEP
+		SKZ @sub_1@@sub_dot@@sub_?@ 76BUT
+		hJPQ STARTDRAW
+		SKZ @sub_1@@sub_dot@@sub_7@ 76BUT
+		hJPQ DESIGNATE
+		SKZ @sub_1@@sub_dot@@sub_3@ 76BUT
+		hJPQ ERASE
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=25 doc_page=23]
+[Handwritten: "FOR MOVIE"]
+[Handwritten: "COPY 1.9"]
+[Handwritten: "DRAW 1.8"]
+[Handwritten: "CENTER 1.7"]
+[Handwritten: "MOVE 1.6"]
+[Handwritten: "INST 1.5"]
+[Handwritten: "TIE 1.4"]
+[Handwritten: "DEL 1.3"]
+[Handwritten: "HORV 1.2"]
+[Handwritten: "CONS 1.1"]
+
+		SKZ @sub_2@@sub_dot@@sub_1@ 74BUT
+		hJPQ MOVEPOINT
+		SKZ @sub_3@@sub_dot@@sub_2@ 76BUT
+		hJPQ MAKETEXT
+		SKZ @sub_3@@sub_dot@@sub_7@ 76BUT
+		hJPQ MAKESCALER
+		SKZ @sub_4@@sub_dot@@sub_1@ 76BUT
+		hJPQ MGPSTART
+		SKZ @sub_2@@sub_dot@@sub_?@ 76BUT [Handwritten: "<- 1.1"]
+		hJPQ MAKECONS
+PAGE1E@arr@	SKZ @sub_2@@sub_dot@@sub_?@ 76BUT [Handwritten: "<- 1.2"]
+		hJPQ TRUEUP
+		SKZ @sub_2@@sub_dot@@sub_6@ 76BUT [Handwritten: "<- 1.4"]
+		hJPQ MAKPATA
+		SKZ @sub_2@@sub_dot@@sub_4@ 76BUT [Handwritten: "<- 1.5"]
+		hJPQ SUBPIC
+		SKZ @sub_2@@sub_dot@@sub_3@ 76BUT
+		hJPQ DUMMY
+		SKZ @sub_1@@sub_dot@@sub_?@ 76BUT
+		hJPQ CPY1
+		SKZ @sub_2@@sub_dot@@sub_5@ 76BUT
+		hJPQ CPY2
+		SKZ @sub_3@@sub_dot@@sub_1@ 76BUT
+		hJPQ CPY3
+		SKZ @sub_3@@sub_dot@@sub_6@ 76BUT
+		hJPQ CPY4
+		SKZ @sub_2@@sub_dot@@sub_2@ 76BUT
+		hJPQ DESIGIT
+		SKZ @sub_2@@sub_dot@@sub_7@ 76BUT
+		hJPQ UNFIX
+		SKZ @sub_3@@sub_dot@@sub_3@ 76BUT [maybe 74BUT?]
+		hJPQ FIXIT
+		SKZ @sub_4@@sub_dot@@sub_4@ 76BUT
+		hJPQ UNMAC
+		SKZ @sub_1@@sub_dot@@sub_1@ 76BUT [Handwritten: "<- 2.8"]
+		hJPQ MOVEPIC
+		SKZ @sub_4@@sub_dot@@sub_?@ 76BUT
+		hJPQ ORDSTARTB	** BEST
+		SKZ @sub_4@@sub_dot@@sub_5@ 76BUT
+		hJPQ ORDSTARTW  ** WORST
+PAGE1F@arr@	SKN @sub_4@@sub_dot@@sub_1@@sub_0@ SWITCH ** IF ONE, DO DEADLY DELETIONS
+		JPQ PAGE1G
+		SKZ @sub_1@@sub_dot@@sub_2@ 76BUT
+		hJPQ CONSTOUT
+		SKZ @sub_1@@sub_dot@@sub_4@ 76BUT
+		hJPQ POINTSOUT
+		SKZ @sub_1@@sub_dot@@sub_5@ 76BUT
+		hJPQ PICOUT
+		SKN @sub_4@@sub_dot@@sub_1@ 76BUT
+		
+[meta file_name=102726903-05-01-acc.pdf pdf_page=26 doc_page=24]
+
+		JPQ #+7
+		hJPQ GARBAGE
+		SKZ @sub_4@@sub_dot@@sub_2@ SWITCH
+		JPQ #+3
+		hJPQ WIBN
+		JPQ #+2
+		hJPQ WIBMN
+		JPQ ALLREAD-2 [some trailing symbol, interpreting as junk]
+PAGE1G@arr@	SKN @sub_4@@sub_dot@@sub_3@ 76BUT
+		JPQ #+10
+		SKN @sub_4@@sub_dot@@sub_2@ SWITCH
+		JPQ #+3
+		hJPQ RIBMN
+		JPQ #+2
+		hJPQ RIBN
+		hJPQ GARBAGE
+		MKN MOVED
+		SKN @sub_3@@sub_dot@@sub_?@ 76BUT
+		JPQ #+3
+		hJPQ RDTX2
+		MKN MOVED
+		RSN @sub_alpha@ 76TABLE
+		JPQ READIT+2
+ALLREAD@arr@
+		hDPX 47TABLE
+READITEX@arr@
+		JPQ #
+CPY1@arr@	@sup_1@ STE CPY1X
+		LDA 377723
+		JPQ CPY1T
+CPY2@arr@	@sup_1@STE CPY1X
+		LDA 377722
+		JPQ CPY1T
+CPY3@arr@	@sup_1@STE CPY1X
+		LDA 377721
+		JPQ CPY1T
+CPY3@arr@	@sup_1@STE CPY1X
+		LDA 377720
+CPY1T@arr@	STA COPYNUM
+		hJPQ COPYIST
+CPY1X@arr@	JPQ #
+ORDSTARTB@arr@
+		@sup_1@STE #+3
+		MKZ ORDWORST
+		hJPQ ORDSTART
+		JPQ #
+ORDSTARTW@arr@
+		@sup_1@STE #+5
+		MKN ORDWORST
+		hJPQ ORDSTART
+		
+[meta file_name=102726903-05-01-acc.pdf pdf_page=27 doc_page=25]
+[Page header: "IES 2XMX 005"]
+
+		JPQ #
+CONSTOUT@arr@
+		@sup_1@STE CONSTOUTX
+		REX @sub_alpha@ CURPICS-LIST
+		LGORR@hamb@SPECB@times@@alpha@=S@arr@CONSTOUT1
+CONSTOUTX@arr@
+		JPQ #
+CONSTOUT1@arr@
+		SUBR@hamb@(LGORR@hamb@PICBLKS@times@@alpha@=S@arr@CONSOUTSUB)
+CONSOUTSUB@arr@
+		@sup_1@STE CONSOUTSUBX
+		RSX @sub_beta@@sub_pipe@@sub_alpha@ LIST+TYPE
+		RSX @sub_beta@@sub_pipe@@sub_alpha@ LIST+TYPE
+		SXD @sub_beta@ CONSTRAINTS-LIST
+		hJPQ DELETE
+CONSOUTSUBX@arr@
+		JPQ #
+PICOUT@arr@	@sup_1@STE PICOUTGRX
+		MKN MOVED
+		REX @sub_alpha@ CURPICS-LIST
+		LGORR@hamb@SPECB@times@@alpha@=S@arr@PICOUT1
+PICOUTGRX@arr@
+		JPQ#
+PICOUT1@arr@
+		@sup_1@STE PICOUTX
+		@sup_1@DPX @sub_alpha@ PICOUT@alpha@
+PICOUT2@arr@
+		RSX @sub_alpha@@sub_pipe@@sub_alpha@ LIST+PICBLKS+1
+		@sup_1@@sup_?@AUX @sub_alpha@@sub_pipe@@sub_alpha@ LIST-1
+		DEX @sub_alpha@ 1
+PICOUT@alpha@@arr@
+		SXD @sub_alpha@ #
+		JPQ PICOUT3
+		hJPQ DELETE
+		RSX @sub_alpha@ PICOUT@alpha@
+		JPQ PICOUT2
+PICOUT3@arr@
+		@sup_1@DPX @sub_alpha@ PICOUT@alpha@1
+		RSX @sub_alpha@@sub_pipe@@sub_alpha@ LIST_PPART+1
+		@sup_1@@sup_6@AUX @sub_alpha@@sub_pipe@@sub_alpha@ LIST-1
+		DEX @sub_alpha@ 1
+PICOUT@alpha@1@arr@
+		SXD @sub_alpha@ #
+PICOUTX@arr@
+		JPQ #
+		hJPQ DELETE
+		RSX @sub_alpha@ PICOUT@alpha@1
+		JPQ PICOUT@?@+1
+		** REMOVE USELESS POINTS
+POINTSOUT@arr@
+		@sup_1@ POINTSOUTGRX
+		
+[meta file_name=102726903-05-01-acc.pdf pdf_page=28 doc_page=26]
+[Page header: "IES 2XMX 006"]
+
+		REX @sub_alpha@ CURPICS-LIST
+		LGORR@hamb@SPECB@times@@alpha@=S@arr@POINTSOUT1
+POINTSOUTGRX@arr@
+		JPQ #
+POINTSOUT1@arr@
+		@sup_1@STE POINTSOUTX
+		LGORR@hamb@PICBLKS@times@@alpha@=S@arr@PTSOUT1
+POINTSOUTX@arr@
+		JPQ #
+PTSOUT1@arr@
+		@sup_1@STE PTSOUT1X
+		hLDE @sub_alpha@ LIST_TYPE
+		@sup_1@SED { POINTS-LIST}
+		JPQ #+2
+PTSOUT1X@arr@
+		JPQ #
+		hLDE @sub_alpha@ LIST_ATATAP
+		@sup_1@SED { 0}
+		JPQ #+2
+		JPQ PTSOUT1X
+		@sup_1@DPX @sub_alpha@ PTSOUT2
+		@sup_1@@sup_5@RSX @sub_T@ POINTS+SIZE
+		INX @sub_alpha@ BWHOS+3
+		DEX @sub_T@ BWHOS+2
+		JPQ PTSOUT1I
+PTSOUT1A@arr@
+		hLDE @sub_alpha@ LIST
+		h@sup_1@STE PTSOUT1B
+		@sup_1@@sup_7@SED E
+		JPQ PTSOUT1B
+		JPQ PTSOUT1X
+PTSOUT1B@arr@
+		SXD @sub_alpha@ #
+		JPQ #+2
+		JPQ PTSOUT1X
+		INX @sub_alpha@ 2
+PTSOUT1I@arr@
+		@sup_minus@@sup_2@JPX @sub_T@ PTSOUT1A
+PTSOUT2@arr@
+		REX @sub_alpha@ #
+		hJPQ DELETE
+		MKN MOVED
+		JPQ PTSOUT1X
+		** MAKE POINT @alpha@ BE ON CIRCLE @beta@
+MPBOC@arr@	@sup_1@STE MPBOCX
+		MAKA@hamb@ONCIRCLES@arr@@gamma@
+		PUT|PBOCP,@gamma@@arr@VCON,@alpha@
+		RSX @sub_S@@sub_pipe@@sub_beta@ CIRCEN+LIST
+		PUT|PBOCC,@gamma@@arr@VCON,S
+		RSX @sub_S@@sub_pipe@@sub_beta@ CSP+LIST
+		
+[meta file_name=102726903-05-01-acc.pdf pdf_page=29 doc_page=27]
+[Page header: "IES 2XMX 007"]
+
+		PUT|PBOCS,@gamma@@arr@VCON,S
+MPBOCX@arr@	JPQ #
+		** MAKE POINT @alpha@ BE ON LINE @beta@
+MPBOL@arr@	@sup_1@STE MPBOLX
+		MAKA@hamb@ONLINES@arr@@gamma@
+		PUT|PBOLP,@gamma@@arr@VCON,@alpha@
+		RSX @sub_S@@sub_pipe@@sub_beta@ LSP+LIST
+		PUT|PBOLS,@gamma@@arr@VCON,S
+		RSX @sub_S@@sub_pipe@@sub_beta@ LEP+LIST
+		PUT|PBOLE,@gamma@@arr@VCON,S
+MPBOLX@arr@	JPQ #
+		**CONSTRAIN A POINT
+CONAP@arr@	@sup_1@STE MACAPX
+		JPQ MACAPT
+		**MAKE AND CONSTRAIN A POINT
+MACAP@arr@	@sup_1@STE MACAPX
+		RSX @sub_gamma@ ATBITS
+		SXG @sub_gamma@ 0
+		JPQ #+5
+		RSX @sub_beta@ ATBITS+1
+		RSX @sub_gamma@@sub_pipe@@sub_beta@ LIST+TYPE
+		SXD @sub_gamma@ POINTS-LIST
+		JPQ MACAP1
+		MAKA@hamb@POINTS@arr@0
+		MOVE|PSPL@arr@VA@sub_alpha@
+		MOVE|PSPL+1@arr@VA+1@sub_alpha@
+		SXD @sub_gamma@ TPVALS-LIST
+		JPQ #+2
+		JPQ MACAPT
+		hJPQ MERGER
+		DPX @sub_alpha@ ATBITS+1
+		RSX @sub_gamma@@sub_pipe@@sub_alpha@ LIST+TYPE
+		@sup_2@DPX @sub_gamma@ ATBITS+1
+		JPQ MACAPX
+MACAPT@arr@	RSX @sub_gamma@ ATBITS
+		JPQ MACAPTX+1
+MACAPA@arr@	@sup_1@DPX @sub_gamma@ MACAPTX
+		SXD @sub_gamma@ 0
+		DPX MACAPTX [something between DPX and MACAPTX, interpreting as junk]
+		RSX @sub_beta@@sub_pipe@@sub_gamma@ ATBITS+1
+		RSX @sub_gamma@@sub_pipe@@sub_beta@ LIST+TYPE
+		SXD @sub_gamma@ LINES-LIST
+		JPQ #+4
+		SXD @sub_gamma@ CIRCLES-LIST
+		hJPQ MPBOC
+		JPQ #+2
+		hJPQ MPBOL
+MACAPTX@arr@
+		REX @sub_gamma@ 0
+		@sup_minus@@sup_1@JPX @sub_gamma@ MACAPA
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=30 doc_page=28]
+[Page header: "IES 2XMX 010" (previous page had "007", out of sequence?)]
+
+		JPQ MACAPX
+MACAP1@arr@	RSX @sub_alpha@ ATBITS+1
+MACAPX@arr@	JPQ #
+MAKETEXT@arr@
+		@sup_1@STE MAKETEXTX
+		SKZ LPLOST
+		JPQ MAKETEXTX
+		hJPQ STOPMOVEP
+		MAKA@hamb@TEXTS@arr@?@
+		LOAB@hamb@PSPL
+		STAB@hamb@LIST+TVAL+2@sub_alpha@
+		LDA SCSZ
+		MUL { 10.} [zero not very legible, but see next block]
+		DPX B
+		STAB@hamb@LIST+TVAL@sub_alpha@
+		DPX @sub_?@@sub_pipe@@sub_alpha@ LIST+TXTS
+		MOVE|{ 47,47,,47,47}@arr@LIST+TXTS+1@sub_alpha@
+		hJPQ MTDIS
+		MKN SHAFTUSE
+MAKETEXTX@arr@
+		JPQ #
+MAKESCALER@arr@
+		@sup_1@STE MAKESCALERX
+		SKZ LPLOST
+		JPQ MAKESCALERX
+		hJPQ STOPMOVEP
+		MAKA@hamb@SCALERS@arr@@beta@
+		MAKA@hamb@NUMBERS@arr@@alpha@
+		PUTL@hamb@NTOSHO@times@@alpha@@arr@SSHOW@times@@beta@
+		LDAB@hamb@PSPL
+		STAB@hamb@NVAL+LIST+2@sub_alpha@
+		LDA SCSZ
+		MUL { 10.}
+		DPX B
+		STA SVAL+LIST@sub_beta@
+		STAB@hamb@NVAL+LIST@sub_alpha@
+		hJPQ MTDIS
+		MKN SHAFTUSE
+MAKESCALERX@arr@
+		JPQ #
+MAKECONS@arr@
+		@sup_1@STE MAKECONSX
+		SKZ LPLOST
+		JPQ MAKECONSX
+		hJPQ STOPMOVEP
+		RSX @sub_delta@ ATBITS
+		SXG @sub_delta@ 0
+		JPQ MAKECONS1
+		RSX @sub_delta@ ATBITS+1
+		RSX @sub_delta@@sub_pipe@@sub_delta@ LIST+TYPE  **@delta@ AT HOVS
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=31 doc_page=29]
+[Page header: "IES 2XMX 011"]
