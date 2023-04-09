@@ -581,7 +581,7 @@ SUBPICS@arr@
 		STAB@hamb@IVAL+LIST@sub_alpha@
 		LDAB@hamb@PSPL
 		STAB@hamb@IP@sub_alpha@
-		PUT|IWHAT.@alpha@@arr@PINS.@gamma@
+		PUT|IWHAT,@alpha@@arr@PINS,@gamma@
 		LGORR@hamb@PATAP@times@@gamma@=S@arr@SUBPIT@arr@SUBPIT1
 SUBPIT@arr@	@sup_1@STE SUBPITX
 		RSX @sub_S@@sub_pipe@@sub_gamma@ LIST+TYPE
@@ -590,10 +590,13 @@ SUBPIT@arr@	@sup_1@STE SUBPITX
 SUBPITX@arr@
 		JPQ #
 		MAKA@hamb@IPCONS@arr@@beta@
-		PUT|IPCV.@beta@@arr@IPCOTP.@gamma@
-		PUT|IPCI.@beta@@arr@VCON.@alpha@
+		[On the following lines involving PUT the separator is most likely]
+		[a comma, since it separates dummy arguments in a macro invocation,]
+		[while a dot does not.]
+		PUT|IPCV,@beta@@arr@IPCOTP,@gamma@
+		PUT|IPCI,@beta@@arr@VCON,@alpha@
 		MAKA@hamb@POINTS@arr@@gamma@
-		PUT|IPCP.@beta@@arr@VCON.@gamma@
+		PUT|IPCP,@beta@@arr@VCON,@gamma@
 		JPQ SUBPITX
 SUBPIT1@arr@
 		hJPQ MOVE@alpha@ [maybe not alpha? MOVE@alpha@ was seen before.]
@@ -628,3 +631,57 @@ UNFIXEX@arr@
 UNFIX1@arr@	SUBR@hamb@(LTAKE@hamb@VORD@times@@alpha@) [maybe not alpha?]
 MAKPATA@arr@
 		@sup_1@STE MAKPATAX
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=34 doc_page=32]
+[Page header: "IES 2XMX 014"]
+		SKZ LPLOST
+		JPQ MAKPATAX
+		RSX @sub_alpha@ ATBITS
+		SXG @sub_alpha@ 0
+		JPQ MAKPATAX
+		RSX @sub_alpha@ ATBITS+1
+		RSX @sub_beta@@sub_pipe@@sub_alpha@ LIST+BWHOS
+		MOVEL@hamb@ATATAP@times@@alpha@@arr@PATAP@times@@beta@
+		@sup_1@DPX @sub_beta@@sub_pipe@@sub_alpha@ LIST+ATATAP
+MAKPATAX@arr@
+		JPQ #
+TRUEUP@arr@	@sup_1@STE TRUEUPX
+		SKN ATLINE
+		JPQ TRUEUP1
+		MAKA@hamb@HOVS@arr@9 [maybe alpha, not 9? or q?]
+		RSX @sub_beta@ ATBITS+1
+		RSX @sub_gamma@@sub_pipe@@sub_beta@ LSP+LIST 
+		PUT|HOVP1,9@arr@VCON,@gamma@ [9 or alpha or q?]
+		RSX @sub_gamma@@sub_pipe@@sub_beta@ LEP+LIST
+		PUT|HOVP2,9@arr@VCON,@gamma@ [9 or alpha or q?]
+		[Handwritten: "<- MKM MOVED", intended correction?]
+		JPQ TRUEUPX
+TRUEUP1@arr@
+		SKN ATINS
+		JPQ TRUEUPX
+		MAKA@hamb@IBVERTS@arr@@alpha@
+		RSX @sub_beta@ ATBITS+1
+		PUT|IBVW,0@arr@VCON,@beta@
+TRUEUPX@arr@
+		JPQ #
+STARTDRAW@arr@
+		@sup_1@STE STARTDRAWEX
+		SKZ LPLOST
+		JPQ STARTDRAWEX
+		hJPQ STOPMOVEP
+		hJPQ MACAP
+		MAKA@hamb@POINTS@arr@@gamma@
+		LDAB@hamb@PSPL
+		STAB@hamb@@gamma@A@sub_gamma@ [is @gamma@A a symex here?]
+		SNZ DESIGNATED
+		JPQ STARTL
+STARTC@arr@	MAKA@hamb@CIRCLES@arr@@beta@
+		@sup_1@DPX @sub_beta@ STARTCA
+		MAKA@hamb@ONCIRCLES@arr@@beta@
+		PUT|PBOCS,@beta@@arr@VCON,@alpha@
+		PUT|PBOCP,@beta@@arr@VCON,@gamma@
+		RSX @sub_delta@ CCENT
+		PUT|PBOCC,@beta@@arr@VCON,@delta@
+STARTCA@arr@
+		REX @sub_beta@ #
+		PUT|CEP,@beta@@arr@PLS,@gamma@
