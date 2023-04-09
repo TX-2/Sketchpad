@@ -26,8 +26,6 @@ s/@sub_delta@/Δ/g
 # Greek letters (regular, subscripts, superscripts).
 #
 
-# Using subscript "a" instead of alpha, as Unicode does not define
-# a subscript alpha.
 s/@sub_beta@/ᵦ/g
 s/@sub_gamma@/ᵧ/g
 s/@alpha@/α/g
@@ -36,7 +34,7 @@ s/@gamma@/γ/g
 s/@delta@/Δ/g
 
 #
-# Subscript an superscript numbers.
+# Subscript and superscript numbers.
 #
 s/@sub_0@/₀/g
 s/@sub_1@/₁/g
@@ -59,10 +57,6 @@ s/@sup_6@/⁶/g
 s/@sup_7@/⁷/g
 s/@sup_8@/⁸/g
 s/@sup_9@/⁹/g
-
-#
-# Subscript characters.
-#
 
 #
 # Special symbols.
