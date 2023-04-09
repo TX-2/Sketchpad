@@ -685,3 +685,110 @@ STARTC@arr@	MAKA@hamb@CIRCLES@arr@@beta@
 STARTCA@arr@
 		REX @sub_beta@ #
 		PUT|CEP,@beta@@arr@PLS,@gamma@
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=35 doc_page=33]
+[Page header: "IES 2XMX 015"]
+
+		PUT|CSP,@beta@@arr@PLS,@alpha@
+		RSX @sub_delta@ CCENT
+		PUT|CIRCEN,@beta@@arr@PLS,@delta@
+		JPQ STARTT
+STARTL@arr@	MAKA@hamb@LINES@arr@@beta@
+		PUT|LSP,@beta@@arr@PLS,@alpha@
+		PUT|LEP,@beta@@arr@PLS,@gamma@
+STARTT@arr@	REX @sub_alpha@@sub_pipe@@sub_gamma@ [missing operand?]
+		hJPQ MOVE@alpha@
+STARTDRAWEX@arr@
+		JPQ #
+DESIGNATE@arr@
+		@sup_1@STE DESIGNATEND
+		SKN LPLOST
+		JPQ #+5
+		SNZ DESIGNATED
+		JPQ DESIGNATEND
+		RSX @sub_alpha@ CCENT
+		JPQ #+5
+		hJPQ MACAP
+		EXX @sub_alpha@ CCENT
+		SNN DESIGNATED
+		JPQ #+1
+		SKN @sub_1@@sub_dot@@sub_1@ DESTS	**OLD POINT AT LINE
+		hJPQ DELETE
+		MOVEB@times@ATPOINT@arr@21@times@DESTS
+DESIGNATEND@arr@
+		JPQ #
+MOVEPOINT@arr@
+		@sup_1@STE MOVEPOINTEX
+		SKZ LPLOST
+		JPQ MOVEPOINTEX
+		hJPQ STOPMOVEP
+		RSX @sub_alpha@ ATBITS
+		SXG @sub_alpha@ 0
+		JPQ MOVEPOINTEX
+		RSX @sub_alpha@ ATBITS+1
+		hJPQ MOVE@alpha@
+		MKN MOVED
+MOVEPOINTEX@arr@
+		JPQ #
+MOVE@alpha@@arr@	@sup_1@STE MOVE@alpha@X
+		RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+TYPE
+		RSX @sub_T@@sub_pipe@@sub_S@ LIST+TYPE
+		SXD @sub_T@ CONSTRAINTS-LIST
+		JPX MOVE@alpha@C
+		SXD @sub_T@ TOPOS-LIST
+		JPQ MOVE@alpha@T
+		SXD @sub_T@ VARIABLES-LIST
+		JPQ MOVE@alpha@V
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=36 doc_page=34]
+[Page header: "IES 2XMX 016"]
+
+		JPQ MOVE@alpha@X
+MOVE@alpha@C@arr@	RSX @sub_T@@sub_pipe@@sub_S@ LIST+CHVAR
+		INX @sub_T@@sub_pipe@@sub_T@
+		JPQ MOVE@alpha@CT
+MOVE@alpha@T@arr@	SXD @sub_S@ PICTURES-LIST
+		ERROR@hamb@@alpha@@arr@MOVE@alpha@X
+		@sup_1@@sup_5@RSX @sub_T@@sub_pipe@@sub_alpha@ LIST+TYPE
+		DEX @sub_T@ VORD+2
+MOVE@alpha@CT@arr@
+		@sup_1@DPX @sub_alpha@ MOVE@alpha@CT1
+		@sup_minus@@sup_2@JPX @sub_T@ #+5
+		MKN SHAFTUSE
+		RSX @sub_alpha@ MOVE@alpha@CT1
+		JPQ MOVE@alpha@D
+		0
+		DPX @sub_T@ #-1
+MOVE@alpha@CT1@arr@
+		INX @sub_T@ #
+		RSX @sub_alpha@@sub_pipe@@sub_T@ LIST+VORD+2
+		RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+TYPE
+		RSX @sub_T@@sub_pipe@@sub_S@ LIST+TYPE
+		JPQ #+2
+		ERROR@hamb@@alpha@@arr@MOVE@alpha@X
+		hJPQ MOVE@alpha@VSS
+		RSX @sub_T@ MOVE@alpha@CT1-2
+		JPQ MOVE@alpha@CT+1
+MOVE@alpha@V@arr@	hJPQ MOVE@alpha@VSS
+		JPQ #+2
+MOVE@alpha@D@arr@	hJPQ MOVE@alpha@MVG
+MOVE@alpha@X@arr@	JPQ #
+MOVE@alpha@VSS@arr@
+		@sup_1@STE MOVE@alpha@VSSX
+		SXD @sub_S@ INSTANCES-LIST
+		JPQ #+3
+		hJPQ MOVE@alpha@VS
+MOVE@alpha@VSSX@arr@
+		JPQ #
+		LGORR@hamb@VCON@times@@alpha@=S@arr@MOVE@alpha@I1
+		REX @sub_S@ INSTANCES-LIST
+		JPQ MOVE@alpha@VSSX-1
+MOVE@alpha@I1@arr@
+		@sup_1@STE MOVE@alpha@VSX
+		RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+TYPE
+		SXD @sub_S@ IPCONS-LIST
+		JPQ #+2
+		JPQ MOVE@alpha@VSX
+		RSX @sub_alpha@@sub_pipe@@sub_alpha@ LIST+IPCP [IRCP maybe?]
+		RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+TYPE
+		JPQ MOVE@alpha@VS+1
