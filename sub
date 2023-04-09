@@ -11,6 +11,8 @@ s/@sub_alpha@/ₐ/g
 s/@sub_S@/ₛ/g
 # Ditto for subscript T.
 s/@sub_T@/ₜ/g
+# Rectangle with a horizontal dash, using filled rectangle instead.
+s/@rect_dash@/▮/g
 
 # These are not ok, may confuse the parser.
 # TODO: fix them somehow.
@@ -21,6 +23,14 @@ s/@sub_pipe@/|/g
 s/@sub_dot@/./g
 # There is no subscript delta, using regular one.
 s/@sub_delta@/Δ/g
+
+# These are transcription problems, where char is unclear.
+# Replacing them with ? for now, to be able to verify that
+# all @..@ tokens have been converted.
+# TODO: remove when no longer needed.
+s/@sub_?@/?/g
+s/@sup_?@/?/g
+s/@?@/?/g
 
 #
 # Greek letters (regular, subscripts, superscripts).
