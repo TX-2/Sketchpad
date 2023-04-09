@@ -424,7 +424,7 @@ MAKETEXT@arr@
 		SKZ LPLOST
 		JPQ MAKETEXTX
 		hJPQ STOPMOVEP
-		MAKA@hamb@TEXTS@arr@?@
+		MAKA@hamb@TEXTS@arr@@?@
 		LOAB@hamb@PSPL
 		STAB@hamb@LIST+TVAL+2@sub_alpha@
 		LDA SCSZ
@@ -469,3 +469,66 @@ MAKECONS@arr@
 
 [meta file_name=102726903-05-01-acc.pdf pdf_page=31 doc_page=29]
 [Page header: "IES 2XMX 011"]
+
+		RSX @sub_alpha@@sub_pipe@@sub_delta@ LIST+TYPE
+		SXD @sub_alpha@ CONSTRAINTS-LIST
+		JPQ MKCN1X+1
+MAKECONS1@arr@
+		REX @sub_delta@ CONSTRAINTS-LIST
+		LGORR@hamb@SPECB@times@@delta@=S@arr@MKCN1
+MAKECONSX@arr@
+		JPQ #
+MKCN1@arr@	@sup_1@STE MKCN1X
+		hLDE @sub_delta@ LIST+CONLET
+		@sup_3@SED NEWCONTOG
+		JPQ #+2
+MKCN1X@arr@	JPQ #
+		MAKA@arr@@alpha@
+		@sup_1@DPX @sub_alpha@ MKCN3
+		@sup_1@@sup_5@ RSX @sub_beta@@sub_pipe@@sub_alpha@ LIST+TYPE
+		LDA SCSZ
+		MUL { 100.}
+		STA B
+		DPX A
+		DEX @sub_beta@ CVTS+2
+		INX @sub_?@ CVTS+2 [sub_alpha?]
+		JPQ MKCN2X
+MKCN2@arr@	MAKA@hamb@TPVALS@arr@@gamma@
+		PUTL@hamb@@?@@times@@alpha@@arr@VCON@times@@gamma@
+		STA MKCN2A
+		STB MKCN2B
+		ADD PSPL
+		STA TPVAL+LIST@sub_gamma@
+		LDA B
+		ADD PSPL+1
+		STA TPVAL+LIST+1@sub_gamma@
+		COM MKCN2A
+		LDB MKCN2A
+		LDA MKCN2B
+		INX @sub_?@ 2
+MKCN2X@arr@	@sup_minus@@sup_2@JPX @sub_beta@ MKCN2
+MKCN3@arr@	REX @sub_alpha@ #
+		hJPQ MOVE@alpha@
+		JPQ MAKECONSX
+MOVEPIC@arr@
+		@sup_1@STE MOVEPICEX
+		MKN MOVED
+		SKZ LPLOST
+		JPQ MOVEPICEX-1
+		MOVE|PSPL@arr@SCCEN
+		MOVE|PSPL+1@arr@SCCEN+1
+		JPQ MOVEPICEX
+		hJPQ GARBAGE
+MOVEPICEX@arr@
+		JPQ #
+		
+
+
+
+
+
+
+
+
+
+

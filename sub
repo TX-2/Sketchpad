@@ -1,0 +1,74 @@
+#!/bin/sed -f
+#
+# Problematic substutions, no representation in Unicode.
+#
+
+# These are ok, as missing symbol may be replaced by a similar one.
+
+# No subscript alpha, using a instead.
+s/@sub_alpha@/ₐ/g
+# No subscript capital S, using subscript lowercase s.
+s/@sub_S@/ₛ/g
+# Ditto for subscript T.
+s/@sub_T@/ₜ/g
+
+# These are not ok, may confuse the parser.
+# TODO: fix them somehow.
+
+# No subscript pipe, using regular one.
+s/@sub_pipe@/|/g
+# No subscript dot, using regular one.
+s/@sub_dot@/./g
+# There is no subscript delta, using regular one.
+s/@sub_delta@/Δ/g
+
+#
+# Greek letters (regular, subscripts, superscripts).
+#
+
+# Using subscript "a" instead of alpha, as Unicode does not define
+# a subscript alpha.
+s/@sub_beta@/ᵦ/g
+s/@sub_gamma@/ᵧ/g
+s/@alpha@/α/g
+s/@beta@/β/g
+s/@gamma@/γ/g
+s/@delta@/Δ/g
+
+#
+# Subscript an superscript numbers.
+#
+s/@sub_0@/₀/g
+s/@sub_1@/₁/g
+s/@sub_2@/₂/g
+s/@sub_3@/₃/g
+s/@sub_4@/₄/g
+s/@sub_5@/₅/g
+s/@sub_6@/₆/g
+s/@sub_7@/₇/g
+s/@sub_8@/₈/g
+s/@sub_9@/₉/g
+
+s/@sup_0@/⁰/g
+s/@sup_1@/¹/g
+s/@sup_2@/²/g
+s/@sup_3@/³/g
+s/@sup_4@/⁴/g
+s/@sup_5@/⁵/g
+s/@sup_6@/⁶/g
+s/@sup_7@/⁷/g
+s/@sup_8@/⁸/g
+s/@sup_9@/⁹/g
+
+#
+# Subscript characters.
+#
+
+#
+# Special symbols.
+#
+
+s/@hamb@/☰/g
+s/@times@/×/g
+s/@arr@/→/g
+s/@sup_minus@/⁻/g
