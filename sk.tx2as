@@ -1175,3 +1175,60 @@ DUM2@arr@	MOVEL@hamb@IWHAT@times@@alpha@@arr@PINS@times@@gamma@
 
 [meta file_name=102726903-05-01-acc.pdf pdf_page=44 doc_page=42]
 [Page header: "IES 2XMX 026"]
+
+DUM3@arr@	@sup_1@RSX @sub_gamma@@sub_pipe@@sub_gamma@ LIST+PATAP+1
+		LGORR@hamb@VCON@times@@alpha@=S@arr@DUM4@arr@DUM6
+DUM4@arr@	@sup_1@STE DUM4X
+		hLDE @sub_alpha@ LIST 	** @alpha@ IS IPCON? [how are we supposed to know? :)]
+		@sup_1@SED { IPCONS-LIST}
+		JPQ #+2
+DUM4X@arr@	JPQ #
+		hLDE @sub_gamma@ LIST-1
+		h@sup_1@SED { 0}
+		JPQ DUM5	** OUT OF POINTS
+		@sup_1@@sup_6@RSX @sub_beta@@sub_pipe@@sub_gamma@ LIST-1
+		INX @sub_beta@@sub_pipe@@sub_gamma@
+		DEX @sub_beta@ 1
+		MOVEL@hamb@IPCV@times@@alpha@@arr@IPCOTP@times@@beta@
+		@sup_1@DPX @sub_beta@@sub_pipe@@sub_alpha@ IPCV+LIST
+		@sup_1@RSX @sub_gamma@@sub_pipe@@sub_gamma@ LIST
+		JPQ DUM4X
+DUM5@arr@	DPX @sub_gamma@ #+2
+		hJPQ DELETE
+		REX @sub_gamma@ #
+		JPQ DUM4X
+DUM4@arr@	hLDE @sub_gamma@ LIST-1
+		h@sup_1@SED { 0}
+		JPQ DUM7
+		@sup_1@@sup_6@RSX @sub_alpha@ E	** NEED MORE POINTS
+		INX @sub_alpha@@sub_pipe@@sub_gamma@
+		DEX @sub_alpha@ 1		** IS NEW VIRG PT
+		MAKA@hamb@IPCONS@arr@@beta@
+		PUT|IPCV,@beta@@arr@IPCOTP,@alpha@
+		RSX @sub_alpha@ ATBITS+1
+		PUT|IPCI,@beta@@arr@VCON,@alpha@
+		MAKA@hamb@POINTS@arr@@alpha@
+		PUT|IPCP,@beta@@arr@VCON,@alpha@
+		@sup_1@RSX @sub_gamma@@sub_pipe@@sub_gamma@ LIST
+		JPQ DUM6
+DUM7@arr@	RSX @sub_alpha@ ATBITS+1
+		LDAE@hamb@LIST+IVAL@sub_alpha@
+		STAE@hamb@MATM
+		RSX @sub_gamma@@sub_pipe@@sub_alpha@ LIST+IWHAT
+		LDA @sub_gamma@ LIST+PSIZE
+		STA MATD
+		LGORR@hamb@VCON@times@@alpha@=S@arr@DUM8 [really 8?]
+DUMMEX@arr@	JPQ #
+DUM8@arr@	@sup_1@STE DUM8X
+		RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+TYPE
+		SXD @sub_S@ IPCONS-LIST
+		JPQ #+2
+DUM8X@arr@	JPQ #
+		RSX @sub_T@@sub_pipe@@sub_alpha@ LIST+IPCV
+		LDAB@hamb@VA@sub_T@
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=45 doc_page=43]
+[Page header: "IES 2XMX 027"]
+
+
+
