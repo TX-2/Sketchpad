@@ -61,3 +61,25 @@ SUBR1@arr@	JPQ #
 
 So, the expression passed as the parameter is itself invoked in the macro
 defition.
+
+Parameters passed to macros may also include subscripts and superscripts,
+example from the code:
+
+MOVE|@sup_1@@sup_6@ LIST@sub_beta@@arr@@sup_1@ GARBS
+
+The MOVE macro is defined as follows:
+
+@hand@@hand@DEF MOVE|A@arr@B
+hLDE A
+STE B
+@hand@@hand@EMD
+
+The above macro invocation will result in the first line getting expanded to
+
+hLDE @sup_1@@sup_6@ LIST@sub_beta@
+
+This likely works because subscripts and superscripts may appear anywhere
+in the statement. So the above line is equivalent to this more familiar
+form:
+
+h@sup_1@@sup_6@LDE @sub_beta@ LIST
