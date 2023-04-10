@@ -850,6 +850,284 @@ MERGEIFP1@arr@
 
 [meta file_name=102726903-05-01-acc.pdf pdf_page=38 doc_page=36]
 [Page header: "IES 2XMX 020"]
+
+		SXD @sub_S@ VARIABLES-LIST
+		hJPQ MERGER
+MERGEIFPX@arr@
+		JPQ #
+STOPMOVEP@arr@
+		@sup_1@STE STOPMOVEX
+		MKN MOVINGDONE
+		MKZ SHAFTUSE
+		RES @sub_alpha@ CURPICS-LIST
+		LGORR@hamb@SPECB@times@@alpha@=S@arr@STOPMOVEP1
+		RSX @sub_alpha@ MOVINGS+SPECB+1
+		SXD @sub_alpha@ MOVINGS-LIST+SPECB+1
+		JPQ STOPMOVEX
+		@sup_1@@sup_6@AUX @sub_alpha@@sub_pipe@@sub_alpha@ LIST-1
+		DEX @sub_alpha@ 1
+		hJPQ STOPM1
+		hJPQ STOPTAKE
+		RSX @sub_beta@ ATBITS+1
+		RSX @sub_S@ ATBITS
+		RSX @sub_S@ 1
+STOPMOVEPB@arr@
+		hJPQ MERGEIFP
+		DPX @sub_alpha@ ATBITS+1
+		RSX @sub_alpha@@sub_pipe@@sub_alpha@ LIST+TYPE
+		@sup_2@DPX @sub_alpha@ ATBITS+1
+		DPX ATBITS
+		SXD @sub_alpha@ LINES-LIST
+		MKN ATLINE
+		SXD @sub_alpha@ CIRCLES-LIST
+		MKN ATCIRCLE
+		SXD @sub_alpha@ INSTANCES-LIST
+		MKN ATINS
+		SXD @sub_alpha@ POINTS-LIST
+		MKN ATPOINT
+		MKN @sub_1@@sub_dot@@sub_1@ ATBITS
+STOPMOVEPA@arr@
+		REX @sub_alpha@ MOVINGS-LIST
+		LGORR@hamb@SPECB@times@@alpha@=S@arr@STOPTAKE
+STOPMOVEX@arr@
+		JPQ #
+STOPMOVEP1@arr@
+		@sup_1@STE STOPMOVEP1X
+		LGORR@hamb@PPARTM@times@@alpha@=S@arr@STOPMOVEP2
+STOPMOVEP1X@arr@
+		JPQ #
+STOPMOVEP2@arr@
+		@sup_1@STE STOPMOVEP2X
+		RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+TYPE
+		RSX @sub_S@@sub_pipe@@sub_S@ LIST+KIND
+		RSX @sub_beta@@sub_pipe@@sub_alpha@ LIST+BWHOS
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=39 doc_page=37]
+[Page header: "IES 2XMX 021"]
+
+		SXD @sub_S@ JUNKK
+		JPQ STOPMOVEP2J
+		SXD @sub_S@ DISPLAYK
+		JPQ STOPMOVEP2D
+		ERROR@hamb@S@arr@STOPMOVEP2X
+STOMOVEP2J@arr@
+		MOVEL@hamb@BWHOS@times@@alpha@@arr@PICBLKS@times@@beta@
+		JPQ STOPMOVEP2X
+STOPMOVEP2D@arr@
+		MOVEL@hamb@BWHOS@times@@alpha@@arr@PPART@times@@beta@
+STOPMOVEP2X@arr@
+		JPQ #
+STOPTAKE@arr@
+		SUBR@hamb@(LTAKE@hamb@VORD@times@@alpha@)
+STOPM1@arr@	@sup_1@STE STOPM1X
+		RSX @sub_gamma@@sub_pipe@@sub_alpha@ LIST+TYPE
+		SXD @sub_gamma@ POINTS-LIST
+		JPQ STOPM2
+STOPM1X@arr@
+		JPQ #
+STOPM2@arr@	@sup_1@DPX @sub_alpha@ STOPM3T
+		LGORR@hamb@VCON@times@@alpha@=S@arr@STOPM3@arr@STOPM4
+STOPM3@arr@	@sup_1@STE STOPM3X
+		hLDE @sub_alpha@ LIST+TYPE
+		h@sup_1@SED { ONLINES-LIST}
+		JPQ STOPM3L
+		@sup_1@SED { ONCIRCLES-LIST}
+		JPQ STOPM3C
+STOPM3X@arr@
+		JPQ #
+STOPM3C@arr@
+		LDA @sub_alpha@ LIST+PBOCC
+		@sup_2@@sup_2@LDA @sub_alpha@ LIST+PBOCS
+		RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+PBOCP
+		JPQ STOPM3T
+STOPM3L@arr@
+		LDA @sub_alpha@ LIST+PBOLE
+		@sup_2@@sup_2@LDA @sub_alpha@ LIST+PBOLS
+		RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+PBOLP
+STOPM3T@arr@
+		SXD @sub_S@ #	**MOVING POINT
+		JPQ #+2
+		JPQ STOPM3X
+		RSX @sub_S@ ATBITS
+		JPQ STOPM3AI
+STOPM3A@arr@
+		DPX @sub_S@ STOPM3S
+		RSX @sub_beta@@sub_pipe@@sub_S@ ATBITS+1
+		RSX @sub_gamma@@sub_pipe@@sub_beta@ LIST+TYPE
+		SXD @sub_gamma@ LINES-LIST
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=40 doc_page=38]
+[Page header: "IES 2XMX 022"]
+
+		JPQ STOPM3AL
+		SXD @sub_gamma@ CIRCLES-LIST
+		JPQ STOPM3AC
+		JPQ STOPM3AI
+STOPM3AL@arr@
+		LDB @sub_beta@ LIST+LEP
+		@sup_2@@sup_2@LDB @sub_beta@ LIST+LSP
+		JPQ STOPM3AT
+STOPM3AC@arr@
+		LDB @sub_beta@ LIST+CSP
+		@sup_2@@sup_2@LDB @sub_beta@ LIST+CIRCEN
+STOPM3AT@arr@
+		hLDE B
+		hSED A
+		JPQ #+2
+		@sup_1@@sup_7@SED A
+		hJPQ DELETE
+		RSX @sub_S@ STOPM3S
+STOPM3AI@arr@
+		@sup_minus@@sup_1@JPX @sub_S@ STOPM3A
+		JPQ STOPM3X
+STOPM4@arr@	hJPQ CONAP
+		JPQ STOPM1X
+		** MERGE @alpha@ AND @beta@
+MERGER@arr@	@sup_1@STE MERGEX
+		MKN MRGRFTT **FIRST TIME THRU
+		SXD @sub_alpha@@sub_pipe@@sub_beta@ [same again, valid without operand?]
+		JPQ MERGEX
+MERGERBAC@arr@
+		RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+TYPE
+		RSX @sub_T@@sub_pipe@@sub_beta@ LIST+TYPE
+		SXD @sub_S@@sub_pipe@@sub_T@
+		JPQ MERGERB
+		SXD @sub_S@ TPVALS-LIST
+		JPQ #+4
+		SXD @sub_T@ TPVALS-LIST
+		JPQ #+6
+		ERROR@hamb@@alpha@@arr@MERGEX
+		RSX @sub_T@@sub_pipe@@sub_T@ LIST+TYPE
+		SXD @sub_T@ VARIABLES-LIST
+		JPQ MERGERC
+		ERROR@hamb@T@arr@MERGEX
+		RSX @sub_S@@sub_pipe@@sub_S@ LIST+TYPE
+		SXD @sub_S@ VARIABLES-LIST
+		JPQ MERGERD
+		ERROR@hamb@S@arr@MERGEX
+MERGERB@arr@
+		SXL @sub_beta@@sub_pipe@@sub_alpha@
+		JPQ MERGERD
+MERGERC@arr@
+		DPX @sub_alpha@ MERGTS
+ 
+[meta file_name=102726903-05-01-acc.pdf pdf_page=41 doc_page=39]
+[Page header: "IES 2XMX 023"]
+
+		EXX @sub_beta@ MERGTS
+		RSX @sub_alpha@ MERGTS
+MERGERD@arr@
+		hLDE @sub_alpha@ LIST+BWHOS
+		SED @sub_beta@ LIST+BWHOS
+		JPQ #+2
+		ERROR@hamb@@alpha@@arr@MERGEX
+		SZZ MRGRFTT
+		@sup_1@DPX @sub_alpha@ MRGR9 [really 9?]
+		RSX @sub_S@@sub_pipe@@sub_beta@ LIST+TYPE
+		SXD @sub_S@ POINTS-LIST
+		JPQ #+2
+		MKN MOVED
+MERGERA@arr@
+		DPX @sub_alpha@ MRGRL
+		DPX @sub_beta@ MRGRU
+		MOVE|LIST@sub_alpha@@arr@MRGTP [notable: LIST@sub_alpha@ as macro parameter]
+		@sup_1@@sup_5@RSX @sub_gamma@@sub_pipe@@sub_beta@ LIST+TYPE
+		DEX @sub_gamma@ 2
+		JPQ MRGRX
+MRGR1@arr@	hLDE @sub_beta@ LIST
+		hSED @sub_alpha@ LIST
+		JPQ MRGR4  ** BOTH ARE SAME
+		@sup_2@@sup_1@SED @sub_alpha@ LIST
+		JPQ #+2
+		ERROR@hamb@@beta@@arr@MERGEX	** LEFT SIDE DIFFERS
+		hLDE @sub_beta@ LIST
+		@sup_1@SED { 0}
+		JPQ MRGR2
+		hLDE @sub_alpha@ LIST
+		@sup_1@SED { 0}
+		JPQ MRGR3
+		JPQ MRGR6
+MRGR2@arr@	h@sup_1@@sup_7@LDE @sub_beta@ LIST+1
+		hRSX @sub_S@ E
+		@sup_1@SED @sub_beta@ LIST+1
+		JPQ #+2
+		ERROR@hamb@@alpha@@arr@MERGEX	** NOT EMPTY KEY
+		SXD @sub_S@@sub_pipe@@sub_beta@ 1
+		JPQ MRGRX
+		ERROR@hamb@@alpha@@arr@MERGEX	** NOT EMPTY KEY
+MRGR3@arr@	h@sup_1@@sup_7@LDE @sub_alpha@ LIST+1
+		hRSX @sub_S@ E
+		@sup_1@SED @sub_alpha@ LIST+1
+		JPQ #+2
+		ERROR@hamb@@alpha@@arr@MERGEX	** NOT EMPTY KEY
+		SXD @sub_S@@sub_pipe@@sub_alpha@ 1
+		JPQ MRGR3A
+		ERROR@hamb@@alpha@@arr@MERGEX	** NOT EMPTY KEY
+MRGR3A@arr@	MOVE|LIST@sub_beta@@arr@LIST@sub_alpha@
+		 
+[meta file_name=102726903-05-01-acc.pdf pdf_page=42 doc_page=40]
+[Page header: "IES 2XMX 024"]
+
+		MOVE|LIST+1@sub_beta@@arr@@?@LIST+1@sub_alpha@ [possibly junk/noise?]
+		RSX @sub_S@ E
+		REX @sub_T@@sub_pipe@@sub_alpha@ 1
+		@sup_2@DPX @sub_T@@sub_pipe@@sub_S@ LIST
+		@sup_2@RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+1
+		@sup_1@DPX @sub_T@@sub_pipe@@sub_S@ LIST
+		REX @sub_T@@sub_pipe@@sub_beta@ 1
+		@sup_1@DPX @sub_?@@sub_pipe@@sub_beta@ LIST [missing operand, can't be valid?]
+		h@sup_1@DPX @sub_T@ E
+		h@sup_2@DPX @sub_T@ E
+		STE @sub_beta@ LIST+1
+		JPQ MRGRX
+MRGR4@arr@	hLDE @sub_alpha@ LIST
+		@sup_1@ SED { 0}
+		JPQ MRGR5
+		LTAKE@hamb@@alpha@@times@@beta@
+		JPQ MRGRX
+MRGR5@arr@	DPX @sub_beta@ MRGRTS
+		RSX @sub_beta@@sub_pipe@@sub_beta@ LIST+1
+MRGR5A@arr@	hLDE @sub_beta@ LIST-1
+		@sup_1@ SED { 0}
+		JPQ MRGR5B
+		MOVE|MRGRL@arr@@sup_1@ LIST-1@sub_beta@ [unkown syntax, what does it mean?]
+		RSX @sub_beta@@sub_pipe@@sub_beta@ LIST
+		JPQ MRGR5A
+MRGR5B@arr@	RSX @sub_beta@ MRGRTS
+		RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+1
+		@sup_2@RSX @sub_T@@sub_pipe@@sub_beta@ LIST+1
+		@sup_2@DPX @sub_T@@sub_pipe@@sub_S@ LIST
+		@sup_1@DPX @sub_S@@sub_pipe@@sub_T@ LIST
+		REX @sub_S@@sub_pipe@@sub_alpha@ 1
+		RSX @sub_T@@sub_pipe@@sub_beta@ LIST+1
+		@sup_1@DPX @sub_T@@sub_pipe@@sub_S@ LIST
+		@sup_2@DPX @sub_S@@sub_pipe@@sub_T@ LIST
+		REX @sub_T@@sub_pipe@@sub_beta@ 1
+		hDPX @sub_T@ E
+		h@sup_2@DPX@sub_T@ E
+		STE @sub_beta@ LIST+1
+MRGRX@arr@	@sup_minus@@sup_2@JPX @sub_gamma@ MRGRXA
+MRGR7@arr@	RSX @sub_alpha@ MRGRU
+		hJPQ DELETE
+MRGR8@arr@	REX @sub_alpha@ MERGERS-LIST
+		LGORR@hamb@SPECB@times@@alpha@=S@arr@MRGR10@arr@MRGR9
+MRGR10@arr@	RSX @sub_beta@@sub_pipe@@sub_alpha@ LIST+VORD+1
+		DEX @sub_beta@ 1
+		@sup_1@@sup_6@AUX @sub_beta@@sub_pipe@@sub_beta@ LIST
+		LTAKE@hamb@VORD@times@@alpha@
+		LTAKE@hamb@VORD@times@@beta@
+		JPQ MERGERBAC
+MRGR6@arr@	RSX @sub_delta@@sub_pipe@@sub_alpha@ LIST ** @delta@ IS POINTED AT THING
+	
+[meta file_name=102726903-05-01-acc.pdf pdf_page=43 doc_page=41]
+[Page header: "IES 2XMX 025"]
+
+
+		
+
+
+		
+
 		
 		
 
