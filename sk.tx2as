@@ -552,7 +552,7 @@ SUBPIC1@arr@
 SUBPIC2@arr@
 		LDAB@hamb@IVAL+LIST@sub_S@
 		STAB@hamb@NIRR
-		@alpha@@rect_dash@IWHAT.S [call to macro named with a composite character]
+		@alpha@@rect_dash@IWHAT,S [call to macro named with a composite character]
 		JPQ SUBPICS
 SUBPIC3@arr@	MOVE|NITOG@arr@NINAME
 		MOVE|SCSZ@arr@NIRR
