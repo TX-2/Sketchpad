@@ -1255,7 +1255,7 @@ UNMAC1@arr@	LDA @sub_alpha@ LIST+PSIZE
 		hJPQ COPYINT	** COPY STUFF
 		hJPQ STOPMOVEP
 UNMAC2@arr@	RSX @sub_alpha@ ATBITS+1
-		LGORR@hamb@VCON@times@@alpha@=S@arr@UNMAC3@arr@UNMAC4@
+		LGORR@hamb@VCON@times@@alpha@=S@arr@UNMAC3@arr@UNMAC4
 UNMAC3@arr@	@sup_1@STE UNMAC3X
 		hLDE @sub_alpha@ LIST+TYPE
 		@sup_1@SED { IPCONS-LIST}
@@ -1401,8 +1401,8 @@ COPYMOVE@arr@
 		@sup_1@@sup_6@RSX @sub_alpha@@sub_pipe@@sub_S@ LIST-1
 		INX @sub_alpha@@sub_pipe@@sub_S@
 		RSX @sub_alpha@@sub_pipe@@sub_alpha@ LIST
-		@sup_1@DPX @sub_S COPYMOVE1
-		DEX @alpha 1	** THING TO MOVE
+		@sup_1@DPX @sub_S@ COPYMOVE1
+		DEX @sub_alpha@ 1	** THING TO MOVE
 		hJPQ MOVE@alpha@
 COPYMOVE1@arr@
 		REX @sub_alpha@ #
@@ -1446,5 +1446,111 @@ COPYMOVE2A@arr@
 [meta file_name=102726903-05-01-acc.pdf pdf_page=49 doc_page=47]
 [Page header: "IES 2XMX 033"]
 
+		RSX @sub_alpha@ COPYMOVE2
+		@sup_2@RSX @sub_alpha@@sub_pipe@@sub_alpha@ LIST
+		@sup_1@DPX @sub_alpha@ COPYMOVE2
+		hLDE @sub_alpha@ LIST-1
+		@sup_1@SED { 0}
+		JPQ COPYX
+		@sup_1@@sup_6@AUX @sub_alpha@@sub_pipe@@sub_alpha@ LIST-1
+		DEX @sub_alpha@ 1
+		hJPQ MERGEIFP
+COPYMOVE2AX@arr@
+		JPQ #
+COPYNOMOVE@arr@
+		hJPQ STOPMOVEP
+		MKN MOVED
+COPYX@arr@	JPQ #
+ERASE@arr@	@sup_1@STE ERASEX
+		SKZ LPLOST
+		JPQ ERASEX
+		RSX @sub_alpha@ MOVINGS+SPECB+1
+		SXD @sub_alpha@ MOVINGS-LIST+SPECB+1
+		JPQ ERASE1
+ERASE1@arr@	@sup_1@@sup_6@AUX @sub_alpha@@sub_pipe@@sub_alpha@ LIST-1
+		DEX @sub_alpha@ 1
+		hJPQ DELETE
+		RSX @sub_alpha@ MOVINGS+SPECB+1
+		SXD @sub_alpha@ MOVINGS+SPECB-LIST+1
+		JPQ ERASEX-1
+		JPQ ERASEA
+ERASE1@arr@	RSX @sub_alpha@ ATBITS
+		SXD @sub_alpha@ 1
+		JPQ ERASE2
+		JPQ ERASEX
+ERASE2@arr@	RSX @sub_alpha@ ATBITS+1
+		hJPQ DELETE
+		MKN MOVED
+ERASEX@arr@	JPQ #
+DELETE@arr@	@sup_1@STE DELETEX
+DELETER@arr@
+		@beta@@rect_dash@TYPE,@alpha@	** IS @alpha@ FORBIDDEN TYPE
+		SXD @sub_beta@ 0
+		JPQ DEL1
+		REX @sub_beta@ DEADS-LIST
+		MOVEL@hamb@TYPE@times@@alpha@@arr@SPECB@times@@beta@
+		@sup_1@DPX @sub_beta@@sub_pipe@@sub_alpha@ LIST+TYPE
+DEL1@arr@	RSX @sub_alpha@ DEADS+SPECB+1
+		hLDE @sub_alpha@ LIST-1
+		@sup_1@SED { 0}
+		JPQ DELETEX ** DONE
+		DEX @sub_alpha@ 1
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=50 doc_page=48]
+[Page header: "IES 2XMX 034"]
+
+		@sup_1@@sup_5@RSX @sub_beta@@sub_pipe@@sub_alpha@ LIST
+		DEX @sub_beta@ 2
+		JPQ DEL2X
+DEL2@arr@	INX @sub_alpha@ 2	** NEXT TIE
+		RSX @sub_gamma@@sub_pipe@@sub_alpha@ LIST+1
+		SXD @sub_gamma@@sub_pipe@@sub_alpha@ 1	** SKIP IF NON EMPTY
+		JPQ DEL2X
+DEL3@arr@	hLDE { 0}
+		@sup_1@SED @sub_alpha@ LIST 	** SKIP IF NON KEY
+		JPQ DEL5
+		LTAKE@hamb@0@times@@alpha@ [pretty clearly zero here as first parameter]
+DEL2X@arr@	@sup_minus@@sup_2@JPX @sub_beta@ DEL2 [possibly DEL3?]
+DEL4@arr@	RSX @sub_alpha@ DEADS+SPECB+1
+		DEX @sub_alpha@ 1	** FREE STORAGE LIST
+		REX @sub_beta@ FREES-LIST
+		MOVEL@hamb@TYPE@times@@alpha@@arr@SPECB@times@@beta@
+		@sup_1@DPX @sub_beta@@sub_pipe@@sub_alpha@ LIST+TYPE
+		JPQ DEL1
+DEL5@arr@	DEX @sub_gamma@ 1	** DELETE A THING IN A
+		LTAKE@hamb@0@times@@gamma@
+		@sup_1@@sup_6@RSX @sub_alpha@@sub_pipe@@sub_gamma@ LIST
+		INX @sub_alpha@@sub_pipe@@sub_gamma@
+		JPQ DELETER
+DELETEX@arr@
+		JPQ #
+GARBAGE@arr@
+		@sup_1@STE GARBEX
+		MKN MOVED
+		MOVE|{ 377777}@arr@@sup_1@ GARB1
+		RSX @sub_S@ FREES+SPECB+1
+		SXD @sub_S@ FREES+SPECB-LIST+1
+		JPQ GARBEX
+GARB1@arr@	SXL @sub_S@ 377777
+		JPQ #+2			[Handwritten: FREE3]
+		@sup_1@DPX @sub_S@ GARB1
+		RSX @sub_S@@sub_pipe@@sub_S@ LIST
+		SXD @sub_S@ FREES+SPECB-LIST+1
+		JPQ GARB2
+		JPQ GARB1
+GARB2@arr@	RSX @sub_alpha@ GARB1
+		DEX @sub_alpha@ 1
+		REX @sub_beta@@sub_pipe@@sub_alpha@
+GARB3@arr@	LTAKE@hamb@TYPE@times@@beta@
+GARB4@arr@	@sup_1@@sup_6@AUX @sub_beta@@sub_pipe@@sub_beta@ LIST
+GARB4A@arr@	SXL @sub_beta@* AFFB
+		JPQ GARBDONE
+		RSX @sub_T@@sub_pipe@@sub_beta@ LIST
+		SXD @sub_T@ FREES-LIST
+		JPQ GARB3
+		MOVE|@sup_1@@sup_6@ LIST@sub_beta@@arr@@sup_1@ GARBS [unknown syntax]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=51 doc_page=49]
+[Page header: "IES 2XMX 035"]
 
 
