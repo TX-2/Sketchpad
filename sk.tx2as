@@ -1122,13 +1122,56 @@ MRGR6@arr@	RSX @sub_delta@@sub_pipe@@sub_alpha@ LIST ** @delta@ IS POINTED AT TH
 [meta file_name=102726903-05-01-acc.pdf pdf_page=43 doc_page=41]
 [Page header: "IES 2XMX 025"]
 
+		RSX @sub_S@@sub_pipe@@sub_delta@ LIST+TYPE
+		SXD @sub_S@ PICTURES-LIST
+		ERROR@hamb@@delta@@arr@MERGEX
+		RSX @sub_S@@sub_pipe@@sub_S@ LIST+TYPE
+		SXD @sub_S@ MASTERS-LIST
+		ERROR@hamb@@delta@@arr@MERGEX
+		@sup_1@DPX @sub_delta@ MRGR6A
+		RSX @sub_delta@@sub_pipe@@sub_beta@ LIST
+		RSX @sub_S@@sub_pipe@@sub_delta@ LIST+TYPE
+		SXD @sub_S@ PICTURES-LIST
+		ERROR@hamb@@delta@@arr@MERGEX
+		RSX @sub_S@@sub_pipe@@sub_S@ LIST+TYPE
+		SXD @sub_S@ MASTERS-LIST
+		ERROR@hamb@@delta@@arr@MERGEX
+		LTAKE@hamb@@alpha@@times@@beta@ [really alpha?]
+		REX @sub_eps@ MERGERS-LIST
+		MOVEL@hamb@VORD@times@@delta@@arr@SPECB@times@@eps@
+		@sup_1@DPX @sub_eps@@sub_pipe@@sub_delta@ VORD+LIST
+MRGR6A@arr@	REX @sub_delta@ #
+		MOVEL@hamb@VORD@times@@delta@@arr@SPECB@times@@eps@
+		@sup_1@DPX @sub_eps@@sub_pipe@@sub_delta@ LIST+VORD
+		JPQ MRGRX
+MRGRXA@arr@	INX @sub_alpha@ 2
+		INX @sub_beta@ 2
+		JPQ MRGR1
+MRGR9@arr@	REX @sub_alpha@ #	** FIRST MERGER RESULT
+MERGEX@arr@	JPQ #
+DUMMY@arr@	@sup_1@STE DUMMEX
+		REX @sub_alpha@ MOVINGS-LIST
+		LGORR@hamb@SPECB@times@@alpha@=S@arr@DUMMYA
+		SKN ATINS
+		JPQ DUMMEX
+		RSX @sub_alpha@ ATBITS+1	** OLD INSTANCE
+		MKN MOVED
+		JPQ DUMMYB
+DUMMYA@arr@	@sup_1@STE DUMMYAX
+		RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+TYPE
+		SXD @sub_S@ INSTANCES-LIST
+		JPQ DUMMYB
+DUMMYAX@arr@
+		JPQ #
+DUMMYB@arr@	REX @sub_gamma@ PICTURES-LIST
+		LGORR@hamb@SPECB@times@@gamma@=S@arr@DUM1@arr@DUMEX
+DUM1@arr@	@sup_1@STE #+4
+		hLDE @sub_gamma@ LIST+PNAME
+		@sup_1@SED NITOG
+		JPQ DUM2
+		JPQ #
+DUM2@arr@	MOVEL@hamb@IWHAT@times@@alpha@@arr@PINS@times@@gamma@
+		@sup_1@DPX @sub_gamma@@sub_pipe@@sub_alpha@ LIST+IWHAT
 
-		
-
-
-		
-
-		
-		
-
-
+[meta file_name=102726903-05-01-acc.pdf pdf_page=44 doc_page=42]
+[Page header: "IES 2XMX 026"]

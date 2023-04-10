@@ -7,6 +7,8 @@
 
 # No subscript alpha, using a instead.
 s/@sub_alpha@/ₐ/g
+# No subscript epsilon, using e instead.
+s/@sub_eps@/ₑ/g
 # No subscript capital S, using subscript lowercase s.
 s/@sub_S@/ₛ/g
 # Ditto for subscript T.
@@ -42,6 +44,7 @@ s/@alpha@/α/g
 s/@beta@/β/g
 s/@gamma@/γ/g
 s/@delta@/Δ/g
+s/@eps@/ε/g
 
 #
 # Subscript and superscript numbers.
