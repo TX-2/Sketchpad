@@ -792,3 +792,65 @@ MOVE@alpha@I1@arr@
 		RSX @sub_alpha@@sub_pipe@@sub_alpha@ LIST+IPCP [IRCP maybe?]
 		RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+TYPE
 		JPQ MOVE@alpha@VS+1
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=37 doc_page=35]
+[Page header: "IES 2XMX 017"]
+
+MOVE@alpha@VS@arr@
+		@sup_1@STE MOVE@alpha@VSX
+		RSX @sub_T@@sub_pipe@@sub_S@ LIST+TUPLE
+		SXD @sub_T@ 4
+		MKN SHAFTUSE
+		SXD @sub_S@ INSTANCES-LIST
+		JPQ MOVE@alpha@V1
+		SXD @sub_S@ POINTS-LIST
+		JPQ MOVE@alpha@V2
+		@sup_1@@sup_5@RSX @sub_T@@sub_pipe@@sub_alpha@ LIST+TYPE
+		SXD @sub_T@ 14
+		JPQ MOVE@alpha@V1
+		SXD @sub_T@ 16
+		JPQ MOVE@alpha@V2
+		ERROR@hamb@T@arr@MOVE@alpha@VSX
+MOVE@alpha@V2@arr@
+		LGORR@hamb@PLS@times@@alpha@=S@arr@MOVE@alpha@IPM
+MOVE@alpha@V1@arr@
+		LGORR@hamb@VCON@times@@alpha@=S@arr@MOVE@alpha@IPM
+		hJPQ MOVE@alpha@IPM
+		hJPQ MOVE@alpha@MVG
+MOVE@alpha@VSX@arr@
+		JPQ #
+MOVE@alpha@IPM@arr@
+		@sup_1@STE MOVE@alpha@IPMX
+		RSX @sub_beta@@sub_pipe@@sub_alpha@ LIST+BWHOS
+		MOVEL@hamb@BWHOS@times@@alpha@@arr@PPARTM@times@beta
+MOVE@alpha@IPMX@arr@
+		JPQ #
+MOVE@alpha@MVG@arr@
+		@sup_1@STE MOVE@alpha@MVGX
+		REX @sub_beta@ MOVINGS-LIST
+		MOVER@hamb@VORD@times@@alpha@@arr@SPECB@times@@beta@
+		@sup_1@DPX @sub_beta@@sub_pipe@@sub_alpha@ LIST+VORD
+MOVE@alpha@MVGX@arr@
+		JPQ #
+MERGEIFP@arr@
+		@sup_1@STE MERGEIPFX
+		RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+TYPE
+		RSX @sub_T@@sub_pipe@@sub_beta@ LIST+TYPE
+		SXD @sub_S@@sub_pipe@@sub_T@
+		JPQ MERGEIFPX-1
+		SXD @sub_S@ TPVALS-LIST
+		JPQ #+4
+		SXD @sub_T@ TPVALS-LIST
+		JPQ MERGEIFP1
+		JPQ MERGEIFPX
+		RSX @sub_S@@sub_pipe@@sub_T@ LIST+TYPE
+		JPQ #+2
+MERGEIFP1@arr@
+		RSX @sub_S@@sub_pipe@@sub_S@ LIST+TYPE
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=38 doc_page=36]
+[Page header: "IES 2XMX 020"]
+		
+		
+
+
