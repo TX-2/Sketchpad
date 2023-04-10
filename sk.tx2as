@@ -1230,5 +1230,221 @@ DUM8X@arr@	JPQ #
 [meta file_name=102726903-05-01-acc.pdf pdf_page=45 doc_page=43]
 [Page header: "IES 2XMX 027"]
 
+		RSX @sub_eps@@sub_pipe@@sub_alpha@ LIST+IPCP [epsilon out of context?]
+		STAB@hamb@VA@sub_alpha@
+		RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+TYPE
+		hBPQ @sub_S@ LIST+MOVIT
+		JPQ DUM8X
+		** DEVELOP LINES FROM INSTANCE
+UNMAC@arr@	@sup_1@STE UNMACEX
+		SKZ LPLOST
+		JPQ UNMACEX
+		SKN ATINS
+		JPQ UNMACEX
+		RSX @sub_alpha@ ATBITS+1
+		REX @sub_S@ 3
+		LDA @sub_S@@sub_pipe@@sub_alpha@ LIST+IVAL
+		STA @sub_S@ MATM
+		@sup_minus@@sup_1@JPX @sub_S@ #-2
+		RSX @sub_alpha@@sub_pipe@@sub_alpha@ LIST+IWHAT
+UNMAC1@arr@	LDA @sub_alpha@ LIST+PSIZE
+		STA MATD
+		LDAB@hamb@MATM
+		hJPQ PYTHAGORIAN
+		STA MATS
+		hJPQ COPYINT	** COPY STUFF
+		hJPQ STOPMOVEP
+UNMAC2@arr@	RSX @sub_alpha@ ATBITS+1
+		LGORR@hamb@VCON@times@@alpha@=S@arr@UNMAC3@arr@UNMAC4@
+UNMAC3@arr@	@sup_1@STE UNMAC3X
+		hLDE @sub_alpha@ LIST+TYPE
+		@sup_1@SED { IPCONS-LIST}
+		JPQ #+2
+UNMAC3X@arr@
+		JPQ #
+		@beta@@rect_dash@IPCP,@alpha@
+		@alpha@@rect_dash@IPCV,@alpha@
+		@sup_1@RSX @sub_alpha@@sub_pipe@@sub_alpha@ LIST+1
+		DEX @sub_alpha@ 1	** @alpha@ = COPIED POINT
+		LDAB@hamb@VA@sub_beta@
+		STAB@hamb@VA@sub_alpha@
+		hJPQ MERGER
+		JPQ UNMAC3X
+UNMAC4@arr@	RSX @sub_alpha@ ATBITS+1
+		hJPQ DELETE
+		DPX ATBITS
+		MKN MOVED
+UNMACEX@arr@
+		JPQ #
+COPYINT@arr@
+		@sup_1@STE COPYMOVE-1
+		JPQ COPYITA
+COPYIST@arr@
+		@sup_1@STE COPYX
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=46 doc_page=44]
+[Page header: "IES 2XMX 030"]
+
+		MOVE|{ COPYMOVE}@arr@@sup_1@ COPYMOVE-1 [what is this @sup_1@ syntax?]
+		SKZ LPLOST
+		JPQ COPYX
+		hJPQ STOPMOVEP
+		REX @sub_alpha@ PICTURES-LIST
+		LGORR@hamb@SPECB@times@@alpha@=S@arr@COPY1@arr@COPYX
+COPY1@arr@	@sup_1@STE COPY1X
+		hLDE @sub_alpha@ LIST+PNAME
+		@sup_1@SED COPYNUM	** @?@PIC TO COPY [possibly #?]
+		JPQ COPYIT
+COPY1X@arr@	JPQ #
+COPYIT@arr@	LDA SCSZ
+		MUL { 100.}
+		STA MATM
+		STA MATS
+		DPX MATO
+		LDAB@hamb@PSPL
+		STAB@hamb@MATRX
+		LDA @sub_alpha@ LIST+PSIZE
+COPYITA@arr@
+		DPX @sub_alpha@ COPYPIC		** PIC TO COPY
+		LGORR@hamb@PPART@times@@alpha@=S@arr@COPYDUP
+		LGORR@hamb@PICBLKS@times@@alpha@=S@arr@COPYDUP@arr@COPYFLS
+COPYDUP@arr@
+		@sup_1@STE COPYDUPX
+		@delta@@rect_dash@TYPE,@alpha@
+		MOVEL@hamb@TYPE@times@@alpha@@arr@SPECB@times@@delta@	** PUT IT FIRST
+		MAKA@arr@@gamma@	** MAKE A NEW ONE
+		@sup_1@@sup_6@RSX @sub_S@@sub_pipe@@sub_gamma@ LIST
+		@sup_1@@sup_5@RSX @sub_T@@sub_pipe@@sub_gamma@ LIST
+		DEX @sub_S@@sub_pipe@@sub_T@
+		JPQ #+4
+		hLDE @sub_alpha@@sub_pipe@@sub_T@ LIST
+		STE @sub_gamma@@sub_pipe@@sub_T@ LIST
+		INX @sub_T@ 1
+		@sup_minus@@sup_1@JPX @sub_S@ #-1
+		REX @sub_alpha@@sub_pipe@@sub_gamma@
+		S@rect_dash@TYPE,@alpha@
+		hBPQ @sub_S@ LIST+MOVIT
+COPYDUPX@arr@
+		JPQ #
+COPYFLS@arr@
+		RSX @sub_alpha@ COPYPIC
+		LGORR@hamb@PPART@times@@alpha@=S@arr@COPYFIX
+		LGORR@hamb@PICBLKS@times@@alpha@=S@arr@COPYFIX@arr@COPIED
+COPYFIX@arr@
+		@sup_1@STE COPYFIXEX
+		RSX @sub_beta@@sub_pipe@@sub_alpha@ LIST+1
+		DEX @sub_beta@ 1	** @beta@=NEW THING
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=47 doc_page=45]
+[Page header: "IES 2XMX 031"]
+
+		RSX @sub_gamma@@sub_pipe@@sub_beta@ LIST+BWHOS
+		MOVEL@hamb@BWHOS@times@@beta@@arr@PPARTM@times@@gamma@
+COPYFIXT@arr@
+		@sup_1@@sup_5@RSX @sub_S@@sub_pipe@@sub_beta@ LIST+TYPE
+		SXL @sub_S@ 5 		** QUIT
+		JPQ #+2
+COPYFIXEX@arr@
+		JPQ #
+		DEX @sub_S@ 2
+		@sup_1@SPX @sub_S@ COPYFIXI		** FILTER OUT
+		hLDE @sub_S@@sub_pipe@@sub_alpha@ LIST	** NEXT TIE
+		h@sup_1@SED { 0}	** EMPTY?
+		JPQ COPYFIXI
+		RSX @sub_gamma@ E	** @gamma@ IS WHERE TIE IS TO
+		SXD @sub_gamma@* COPYPIC 	** TO OWN PICTURE?
+		JPQ COPYFIXI
+		RSX @sub_S@@sub_pipe@@sub_gamma@ LIST+TYPE
+		RSX @sub_T@@sub_pipe@@sub_S@ LIST+TYPE
+		SXD @sub_T@ MASTERS-LIST
+		JPQ COPYFIXI
+COPYFIXA@arr@
+		SXD @sub_S@ PICTURES-LIST
+		JPQ COPYFIXB		** PUT @beta@ in @gamma@
+		RSX @sub_S@@sub_pipe@@sub_gamma@ LIST+BWHOS
+		SXD @sub_S@* COPYPIC [what is this syntax?]
+		JPQ #+2
+		JPQ COPYFIXB
+		RSX @sub_gamma@@sub_pipe@@sub_gamma@ LIST+TYPE+1
+		DEX @sub_gamma@ 1	** @gamma@=SHADDOW [SHADDOW in the listing]
+		COPYFIXB@arr@
+		RSX @sub_T@ COPYFIXI
+		hLDE @sub_T@@sub_pipe@@sub_alpha@ LIST+1
+		RSX @sub_T@ E
+		hLDE @sub_T@ LIST-1
+		@sup_1@SED { 0}
+		JPQ #+3 [possibly #+1?]
+		RSX @sub_T@@sub_pipe@@sub_T@ LIST
+		JPQ #-4
+COPYFIXC@arr@
+		@sup_1@@sup_6@RSX @sub_T@@sub_pipe@@sub_T@ LIST-1
+		@sup_1@REX @sub_T@@sub_pipe@@sub_T@
+		REX @sub_delta@@sub_pipe@@sub_beta@
+		AUX @sub_delta@ COPYFIXI
+		@sup_1@DPX @sub_gamma@@sub_pipe@@sub_delta@ LIST
+		INX @sub_gamma@@sub_pipe@@sub_T@
+		MOVEL@hamb@@alpha@@times@@delta@@arr@0@times@@gamma@
+COPYFIXI@arr@
+		REX @sub_S@ #
+		JPQ COPYFIXEX-2
+COPIED@arr@	JPQ #	** EXIT FOR UNMAC
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=48 doc_page=46]
+[Page header: "IES 2XMX 032"]
+
+COPYMOVE@arr@
+		RSX @sub_S@ COPYPIC
+		@sup_2@RSX @sub_S@@sub_pipe@@sub_S@ LIST+PATAP+1
+		hLDE @sub_S@ LIST-1
+		@sup_1@SED { 0}
+		JPQ COPYNOMOVE
+		@sup_1@@sup_6@RSX @sub_alpha@@sub_pipe@@sub_S@ LIST-1
+		INX @sub_alpha@@sub_pipe@@sub_S@
+		RSX @sub_alpha@@sub_pipe@@sub_alpha@ LIST
+		@sup_1@DPX @sub_S COPYMOVE1
+		DEX @alpha 1	** THING TO MOVE
+		hJPQ MOVE@alpha@
+COPYMOVE1@arr@
+		REX @sub_alpha@ #
+		@sup_2@RSX @sub_alpha@@sub_pipe@@sub_alpha@ LIST
+		hLDE @sub_alpha@ LIST-1
+		@sup_1@SED { 0}
+		JPQ COPYX
+		@sup_1@DPX @sub_alpha@ COPYMOVE2
+		@sup_1@@sup_6@AUX @sub_alpha@@sub_pipe@@sub_alpha@ LIST-1
+		RSX @sub_alpha@@sub_pipe@@sub_alpha@ LIST
+		DEX @sub_alpha@ 1
+		RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+TYPE
+		SXD @sub_S@ POINTS-LIST
+		JPQ COPYMOVE1P
+		RSX @sub_beta@ ATBITS
+		SXD @sub_beta@ 1
+		JPQ COPYMOVE1A
+		JPQ COPYX
+COPYMOVE1P@arr@
+		@sup_1@DPX @sub_alpha@ #+2
+		hJPQ MACAP
+		REX @sub_beta@ #
+		LDAB@hamb@VA@sub_alpha@
+		STAB@hamb@VA@sub_beta@
+		hJPQ MERGER
+		JPQ COPYMOVE2
+COPYMOVE1A@arr@
+		@sup_1@DPX @sub_alpha@ #+2
+		RSX @sub_alpha@ ATBITS+1
+		REX @sub_beta@ #
+		hJPQ MERGEIFP
+		@sup_1@DPX @sub_alpha@ ATBITS+1
+COPYMOVE2@arr@
+		REX @sub_alpha@ #
+		REX @sub_beta@ DESIGS-LIST
+		LGORR@hamb@SPECB@times@@beta@=S@arr@COPYMOVE2A@arr@COPYX
+COPYMOVE2A@arr@
+		@sup_1@STE COPYMOVE2AX
+		LTAKE@hamb@VORDE@times@@beta@
+		
+[meta file_name=102726903-05-01-acc.pdf pdf_page=49 doc_page=47]
+[Page header: "IES 2XMX 033"]
+
 
 
