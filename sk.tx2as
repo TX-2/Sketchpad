@@ -1553,4 +1553,57 @@ GARB4A@arr@	SXL @sub_beta@* AFFB
 [meta file_name=102726903-05-01-acc.pdf pdf_page=51 doc_page=49]
 [Page header: "IES 2XMX 035"]
 
+		DPX @sub_alpha@ GARBA
+		DPX @sub_beta@ GARBB
+		INX @sub_alpha@ 1
+		@sup_1@@sup_5@RSX @sub_T@@sub_pipe@@sub_beta@ LIST
+		JPQ GARB5
+GARB5A@arr@	RSX @sub_S@@sub_pipe@@sub_beta@ LIST+1
+		@sup_2@RSX @sub_gamma@@sub_pipe@@sub_beta@ LIST+1
+		@sup_2@DPX @sub_alpha@@sub_pipe@@sub_S@ LIST
+		@sup_1@DPX @sub_alpha@@sub_pipe@@sub_gamma@ LIST
+		hLDE @sub_beta@ LIST+1
+		STE @sub_alpha@ LIST
+		INX @sub_alpha@ 2
+		INX @sub_beta@ 2
+		hLDE @sub_beta@ LIST-2
+		hSTE @sub_alpha@ LIST-3
+		@sup_1@SED { 0}
+		JPQ GARB6
+GARB5@arr@	@sup_minus@@sup_2@JPX @sub_T@ GARB5A
+GARB7@arr@	RSX @sub_alpha@ GARBA
+		RSX @sub_beta@ GARBB
+		@sup_1@@sup_5@RSX @sub_T@@sub_pipe@@sub_alpha@ LIST
+		@sup_1@REX @sub_S@@sub_pipe@@sub_T@
+		@sup_1@@sup_6@AUX @sub_S@@sub_pipe@@sub_alpha@ LIST
+		JPQ #+4
+		hLDE @sub_T@@sub_pipe@@sub_beta@ LIST
+		STE @sub_T@@sub_pipe@@sub_alpha@ LIST
+		INX @sub_T@ 1
+		@sup_minus@@sup_1@AUX @sub_alpha@@sub_pipe@@sub_alpha@ LIST
+GARBS@arr@	INX @sub_beta@ 0
+		JPQ GARB4A
+GARB6@arr@	hLDE @sub_S@ LIST-1
+		@sup_1@SED { 0}
+		JPQ GARB@?@
+		hLDE GARBA
+		@sup_1@STE @sub_S@ LIST-1
+		RSX @sub_S@@sub_pipe@@sub_S@ LIST
+		JPQ GARB6
+GARBDONE@arr@
+		DPX @sub_alpha@ AFFB
+GARBEX@arr@	JPQ #
+BLOCKMAKER@arr@
+		@sup_1@STE BLOCKMAKEREX
+		@sup_1@@sup_6@RSX @sub_S@@sub_pipe@@sub_delta@ SIZE+LIST
+		hJPQ GETBLOCKER
+		hLDE @sub_delta@ SIZE+LIST
+		@sup_2@@sup_1@STE @sub_T@ LIST+TYPE
+		REX @sub_S@@sub_pipe@@sub_T@
+		PUT|TYPE,S@arr@SPECB,@delta@
+		REX @sub_T@@sub_pipe@@sub_delta@
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=52 doc_page=50]
+[Page header: "IES 2XMX 0??"]
+
 
