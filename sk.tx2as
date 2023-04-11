@@ -1606,4 +1606,167 @@ BLOCKMAKER@arr@
 [meta file_name=102726903-05-01-acc.pdf pdf_page=52 doc_page=50]
 [Page header: "IES 2XMX 0??"]
 
+		RSX @sub_delta@ CURPICS+SPECB+1
+		@sup_1@@sup_6@AUX @sub_delta@@sub_pipe@@sub_delta@ LIST-1
+		DEX @sub_delta@ 1
+		hLDE @sub_T@ LIST+KIND
+		hSED { PICTUREK}
+		JPQ BLOCKMAKEREX-1
+		hSED { DISPLAYK}
+		JPQ BLOCKM2
+		SED { JUNKK}
+		JPQ BLOCKM1
+		ERROR@hamb@@delta@@arr@BLOCKMAKEREX
+BLOCKM1@arr@	PUT|BWHOS,S@arr@PICBLKS,@delta@
+		JPQ BLOCKMAKEREX-1
+BLOCKM2@arr@
+		PUT|BWHOS,S@arr@PPART,@delta@
+		REX @sub_delta@@sub_pipe@@sub_S@
+BLOCKMAKEREX@arr@
+		JPQ #
+GETBLOCKER@arr@
+		@sup_1@STE GETBLOCKEX
+		RSX @sub_T@ AFFB
+		ADX @sub_S@ AFFB
+		@sup_6@DPX @sub_S@@sub_pipe@@sub_T@ LIST
+		@sup_5@DPX @sub_S@@sub_pipe@@sub_T@ LIST
+		INT @sub_S@@sub_pipe@@sub_T@
+		DEX @sub_S@ 1
+GETBLOCK1@arr@
+		DPX @sub_S@@sub_pipe@@sub_S@ LIST
+		@sup_2@DPX @sub_S@@sub_pipe@@sub_S@ LIST
+		DEX @sub_S@ 1
+		SXD @sub_S@@sub_pipe@@sub_T@
+		JPQ GETBLOCKEX
+		DPX 0@sub_pipe@@sub_S@ LIST
+		hDPX @sub_S@ E
+		hCOM E
+		hADX @sub_T@ E
+		@sup_?@ STE @sub_S@ LIST
+		@sup_minus@@sup_1@JPX @sub_S@ GETBLOCK1
+GETBLOCKEX@arr@
+		JPQ #
+		** PLOTTER ORDERING PROGRAM
+		** ORD T31-14 [numbers may not be correct, but it's a comment]
+ORDSTART@arr@
+		@sup_1@STE ORDGREXIT
+		MKN MOVED
+		REX @sub_gamma@ CURPICS-LIST
+		LGORR@hamb@SPECB@times@@gamma@=S@arr@ORDCURPIC
+ORDGREXIT@arr@
+		JPQ #
 
+[meta file_name=102726903-05-01-acc.pdf pdf_page=53 doc_page=51]
+[Page header: "IES 2XMX 037"]
+
+ORDCURPIC@arr@
+		@sup_1@STE ORDEXIT
+		SKX @sub_delta@ 0
+		DPX ORDSWITCHES
+		LDA {-(@?@)} [looks like k, or, maybe, # ?]
+		STA ORDPX
+		DPX ORDPY
+		** GROUP INSTANCES
+		REX @sub_alpha@@sub_pipe@@sub_gamma@
+		LGORR@hamb@PPART@times@@alpha@=@beta@@arr@ORDGRPI@arr@ORDI
+ORDGRPI@arr@
+		@sup_1@STE ORDGRPIEXIT
+		@sup_1@@sup_1@RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+TYPE
+		@sup_1@@sup_1@RSX @sub_S@@sub_pipe@@sub_S@ LIST+TYPE
+		SXD @sub_S@ VARIABLES-LIST
+		MKX @sub_M@@sub_E@@sub_T@@sub_A@|@sub_alpha@ LIST
+ORDGRPIEXIT@arr@
+		JPQ #	** MODIFIED
+		MOVER@hamb@BWHOS@times@@alpha@@arr@PPART@times@@gamma@
+ORDGRPI1@arr@
+		[Not sure what asterisks are on the following two lines]
+                [Given that ORDGRPIEXIT is just a label few lines above,]
+		[deferred addressing does not make much sense?]
+		h@sup_1@JPX @sub_delta@ ORDGRPIEXIT*
+		JPQ ORDGRPIEXIT*
+		** ORDER INSTANCES
+ORDI@arr@	h@sup_minus@@sup_1@JPX @sub_delta@ #+2
+		JPQ ORDGRPP
+ORDI2@arr@	SKX @sub_eps@@sub_pipe@@sub_delta@ 0 [can also be alpha instead of 0?]
+		@sup_1@DPX ORDNXTPNT
+		REX @sub_alpha@@sub_pipe@@sub_gamma@
+		LDA {-(@?@)}
+		SKZ ORDWORST
+		DPX A
+		STA ORDMIND
+		SKZ ORDISW
+		JPQ ORDP3
+		LGORR@hamb@PPART@times@@alpha@=@beta@@arr@ORDCALC@arr@ORDERROR
+ORDCALC@arr@
+		@sup_1@STE ORDCALCEXIT
+		@sup_1@@sup_1@RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+TYPE
+		hBPQ @sub_S@ LIST+WHERE
+		STB ORDWA3	** A=X, B=Y
+ORDC?@arr@	SUB ORDPX
+		SCA {-1.}
+		SKZ @sub_4@@sub_dot@@sub_9@ A [guessing about subscripts, incorrect?]
+		COM A
+		STA ORDWA1
+		LDA ORDWA3
+		SKZ ORDISW
+		LDS @sub_alpha@ LIST+PVAL+1
+		SUB ORDPY
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=54 doc_page=52]
+[Page header: "IES 2XMX 040"]
+
+		SCA {-1.}
+		SKZ @sub_4@@sub_dot@@sub_9@ A
+		COM A
+		STA ORDWA2
+		SUB ORDWA1
+		JPA ORDC1	** @delta@@gamma@ BIGGER
+		LDA ORDWA1
+		STA ORDWA2
+		JPQ #+2
+ORDC1@arr@	LDA ORDWA2
+		SUB ORDMIND
+		SKZ ORDWORST
+		JPQ ORDWORST1
+		JPA ORDC2
+ORDC1A@arr@	LDA ORDWA2
+		STA ORDMIND
+		@sup_1@DPX @sub_alpha@ ORDNXTPNT
+ORDCALCEXIT@arr@
+		h@sup_minus@@sup_1@JPX @sub_eps@ #	** MODIFIED
+		@sup_1@@sup_1@RSX @sub_alpha@ ORDNXTPNT
+		SXD @sub_alpha@ 0
+		JPQ ORDGRPP
+		SKZ ORDISW
+		JPQ ORDP
+		hJPQ ORDMOVEL
+		@sup_1@@sup_1@RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+TYPE
+		hBPQ @sub_S@ LIST+WHERE
+		STA ORDPX
+		STB ORDPY
+		JPQ ORDI
+ORDMOVEL@arr@	@sup_1@STE ORDMOVELEXIT
+		MOVEL@hamb@BWHOS@times@@alpha@@arr@PPART@times@@gamma@
+ORDMOVELEXIT@arr@
+		JPQ #	** MODIFIED
+ORDGRPP@arr@
+		SZN ORDISW
+ORDEXIT@arr@
+		JPQ #	** MODIFIED FINAL EXIT
+		** GROUP POINTS
+		SKX @sub_delta@ 0
+		REX @sub_alpha@@sub_pipe@@sub_gamma@
+		LGORR@hamb@PICBLKS@times@@alpha@=@beta@@arr@ORDGRPP1@arr@ORDI
+ORDGRPP1@arr@
+		@sup_1@STE ORDGRPIEXIT
+		@sup_1@@sup_1@RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+TYPE
+		SXD @sub_S@ POINTS-LIST
+		JPQ #+2
+		JPQ ORDGRPIEXIT*
+		MOVER@hamb@BWHOS@times@@alpha@@arr@PICBLKS@times@@gamma@
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=55 doc_page=53]
+[Page header: "IES 2XMX 041"]
+
+
+ 	

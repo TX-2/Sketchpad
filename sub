@@ -9,10 +9,12 @@
 s/@sub_alpha@/ₐ/g
 # No subscript epsilon, using e instead.
 s/@sub_eps@/ₑ/g
-# No subscript capital S, using subscript lowercase s.
+# No subscript for capital letters, using subscript lowercase.
 s/@sub_S@/ₛ/g
-# Ditto for subscript T.
 s/@sub_T@/ₜ/g
+s/@sub_M@/ₘ/g
+s/@sub_E@/ₑ/g
+s/@sub_A@/ₐ/g
 # Rectangle with a horizontal dash, using filled rectangle instead.
 s/@rect_dash@/▮/g
 
