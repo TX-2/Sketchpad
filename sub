@@ -5,10 +5,11 @@
 
 # These are ok, as missing symbol may be replaced by a similar one.
 
-# No subscript alpha, using a instead.
+# No subscript for Greek letters, using Latin instead.
 s/@sub_alpha@/ₐ/g
-# No subscript epsilon, using e instead.
 s/@sub_eps@/ₑ/g
+# No subscript for lambda, using chi instead.
+s/@sub_lambda@/ᵪ/g
 # No subscript for capital letters, using subscript lowercase.
 s/@sub_S@/ₛ/g
 s/@sub_T@/ₜ/g
@@ -17,12 +18,12 @@ s/@sub_E@/ₑ/g
 s/@sub_A@/ₐ/g
 # Rectangle with a horizontal dash, using filled rectangle instead.
 s/@rect_dash@/▮/g
+# No subscript pipe, using subscript lowercase l (ell).
+s/@sub_pipe@/ₗ/g
 
 # These are not ok, may confuse the parser.
 # TODO: fix them somehow.
 
-# No subscript pipe, using regular one.
-s/@sub_pipe@/|/g
 # No subscript dot, using regular one.
 s/@sub_dot@/./g
 # There is no subscript delta, using regular one.
@@ -47,7 +48,7 @@ s/@beta@/β/g
 s/@gamma@/γ/g
 s/@delta@/Δ/g
 s/@eps@/ε/g
-
+s/@lambda@/λ/g
 #
 # Subscript and superscript numbers.
 #

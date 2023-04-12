@@ -1768,5 +1768,171 @@ ORDGRPP1@arr@
 [meta file_name=102726903-05-01-acc.pdf pdf_page=55 doc_page=53]
 [Page header: "IES 2XMX 041"]
 
+		h@sup_1@JPX @sub_delta@ ORDGRPIEXIT*
+		JPQ ORDGRPIEXIT*
+		** ORDER POINTS
+ORDP@arr@	LGORR@hamb@PLS@times@@alpha@=@beta@@arr@ORDP1@arr@ORDMP+1
+ORDP1@arr@	@sup_1@STE ORDPEXIT
+		@sup_1@@sup_2@RSX @sub_beta@@sub_pipe@@sub_beta@ LIST
+		SKZ @sub_M@@sub_E@@sub_T@@sub_A@@sub_pipe@@sub_alpha@ LIST
+		JPQ ORDMP
+		@sup_1@@sup_1@RSX @sub_S@@sub_pipe@@sub_alpha@ LIST
+		SXD @sub_S@ CIRCLES-LIST
+		JPQ ORDCIRCLES
+		SXD @sub_beta@@sub_pipe@@sub_alpha@ LSP+1
+		JPQ ORDP1A
+		@sup_1@@sup_1@ @sub_beta@@sub_pipe@@sub_alpha@ LIST+LSP
+		@sup_1@EXX @sub_beta@@sub_pipe@@sub_alpha@ LIST+LEP
+		@sup_1@DPX @sub_beta@@sub_pipe@@sub_alpha@ LIST+LSP
+		JPQ #+2
+ORDP1A@arr@	@sup_1@@sup_1@RSX @sub_beta@@sub_pipe@@sub_alpha@ LIST+LSP
+		MOVEL@hamb@LSP@times@@alpha@@arr@PLS@times@@beta@
+		@sup_1@@sup_1@RSX @sub_beta@@sub_pipe@@sub_alpha@ LIST+LEP
+		MOVEL@hamb@LEP@times@@alpha@@arr@PLS@times@@beta@
+ORDP2@arr@	MKN @sub_M@@sub_E@@sub_T@@sub_A@@sub_pipe@@sub_alpha@ LIST
+		hJPQ ORDMOVEL
+		@sup_1@@sup_1@RSX @sub_alpha@@sub_pipe@@sub_alpha@ LIST+LEP
+		LDA @sub_alpha@ LIST+PVAL
+		STA ORDPX
+		LDA @sub_alpha@ LIST+PVAL+1
+ORDP4@arr@	STA ORDPY
+		SKX ORDWORST
+		JPQ ORDI2
+		JPQ ORDP
+ORDCIRCLES@arr@
+		SXD @sub_beta@@sub_pipe@@sub_alpha@ CIRCEN+1
+ORDPEXIT@arr@
+		JPQ #	** MODIFIED
+		SXD @sub_beta@@sub_pipe@@sub_alpha@ CSP+1
+		JPQ ORDCIRC1
+		@sup_1@@sup_1@RSX @sub_beta@@sub_pipe@@sub_alpha@ LIST+CSP
+		@sup_1@EXX @sub_beta@@sub_pipe@@sub_alpha@ LIST+CEP
+		@sup_1@DPX @sub_beta@@sub_pipe@@sub_alpha@ LIST+CSP
+		COM @sub_alpha@ LIST+CVAL
+		JPQ #+2
+ORDCIRC1@arr@
+		@sup_1@@sup_1@RSX @sub_beta@@sub_pipe@@sub_alpha@ LIST+CSP
+		MOVEL@hamb@CSP@times@@alpha@@arr@PLS@times@@beta@
+		@sup_1@@sup_1@RSX @sub_beta@@sub_pipe@@sub_alpha@ LIST+CEP
+		MOVEL@hamb@CEP@times@@alpha@@arr@PLS@times@@beta@
+ORDCIRC2@arr@
+		MKN @sub_M@@sub_E@@sub_T@@sub_A@@sub_pipe@@sub_alpha@ LIST
+		hJPQ ORDMOVEL
 
+[meta file_name=102726903-05-01-acc.pdf pdf_page=56 doc_page=54]
+[Page header: "IES 2XMX 042"]
+
+		@sup_1@@sup_1@RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+LEP
+		hLDE @sub_alpha@ LIST+CVAL
+		hSED {(@?@)}
+		@sup_1@@sup_1@RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+LSP
+		SED {-(@delta@)}
+		@sup_1@@sup_1@RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+LSP
+ORDCIRC3@arr@
+		LDA @sub_S@ LIST+PVAL
+		STA ORDPX
+		LDA @sub_S@ LIST+PVAL+1
+		SKX @sub_alpha@@sub_pipe@@sub_S@ 0
+		JPQ ORDP4
+ORDMP@arr@	@sup_1@@sup_1@RSX @sub_alpha@@sub_pipe@@sub_beta@ LIST-1
+		MKZ @sup_3@@sub_dot@@sub_?@ ORDMPSW	** MAKE JPQ
+		MOVEL@hamb@BWHOS@times@@alpha@@arr@PICBLKS@times@@gamma@
+ORDMPSW@arr@
+		JPQ ORDI	** CHGD TO @sup_1@@sup_4@JNX ORDI
+		h@sup_minus@@sup_1@JPX @sub_delta@ ORDCALCEXIT
+		JPQ ORDCALCEXIT
+ORDP3@arr@	LGORR@hamb@PICBLKS@times@@alpha@=@beta@@arr@ORDP5@arr@ORDERROR
+ORDP5@arr@	@sup_1@STE ORDCALCEXIT
+		MKN @sup_3@@sub_dot@@sub_?@ ORDMPSW	** MAKE @sup_1@@sup_4@JNX
+		@sup_1@@sup_1@RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+PLS+1
+		@sup_1@@sup_6@AUX @sub_S@@sub_pipe@@sub_S@ LIST-1
+		SKZ @sub_M@@sub_E@@sub_T@@sub_A@@sub_pipe@@sub_S@ LIST-1
+		JPQ ORDMP+2
+		SXD @sub_S@@sub_pipe@@sub_alpha@ 1
+		JPQ ORDMP+2
+		LDA @sub_alpha@ LIST+PVAL
+		JPQ ORDC0
+ORDWORST1@arr@
+		JNA ORDC2
+		JPQ ORDC1A
+ORDERROR@arr@
+		@sup_1@STE #+1
+		#@sub_alpha@	[is this valid too??]
+		JPQ ORDSTART+2
+ORDSWITCHES@arr@
+		0
+ORDPX@arr@	0
+ORDPY@arr@	0
+ORDWA1@arr@	0
+ORDWA2@arr@	0
+ORDWA3@arr@	0
+ORDMIND@arr@
+		0
+ORDNXTPNT@arr@
+		0
+ORDLAST@arr@
+		ORDLAST-ORDSTART+1 	[constant at address]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=57 doc_page=55]
+[Page header: "IES 2XMX 043"]
+
+		** MERGE POINTS PROGRAM
+		** MGP 726-1
+MGPSTART@arr@
+		@sup_1@STE MGPEXIT
+		SKX @sub_alpha@ CURPICS-LIST
+		LGORR@hamb@SPECB@times@@alpha@=@beta@@arr@MGPMOVP@arr@MGPEXIT*
+MGPEXIT@arr@
+		hJPQ #		** FINAL EXIT MODIFIED
+MGPMOVP@arr@
+		@sup_1@STE MGPMOVPX
+		@sup_1@DPX @sub_alpha@ MGPCURPIC
+		@sup_1@@sup_1@RSX @sub_beta@ MGPCURPIC
+		SKX @sub_lambda@ 0
+		LGORR@hamb@PICBLKS@times@@beta@=S@arr@MGPMOVP1@arr@MGPMGP
+MGPMOVP1@arr@
+		@sup_1@STE MGPMOVP1X
+		@sup_1@@sup_1@RSX @sub_S@@sub_pipe@@sub_beta@ LIST+TYPE
+		SXD @sub_S@ POINTS-LIST
+		JPQ #+2
+MGPMOVP1X@arr@
+		hJPQ #		** MODIFIED
+		MOVER@hamb@BWHOS@times@@beta@@arr@PICBLKS@times@@alpha@
+		h@sup_1@JPX @sub_lambda@ MGPMOVPIX*
+		JPQ MGPMOVP1X*
+MGPMGP@arr@	SXL @sub_lambda@ 2
+		JPQ #+2
+MGPMOVPX@arr@
+		JPQ #	** ALL PNTS IN PICTURE ARE MERGED
+		** MERGE LOOP
+MGP1@arr@
+		DEX @sub_lambda@ 1
+		SKX @sub_eps@@sub_pipe@@sub_lambda@ 0
+		@sup_1@@sup_1@RSX @sub_beta@ MGPCURPIC
+		MKZ @sub_M@@sub_E@@sub_T@@sub_A@ MGPSW
+		LGORR@hamb@PICBLKS@times@@beta@=S@arr@MGP2@arr@MGPERROR
+MGP2@arr@	@sup_1@STE MGP2X
+MGPSW@arr@	SZN @sub_M@@sub_E@@sub_T@@sub_A@ #
+		JPQ MGP1
+		@sup_1@DPX @sub_beta@ MGPC
+		LDA @sub_beta@ LIST+PVAL
+		STA MGPVAL
+MGPK@arr@	LDA @sub_beta@ LIST+PVAL+1
+		STA MGPVAL+1
+MGP2X@arr@	h@sup_minus@@sup_1@JPX @sub_eps@ #	** MOD
+		@sup_1@@sup_1@RSX @sub_alpha@ MGPCURPIC
+		@sup_1@@sup_1@RSX @sub_beta@ MGPC
+		MOVEL@hamb@BWHOS@times@@beta@@arr@PICBLKS@times@@alpha@
+		JPQ MGPMGP
+MGP?@arr@	@sup_1@SKX @sub_alpha@ 1
+		LDA @sub_alpha@ MGPK*
+		SUB @sub_alpha@ MGPVAL+1
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=58 doc_page=56]
+[Page header: "IES 2XMX 044"]
+
+
+
+
+		
  	
