@@ -1924,15 +1924,77 @@ MGP2X@arr@	h@sup_minus@@sup_1@JPX @sub_eps@ #	** MOD
 		@sup_1@@sup_1@RSX @sub_beta@ MGPC
 		MOVEL@hamb@BWHOS@times@@beta@@arr@PICBLKS@times@@alpha@
 		JPQ MGPMGP
-MGP?@arr@	@sup_1@SKX @sub_alpha@ 1
+MGP3@arr@	@sup_1@SKX @sub_alpha@ 1
 		LDA @sub_alpha@ MGPK*
 		SUB @sub_alpha@ MGPVAL+1
 
 [meta file_name=102726903-05-01-acc.pdf pdf_page=58 doc_page=56]
 [Page header: "IES 2XMX 044"]
 
+		JPA #+2
+		COM A
+		SUB { TOL}
+		JPA MGP2X
+		h@sup_1@JNA @sub_alpha@ MGP3+1
+		@sup_1@@sup_1@RSX @sub_alpha@ MGPC
+		hJPQ MERGER 		** MERGE BOTH BLKS
+		DEX @sub_lambda@ 1	** ONE LESS BLOCK IN TABLE
+		SXD @sub_alpha@ MGPC*
+		JPQ MGP2X
+		INX @sub_lambda@ 1
+		JPQ MGPMGP
+MGPCURPIC@arr@
+		0
+MGPC@arr@	0
+MGPVAL@arr@	0
+		0
+MGPERROR@arr@
+		@sup_1@STE #+1
+		@sup_3@@sup_6@ #	** ERROR
+		JPQ MGPSTART+1
+MGPLAST INSTR@arr@
+		#-MGPSTART+1
+RI@arr@		JPQ 377750
+CL@arr@		JPQ 200000
+ST@arr@		JPQ 200001
+LAST@arr@	ZZLAST
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=59 doc_page=57]
+[Page header: "IES OPLW 001"]
+[Page contains no code, beginning of the symex table.]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=60 doc_page=58]
+[Page header: "IES OPLW 002"]
+[Page contains no code, continuation of the symex table.]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=61 doc_page=59]
+[Page header: "IES OPLW 003"]
+[Page contains no code, last part of the symex table.]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=62 doc_page=60]
+[Page header: "IES OPLW 004"]
+[Page contains no code, beginning of the equalities table.]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=63 doc_page=61]
+[Page header: "IES OPLW 005"]
+[Page contains no code, continuation of the equalities table.]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=64 doc_page=62]
+[Page header: "IES OPLW 006"]
+[Page contains no code, continuation of the equalities table.]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=65 doc_page=63]
+[Page header: "IES OPLW 007"]
+[Page contains no code, continuation of the equalities table.]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=66 doc_page=64]
+[Page header: "IES OPLW 010"]
+[Page contains no code, continuation of the equalities table.]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=67 doc_page=65]
+[Page header: "IES OPLW 012"]
 
 
 
-		
+
  	
