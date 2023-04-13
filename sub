@@ -82,3 +82,4 @@ s/@hamb@/☰/g
 s/@times@/×/g
 s/@arr@/→/g
 s/@sup_minus@/⁻/g
+s/@hand@/☛/g
