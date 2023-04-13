@@ -16,18 +16,19 @@ s/@sub_T@/ₜ/g
 s/@sub_M@/ₘ/g
 s/@sub_E@/ₑ/g
 s/@sub_A@/ₐ/g
-# Rectangle with a horizontal dash, using filled rectangle instead.
-s/@rect_dash@/▮/g
-# No subscript pipe, using subscript lowercase l (ell).
-s/@sub_pipe@/ₗ/g
+s/@sub_I@/ᵢ/g
+s/@sub_X@/ₓ/g
+s/@sub_R@/ᵣ/g
+# Rectangle with a horizontal dash, using something similar.
+s/@rect_dash@/▣ /g
 
 # These are not ok, may confuse the parser.
 # TODO: fix them somehow.
 
 # No subscript dot, using regular one.
 s/@sub_dot@/./g
-# There is no subscript delta, using regular one.
-s/@sub_delta@/Δ/g
+# There is no subscript delta, using subscript rho.
+s/@sub_delta@/ᵨ/g
 
 # These are transcription problems, where char is unclear.
 # Replacing them with ? for now, to be able to verify that
@@ -83,3 +84,5 @@ s/@times@/×/g
 s/@arr@/→/g
 s/@sup_minus@/⁻/g
 s/@hand@/☛/g
+s/@sub_pipe@/╷/g
+
