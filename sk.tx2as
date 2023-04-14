@@ -2016,7 +2016,7 @@ STA R
 
 @hand@@hand@DEF FABVAL@hamb@P@arr@Q
 LDA P
-JQA #+2
+JPA #+2
 COM A
 STA Q
 @hand@@hand@EMD
@@ -2632,6 +2632,156 @@ Q6@arr@		DISPLAYK
  ORIGIN|
 
 [meta file_name=102726903-05-01-acc.pdf pdf_page=80 doc_page=78]
-[Page header: "LMH GX71 001"]
+[Page header: "LMH GX7A 001"]
+[Handwritten: "FULL TEXT", some other random scribbles]
+[Stamped: "SEP 21 1962"]
 [Page contains no code, beginning of the symex table]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=81 doc_page=79]
+[Page header: "LMH GX7A 002"]
+[Page contains no code, continuation of the symex table]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=83 doc_page=81]
+[Page header: "LMH GX7A 004"]
+[Page contains no code, end of the symex table]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=84 doc_page=82]
+[Page header: "LMH GX7A 005"]
+[Page contains no code, beginning of the equalities table]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=85 doc_page=83]
+[Page header: "LMH GX7A 006"]
+[Page contains no code, continuation of the equalities table]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=86 doc_page=84]
+[Page header: "LMH GX7A 007"]
+[Page contains no code, continuation of the equalities table]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=87 doc_page=85]
+[Page header: "LMH GX7A 010"]
+[Page contains no code, continuation of the equalities table]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=89 doc_page=87]
+[Page header: "LMH GX7A 012"]
+[Page contains no code, continuation of the equalities table]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=90 doc_page=88]
+[Page header: "LMH GX7A 013"]
+[Page contains no code, end of the equalities table]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=91 doc_page=89]
+[Page header: "LMH GX7A 014"]
+[Beginning of the macro definition block]
+
+@hand@@hand@DEF LDAE@hamb@A,B,C,D
+LDA A
+LDB A+B
+LDC A+C
+LDD A+D
+@hand@@hand@EMD
+
+@hand@@hand@DEF STAE@hamb@A,B,C,D
+STA A
+STB A+B
+STC A+C
+STA A+D
+@hand@@hand@EMD
+
+@hand@@hand@DEF MOVE|A@arr@B
+hLDE A
+STE B
+@hand@@hand@EMD
+
+@hand@@hand@DEF SUMM@hamb@P@arr@Q=R@arr@S
+LDA P
+ADD Q
+hJOV S
+STA R
+@hand@@hand@EMD
+
+@hand@@hand@DEF DIFF@hamb@P@arr@Q=R@arr@S
+LDA P
+SUB Q
+hJOV S
+STA R
+@hand@@hand@EMD
+
+@hand@@hand@DEF FABVAL@hamb@P@arr@Q
+LDA P
+JPA #+2
+COM A
+STA Q
+@hand@@hand@EMD
+
+@hand@@hand@DEF PROD@hamb@A@times@B/C=D@arr@E
+LDA A
+MUL B
+DIV C
+hJOV E
+STA D
+@hand@@hand@EMD
+
+@hand@@hand@DEF STAB@hamb@A
+STA A
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=92 doc_page=90]
+[Page header: "LMH GX7A 015"]
+[Beginning of the macro definition block]
+
+STB A+1
+@hand@@hand@EMD
+
+@hand@@hand@DEF SQ45DELAY
+	@sup_1@STE 45DELAYEX
+	@sup_1@DPX@sup_5@@sup_4@45DELAYK
+	RFD@sup_5@@sup_4@#+1
+	@sup_1@IOS@sup_5@@sup_4@30000
+	h@sup_1@TSD 45DELAYK
+	@sup_2@@sup_1@IOS@sup_5@@sup_4@30300
+	@sup_1@IOS@sup_5@@sup_4@30000
+45DELAYEX@arr@	RFD@sup_4@@sup_5@#
+45DELAYK@arr@	0
+@hand@@hand@EMD
+
+@hand@@hand@DEF 45DELAY@hamb@USECS
+	SKX@sup_5@@sup_4@USECS
+	hJPQ {SQ45DELAY}
+@hand@@hand@EMD
+
+@hand@@hand@DEF LTAKE@hamb@N@times@XR
+	@sup_1@@sup_2@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+	@sup_1@@sup_1@RSX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+	@sup_1@DPX@sub_T@@sub_pipe@@sub_S@LIST
+	@sup_2@EXX@sub_S@@sub_pipe@@sub_T@LIST
+	@sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+	@sup_2@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+	@sup_1@DPX@sub_0@@sub_pipe@@sub_X@@sub_R@LIST+(N)
+@hand@@hand@EMD
+
+@hand@@hand@DEF PUTL@hamb@N@times@XR@arr@M@times@XR2
+	@sup_1@@sup_2@AUX@sub_X@@sub_R@{(N)+1,,-((N)+1)}
+	@sup_1@@sup_2@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)+1
+	@sup_2@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST
+	@sup_1@@sup_1@RSX@sub_T@@sub_pipe@@sub_S@LIST
+	@sup_1@DPX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST
+        @sup_2@DPX@sub_X@@sub_R@@sub_pipe@@sub_T@LIST
+        @sup_1@DPX@sub_X@@sub_R@@sub_pipe@@sub_S@LIST
+	@sup_1@@sup_1@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)
+	hJPX@sub_S@#+2
+	SKX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@0
+	@sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST-1
+	@sup_1@@sup_1@AUX@sub_X@@sub_R@{(N)+1,,-((N)+1)}
+@hand@@hand@EMD
+
+@hand@@hand@DEF PUTLQ@hamb@N@times@XR@arr@M@times@XR2
+	@sup_1@@sup_2@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+	@sup_2@EXX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)+1
+	@sup_2@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+	@sup_1@@sup_1@RSX@sub_T@@sub_pipe@@sub_S@LIST
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=93 doc_page=91]
+[Page header: "LMH GX7A 016"]
+[Continuation of the macro definition block]
+
+
 
