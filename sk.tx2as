@@ -2316,4 +2316,322 @@ SUBR1@arr@	JPQ #
 [Page header: "IES OPLW 020"]
 [Beginning of main program block]
 
+ 200067|
+		JPQ STARTS
+ 200070|
+MATS@arr@	0
+MATM@arr@	0
+MATO@arr@	0
+MATRX@arr@	0
+MATRY@arr@	0
+MATD@arr@	0
+ 200100|
+BADOV@arr@	h@sup_1@STE #+2
+		hSKZ OVERFLOSTOP
+		@sup_2@#@sub_7@@sub_6@ [very useful as right column contains numeric code]
+		JPQ 200001
+ CCFR+1|
+		hJMP MAGCON [placed at 200777?]
+ NLIST|
+		HOVS-LIST+MASBL [placed at 022000]
+MM0@arr@	SMASBL,4,,0 **MASTERS
+		SPLAT
+		-2,0 [resulting octal is |775000 000000|, so -2 goes into top quarter]
+		MM4-NLIST+1,,MM1-NLIST+1
+		45,30,,35,44	**UNIV
+		0
+MM1@arr@	UNIVBH	**VARIABLES
+		MM0-NLIST+SPECB+1,,SPLATT
+		-2,
+		V6-NLIST+1,,V1-NLIST+1
+		42,41,,,20,45	**VARS
+		0
+MM2@arr@	UNIVBH	**HOLDERS
+		SPLATT
+		-2,
+		H10-NLIST+1,,H1-NLIST+1
+		42,23,,33,27	**HLDS
+		0
+MM3@arr@	UNIVBH	**TOPOS
+		SPLATT
+		-2,
+		L3-NLIST+1,,L1-NLIST+1
+		36,37,,36,43	**TOPO
+		0
+MM4@arr@	UNIVBH	**CONSTRAINTS
+		#-NLIST-SMASBL,,MM0-NLIST+SPECB+1
+		-2,
+		IPCONS-LIST+1,,ONLINES-LIST+1
+		42,35,,36,20
+		0
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=74 doc_page=71]
+[Page header: "IES OPLW 021"]
+[Continuation of the main program block]
+
+H1@arr@		SMASBL,4,,MM2-NLIST	**FREES
+		MM2+SPECB+1-NLIST,,SPLATT
+		-2,
+		SPLAT [evaluates to different values, is it a macro?]
+		24,24,,41,25
+		0
+H2@arr@		HEADER@hamb@HOLDERS@arr@(34,23,,41,25)	**FREEDOM
+		SMASBL,4,,HOLDERS-LIST
+		#-NLIST-SMASBL,,#+SMASBL-NLIST
+		-2,0
+		SPLAT
+		(34,23,,41,25)
+		T1
+H3@arr@		HEADER@arr@HOLDERS@arr@(42,32,,41,46)	**WORKS
+		SMASBL,4,,HOLDERS-LIST
+		#-NLIST-SMASBL,,#+SMASBL-NLIST
+		-2,0
+		SPLAT
+		(42,32,,41,46)
+		T1
+H4@arr@		HEADER@hamb@HOLDERS@arr@(41,26,,41,34)	**MRGR
+		SMASBL,4,,HOLDERS-LIST
+		#-NLIST-SMASBL,,#+SMASBL-NLIST
+		-2,0
+		SPLAT
+		(41,26,,41,34)
+		T1
+H5@arr@		HEADER@hamb@HOLDERS@arr@(42,23,,24,23)	**DEADS
+		SMASBL,4,,HOLDERS-LIST
+		#-NLIST-SMASBL,,#+SMASBL-NLIST
+		-2,0
+		SPLAT
+		(42,23,,24,23)
+		T1
+H6@arr@		HEADER@hamb@HOLDERS@arr@(42,47,,30,25)	**FIXED
+		SMASBL,4,,HOLDERS-LIST
+		#-NLIST-SMASBL,,#+SMASBL-NLIST
+		-2,0
+		SPLAT
+		(42,47,,30,25)
+		T1
+H7@arr@		HEADER@hamb@HOLDERS@arr@(42,26,,24,23)
+		SMASBL,4,,HOLDERS-LIST
+		#-NLIST-SMASBL,,#+SMASBL-NLIST
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=75 doc_page=73]
+[Page header: "IES OPLW 022"]
+[Continuation of the main program block]
+
+		-2,0
+		SPLAT
+		(42,26,,24,23)
+		T1
+H8@arr@		HEADER@hamb@HOLDERS@arr@(42,35,,45,34)	**MOVINGS
+		SMASBL,4,,HOLDERS-LIST
+		#-NLIST-SMASBL,,#+SMASBL-NLIST
+		-2.0
+		SPLAT
+		(42,35,,45,34)
+		T1
+H9@arr@		HEADER@hamb@HOLDERS@arr@(22,37,,44,22)	**CURPICS
+		SMASBL,4,,HOLDERS-LIST
+		#-NLIST-SMASBL,,#+SMASBL-NLIST
+		-2,0
+		SPLAT
+		(22,37,,44,22)
+		T1
+H9.1@arr@	HEADER@hamb@HOLDERS@arr@(35,22,,47,35)
+		SMASBL,4,,HOLDERS-LIST
+		#-NLIST-SMASBL..#+SMASBL-NLIST
+[h-n: "?"]	-2,0	[handwritten: "NCXN"]
+		SPLAT
+		(35,22,,47,35)
+		T1
+H9.2@arr@	HEADER@hamb@HOLDERS@arr@(1,41,,37,42)
+		SMASBL,4,,HOLDERS-LIST
+		#-NLIST-SMASBL,,#+SMASBL-NLIST
+		-2,0
+		SPLAT
+		(1,41,,37,42)
+		T1
+H9.3@arr@	HEADERS@hamb@HOLDERS@arr@(2,41,,37,42)
+		SMASBL,4,,HOLDERS-LIST
+		#-NLIST-SMASBL,,#+SMASBL-NLIST
+		-2,0
+		SPLAT
+		(2,41,,37,42)
+		T1
+H10@arr@	SMASBL,4,MM2-NLIST
+		#-NLIST-SMASBL,,MM2-NLIST+SPECB+1
+		-2,
+		SPLAT
+		
+[meta file_name=102726903-05-01-acc.pdf pdf_page=76 doc_page=74]
+[Page header: "IES OPLW 023"]
+[Continuation of the main program block]
+
+		0
+		**PICTURE MASTER
+L1@arr@		MASBL,4,,TOPOS-LIST
+		MM3+SPECB+1-NLIST,,SPLATTT
+		-2,
+		SPLAT
+		42,22,,30,37	**NAME
+		hJPQ MAGPIC 	**DISPLAY
+		0	**HOWBIG
+		0	**GETIT
+		0	**MOVIT
+		30,16,,0	**SIZE
+		0
+Q1@arr@		PICTUREK	**KIND
+		0	**TUPLE
+		0	**VARLOC
+ LINES+NLIST-LIST|
+		**LINE MASTER
+L2@arr@		MASTER@hamb@TOPOS@arr@(24,35,,,30,33)
+		MASBL,4,,TOPOS-LIST
+		#-NLIST-MASBL,,#-NLIST+MASBL
+		-2,
+		SPLAT
+		(24,35,,30,33)
+		hJMP MAGL	**DISPLAY
+		hJMP CPIL	**HOWBIG
+		0	**GETIT
+		DEGEN		**MOVIT
+		14,14,,0	**SIZE
+		0
+Q2@arr@		DISPLAYK
+		0	**TUPLE
+		0	**VARLOC
+ CIRCLES+NLIST-LIST|
+		**CIRCLE MASTER
+L3@arr@		MASBL,4,,TOPOS-LIST
+		#-NLIST-MASBL,,MM3+SPECB+1-NLIST
+		-2,
+		SPLAT
+		22,41,,30,22	**CIRC
+		hJMP MAGC 	**DISPLAY
+		hJMP CPIC	**HOWBIG
+		0		**GETIT
+		DEGEN		**MOVIT
+		20,16,,0	**SIZE
+		0
+Q3@arr@		DISPLAYK
+		
+[meta file_name=102726903-05-01-acc.pdf pdf_page=77 doc_page=75]
+[Page header: "IES OPLW 024"]
+[Continuation of the main program block]
+
+		0	**TUPLE
+		0	**VARLOC
+ SCALERS+NLIST-LIST|
+		**SCALER MASTER
+V1@arr@		MASBL,4,,VARIABLES-LIST
+		MM1+SPECB+1-NLIST,,SPLATTT
+		-2,
+		SPLAT
+		33,20,,22,42	**SCAL
+		hJMP MAGSCA	**DISPLAY
+		DEGEN		**HOWBIG
+		0	**GETIT
+		hJMP TRANSFORM	**MOVIT
+		20,16,,0	**SIZE
+		hJMP WHERESCA	**WHERE
+Q7@arr@		JUNKK
+		1	**TUPLE
+		SVAL	**VARLOC
+ POINTS+NLIST-LIST|
+		**POINT MASTER
+V2@arr@		MASTER@hamb@VARIABLES@arr@(42,43,,35,37)
+		MASBL,4,,VARIABLES-LIST
+		#-NLIST-MASBL,,#-NLIST+MASBL
+		-2,
+		(43,43,,35,37)
+		hJMP MAGP	**DISPLAY
+		hJMP CPIP	**HOWBIG
+		0	**GETIT
+		hJMP TRANSFORM	**MOVIT
+		22,20,,0	**SIZE
+		hJMP WHERESUB	**WHERE
+Q4@arr@		JUNKK
+		2	**TUPLE
+		PVAL	**VARLOC
+ TPVALS-LIST+NLIST|
+		**TYPICAL VARIABLE  @times@
+V3@arr@		MASTER@hamb@VARIABLES@arr@(41,45,,37,43)
+		MASBL,4,,VARIABLES-LIST
+		#-NLIST-MASBL,,#-NLIST+MASBL
+		-2,
+		SPLAT
+		(41,45,,37,43)
+		hJMP MAGTPVAR	**DISPLAY
+		DEGEN		**HOWBIG
+		0	**GETIT
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=78 doc_page=76]
+[Page header: "IES OPLW 025"]
+[Continuation of the main program block]
+
+		hJMP TRANSFORM 	**MOVIT
+		16,14,,0	**SIZE
+		hJMP WHERESUB	**WHERE
+Q14@arr@	JUNKK
+		2	**TUPLE
+		TPVAL	**VARLOC
+ INSTANCES+NLIST-LIST|
+		**INSTANCE MASTER
+V4@arr@		MASTER@hamb@VARIABLES@arr@(43,42,,35,30)
+		MASBL,4,,VARIABLES-LIST
+		#-NLIST-MASBL,,#-NLIST+MASBL
+		-2,
+		SPLAT
+		(43,42,,35,30)
+		hJMP MAGI	**DISPLAY
+		hJMP CPII	**HOWBIG
+		0	**GETIT
+		hJMP TRANSFORM	**MOVIT
+		24,16,,0	**SIZE
+		hJMP WHERESUB	**WHERE
+Q5@arr@		DISPLAYK
+		4	**TUPLE
+		IVAL	**VARLOC
+ TEXTS+NLIST-LIST|
+		**TEXT MASTER
+V5@arr@		MASTER@hamb@VARIABLES@arr@(43,47,,24,43)
+		MASBL,4,,VARIABLES-LIST
+		#-NLIST-MASBL,,#-NLIST+MASBL
+		-2,
+		SPLAT
+		(43,47,,24,43)
+		hJMP MAGTXT	**DISPLAY
+		hJMP CPITXT	**HOWBIG
+		0	**GETIT
+		hJMP TRANSFORM	**MOVIT
+		32,14,,0	**SIZE
+		hJMP WHERESUB	**WHERE
+Q?@arr@		DISPLAYK
+		4	**TUPLE
+		TVAL	**VARLOC
+ NUMBERS+NLIST-LIST|
+		**NUMBER MASTER
+V6@arr@		MASBL,4,,VARIABLES-LIST
+		#-NLIST-MASBL,,MM1+SPECB+1-NLIST
+		-2,
+		SPLAT
+		(21,34,,44,35)	**NUMB
+		
+[meta file_name=102726903-05-01-acc.pdf pdf_page=79 doc_page=77]
+[Page header: "IES OPLW 026"]
+[End of the main program block]
+
+		hJMP MAGNUM	**DISPLAY
+		hJMP CPINUM	**HOWBIG
+		0	**GETIT
+		hJMP TRANSFORM	**MOVIT
+		22,16,,0	**SIZE
+		hJMP WHERESUB	**WHERE
+Q6@arr@		DISPLAYK
+		4	**TUPLE
+		NVAL	**VARLOC
+ ORIGIN|
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=80 doc_page=78]
+[Page header: "LMH GX71 001"]
+[Page contains no code, beginning of the symex table]
 
