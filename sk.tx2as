@@ -2892,4 +2892,277 @@ LGORR1@arr@     SXD@sub_X@@sub_R@#      ** MODIFIED
 [Page header: "LMH GX7A 020"]
 [Continuation of the macro definition block]
 
+LGORR2@arr@     SKX@sub_X@@sub_R@@sub_2@#       **MODIFIED
+LGORREND@arr@   JPQ LGORR0
+@hand@@hand@EMD
+
+@hand@@hand@DEF LGORL@hamb@N@times@XR=XR2@arr@SUBR@arr@LEXIT
+GORLEXIT=LEXIT
+	@sup_1@DPX@sub_X@@sub_R@LGORL1
+	@sup_1@@sup_2@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+LGORL0@arr@	@sup_1@@sup_6@RSX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST-1
+	h@sup_minus@@sup_1@JNX@sub_X@@sub_R@#+2
+	@sup_1@SKX@sub_X@@sub_R@1
+	INX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@0
+LGORL1@arr@     SXD@sub_X@@sub_R@#      ** MODIFIED
+	hJPQ GORLEXIT+(GORLEXIT/GORLEXIT@circled_v@1@times@(LGORLEND+1))
+	@sup_1@@sup_2@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST
+	@sup_1@DPX@sub_X@@sub_R@@sub_2@LGORL2
+	hJPQ SUBR
+LGORL2@arr@     SKX@sub_X@@sub_R@@sub_2@#       **MODIFIED
+LGORLEND@arr@   JPQ LGORL0
+@hand@@hand@EMD
+
+@hand@@hand@DEF LGORRI@hamb@N@times@XR=XR2@arr@SUBR@arr@LEXIT
+GORRIEXIT=LEXIT
+	@sup_1@DPX@sub_X@@sub_R@LGORRI1
+	@sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+LGORRI0@arr@	@sup_1@@sup_6@RSX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST-1
+	h@sup_minus@@sup_1@JNX@sub_X@@sub_R@#+2
+	@sup_1@SKX@sub_X@@sub_R@1
+	INX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@0
+LGORRI1@arr@     SXD@sub_X@@sub_R@#      ** MODIFIED
+	[GGORIEXIT in listing, typo?]
+	hJPQ GGORRIEXIT+(GORRIEXIT/GORRIEXIT@circled_v@1@times@(LGORRIEND+1))
+	@sup_1@DPX@sub_X@@sub_R@@sub_2@LGORRI2
+	@sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST	**CURRENT NXT
+	hJPQ SUBR
+LGORRI2@arr@     SKX@sub_X@@sub_R@@sub_2@#       **MODIFIED
+	@sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST	** NEW NXT
+LGORRIEND@arr@   JPQ LGORRI0
+@hand@@hand@EMD
+
+@hand@@hand@DEF LGORLI@hamb@N@times@XR=XR2@arr@SUBR@arr@LEXIT
+GORLIEXIT=LEXIT
+	@sup_1@DPX@sub_X@@sub_R@LGORLI1
+	@sup_1@@sup_2@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+LGORLI0@arr@	@sup_1@@sup_6@RSX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST-1
+	h@sup_minus@@sup_1@JNX@sub_X@@sub_R@#+2
+	@sup_1@SKX@sub_X@@sub_R@1
+	INX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@0
+LGORLI1@arr@     SXD@sub_X@@sub_R@#      ** MODIFIED
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=96 doc_page=94]
+[Page header: "LMH GX7A 021"]
+[Continuation of the macro definition block]
+
+	hJPQ GORLIEXIT+(GORLIEXIT/GORLIEXIT@circled_v@1@times@(LGORLIEND+1))
+	@sup_1@DPX@sub_X@@sub_R@@sub_2@LGORLI2
+	@sup_1@@sup_2@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST	**CURRENT NXT
+	hJPQ SUBR
+LGORLI2@arr@     SKX@sub_X@@sub_R@@sub_2@#       **MODIFIED
+	@sup_1@@sup_2@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST	** NEW NXT
+LGORLIEND@arr@   JPQ LGORLI0
+@hand@@hand@EMD
+
+@hand@@hand@DEF NEWH@hamb@N@times@XR@arr@M@times@XR2
+	@sup_1@@sup_1@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)
+	hJPX@sub_S@#+2
+	SKX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@0
+	@sup_1@@sup_2@AUX@sub_X@@sub_R@{(N)+1,,-((N)+1)}
+	@sup_1@@sup_1@RSX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST
+NEWH1@arr@	SXD@sub_T@@sub_pipe@@sub_X@@sub_R@0
+	JPQ NEWH2
+NEWH2@arr@	@sup_1@@sup_1@AUX@sub_X@@sub_R@{(N)+1,,-((N)+1)}
+@hand@@hand@EMD
+
+@hand@@hand@DEF COMBHR@hamb@NN@times@XRR@arr@MM@times@XRR2
+	NEWH@hamb@NN@times@XRR@arr@MM@times@XRR2
+	COMBR@hamb@NN@times@XRR@arr@MM@times@XRR2
+@hand@@hand@EMD	
+
+@hand@@hand@DEF COMBHL@hamb@NN@times@XRR@arr@MM@times@XRR2
+	NEWH@hamb@NN@times@XRR@arr@MM@times@XRR2
+	COMBL@hamb@NN@times@XRR@arr@MM@times@XRR2
+@hand@@hand@EMD	
+
+@hand@@hand@DEF CHGRR@hamb@NN@times@XRR@arr@MM@times@XRR2
+	MOVER@hamb@NN@times@XRR@arr@MM@times@XRR2
+	@sup_1@@sup_1@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_R@@sub_2@LIST+(MM)
+	hJPX@sub_S@#+2
+	SKX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_R@@sub_2@0
+	@sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_R@LIST+(NN)
+@hand@@hand@EMD
+
+@hand@@hand@DEF CHGRL@hamb@NN@times@XRR@arr@MM@times@XRR2
+	MOVEL@hamb@NN@times@XRR@arr@MM@times@XRR2
+	@sup_1@@sup_1@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_R@@sub_2@LIST+(MM)
+	hJPX@sub_S@#+2
+	SKX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_R@@sub_2@0
+	@sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_R@LIST+(NN)
+@hand@@hand@EMD
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=97 doc_page=95]
+[Page header: "LMH GX7A 022"]
+[Continuation of the macro definition block]
+
+@hand@@hand@DEF TYPEN@sup@SC,NUM@times@WD
+	LDC WD
+	LDB {3,77,,77}
+	@sup_3@LDB SC
+	@sup_1@SKX NUM-1
+	hJES@sub_6@@sub_6@{TYPE@beta@}
+@hand@@hand@EMD
+
+@hand@@hand@DEF TYPEL@sup@SC,NUM@times@WD
+	LDC WD
+	LDB {3,77,,77}
+	@sup_3@LDB SC
+	@sup_1@SKX NUM-1
+	hJES@sub_6@@sub_6@{TYPE@beta@}+2
+@hand@@hand@EMD
+
+@hand@@hand@DEF TYPE@beta@
+XXX@beta@=0
+NENTRY@beta@@arr@	hMKZ@sub_4@@sub_dot@@sub_1@@sub_0@LSW@beta@
+		hJPQ #+2
+LENTRY@beta@@arr@	hMKN@sub_4@@sub_dot@@sub_1@@sub_0@LSW@beta@
+MTLOOP@beta@@arr@	h@sup_1@DPX@sub_6@@sub_6@TYPEXIT@beta@
+		hDEX@sub_6@@sub_6@2
+		LDA@sub_6@@sub_6@0
+		RFD@sub_6@@sub_6@#+1
+		@sup_1@IOS@sub_6@@sub_6@30000
+		@sup_3@TSD B
+		@sup_2@@sup_5@INS TYPECNTR@beta@
+		LDB C
+TYPELOOP@beta@@arr@	@sup_3@DPX A
+LSW@beta@@arr@	SKZ@sub_4@@sub_dot@@sub_1@@sub_0@
+		CAB {3,77,,77}
+		CAB #-1*
+		@sup_3@TSD A
+TYPECNTR@beta@@arr@	h@sup_1@JNX@sub_X@@sub_X@@sub_X@@sub_beta@TYPELOOP@beta@
+TYPEEXIT@beta@@arr@	JPQ XXX@beta@
+@hand@@hand@EMD
+
+@hand@@hand@DEF TPK@beta@
+		0	**PREDICTED BM,,ACTUAL BM
+		0	**X@sub_3@@sub_5@,,X@sub_3@@sub_4@
+		BPQ@sup_3@@sup_6@0	**MODIFIED EXIT
+		0	**END WR ADDR,,START WR ADDR
+		0	**WA
+		0	**ERR BLK,,
+		0	**PGM ADDR,,
+		0	**IOS REPORT
+		0	**SEL,ERR TYPE,,X@sub_3@@sub_7@
+		10	**K FOR FWD OR REV
+		0	**LAST SC SUMCHK,,LAST WR SUMCHK
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=98 doc_page=96]
+[Page header: "LMH GX7A 023"]
+[Continuation of the macro definition block]
+
+@hand@@hand@EMD
+
+@hand@@hand@DEF SUMCHKCMP
+		@sup_1@STE {TPK@beta@}+2	**SAVE RETURN
+		hLDE {TPK@beta@}+10.		**CUMULATIVE SUM CHK
+		@sup_2@SED E
+		JQP CMP1	**CORRECT
+		TYPEL,6@sub_3@@sub_6@@times@{603536,,704641} [6@sub_3@@sub_6@??]
+		SKX@sub_3@@sub_6@0 [another symbol on the line, junk?]
+		RFD@sub_4@@sub_6@{TPK@beta@}+2*
+CMP1@arr@	SKX@sub_3@@sub_6@1
+		JPQ {TPK@beta@}+2*
+@hand@@hand@EMD
+
+@hand@@hand@DEF IOA@beta@
+IOASCH@beta@@arr@	h@sup_2@STE {TPK@beta@}+6	**PGM ADDR
+		MKN@sub_4@@sub_dot@@sub_1@@sub_0@IOASCHSW@beta@
+		JPQ #+3
+IOANOTSCH@beta@@arr@	h@sup_2@STE {TPK@beta@}+6	**PGM ADDR
+		MKZ@sub_4@@sub_dot@@sub_1@@sub_0@IOASCHSW@beta@
+		h@sup_1@IOS@sub_4@@sub_6@20000
+		STE {TPK@beta@}+7	**SAVE REPORT
+IOASCHSW@beta@@arr@	SKN@sub_4@@sub_dot@@sub_1@@sub_0@#	**SKIP FOR SCH
+		JPQ IOACONT@beta@
+		LDA {TPK@beta@}		**PRED,,ACTUAL BM
+		SKN@sub_1@@sub_dot@@sub_3@{TPK@beta@}+7		**SKIP FOR REV
+		@sup_2@@sup_2@LDA A	**BM READ
+IOACONT@beta@@arr@	@sup_1@SKX@sub_3@@sub_4@(LIOAMSG@beta@-FIOAMSG@beta@)
+		SKX@sub_3@@sub_6@3	**FOR ERRLOOP
+EIALOOP@beta@@arr@	@sup_2@@sup_5@LDC@sub_3@@sub_4@LIOAMSG@beta@
+		@sup_2@@sup_5@STC #+1
+		[In other macros XX is a parameter, here it's not.]
+		SKZ@sub_X@@sub_X@{TPK@beta@}+7	**CHK REPORT BITS
+		JPQ EIAFND@beta@
+		SKX@sub_3@@sub_6@4	**FOR ERRLOOP
+		h@sup_1@JNX@sub_3@@sub_4@EIALOOP@beta@
+EIAFNDR@beta@@arr@	SKN@sub_4@@sub_dot@@sub_1@EIALOOP@beta@*	**SKIP IF WR TYPE
+		JPQ EIALD@beta@
+		SKN@sub_1@@sub_dot@@sub_9@{TPK@beta@}+7	**SKIP IF WRITING
+		h@sup_1@JNX@sub_3@@sub_4@EIALOOP@beta@		**IGNORE CONDITION
+EIALD@beta@@arr@	@sup_2@@sup_2@LDC@sub_3@@sub_4@LIOAMSG@beta@	**TYPE OF ERROR
+		RFD@sub_4@@sub_6@{ERRLOOP@beta@}*
+		JPD #	**NOT USED
+FIOAMSG@beta@@arr@	0,744,,343042	**MIS 2.4
+		0,706,,334336	**LTO 4.6
+		1,771,,433625	**TOF 3.9 [maybe TQF?]
+		1,705,,322450	**KEY 4.5
+		1,770,,343723	**MP? 3.8 [not sure about 8]
+		0,710,,252443	**FET 4.8
+		0,711,,412443	**RET 4.9
+		0,707,,353436	**NMO 4.7
+		
+[meta file_name=102726903-05-01-acc.pdf pdf_page=99 doc_page=97]
+[Page header: "LMH GX7A 024"]
+[Continuation of the macro definition block]
+
+LIOAMSG@beta@@arr@	0,745,,243020	**EIA 2.5
+		,,753374	**? [actual question mark in the listing]
+@hand@@hand@EMD
+
+@hand@@hand@DEF ERRLOOP@beta@
+		** FOR INDIVIDUAL
+ERRTABLEK@beta@@arr@	ERRTABLE@beta@@sub_3@@sub_6@* [syntax]
+ERRTABLE@beta@@arr@	NTFENTRY@beta@	**NOT FOUND ENTRY
+		SCENTRY@beta@	**SUM CHECK ENTRY
+		BMENTRY@beta@	**BLOCK MARK ENTRY
+		ALLERRS@beta@	**MISAL ENTRY
+		ALLERRS@beta@	**EIA ENTRY
+NORMENTRY@beta@@arr@	@sup_5@DPX {TPK@beta@}+8.	**CLR ERR TYPE
+		SKX@sub_3@@sub_6@1
+		JPQ NORMEXIT@beta@
+NTFENTRY@beta@@arr@	SKX@sub_3@@sub_6@5
+		JPQ ALLERRS@beta@
+SCENTRY@beta@@arr@	@sup_2@@sup_2@SUB {TPK@beta@}+9.	**10 OR 0
+SCEBME@beta@@arr@	@sup_2@@sup_1@LDC {422224,,213424}	**SCE
+ALLERRS@beta@@arr@	@sup_5@DPX@sub_3@@sub_6@{TPK@beta@}+8.	**SAVE ERR TYPE
+		@sup_2@@sup_1@ {TPK@beta@}+5	**BLK NO
+		@sup_1@IOS@sub_4@@sub_1@20000	**DISC IOA SEQ
+NTFNDMSG@beta@@arr@	@sup_1@LDC {354325,,703443}	**MT
+		TYPEL@sup@{60},6@sub_3@@sub_4@ [@sub_3@@sub_4@ propagates to instruction in the macro?]
+		@sup_1@SKX@sub_3@@sub_5@(LXSET@beta@-XSETK@beta@)	**WD CNTR
+WRSP@beta@@arr@	h@sup_3@TSD {70}	**SPACE
+		h@sup_3@TSD {70}	**SPACE
+		h@sup_3@TSD {70}	**SPACE
+		h@sup_1@JNX@sub_3@@sub_5@ELOOPMSG1@beta@
+TYPEL@sup@{70},3@sub_3@@sub_5@@times@@sup_2@@sup_1@TX2IK
+		TYPEN@sup@{70},5@sub_3@@sub_5@@times@@sup_2@@sup_1@{TPK@beta@}+5
+		@sup_3@TSD {60}
+		RFD@sub_4@@sub_6@NORMEXIT@beta@-1
+ELOOPMSG1@beta@@arr@	@sup_1@@sup_3@RSX@sub_3@@sub_7@XSETX@beta@*	**NO OF QUARTERS=1
+		LDB@sub_3@@sub_5@{TPK@beta@}+8.	**WORD
+ELOOPMSG2@beta@@arr@	STB {TPK@beta@}+4	**WA
+		TYPEN@sup@{70},3@sub_3@@sub_4@@times@B
+		LDB {TPK@beta@}+4	**WA
+		CYB XSET@beta@		**SET NEXT QUARTER
+		h@sup_1@JNX@sub_3@@sub_7@ELOOPMSG2@beta@	**TYPE NXT QUARTER
+		JPQ WRSP@beta@
+		SKX@sup_3@@sup_6@0	**SET X@sub_3@@sub_6@
+NORMEXIT@beta@@arr@	@sup_1@RSX@sub_3@@sub_4@{TPK@beta@}+1	**RESET X@sub_3@@sub_4@
+		@sup_2@RSX@sub_3@@sub_5@{TPK@beta@}+1	**RESET X@sub_3@@sub_5@
+		@sup_1@RSX@sub_3@@sub_7@{TPK@beta@}+8.	**RESET X@sub_3@@sub_7@
+		JPQ {TPK@beta@}+2*	**RETURN TO PGM
+BMENTRY@beta@@arr@	@sup_2@@sup_2@LDC SCEBME@beta@*		**BME
+		JPQ ALLERRS@beta@	**WRITE MSG
+XSETK@beta@@arr@	LXSET@beta@@sub_3@@sub_5@ [syntax]
+XSET@beta@@arr@	9.,-1
+		
+[meta file_name=102726903-05-01-acc.pdf pdf_page=100 doc_page=98]
+[Page header: "LMH GX7A 025"]
+[Continuation of the macro definition block]
+
+
+		
+
 
