@@ -85,4 +85,5 @@ s/@arr@/→/g
 s/@sup_minus@/⁻/g
 s/@hand@/☛/g
 s/@sub_pipe@/╷/g
+s/@circled_v@/Ⓥ/g
 

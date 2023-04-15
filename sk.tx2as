@@ -2206,7 +2206,7 @@ h@sup_minus@@sup_1@JNX@sub_X@@sub_R@#+2
 @sup_1@SKX@sub_X@@sub_R@1
 INX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@0
 LGORR1@arr@	SXD@sub_X@@sub_R@#	** MODIFIED
-hJPQ GORREXIT+(GORREXIT/GORREXIT?1@times@(LGORREND+1))
+hJPQ GORREXIT+(GORREXIT/GORREXIT@circled_v@1@times@(LGORREND+1))
 @sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@LIST
 @sup_1@DPX@sub_X@@sub_R@@sub_2@LGORR2
 hJPQ SUBR
@@ -2783,5 +2783,113 @@ STB A+1
 [Page header: "LMH GX7A 016"]
 [Continuation of the macro definition block]
 
+	@sup_1@EXX @sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+	@sup_1@DPX@sub_T@@sub_pipe@@sub_S@LIST
+	@sup_1@@sup_1@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)
+	hJPX@sub_S@#+2
+	SKX@sub_S@@sub_pipe@@sub_X@@sub_R@0
+	@sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)
+@hand@@hand@EMD
+
+@hand@@hand@DEF MOVEL@hamb@N@times@XR@arr@M@times@XR2
+	@sup_1@@sup_2@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1      **TAKE
+	@sup_1@@sup_1@RSX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+	@sup_1@DPX@sub_T@@sub_pipe@@sub_S@LIST
+	@sup_2@EXX@sub_S@@sub_pipe@@sub_T@LIST
+	@sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+	@sup_2@EXX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)+1      **PUT
+	@sup_2@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+	@sup_1@@sup_1@RSX@sub_T@@sub_pipe@@sub_S@LIST
+	@sup_1@EXX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+	@sup_1@DPX@sub_T@@sub_pipe@@sub_S@LIST
+@hand@@hand@EMD
+
+@hand@@hand@DEF PUTR@hamb@N@times@XR@arr@M@times@XR2
+	@sup_1@@sup_2@AUX@sub_X@@sub_R@{(N)+1,,-((N)+1)}
+	@sup_1@@sup_1@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)+1
+	@sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST
+	@sup_1@@sup_2@RSX@sub_T@@sub_pipe@@sub_S@LIST
+	@sup_2@DPX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST
+        @sup_2@DPX@sub_X@@sub_R@@sub_pipe@@sub_S@LIST
+        @sup_1@DPX@sub_X@@sub_R@@sub_pipe@@sub_T@LIST
+	@sup_1@@sup_1@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)
+	hJPX@sub_S@#+2
+	SKX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@0
+	@sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST-1
+	@sup_1@@sup_1@AUX@sub_X@@sub_R@{(N)+1,,-((N)+1)}
+@hand@@hand@EMD
+
+@hand@@hand@DEF PUTRQ@hamb@N@times@XR@arr@M@times@XR2
+	@sup_1@@sup_1@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+	@sup_1@EXX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)+1
+	@sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+	@sup_1@@sup_2@RSX@sub_T@@sub_pipe@@sub_S@LIST
+	@sup_2@EXX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+        @sup_2@DPX@sub_T@@sub_pipe@@sub_S@LIST
+	@sup_1@@sup_1@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)
+	hJPX@sub_S@#+2
+	SKX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@0
+	@sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)
+@hand@@hand@EMD
+
+@hand@@hand@DEF MOVER@hamb@N@times@XR@arr@M@times@XR2
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=94 doc_page=92]
+[Page header: "LMH GX7A 017"]
+[Continuation of the macro definition block]
+
+	@sup_1@@sup_2@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1      **TAKE
+	@sup_1@@sup_1@RSX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+	@sup_1@DPX@sub_T@@sub_pipe@@sub_S@LIST
+	@sup_2@EXX@sub_S@@sub_pipe@@sub_T@LIST
+	@sup_2@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+	@sup_1@EXX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)+1      **PUT
+	@sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+	@sup_1@@sup_2@RSX@sub_T@@sub_pipe@@sub_S@LIST
+	@sup_2@EXX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+	@sup_2@DPX@sub_T@@sub_pipe@@sub_S@LIST
+@hand@@hand@EMD	
+
+@hand@@hand@DEF COMBL@hamb@N@times@XR@arr@M@times@XR2
+	@sup_1@@sup_2@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+	@sup_2@EXX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)+1
+	@sup_1@@sup_1@RSX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+	@sup_2@DPX@sub_S@@sub_pipe@@sub_T@LIST
+	@sup_1@EXX@sub_T@@sub_pipe@@sub_S@LIST
+	@sup_1@@sup_2@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+	@sup_1@EXX@sub_T@@sub_pipe@@sub_S@LIST
+	@sup_2@DPX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+	@sup_1@DPX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@hand@@hand@EMD
+
+@hand@@hand@DEF COMBR@hamb@N@times@XR@arr@M@times@XR2
+	@sup_1@@sup_1@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+	@sup_1@EXX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)+1
+	@sup_1@@sup_2@RSX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+	@sup_1@DPX@sub_S@@sub_pipe@@sub_T@LIST
+	@sup_2@EXX@sub_T@@sub_pipe@@sub_S@LIST
+	@sup_1@@sup_1@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+	@sup_2@EXX@sub_T@@sub_pipe@@sub_S@LIST
+	@sup_2@DPX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+	@sup_1@DPX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@hand@@hand@EMD
+
+@hand@@hand@DEF LGORR@hamb@N@times@XR=XR2@arr@SUBR@arr@LEXIT
+GORREXIT=LEXIT
+	@sup_1@DPX@sub_X@@sub_R@LGORR1
+	@sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+LGORR0@arr@	@sup_1@@sup_6@RSX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST-1
+	h@sup_minus@@sup_1@JNX@sub_X@@sub_R@#+2
+	@sup_1@SKX@sub_X@@sub_R@1
+	INX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@0
+LGORR1@arr@     SXD@sub_X@@sub_R@#      ** MODIFIED
+	hJPQ GORREXIT+(GORREXIT/GORREXIT@circled_v@1@times@(LGORREND+1))
+	@sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@LIST
+	@sup_1@DPX@sub_X@@sub_R@@sub_2@LGORR2
+	hJPQ SUBR
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=95 doc_page=93]
+[Page header: "LMH GX7A 020"]
+[Continuation of the macro definition block]
 
 
