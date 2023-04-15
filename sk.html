@@ -3324,6 +3324,115 @@ XCHKSW&rarr;	<sup>1</sup>SXD<sub>3</sub><sub>4</sub>0	**MOD TO <sup>1</sup>SXD<s
 [Page header: "LMH GX7A 030"]
 [Continuation of the macro definition block]
 
+		JPQ XCHK
+		JPQ TAFIOSRET	**IGNORE WHAT WAS READ
+TAFFOR&rarr;	h<sup>1</sup>JNX<sub>3</sub><sub>4</sub>TAFLVREV
+		SXL<sub>3</sub><sub>4</sub>4
+		JPQ TAF4F	**FWD SPD4
+TAFIOS&rarr;	hLDE<sub>3</sub><sub>4</sub>XXX	**IOS K
+		h<sup>2</sup><sup>2</sup>STE TAF2F	**RD LINES
+		h<sup>1</sup>STE TAF3F	**RD MKS
+		<sup>1</sup>STE #+1		**RD MKS
+		h<sup>1</sup>IOS<sub>4</sub><sub>6</sub>XXX	**RD MKS
+		STE {TPK&beta;}+7	**SAVE REPORT
+		JPQ TAFIOSRET
+TAFREV&rarr;	h<sup>-</sup><sup>1</sup>JPX<sub>3</sub><sub>4</sub>TAFIOS
+		SXG<sub>3</sub><sub>4</sub>5
+		JPQ TAF4F	**SPD4 LOOP
+TAFREVSW&rarr;	SKZ<sub>1</sub><sub>.</sub><sub>1</sub>XCHKSW	**LV FWD?
+		JPQ TAFIOS
+		SXG<sub>3</sub><sub>4</sub>2
+		JPQ TAFIOS
+TAFCOMP&rarr;	h<sup>1</sup>LDE {TPK&beta;}	**BLK READ
+		<sup>1</sup>SED {TPK&beta;}+1	**BLK NEEDED
+		JPQ {ERRLOOP&beta;}+6	**LEAVE SEARCH, BLK FOUND
+TAFERRSW&rarr;	h<sup>1</sup>JNX<sub>3</sub><sub>6</sub>TAFIOS	**ERR CNTR
+TAFERR&rarr;	hJPQ{TURNOFF&Delta;}	**PGM ADDR
+		<sup>2</sup><sup>1</sup>LDC {354325,,703443}	**NTF
+		SKX<sub>3</sub><sub>6</sub>0
+TAFERREXIT&rarr;	<sup>2</sup><sup>2</sup>LDA {TPK&beta;}+1	**ORIGINAL NO
+		JPQ {ERRLOOP&beta;}*	**NTF OR EIA ENTRY
+TAFREVDIR&rarr;	h<sup>1</sup>SKX<sub>4</sub><sub>6</sub><sub>|</sub><sub>4</sub><sub>6</sub>0	** COMPL. X<sub>4</sub><sub>6</sub>
+		hMKN<sub>1</sub><sub>.</sub><sub>1</sub>XCHKSW	**SET TO LEAVE REV
+		LDE TAFDKR	**REV K
+		hJMP TAFSCHK
+TAFLVREV&rarr;	hJNX<sub>3</sub><sub>4</sub>TAFIOS	**CHK FOR CHG OF DIR
+		SKN<sub>1</sub><sub>.</sub><sub>1</sub>XCHKSW	**LV REV?
+		JPQ TAFIOS
+		JPQ TAFCOMP
+XCHK&rarr;	h<sup>1</sup><sup>1</sup>LDE {TPK&beta;}	**BM READ
+		<sup>1</sup>SED {TPK&beta;}+1	**BM NEEDED
+		JPQ {ERRLOOP&beta;}+6	**LEAVE SEARCH, BLK FOUND
+		JPQ TAFIOSRET	**IGNORE
+TAFNOTREADY&rarr;	<sup>2</sup>STE {TPK&beta;}+6	**PGM ADDR
+		<sup>2</sup><sup>2</sup>LDC {,,334336}	**LTO
+		SKX<sub>3</sub><sub>6</sub>4
+		JPQ TAFERREXIT	**EIA ENTRY
+TAFNEGMK&rarr;	<sup>2</sup><sup>2</sup>STE {TPK&beta;}	**TAKE PREDICTION
+		JPQ TAFIOSRET
+TAFWA1&rarr;	0
+TAFBL&rarr;	0
+TAFSPDK&rarr;	TAF2R,,TAF1R
+TAFSTK&rarr;	TAFST<sub>3</sub><sub>4</sub>
+
+<hr>
+[Page header: "LMH GX7A 031"]
+[Continuation of the macro definition block]
+
+TAFDKF&rarr;	TAPEK1+10,,10
+TAFDKR&rarr;	TAPEK1-10,,-10
+		**SPEED TABLES
+		377777-TAPEK4,,-377777
+		TAPEK4-TAPEK3,,-TAPEK4
+		TAPEK3-TAPEK2,,-TAPEK3
+		TAPEK2-TAPEK1,,-TAPEK2
+		TAPEK1+10,,-TAPEK1	**MOD TO TAPEK1-10,,-TAPEK1
+TAFST&rarr;	TAPEK1-10,,10		**MOD TO TAPEK1-10,,-10
+		TAPEK2-TAPEK1,,TAPEK1
+		TAPER3-TAPEK2,,TAPEK2
+		TAPEK4-TAPER3,,TAPEK3
+		377777-TAPEK4,,TAPEK4
+		RL+REV+SPD4,,RM+REV+SPD4
+		RL+REV+SPD3,,RM+REV+SPD3
+		RL+REV+SPD2,,RM+REV+SPD2
+		RL+REV+SPD1,,RM+REV+SPD1
+		RL+REV,,RM+REV
+TAF1R&rarr;	RL,,RM
+		RL+SPD1,,RM+SPD1
+		RL+SPD2,,RM+SPD2
+		RL+SPD3,,RM+SPD3
+		RL+SPD4,,RM+SPD4
+		RL+REV+SPD4,,RM+REV+SPD4
+		RL+REV+SPD3,,RM+REV+SPD3
+		RL+REV+SPD2,,RM+REV+SPD2
+		RL+REV+SPD2,,RM+REV+SPD2
+		RL+REV+SPD2,,RM+REV+SPD2
+TAF2R&rarr;	RL+SPD2,,RM+SPD2
+		RL+SPD2,,RM+SPD2
+		RL+SPD2,,RM+SPD2
+		RL+SPD3,,RM+SPD4
+		RL+SPD3,,RM+SPD4
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF SCF&Delta;&sup;X&rarr;Y|SELECT,ERROR
+ERR=ERROR
+		<sup>1</sup>IOS<sub>4</sub><sub>6</sub>60000+SELECT	**SELECT TAPE
+		RSX<sub>3</sub><sub>4</sub>X	**LOW NO.
+		RSX<sub>3</sub><sub>5</sub>Y	**HIGH NO.
+		DEX<sub>3</sub><sub>4</sub>10	**PREV BLK
+		hSKX<sub>4</sub><sub>6</sub>2	**SPD 2
+		hJPQ {SEARCH&Delta;}	**SEARCH RTNE
+		hJPQ ERR		**ERR ADDR
+		hJPQ {SCF2&Delta;}	**SUM CHK RTNE
+		hJPQ ERR		**ERR ADDRESS
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF SCR&Delta;&sup;X&rarr;Y|SELECT,ERROR
+
+<hr>
+[Page header: "LMH GX7A 032"]
+[Continuation of the macro definition block]
+
 
 </code></pre></body></html>
 <html><body style='font-size:150%'><pre><code>
@@ -6650,6 +6759,115 @@ XCHKSW&rarr;	<sup>1</sup>SXD<sub>3</sub><sub>4</sub>0	**MOD TO <sup>1</sup>SXD<s
 
 <hr>
 [Page header: "LMH GX7A 030"]
+[Continuation of the macro definition block]
+
+		JPQ XCHK
+		JPQ TAFIOSRET	**IGNORE WHAT WAS READ
+TAFFOR&rarr;	h<sup>1</sup>JNX<sub>3</sub><sub>4</sub>TAFLVREV
+		SXL<sub>3</sub><sub>4</sub>4
+		JPQ TAF4F	**FWD SPD4
+TAFIOS&rarr;	hLDE<sub>3</sub><sub>4</sub>XXX	**IOS K
+		h<sup>2</sup><sup>2</sup>STE TAF2F	**RD LINES
+		h<sup>1</sup>STE TAF3F	**RD MKS
+		<sup>1</sup>STE #+1		**RD MKS
+		h<sup>1</sup>IOS<sub>4</sub><sub>6</sub>XXX	**RD MKS
+		STE {TPK&beta;}+7	**SAVE REPORT
+		JPQ TAFIOSRET
+TAFREV&rarr;	h<sup>-</sup><sup>1</sup>JPX<sub>3</sub><sub>4</sub>TAFIOS
+		SXG<sub>3</sub><sub>4</sub>5
+		JPQ TAF4F	**SPD4 LOOP
+TAFREVSW&rarr;	SKZ<sub>1</sub><sub>.</sub><sub>1</sub>XCHKSW	**LV FWD?
+		JPQ TAFIOS
+		SXG<sub>3</sub><sub>4</sub>2
+		JPQ TAFIOS
+TAFCOMP&rarr;	h<sup>1</sup>LDE {TPK&beta;}	**BLK READ
+		<sup>1</sup>SED {TPK&beta;}+1	**BLK NEEDED
+		JPQ {ERRLOOP&beta;}+6	**LEAVE SEARCH, BLK FOUND
+TAFERRSW&rarr;	h<sup>1</sup>JNX<sub>3</sub><sub>6</sub>TAFIOS	**ERR CNTR
+TAFERR&rarr;	hJPQ{TURNOFF&Delta;}	**PGM ADDR
+		<sup>2</sup><sup>1</sup>LDC {354325,,703443}	**NTF
+		SKX<sub>3</sub><sub>6</sub>0
+TAFERREXIT&rarr;	<sup>2</sup><sup>2</sup>LDA {TPK&beta;}+1	**ORIGINAL NO
+		JPQ {ERRLOOP&beta;}*	**NTF OR EIA ENTRY
+TAFREVDIR&rarr;	h<sup>1</sup>SKX<sub>4</sub><sub>6</sub><sub>|</sub><sub>4</sub><sub>6</sub>0	** COMPL. X<sub>4</sub><sub>6</sub>
+		hMKN<sub>1</sub><sub>.</sub><sub>1</sub>XCHKSW	**SET TO LEAVE REV
+		LDE TAFDKR	**REV K
+		hJMP TAFSCHK
+TAFLVREV&rarr;	hJNX<sub>3</sub><sub>4</sub>TAFIOS	**CHK FOR CHG OF DIR
+		SKN<sub>1</sub><sub>.</sub><sub>1</sub>XCHKSW	**LV REV?
+		JPQ TAFIOS
+		JPQ TAFCOMP
+XCHK&rarr;	h<sup>1</sup><sup>1</sup>LDE {TPK&beta;}	**BM READ
+		<sup>1</sup>SED {TPK&beta;}+1	**BM NEEDED
+		JPQ {ERRLOOP&beta;}+6	**LEAVE SEARCH, BLK FOUND
+		JPQ TAFIOSRET	**IGNORE
+TAFNOTREADY&rarr;	<sup>2</sup>STE {TPK&beta;}+6	**PGM ADDR
+		<sup>2</sup><sup>2</sup>LDC {,,334336}	**LTO
+		SKX<sub>3</sub><sub>6</sub>4
+		JPQ TAFERREXIT	**EIA ENTRY
+TAFNEGMK&rarr;	<sup>2</sup><sup>2</sup>STE {TPK&beta;}	**TAKE PREDICTION
+		JPQ TAFIOSRET
+TAFWA1&rarr;	0
+TAFBL&rarr;	0
+TAFSPDK&rarr;	TAF2R,,TAF1R
+TAFSTK&rarr;	TAFST<sub>3</sub><sub>4</sub>
+
+<hr>
+[Page header: "LMH GX7A 031"]
+[Continuation of the macro definition block]
+
+TAFDKF&rarr;	TAPEK1+10,,10
+TAFDKR&rarr;	TAPEK1-10,,-10
+		**SPEED TABLES
+		377777-TAPEK4,,-377777
+		TAPEK4-TAPEK3,,-TAPEK4
+		TAPEK3-TAPEK2,,-TAPEK3
+		TAPEK2-TAPEK1,,-TAPEK2
+		TAPEK1+10,,-TAPEK1	**MOD TO TAPEK1-10,,-TAPEK1
+TAFST&rarr;	TAPEK1-10,,10		**MOD TO TAPEK1-10,,-10
+		TAPEK2-TAPEK1,,TAPEK1
+		TAPER3-TAPEK2,,TAPEK2
+		TAPEK4-TAPER3,,TAPEK3
+		377777-TAPEK4,,TAPEK4
+		RL+REV+SPD4,,RM+REV+SPD4
+		RL+REV+SPD3,,RM+REV+SPD3
+		RL+REV+SPD2,,RM+REV+SPD2
+		RL+REV+SPD1,,RM+REV+SPD1
+		RL+REV,,RM+REV
+TAF1R&rarr;	RL,,RM
+		RL+SPD1,,RM+SPD1
+		RL+SPD2,,RM+SPD2
+		RL+SPD3,,RM+SPD3
+		RL+SPD4,,RM+SPD4
+		RL+REV+SPD4,,RM+REV+SPD4
+		RL+REV+SPD3,,RM+REV+SPD3
+		RL+REV+SPD2,,RM+REV+SPD2
+		RL+REV+SPD2,,RM+REV+SPD2
+		RL+REV+SPD2,,RM+REV+SPD2
+TAF2R&rarr;	RL+SPD2,,RM+SPD2
+		RL+SPD2,,RM+SPD2
+		RL+SPD2,,RM+SPD2
+		RL+SPD3,,RM+SPD4
+		RL+SPD3,,RM+SPD4
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF SCF&Delta;&sup;X&rarr;Y|SELECT,ERROR
+ERR=ERROR
+		<sup>1</sup>IOS<sub>4</sub><sub>6</sub>60000+SELECT	**SELECT TAPE
+		RSX<sub>3</sub><sub>4</sub>X	**LOW NO.
+		RSX<sub>3</sub><sub>5</sub>Y	**HIGH NO.
+		DEX<sub>3</sub><sub>4</sub>10	**PREV BLK
+		hSKX<sub>4</sub><sub>6</sub>2	**SPD 2
+		hJPQ {SEARCH&Delta;}	**SEARCH RTNE
+		hJPQ ERR		**ERR ADDR
+		hJPQ {SCF2&Delta;}	**SUM CHK RTNE
+		hJPQ ERR		**ERR ADDRESS
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF SCR&Delta;&sup;X&rarr;Y|SELECT,ERROR
+
+<hr>
+[Page header: "LMH GX7A 032"]
 [Continuation of the macro definition block]
 
 

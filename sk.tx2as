@@ -3323,4 +3323,113 @@ XCHKSW@arr@	@sup_1@SXD@sub_3@@sub_4@0	**MOD TO @sup_1@SXD@sub_3@@sub_4@1 FOR REV
 [Page header: "LMH GX7A 030"]
 [Continuation of the macro definition block]
 
+		JPQ XCHK
+		JPQ TAFIOSRET	**IGNORE WHAT WAS READ
+TAFFOR@arr@	h@sup_1@JNX@sub_3@@sub_4@TAFLVREV
+		SXL@sub_3@@sub_4@4
+		JPQ TAF4F	**FWD SPD4
+TAFIOS@arr@	hLDE@sub_3@@sub_4@XXX	**IOS K
+		h@sup_2@@sup_2@STE TAF2F	**RD LINES
+		h@sup_1@STE TAF3F	**RD MKS
+		@sup_1@STE #+1		**RD MKS
+		h@sup_1@IOS@sub_4@@sub_6@XXX	**RD MKS
+		STE {TPK@beta@}+7	**SAVE REPORT
+		JPQ TAFIOSRET
+TAFREV@arr@	h@sup_minus@@sup_1@JPX@sub_3@@sub_4@TAFIOS
+		SXG@sub_3@@sub_4@5
+		JPQ TAF4F	**SPD4 LOOP
+TAFREVSW@arr@	SKZ@sub_1@@sub_dot@@sub_1@XCHKSW	**LV FWD?
+		JPQ TAFIOS
+		SXG@sub_3@@sub_4@2
+		JPQ TAFIOS
+TAFCOMP@arr@	h@sup_1@LDE {TPK@beta@}	**BLK READ
+		@sup_1@SED {TPK@beta@}+1	**BLK NEEDED
+		JPQ {ERRLOOP@beta@}+6	**LEAVE SEARCH, BLK FOUND
+TAFERRSW@arr@	h@sup_1@JNX@sub_3@@sub_6@TAFIOS	**ERR CNTR
+TAFERR@arr@	hJPQ{TURNOFF@delta@}	**PGM ADDR
+		@sup_2@@sup_1@LDC {354325,,703443}	**NTF
+		SKX@sub_3@@sub_6@0
+TAFERREXIT@arr@	@sup_2@@sup_2@LDA {TPK@beta@}+1	**ORIGINAL NO
+		JPQ {ERRLOOP@beta@}*	**NTF OR EIA ENTRY
+TAFREVDIR@arr@	h@sup_1@SKX@sub_4@@sub_6@@sub_pipe@@sub_4@@sub_6@0	** COMPL. X@sub_4@@sub_6@
+		hMKN@sub_1@@sub_dot@@sub_1@XCHKSW	**SET TO LEAVE REV
+		LDE TAFDKR	**REV K
+		hJMP TAFSCHK
+TAFLVREV@arr@	hJNX@sub_3@@sub_4@TAFIOS	**CHK FOR CHG OF DIR
+		SKN@sub_1@@sub_dot@@sub_1@XCHKSW	**LV REV?
+		JPQ TAFIOS
+		JPQ TAFCOMP
+XCHK@arr@	h@sup_1@@sup_1@LDE {TPK@beta@}	**BM READ
+		@sup_1@SED {TPK@beta@}+1	**BM NEEDED
+		JPQ {ERRLOOP@beta@}+6	**LEAVE SEARCH, BLK FOUND
+		JPQ TAFIOSRET	**IGNORE
+TAFNOTREADY@arr@	@sup_2@STE {TPK@beta@}+6	**PGM ADDR
+		@sup_2@@sup_2@LDC {,,334336}	**LTO
+		SKX@sub_3@@sub_6@4
+		JPQ TAFERREXIT	**EIA ENTRY
+TAFNEGMK@arr@	@sup_2@@sup_2@STE {TPK@beta@}	**TAKE PREDICTION
+		JPQ TAFIOSRET
+TAFWA1@arr@	0
+TAFBL@arr@	0
+TAFSPDK@arr@	TAF2R,,TAF1R
+TAFSTK@arr@	TAFST@sub_3@@sub_4@
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=104 doc_page=102]
+[Page header: "LMH GX7A 031"]
+[Continuation of the macro definition block]
+
+TAFDKF@arr@	TAPEK1+10,,10
+TAFDKR@arr@	TAPEK1-10,,-10
+		**SPEED TABLES
+		377777-TAPEK4,,-377777
+		TAPEK4-TAPEK3,,-TAPEK4
+		TAPEK3-TAPEK2,,-TAPEK3
+		TAPEK2-TAPEK1,,-TAPEK2
+		TAPEK1+10,,-TAPEK1	**MOD TO TAPEK1-10,,-TAPEK1
+TAFST@arr@	TAPEK1-10,,10		**MOD TO TAPEK1-10,,-10
+		TAPEK2-TAPEK1,,TAPEK1
+		TAPER3-TAPEK2,,TAPEK2
+		TAPEK4-TAPER3,,TAPEK3
+		377777-TAPEK4,,TAPEK4
+		RL+REV+SPD4,,RM+REV+SPD4
+		RL+REV+SPD3,,RM+REV+SPD3
+		RL+REV+SPD2,,RM+REV+SPD2
+		RL+REV+SPD1,,RM+REV+SPD1
+		RL+REV,,RM+REV
+TAF1R@arr@	RL,,RM
+		RL+SPD1,,RM+SPD1
+		RL+SPD2,,RM+SPD2
+		RL+SPD3,,RM+SPD3
+		RL+SPD4,,RM+SPD4
+		RL+REV+SPD4,,RM+REV+SPD4
+		RL+REV+SPD3,,RM+REV+SPD3
+		RL+REV+SPD2,,RM+REV+SPD2
+		RL+REV+SPD2,,RM+REV+SPD2
+		RL+REV+SPD2,,RM+REV+SPD2
+TAF2R@arr@	RL+SPD2,,RM+SPD2
+		RL+SPD2,,RM+SPD2
+		RL+SPD2,,RM+SPD2
+		RL+SPD3,,RM+SPD4
+		RL+SPD3,,RM+SPD4
+@hand@@hand@EMD
+
+@hand@@hand@DEF SCF@delta@@sup@X@arr@Y|SELECT,ERROR
+ERR=ERROR
+		@sup_1@IOS@sub_4@@sub_6@60000+SELECT	**SELECT TAPE
+		RSX@sub_3@@sub_4@X	**LOW NO.
+		RSX@sub_3@@sub_5@Y	**HIGH NO.
+		DEX@sub_3@@sub_4@10	**PREV BLK
+		hSKX@sub_4@@sub_6@2	**SPD 2
+		hJPQ {SEARCH@delta@}	**SEARCH RTNE
+		hJPQ ERR		**ERR ADDR
+		hJPQ {SCF2@delta@}	**SUM CHK RTNE
+		hJPQ ERR		**ERR ADDRESS
+@hand@@hand@EMD
+
+@hand@@hand@DEF SCR@delta@@sup@X@arr@Y|SELECT,ERROR
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=105 doc_page=103]
+[Page header: "LMH GX7A 032"]
+[Continuation of the macro definition block]
+
 
