@@ -3162,7 +3162,165 @@ XSET@beta@@arr@	9.,-1
 [Page header: "LMH GX7A 025"]
 [Continuation of the macro definition block]
 
+		-1
+		-3
+LXSET@beta@@arr@	0
 
+@hand@@hand@DEF TURNOFF@delta@
+		h@sup_2@STE {TPK@beta@}+6	**PGM ADDR
+		h@sup_1@IOS@sub_4@@sub_6@20000	**DISCONNECT
+		hSTE {TPK@beta@}+7		**SAVE REPORT
+		h@sup_1@IOS@sub_4@@sub_1@40000	**LOWER FLAG
+		h@sup_1@@sup_2@LDE {TPK@beta@} +6	**RETURN ADDR
+		hJPQ E*		**RETURN TO PGM
+@hand@@hand@EMD
+
+@hand@@hand@DEF TAFIOA@delta@
+TAFIOASTART@beta@@arr@	h@sup_2@STE {TPK@beta@}+6
+		h@sup_1@IOS@sub_4@@sub_6@0
+		h@sup_3@STE TAFIOAIOS@beta@
+		SKZ@sub_2@@sub_dot@@sub_5@E	**MISAL?
+		JPQ {IOA@beta@}+1
+TAFIOAIOS@beta@@arr@	@sup_1@IOS@sub_4@@sub_6@34000	**CLR ERROR
+		JPD TAFIOASTART@beta@
+@hand@@hand@EMD
+
+@hand@@hand@DEF SEARCH@delta@
+RL=30000
+RM=RL+100
+SPD1=10
+SPD2=20
+SPD3=30
+SPD4=40
+REV=4
+TAPEK4=20000
+TAPEK3=3000
+TAPEK2=1500
+TAPEK1=300
+XXX=0
+		**SPECIAL SEARCH TO AVOID ERRORS
+		**FOR INDIVIDUAL
+		**{TPK@beta@}=PREDICTED BM,,ACTUAL BM
+		**{TPK@beta@}+1=ORIG X@sub_3@@sub_5@,,ORIG X@sub_3@@sub_4@
+		**TAFBL=-(ORIG X@sub_3@@sub_4@),,
+SCHENTRY@arr@	h@sup_1@STE {TPK@beta@}+2	**SAVE RETURN
+		hJNX@sub_4@@sub_6@TAFREVDIR	**LEAVE REV?
+		hMKZ@sub_1@@sub_dot@@sub_1@XCHKSW	**SET FOR FWD
+		hLDE TAFDKF	**FWD CONSTANTS
+TAFSCHK@arr@	h@sup_1@STE TAFST
+		h@sup_2@@sup_1@STE TAFST-1
+		hLDE TAFSPDK
+		hSXD@sub_4@@sub_6@2	**CHK FOR SPD2 EXIT
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=101 doc_page=99]
+[Page header: "LMH GX7A 026"]
+[Continuation of the macro definition block]
+
+		h@sup_2@LDE E
+		@sup_1@STE TAFIOS
+		RFD@sub_4@@sub_6@#+1
+		@sup_1@SKX@sub_3@@sub_6@4	**ERR CNTR
+		SKX@sub_4@@sub_1@{JPD #}
+		@sup_1@IOS@sub_1@@sub_1@30000	**CONNECTION IOA
+		@sup_1@DPX@sub_3@@sub_4@{TPK@beta@}+1	**SAVE SEARCH NO.
+		@sup_2@DPX@sub_3@@sub_4@TAFBL	**ORIGINAL NO.
+		@sup_2@@sup_1@COM TAFBL 	** -(ORIG NO.) [some smudge  after COM, interpreting as junk]
+		@sup_2@DPX@sub_3@@sub_5@{TPK@beta@}+1	** SAVE X@sub_3@@sub_5@
+		@sup_1@DPX@sub_3@@sub_7@{TPK@beta@}+8.	** SAVE X@sub_3@@sub_7@
+EOTCHK@arr@	h@sup_1@IOS@sub_4@@sub_6@0	**GET REPORT
+		hSKN@sub_4@@sub_dot@@sub_3@E	**SELECTION COMPLETE?
+		JPQ EOTCHK	**WAIT
+		SKU@sup_3@@sub_dot@@sub_7@	**OPERABLE SPEED?
+		JPQ EOTCHK	**WAIT
+		h@sup_1@IOS@sub_4@@sub_6@36200	**CLR ALARMS,CHG RS,MOVE TAPE
+		STE TAFWA1	**SAVE REPORT
+		h@sup_1@IOS@sub_4@@sub_6@34200	**CLR ALARMS,CHG RS,MOVE TAPE
+		hIOS@sub_4@@sub_6@20000	**DISC
+		@sup_6@STE {TPK@beta@}+8.	**SAVE SELECT
+		SKZ@sub_4@@sub_dot@@sub_6@TAFWA1	** UNIT READY?
+		hJPQ TAFNOTREADY
+		SKX@sub_4@@sub_1@{TAFIOA@delta@}
+		SKZ@sub_4@@sub_dot@@sub_8@TAFWA1	**NO FWD EOT?
+		JPQ TAF0R	**GO REV
+		SKZ@sub_4@@sub_dot@@sub_9@TAFWA1	**NO REV EOT?
+		JPQ TAF0F	**GO FWD
+		DEX@sub_3@@sub_4@40	**FWD ROLL
+		SKZ@sub_1@@sub_dot@@sub_3@{TPK@beta@}+7	**WAS TAPE GOING IN REV?
+		INX@sub_3@@sub_4@100
+		hJNX@sub_3@@sub_4@TAFGOFWD
+		h@sup_1@@sup_2@LDE {TPK@beta@}	**CURRENT POSITION
+		hSKZ@sub_4@@sub_dot@@sub_9@E
+		hDPX E
+		SXK@sub_3@@sub_4@E*
+		JPQ TAFGOFWD
+		@sup_1@SKX@sub_3@@sub_4@1	**GO REV
+		JPQ TAFIOS	**SET IOS INSTRUCTIONS
+TAFGOFWD@arr@	SKX@sub_3@@sub_4@0
+		JPQ TAFIOS
+		** FAST LOOPS
+		** GO MORE IN REVERSE DIRECTION
+TAF3R@arr@	SXD@sub_3@@sub_4@3
+		h@sup_minus@@sup_1@JPX@sub_3@@sub_4@TAFIOS	**GO TO SLOW LOOP SPD 2 FWD
+		h@sup_minus@@sup_1@JPX@sub_3@@sub_4@TAF4F+1	**SLOW TO SPD 3 FWD
+TAF0R@arr@	@sup_1@SKX@sub_3@@sub_4@5	**REV SPD4
+TAF4F@arr@	@sup_3@DPX {TPK@beta@}	**CLR FINE MK
+		hLDE TAFIOS*
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=102 doc_page=100]
+[Page header: "LMH GX7A 027"]
+[Continuation of the macro definition block]
+
+		@sup_1@STE#+1
+		h@sup_1@IOS@sub_4@@sub_6@XXX	**RD MKS
+		STE {TPK@beta@}+7
+		h@sup_1@@sup_1@LDE {TPK@beta@}	**CURRENT BLK
+TAF4R@arr@	@sup_2@STE {TPK@beta@}	**EXPECTED BLK
+		h@sup_4@TSD {TPK@beta@}	**COARSE MK
+		hSKZ@sub_2@@sub_dot@@sub_9@E	**NEG MK?
+		hJMP TAF4R+1	**IGNORE
+		h@sup_2@SED E	**EXPECTED MK
+		hJMP #+2	**GOOD MK
+		hJMP TAF4R
+		@sup_1@@sup_1@RSX@sub_3@@sub_5@E	**BLK READ
+		@sup_2@AUX@sub_3@@sub_5@TAFBL	**-(ORIG NO.)
+		@sup_1@AUX@sub_3@@sub_5@TAFSTK*	**SPD SPREAD
+		hJPX@sub_3@@sub_5@TAF3R	**GO MORE IN REV.
+		@sup_2@AUX@sub_3@@sub_5@TAFSTK*
+		hJPX@sub_3@@sub_5@TAF4R-1	**CONTINUE AT SAME SPEED
+		**GO MORE IN FORWARD DIRECTION
+TAF0F@delta@@arr@	@sup_1@SXD@sub_3@@sub_4@4
+		h@sup_1@JNX@sub_3@@sub_4@TAFIOS	**GO TO SLOW LOOP SPD 2 REV
+		h@sup_1@JNX@sub_3@@sub_4@TAF4F+1	**SLOW TO SPD 3 REV
+TAF0F@arr@	SKX@sub_3@@sub_4@4 **FWD SPD 4
+		JPQ TAF4F
+		**SLOW LOOPS
+TAFCON@arr@	@sup_2@AUX@sub_3@@sub_5@TAFBL	**-(ORIG BLK)
+		@sup_1@AUX@sub_3@@sub_5@TAFSTK*	**LIMIT AT THIS SPEED
+		hJPX@sub_3@@sub_5@TAFREV
+		@sup_2@AUX@sub_3@@sub_5@TAFSTK*
+		hJNX@sub_3@@sub_5@TAFFOR
+TAFIOSRET@arr@	h@sup_1@@sup_2@RSX@sub_3@@sub_7@{TPK@beta@}	**PREDICTED BM
+		@sup_1@@sup_1@RSX@sub_3@@sub_5@E	**BM READ
+		DEX@sub_3@@sub_5@10	**PRECEDING BLK
+		SXL@sub_3@@sub_4@0	**REV?
+		INX@sub_3@@sub_5@20	**NXT BLK
+TAF1F@arr@	h@sup_4@TSD {TPK@beta@}	**BLK MK
+TAF2F@arr@	h@sup_1@IOS@sub_4@@sub_6@XXX	**RD LINES
+		h@sup_3@TSD {TPK@beta@} **FINE MK
+TAF3F@arr@	@sup_1@IOS@sub_4@@sub_6@XXX	**RD MKS
+		h@sup_1@@sup_1@RSX@sub_3@@sub_5@{TPK@beta@}	**BM READ
+		hJNX@sub_3@@sub_5@TAFNEGMK
+		@sup_2@SED E	**BM PREDICTED
+		JPQ TAFCON	**CONTINUE
+		DEX@sub_3@@sub_7@10	**FOR REV
+		SXL@sub_3@@sub_4@0	**REV?
+		INX@sub_3@@sub_7@20	**FOR FWD
+		SXD@sub_3@@sub_7@@sub_pipe@@sub_3@@sub_5@0	**1>LAST PREDICTION?
+		JPQ TAFCON	**CONTINUE
+XCHKSW@arr@	@sup_1@SXD@sub_3@@sub_4@0	**MOD TO @sup_1@SXD@sub_3@@sub_4@1 FOR REV
 		
+[meta file_name=102726903-05-01-acc.pdf pdf_page=103 doc_page=101]
+[Page header: "LMH GX7A 030"]
+[Continuation of the macro definition block]
 
 
