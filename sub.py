@@ -167,7 +167,6 @@ class HTMLGenerator(Sub):
             if "[meta" in line:
                 # Page break.
                 print("<hr>")
-                continue
             text_line = self.text_generator.SubLine(line)
             fixed_line = self.FixTabs(line, text_line)
             print(self.SubLine(fixed_line))
