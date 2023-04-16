@@ -1,4 +1,4 @@
-[meta file_name=102726903-05-01-acc.pdf pdf_page=22 doc_page=20]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=22 doc_page=20 type=main]
 
  200002|
 I2@arr@		JPQ FRESH START
@@ -23,7 +23,7 @@ FRESH START@arr@
 		[May be possible to deduce from octal representation.]
 		@sup_minus@@sup_1@JPX @sub_alpha@ #-2
  
-[meta file_name=102726903-05-01-acc.pdf pdf_page=23 doc_page=21]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=23 doc_page=21 type=code]
 [Handwritten: "BUILD"]
 [Handwritten: "RDTX2=200126"]
 
@@ -81,7 +81,7 @@ STARTS@arr@	RXF @sub_4@@sub_7@ 47START
 		RSX @sub_alpha@ ATBITS+1
 		RSX @sub_alpha@@sub_pipe@@sub_alpha@ LIST+VORD
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=24 doc_page=22]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=24 doc_page=22 type=code]
 
 		SXD @sub_alpha@ FIXEDS-LIST
 		MKN @sub_1@@sub_dot@@sub_7@ PAGE1
@@ -135,7 +135,7 @@ PAGE1D@arr@	SKZ @sub_1@@sub_dot@@sub_6@ 76BUT
 		SKZ @sub_1@@sub_dot@@sub_3@ 76BUT
 		hJPQ ERASE
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=25 doc_page=23]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=25 doc_page=23 type=code]
 [Handwritten: "FOR MOVIE"]
 [Handwritten: "COPY 1.9"]
 [Handwritten: "DRAW 1.8"]
@@ -197,7 +197,7 @@ PAGE1F@arr@	SKN @sub_4@@sub_dot@@sub_1@@sub_0@ SWITCH ** IF ONE, DO DEADLY DELET
 		hJPQ PICOUT
 		SKN @sub_4@@sub_dot@@sub_1@ 76BUT
 		
-[meta file_name=102726903-05-01-acc.pdf pdf_page=26 doc_page=24]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=26 doc_page=24 type=code]
 
 		JPQ #+7
 		hJPQ GARBAGE
@@ -250,7 +250,7 @@ ORDSTARTW@arr@
 		MKN ORDWORST
 		hJPQ ORDSTART
 		
-[meta file_name=102726903-05-01-acc.pdf pdf_page=27 doc_page=25]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=27 doc_page=25 type=code]
 [Page header: "IES 2XMX 005"]
 
 		JPQ #
@@ -305,7 +305,7 @@ PICOUTX@arr@
 POINTSOUT@arr@
 		@sup_1@ POINTSOUTGRX
 		
-[meta file_name=102726903-05-01-acc.pdf pdf_page=28 doc_page=26]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=28 doc_page=26 type=code]
 [Page header: "IES 2XMX 006"]
 
 		REX @sub_alpha@ CURPICS-LIST
@@ -359,7 +359,7 @@ MPBOC@arr@	@sup_1@STE MPBOCX
 		PUT|PBOCC,@gamma@@arr@VCON,S
 		RSX @sub_S@@sub_pipe@@sub_beta@ CSP+LIST
 		
-[meta file_name=102726903-05-01-acc.pdf pdf_page=29 doc_page=27]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=29 doc_page=27 type=code]
 [Page header: "IES 2XMX 007"]
 
 		PUT|PBOCS,@gamma@@arr@VCON,S
@@ -413,8 +413,8 @@ MACAPTX@arr@
 		REX @sub_gamma@ 0
 		@sup_minus@@sup_1@JPX @sub_gamma@ MACAPA
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=30 doc_page=28]
-[Page header: "IES 2XMX 010" (previous page had "007", out of sequence?)]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=30 doc_page=28 type=code]
+[Page header: "IES 2XMX 010" (octal numbering, previous page had 007)]
 
 		JPQ MACAPX
 MACAP1@arr@	RSX @sub_alpha@ ATBITS+1
@@ -467,7 +467,7 @@ MAKECONS@arr@
 		RSX @sub_delta@ ATBITS+1
 		RSX @sub_delta@@sub_pipe@@sub_delta@ LIST+TYPE  **@delta@ AT HOVS
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=31 doc_page=29]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=31 doc_page=29 type=code]
 [Page header: "IES 2XMX 011"]
 
 		RSX @sub_alpha@@sub_pipe@@sub_delta@ LIST+TYPE
@@ -522,7 +522,7 @@ MOVEPIC@arr@
 MOVEPICEX@arr@
 		JPQ #
 		
-[meta file_name=102726903-05-01-acc.pdf pdf_page=32 doc_page=30]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=32 doc_page=30 type=code]
 [Page header: "IES 2XMX 012"]
 
 MTDIS@arr@	@sup_1@STE MOVETHISX
@@ -575,7 +575,7 @@ SUBPICS@arr@
 		MKN SHAFTUSE
 		LDAB@hamb@NIRR
 		
-[meta file_name=102726903-05-01-acc.pdf pdf_page=33 doc_page=31]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=33 doc_page=31 type=code]
 [Page header: "IES 2XMX 013"]
 
 		STAB@hamb@IVAL+LIST@sub_alpha@
@@ -632,7 +632,7 @@ UNFIX1@arr@	SUBR@hamb@(LTAKE@hamb@VORD@times@@alpha@) [maybe not alpha?]
 MAKPATA@arr@
 		@sup_1@STE MAKPATAX
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=34 doc_page=32]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=34 doc_page=32 type=code]
 [Page header: "IES 2XMX 014"]
 		SKZ LPLOST
 		JPQ MAKPATAX
@@ -686,7 +686,7 @@ STARTCA@arr@
 		REX @sub_beta@ #
 		PUT|CEP,@beta@@arr@PLS,@gamma@
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=35 doc_page=33]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=35 doc_page=33 type=code]
 [Page header: "IES 2XMX 015"]
 
 		PUT|CSP,@beta@@arr@PLS,@alpha@
@@ -740,7 +740,7 @@ MOVE@alpha@@arr@	@sup_1@STE MOVE@alpha@X
 		SXD @sub_T@ VARIABLES-LIST
 		JPQ MOVE@alpha@V
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=36 doc_page=34]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=36 doc_page=34 type=code]
 [Page header: "IES 2XMX 016"]
 
 		JPQ MOVE@alpha@X
@@ -793,7 +793,7 @@ MOVE@alpha@I1@arr@
 		RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+TYPE
 		JPQ MOVE@alpha@VS+1
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=37 doc_page=35]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=37 doc_page=35 type=code]
 [Page header: "IES 2XMX 017"]
 
 MOVE@alpha@VS@arr@
@@ -848,7 +848,7 @@ MERGEIFP@arr@
 MERGEIFP1@arr@
 		RSX @sub_S@@sub_pipe@@sub_S@ LIST+TYPE
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=38 doc_page=36]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=38 doc_page=36 type=code]
 [Page header: "IES 2XMX 020"]
 
 		SXD @sub_S@ VARIABLES-LIST
@@ -902,7 +902,7 @@ STOPMOVEP2@arr@
 		RSX @sub_S@@sub_pipe@@sub_S@ LIST+KIND
 		RSX @sub_beta@@sub_pipe@@sub_alpha@ LIST+BWHOS
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=39 doc_page=37]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=39 doc_page=37 type=code]
 [Page header: "IES 2XMX 021"]
 
 		SXD @sub_S@ JUNKK
@@ -956,7 +956,7 @@ STOPM3A@arr@
 		RSX @sub_gamma@@sub_pipe@@sub_beta@ LIST+TYPE
 		SXD @sub_gamma@ LINES-LIST
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=40 doc_page=38]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=40 doc_page=38 type=code]
 [Page header: "IES 2XMX 022"]
 
 		JPQ STOPM3AL
@@ -1011,7 +1011,7 @@ MERGERB@arr@
 MERGERC@arr@
 		DPX @sub_alpha@ MERGTS
  
-[meta file_name=102726903-05-01-acc.pdf pdf_page=41 doc_page=39]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=41 doc_page=39 type=code]
 [Page header: "IES 2XMX 023"]
 
 		EXX @sub_beta@ MERGTS
@@ -1065,7 +1065,7 @@ MRGR3@arr@	h@sup_1@@sup_7@LDE @sub_alpha@ LIST+1
 		ERROR@hamb@@alpha@@arr@MERGEX	** NOT EMPTY KEY
 MRGR3A@arr@	MOVE|LIST@sub_beta@@arr@LIST@sub_alpha@
 		 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=42 doc_page=40]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=42 doc_page=40 type=code]
 [Page header: "IES 2XMX 024"]
 
 		MOVE|LIST+1@sub_beta@@arr@@?@LIST+1@sub_alpha@ [possibly junk/noise?]
@@ -1119,7 +1119,7 @@ MRGR10@arr@	RSX @sub_beta@@sub_pipe@@sub_alpha@ LIST+VORD+1
 		JPQ MERGERBAC
 MRGR6@arr@	RSX @sub_delta@@sub_pipe@@sub_alpha@ LIST ** @delta@ IS POINTED AT THING
 	
-[meta file_name=102726903-05-01-acc.pdf pdf_page=43 doc_page=41]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=43 doc_page=41 type=code]
 [Page header: "IES 2XMX 025"]
 
 		RSX @sub_S@@sub_pipe@@sub_delta@ LIST+TYPE
@@ -1173,7 +1173,7 @@ DUM1@arr@	@sup_1@STE #+4
 DUM2@arr@	MOVEL@hamb@IWHAT@times@@alpha@@arr@PINS@times@@gamma@
 		@sup_1@DPX @sub_gamma@@sub_pipe@@sub_alpha@ LIST+IWHAT
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=44 doc_page=42]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=44 doc_page=42 type=code]
 [Page header: "IES 2XMX 026"]
 
 DUM3@arr@	@sup_1@RSX @sub_gamma@@sub_pipe@@sub_gamma@ LIST+PATAP+1
@@ -1227,7 +1227,7 @@ DUM8X@arr@	JPQ #
 		RSX @sub_T@@sub_pipe@@sub_alpha@ LIST+IPCV
 		LDAB@hamb@VA@sub_T@
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=45 doc_page=43]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=45 doc_page=43 type=code]
 [Page header: "IES 2XMX 027"]
 
 		RSX @sub_eps@@sub_pipe@@sub_alpha@ LIST+IPCP [epsilon out of context?]
@@ -1282,7 +1282,7 @@ COPYINT@arr@
 COPYIST@arr@
 		@sup_1@STE COPYX
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=46 doc_page=44]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=46 doc_page=44 type=code]
 [Page header: "IES 2XMX 030"]
 
 		MOVE|{ COPYMOVE}@arr@@sup_1@ COPYMOVE-1 [what is this @sup_1@ syntax?]
@@ -1335,7 +1335,7 @@ COPYFIX@arr@
 		RSX @sub_beta@@sub_pipe@@sub_alpha@ LIST+1
 		DEX @sub_beta@ 1	** @beta@=NEW THING
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=47 doc_page=45]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=47 doc_page=45 type=code]
 [Page header: "IES 2XMX 031"]
 
 		RSX @sub_gamma@@sub_pipe@@sub_beta@ LIST+BWHOS
@@ -1389,7 +1389,7 @@ COPYFIXI@arr@
 		JPQ COPYFIXEX-2
 COPIED@arr@	JPQ #	** EXIT FOR UNMAC
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=48 doc_page=46]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=48 doc_page=46 type=code]
 [Page header: "IES 2XMX 032"]
 
 COPYMOVE@arr@
@@ -1443,7 +1443,7 @@ COPYMOVE2A@arr@
 		@sup_1@STE COPYMOVE2AX
 		LTAKE@hamb@VORDE@times@@beta@
 		
-[meta file_name=102726903-05-01-acc.pdf pdf_page=49 doc_page=47]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=49 doc_page=47 type=code]
 [Page header: "IES 2XMX 033"]
 
 		RSX @sub_alpha@ COPYMOVE2
@@ -1496,7 +1496,7 @@ DEL1@arr@	RSX @sub_alpha@ DEADS+SPECB+1
 		JPQ DELETEX ** DONE
 		DEX @sub_alpha@ 1
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=50 doc_page=48]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=50 doc_page=48 type=code]
 [Page header: "IES 2XMX 034"]
 
 		@sup_1@@sup_5@RSX @sub_beta@@sub_pipe@@sub_alpha@ LIST
@@ -1550,7 +1550,7 @@ GARB4A@arr@	SXL @sub_beta@* AFFB
 		JPQ GARB3
 		MOVE|@sup_1@@sup_6@ LIST@sub_beta@@arr@@sup_1@ GARBS [unknown syntax]
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=51 doc_page=49]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=51 doc_page=49 type=code]
 [Page header: "IES 2XMX 035"]
 
 		DPX @sub_alpha@ GARBA
@@ -1603,7 +1603,7 @@ BLOCKMAKER@arr@
 		PUT|TYPE,S@arr@SPECB,@delta@
 		REX @sub_T@@sub_pipe@@sub_delta@
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=52 doc_page=50]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=52 doc_page=50 type=code]
 [Page header: "IES 2XMX 0??"]
 
 		RSX @sub_delta@ CURPICS+SPECB+1
@@ -1656,7 +1656,7 @@ ORDSTART@arr@
 ORDGREXIT@arr@
 		JPQ #
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=53 doc_page=51]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=53 doc_page=51 type=code]
 [Page header: "IES 2XMX 037"]
 
 ORDCURPIC@arr@
@@ -1712,7 +1712,7 @@ ORDC?@arr@	SUB ORDPX
 		LDS @sub_alpha@ LIST+PVAL+1
 		SUB ORDPY
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=54 doc_page=52]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=54 doc_page=52 type=code]
 [Page header: "IES 2XMX 040"]
 
 		SCA {-1.}
@@ -1765,7 +1765,7 @@ ORDGRPP1@arr@
 		JPQ ORDGRPIEXIT*
 		MOVER@hamb@BWHOS@times@@alpha@@arr@PICBLKS@times@@gamma@
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=55 doc_page=53]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=55 doc_page=53 type=code]
 [Page header: "IES 2XMX 041"]
 
 		h@sup_1@JPX @sub_delta@ ORDGRPIEXIT*
@@ -1819,7 +1819,7 @@ ORDCIRC2@arr@
 		MKN @sub_M@@sub_E@@sub_T@@sub_A@@sub_pipe@@sub_alpha@ LIST
 		hJPQ ORDMOVEL
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=56 doc_page=54]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=56 doc_page=54 type=code]
 [Page header: "IES 2XMX 042"]
 
 		@sup_1@@sup_1@RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+LEP
@@ -1873,7 +1873,7 @@ ORDNXTPNT@arr@
 ORDLAST@arr@
 		ORDLAST-ORDSTART+1 	[constant at address]
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=57 doc_page=55]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=57 doc_page=55 type=code]
 [Page header: "IES 2XMX 043"]
 
 		** MERGE POINTS PROGRAM
@@ -1928,7 +1928,7 @@ MGP3@arr@	@sup_1@SKX @sub_alpha@ 1
 		LDA @sub_alpha@ MGPK*
 		SUB @sub_alpha@ MGPVAL+1
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=58 doc_page=56]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=58 doc_page=56 type=code]
 [Page header: "IES 2XMX 044"]
 
 		JPA #+2
@@ -1959,41 +1959,32 @@ CL@arr@		JPQ 200000
 ST@arr@		JPQ 200001
 LAST@arr@	ZZLAST
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=59 doc_page=57]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=59 doc_page=57 type=symex]
 [Page header: "IES OPLW 001"]
-[Page contains no code, beginning of the symex table.]
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=60 doc_page=58]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=60 doc_page=58 type=symex]
 [Page header: "IES OPLW 002"]
-[Page contains no code, continuation of the symex table.]
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=61 doc_page=59]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=61 doc_page=59 type=symex]
 [Page header: "IES OPLW 003"]
-[Page contains no code, last part of the symex table.]
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=62 doc_page=60]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=62 doc_page=60 type=equalities]
 [Page header: "IES OPLW 004"]
-[Page contains no code, beginning of the equalities table.]
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=63 doc_page=61]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=63 doc_page=61 type=equalities]
 [Page header: "IES OPLW 005"]
-[Page contains no code, continuation of the equalities table.]
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=64 doc_page=62]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=64 doc_page=62 type=equalities]
 [Page header: "IES OPLW 006"]
-[Page contains no code, continuation of the equalities table.]
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=65 doc_page=63]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=65 doc_page=63 type=equalities]
 [Page header: "IES OPLW 007"]
-[Page contains no code, continuation of the equalities table.]
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=66 doc_page=64]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=66 doc_page=64 type=equalities]
 [Page header: "IES OPLW 010"]
-[Page contains no code, end of the equalities table.]
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=67 doc_page=65]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=67 doc_page=65 type=macros]
 [Page header: "IES OPLW 012"]
-[Beginning of the macro definition block]
 
 @hand@@hand@ MOVE|A@arr@B
 hLDE A
@@ -2046,9 +2037,8 @@ STA B+(R)-(R)
 LDA P
 SUB Q
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=68 doc_page=66]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=68 doc_page=66 type=macros]
 [Page header: "IES OPLW 013"]
-[Continuation of the macro definition block]
 
 hJOV U+(Q)-(Q)
 hJPQ CACT
@@ -2101,9 +2091,8 @@ STA A
 STB A+B
 STC A+C
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=69 doc_page=67]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=69 doc_page=67 type=macros]
 [Page header: "IES OPLW 014"]
-[Continuation of the macro definition block]
 
 STA A+D
 @hand@@hand@EMD
@@ -2156,9 +2145,8 @@ hJPQ {ERROR1@hamb@@alpha@@arr@P}
 @sup_1@STE #+2
 SKZ ERRORSTOP
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=70 doc_page=68]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=70 doc_page=68 type=macros]
 [Page header: "IES OPLW 015"]
-[Continuation of the macro definition block]
 
 @sup_1@#@sub_alpha@ [another interesting case]
 JPQ P
@@ -2211,9 +2199,8 @@ hJPQ GORREXIT+(GORREXIT/GORREXIT@circled_v@1@times@(LGORREND+1))
 @sup_1@DPX@sub_X@@sub_R@@sub_2@LGORR2
 hJPQ SUBR
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=71 doc_page=69]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=71 doc_page=69 type=macros]
 [Page header: "IES OPLW 016"]
-[Continuation of the macro definition block]
 
 LGORR2@arr@	SKX@sub_X@@sub_R@@sub_2@#	**MODIFIED
 LGORREND@arr@	JPQ LGORR0
@@ -2265,9 +2252,8 @@ SKX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@0
 SUBR1@arr@	JPQ #
 @hand@@hand@EMD
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=72 doc_page=70]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=72 doc_page=70 type=macros]
 [Page header: "IES OPLW 017"]
-[End of the macro definition block]
 
 @hand@@hand@DEF HEADER@hamb@T@arr@N@arr@P
 		T1=P
@@ -2312,9 +2298,8 @@ SUBR1@arr@	JPQ #
 		JPQ #+2
 @hand@@hand@EMD
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=73 doc_page=71]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=73 doc_page=71 type=main]
 [Page header: "IES OPLW 020"]
-[Beginning of main program block]
 
  200067|
 		JPQ STARTS
@@ -2365,9 +2350,8 @@ MM4@arr@	UNIVBH	**CONSTRAINTS
 		42,35,,36,20
 		0
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=74 doc_page=71]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=74 doc_page=71 type=main]
 [Page header: "IES OPLW 021"]
-[Continuation of the main program block]
 
 H1@arr@		SMASBL,4,,MM2-NLIST	**FREES
 		MM2+SPECB+1-NLIST,,SPLATT
@@ -2414,9 +2398,8 @@ H7@arr@		HEADER@hamb@HOLDERS@arr@(42,26,,24,23)
 		SMASBL,4,,HOLDERS-LIST
 		#-NLIST-SMASBL,,#+SMASBL-NLIST
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=75 doc_page=73]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=75 doc_page=73 type=main]
 [Page header: "IES OPLW 022"]
-[Continuation of the main program block]
 
 		-2,0
 		SPLAT
@@ -2462,9 +2445,8 @@ H10@arr@	SMASBL,4,MM2-NLIST
 		-2,
 		SPLAT
 		
-[meta file_name=102726903-05-01-acc.pdf pdf_page=76 doc_page=74]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=76 doc_page=74 type=main]
 [Page header: "IES OPLW 023"]
-[Continuation of the main program block]
 
 		0
 		**PICTURE MASTER
@@ -2514,9 +2496,8 @@ L3@arr@		MASBL,4,,TOPOS-LIST
 		0
 Q3@arr@		DISPLAYK
 		
-[meta file_name=102726903-05-01-acc.pdf pdf_page=77 doc_page=75]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=77 doc_page=75 type=main]
 [Page header: "IES OPLW 024"]
-[Continuation of the main program block]
 
 		0	**TUPLE
 		0	**VARLOC
@@ -2564,9 +2545,8 @@ V3@arr@		MASTER@hamb@VARIABLES@arr@(41,45,,37,43)
 		DEGEN		**HOWBIG
 		0	**GETIT
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=78 doc_page=76]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=78 doc_page=76 type=main]
 [Page header: "IES OPLW 025"]
-[Continuation of the main program block]
 
 		hJMP TRANSFORM 	**MOVIT
 		16,14,,0	**SIZE
@@ -2616,9 +2596,8 @@ V6@arr@		MASBL,4,,VARIABLES-LIST
 		SPLAT
 		(21,34,,44,35)	**NUMB
 		
-[meta file_name=102726903-05-01-acc.pdf pdf_page=79 doc_page=77]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=79 doc_page=77 type=main]
 [Page header: "IES OPLW 026"]
-[End of the main program block]
 
 		hJMP MAGNUM	**DISPLAY
 		hJMP CPINUM	**HOWBIG
@@ -2631,47 +2610,37 @@ Q6@arr@		DISPLAYK
 		NVAL	**VARLOC
  ORIGIN|
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=80 doc_page=78]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=80 doc_page=78 type=symex]
 [Page header: "LMH GX7A 001"]
 [Handwritten: "FULL TEXT", some other random scribbles]
 [Stamped: "SEP 21 1962"]
-[Page contains no code, beginning of the symex table]
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=81 doc_page=79]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=81 doc_page=79 type=symex]
 [Page header: "LMH GX7A 002"]
-[Page contains no code, continuation of the symex table]
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=83 doc_page=81]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=83 doc_page=81 type=symex]
 [Page header: "LMH GX7A 004"]
-[Page contains no code, end of the symex table]
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=84 doc_page=82]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=84 doc_page=82 type=equalities]
 [Page header: "LMH GX7A 005"]
-[Page contains no code, beginning of the equalities table]
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=85 doc_page=83]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=85 doc_page=83 type=equalities]
 [Page header: "LMH GX7A 006"]
-[Page contains no code, continuation of the equalities table]
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=86 doc_page=84]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=86 doc_page=84 type=equalities]
 [Page header: "LMH GX7A 007"]
-[Page contains no code, continuation of the equalities table]
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=87 doc_page=85]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=87 doc_page=85 type=equalities]
 [Page header: "LMH GX7A 010"]
-[Page contains no code, continuation of the equalities table]
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=89 doc_page=87]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=89 doc_page=87 type=equalities]
 [Page header: "LMH GX7A 012"]
-[Page contains no code, continuation of the equalities table]
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=90 doc_page=88]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=90 doc_page=88 type=equalities]
 [Page header: "LMH GX7A 013"]
-[Page contains no code, end of the equalities table]
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=91 doc_page=89]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=91 doc_page=89 type=macros]
 [Page header: "LMH GX7A 014"]
-[Beginning of the macro definition block]
 
 @hand@@hand@DEF LDAE@hamb@A,B,C,D
 LDA A
@@ -2724,9 +2693,8 @@ STA D
 @hand@@hand@DEF STAB@hamb@A
 STA A
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=92 doc_page=90]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=92 doc_page=90 type=macros]
 [Page header: "LMH GX7A 015"]
-[Beginning of the macro definition block]
 
 STB A+1
 @hand@@hand@EMD
@@ -2780,9 +2748,8 @@ STB A+1
 	@sup_2@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
 	@sup_1@@sup_1@RSX@sub_T@@sub_pipe@@sub_S@LIST
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=93 doc_page=91]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=93 doc_page=91 type=macros]
 [Page header: "LMH GX7A 016"]
-[Continuation of the macro definition block]
 
 	@sup_1@EXX @sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
 	@sup_1@DPX@sub_T@@sub_pipe@@sub_S@LIST
@@ -2835,9 +2802,8 @@ STB A+1
 
 @hand@@hand@DEF MOVER@hamb@N@times@XR@arr@M@times@XR2
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=94 doc_page=92]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=94 doc_page=92 type=macros]
 [Page header: "LMH GX7A 017"]
-[Continuation of the macro definition block]
 
 	@sup_1@@sup_2@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1      **TAKE
 	@sup_1@@sup_1@RSX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
@@ -2889,9 +2855,8 @@ LGORR1@arr@     SXD@sub_X@@sub_R@#      ** MODIFIED
 	@sup_1@DPX@sub_X@@sub_R@@sub_2@LGORR2
 	hJPQ SUBR
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=95 doc_page=93]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=95 doc_page=93 type=macros]
 [Page header: "LMH GX7A 020"]
-[Continuation of the macro definition block]
 
 LGORR2@arr@     SKX@sub_X@@sub_R@@sub_2@#       **MODIFIED
 LGORREND@arr@   JPQ LGORR0
@@ -2943,9 +2908,8 @@ LGORLI0@arr@	@sup_1@@sup_6@RSX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST-
 	INX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@0
 LGORLI1@arr@     SXD@sub_X@@sub_R@#      ** MODIFIED
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=96 doc_page=94]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=96 doc_page=94 type=macros]
 [Page header: "LMH GX7A 021"]
-[Continuation of the macro definition block]
 
 	hJPQ GORLIEXIT+(GORLIEXIT/GORLIEXIT@circled_v@1@times@(LGORLIEND+1))
 	@sup_1@DPX@sub_X@@sub_R@@sub_2@LGORLI2
@@ -2993,9 +2957,8 @@ NEWH2@arr@	@sup_1@@sup_1@AUX@sub_X@@sub_R@{(N)+1,,-((N)+1)}
 	@sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_R@LIST+(NN)
 @hand@@hand@EMD
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=97 doc_page=95]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=97 doc_page=95 type=macros]
 [Page header: "LMH GX7A 022"]
-[Continuation of the macro definition block]
 
 @hand@@hand@DEF TYPEN@sup@SC,NUM@times@WD
 	LDC WD
@@ -3049,9 +3012,8 @@ TYPEEXIT@beta@@arr@	JPQ XXX@beta@
 		10	**K FOR FWD OR REV
 		0	**LAST SC SUMCHK,,LAST WR SUMCHK
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=98 doc_page=96]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=98 doc_page=96 type=macros]
 [Page header: "LMH GX7A 023"]
-[Continuation of the macro definition block]
 
 @hand@@hand@EMD
 
@@ -3106,9 +3068,8 @@ FIOAMSG@beta@@arr@	0,744,,343042	**MIS 2.4
 		0,711,,412443	**RET 4.9
 		0,707,,353436	**NMO 4.7
 		
-[meta file_name=102726903-05-01-acc.pdf pdf_page=99 doc_page=97]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=99 doc_page=97 type=macros]
 [Page header: "LMH GX7A 024"]
-[Continuation of the macro definition block]
 
 LIOAMSG@beta@@arr@	0,745,,243020	**EIA 2.5
 		,,753374	**? [actual question mark in the listing]
@@ -3162,9 +3123,8 @@ BMENTRY@beta@@arr@	@sup_2@@sup_2@LDC SCEBME@beta@*		**BME
 XSETK@beta@@arr@	LXSET@beta@@sub_3@@sub_5@ [syntax]
 XSET@beta@@arr@	9.,-1
 		
-[meta file_name=102726903-05-01-acc.pdf pdf_page=100 doc_page=98]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=100 doc_page=98 type=macros]
 [Page header: "LMH GX7A 025"]
-[Continuation of the macro definition block]
 
 		-1
 		-3
@@ -3216,9 +3176,8 @@ TAFSCHK@arr@	h@sup_1@STE TAFST
 		hLDE TAFSPDK
 		hSXD@sub_4@@sub_6@2	**CHK FOR SPD2 EXIT
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=101 doc_page=99]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=101 doc_page=99 type=macros]
 [Page header: "LMH GX7A 026"]
-[Continuation of the macro definition block]
 
 		h@sup_2@LDE E
 		@sup_1@STE TAFIOS
@@ -3270,9 +3229,8 @@ TAF0R@arr@	@sup_1@SKX@sub_3@@sub_4@5	**REV SPD4
 TAF4F@arr@	@sup_3@DPX {TPK@beta@}	**CLR FINE MK
 		hLDE TAFIOS*
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=102 doc_page=100]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=102 doc_page=100 type=macros]
 [Page header: "LMH GX7A 027"]
-[Continuation of the macro definition block]
 
 		@sup_1@STE#+1
 		h@sup_1@IOS@sub_4@@sub_6@XXX	**RD MKS
@@ -3323,9 +3281,8 @@ TAF3F@arr@	@sup_1@IOS@sub_4@@sub_6@XXX	**RD MKS
 		JPQ TAFCON	**CONTINUE
 XCHKSW@arr@	@sup_1@SXD@sub_3@@sub_4@0	**MOD TO @sup_1@SXD@sub_3@@sub_4@1 FOR REV
 		
-[meta file_name=102726903-05-01-acc.pdf pdf_page=103 doc_page=101]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=103 doc_page=101 type=macros]
 [Page header: "LMH GX7A 030"]
-[Continuation of the macro definition block]
 
 		JPQ XCHK
 		JPQ TAFIOSRET	**IGNORE WHAT WAS READ
@@ -3378,9 +3335,8 @@ TAFBL@arr@	0
 TAFSPDK@arr@	TAF2R,,TAF1R
 TAFSTK@arr@	TAFST@sub_3@@sub_4@
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=104 doc_page=102]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=104 doc_page=102 type=macros]
 [Page header: "LMH GX7A 031"]
-[Continuation of the macro definition block]
 
 TAFDKF@arr@	TAPEK1+10,,10
 TAFDKR@arr@	TAPEK1-10,,-10
@@ -3432,9 +3388,8 @@ ERR=ERROR
 
 @hand@@hand@DEF SCR@delta@@sup@X@arr@Y|SELECT,ERROR
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=105 doc_page=103]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=105 doc_page=103 type=macros]
 [Page header: "LMH GX7A 032"]
-[Continuation of the macro definition block]
 
 ERR=ERROR
 		@sup_1@IOS@sub_4@@sub_6@60000+SELECT	**SELECT TAPE
@@ -3487,9 +3442,8 @@ SCADD@arr@	h@sup_4@TSD B	**DUMMY
 		h@sup_1@JNA {ERRLOOP@beta@}*	**SUMCHK ERR
 		h@sup_3@TSD B	**FINE MK
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=106 doc_page=104]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=106 doc_page=104 type=macros]
 [Page header: "LMH GX7A 033"]
-[Continuation of the macro definition block]
 
 		h@sup_1@JPA {TURNOFF@delta@}	**SUMCHK ERR
 		h@sup_1@JPA {ERRLOOP@beta@}*	**SUMCHK ERR
@@ -3542,9 +3496,8 @@ WRELOOP@arr@	@sup_2@@sup_1@STA {TPK@beta@}	**PREDICTED BM
 		h@sup_4@TSD {TPK@beta@}	**COARSE MK
 		@sup_1@IOS@sub_4@@sub_6@30000	**RLF0
 		
-[meta file_name=102726903-05-01-acc.pdf pdf_page=107 doc_page=105]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=107 doc_page=105 type=macros]
 [Page header: "LMH GX7A 034"]
-[Continuation of the macro definition block]
 
 		h@sup_3@TSD {TPK@beta@} **FINE MK
 		@sup_2@SED A	**COMP WITH EXPECTED
@@ -3597,8 +3550,9 @@ WRSPL@arr@	hJPQ {TURNOFF@delta@}
 		hJPQ {ERRLOOP@beta@}+4*
 WRCONT@arr@	h@sup_1@JNX@sub_3@@sub_5@WRLD	**ANY DATA LEFT?
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=108 doc_page=106 type=macro]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=108 doc_page=106 type=macros]
 [Page header: "LMH GX7A 035"]
+
 		@sup_1@@sup_2@LDB {0,,-0}	**0
 		JPQ WRLD+1
 @hand@@hand@EMD
