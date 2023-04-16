@@ -2735,7 +2735,8 @@ STB A+1
 	@sup_1@STE 45DELAYEX
 	@sup_1@DPX@sup_5@@sup_4@45DELAYK
 	RFD@sup_5@@sup_4@#+1
-	@sup_1@IOS@sup_5@@sup_4@30000
+	[Device 54 is "interval timer", see table 7-1 of the handbook.]
+	@sup_1@IOS@sub_5@@sub_4@30000
 	h@sup_1@TSD 45DELAYK
 	@sup_2@@sup_1@IOS@sup_5@@sup_4@30300
 	@sup_1@IOS@sup_5@@sup_4@30000
@@ -3021,6 +3022,7 @@ MTLOOP@beta@@arr@	h@sup_1@DPX@sub_6@@sub_6@TYPEXIT@beta@
 		hDEX@sub_6@@sub_6@2
 		LDA@sub_6@@sub_6@0
 		RFD@sub_6@@sub_6@#+1
+		[Device 66 is "Lincoln writer output no. 1", table 7-1.]
 		@sup_1@IOS@sub_6@@sub_6@30000
 		@sup_3@TSD B
 		@sup_2@@sup_5@INS TYPECNTR@beta@
@@ -3071,6 +3073,7 @@ IOASCH@beta@@arr@	h@sup_2@STE {TPK@beta@}+6	**PGM ADDR
 		JPQ #+3
 IOANOTSCH@beta@@arr@	h@sup_2@STE {TPK@beta@}+6	**PGM ADDR
 		MKZ@sub_4@@sub_dot@@sub_1@@sub_0@IOASCHSW@beta@
+		[Device 46 is "Mag tape bulk storage", table 7-1.]
 		h@sup_1@IOS@sub_4@@sub_6@20000
 		STE {TPK@beta@}+7	**SAVE REPORT
 IOASCHSW@beta@@arr@	SKN@sub_4@@sub_dot@@sub_1@@sub_0@#	**SKIP FOR SCH
@@ -3128,6 +3131,7 @@ SCENTRY@beta@@arr@	@sup_2@@sup_2@SUB {TPK@beta@}+9.	**10 OR 0
 SCEBME@beta@@arr@	@sup_2@@sup_1@LDC {422224,,213424}	**SCE
 ALLERRS@beta@@arr@	@sup_5@DPX@sub_3@@sub_6@{TPK@beta@}+8.	**SAVE ERR TYPE
 		@sup_2@@sup_1@ {TPK@beta@}+5	**BLK NO
+		[Device 41 is "Alarm, in-out", table 7-1.]
 		@sup_1@IOS@sub_4@@sub_1@20000	**DISC IOA SEQ
 NTFNDMSG@beta@@arr@	@sup_1@LDC {354325,,703443}	**MT
 		TYPEL@sup@{60},6@sub_3@@sub_4@ [@sub_3@@sub_4@ propagates to instruction in the macro?]
@@ -3431,5 +3435,219 @@ ERR=ERROR
 [meta file_name=102726903-05-01-acc.pdf pdf_page=105 doc_page=103]
 [Page header: "LMH GX7A 032"]
 [Continuation of the macro definition block]
+
+ERR=ERROR
+		@sup_1@IOS@sub_4@@sub_6@60000+SELECT	**SELECT TAPE
+		RSX@sub_3@@sub_4@X	**HIGH NO.
+		RSX@sub_3@@sub_5@Y	**LOW NO.
+		INX@sub_3@@sub_4@10	**FOR SEARCH
+		h@sup_1@SKX@sub_4@@sub_6@2	**FOR SPD2
+		hJPQ {SEARCH@delta@}	**SEARCH RTNE
+		hJPQ ERR	**ERR ADDR
+		hJPQ {SCR2@delta@}	**SUMCHK RTNE
+		hJPQ ERR	**ERR ADDRESS
+@hand@@hand@EMD
+
+@hand@@hand@DEF SCF2@delta@
+XXX=0
+		@sup_1@STE {TPK@beta@}+2	**SAVE RETURN
+		MKN@sub_1@@sub_dot@@sub_4@{TPK@beta@}+9.	**SET TO 10
+		@sup_2@DPX@sub_3@@sub_4@A	**PREV BLK. NO
+		@sup_2@@sup_2@ADD {-10,,10}	**10@arr@D@sub_3@
+		@sup_2@@sup_2@STA {TPK@beta@}+1	**SAVE LOW NUMBER
+		@sup_2@DPX@sub_3@@sub_5@{TPK@beta@}+1	**SAVE X@sub_3@@sub_5@
+SRCENTRY@arr@	SKX@sub_4@@sub_1@{IOAB}+3	**SET IOA SEQ
+		DEX@sub_3@@sub_5@@sub_pipe@@sub_3@@sub_4@10	**NO BLKS @arr@ X@sub_3@@sub_5@
+		SKX@sub_3@@sub_6@1	**SET X@sub_3@@sub_6@
+		@sup_1@DPX@sub_3@@sub_7@{TPK@beta@}+8.	**SAVE X@sub_3@@sub_7@
+		@sup_1@LDB {30130}	**RMF3
+		SKN@sub_1@@sub_dot@@sub_4@{TPK@beta@}+9.	**CHK FOR SCF OR SCR
+		MKN@sub_1@@sub_dot@@sub_3@B	**CG TO RMR3
+		@sup_1@STB SCRM	**IOS RM
+		@sup_1@STB SCRL	**IOS RL
+		MKZ@sub_1@@sub_dot@@sub_7@SCRL	**CHG TO RL
+SCRM@arr@	@sup_1@IOS@sub_4@@sub_6@XXX	**RM
+		h@sup_6@TSB B	**COARSE MK
+SCRL@arr@	h@sup_1@IOS@sub_4@@sub_6@XXX	**RL
+		hJPQ BMCHK	**CHK FOR BLK MK
+SCRET@arr@	h@sup_3@TSD A	**SUMCHK L.O.
+		SKX@sub_3@@sub_4@177	**DATA CNTR
+		h@sup_4@TSD D	**DATA
+SCDATA@arr@	h@sup_3@TSD D	**DATA
+		@sup_1@ADD D	**TO SUMCHK
+		h@sup_4@TSD D	**DATA
+		h@sup_3@TSD D	**DATA
+		@sup_1@ADD D	**TO SUMCHK
+		h@sup_4@TSD D	**DATA OR SUMCHK
+		h@sup_minus@@sup_1@JPX@sub_3@@sub_4@SCDATA	**MORE DATA?
+		h@sup_3@TSD D	**SUMCHK
+		@sup_2@@sup_0@ADD D	**BM,,SUMCHK
+SCADD@arr@	h@sup_4@TSD B	**DUMMY
+		h@sup_1@JNA {TURNOFF@delta@}	**SUMCHK ERR
+		h@sup_1@JNA {ERRLOOP@beta@}*	**SUMCHK ERR
+		h@sup_3@TSD B	**FINE MK
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=106 doc_page=104]
+[Page header: "LMH GX7A 033"]
+[Continuation of the macro definition block]
+
+		h@sup_1@JPA {TURNOFF@delta@}	**SUMCHK ERR
+		h@sup_1@JPA {ERRLOOP@beta@}*	**SUMCHK ERR
+		h@sup_6@TSD B	**COARSE MK
+BMCHK@arr@	@sup_2@@sup_1@ {TPK@beta@}	**EXPECTED BM
+		@sup_5@TSD B	**FINE MK
+		@sup_2@@sup_2@STB {TPK@beta@}	**BM READ
+		h@sup_4@TSD B	**DUMMY
+		h@sup_2@@sup_1@SED A	**CHK AGAINST EXPECTED
+		hJPQ GOODBM	**CORRECT BM
+BMERR@arr@	hJPQ {TURNOFF@delta@}
+		SKX@sub_3@@sub_6@2
+		hJPQ {ERRLOOP@beta@}*	**TO ERR MSG
+GOODBM@arr@	h@sup_4@TSD A	**SUMCHK H.O.
+		h@sup_minus@@sup_1@@sup_0@JPX@sub_3@@sub_5@SCRET	**DONE?
+		hJPQ {TURNOFF@delta@}
+		@sup_1@IOS@sub_4@@sub_1@20000
+		@sup_2@STD {TPK@beta@}+10.
+		JPQ {ERRLOOP@beta@}+6	**RESET INDICES
+@hand@@hand@EMD
+
+@hand@@hand@DEF SCR2@delta@
+		@sup_1@STE {TPK@beta@}+2	**SAVE RETURN
+		MKZ@sub_1@@sub_dot@@sub_4@{TPK@beta@}+9.	**SET TO 0
+		@sup_1@DPX@sub_3@@sub_5@{TPK@beta@}+1	**SAVE LOW NUMBER
+		SKX@sub_3@@sub_5@@sub_pipe@@sub_3@@sub_4@0	**HIGH ADDR+10@arr@X@sub_3@@sub_5@
+		@sup_1@@sup_1@RSX@sub_3@@sub_4@{TPK@beta@}+1	**LOW ADDR
+		@sup_2@DPX@sub_3@@sub_5@A	**SET A
+		@sup_2@@sup_1@ADD {-10,,10}	**-10@arr@D@sub_3@
+SCRAST@arr@	@sup_2@@sup_1@STA{TPK@beta@}+1	**SAVE HIGH ADDR
+		JPQ {SCF2@delta@}+6	**TO SUMCHK RTNE
+@hand@@hand@EMD
+
+@hand@@hand@DEF WR2@delta@
+XXX=0
+		**DO NOT WRITE BLOCK MARKS
+WRENTRY@arr@	@sup_1@STE {TPK@beta@}+2	**RETURN
+		@sup_2@DPX@sub_3@@sub_5@{TPK@beta@}+1	**X@sub_3@@sub_5@
+		@sup_1@DPX@sub_3@@sub_7@{TPK@beta@}+8	**X@sub_3@@sub_7@
+		@sup_2@DPX@sub_3@@sub_4@A	**PREV BLOCK
+		@sup_2@@sup_2@ADD {-10,,10}	**START BLOCK
+		@sup_2@@sup_2@STA {TPK@beta@}+1	**X@sub_3@@sub_4@
+		@sup_2@@sup_2@STA {TPK@beta@}+3	**LOW END
+		DEX @sub_3@@sub_7@@sub_pipe@@sub_3@@sub_7@	**-(NO OF WDS)@arr@X@sub_3@@sub_5@
+		@sup_1@DPX@sub_3@@sub_7@WRLD	**STARTING CORE ADDR
+		MKZ@sub_4@@sub_dot@@sub_1@@sub_0@WRESW
+		SKX@sub_4@@sub_1@{IOA@beta@}+3
+WRELOOP@arr@	@sup_2@@sup_1@STA {TPK@beta@}	**PREDICTED BM
+		@sup_1@IOS@sub_4@@sub_6@30100	**RMF0
+		h@sup_4@TSD {TPK@beta@}	**COARSE MK
+		@sup_1@IOS@sub_4@@sub_6@30000	**RLF0
+		
+[meta file_name=102726903-05-01-acc.pdf pdf_page=107 doc_page=105]
+[Page header: "LMH GX7A 034"]
+[Continuation of the macro definition block]
+
+		h@sup_3@TSD {TPK@beta@} **FINE MK
+		@sup_2@SED A	**COMP WITH EXPECTED
+		JPQ WRESW
+WRLBM@arr@	hJPQ {TURNOFF@delta@}
+		SKX@sub_3@@sub_6@2
+		hJPQ {ERRLOOP@beta@}*	**ERR LOOP
+WRESW@arr@	SZN@sub_4@abo@sub_1@@sub_0@#
+		JPQ WRSC
+WRMAINLOOP@arr@	@sup_1@IOS@sub_4@@sub_6@30400	**WLF0
+		@sup_1@LDA {0,,-0}	**FOR SUM CHK
+		@sup_3@TSD A	**SUM CHK H.O.
+		@sup_3@TSD A
+		@sup_1@SKX@sub_3@@sub_4@177
+WRLD@arr@	LDB@sub_3@@sub_5@XXX	**WD FROM CORE
+		@sup_6@TSD B	**DATA
+		@sup_5@TSD B	**DATA
+		@sup_2@ADD B	**FOR SUM CHK
+		@sup_4@TSD B	**DATA
+		@sup_3@TSD B	**DATA
+		@sup_1@ADD B	**FOR SUM CHK
+		h@sup_1@JNX@sub_3@@sub_4@WRCONT	**END OF BLOCK
+		@sup_1@COM A
+		@sup_1@@sup_1@RSX@sub_3@@sub_4@A
+		@sup_1@ADX@sub_3@@sub_4@45WA	**CONTINUOUS SUMCHK
+		@sup_4@TSD A	**SUM CHK H.O.
+		@sup_2@@sup_2@ADD {-10,,10}	**NXT BM NO
+		@sup_3@TSD A	**SUM CHK L.O.
+		@sup_1@IOS@sub_4@@sub_6@30000	**RLF0
+		@sup_2@@sup_1@STA {TPK@beta@}	**BM PREDICTED
+		@sup_2@@sup_2@STA {TPK@beta@}	**BM TO BE READ
+		h@sup_3@TSD E	**DUMMY
+		h@sup_3@TSD E	**FINE MK
+		h@sup_4@TSD E	**COARSE MK
+		h@sup_1@IOS@sub_4@@sub_6@0	**REPORT
+		SKU@sub_4@@sub_dot@@sub_4@E	**BM PASSED?
+		hJPQ WRSPL	**ERROR
+		h@sup_3@TSD E	**FINE MARK
+		h@sup_1@JNX@sub_3@@sub_5@WRMAINLOOP	**NO WORDS LEFT?
+		@sup_2@@sup_1@{TPK@beta@}+3	**LAST BM WRITTEN
+		@sup_2@@sup_2@ADD {-10,,10}
+		JPQ WRELOOP
+WRSC@arr@	hJPQ {TURNOFF@delta@}
+		@sup_1@IOS@sub_4@@sub_1@20000
+		@sup_1@STA {TPK@beta@}+10.	**SAVE LAST SUM CHK
+		JPQ {ERRLOOP@beta@}+6	**NORMAL EXIT
+WRSPL@arr@	hJPQ {TURNOFF@delta@}
+		SKX@sub_3@@sub_6@2
+		@sup_2@@sup_2@LDC {223437,,423733}	**SPL
+		hJPQ {ERRLOOP@beta@}+4*
+WRCONT@arr@	h@sup_1@JNX@sub_3@@sub_5@WRLD	**ANY DATA LEFT?
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=108 doc_page=106 type=macro]
+[Page header: "LMH GX7A 035"]
+		@sup_1@@sup_2@LDB {0,,-0}	**0
+		JPQ WRLD+1
+@hand@@hand@EMD
+
+@hand@@hand@DEF WR@delta@@sup@X@arr@Y@hand@BLOCK|SELECT,ERROR
+ERRS=ERROR
+		@sup_1@IOS@sub_4@@sub_6@60000+SELECT	**SELECT TAPE
+		RSX@sub_3@@sub_4@BLOCK	**TP BLK
+		RSX@sub_3@@sub_5@X	**CORE LOW ADDR
+		RSX@sub_3@@sub_7@Y	**CORE HIGH ADDR
+		DEX@sub_3@@sub_4@310	**31 BLKS PREV
+		hJNX@sub_3@@sub_4@#+3
+		hJPQ {SEARCH@delta@}
+		hJPQ #+1
+		INX@sub_3@@sub_4@300	**PREV BLOCK
+		hJPQ {SEARCH@delta@}	**SEARCH RTNE
+		hJPQ ERRS	**ERROR ADDRESS
+		hJPQ {WR2@delta@}	**WR RTNE
+		hJPQ ERRS	**ERR ADDR
+		SCR@delta@@sup@@sup_1@@sup_2@{TPK@beta@}@arr@@sup_1@@sup_1@{TPK@beta@}+3,ERRS
+		SCF@delta@@sup@@sup_1@@sup_1@{TPK@beta@}+3@arr@@sup_1@@sup_2@{TPK@beta@},ERRS
+		hJPQ {SUMCHKCMP}
+		hJPQ ERRS
+@hand@@hand@EMD
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=109 doc_page=107 type=main]
+[Page header: "LMH GX7A 036"]
+
+ 200014|
+		hJMP TEXTMAG	**TEXT
+I15@arr@	hJMP LETMAG	**LETTERS
+		hJMP NUMMAG	**NUMBERS
+ 200076|
+		JPQ STARTS
+		hJMP TEXTCNG
+ 200120|
+RIBM@arr@	hJMP 45SR
+RIBMN@arr@	hJMP 45SRN
+WIBM@arr@	hJMP 45SW
+WIBMN@arr@	hJMP 45SWN
+RGARB@arr@	hJMP 45GARB
+45CURRENT@arr@
+		0
+RDTX2@arr@	hJMP TX2RD
+WRTX2@arr@	hJMP TX2WR
+ ORIGIN|
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=110 doc_page=108 type=code]
+[Page header: "LMH GX7A 001"]
+[This page header was seen before, see pdf_page 80. Significance is not clear.]
 
 

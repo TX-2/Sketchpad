@@ -2736,7 +2736,8 @@ STB A+1
 	<sup>1</sup>STE 45DELAYEX
 	<sup>1</sup>DPX<sup>5</sup><sup>4</sup>45DELAYK
 	RFD<sup>5</sup><sup>4</sup>#+1
-	<sup>1</sup>IOS<sup>5</sup><sup>4</sup>30000
+	[Device 54 is "interval timer", see table 7-1 of the handbook.]
+	<sup>1</sup>IOS<sub>5</sub><sub>4</sub>30000
 	h<sup>1</sup>TSD 45DELAYK
 	<sup>2</sup><sup>1</sup>IOS<sup>5</sup><sup>4</sup>30300
 	<sup>1</sup>IOS<sup>5</sup><sup>4</sup>30000
@@ -3022,6 +3023,7 @@ MTLOOP&beta;&rarr;	h<sup>1</sup>DPX<sub>6</sub><sub>6</sub>TYPEXIT&beta;
 		hDEX<sub>6</sub><sub>6</sub>2
 		LDA<sub>6</sub><sub>6</sub>0
 		RFD<sub>6</sub><sub>6</sub>#+1
+		[Device 66 is "Lincoln writer output no. 1", table 7-1.]
 		<sup>1</sup>IOS<sub>6</sub><sub>6</sub>30000
 		<sup>3</sup>TSD B
 		<sup>2</sup><sup>5</sup>INS TYPECNTR&beta;
@@ -3072,6 +3074,7 @@ IOASCH&beta;&rarr;	h<sup>2</sup>STE {TPK&beta;}+6	**PGM ADDR
 		JPQ #+3
 IOANOTSCH&beta;&rarr;	h<sup>2</sup>STE {TPK&beta;}+6	**PGM ADDR
 		MKZ<sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub>IOASCHSW&beta;
+		[Device 46 is "Mag tape bulk storage", table 7-1.]
 		h<sup>1</sup>IOS<sub>4</sub><sub>6</sub>20000
 		STE {TPK&beta;}+7	**SAVE REPORT
 IOASCHSW&beta;&rarr;	SKN<sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub>#	**SKIP FOR SCH
@@ -3129,6 +3132,7 @@ SCENTRY&beta;&rarr;	<sup>2</sup><sup>2</sup>SUB {TPK&beta;}+9.	**10 OR 0
 SCEBME&beta;&rarr;	<sup>2</sup><sup>1</sup>LDC {422224,,213424}	**SCE
 ALLERRS&beta;&rarr;	<sup>5</sup>DPX<sub>3</sub><sub>6</sub>{TPK&beta;}+8.	**SAVE ERR TYPE
 		<sup>2</sup><sup>1</sup> {TPK&beta;}+5	**BLK NO
+		[Device 41 is "Alarm, in-out", table 7-1.]
 		<sup>1</sup>IOS<sub>4</sub><sub>1</sub>20000	**DISC IOA SEQ
 NTFNDMSG&beta;&rarr;	<sup>1</sup>LDC {354325,,703443}	**MT
 		TYPEL&sup;{60},6<sub>3</sub><sub>4</sub> [<sub>3</sub><sub>4</sub> propagates to instruction in the macro?]
@@ -3432,6 +3436,220 @@ ERR=ERROR
 <hr>
 [Page header: "LMH GX7A 032"]
 [Continuation of the macro definition block]
+
+ERR=ERROR
+		<sup>1</sup>IOS<sub>4</sub><sub>6</sub>60000+SELECT	**SELECT TAPE
+		RSX<sub>3</sub><sub>4</sub>X	**HIGH NO.
+		RSX<sub>3</sub><sub>5</sub>Y	**LOW NO.
+		INX<sub>3</sub><sub>4</sub>10	**FOR SEARCH
+		h<sup>1</sup>SKX<sub>4</sub><sub>6</sub>2	**FOR SPD2
+		hJPQ {SEARCH&Delta;}	**SEARCH RTNE
+		hJPQ ERR	**ERR ADDR
+		hJPQ {SCR2&Delta;}	**SUMCHK RTNE
+		hJPQ ERR	**ERR ADDRESS
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF SCF2&Delta;
+XXX=0
+		<sup>1</sup>STE {TPK&beta;}+2	**SAVE RETURN
+		MKN<sub>1</sub><sub>.</sub><sub>4</sub>{TPK&beta;}+9.	**SET TO 10
+		<sup>2</sup>DPX<sub>3</sub><sub>4</sub>A	**PREV BLK. NO
+		<sup>2</sup><sup>2</sup>ADD {-10,,10}	**10&rarr;D<sub>3</sub>
+		<sup>2</sup><sup>2</sup>STA {TPK&beta;}+1	**SAVE LOW NUMBER
+		<sup>2</sup>DPX<sub>3</sub><sub>5</sub>{TPK&beta;}+1	**SAVE X<sub>3</sub><sub>5</sub>
+SRCENTRY&rarr;	SKX<sub>4</sub><sub>1</sub>{IOAB}+3	**SET IOA SEQ
+		DEX<sub>3</sub><sub>5</sub><sub>|</sub><sub>3</sub><sub>4</sub>10	**NO BLKS &rarr; X<sub>3</sub><sub>5</sub>
+		SKX<sub>3</sub><sub>6</sub>1	**SET X<sub>3</sub><sub>6</sub>
+		<sup>1</sup>DPX<sub>3</sub><sub>7</sub>{TPK&beta;}+8.	**SAVE X<sub>3</sub><sub>7</sub>
+		<sup>1</sup>LDB {30130}	**RMF3
+		SKN<sub>1</sub><sub>.</sub><sub>4</sub>{TPK&beta;}+9.	**CHK FOR SCF OR SCR
+		MKN<sub>1</sub><sub>.</sub><sub>3</sub>B	**CG TO RMR3
+		<sup>1</sup>STB SCRM	**IOS RM
+		<sup>1</sup>STB SCRL	**IOS RL
+		MKZ<sub>1</sub><sub>.</sub><sub>7</sub>SCRL	**CHG TO RL
+SCRM&rarr;	<sup>1</sup>IOS<sub>4</sub><sub>6</sub>XXX	**RM
+		h<sup>6</sup>TSB B	**COARSE MK
+SCRL&rarr;	h<sup>1</sup>IOS<sub>4</sub><sub>6</sub>XXX	**RL
+		hJPQ BMCHK	**CHK FOR BLK MK
+SCRET&rarr;	h<sup>3</sup>TSD A	**SUMCHK L.O.
+		SKX<sub>3</sub><sub>4</sub>177	**DATA CNTR
+		h<sup>4</sup>TSD D	**DATA
+SCDATA&rarr;	h<sup>3</sup>TSD D	**DATA
+		<sup>1</sup>ADD D	**TO SUMCHK
+		h<sup>4</sup>TSD D	**DATA
+		h<sup>3</sup>TSD D	**DATA
+		<sup>1</sup>ADD D	**TO SUMCHK
+		h<sup>4</sup>TSD D	**DATA OR SUMCHK
+		h<sup>-</sup><sup>1</sup>JPX<sub>3</sub><sub>4</sub>SCDATA	**MORE DATA?
+		h<sup>3</sup>TSD D	**SUMCHK
+		<sup>2</sup><sup>0</sup>ADD D	**BM,,SUMCHK
+SCADD&rarr;	h<sup>4</sup>TSD B	**DUMMY
+		h<sup>1</sup>JNA {TURNOFF&Delta;}	**SUMCHK ERR
+		h<sup>1</sup>JNA {ERRLOOP&beta;}*	**SUMCHK ERR
+		h<sup>3</sup>TSD B	**FINE MK
+
+<hr>
+[Page header: "LMH GX7A 033"]
+[Continuation of the macro definition block]
+
+		h<sup>1</sup>JPA {TURNOFF&Delta;}	**SUMCHK ERR
+		h<sup>1</sup>JPA {ERRLOOP&beta;}*	**SUMCHK ERR
+		h<sup>6</sup>TSD B	**COARSE MK
+BMCHK&rarr;	<sup>2</sup><sup>1</sup> {TPK&beta;}	**EXPECTED BM
+		<sup>5</sup>TSD B	**FINE MK
+		<sup>2</sup><sup>2</sup>STB {TPK&beta;}	**BM READ
+		h<sup>4</sup>TSD B	**DUMMY
+		h<sup>2</sup><sup>1</sup>SED A	**CHK AGAINST EXPECTED
+		hJPQ GOODBM	**CORRECT BM
+BMERR&rarr;	hJPQ {TURNOFF&Delta;}
+		SKX<sub>3</sub><sub>6</sub>2
+		hJPQ {ERRLOOP&beta;}*	**TO ERR MSG
+GOODBM&rarr;	h<sup>4</sup>TSD A	**SUMCHK H.O.
+		h<sup>-</sup><sup>1</sup><sup>0</sup>JPX<sub>3</sub><sub>5</sub>SCRET	**DONE?
+		hJPQ {TURNOFF&Delta;}
+		<sup>1</sup>IOS<sub>4</sub><sub>1</sub>20000
+		<sup>2</sup>STD {TPK&beta;}+10.
+		JPQ {ERRLOOP&beta;}+6	**RESET INDICES
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF SCR2&Delta;
+		<sup>1</sup>STE {TPK&beta;}+2	**SAVE RETURN
+		MKZ<sub>1</sub><sub>.</sub><sub>4</sub>{TPK&beta;}+9.	**SET TO 0
+		<sup>1</sup>DPX<sub>3</sub><sub>5</sub>{TPK&beta;}+1	**SAVE LOW NUMBER
+		SKX<sub>3</sub><sub>5</sub><sub>|</sub><sub>3</sub><sub>4</sub>0	**HIGH ADDR+10&rarr;X<sub>3</sub><sub>5</sub>
+		<sup>1</sup><sup>1</sup>RSX<sub>3</sub><sub>4</sub>{TPK&beta;}+1	**LOW ADDR
+		<sup>2</sup>DPX<sub>3</sub><sub>5</sub>A	**SET A
+		<sup>2</sup><sup>1</sup>ADD {-10,,10}	**-10&rarr;D<sub>3</sub>
+SCRAST&rarr;	<sup>2</sup><sup>1</sup>STA{TPK&beta;}+1	**SAVE HIGH ADDR
+		JPQ {SCF2&Delta;}+6	**TO SUMCHK RTNE
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF WR2&Delta;
+XXX=0
+		**DO NOT WRITE BLOCK MARKS
+WRENTRY&rarr;	<sup>1</sup>STE {TPK&beta;}+2	**RETURN
+		<sup>2</sup>DPX<sub>3</sub><sub>5</sub>{TPK&beta;}+1	**X<sub>3</sub><sub>5</sub>
+		<sup>1</sup>DPX<sub>3</sub><sub>7</sub>{TPK&beta;}+8	**X<sub>3</sub><sub>7</sub>
+		<sup>2</sup>DPX<sub>3</sub><sub>4</sub>A	**PREV BLOCK
+		<sup>2</sup><sup>2</sup>ADD {-10,,10}	**START BLOCK
+		<sup>2</sup><sup>2</sup>STA {TPK&beta;}+1	**X<sub>3</sub><sub>4</sub>
+		<sup>2</sup><sup>2</sup>STA {TPK&beta;}+3	**LOW END
+		DEX <sub>3</sub><sub>7</sub><sub>|</sub><sub>3</sub><sub>7</sub>	**-(NO OF WDS)&rarr;X<sub>3</sub><sub>5</sub>
+		<sup>1</sup>DPX<sub>3</sub><sub>7</sub>WRLD	**STARTING CORE ADDR
+		MKZ<sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub>WRESW
+		SKX<sub>4</sub><sub>1</sub>{IOA&beta;}+3
+WRELOOP&rarr;	<sup>2</sup><sup>1</sup>STA {TPK&beta;}	**PREDICTED BM
+		<sup>1</sup>IOS<sub>4</sub><sub>6</sub>30100	**RMF0
+		h<sup>4</sup>TSD {TPK&beta;}	**COARSE MK
+		<sup>1</sup>IOS<sub>4</sub><sub>6</sub>30000	**RLF0
+
+<hr>
+[Page header: "LMH GX7A 034"]
+[Continuation of the macro definition block]
+
+		h<sup>3</sup>TSD {TPK&beta;} **FINE MK
+		<sup>2</sup>SED A	**COMP WITH EXPECTED
+		JPQ WRESW
+WRLBM&rarr;	hJPQ {TURNOFF&Delta;}
+		SKX<sub>3</sub><sub>6</sub>2
+		hJPQ {ERRLOOP&beta;}*	**ERR LOOP
+WRESW&rarr;	SZN<sub>4</sub>abo<sub>1</sub><sub>0</sub>#
+		JPQ WRSC
+WRMAINLOOP&rarr;	<sup>1</sup>IOS<sub>4</sub><sub>6</sub>30400	**WLF0
+		<sup>1</sup>LDA {0,,-0}	**FOR SUM CHK
+		<sup>3</sup>TSD A	**SUM CHK H.O.
+		<sup>3</sup>TSD A
+		<sup>1</sup>SKX<sub>3</sub><sub>4</sub>177
+WRLD&rarr;	LDB<sub>3</sub><sub>5</sub>XXX	**WD FROM CORE
+		<sup>6</sup>TSD B	**DATA
+		<sup>5</sup>TSD B	**DATA
+		<sup>2</sup>ADD B	**FOR SUM CHK
+		<sup>4</sup>TSD B	**DATA
+		<sup>3</sup>TSD B	**DATA
+		<sup>1</sup>ADD B	**FOR SUM CHK
+		h<sup>1</sup>JNX<sub>3</sub><sub>4</sub>WRCONT	**END OF BLOCK
+		<sup>1</sup>COM A
+		<sup>1</sup><sup>1</sup>RSX<sub>3</sub><sub>4</sub>A
+		<sup>1</sup>ADX<sub>3</sub><sub>4</sub>45WA	**CONTINUOUS SUMCHK
+		<sup>4</sup>TSD A	**SUM CHK H.O.
+		<sup>2</sup><sup>2</sup>ADD {-10,,10}	**NXT BM NO
+		<sup>3</sup>TSD A	**SUM CHK L.O.
+		<sup>1</sup>IOS<sub>4</sub><sub>6</sub>30000	**RLF0
+		<sup>2</sup><sup>1</sup>STA {TPK&beta;}	**BM PREDICTED
+		<sup>2</sup><sup>2</sup>STA {TPK&beta;}	**BM TO BE READ
+		h<sup>3</sup>TSD E	**DUMMY
+		h<sup>3</sup>TSD E	**FINE MK
+		h<sup>4</sup>TSD E	**COARSE MK
+		h<sup>1</sup>IOS<sub>4</sub><sub>6</sub>0	**REPORT
+		SKU<sub>4</sub><sub>.</sub><sub>4</sub>E	**BM PASSED?
+		hJPQ WRSPL	**ERROR
+		h<sup>3</sup>TSD E	**FINE MARK
+		h<sup>1</sup>JNX<sub>3</sub><sub>5</sub>WRMAINLOOP	**NO WORDS LEFT?
+		<sup>2</sup><sup>1</sup>{TPK&beta;}+3	**LAST BM WRITTEN
+		<sup>2</sup><sup>2</sup>ADD {-10,,10}
+		JPQ WRELOOP
+WRSC&rarr;	hJPQ {TURNOFF&Delta;}
+		<sup>1</sup>IOS<sub>4</sub><sub>1</sub>20000
+		<sup>1</sup>STA {TPK&beta;}+10.	**SAVE LAST SUM CHK
+		JPQ {ERRLOOP&beta;}+6	**NORMAL EXIT
+WRSPL&rarr;	hJPQ {TURNOFF&Delta;}
+		SKX<sub>3</sub><sub>6</sub>2
+		<sup>2</sup><sup>2</sup>LDC {223437,,423733}	**SPL
+		hJPQ {ERRLOOP&beta;}+4*
+WRCONT&rarr;	h<sup>1</sup>JNX<sub>3</sub><sub>5</sub>WRLD	**ANY DATA LEFT?
+
+<hr>
+[Page header: "LMH GX7A 035"]
+		<sup>1</sup><sup>2</sup>LDB {0,,-0}	**0
+		JPQ WRLD+1
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF WR&Delta;&sup;X&rarr;Y&#9755;BLOCK|SELECT,ERROR
+ERRS=ERROR
+		<sup>1</sup>IOS<sub>4</sub><sub>6</sub>60000+SELECT	**SELECT TAPE
+		RSX<sub>3</sub><sub>4</sub>BLOCK	**TP BLK
+		RSX<sub>3</sub><sub>5</sub>X	**CORE LOW ADDR
+		RSX<sub>3</sub><sub>7</sub>Y	**CORE HIGH ADDR
+		DEX<sub>3</sub><sub>4</sub>310	**31 BLKS PREV
+		hJNX<sub>3</sub><sub>4</sub>#+3
+		hJPQ {SEARCH&Delta;}
+		hJPQ #+1
+		INX<sub>3</sub><sub>4</sub>300	**PREV BLOCK
+		hJPQ {SEARCH&Delta;}	**SEARCH RTNE
+		hJPQ ERRS	**ERROR ADDRESS
+		hJPQ {WR2&Delta;}	**WR RTNE
+		hJPQ ERRS	**ERR ADDR
+		SCR&Delta;&sup;<sup>1</sup><sup>2</sup>{TPK&beta;}&rarr;<sup>1</sup><sup>1</sup>{TPK&beta;}+3,ERRS
+		SCF&Delta;&sup;<sup>1</sup><sup>1</sup>{TPK&beta;}+3&rarr;<sup>1</sup><sup>2</sup>{TPK&beta;},ERRS
+		hJPQ {SUMCHKCMP}
+		hJPQ ERRS
+&#9755;&#9755;EMD
+
+<hr>
+[Page header: "LMH GX7A 036"]
+
+ 200014|
+		hJMP TEXTMAG	**TEXT
+I15&rarr;	hJMP LETMAG	**LETTERS
+		hJMP NUMMAG	**NUMBERS
+ 200076|
+		JPQ STARTS
+		hJMP TEXTCNG
+ 200120|
+RIBM&rarr;	hJMP 45SR
+RIBMN&rarr;	hJMP 45SRN
+WIBM&rarr;	hJMP 45SW
+WIBMN&rarr;	hJMP 45SWN
+RGARB&rarr;	hJMP 45GARB
+45CURRENT&rarr;
+		0
+RDTX2&rarr;	hJMP TX2RD
+WRTX2&rarr;	hJMP TX2WR
+ ORIGIN|
+
+<hr>
+[Page header: "LMH GX7A 001"]
+[This page header was seen before, see pdf_page 80. Significance is not clear.]
 
 
 </code></pre></body></html>
@@ -6173,7 +6391,8 @@ STB A+1
 	<sup>1</sup>STE 45DELAYEX
 	<sup>1</sup>DPX<sup>5</sup><sup>4</sup>45DELAYK
 	RFD<sup>5</sup><sup>4</sup>#+1
-	<sup>1</sup>IOS<sup>5</sup><sup>4</sup>30000
+	[Device 54 is "interval timer", see table 7-1 of the handbook.]
+	<sup>1</sup>IOS<sub>5</sub><sub>4</sub>30000
 	h<sup>1</sup>TSD 45DELAYK
 	<sup>2</sup><sup>1</sup>IOS<sup>5</sup><sup>4</sup>30300
 	<sup>1</sup>IOS<sup>5</sup><sup>4</sup>30000
@@ -6459,6 +6678,7 @@ MTLOOP&beta;&rarr;	h<sup>1</sup>DPX<sub>6</sub><sub>6</sub>TYPEXIT&beta;
 		hDEX<sub>6</sub><sub>6</sub>2
 		LDA<sub>6</sub><sub>6</sub>0
 		RFD<sub>6</sub><sub>6</sub>#+1
+		[Device 66 is "Lincoln writer output no. 1", table 7-1.]
 		<sup>1</sup>IOS<sub>6</sub><sub>6</sub>30000
 		<sup>3</sup>TSD B
 		<sup>2</sup><sup>5</sup>INS TYPECNTR&beta;
@@ -6509,6 +6729,7 @@ IOASCH&beta;&rarr;	h<sup>2</sup>STE {TPK&beta;}+6	**PGM ADDR
 		JPQ #+3
 IOANOTSCH&beta;&rarr;	h<sup>2</sup>STE {TPK&beta;}+6	**PGM ADDR
 		MKZ<sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub>IOASCHSW&beta;
+		[Device 46 is "Mag tape bulk storage", table 7-1.]
 		h<sup>1</sup>IOS<sub>4</sub><sub>6</sub>20000
 		STE {TPK&beta;}+7	**SAVE REPORT
 IOASCHSW&beta;&rarr;	SKN<sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub>#	**SKIP FOR SCH
@@ -6566,6 +6787,7 @@ SCENTRY&beta;&rarr;	<sup>2</sup><sup>2</sup>SUB {TPK&beta;}+9.	**10 OR 0
 SCEBME&beta;&rarr;	<sup>2</sup><sup>1</sup>LDC {422224,,213424}	**SCE
 ALLERRS&beta;&rarr;	<sup>5</sup>DPX<sub>3</sub><sub>6</sub>{TPK&beta;}+8.	**SAVE ERR TYPE
 		<sup>2</sup><sup>1</sup> {TPK&beta;}+5	**BLK NO
+		[Device 41 is "Alarm, in-out", table 7-1.]
 		<sup>1</sup>IOS<sub>4</sub><sub>1</sub>20000	**DISC IOA SEQ
 NTFNDMSG&beta;&rarr;	<sup>1</sup>LDC {354325,,703443}	**MT
 		TYPEL&sup;{60},6<sub>3</sub><sub>4</sub> [<sub>3</sub><sub>4</sub> propagates to instruction in the macro?]
@@ -6869,6 +7091,220 @@ ERR=ERROR
 <hr>
 [Page header: "LMH GX7A 032"]
 [Continuation of the macro definition block]
+
+ERR=ERROR
+		<sup>1</sup>IOS<sub>4</sub><sub>6</sub>60000+SELECT	**SELECT TAPE
+		RSX<sub>3</sub><sub>4</sub>X	**HIGH NO.
+		RSX<sub>3</sub><sub>5</sub>Y	**LOW NO.
+		INX<sub>3</sub><sub>4</sub>10	**FOR SEARCH
+		h<sup>1</sup>SKX<sub>4</sub><sub>6</sub>2	**FOR SPD2
+		hJPQ {SEARCH&Delta;}	**SEARCH RTNE
+		hJPQ ERR	**ERR ADDR
+		hJPQ {SCR2&Delta;}	**SUMCHK RTNE
+		hJPQ ERR	**ERR ADDRESS
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF SCF2&Delta;
+XXX=0
+		<sup>1</sup>STE {TPK&beta;}+2	**SAVE RETURN
+		MKN<sub>1</sub><sub>.</sub><sub>4</sub>{TPK&beta;}+9.	**SET TO 10
+		<sup>2</sup>DPX<sub>3</sub><sub>4</sub>A	**PREV BLK. NO
+		<sup>2</sup><sup>2</sup>ADD {-10,,10}	**10&rarr;D<sub>3</sub>
+		<sup>2</sup><sup>2</sup>STA {TPK&beta;}+1	**SAVE LOW NUMBER
+		<sup>2</sup>DPX<sub>3</sub><sub>5</sub>{TPK&beta;}+1	**SAVE X<sub>3</sub><sub>5</sub>
+SRCENTRY&rarr;	SKX<sub>4</sub><sub>1</sub>{IOAB}+3	**SET IOA SEQ
+		DEX<sub>3</sub><sub>5</sub><sub>|</sub><sub>3</sub><sub>4</sub>10	**NO BLKS &rarr; X<sub>3</sub><sub>5</sub>
+		SKX<sub>3</sub><sub>6</sub>1	**SET X<sub>3</sub><sub>6</sub>
+		<sup>1</sup>DPX<sub>3</sub><sub>7</sub>{TPK&beta;}+8.	**SAVE X<sub>3</sub><sub>7</sub>
+		<sup>1</sup>LDB {30130}	**RMF3
+		SKN<sub>1</sub><sub>.</sub><sub>4</sub>{TPK&beta;}+9.	**CHK FOR SCF OR SCR
+		MKN<sub>1</sub><sub>.</sub><sub>3</sub>B	**CG TO RMR3
+		<sup>1</sup>STB SCRM	**IOS RM
+		<sup>1</sup>STB SCRL	**IOS RL
+		MKZ<sub>1</sub><sub>.</sub><sub>7</sub>SCRL	**CHG TO RL
+SCRM&rarr;	<sup>1</sup>IOS<sub>4</sub><sub>6</sub>XXX	**RM
+		h<sup>6</sup>TSB B	**COARSE MK
+SCRL&rarr;	h<sup>1</sup>IOS<sub>4</sub><sub>6</sub>XXX	**RL
+		hJPQ BMCHK	**CHK FOR BLK MK
+SCRET&rarr;	h<sup>3</sup>TSD A	**SUMCHK L.O.
+		SKX<sub>3</sub><sub>4</sub>177	**DATA CNTR
+		h<sup>4</sup>TSD D	**DATA
+SCDATA&rarr;	h<sup>3</sup>TSD D	**DATA
+		<sup>1</sup>ADD D	**TO SUMCHK
+		h<sup>4</sup>TSD D	**DATA
+		h<sup>3</sup>TSD D	**DATA
+		<sup>1</sup>ADD D	**TO SUMCHK
+		h<sup>4</sup>TSD D	**DATA OR SUMCHK
+		h<sup>-</sup><sup>1</sup>JPX<sub>3</sub><sub>4</sub>SCDATA	**MORE DATA?
+		h<sup>3</sup>TSD D	**SUMCHK
+		<sup>2</sup><sup>0</sup>ADD D	**BM,,SUMCHK
+SCADD&rarr;	h<sup>4</sup>TSD B	**DUMMY
+		h<sup>1</sup>JNA {TURNOFF&Delta;}	**SUMCHK ERR
+		h<sup>1</sup>JNA {ERRLOOP&beta;}*	**SUMCHK ERR
+		h<sup>3</sup>TSD B	**FINE MK
+
+<hr>
+[Page header: "LMH GX7A 033"]
+[Continuation of the macro definition block]
+
+		h<sup>1</sup>JPA {TURNOFF&Delta;}	**SUMCHK ERR
+		h<sup>1</sup>JPA {ERRLOOP&beta;}*	**SUMCHK ERR
+		h<sup>6</sup>TSD B	**COARSE MK
+BMCHK&rarr;	<sup>2</sup><sup>1</sup> {TPK&beta;}	**EXPECTED BM
+		<sup>5</sup>TSD B	**FINE MK
+		<sup>2</sup><sup>2</sup>STB {TPK&beta;}	**BM READ
+		h<sup>4</sup>TSD B	**DUMMY
+		h<sup>2</sup><sup>1</sup>SED A	**CHK AGAINST EXPECTED
+		hJPQ GOODBM	**CORRECT BM
+BMERR&rarr;	hJPQ {TURNOFF&Delta;}
+		SKX<sub>3</sub><sub>6</sub>2
+		hJPQ {ERRLOOP&beta;}*	**TO ERR MSG
+GOODBM&rarr;	h<sup>4</sup>TSD A	**SUMCHK H.O.
+		h<sup>-</sup><sup>1</sup><sup>0</sup>JPX<sub>3</sub><sub>5</sub>SCRET	**DONE?
+		hJPQ {TURNOFF&Delta;}
+		<sup>1</sup>IOS<sub>4</sub><sub>1</sub>20000
+		<sup>2</sup>STD {TPK&beta;}+10.
+		JPQ {ERRLOOP&beta;}+6	**RESET INDICES
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF SCR2&Delta;
+		<sup>1</sup>STE {TPK&beta;}+2	**SAVE RETURN
+		MKZ<sub>1</sub><sub>.</sub><sub>4</sub>{TPK&beta;}+9.	**SET TO 0
+		<sup>1</sup>DPX<sub>3</sub><sub>5</sub>{TPK&beta;}+1	**SAVE LOW NUMBER
+		SKX<sub>3</sub><sub>5</sub><sub>|</sub><sub>3</sub><sub>4</sub>0	**HIGH ADDR+10&rarr;X<sub>3</sub><sub>5</sub>
+		<sup>1</sup><sup>1</sup>RSX<sub>3</sub><sub>4</sub>{TPK&beta;}+1	**LOW ADDR
+		<sup>2</sup>DPX<sub>3</sub><sub>5</sub>A	**SET A
+		<sup>2</sup><sup>1</sup>ADD {-10,,10}	**-10&rarr;D<sub>3</sub>
+SCRAST&rarr;	<sup>2</sup><sup>1</sup>STA{TPK&beta;}+1	**SAVE HIGH ADDR
+		JPQ {SCF2&Delta;}+6	**TO SUMCHK RTNE
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF WR2&Delta;
+XXX=0
+		**DO NOT WRITE BLOCK MARKS
+WRENTRY&rarr;	<sup>1</sup>STE {TPK&beta;}+2	**RETURN
+		<sup>2</sup>DPX<sub>3</sub><sub>5</sub>{TPK&beta;}+1	**X<sub>3</sub><sub>5</sub>
+		<sup>1</sup>DPX<sub>3</sub><sub>7</sub>{TPK&beta;}+8	**X<sub>3</sub><sub>7</sub>
+		<sup>2</sup>DPX<sub>3</sub><sub>4</sub>A	**PREV BLOCK
+		<sup>2</sup><sup>2</sup>ADD {-10,,10}	**START BLOCK
+		<sup>2</sup><sup>2</sup>STA {TPK&beta;}+1	**X<sub>3</sub><sub>4</sub>
+		<sup>2</sup><sup>2</sup>STA {TPK&beta;}+3	**LOW END
+		DEX <sub>3</sub><sub>7</sub><sub>|</sub><sub>3</sub><sub>7</sub>	**-(NO OF WDS)&rarr;X<sub>3</sub><sub>5</sub>
+		<sup>1</sup>DPX<sub>3</sub><sub>7</sub>WRLD	**STARTING CORE ADDR
+		MKZ<sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub>WRESW
+		SKX<sub>4</sub><sub>1</sub>{IOA&beta;}+3
+WRELOOP&rarr;	<sup>2</sup><sup>1</sup>STA {TPK&beta;}	**PREDICTED BM
+		<sup>1</sup>IOS<sub>4</sub><sub>6</sub>30100	**RMF0
+		h<sup>4</sup>TSD {TPK&beta;}	**COARSE MK
+		<sup>1</sup>IOS<sub>4</sub><sub>6</sub>30000	**RLF0
+
+<hr>
+[Page header: "LMH GX7A 034"]
+[Continuation of the macro definition block]
+
+		h<sup>3</sup>TSD {TPK&beta;} **FINE MK
+		<sup>2</sup>SED A	**COMP WITH EXPECTED
+		JPQ WRESW
+WRLBM&rarr;	hJPQ {TURNOFF&Delta;}
+		SKX<sub>3</sub><sub>6</sub>2
+		hJPQ {ERRLOOP&beta;}*	**ERR LOOP
+WRESW&rarr;	SZN<sub>4</sub>abo<sub>1</sub><sub>0</sub>#
+		JPQ WRSC
+WRMAINLOOP&rarr;	<sup>1</sup>IOS<sub>4</sub><sub>6</sub>30400	**WLF0
+		<sup>1</sup>LDA {0,,-0}	**FOR SUM CHK
+		<sup>3</sup>TSD A	**SUM CHK H.O.
+		<sup>3</sup>TSD A
+		<sup>1</sup>SKX<sub>3</sub><sub>4</sub>177
+WRLD&rarr;	LDB<sub>3</sub><sub>5</sub>XXX	**WD FROM CORE
+		<sup>6</sup>TSD B	**DATA
+		<sup>5</sup>TSD B	**DATA
+		<sup>2</sup>ADD B	**FOR SUM CHK
+		<sup>4</sup>TSD B	**DATA
+		<sup>3</sup>TSD B	**DATA
+		<sup>1</sup>ADD B	**FOR SUM CHK
+		h<sup>1</sup>JNX<sub>3</sub><sub>4</sub>WRCONT	**END OF BLOCK
+		<sup>1</sup>COM A
+		<sup>1</sup><sup>1</sup>RSX<sub>3</sub><sub>4</sub>A
+		<sup>1</sup>ADX<sub>3</sub><sub>4</sub>45WA	**CONTINUOUS SUMCHK
+		<sup>4</sup>TSD A	**SUM CHK H.O.
+		<sup>2</sup><sup>2</sup>ADD {-10,,10}	**NXT BM NO
+		<sup>3</sup>TSD A	**SUM CHK L.O.
+		<sup>1</sup>IOS<sub>4</sub><sub>6</sub>30000	**RLF0
+		<sup>2</sup><sup>1</sup>STA {TPK&beta;}	**BM PREDICTED
+		<sup>2</sup><sup>2</sup>STA {TPK&beta;}	**BM TO BE READ
+		h<sup>3</sup>TSD E	**DUMMY
+		h<sup>3</sup>TSD E	**FINE MK
+		h<sup>4</sup>TSD E	**COARSE MK
+		h<sup>1</sup>IOS<sub>4</sub><sub>6</sub>0	**REPORT
+		SKU<sub>4</sub><sub>.</sub><sub>4</sub>E	**BM PASSED?
+		hJPQ WRSPL	**ERROR
+		h<sup>3</sup>TSD E	**FINE MARK
+		h<sup>1</sup>JNX<sub>3</sub><sub>5</sub>WRMAINLOOP	**NO WORDS LEFT?
+		<sup>2</sup><sup>1</sup>{TPK&beta;}+3	**LAST BM WRITTEN
+		<sup>2</sup><sup>2</sup>ADD {-10,,10}
+		JPQ WRELOOP
+WRSC&rarr;	hJPQ {TURNOFF&Delta;}
+		<sup>1</sup>IOS<sub>4</sub><sub>1</sub>20000
+		<sup>1</sup>STA {TPK&beta;}+10.	**SAVE LAST SUM CHK
+		JPQ {ERRLOOP&beta;}+6	**NORMAL EXIT
+WRSPL&rarr;	hJPQ {TURNOFF&Delta;}
+		SKX<sub>3</sub><sub>6</sub>2
+		<sup>2</sup><sup>2</sup>LDC {223437,,423733}	**SPL
+		hJPQ {ERRLOOP&beta;}+4*
+WRCONT&rarr;	h<sup>1</sup>JNX<sub>3</sub><sub>5</sub>WRLD	**ANY DATA LEFT?
+
+<hr>
+[Page header: "LMH GX7A 035"]
+		<sup>1</sup><sup>2</sup>LDB {0,,-0}	**0
+		JPQ WRLD+1
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF WR&Delta;&sup;X&rarr;Y&#9755;BLOCK|SELECT,ERROR
+ERRS=ERROR
+		<sup>1</sup>IOS<sub>4</sub><sub>6</sub>60000+SELECT	**SELECT TAPE
+		RSX<sub>3</sub><sub>4</sub>BLOCK	**TP BLK
+		RSX<sub>3</sub><sub>5</sub>X	**CORE LOW ADDR
+		RSX<sub>3</sub><sub>7</sub>Y	**CORE HIGH ADDR
+		DEX<sub>3</sub><sub>4</sub>310	**31 BLKS PREV
+		hJNX<sub>3</sub><sub>4</sub>#+3
+		hJPQ {SEARCH&Delta;}
+		hJPQ #+1
+		INX<sub>3</sub><sub>4</sub>300	**PREV BLOCK
+		hJPQ {SEARCH&Delta;}	**SEARCH RTNE
+		hJPQ ERRS	**ERROR ADDRESS
+		hJPQ {WR2&Delta;}	**WR RTNE
+		hJPQ ERRS	**ERR ADDR
+		SCR&Delta;&sup;<sup>1</sup><sup>2</sup>{TPK&beta;}&rarr;<sup>1</sup><sup>1</sup>{TPK&beta;}+3,ERRS
+		SCF&Delta;&sup;<sup>1</sup><sup>1</sup>{TPK&beta;}+3&rarr;<sup>1</sup><sup>2</sup>{TPK&beta;},ERRS
+		hJPQ {SUMCHKCMP}
+		hJPQ ERRS
+&#9755;&#9755;EMD
+
+<hr>
+[Page header: "LMH GX7A 036"]
+
+ 200014|
+		hJMP TEXTMAG	**TEXT
+I15&rarr;	hJMP LETMAG	**LETTERS
+		hJMP NUMMAG	**NUMBERS
+ 200076|
+		JPQ STARTS
+		hJMP TEXTCNG
+ 200120|
+RIBM&rarr;	hJMP 45SR
+RIBMN&rarr;	hJMP 45SRN
+WIBM&rarr;	hJMP 45SW
+WIBMN&rarr;	hJMP 45SWN
+RGARB&rarr;	hJMP 45GARB
+45CURRENT&rarr;
+		0
+RDTX2&rarr;	hJMP TX2RD
+WRTX2&rarr;	hJMP TX2WR
+ ORIGIN|
+
+<hr>
+[Page header: "LMH GX7A 001"]
+[This page header was seen before, see pdf_page 80. Significance is not clear.]
 
 
 </code></pre></body></html>
