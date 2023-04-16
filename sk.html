@@ -3604,6 +3604,446 @@ WRTX2&rarr;	hJMP TX2WR
 <hr>
 [Page header: "LMH GX7A 001"]
 [This page header was seen before, see pdf_page 80. Significance is not clear.]
+[First few lines of code are crossed out by hand.]
+
+STARTS&rarr;	RXF<sub>6</sub><sub>5</sub> KEYSTART
+		DPX 45CURRENT
+		RXF <sub>6</sub><sub>6</sub> TYPESTART
+		**TYPEWRITER INPUT
+KEYSTART&rarr;
+		CSQ<sub>6</sub><sub>5</sub>
+		MKZ <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> 45TYPE
+		MOVE|{ 17}&rarr;TEXTPLACE
+		[Device 65 is "Lincoln writer input no. 1", table 7-1]
+		<sup>1</sup>IOS <sub>6</sub><sub>5</sub> 30000
+		RXF <sub>6</sub><sub>6</sub> TYPESTART
+		REX <sub>K</sub><sub>A</sub> 17
+		hTSD <sub>K</sub><sub>A</sub> KEYTAB
+		[Device 66 is "Lincoln writer output no. 1", table 7-1]
+		<sup>1</sup>IOS <sub>6</sub><sub>6</sub> 50000
+		<sup>-</sup><sup>1</sup>JPX <sub>K</sub><sub>A</sub>#-2
+		JPQ #-4
+TYPESTART&rarr;
+		CSQ<sub>6</sub><sub>6</sub>
+		<sup>2</sup><sup>1</sup>IOS <sub>6</sub><sub>6</sub> 30000
+		REX <sub>T</sub><sub>A</sub> 17
+		SXD <sub>T</sub><sub>A</sub><sub>|</sub><sub>K</sub><sub>A</sub>
+		JPD #-1
+		hTSD <sub>T</sub><sub>A</sub> KEYTAB
+		<sup>-</sup><sup>1</sup>JPX <sub>T</sub><sub>A</sub>#-3
+KEYTAB&rarr;	0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		**TEXT CHANGE
+TEXTCNG&rarr;
+		<sup>1</sup>STE TEXTCNGEX
+		RSX <sub>&alpha;</sub> TEXTPLACE
+		SXD <sub>&alpha;</sub><sub>|</sub><sub>K</sub><sub>A</sub>
+		JPQ TEXTCNGEX
+		REX <sub>&beta;</sub> MOVING-LIST
+		LGORR&equiv;SPECB&times;&beta;=S&rarr;TEXTCNG1
+TEXTCNGEX&rarr;
+		JPQ #
+
+<hr>
+[Page header: "LMH GX7A 002"]
+
+TEXTCNG1&rarr;
+		<sup>1</sup>STE TEXTCNGX
+		hLDE <sub>&beta;</sub> LIST+TYPE
+		<sup>1</sup>SED { TEXTS-LIST}
+		JPQ #+2
+TEXTCNGX&rarr;
+		JPQ #
+		RSX <sub>&gamma;</sub><sub>|</sub><sub>&beta;</sub> TXTS+LIST	**# NOW IN TAB
+		SXL <sub>&gamma;</sub> 44
+		JPQ TEXTCNGX
+		<sup>1</sup><sup>3</sup>RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> KEYTAB
+TXCG1&rarr;	SXD <sub>S</sub> 62	**BACKSPACE
+		JPQ TXCGBAC
+		SXD <sub>S</sub> 16	**NO
+		JPQ TXCGNO
+TXCG2&rarr;	DPX <sub>&gamma;</sub> A
+		CYA {-2,}
+		<sup>2</sup><sup>1</sup>CYA {-4,}
+		ADD {<sup>1</sup><sup>3</sup>STB <sub>&beta;</sub> LIST+TXTS+1}
+		DPX <sub>S</sub> B
+		STA #+1
+		#**<sup>1</sup><sup>?</sup>STB<sub>&beta;</sub>LIST+TXTS+1+N [strange line, actual question mark in the listing]
+		INX <sub>&gamma;</sub> 1
+TXCG3&rarr;	DPX <sub>&gamma;</sub><sub>|</sub><sub>&beta;</sub> TXTS+LIST
+		<sup>-</sup><sup>1</sup>JPX <sub>&alpha;</sub>#+2
+		REX <sub>&alpha;</sub> 17
+		DPX <sub>&alpha;</sub> TEXTPLACE
+		JPQ TEXTCNG+1
+TXCGBAC&rarr;
+		<sup>-</sup><sup>1</sup>JPX <sub>&gamma;</sub> TXCG3
+TXCGNO&rarr;	REX <sub>&gamma;</sub> 0
+		JPQ TXCG3
+TEXTMAG&rarr;
+		<sup>1</sup>STE TEXTMAGEX
+		LDAE&equiv;200022,1,2,3
+		STAE&equiv;RCOS,1,2,3
+		MOVE|200026&rarr;TEXT
+		<sup>2</sup><sup>5</sup>DPX TEXT
+		LDB RCOS
+		SCB {-1,}
+		SUMM&equiv;RCOS&rarr; B=NRCOS&rarr;BADOV
+		LDB RSIN
+		SCB {-1,}
+		SUMM&equiv;RSIN&rarr; B=NRSIN&rarr;BADOV
+		REX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 0
+		REX <sub>C</sub><sub>M</sub><sub>&beta;</sub> 3
+TEXTMAG1&rarr;
+		MOVE|TEXTMAG1T<sub>C</sub><sub>M</sub><sub>&beta;</sub>&rarr;TEXTMAG1A
+		DPX <sub>C</sub><sub>M</sub><sub>&beta;</sub> TEXTINDEX
+		<sup>2</sup>DPX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> TEXTINDEX
+
+<hr>
+[Page header: "LMH GX7A 003"]
+
+TEXTMAG1A&rarr;
+		#**<sup>1</sup><sup>3</sup><sup>-</sup><sup>1</sup><sup>6</sup>LDA *TEXT [syntax, also see previous page]
+		STA LETTER
+		hJPQ LETMAGINT
+		SUMM&equiv;XPOS&rarr;NRCOS=XPOS&rarr;BADOV
+		DIFF&equiv;YPOS&rarr;NRSIN=YPOS&rarr;BADOV
+		RSX <sub>C</sub><sub>M</sub><sub>&beta;</sub> TEXTINDEX
+		<sup>-</sup><sup>1</sup>JPX <sub>C</sub><sub>M</sub><sub>&beta;</sub> TEXTMAG1B
+		REX <sub>C</sub><sub>M</sub><sub>&beta;</sub> 1
+		<sup>1</sup>ADX <sub>C</sub><sub>M</sub><sub>&beta;</sub> TEXT
+		REX <sub>C</sub><sub>M</sub><sub>&beta;</sub> 3
+TEXTMAG1B&rarr;
+		<sup>2</sup>RSX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> TEXTINDEX
+TEXTMAG1X&rarr;
+		<sup>1</sup><sup>6</sup>LDA TEXT
+		INX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 1
+		SXL <sub>C</sub><sub>M</sub><sub>&alpha;</sub>* A
+TEXTMAGEX&rarr;	JPQ #
+		JPQ TEXTMAG1
+TEXTMAG1T&rarr;
+		<sup>1</sup><sup>6</sup>LDA *TEXT
+		<sup>1</sup><sup>5</sup>LDA *TEXT
+		<sup>1</sup><sup>4</sup>LDA *TEXT
+		<sup>1</sup><sup>3</sup>LDA *TEXT
+NUMMAG&rarr;	<sup>1</sup>STE NUMMAGEX
+		LDAE&equiv;200022,1,2,3
+		STAE&equiv;RCOS,1,2,3
+		MOVE|200026&rarr;NUMBER
+		DIFF&equiv;XPOS&rarr;SCCEN&rarr;BADOV
+		FABVAL&rarr;B
+		DIFF&equiv;YPOS&rarr;SCCEN+1&rarr;BADOV
+		FABVAL
+		SUB B
+		JNA #+3
+		ADD B
+		STA B
+		LDA SCSZ
+		SUB B
+		JPA NUMMON
+		STA B
+NUMMAG1&rarr;
+		FABVAL&equiv;RSIN&rarr;C
+		FABVAL&equiv;RCOS
+		SUMM&rarr; C&rarr;BADOV
+		SUMM&rarr; A&rarr;BADOV
+		SUMM&rarr; A&rarr;BADOV
+		SUMM&rarr; B&rarr;BADOV
+		JNA NUMMAGEX
+NUMMON&rarr;	REX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 4
+
+<hr>
+[Page header: "LMH GX7A 004"]
+
+		SUMM&equiv;RCOS&rarr; A&rarr;BADOV
+		SUMM&rarr;RCOS&rarr;BADOV
+		STA B
+		SCB {-1,}
+		STB NRCOS
+		SUMM&rarr;XPOS=XPOS&rarr;BADOV
+		SUMM&equiv;RSIN&rarr; A&rarr;BADOV
+		SUMM&rarr;RSIN&rarr;BADOV
+		COM A
+		STA B
+		SCB {-1,}
+		STB NRSIN
+		SUMM&rarr;YPOS=YPOS&rarr;BADOV
+		LDA NUMBER
+		MUL { 100000.,,}
+		JPA NUMMON1
+		COM A
+NUMMON1&rarr;
+		<sup>2</sup><sup>0</sup>SAB {-17.,}
+		<sup>2</sup><sup>0</sup>DIV { 12,,}
+		<sup>2</sup><sup>2</sup>STB LETTER
+		STA NUMTT
+		DPX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> NUMTS
+		hJPQ LETMAGINT
+		DIFF&equiv;YPOS&rarr;NRSIN=YPOS&rarr;BADOV
+		DIFF&equiv;XPOS&rarr;NRCOS=XPOS&rarr;BADOV
+		LDA NUMTT
+		JPA #+2 [some handwritten scribble before the line]
+		JPQ NUMMON2
+		RSX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> NUMTS
+		<sup>-</sup><sup>1</sup> <sub>C</sub><sub>M</sub><sub>&alpha;</sub> NUMMON1
+NUMMON2&rarr;
+		LDA NUMBER
+		JNA #+2
+		JPQ NUMMAGEX
+		MOVE|{ 55}&rarr;LETTER	**MINUS SIGN
+		hJPQ LETMAGINT
+NUMMAGEX&rarr;
+		JPQ #
+LETMAG&rarr;	<sup>1</sup>STE LETMAGEX
+		LDAE&equiv;200022,1,2,3
+		STAE&equiv;RCOS,1,2,3
+		MOVE|200026&rarr;LETTER
+		JPQ #+2
+LETMAGINT&rarr;
+		<sup>1</sup>STE LETMAGEX
+		DIFF&equiv;XPOS&rarr;SCCEN&rarr;BADOV
+		FABVAL&rarr; B
+		DIFF&equiv;YPOS&rarr;SCCEN+1&rarr;BADOV
+		FABVAL
+
+<hr>
+[Page header: "LMH GX7A 005"]
+
+		SUB B
+		JNA #+3
+		ADD B
+		STA B
+		LDA SCSZ
+		SUB B
+		JPA LETMON
+		STA B
+LETMAG1&rarr;
+		FABVAL&equiv;RSIN&rarr;C
+		FABVAL&equiv;RCOS
+		SUMM&rarr; C&rarr;BADOV
+		SUMM&rarr; B&rarr;BADOV
+		JNA LETMAGEX	**OFF SCOPE
+LETMON&rarr;	RSX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> LETTER
+		SXL <sub>C</sub><sub>M</sub><sub>&alpha;</sub> LETDISLAST-LETDIS+1
+		JPQ LETMAGEX
+		JNX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> LETMAGEX
+		<sup>1</sup><sup>1</sup>LDA <sub>C</sub><sub>M</sub><sub>&alpha;</sub> LETDIS
+		STA LET&Delta;
+		<sup>1</sup><sup>6</sup>RSX <sub>C</sub><sub>M</sub><sub>&alpha;</sub>*LET&Delta;
+		JPQ LETMAG2X
+LETMAG2&rarr;
+		DPX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> LETCNT
+		RSX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> LET&Delta;
+		hJPQ LETMAG3
+		STAB&equiv;LMSTART
+		INX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 1
+		hJPQ LETMAG3
+		STAB&equiv;LMEND
+		LDA <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 377777
+		INX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 2
+		DPX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> LET&Delta;
+		SKN <sub>3</sub><sub>.</sub><sub>1</sub> A
+		JPQ LETMAG2L
+LETMAG2C&rarr;
+		<sup>1</sup><sup>1</sup>LDA A
+		<sup>1</sup><sup>7</sup>STA CMANG
+		hJPQ CMAG
+		JPQ #+2
+LETMAG2L&rarr;
+		hJPQ LMAG
+		RSX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> LETCNT
+LETMAG2X&rarr;
+		<sup>-</sup><sup>1</sup>JPX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> LETMAG2
+LETMAGEX&rarr;
+		JPQ #
+LETMAGE3&rarr;
+		<sup>1</sup>STE LETMAG3X
+		PROD&equiv;<sup>1</sup><sup>2</sup> 1<sub>C</sub><sub>M</sub><sub>&alpha;</sub>&times;RSIN/{ SIZE}=LETS&rarr;BADOV [syntax, first macro argument is <sup>1</sup><sup>2</sup>1<sub>C</sub><sub>M</sub><sub>&alpha;</sub>?]
+
+<hr>
+[Page header: "LMH GX7A 006"]
+
+		PROD&equiv;<sup>1</sup><sup>1</sup> 1<sub>C</sub><sub>M</sub><sub>&alpha;</sub>&times;RCOS/{ SIZE}&rarr;BADOV
+		DIFF&rarr;LETS&rarr;BADOV
+		SUMM&rarr;YPOS=LETT&rarr;BADOV
+		PROD&equiv;<sup>1</sup><sup>2</sup> 1<sub>C</sub><sub>M</sub><sub>&alpha;</sub>&times;RCOS/{ SIZE}=LETS&rarr;BADOV
+		PROD&equiv;<sup>1</sup><sup>1</sup> 1<sub>C</sub><sub>M</sub><sub>&alpha;</sub>&times;RSIN/{ SIZE}&rarr;BADOV
+		SUMM&rarr;LETS&rarr;BADOV
+		SUMM&rarr;XPOS&rarr;BADOV
+		LDB LETT
+LETMAG3X&rarr;
+		JPQ #
+		[Looks like what follows is a symbol table for display.]
+LETDIS&rarr;	ZERO
+		ONE
+		TWO
+		THREE
+		FOUR
+		FIVE
+		SIX
+		SEVEN
+		EIGHT
+		NINE
+LETDIS1&rarr;
+		SPACE
+		SPACE
+		SPACE
+		SPACE
+		SPACE
+		SPACE
+		AA
+		BB
+		CC
+		DD
+		EE
+		FF
+		GG
+		HH
+		II
+		JJ
+		KK
+		LL
+		MM
+		NN
+		OO
+		PP
+		QQ
+		RR
+		SS
+		TT
+		UU
+		VV
+		WW
+
+<hr>
+[Page header: "LMH GX7A 007"]
+
+		XX
+		YY
+		ZZ
+		LPAREN
+		RPAREN
+		PLUS
+		MINUS
+		COMMA
+		DOT
+LETDISLAST&rarr;
+		SPACE
+RCOS&rarr;	0
+RSIN&rarr;	0
+XPOS&rarr;	0
+YPOS&rarr;	0
+LETTER&rarr;	0
+SPACE&rarr;	0
+		[Table with data structures describing how to draw symbols.]
+ONE&rarr;	3,	**#PARTS, LINE-CIRC,,ANGLE
+		-SIZE/4,,3&times;SIZE/4	**START POINT
+		SIZE	**CENTER OR END
+		0
+		SIZE
+		0,,-SIZE
+		0
+		-SIZE/4,,-SIZE
+		SIZE/4,,,-SIZE
+TWO&rarr;	3001,,525425
+		-SIZE/2,,4071&times;SIZE/10000
+		(424.)&times;SIZE/(1000.)
+		1,,62446
+		1305&times;SIZE/10000,,-336&times;SIZE/10000
+		BR
+		0
+		BL
+		BR
+THREE&rarr;	3,
+		-SIZE/2,,SIZE
+		2&times;SIZE/3,,SIZE
+		0
+		2&times;SIZE/3,,SIZE
+		SIZE/3
+		1,,-240000
+		SIZE/3
+		0,,-SIZE/3
+FOUR&rarr;	3,
+		SIZE/6,,SIZE
+		-2&times;SIZE/3,,-SIZE/3
+		0
+		-2&times;SIZE/3,,-SIZE/3
+		SIZE/2,,-SIZE/3
+
+<hr>
+[Page header: "LMH GX7A 010"]
+
+		0
+		SIZE/6,,SIZE
+		SIZE/6,,-SIZE
+FIVE&rarr;	3,
+		-(1732.)&times;SIZE/(3160.),,SIZE
+		-(1732.)&times;SIZE/(3160.),,
+		1,,-5&times;400000/6
+		-(1732.)&times;SIZE/(3160.),,
+		-SIZE/3
+		0
+		-(1732.)&times;SIZE/(3160.),,SIZE
+		SIZE/2,,SIZE
+SIX&rarr;	3,1,,140,0
+		(1574.)&times;SIZE/(4000.),,(3414.)&times;SIZE/(4000.)
+		SIZE/2
+		0
+		-SIZE/2,,SIZE/2
+		-SIZE/2,,-SIZE/2
+		1,,-400000
+		-SIZE/2,,-SIZE/2
+		-SIZE/2
+SEVEN&rarr;	3,
+		-SIZE/2,,SIZE
+		SIZE/2,,SIZE
+		0
+		SIZE/2,,SIZE
+		0,,-SIZE
+		0
+		SIZE/3
+		SIZE/2,,SIZE/3
+EIGHT&rarr;	2,1,,377,777
+		SIZE
+		3&times;SIZE/5
+		1,,377777
+		SIZE/5
+		0,,-2&times;SIZE/5
+NINE&rarr;	3,1,,400,0
+		SIZE/2,,SIZE/2
+		SIZE/2
+		0
+		SIZE/2,,SIZE/2
+		SIZE/2,,-SIZE/2
+		1,,-200000
+		SIZE/2,,-SIZE/2
+		0,,-SIZE/2
+ZERO&rarr;	4,1,,-200,-0
+		-SIZE/2,,SIZE/2
+		SIZE/2
+		0
+		SIZE/2,,SIZE/2
+
+<hr>
+[Page header: "LMH GX7A 011"]
+
+
+
+
+
 
 
 </code></pre></body></html>
@@ -7213,6 +7653,446 @@ WRTX2&rarr;	hJMP TX2WR
 <hr>
 [Page header: "LMH GX7A 001"]
 [This page header was seen before, see pdf_page 80. Significance is not clear.]
+[First few lines of code are crossed out by hand.]
+
+STARTS&rarr;	RXF<sub>6</sub><sub>5</sub> KEYSTART
+		DPX 45CURRENT
+		RXF <sub>6</sub><sub>6</sub> TYPESTART
+		**TYPEWRITER INPUT
+KEYSTART&rarr;
+		CSQ<sub>6</sub><sub>5</sub>
+		MKZ <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> 45TYPE
+		MOVE|{ 17}&rarr;TEXTPLACE
+		[Device 65 is "Lincoln writer input no. 1", table 7-1]
+		<sup>1</sup>IOS <sub>6</sub><sub>5</sub> 30000
+		RXF <sub>6</sub><sub>6</sub> TYPESTART
+		REX <sub>K</sub><sub>A</sub> 17
+		hTSD <sub>K</sub><sub>A</sub> KEYTAB
+		[Device 66 is "Lincoln writer output no. 1", table 7-1]
+		<sup>1</sup>IOS <sub>6</sub><sub>6</sub> 50000
+		<sup>-</sup><sup>1</sup>JPX <sub>K</sub><sub>A</sub>#-2
+		JPQ #-4
+TYPESTART&rarr;
+		CSQ<sub>6</sub><sub>6</sub>
+		<sup>2</sup><sup>1</sup>IOS <sub>6</sub><sub>6</sub> 30000
+		REX <sub>T</sub><sub>A</sub> 17
+		SXD <sub>T</sub><sub>A</sub><sub>|</sub><sub>K</sub><sub>A</sub>
+		JPD #-1
+		hTSD <sub>T</sub><sub>A</sub> KEYTAB
+		<sup>-</sup><sup>1</sup>JPX <sub>T</sub><sub>A</sub>#-3
+KEYTAB&rarr;	0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		**TEXT CHANGE
+TEXTCNG&rarr;
+		<sup>1</sup>STE TEXTCNGEX
+		RSX <sub>&alpha;</sub> TEXTPLACE
+		SXD <sub>&alpha;</sub><sub>|</sub><sub>K</sub><sub>A</sub>
+		JPQ TEXTCNGEX
+		REX <sub>&beta;</sub> MOVING-LIST
+		LGORR&equiv;SPECB&times;&beta;=S&rarr;TEXTCNG1
+TEXTCNGEX&rarr;
+		JPQ #
+
+<hr>
+[Page header: "LMH GX7A 002"]
+
+TEXTCNG1&rarr;
+		<sup>1</sup>STE TEXTCNGX
+		hLDE <sub>&beta;</sub> LIST+TYPE
+		<sup>1</sup>SED { TEXTS-LIST}
+		JPQ #+2
+TEXTCNGX&rarr;
+		JPQ #
+		RSX <sub>&gamma;</sub><sub>|</sub><sub>&beta;</sub> TXTS+LIST	**# NOW IN TAB
+		SXL <sub>&gamma;</sub> 44
+		JPQ TEXTCNGX
+		<sup>1</sup><sup>3</sup>RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> KEYTAB
+TXCG1&rarr;	SXD <sub>S</sub> 62	**BACKSPACE
+		JPQ TXCGBAC
+		SXD <sub>S</sub> 16	**NO
+		JPQ TXCGNO
+TXCG2&rarr;	DPX <sub>&gamma;</sub> A
+		CYA {-2,}
+		<sup>2</sup><sup>1</sup>CYA {-4,}
+		ADD {<sup>1</sup><sup>3</sup>STB <sub>&beta;</sub> LIST+TXTS+1}
+		DPX <sub>S</sub> B
+		STA #+1
+		#**<sup>1</sup><sup>?</sup>STB<sub>&beta;</sub>LIST+TXTS+1+N [strange line, actual question mark in the listing]
+		INX <sub>&gamma;</sub> 1
+TXCG3&rarr;	DPX <sub>&gamma;</sub><sub>|</sub><sub>&beta;</sub> TXTS+LIST
+		<sup>-</sup><sup>1</sup>JPX <sub>&alpha;</sub>#+2
+		REX <sub>&alpha;</sub> 17
+		DPX <sub>&alpha;</sub> TEXTPLACE
+		JPQ TEXTCNG+1
+TXCGBAC&rarr;
+		<sup>-</sup><sup>1</sup>JPX <sub>&gamma;</sub> TXCG3
+TXCGNO&rarr;	REX <sub>&gamma;</sub> 0
+		JPQ TXCG3
+TEXTMAG&rarr;
+		<sup>1</sup>STE TEXTMAGEX
+		LDAE&equiv;200022,1,2,3
+		STAE&equiv;RCOS,1,2,3
+		MOVE|200026&rarr;TEXT
+		<sup>2</sup><sup>5</sup>DPX TEXT
+		LDB RCOS
+		SCB {-1,}
+		SUMM&equiv;RCOS&rarr; B=NRCOS&rarr;BADOV
+		LDB RSIN
+		SCB {-1,}
+		SUMM&equiv;RSIN&rarr; B=NRSIN&rarr;BADOV
+		REX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 0
+		REX <sub>C</sub><sub>M</sub><sub>&beta;</sub> 3
+TEXTMAG1&rarr;
+		MOVE|TEXTMAG1T<sub>C</sub><sub>M</sub><sub>&beta;</sub>&rarr;TEXTMAG1A
+		DPX <sub>C</sub><sub>M</sub><sub>&beta;</sub> TEXTINDEX
+		<sup>2</sup>DPX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> TEXTINDEX
+
+<hr>
+[Page header: "LMH GX7A 003"]
+
+TEXTMAG1A&rarr;
+		#**<sup>1</sup><sup>3</sup><sup>-</sup><sup>1</sup><sup>6</sup>LDA *TEXT [syntax, also see previous page]
+		STA LETTER
+		hJPQ LETMAGINT
+		SUMM&equiv;XPOS&rarr;NRCOS=XPOS&rarr;BADOV
+		DIFF&equiv;YPOS&rarr;NRSIN=YPOS&rarr;BADOV
+		RSX <sub>C</sub><sub>M</sub><sub>&beta;</sub> TEXTINDEX
+		<sup>-</sup><sup>1</sup>JPX <sub>C</sub><sub>M</sub><sub>&beta;</sub> TEXTMAG1B
+		REX <sub>C</sub><sub>M</sub><sub>&beta;</sub> 1
+		<sup>1</sup>ADX <sub>C</sub><sub>M</sub><sub>&beta;</sub> TEXT
+		REX <sub>C</sub><sub>M</sub><sub>&beta;</sub> 3
+TEXTMAG1B&rarr;
+		<sup>2</sup>RSX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> TEXTINDEX
+TEXTMAG1X&rarr;
+		<sup>1</sup><sup>6</sup>LDA TEXT
+		INX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 1
+		SXL <sub>C</sub><sub>M</sub><sub>&alpha;</sub>* A
+TEXTMAGEX&rarr;	JPQ #
+		JPQ TEXTMAG1
+TEXTMAG1T&rarr;
+		<sup>1</sup><sup>6</sup>LDA *TEXT
+		<sup>1</sup><sup>5</sup>LDA *TEXT
+		<sup>1</sup><sup>4</sup>LDA *TEXT
+		<sup>1</sup><sup>3</sup>LDA *TEXT
+NUMMAG&rarr;	<sup>1</sup>STE NUMMAGEX
+		LDAE&equiv;200022,1,2,3
+		STAE&equiv;RCOS,1,2,3
+		MOVE|200026&rarr;NUMBER
+		DIFF&equiv;XPOS&rarr;SCCEN&rarr;BADOV
+		FABVAL&rarr;B
+		DIFF&equiv;YPOS&rarr;SCCEN+1&rarr;BADOV
+		FABVAL
+		SUB B
+		JNA #+3
+		ADD B
+		STA B
+		LDA SCSZ
+		SUB B
+		JPA NUMMON
+		STA B
+NUMMAG1&rarr;
+		FABVAL&equiv;RSIN&rarr;C
+		FABVAL&equiv;RCOS
+		SUMM&rarr; C&rarr;BADOV
+		SUMM&rarr; A&rarr;BADOV
+		SUMM&rarr; A&rarr;BADOV
+		SUMM&rarr; B&rarr;BADOV
+		JNA NUMMAGEX
+NUMMON&rarr;	REX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 4
+
+<hr>
+[Page header: "LMH GX7A 004"]
+
+		SUMM&equiv;RCOS&rarr; A&rarr;BADOV
+		SUMM&rarr;RCOS&rarr;BADOV
+		STA B
+		SCB {-1,}
+		STB NRCOS
+		SUMM&rarr;XPOS=XPOS&rarr;BADOV
+		SUMM&equiv;RSIN&rarr; A&rarr;BADOV
+		SUMM&rarr;RSIN&rarr;BADOV
+		COM A
+		STA B
+		SCB {-1,}
+		STB NRSIN
+		SUMM&rarr;YPOS=YPOS&rarr;BADOV
+		LDA NUMBER
+		MUL { 100000.,,}
+		JPA NUMMON1
+		COM A
+NUMMON1&rarr;
+		<sup>2</sup><sup>0</sup>SAB {-17.,}
+		<sup>2</sup><sup>0</sup>DIV { 12,,}
+		<sup>2</sup><sup>2</sup>STB LETTER
+		STA NUMTT
+		DPX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> NUMTS
+		hJPQ LETMAGINT
+		DIFF&equiv;YPOS&rarr;NRSIN=YPOS&rarr;BADOV
+		DIFF&equiv;XPOS&rarr;NRCOS=XPOS&rarr;BADOV
+		LDA NUMTT
+		JPA #+2 [some handwritten scribble before the line]
+		JPQ NUMMON2
+		RSX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> NUMTS
+		<sup>-</sup><sup>1</sup> <sub>C</sub><sub>M</sub><sub>&alpha;</sub> NUMMON1
+NUMMON2&rarr;
+		LDA NUMBER
+		JNA #+2
+		JPQ NUMMAGEX
+		MOVE|{ 55}&rarr;LETTER	**MINUS SIGN
+		hJPQ LETMAGINT
+NUMMAGEX&rarr;
+		JPQ #
+LETMAG&rarr;	<sup>1</sup>STE LETMAGEX
+		LDAE&equiv;200022,1,2,3
+		STAE&equiv;RCOS,1,2,3
+		MOVE|200026&rarr;LETTER
+		JPQ #+2
+LETMAGINT&rarr;
+		<sup>1</sup>STE LETMAGEX
+		DIFF&equiv;XPOS&rarr;SCCEN&rarr;BADOV
+		FABVAL&rarr; B
+		DIFF&equiv;YPOS&rarr;SCCEN+1&rarr;BADOV
+		FABVAL
+
+<hr>
+[Page header: "LMH GX7A 005"]
+
+		SUB B
+		JNA #+3
+		ADD B
+		STA B
+		LDA SCSZ
+		SUB B
+		JPA LETMON
+		STA B
+LETMAG1&rarr;
+		FABVAL&equiv;RSIN&rarr;C
+		FABVAL&equiv;RCOS
+		SUMM&rarr; C&rarr;BADOV
+		SUMM&rarr; B&rarr;BADOV
+		JNA LETMAGEX	**OFF SCOPE
+LETMON&rarr;	RSX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> LETTER
+		SXL <sub>C</sub><sub>M</sub><sub>&alpha;</sub> LETDISLAST-LETDIS+1
+		JPQ LETMAGEX
+		JNX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> LETMAGEX
+		<sup>1</sup><sup>1</sup>LDA <sub>C</sub><sub>M</sub><sub>&alpha;</sub> LETDIS
+		STA LET&Delta;
+		<sup>1</sup><sup>6</sup>RSX <sub>C</sub><sub>M</sub><sub>&alpha;</sub>*LET&Delta;
+		JPQ LETMAG2X
+LETMAG2&rarr;
+		DPX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> LETCNT
+		RSX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> LET&Delta;
+		hJPQ LETMAG3
+		STAB&equiv;LMSTART
+		INX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 1
+		hJPQ LETMAG3
+		STAB&equiv;LMEND
+		LDA <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 377777
+		INX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 2
+		DPX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> LET&Delta;
+		SKN <sub>3</sub><sub>.</sub><sub>1</sub> A
+		JPQ LETMAG2L
+LETMAG2C&rarr;
+		<sup>1</sup><sup>1</sup>LDA A
+		<sup>1</sup><sup>7</sup>STA CMANG
+		hJPQ CMAG
+		JPQ #+2
+LETMAG2L&rarr;
+		hJPQ LMAG
+		RSX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> LETCNT
+LETMAG2X&rarr;
+		<sup>-</sup><sup>1</sup>JPX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> LETMAG2
+LETMAGEX&rarr;
+		JPQ #
+LETMAGE3&rarr;
+		<sup>1</sup>STE LETMAG3X
+		PROD&equiv;<sup>1</sup><sup>2</sup> 1<sub>C</sub><sub>M</sub><sub>&alpha;</sub>&times;RSIN/{ SIZE}=LETS&rarr;BADOV [syntax, first macro argument is <sup>1</sup><sup>2</sup>1<sub>C</sub><sub>M</sub><sub>&alpha;</sub>?]
+
+<hr>
+[Page header: "LMH GX7A 006"]
+
+		PROD&equiv;<sup>1</sup><sup>1</sup> 1<sub>C</sub><sub>M</sub><sub>&alpha;</sub>&times;RCOS/{ SIZE}&rarr;BADOV
+		DIFF&rarr;LETS&rarr;BADOV
+		SUMM&rarr;YPOS=LETT&rarr;BADOV
+		PROD&equiv;<sup>1</sup><sup>2</sup> 1<sub>C</sub><sub>M</sub><sub>&alpha;</sub>&times;RCOS/{ SIZE}=LETS&rarr;BADOV
+		PROD&equiv;<sup>1</sup><sup>1</sup> 1<sub>C</sub><sub>M</sub><sub>&alpha;</sub>&times;RSIN/{ SIZE}&rarr;BADOV
+		SUMM&rarr;LETS&rarr;BADOV
+		SUMM&rarr;XPOS&rarr;BADOV
+		LDB LETT
+LETMAG3X&rarr;
+		JPQ #
+		[Looks like what follows is a symbol table for display.]
+LETDIS&rarr;	ZERO
+		ONE
+		TWO
+		THREE
+		FOUR
+		FIVE
+		SIX
+		SEVEN
+		EIGHT
+		NINE
+LETDIS1&rarr;
+		SPACE
+		SPACE
+		SPACE
+		SPACE
+		SPACE
+		SPACE
+		AA
+		BB
+		CC
+		DD
+		EE
+		FF
+		GG
+		HH
+		II
+		JJ
+		KK
+		LL
+		MM
+		NN
+		OO
+		PP
+		QQ
+		RR
+		SS
+		TT
+		UU
+		VV
+		WW
+
+<hr>
+[Page header: "LMH GX7A 007"]
+
+		XX
+		YY
+		ZZ
+		LPAREN
+		RPAREN
+		PLUS
+		MINUS
+		COMMA
+		DOT
+LETDISLAST&rarr;
+		SPACE
+RCOS&rarr;	0
+RSIN&rarr;	0
+XPOS&rarr;	0
+YPOS&rarr;	0
+LETTER&rarr;	0
+SPACE&rarr;	0
+		[Table with data structures describing how to draw symbols.]
+ONE&rarr;	3,	**#PARTS, LINE-CIRC,,ANGLE
+		-SIZE/4,,3&times;SIZE/4	**START POINT
+		SIZE	**CENTER OR END
+		0
+		SIZE
+		0,,-SIZE
+		0
+		-SIZE/4,,-SIZE
+		SIZE/4,,,-SIZE
+TWO&rarr;	3001,,525425
+		-SIZE/2,,4071&times;SIZE/10000
+		(424.)&times;SIZE/(1000.)
+		1,,62446
+		1305&times;SIZE/10000,,-336&times;SIZE/10000
+		BR
+		0
+		BL
+		BR
+THREE&rarr;	3,
+		-SIZE/2,,SIZE
+		2&times;SIZE/3,,SIZE
+		0
+		2&times;SIZE/3,,SIZE
+		SIZE/3
+		1,,-240000
+		SIZE/3
+		0,,-SIZE/3
+FOUR&rarr;	3,
+		SIZE/6,,SIZE
+		-2&times;SIZE/3,,-SIZE/3
+		0
+		-2&times;SIZE/3,,-SIZE/3
+		SIZE/2,,-SIZE/3
+
+<hr>
+[Page header: "LMH GX7A 010"]
+
+		0
+		SIZE/6,,SIZE
+		SIZE/6,,-SIZE
+FIVE&rarr;	3,
+		-(1732.)&times;SIZE/(3160.),,SIZE
+		-(1732.)&times;SIZE/(3160.),,
+		1,,-5&times;400000/6
+		-(1732.)&times;SIZE/(3160.),,
+		-SIZE/3
+		0
+		-(1732.)&times;SIZE/(3160.),,SIZE
+		SIZE/2,,SIZE
+SIX&rarr;	3,1,,140,0
+		(1574.)&times;SIZE/(4000.),,(3414.)&times;SIZE/(4000.)
+		SIZE/2
+		0
+		-SIZE/2,,SIZE/2
+		-SIZE/2,,-SIZE/2
+		1,,-400000
+		-SIZE/2,,-SIZE/2
+		-SIZE/2
+SEVEN&rarr;	3,
+		-SIZE/2,,SIZE
+		SIZE/2,,SIZE
+		0
+		SIZE/2,,SIZE
+		0,,-SIZE
+		0
+		SIZE/3
+		SIZE/2,,SIZE/3
+EIGHT&rarr;	2,1,,377,777
+		SIZE
+		3&times;SIZE/5
+		1,,377777
+		SIZE/5
+		0,,-2&times;SIZE/5
+NINE&rarr;	3,1,,400,0
+		SIZE/2,,SIZE/2
+		SIZE/2
+		0
+		SIZE/2,,SIZE/2
+		SIZE/2,,-SIZE/2
+		1,,-200000
+		SIZE/2,,-SIZE/2
+		0,,-SIZE/2
+ZERO&rarr;	4,1,,-200,-0
+		-SIZE/2,,SIZE/2
+		SIZE/2
+		0
+		SIZE/2,,SIZE/2
+
+<hr>
+[Page header: "LMH GX7A 011"]
+
+
+
+
+
 
 
 </code></pre></body></html>

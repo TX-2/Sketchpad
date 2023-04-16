@@ -3603,5 +3603,445 @@ WRTX2@arr@	hJMP TX2WR
 [meta file_name=102726903-05-01-acc.pdf pdf_page=110 doc_page=108 type=code]
 [Page header: "LMH GX7A 001"]
 [This page header was seen before, see pdf_page 80. Significance is not clear.]
+[First few lines of code are crossed out by hand.]
 
+STARTS@arr@	RXF@sub_6@@sub_5@ KEYSTART
+		DPX 45CURRENT
+		RXF @sub_6@@sub_6@ TYPESTART
+		**TYPEWRITER INPUT
+KEYSTART@arr@
+		CSQ@sub_6@@sub_5@
+		MKZ @sub_M@@sub_E@@sub_T@@sub_A@ 45TYPE
+		MOVE|{ 17}@arr@TEXTPLACE
+		[Device 65 is "Lincoln writer input no. 1", table 7-1]
+		@sup_1@IOS @sub_6@@sub_5@ 30000
+		RXF @sub_6@@sub_6@ TYPESTART
+		REX @sub_K@@sub_A@ 17
+		hTSD @sub_K@@sub_A@ KEYTAB
+		[Device 66 is "Lincoln writer output no. 1", table 7-1]
+		@sup_1@IOS @sub_6@@sub_6@ 50000
+		@sup_minus@@sup_1@JPX @sub_K@@sub_A@#-2
+		JPQ #-4
+TYPESTART@arr@
+		CSQ@sub_6@@sub_6@
+		@sup_2@@sup_1@IOS @sub_6@@sub_6@ 30000
+		REX @sub_T@@sub_A@ 17
+		SXD @sub_T@@sub_A@@sub_pipe@@sub_K@@sub_A@
+		JPD #-1
+		hTSD @sub_T@@sub_A@ KEYTAB
+		@sup_minus@@sup_1@JPX @sub_T@@sub_A@#-3
+KEYTAB@arr@	0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		**TEXT CHANGE
+TEXTCNG@arr@
+		@sup_1@STE TEXTCNGEX
+		RSX @sub_alpha@ TEXTPLACE
+		SXD @sub_alpha@@sub_pipe@@sub_K@@sub_A@
+		JPQ TEXTCNGEX
+		REX @sub_beta@ MOVING-LIST
+		LGORR@hamb@SPECB@times@@beta@=S@arr@TEXTCNG1
+TEXTCNGEX@arr@
+		JPQ #
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=111 doc_page=109 type=code]
+[Page header: "LMH GX7A 002"]
+
+TEXTCNG1@arr@
+		@sup_1@STE TEXTCNGX
+		hLDE @sub_beta@ LIST+TYPE
+		@sup_1@SED { TEXTS-LIST}
+		JPQ #+2
+TEXTCNGX@arr@
+		JPQ #
+		RSX @sub_gamma@@sub_pipe@@sub_beta@ TXTS+LIST	**# NOW IN TAB
+		SXL @sub_gamma@ 44
+		JPQ TEXTCNGX
+		@sup_1@@sup_3@RSX @sub_S@@sub_pipe@@sub_alpha@ KEYTAB
+TXCG1@arr@	SXD @sub_S@ 62	**BACKSPACE
+		JPQ TXCGBAC
+		SXD @sub_S@ 16	**NO
+		JPQ TXCGNO
+TXCG2@arr@	DPX @sub_gamma@ A
+		CYA {-2,}
+		@sup_2@@sup_1@CYA {-4,}
+		ADD {@sup_1@@sup_3@STB @sub_beta@ LIST+TXTS+1}
+		DPX @sub_S@ B
+		STA #+1
+		#**@sup_1@@sup_?@STB@sub_beta@LIST+TXTS+1+N [strange line, actual question mark in the listing]
+		INX @sub_gamma@ 1
+TXCG3@arr@	DPX @sub_gamma@@sub_pipe@@sub_beta@ TXTS+LIST
+		@sup_minus@@sup_1@JPX @sub_alpha@#+2
+		REX @sub_alpha@ 17
+		DPX @sub_alpha@ TEXTPLACE
+		JPQ TEXTCNG+1
+TXCGBAC@arr@
+		@sup_minus@@sup_1@JPX @sub_gamma@ TXCG3
+TXCGNO@arr@	REX @sub_gamma@ 0
+		JPQ TXCG3
+TEXTMAG@arr@
+		@sup_1@STE TEXTMAGEX
+		LDAE@hamb@200022,1,2,3
+		STAE@hamb@RCOS,1,2,3
+		MOVE|200026@arr@TEXT
+		@sup_2@@sup_5@DPX TEXT
+		LDB RCOS
+		SCB {-1,}
+		SUMM@hamb@RCOS@arr@ B=NRCOS@arr@BADOV
+		LDB RSIN
+		SCB {-1,}
+		SUMM@hamb@RSIN@arr@ B=NRSIN@arr@BADOV
+		REX @sub_C@@sub_M@@sub_alpha@ 0
+		REX @sub_C@@sub_M@@sub_beta@ 3
+TEXTMAG1@arr@
+		MOVE|TEXTMAG1T@sub_C@@sub_M@@sub_beta@@arr@TEXTMAG1A
+		DPX @sub_C@@sub_M@@sub_beta@ TEXTINDEX
+		@sup_2@DPX @sub_C@@sub_M@@sub_alpha@ TEXTINDEX
+		
+[meta file_name=102726903-05-01-acc.pdf pdf_page=112 doc_page=110 type=code]
+[Page header: "LMH GX7A 003"]
+
+TEXTMAG1A@arr@
+		#**@sup_1@@sup_3@@sup_minus@@sup_1@@sup_6@LDA *TEXT [syntax, also see previous page]
+		STA LETTER
+		hJPQ LETMAGINT
+		SUMM@hamb@XPOS@arr@NRCOS=XPOS@arr@BADOV
+		DIFF@hamb@YPOS@arr@NRSIN=YPOS@arr@BADOV
+		RSX @sub_C@@sub_M@@sub_beta@ TEXTINDEX
+		@sup_minus@@sup_1@JPX @sub_C@@sub_M@@sub_beta@ TEXTMAG1B
+		REX @sub_C@@sub_M@@sub_beta@ 1
+		@sup_1@ADX @sub_C@@sub_M@@sub_beta@ TEXT
+		REX @sub_C@@sub_M@@sub_beta@ 3
+TEXTMAG1B@arr@
+		@sup_2@RSX @sub_C@@sub_M@@sub_alpha@ TEXTINDEX
+TEXTMAG1X@arr@
+		@sup_1@@sup_6@LDA TEXT
+		INX @sub_C@@sub_M@@sub_alpha@ 1
+		SXL @sub_C@@sub_M@@sub_alpha@* A
+TEXTMAGEX@arr@	JPQ #
+		JPQ TEXTMAG1
+TEXTMAG1T@arr@
+		@sup_1@@sup_6@LDA *TEXT
+		@sup_1@@sup_5@LDA *TEXT
+		@sup_1@@sup_4@LDA *TEXT
+		@sup_1@@sup_3@LDA *TEXT
+NUMMAG@arr@	@sup_1@STE NUMMAGEX
+		LDAE@hamb@200022,1,2,3
+		STAE@hamb@RCOS,1,2,3
+		MOVE|200026@arr@NUMBER
+		DIFF@hamb@XPOS@arr@SCCEN@arr@BADOV
+		FABVAL@arr@B
+		DIFF@hamb@YPOS@arr@SCCEN+1@arr@BADOV
+		FABVAL
+		SUB B
+		JNA #+3
+		ADD B
+		STA B
+		LDA SCSZ
+		SUB B
+		JPA NUMMON
+		STA B
+NUMMAG1@arr@
+		FABVAL@hamb@RSIN@arr@C
+		FABVAL@hamb@RCOS
+		SUMM@arr@ C@arr@BADOV
+		SUMM@arr@ A@arr@BADOV
+		SUMM@arr@ A@arr@BADOV
+		SUMM@arr@ B@arr@BADOV
+		JNA NUMMAGEX
+NUMMON@arr@	REX @sub_C@@sub_M@@sub_alpha@ 4
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=113 doc_page=111 type=code]
+[Page header: "LMH GX7A 004"]
+
+		SUMM@hamb@RCOS@arr@ A@arr@BADOV
+		SUMM@arr@RCOS@arr@BADOV
+		STA B
+		SCB {-1,}
+		STB NRCOS
+		SUMM@arr@XPOS=XPOS@arr@BADOV
+		SUMM@hamb@RSIN@arr@ A@arr@BADOV
+		SUMM@arr@RSIN@arr@BADOV
+		COM A
+		STA B
+		SCB {-1,}
+		STB NRSIN
+		SUMM@arr@YPOS=YPOS@arr@BADOV
+		LDA NUMBER
+		MUL { 100000.,,}
+		JPA NUMMON1
+		COM A
+NUMMON1@arr@
+		@sup_2@@sup_0@SAB {-17.,}
+		@sup_2@@sup_0@DIV { 12,,}
+		@sup_2@@sup_2@STB LETTER
+		STA NUMTT
+		DPX @sub_C@@sub_M@@sub_alpha@ NUMTS
+		hJPQ LETMAGINT
+		DIFF@hamb@YPOS@arr@NRSIN=YPOS@arr@BADOV
+		DIFF@hamb@XPOS@arr@NRCOS=XPOS@arr@BADOV
+		LDA NUMTT
+		JPA #+2 [some handwritten scribble before the line]
+		JPQ NUMMON2
+		RSX @sub_C@@sub_M@@sub_alpha@ NUMTS
+		@sup_minus@@sup_1@ @sub_C@@sub_M@@sub_alpha@ NUMMON1
+NUMMON2@arr@
+		LDA NUMBER
+		JNA #+2
+		JPQ NUMMAGEX
+		MOVE|{ 55}@arr@LETTER	**MINUS SIGN
+		hJPQ LETMAGINT
+NUMMAGEX@arr@
+		JPQ #
+LETMAG@arr@	@sup_1@STE LETMAGEX
+		LDAE@hamb@200022,1,2,3
+		STAE@hamb@RCOS,1,2,3
+		MOVE|200026@arr@LETTER
+		JPQ #+2
+LETMAGINT@arr@
+		@sup_1@STE LETMAGEX
+		DIFF@hamb@XPOS@arr@SCCEN@arr@BADOV
+		FABVAL@arr@ B
+		DIFF@hamb@YPOS@arr@SCCEN+1@arr@BADOV
+		FABVAL
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=114 doc_page=112 type=code]
+[Page header: "LMH GX7A 005"]
+
+		SUB B
+		JNA #+3
+		ADD B
+		STA B
+		LDA SCSZ
+		SUB B
+		JPA LETMON
+		STA B
+LETMAG1@arr@
+		FABVAL@hamb@RSIN@arr@C
+		FABVAL@hamb@RCOS
+		SUMM@arr@ C@arr@BADOV
+		SUMM@arr@ B@arr@BADOV
+		JNA LETMAGEX	**OFF SCOPE
+LETMON@arr@	RSX @sub_C@@sub_M@@sub_alpha@ LETTER
+		SXL @sub_C@@sub_M@@sub_alpha@ LETDISLAST-LETDIS+1
+		JPQ LETMAGEX
+		JNX @sub_C@@sub_M@@sub_alpha@ LETMAGEX
+		@sup_1@@sup_1@LDA @sub_C@@sub_M@@sub_alpha@ LETDIS
+		STA LET@delta@
+		@sup_1@@sup_6@RSX @sub_C@@sub_M@@sub_alpha@*LET@delta@
+		JPQ LETMAG2X
+LETMAG2@arr@
+		DPX @sub_C@@sub_M@@sub_alpha@ LETCNT
+		RSX @sub_C@@sub_M@@sub_alpha@ LET@delta@
+		hJPQ LETMAG3
+		STAB@hamb@LMSTART
+		INX @sub_C@@sub_M@@sub_alpha@ 1
+		hJPQ LETMAG3
+		STAB@hamb@LMEND
+		LDA @sub_C@@sub_M@@sub_alpha@ 377777
+		INX @sub_C@@sub_M@@sub_alpha@ 2
+		DPX @sub_C@@sub_M@@sub_alpha@ LET@delta@
+		SKN @sub_3@@sub_dot@@sub_1@ A
+		JPQ LETMAG2L
+LETMAG2C@arr@
+		@sup_1@@sup_1@LDA A
+		@sup_1@@sup_7@STA CMANG
+		hJPQ CMAG
+		JPQ #+2
+LETMAG2L@arr@
+		hJPQ LMAG
+		RSX @sub_C@@sub_M@@sub_alpha@ LETCNT
+LETMAG2X@arr@
+		@sup_minus@@sup_1@JPX @sub_C@@sub_M@@sub_alpha@ LETMAG2
+LETMAGEX@arr@
+		JPQ #
+LETMAGE3@arr@
+		@sup_1@STE LETMAG3X
+		PROD@hamb@@sup_1@@sup_2@ 1@sub_C@@sub_M@@sub_alpha@@times@RSIN/{ SIZE}=LETS@arr@BADOV [syntax, first macro argument is @sup_1@@sup_2@1@sub_C@@sub_M@@sub_alpha@?]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=115 doc_page=113 type=code]
+[Page header: "LMH GX7A 006"]
+
+		PROD@hamb@@sup_1@@sup_1@ 1@sub_C@@sub_M@@sub_alpha@@times@RCOS/{ SIZE}@arr@BADOV
+		DIFF@arr@LETS@arr@BADOV
+		SUMM@arr@YPOS=LETT@arr@BADOV
+		PROD@hamb@@sup_1@@sup_2@ 1@sub_C@@sub_M@@sub_alpha@@times@RCOS/{ SIZE}=LETS@arr@BADOV
+		PROD@hamb@@sup_1@@sup_1@ 1@sub_C@@sub_M@@sub_alpha@@times@RSIN/{ SIZE}@arr@BADOV
+		SUMM@arr@LETS@arr@BADOV
+		SUMM@arr@XPOS@arr@BADOV
+		LDB LETT
+LETMAG3X@arr@
+		JPQ #
+		[Looks like what follows is a symbol table for display.]
+LETDIS@arr@	ZERO
+		ONE
+		TWO
+		THREE
+		FOUR
+		FIVE
+		SIX
+		SEVEN
+		EIGHT
+		NINE
+LETDIS1@arr@
+		SPACE
+		SPACE
+		SPACE
+		SPACE
+		SPACE
+		SPACE
+		AA
+		BB
+		CC
+		DD
+		EE
+		FF
+		GG
+		HH
+		II
+		JJ
+		KK
+		LL
+		MM
+		NN
+		OO
+		PP
+		QQ
+		RR
+		SS
+		TT
+		UU
+		VV
+		WW
+			
+[meta file_name=102726903-05-01-acc.pdf pdf_page=116 doc_page=114 type=code]
+[Page header: "LMH GX7A 007"]
+
+		XX
+		YY
+		ZZ
+		LPAREN
+		RPAREN
+		PLUS
+		MINUS
+		COMMA
+		DOT
+LETDISLAST@arr@
+		SPACE
+RCOS@arr@	0
+RSIN@arr@	0
+XPOS@arr@	0
+YPOS@arr@	0
+LETTER@arr@	0
+SPACE@arr@	0
+		[Table with data structures describing how to draw symbols.]
+ONE@arr@	3,	**#PARTS, LINE-CIRC,,ANGLE
+		-SIZE/4,,3@times@SIZE/4	**START POINT
+		SIZE	**CENTER OR END
+		0
+		SIZE
+		0,,-SIZE
+		0
+		-SIZE/4,,-SIZE
+		SIZE/4,,,-SIZE
+TWO@arr@	3001,,525425
+		-SIZE/2,,4071@times@SIZE/10000
+		(424.)@times@SIZE/(1000.)
+		1,,62446
+		1305@times@SIZE/10000,,-336@times@SIZE/10000
+		BR
+		0
+		BL
+		BR
+THREE@arr@	3,
+		-SIZE/2,,SIZE
+		2@times@SIZE/3,,SIZE
+		0
+		2@times@SIZE/3,,SIZE
+		SIZE/3
+		1,,-240000
+		SIZE/3
+		0,,-SIZE/3
+FOUR@arr@	3,
+		SIZE/6,,SIZE
+		-2@times@SIZE/3,,-SIZE/3
+		0
+		-2@times@SIZE/3,,-SIZE/3
+		SIZE/2,,-SIZE/3
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=117 doc_page=115 type=code]
+[Page header: "LMH GX7A 010"]
+
+		0
+		SIZE/6,,SIZE
+		SIZE/6,,-SIZE
+FIVE@arr@	3,
+		-(1732.)@times@SIZE/(3160.),,SIZE
+		-(1732.)@times@SIZE/(3160.),,
+		1,,-5@times@400000/6
+		-(1732.)@times@SIZE/(3160.),,
+		-SIZE/3
+		0
+		-(1732.)@times@SIZE/(3160.),,SIZE
+		SIZE/2,,SIZE
+SIX@arr@	3,1,,140,0
+		(1574.)@times@SIZE/(4000.),,(3414.)@times@SIZE/(4000.)
+		SIZE/2
+		0
+		-SIZE/2,,SIZE/2
+		-SIZE/2,,-SIZE/2
+		1,,-400000
+		-SIZE/2,,-SIZE/2
+		-SIZE/2
+SEVEN@arr@	3,
+		-SIZE/2,,SIZE
+		SIZE/2,,SIZE
+		0
+		SIZE/2,,SIZE
+		0,,-SIZE
+		0
+		SIZE/3
+		SIZE/2,,SIZE/3
+EIGHT@arr@	2,1,,377,777
+		SIZE
+		3@times@SIZE/5
+		1,,377777
+		SIZE/5
+		0,,-2@times@SIZE/5
+NINE@arr@	3,1,,400,0
+		SIZE/2,,SIZE/2
+		SIZE/2
+		0
+		SIZE/2,,SIZE/2
+		SIZE/2,,-SIZE/2
+		1,,-200000
+		SIZE/2,,-SIZE/2
+		0,,-SIZE/2
+ZERO@arr@	4,1,,-200,-0
+		-SIZE/2,,SIZE/2
+		SIZE/2
+		0
+		SIZE/2,,SIZE/2
+		
+[meta file_name=102726903-05-01-acc.pdf pdf_page=118 doc_page=116 type=code]
+[Page header: "LMH GX7A 011"]
+
+
+
+		
+
+		
 
