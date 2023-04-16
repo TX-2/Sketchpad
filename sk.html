@@ -4472,6 +4472,113 @@ COMMA&rarr;		1,
 <hr>
 [Page header: "LMH GX7A 021"]
 
+		SKZ 45RWSW
+		JPQ 45W2
+45PREXIT&rarr;	h<sup>1</sup>TSD 45WA	**SUMCHK
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30000
+		45SRM
+		<sup>1</sup>AUX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45WA
+		hJPX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45ERR
+		hJNX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45ERR
+		45DELAY&equiv;1516.
+		SKX <sub>4</sub><sub>5</sub><sub>X</sub> 1
+		<sup>1</sup>ADX <sub>4</sub><sub>5</sub><sub>X</sub> 45CURRENT
+		RXF <sub>7</sub><sub>6</sub> 45EXIT*
+		SKN 45RWSW	** WRITING?
+		RXF <sub>7</sub><sub>6</sub> 45MERGE
+		MKZ <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> 45NORMSG
+		** SEQUENCE 66
+45MSG&rarr;		h<sup>1</sup>DPX <sub>4</sub><sub>5</sub><sub>L</sub><sub>W</sub> 45LWRET
+		RFD <sub>4</sub><sub>5</sub><sub>L</sub><sub>W</sub>#+1
+		<sup>1</sup>IOS <sub>4</sub><sub>5</sub><sub>L</sub><sub>W</sub> 30000
+		hLDE 45LIST
+		STE 45MWA3
+		<sup>2</sup>DPX 45LIST
+		RXF <sub>5</sub><sub>4</sub> 45RESETIT
+45MK1&rarr;		<sup>6</sup>TSD { 60,30,,21,34}	**CR,I,,B,M
+		<sup>5</sup>TSD 45MK1*
+		<sup>4</sup>TSD 45MK1*
+		<sup>3</sup>TSD 45MK1*
+45MK2&rarr;		<sup>6</sup>TSD { 70,41,,46,63}	**SP,R,,W,BLK
+		MKZ <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> TX2MSW2
+		SKZ 45RWSW
+		JPQ 45MW
+		<sup>5</sup>TSD 45MK2* **R [extra space added for clarity]
+45M2&rarr;		<sup>1</sup><sup>2</sup>RSX <sub>4</sub><sub>5</sub><sub>R</sub><sub>X</sub><sub>2</sub> 45MWA3	**IDENT
+		<sup>6</sup>TSD 45MK2*
+		<sup>6</sup>TSD 45MK2*
+		MKZ <sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub> 45M2A
+45M2A&rarr;		SKX <sub>4</sub><sub>5</sub><sub>X</sub> 2
+45M3&rarr;		h<sup>1</sup>DPX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> E
+		h<sup>1</sup>ITE {,,7,7}
+		<sup>1</sup>STE <sub>4</sub><sub>5</sub><sub>X</sub> 45MWA
+		<sup>1</sup>DPX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45MWA2
+		CYR 45MWA2
+		CYR 45MWA2
+		CYR 45MWA2
+		<sup>1</sup><sup>1</sup>RSX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45MWA2
+		h<sup>-</sup><sup>1</sup>JPX <sub>4</sub><sub>5</sub><sub>X</sub> 45M3
+		MKZ 45ZSW
+		MKZ <sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub> 45M4
+45M3A&rarr;		<sup>1</sup>SKX <sub>4</sub><sub>5</sub><sub>X</sub> 2
+
+<hr>
+[Page header: "LMH GX7A 022"]
+
+45M4&rarr;		<sup>1</sup><sup>4</sup>RSX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45M6*
+		SKZ 45ZSW
+		JPQ 45M5
+		SXD <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 0
+		JPQ 45M6
+		MKN 45ZSW
+45M5&rarr;		hDPX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> E
+		<sup>3</sup>TSD E
+45M6&rarr;		h<sup>1</sup><sup>1</sup>LDE <sub>4</sub><sub>5</sub><sub>X</sub> 45MWA+2
+		<sup>3</sup><sup>7</sup>STE <sub>4</sub><sub>5</sub><sub>X</sub> 45MWA+2
+		h<sup>1</sup>JNX <sub>4</sub><sub>5</sub><sub>X</sub> 45M4
+		SNN <sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub> 45M4
+		JPQ 45M3A
+		SKN 45ZSW
+		<sup>3</sup>TSD { 0}
+45M6A&rarr;		<sup>6</sup>TSD 45MK2* **SPACE
+TX2MSW2&rarr;
+		SZZ <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub>#
+		JPD 45LWRET*
+		<sup>6</sup>TSD 45MK2* **SPACE
+45MORMSG&rarr;
+		SZZ <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub>#
+		JPQ 45ERRMSG
+		<sup>1</sup><sup>1</sup>RSX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45MWA3	**LENGTH
+		SNN <sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub> 45M2A
+		JPQ 45M2A
+		<sup>1</sup>SKX <sub>4</sub><sub>5</sub><sub>X</sub> 3
+45M7&rarr;		h<sup>1</sup><sup>3</sup>LDE 45WA
+		h<sup>3</sup>ITE { 77}
+		<sup>1</sup><sup>3</sup>RSX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> E
+		SXL <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 52
+		DEX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 26
+		SXL <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 20
+		JPQ 45M8
+		SXL <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 12
+		DEX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 6
+		SXD <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 0
+		SKX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 0	**AVOID -0
+45M8&rarr;		hDPX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> E
+		<sup>3</sup>TSD E
+		<sup>1</sup>SKX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 3
+		CYR 45WA
+		h<sup>1</sup>JNX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub>#-1
+		h<sup>1</sup>JNX <sub>4</sub><sub>5</sub><sub>X</sub> 45M7
+		SKZ 45GARBSW
+		DPX 45CURRENT
+TX2MSW&rarr;		SKN <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub>#
+45LWRET&rarr;
+		JPD ? [syntax, actual question mark]
+		MKN <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> TX2MSW2
+
+<hr>
+[Page header: "LMH GX7A 023"]
+
 
 </code></pre></body></html>
 <html><body style='font-size:150%'><pre><code>
@@ -8947,6 +9054,113 @@ COMMA&rarr;		1,
 
 <hr>
 [Page header: "LMH GX7A 021"]
+
+		SKZ 45RWSW
+		JPQ 45W2
+45PREXIT&rarr;	h<sup>1</sup>TSD 45WA	**SUMCHK
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30000
+		45SRM
+		<sup>1</sup>AUX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45WA
+		hJPX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45ERR
+		hJNX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45ERR
+		45DELAY&equiv;1516.
+		SKX <sub>4</sub><sub>5</sub><sub>X</sub> 1
+		<sup>1</sup>ADX <sub>4</sub><sub>5</sub><sub>X</sub> 45CURRENT
+		RXF <sub>7</sub><sub>6</sub> 45EXIT*
+		SKN 45RWSW	** WRITING?
+		RXF <sub>7</sub><sub>6</sub> 45MERGE
+		MKZ <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> 45NORMSG
+		** SEQUENCE 66
+45MSG&rarr;		h<sup>1</sup>DPX <sub>4</sub><sub>5</sub><sub>L</sub><sub>W</sub> 45LWRET
+		RFD <sub>4</sub><sub>5</sub><sub>L</sub><sub>W</sub>#+1
+		<sup>1</sup>IOS <sub>4</sub><sub>5</sub><sub>L</sub><sub>W</sub> 30000
+		hLDE 45LIST
+		STE 45MWA3
+		<sup>2</sup>DPX 45LIST
+		RXF <sub>5</sub><sub>4</sub> 45RESETIT
+45MK1&rarr;		<sup>6</sup>TSD { 60,30,,21,34}	**CR,I,,B,M
+		<sup>5</sup>TSD 45MK1*
+		<sup>4</sup>TSD 45MK1*
+		<sup>3</sup>TSD 45MK1*
+45MK2&rarr;		<sup>6</sup>TSD { 70,41,,46,63}	**SP,R,,W,BLK
+		MKZ <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> TX2MSW2
+		SKZ 45RWSW
+		JPQ 45MW
+		<sup>5</sup>TSD 45MK2* **R [extra space added for clarity]
+45M2&rarr;		<sup>1</sup><sup>2</sup>RSX <sub>4</sub><sub>5</sub><sub>R</sub><sub>X</sub><sub>2</sub> 45MWA3	**IDENT
+		<sup>6</sup>TSD 45MK2*
+		<sup>6</sup>TSD 45MK2*
+		MKZ <sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub> 45M2A
+45M2A&rarr;		SKX <sub>4</sub><sub>5</sub><sub>X</sub> 2
+45M3&rarr;		h<sup>1</sup>DPX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> E
+		h<sup>1</sup>ITE {,,7,7}
+		<sup>1</sup>STE <sub>4</sub><sub>5</sub><sub>X</sub> 45MWA
+		<sup>1</sup>DPX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45MWA2
+		CYR 45MWA2
+		CYR 45MWA2
+		CYR 45MWA2
+		<sup>1</sup><sup>1</sup>RSX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45MWA2
+		h<sup>-</sup><sup>1</sup>JPX <sub>4</sub><sub>5</sub><sub>X</sub> 45M3
+		MKZ 45ZSW
+		MKZ <sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub> 45M4
+45M3A&rarr;		<sup>1</sup>SKX <sub>4</sub><sub>5</sub><sub>X</sub> 2
+
+<hr>
+[Page header: "LMH GX7A 022"]
+
+45M4&rarr;		<sup>1</sup><sup>4</sup>RSX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45M6*
+		SKZ 45ZSW
+		JPQ 45M5
+		SXD <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 0
+		JPQ 45M6
+		MKN 45ZSW
+45M5&rarr;		hDPX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> E
+		<sup>3</sup>TSD E
+45M6&rarr;		h<sup>1</sup><sup>1</sup>LDE <sub>4</sub><sub>5</sub><sub>X</sub> 45MWA+2
+		<sup>3</sup><sup>7</sup>STE <sub>4</sub><sub>5</sub><sub>X</sub> 45MWA+2
+		h<sup>1</sup>JNX <sub>4</sub><sub>5</sub><sub>X</sub> 45M4
+		SNN <sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub> 45M4
+		JPQ 45M3A
+		SKN 45ZSW
+		<sup>3</sup>TSD { 0}
+45M6A&rarr;		<sup>6</sup>TSD 45MK2* **SPACE
+TX2MSW2&rarr;
+		SZZ <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub>#
+		JPD 45LWRET*
+		<sup>6</sup>TSD 45MK2* **SPACE
+45MORMSG&rarr;
+		SZZ <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub>#
+		JPQ 45ERRMSG
+		<sup>1</sup><sup>1</sup>RSX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45MWA3	**LENGTH
+		SNN <sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub> 45M2A
+		JPQ 45M2A
+		<sup>1</sup>SKX <sub>4</sub><sub>5</sub><sub>X</sub> 3
+45M7&rarr;		h<sup>1</sup><sup>3</sup>LDE 45WA
+		h<sup>3</sup>ITE { 77}
+		<sup>1</sup><sup>3</sup>RSX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> E
+		SXL <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 52
+		DEX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 26
+		SXL <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 20
+		JPQ 45M8
+		SXL <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 12
+		DEX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 6
+		SXD <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 0
+		SKX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 0	**AVOID -0
+45M8&rarr;		hDPX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> E
+		<sup>3</sup>TSD E
+		<sup>1</sup>SKX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 3
+		CYR 45WA
+		h<sup>1</sup>JNX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub>#-1
+		h<sup>1</sup>JNX <sub>4</sub><sub>5</sub><sub>X</sub> 45M7
+		SKZ 45GARBSW
+		DPX 45CURRENT
+TX2MSW&rarr;		SKN <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub>#
+45LWRET&rarr;
+		JPD ? [syntax, actual question mark]
+		MKN <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> TX2MSW2
+
+<hr>
+[Page header: "LMH GX7A 023"]
 
 
 </code></pre></body></html>

@@ -4039,9 +4039,543 @@ ZERO@arr@	4,1,,-200,-0
 [meta file_name=102726903-05-01-acc.pdf pdf_page=118 doc_page=116 type=code]
 [Page header: "LMH GX7A 011"]
 
+		SIZE/2,,-SIZE/2
+		1,,-200000
+		SIZE/2,,-SIZE/2
+		0,,-SIZE/2
+		0
+		-SIZE/2,,-SIZE/2
+		-SIZE/2,,SIZE/2
+AA@arr@		3,
+		BL
+		SIZE
+		0
+		SIZE
+		BR
+		0
+		-SIZE/4,,0
+		SIZE/4,,0
+BB@arr@		6,
+		TL
+		BL
+		0
+		BL
+		0,,-SIZE
+		1,,200000
+		0,,-SIZE
+		0,,-2@times@SIZE/5
+		1,,200000
+		SIZE/5
+		3@times@SIZE/5
+		0
+		SIZE
+		TL
+		0
+		-SIZE/2,,SIZE/5
+		SIZE/5
+CC@arr@		3,1,,140,0
+		(1574.)@times@SIZE/(4000.),,(3414.)@times@SIZE/(4000.)
+		SIZE/2
+		0
+		-SIZE/2,,SIZE/2
+		-SIZE/2,,-SIZE/2
+		1,,140000
+		-SIZE/2,,-SIZE/2
+		0,,-SIZE/2
+DD@arr@		2,1,,-200,-0
+		TL
+		-SIZE/2,,0
+		0
+		BL
+		TL
+EE@arr@		4,
 
+[meta file_name=102726903-05-01-acc.pdf pdf_page=119 doc_page=117 type=code]
+[Page header: "LMH GX7A 012"]
+		TR
+		TL
+		0
+		TL
+		BL
+		0
+		BL
+		BR
+		0
+		-SIZE/2,,0
+		SIZE/3,,0
+FF@arr@		3,,
+		TR
+		TL
+		0
+		TL
+		BL
+		0
+		-SIZE/2,,0
+		SIZE/3,,0
+GG@arr@		5,1,,140,0
+		(1574.)@times@SIZE/(4000.),,(3414.)@times@SIZE/(4000.)
+		SIZE/2
+		0
+		-SIZE/2,,SIZE/2
+		-SIZE/2,,-SIZE/2
+		1,,200000
+		-SIZE/2,,-SIZE/2
+		0,,-SIZE/2
+		0
+		SIZE/2,,-SIZE/2
+		SIZE/2,,0
+		0
+		SIZE/2,,0
+		0
+HH@arr@		3,
+		TL
+		BL
+		0
+		-SIZE/2,,0
+		SIZE/2,,0
+		0
+		TR
+		BR
+II@arr@		3,
+		TL
+		TR
+		0
+		SIZE
+		-SIZE
 
+[meta file_name=102726903-05-01-acc.pdf pdf_page=120 doc_page=118 type=code]
+[Page header: "LMH GX7A 013"]
+
+		0
+		BL
+		BR
+JJ@arr@		3,
+		TL
+		TR
+		0
+		SIZE
+		0,,-3@times@SIZE/4
+		1,,-200000
+		0,,-3@times@SIZE/4
+		-SIZE/4,,-3@times@SIZE/4
+KK@arr@		3,
+		TL
+		BL
+		0
+		-SIZE/2,,-SIZE/3
+		TR
+		0
+		-SIZE/4,,0
+		BR
+LL@arr@		2,
+		TL
+		BL
+		0
+		BL
+		BR
+		[Trying to decipher this]
+MM@arr@		4,	[4 lines]
+		BL	[Line start: Bottom-Left]
+		TL	[Line end: Top-Left]
+		0	[terminating zero?]
+		TL	[Line start: Top-Left]
+		0	[Line end: zero likely represent the center of the drawing area]
+		0	[terminator?]
+		0	[Line start: center]
+		TR	[Line end: top-right]
+		0	[terminator?]
+		TR	[Line start: Top-Right]
+		BR	[Line end: Bottom-Right, no terminator needed for the last entry?]
+NN@arr@		3,
+		BL
+		TL
+		0
+		TL
+		BR
+		0
+		BR
+		TR
+		[More complicated, involves circles/arcs]
+OO@arr@		4,1,,-200,-0
+		-SIZE/2,,SIZE/2
 		
+[meta file_name=102726903-05-01-acc.pdf pdf_page=121 doc_page=119 type=code]
+[Page header: "LMH GX7A 014"]
 
+		SIZE/2
+		0
+		SIZE/2..SIZE/2
+		SIZE/2,,-SIZE/2
+		1..-200000
+		SIZE/2,,-SIZE/2
+		0,,-SIZE/2
+		0
+		-SIZE/2,,-SIZE/2
+PP@arr@		4,
+		BL
+		TL
+		0
+		TL
+		SIZE
+		1,,-200000
+		SIZE
+		SIZE/2
+		0
+		0
+		-SIZE/2,,
+QQ@arr@		5,1,,-200,-0
+		-SIZE/2,,SIZE/2
+		SIZE/2
+		0
+		SIZE/2,,SIZE/2
+		SIZE/2,,-SIZE/2
+		1,,-200000
+		SIZE/2,,-SIZE/2
+		0,,-SIZE/2
+		0
+		-SIZE/2,,-SIZE/2
+		-SIZE/2,,SIZE/2
+		0
+		0,,-SIZE/2
+		BR
+RR@arr@		5,
+		BL
+		TL
+		0
+		TL
+		SIZE
+		1,,-200000
+		SIZE
+		SIZE/2
+		0
+		0
+		-SIZE/2,,0
+		0
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=122 doc_page=120 type=code]
+[Page header: "LMH GX7A 0??" (partially cut by margin)]
+
+		0
+		BR
+SS@arr@		2,1,,240,0
+		(1574.)@times@SIZE/(5000.),,(4414.)@times@SIZE/(5000.)
+		3*SIZE/5
+		1,,-240000
+		SIZE/5
+		0,,-2@times@SIZE/5
+TT@arr@		2,
+		TL
+		TR
+		0
+		SIZE
+		0,,-SIZE
+UU@arr@		3,
+		TL
+		-SIZE/2,,-SIZE/2
+		0,1,,200,0
+		-SIZE/2,,-SIZE/2
+		0,,-SIZE/2
+		0
+		SIZE/2,,-SIZE/2
+		TR
+VV@arr@		2,
+		TL
+		0,,-SIZE
+		0
+		0,,-SIZE
+		TR
+		[WW entry looks strange, 4 lines declared, more specified?]
+		[Some additional structure?]
+WW@arr@		4,
+		TL
+		-SIZE/4,,-SIZE
+		0
+		-SIZE/4,,-SIZE
+		0
+		0
+		0
+		SIZE/4,,-SIZE
+		0
+		SIZE/4,,-SIZE
+		TR
+XX@arr@		2,
+		TL
+		BR
+		0
+		BL
+		TR
+YY@arr@		3,
+		TL
+		0
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=123 doc_page=121 type=code]
+[Page header: "LMH GX7A 016"]
 		
+		0
+		0
+		0,,-SIZE
+		0
+		0
+		TR
+ZZ@arr@		3,
+		TL
+		TR
+		0
+		TR
+		BL
+		0
+		BL
+		BR
+PLUS@arr@	2,
+		0,,-SIZE/2
+		SIZE/2
+		0
+		SIZE/2,,
+		-SIZE/2,,
+MINUS@arr@	1,
+		SIZE/2,,
+		-SIZE/2,,
+DOT@arr@	1,
+		-SIZE
+		-SIZE
+COMMA@arr@	1,
+		-SIZE
+		-5@times@SIZE/6
+		**IBM TAPE PROGRAM
+		** IBM 910-24
+45SRN@arr@	@sup_1@STE 45EXIT
+		MKN 45NSW
+		JPQ #+3
+45SR@arr@	@sup_1@STE 45EXIT
+		MKZ 45NSW
+		MKZ 45GARBSW
+45SRGARB@arr@
+		MKZ 45RWSW
+		hJPQ 45TYPECHK
+		@sup_1@@sup_1@RSX @sub_4@@sub_5@@sub_X@ LIST
+		INX @sub_4@@sub_5@@sub_X@ LIST+1
+		JPQ 45GO
+45GARB@arr@	@sup_1@STE 45EXIT
+		MKN 45GARBSW
+		MKZ 45NSW
+		DPX 45CURRENT
+		JPQ 45SRGARB
+45SWN@arr@	@sup_1@STE 45EXIT
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=124 doc_page=122 type=code]
+[Page header: "LMH GX7A 017"]
+
+		MKN 45NSW
+		JPQ #+3
+45SW@arr@	@sup_1@STE 45EXIT
+		MKZ 45NSW
+		MKN 45RWSW
+		hJPQ 45TYPECHK
+		SKX @sub_4@@sub_5@@sub_X@ LIST
+		MKZ 45GARBSW
+45GO@arr@	DPX @sub_4@@sub_5@@sub_X@ 45B
+		MKZ @sub_M@@sub_E@@sub_T@@sub_A@ TX2MSW
+		@sup_3@@sup_4@SPG { 604,331,,330,333}
+		@sup_1@@sup_1@RSX @sub_4@@sub_5@@sub_X@ 45NUM	**TOGGLE
+		SKZ 45NSW
+		@sup_1@@sup_1@RSX @sub_4@@sub_5@@sub_X@ 45CURRENT
+		@sup_2@DPX @sub_4@@sub_5@@sub_X@ 45LIST
+		RFD @sub_4@@sub_5@#+2
+		JPD #
+		@sup_1@IOS @sub_4@@sub_1@ 20000
+		@sup_1@IOS @sub_5@@sub_4@ 30000
+		@sup_1@IOS @sub_5@@sub_4@ 40000
+		MKZ @sub_M@@sub_E@@sub_T@@sub_A@ 45DORWD
+		MKZ 45REVSW
+		SXD 45CURRENT*
+		hJPQ 45DORWD
+45GO2@arr@	SKZ 45NSW
+		JPQ 45RW?	[syntax, question mark cannot be part of symex]
+		SKZ 45GARBSW
+		JPQ 45READ
+		SXD @sub_4@@sub_5@@sub_X@ 0
+		hJPQ 45DORWD
+		DEX @sub_4@@sub_5@@sub_X@ 45CURRENT*
+		h@sup_minus@@sup_1@JPX@sub_4@@sub_5@@sub_X@ 45SCHBWD
+		JPQ 45RW?
+45SCHFWD@arr@
+		SKX @sub_4@@sub_5@@sub_X@@sub_2@ 1
+45SF1@arr@	45GF
+		SKX @sub_5@@sub_4@ 3160.
+		SNN 45LPSW
+		SKX @sub_5@@sub_4@ 16000.
+		hJPQ {SQ45DELAY}
+		45GFR
+45SF1A@arr@	RXF @sub_5@@sub_4@ 45SIT1
+		h@sup_1@TSD 45WA
+		@sup_1@IOS @sub_5@@sub_4@ 30000
+		@sup_1@IOS @sub_5@@sub_4@ 30300
+		JPQ #-3
+45SF2@arr@	45SRM
+		45DELAY@hamb@1300.
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=125 doc_page=123 type=code]
+[Page header: "LMH GX7A 020"]
+
+		@sup_1@ADX @sub_4@@sub_5@@sub_X@@sub_2@ 45CURRENT
+		SKZ 45GARB
+		JPQ 45READ
+		h@sup_minus@@sup_1@JPX @sub_4@@sub_5@@sub_X@ 45SF1
+45RW?@arr@	SKZ 45RWSW [so it's just symex with question mark, after all?]
+		JPQ 45WR
+45READ@arr@	45GF
+		SKX @sub_5@@sub_4@ 3160.
+		SNN 45LPSW
+		SKX @sub_5@@sub_4@ 16000.
+		hJPQ {SQ45DELAY}
+		RXF @sub_5@@sub_4@ 45SIT3
+		45GFR
+		h@sup_1@TSD 45WA
+		@sup_2@SED 45LIST
+		JPQ 45COMMON
+		SKZ 45GARBSW
+		JPQ 45SF1A
+		hJPQ 45ERR
+45COMMON@arr@
+		@sup_1@IOS @sub_5@@sub_4@ 30300
+		h@sup_1@TSD 45LIST
+		@sup_1@IOS @sub_5@@sub_4@ 30000
+		@sup_1@@sup_1@RSX @sub_4@@sub_5@@sub_X@@sub_2@ 45LIST
+		@sup_2@AUX @sub_4@@sub_5@@sub_X@@sub_2@ 45LIST	**START SC CALC
+		@sup_1@@sup_1@RSX @sub_4@@sub_5@@sub_X@ 45LIST
+		@sup_1@@sup_1@AUX @sub_4@@sub_5@@sub_X@ 45B
+		DEX @sub_4@@sub_5@@sub_X@ 1
+		@sup_1@DPX @sub_4@@sub_5@@sub_X@ 45TSD
+		SXL @sub_4@@sub_5@@sub_X@ 100000
+		hJPQ 45ERR
+		@sup_1@@sup_1@RSX @sub_4@@sub_5@@sub_X@ 45LIST
+		@sup_1@SKX @sub_4@@sub_5@@sub_X@@sub_pipe@@sub_4@@sub_5@@sub_X@ 0
+		@sup_1@IOS @sub_5@@sub_4@ 30300
+		INX @sub_4@@sub_5@@sub_X@ 1
+		h@sup_1@JNX @sub_4@@sub_5@@sub_X@#+2
+		JPQ 45ENDBLK
+45TSD@arr@	h@sup_2@TSD @sub_4@@sub_5@@sub_X@ 45LIST	**MOD
+		@sup_1@IOS @sub_5@@sub_4@ 30000
+		@sup_2@AUX @sub_4@@sub_5@@sub_X@@sub_2@ 45TSD*
+		@sup_1@IOS @sub_5@@sub_4@ 30300
+		h@sup_1@TSD 45TSD*
+		@sup_1@IOS @sub_5@@sub_4@ 30300
+		@sup_1@AUX @sub_4@@sub_5@@sub_X@@sub_2@ 45TSD*
+		@sup_1@IOS @sub_5@@sub_4@ 30300
+		h@sup_1@JNX @sub_4@@sub_5@@sub_X@ 45TSD
+45ENDBLK@arr@
+		h@sup_1@TSD E	**DUMMY SLOT
+		@sup_1@IOS @sub_5@@sub_4@ 30000
+		@sup_1@IOS @sub_5@@sub_4@ 30300
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=126 doc_page=124 type=code]
+[Page header: "LMH GX7A 021"]
+
+		SKZ 45RWSW
+		JPQ 45W2
+45PREXIT@arr@	h@sup_1@TSD 45WA	**SUMCHK
+		@sup_1@IOS @sub_5@@sub_4@ 30000
+		45SRM
+		@sup_1@AUX @sub_4@@sub_5@@sub_X@@sub_2@ 45WA
+		hJPX @sub_4@@sub_5@@sub_X@@sub_2@ 45ERR
+		hJNX @sub_4@@sub_5@@sub_X@@sub_2@ 45ERR
+		45DELAY@hamb@1516.
+		SKX @sub_4@@sub_5@@sub_X@ 1
+		@sup_1@ADX @sub_4@@sub_5@@sub_X@ 45CURRENT
+		RXF @sub_7@@sub_6@ 45EXIT*
+		SKN 45RWSW	** WRITING?
+		RXF @sub_7@@sub_6@ 45MERGE
+		MKZ @sub_M@@sub_E@@sub_T@@sub_A@ 45NORMSG
+		** SEQUENCE 66
+45MSG@arr@	h@sup_1@DPX @sub_4@@sub_5@@sub_L@@sub_W@ 45LWRET
+		RFD @sub_4@@sub_5@@sub_L@@sub_W@#+1
+		@sup_1@IOS @sub_4@@sub_5@@sub_L@@sub_W@ 30000
+		hLDE 45LIST
+		STE 45MWA3
+		@sup_2@DPX 45LIST
+		RXF @sub_5@@sub_4@ 45RESETIT
+45MK1@arr@	@sup_6@TSD { 60,30,,21,34}	**CR,I,,B,M
+		@sup_5@TSD 45MK1*
+		@sup_4@TSD 45MK1*
+		@sup_3@TSD 45MK1*
+45MK2@arr@	@sup_6@TSD { 70,41,,46,63}	**SP,R,,W,BLK
+		MKZ @sub_M@@sub_E@@sub_T@@sub_A@ TX2MSW2
+		SKZ 45RWSW
+		JPQ 45MW
+		@sup_5@TSD 45MK2* **R [extra space added for clarity]
+45M2@arr@	@sup_1@@sup_2@RSX @sub_4@@sub_5@@sub_R@@sub_X@@sub_2@ 45MWA3	**IDENT
+		@sup_6@TSD 45MK2*
+		@sup_6@TSD 45MK2*
+		MKZ @sub_4@@sub_dot@@sub_1@@sub_0@ 45M2A
+45M2A@arr@	SKX @sub_4@@sub_5@@sub_X@ 2
+45M3@arr@	h@sup_1@DPX @sub_4@@sub_5@@sub_X@@sub_2@ E
+		h@sup_1@ITE {,,7,7}
+		@sup_1@STE @sub_4@@sub_5@@sub_X@ 45MWA
+		@sup_1@DPX @sub_4@@sub_5@@sub_X@@sub_2@ 45MWA2
+		CYR 45MWA2
+		CYR 45MWA2
+		CYR 45MWA2
+		@sup_1@@sup_1@RSX @sub_4@@sub_5@@sub_X@@sub_2@ 45MWA2
+		h@sup_minus@@sup_1@JPX @sub_4@@sub_5@@sub_X@ 45M3
+		MKZ 45ZSW
+		MKZ @sub_4@@sub_dot@@sub_1@@sub_0@ 45M4
+45M3A@arr@	@sup_1@SKX @sub_4@@sub_5@@sub_X@ 2
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=127 doc_page=125 type=code]
+[Page header: "LMH GX7A 022"]
+
+45M4@arr@	@sup_1@@sup_4@RSX @sub_4@@sub_5@@sub_X@@sub_2@ 45M6*
+		SKZ 45ZSW
+		JPQ 45M5
+		SXD @sub_4@@sub_5@@sub_X@@sub_2@ 0
+		JPQ 45M6
+		MKN 45ZSW
+45M5@arr@	hDPX @sub_4@@sub_5@@sub_X@@sub_2@ E
+		@sup_3@TSD E
+45M6@arr@	h@sup_1@@sup_1@LDE @sub_4@@sub_5@@sub_X@ 45MWA+2
+		@sup_3@@sup_7@STE @sub_4@@sub_5@@sub_X@ 45MWA+2
+		h@sup_1@JNX @sub_4@@sub_5@@sub_X@ 45M4
+		SNN @sub_4@@sub_dot@@sub_1@@sub_0@ 45M4
+		JPQ 45M3A
+		SKN 45ZSW
+		@sup_3@TSD { 0}
+45M6A@arr@	@sup_6@TSD 45MK2* **SPACE
+TX2MSW2@arr@
+		SZZ @sub_M@@sub_E@@sub_T@@sub_A@#
+		JPD 45LWRET*
+		@sup_6@TSD 45MK2* **SPACE
+45MORMSG@arr@
+		SZZ @sub_M@@sub_E@@sub_T@@sub_A@#
+		JPQ 45ERRMSG
+		@sup_1@@sup_1@RSX @sub_4@@sub_5@@sub_X@@sub_2@ 45MWA3	**LENGTH
+		SNN @sub_4@@sub_dot@@sub_1@@sub_0@ 45M2A
+		JPQ 45M2A
+		@sup_1@SKX @sub_4@@sub_5@@sub_X@ 3
+45M7@arr@	h@sup_1@@sup_3@LDE 45WA
+		h@sup_3@ITE { 77}
+		@sup_1@@sup_3@RSX @sub_4@@sub_5@@sub_X@@sub_2@ E
+		SXL @sub_4@@sub_5@@sub_X@@sub_2@ 52	
+		DEX @sub_4@@sub_5@@sub_X@@sub_2@ 26	
+		SXL @sub_4@@sub_5@@sub_X@@sub_2@ 20
+		JPQ 45M8	
+		SXL @sub_4@@sub_5@@sub_X@@sub_2@ 12
+		DEX @sub_4@@sub_5@@sub_X@@sub_2@ 6	
+		SXD @sub_4@@sub_5@@sub_X@@sub_2@ 0	
+		SKX @sub_4@@sub_5@@sub_X@@sub_2@ 0	**AVOID -0
+45M8@arr@	hDPX @sub_4@@sub_5@@sub_X@@sub_2@ E
+		@sup_3@TSD E
+		@sup_1@SKX @sub_4@@sub_5@@sub_X@@sub_2@ 3
+		CYR 45WA
+		h@sup_1@JNX @sub_4@@sub_5@@sub_X@@sub_2@#-1
+		h@sup_1@JNX @sub_4@@sub_5@@sub_X@ 45M7
+		SKZ 45GARBSW
+		DPX 45CURRENT
+TX2MSW@arr@	SKN @sub_M@@sub_E@@sub_T@@sub_A@#
+45LWRET@arr@
+		JPD ? [syntax, actual question mark]
+		MKN @sub_M@@sub_E@@sub_T@@sub_A@ TX2MSW2
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=128 doc_page=126 type=code]
+[Page header: "LMH GX7A 023"]
+	
 

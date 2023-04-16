@@ -32,6 +32,9 @@ SUBS = {
     "@sub_X@": ("ₓ", "<sub>X</sub>"),
     "@sub_R@": ("ᵣ", "<sub>R</sub>"),
     "@sub_K@": ("ₖ", "<sub>K</sub>"),
+    "@sub_L@": ("ₗ", "<sub>L</sub>"),
+    # No capital or lowercase subscript w, using v.
+    "@sub_W@": ("ᵥ", "<sub>W</sub>"),
     # Neither capital nor lowercase subscript c, using what's left.
     "@sub_C@": ("ᵩ", "<sub>C</sub>"),
     # These are transcription problems, where char is unclear.
