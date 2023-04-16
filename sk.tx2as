@@ -3184,7 +3184,7 @@ TAFSCHK@arr@	h@sup_1@STE TAFST
 		RFD@sub_4@@sub_6@#+1
 		@sup_1@SKX@sub_3@@sub_6@4	**ERR CNTR
 		SKX@sub_4@@sub_1@{JPD #}
-		@sup_1@IOS@sub_1@@sub_1@30000	**CONNECTION IOA
+		@sup_1@IOS@sub_4@@sub_1@30000	**CONNECT IOA
 		@sup_1@DPX@sub_3@@sub_4@{TPK@beta@}+1	**SAVE SEARCH NO.
 		@sup_2@DPX@sub_3@@sub_4@TAFBL	**ORIGINAL NO.
 		@sup_2@@sup_1@COM TAFBL 	** -(ORIG NO.) [some smudge  after COM, interpreting as junk]
