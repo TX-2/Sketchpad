@@ -4684,6 +4684,170 @@ TX2MSW&rarr;		SKN <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub>#
 [meta file_name=102726903-05-01-acc.pdf pdf_page=128 doc_page=126 type=code]
 [Page header: "LMH GX7A 023"]
 
+		<sup>1</sup><sup>1</sup>RSX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> TX2WA3
+		JPQ 45M2+1
+45ERRMSG&rarr;
+		<sup>6</sup>TSD {67,24,,41,41}	**RED ERR
+		<sup>5</sup>TSD #-1* [syntax]
+		<sup>4</sup>TSD #-2*
+		<sup>3</sup>TSD #-3*
+		<sup>3</sup>TSD 45MK2*	**BLACK
+		<sup>6</sup>TSD 45MK1*
+		<sup>6</sup>TSD 45MK1*
+		<sup>6</sup>TSD 45MK1*
+		JPD 45LWRET*
+45WR&rarr;		45GFW
+		SKX <sub>5</sub><sub>4</sub> 5000.
+		SNN 45LPSW
+		SKX <sub>5</sub><sub>4</sub> 76000.
+		hJPQ {SQ45DELAY}
+		RXF <sub>5</sub><sub>4</sub> 45IT3
+		h<sup>2</sup>TSD 45LIST	**IDENT
+		JPQ 45COMMON
+45W2&rarr;		<sup>1</sup>DPX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45WA
+		<sup>1</sup>COM 45WA
+		<sup>1</sup>TSD 45WA	**SUMCHK
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30000
+		h45WCS [syntax, 45WCS is listed without a value in the equalities table]
+		SKZ <sub>1</sub><sub>.</sub><sub>9</sub> E	**NOT EOT?
+		hJPQ 45ERR
+		45DELAY&equiv;3516.
+		SKX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 1
+		<sup>1</sup>ADX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45CURRENT
+		MKN 45REVSW
+		SKX <sub>4</sub><sub>5</sub><sub>X</sub> 0
+45SCHBWD&rarr;
+		<sup>1</sup>SKX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 1
+		45DELAY&equiv;11160.
+45SR1&rarr;		45REV
+		RXF <sub>5</sub><sub>4</sub> 45IT2
+		h<sup>1</sup>TSD 45WA
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30000
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30300
+		JPQ #-3
+45SR2&rarr;		45DELAY&equiv;2000.
+		45SRM
+		45DELAY&equiv;1300.
+		h<sup>1</sup>ADX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45CURRENT
+		<sup>1</sup>SED {-0}
+		DPX 45CURRENT
+		h<sup>1</sup>JNX <sub>4</sub><sub>5</sub><sub>X</sub> 45SR1
+		45DELAY&equiv;11160.
+		SKN 45REVSW
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=129 doc_page=127 type=code]
+[Page header: "LMH GX7A 024"]
+
+		JPQ 45RW?
+45SC&rarr;		<sup>1</sup><sup>1</sup>RSX <sub>4</sub><sub>5</sub><sub>X</sub> 45LIST
+		DEX <sub>4</sub><sub>5</sub><sub>X</sub> 1
+		<sup>1</sup>SKX <sub>4</sub><sub>5</sub><sub>X</sub><sub>|</sub><sub>4</sub><sub>5</sub><sub>X</sub> 0
+		SKX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 0
+		45GF
+		45DELAY&equiv;3160.
+		RXF <sub>5</sub><sub>4</sub> 45IT3
+		45GFR
+45SC2&rarr;		h<sup>2</sup>TSD 45WA2
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30000
+		<sup>2</sup>AUX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45SC2*
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30300
+		h<sup>1</sup>TSD 45SC2*
+		hIOS <sub>5</sub><sub>4</sub> 30000
+		SED 45TSD*
+		JPQ #+2
+		hJPQ 45ERR
+		<sup>1</sup>AUX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45SC2*
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30300
+		h<sup>1</sup>JNX <sub>4</sub><sub>5</sub><sub>X</sub> 45SC2
+		h<sup>1</sup>TSD E	**DUMMY SLOT
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30000
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30300
+		JPQ 45PREXIT
+45DORWD&rarr;
+		<sup>1</sup>STE 45RWDEXIT
+		SZN <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> 45DORWD
+		JPQ 45RWDEXIT*
+		MKZ 45LPSW
+		DPX 45CURRENT
+		<sup>2</sup><sup>0</sup> 45RWD
+		45DELAY&equiv;31600.
+45RWDEXIT&rarr;
+		JPQ #	**MOD
+45RESETIT&rarr;
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30000
+		h<sup>1</sup>TSD { 10000.}
+		<sup>2</sup><sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30300
+		SKN <sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub> 200134
+		RXF <sub>5</sub><sub>7</sub> 200134*
+		JPD #-2
+45SWITCHES&rarr;
+		0
+45WA&rarr;		0
+		**SEQUENCE 54
+45IT1&rarr;		<sup>1</sup>TS { 400.,,200.}
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30000
+		RFD <sub>4</sub><sub>5</sub> 45SF2
+		JPD #
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=130 doc_page=128 type=code]
+[Page header: "LMH GX7A 025"]
+
+45IT2&rarr;		<sup>1</sup>TSD { 400.,,200.}
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30000
+		RFD <sub>4</sub><sub>5</sub> 45SR2
+		JPD #
+45IT3&rarr;		<sup>2</sup>TSD { 400.,,200.}
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30000
+		RFD <sub>4</sub><sub>5</sub> 45ERR
+		JPD #
+45TYPECHK&rarr;
+		<sup>1</sup>STE 45TYPECHKX
+45TC1&rarr;		h<sup>1</sup>IOS <sub>4</sub><sub>6</sub><sub>L</sub><sub>W</sub> 0
+		hSKN <sub>2</sub><sub>.</sub><sub>6</sub> E	**CONNECTED?
+		JPQ 45TYPECHKX*
+		hSKN <sub>2</sub><sub>.</sub><sub>8</sub> E	**STATUS?
+		JPQ 45TC1
+		SKN <sub>2</sub><sub>.</sub><sub>9</sub> E	**FLAG
+45TYPECHKX&rarr;
+		JPQ ?
+		JPQ 45TC1
+		**ERROR ROUTINES
+45ERR&rarr;		h<sup>1</sup>STE 45ERRSTOP
+		h45SRM
+		45DELAY&equiv;20000.
+		<sup>1</sup>DPX 45CURRENT
+		45RWD [in the listing statements like this one are offset by one space, is it significant?]
+		45DELAY&equiv;31600.
+		<sup>1</sup>IOS <sub>4</sub><sub>5</sub> 20000
+		MKN <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> 45NORMSG
+		RXF <sub>7</sub><sub>6</sub> 45EXIT*
+		JPQ 45MSG
+45ERRSTOP&rarr;
+		0
+45MW&rarr;		<sup>4</sup>TSD 45MK2***W [should be interpreted as 45MK2* **W]
+		JPQ 45M2
+45MWA&rarr;		0
+		0
+		0
+45MWA2&rarr;		0
+45MWA3&rarr;		0
+45B&rarr;		0
+45MERGE&rarr;
+		<sup>1</sup><sup>1</sup>RSX <sub>&alpha;</sub> LIST
+		INX <sub>&alpha;</sub> 1
+		<sup>1</sup>DPX <sub>&alpha;</sub> LIST2
+		INX <sub>&alpha;</sub> MASTERS-LIST
+LIST2&rarr;		SKX <sub>&gamma;</sub> ?	** REL RD ADDR	[syntax]
+		<sup>1</sup><sup>1</sup>RSX <sub>?</sub> 45TSD	**END OF RD AREA [maybe <sub>&beta;</sub>?]
+		DEX <sub>&beta;</sub> LIST
+45MCA1&rarr;		SKX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> 0
+		<sup>1</sup><sup>5</sup>AUX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LIST
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=131 doc_page=129 type=code]
+[Page header: "LMH GX7A 026"]
 
 </code></pre></body></html>
 <html><body style='font-size:150%'><pre><code>
@@ -9372,5 +9536,169 @@ TX2MSW&rarr;		SKN <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub>#
 [meta file_name=102726903-05-01-acc.pdf pdf_page=128 doc_page=126 type=code]
 [Page header: "LMH GX7A 023"]
 
+		<sup>1</sup><sup>1</sup>RSX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> TX2WA3
+		JPQ 45M2+1
+45ERRMSG&rarr;
+		<sup>6</sup>TSD {67,24,,41,41}	**RED ERR
+		<sup>5</sup>TSD #-1* [syntax]
+		<sup>4</sup>TSD #-2*
+		<sup>3</sup>TSD #-3*
+		<sup>3</sup>TSD 45MK2*	**BLACK
+		<sup>6</sup>TSD 45MK1*
+		<sup>6</sup>TSD 45MK1*
+		<sup>6</sup>TSD 45MK1*
+		JPD 45LWRET*
+45WR&rarr;		45GFW
+		SKX <sub>5</sub><sub>4</sub> 5000.
+		SNN 45LPSW
+		SKX <sub>5</sub><sub>4</sub> 76000.
+		hJPQ {SQ45DELAY}
+		RXF <sub>5</sub><sub>4</sub> 45IT3
+		h<sup>2</sup>TSD 45LIST	**IDENT
+		JPQ 45COMMON
+45W2&rarr;		<sup>1</sup>DPX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45WA
+		<sup>1</sup>COM 45WA
+		<sup>1</sup>TSD 45WA	**SUMCHK
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30000
+		h45WCS [syntax, 45WCS is listed without a value in the equalities table]
+		SKZ <sub>1</sub><sub>.</sub><sub>9</sub> E	**NOT EOT?
+		hJPQ 45ERR
+		45DELAY&equiv;3516.
+		SKX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 1
+		<sup>1</sup>ADX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45CURRENT
+		MKN 45REVSW
+		SKX <sub>4</sub><sub>5</sub><sub>X</sub> 0
+45SCHBWD&rarr;
+		<sup>1</sup>SKX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 1
+		45DELAY&equiv;11160.
+45SR1&rarr;		45REV
+		RXF <sub>5</sub><sub>4</sub> 45IT2
+		h<sup>1</sup>TSD 45WA
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30000
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30300
+		JPQ #-3
+45SR2&rarr;		45DELAY&equiv;2000.
+		45SRM
+		45DELAY&equiv;1300.
+		h<sup>1</sup>ADX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45CURRENT
+		<sup>1</sup>SED {-0}
+		DPX 45CURRENT
+		h<sup>1</sup>JNX <sub>4</sub><sub>5</sub><sub>X</sub> 45SR1
+		45DELAY&equiv;11160.
+		SKN 45REVSW
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=129 doc_page=127 type=code]
+[Page header: "LMH GX7A 024"]
+
+		JPQ 45RW?
+45SC&rarr;		<sup>1</sup><sup>1</sup>RSX <sub>4</sub><sub>5</sub><sub>X</sub> 45LIST
+		DEX <sub>4</sub><sub>5</sub><sub>X</sub> 1
+		<sup>1</sup>SKX <sub>4</sub><sub>5</sub><sub>X</sub><sub>|</sub><sub>4</sub><sub>5</sub><sub>X</sub> 0
+		SKX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 0
+		45GF
+		45DELAY&equiv;3160.
+		RXF <sub>5</sub><sub>4</sub> 45IT3
+		45GFR
+45SC2&rarr;		h<sup>2</sup>TSD 45WA2
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30000
+		<sup>2</sup>AUX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45SC2*
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30300
+		h<sup>1</sup>TSD 45SC2*
+		hIOS <sub>5</sub><sub>4</sub> 30000
+		SED 45TSD*
+		JPQ #+2
+		hJPQ 45ERR
+		<sup>1</sup>AUX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45SC2*
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30300
+		h<sup>1</sup>JNX <sub>4</sub><sub>5</sub><sub>X</sub> 45SC2
+		h<sup>1</sup>TSD E	**DUMMY SLOT
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30000
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30300
+		JPQ 45PREXIT
+45DORWD&rarr;
+		<sup>1</sup>STE 45RWDEXIT
+		SZN <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> 45DORWD
+		JPQ 45RWDEXIT*
+		MKZ 45LPSW
+		DPX 45CURRENT
+		<sup>2</sup><sup>0</sup> 45RWD
+		45DELAY&equiv;31600.
+45RWDEXIT&rarr;
+		JPQ #	**MOD
+45RESETIT&rarr;
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30000
+		h<sup>1</sup>TSD { 10000.}
+		<sup>2</sup><sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30300
+		SKN <sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub> 200134
+		RXF <sub>5</sub><sub>7</sub> 200134*
+		JPD #-2
+45SWITCHES&rarr;
+		0
+45WA&rarr;		0
+		**SEQUENCE 54
+45IT1&rarr;		<sup>1</sup>TS { 400.,,200.}
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30000
+		RFD <sub>4</sub><sub>5</sub> 45SF2
+		JPD #
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=130 doc_page=128 type=code]
+[Page header: "LMH GX7A 025"]
+
+45IT2&rarr;		<sup>1</sup>TSD { 400.,,200.}
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30000
+		RFD <sub>4</sub><sub>5</sub> 45SR2
+		JPD #
+45IT3&rarr;		<sup>2</sup>TSD { 400.,,200.}
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30000
+		RFD <sub>4</sub><sub>5</sub> 45ERR
+		JPD #
+45TYPECHK&rarr;
+		<sup>1</sup>STE 45TYPECHKX
+45TC1&rarr;		h<sup>1</sup>IOS <sub>4</sub><sub>6</sub><sub>L</sub><sub>W</sub> 0
+		hSKN <sub>2</sub><sub>.</sub><sub>6</sub> E	**CONNECTED?
+		JPQ 45TYPECHKX*
+		hSKN <sub>2</sub><sub>.</sub><sub>8</sub> E	**STATUS?
+		JPQ 45TC1
+		SKN <sub>2</sub><sub>.</sub><sub>9</sub> E	**FLAG
+45TYPECHKX&rarr;
+		JPQ ?
+		JPQ 45TC1
+		**ERROR ROUTINES
+45ERR&rarr;		h<sup>1</sup>STE 45ERRSTOP
+		h45SRM
+		45DELAY&equiv;20000.
+		<sup>1</sup>DPX 45CURRENT
+		45RWD [in the listing statements like this one are offset by one space, is it significant?]
+		45DELAY&equiv;31600.
+		<sup>1</sup>IOS <sub>4</sub><sub>5</sub> 20000
+		MKN <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> 45NORMSG
+		RXF <sub>7</sub><sub>6</sub> 45EXIT*
+		JPQ 45MSG
+45ERRSTOP&rarr;
+		0
+45MW&rarr;		<sup>4</sup>TSD 45MK2***W [should be interpreted as 45MK2* **W]
+		JPQ 45M2
+45MWA&rarr;		0
+		0
+		0
+45MWA2&rarr;		0
+45MWA3&rarr;		0
+45B&rarr;		0
+45MERGE&rarr;
+		<sup>1</sup><sup>1</sup>RSX <sub>&alpha;</sub> LIST
+		INX <sub>&alpha;</sub> 1
+		<sup>1</sup>DPX <sub>&alpha;</sub> LIST2
+		INX <sub>&alpha;</sub> MASTERS-LIST
+LIST2&rarr;		SKX <sub>&gamma;</sub> ?	** REL RD ADDR	[syntax]
+		<sup>1</sup><sup>1</sup>RSX <sub>?</sub> 45TSD	**END OF RD AREA [maybe <sub>&beta;</sub>?]
+		DEX <sub>&beta;</sub> LIST
+45MCA1&rarr;		SKX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> 0
+		<sup>1</sup><sup>5</sup>AUX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LIST
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=131 doc_page=129 type=code]
+[Page header: "LMH GX7A 026"]
 
 </code></pre></body></html>

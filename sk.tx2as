@@ -4577,5 +4577,166 @@ TX2MSW@arr@	SKN @sub_M@@sub_E@@sub_T@@sub_A@#
 
 [meta file_name=102726903-05-01-acc.pdf pdf_page=128 doc_page=126 type=code]
 [Page header: "LMH GX7A 023"]
-	
+
+		@sup_1@@sup_1@RSX @sub_4@@sub_5@@sub_X@@sub_2@ TX2WA3
+		JPQ 45M2+1
+45ERRMSG@arr@
+		@sup_6@TSD {67,24,,41,41}	**RED ERR
+		@sup_5@TSD #-1* [syntax]
+		@sup_4@TSD #-2*
+		@sup_3@TSD #-3*
+		@sup_3@TSD 45MK2*	**BLACK
+		@sup_6@TSD 45MK1*
+		@sup_6@TSD 45MK1*
+		@sup_6@TSD 45MK1*
+		JPD 45LWRET*
+45WR@arr@	45GFW
+		SKX @sub_5@@sub_4@ 5000.
+		SNN 45LPSW
+		SKX @sub_5@@sub_4@ 76000.
+		hJPQ {SQ45DELAY}
+		RXF @sub_5@@sub_4@ 45IT3
+		h@sup_2@TSD 45LIST	**IDENT
+		JPQ 45COMMON
+45W2@arr@	@sup_1@DPX @sub_4@@sub_5@@sub_X@@sub_2@ 45WA
+		@sup_1@COM 45WA
+		@sup_1@TSD 45WA	**SUMCHK
+		@sup_1@IOS @sub_5@@sub_4@ 30000
+		h45WCS [syntax, 45WCS is listed without a value in the equalities table]
+		SKZ @sub_1@@sub_dot@@sub_9@ E	**NOT EOT?
+		hJPQ 45ERR
+		45DELAY@hamb@3516.
+		SKX @sub_4@@sub_5@@sub_X@@sub_2@ 1
+		@sup_1@ADX @sub_4@@sub_5@@sub_X@@sub_2@ 45CURRENT
+		MKN 45REVSW
+		SKX @sub_4@@sub_5@@sub_X@ 0
+45SCHBWD@arr@
+		@sup_1@SKX @sub_4@@sub_5@@sub_X@@sub_2@ 1
+		45DELAY@hamb@11160.
+45SR1@arr@	45REV
+		RXF @sub_5@@sub_4@ 45IT2
+		h@sup_1@TSD 45WA
+		@sup_1@IOS @sub_5@@sub_4@ 30000
+		@sup_1@IOS @sub_5@@sub_4@ 30300
+		JPQ #-3
+45SR2@arr@	45DELAY@hamb@2000.
+		45SRM
+		45DELAY@hamb@1300.
+		h@sup_1@ADX @sub_4@@sub_5@@sub_X@@sub_2@ 45CURRENT
+		@sup_1@SED {-0}
+		DPX 45CURRENT
+		h@sup_1@JNX @sub_4@@sub_5@@sub_X@ 45SR1
+		45DELAY@hamb@11160.
+		SKN 45REVSW
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=129 doc_page=127 type=code]
+[Page header: "LMH GX7A 024"]
+
+		JPQ 45RW?
+45SC@arr@	@sup_1@@sup_1@RSX @sub_4@@sub_5@@sub_X@ 45LIST
+		DEX @sub_4@@sub_5@@sub_X@ 1
+		@sup_1@SKX @sub_4@@sub_5@@sub_X@@sub_pipe@@sub_4@@sub_5@@sub_X@ 0
+		SKX @sub_4@@sub_5@@sub_X@@sub_2@ 0
+		45GF
+		45DELAY@hamb@3160.
+		RXF @sub_5@@sub_4@ 45IT3
+		45GFR
+45SC2@arr@	h@sup_2@TSD 45WA2
+		@sup_1@IOS @sub_5@@sub_4@ 30000
+		@sup_2@AUX @sub_4@@sub_5@@sub_X@@sub_2@ 45SC2*
+		@sup_1@IOS @sub_5@@sub_4@ 30300
+		h@sup_1@TSD 45SC2*
+		hIOS @sub_5@@sub_4@ 30000
+		SED 45TSD*
+		JPQ #+2
+		hJPQ 45ERR
+		@sup_1@AUX @sub_4@@sub_5@@sub_X@@sub_2@ 45SC2*
+		@sup_1@IOS @sub_5@@sub_4@ 30300
+		h@sup_1@JNX @sub_4@@sub_5@@sub_X@ 45SC2
+		h@sup_1@TSD E	**DUMMY SLOT
+		@sup_1@IOS @sub_5@@sub_4@ 30000
+		@sup_1@IOS @sub_5@@sub_4@ 30300
+		JPQ 45PREXIT
+45DORWD@arr@
+		@sup_1@STE 45RWDEXIT
+		SZN @sub_M@@sub_E@@sub_T@@sub_A@ 45DORWD
+		JPQ 45RWDEXIT*
+		MKZ 45LPSW
+		DPX 45CURRENT
+		@sup_2@@sup_0@ 45RWD
+		45DELAY@hamb@31600.
+45RWDEXIT@arr@
+		JPQ #	**MOD
+45RESETIT@arr@
+		@sup_1@IOS @sub_5@@sub_4@ 30000
+		h@sup_1@TSD { 10000.}
+		@sup_2@@sup_1@IOS @sub_5@@sub_4@ 30300
+		SKN @sub_4@@sub_dot@@sub_1@@sub_0@ 200134
+		RXF @sub_5@@sub_7@ 200134*
+		JPD #-2
+45SWITCHES@arr@
+		0
+45WA@arr@	0
+		**SEQUENCE 54
+45IT1@arr@	@sup_1@TS { 400.,,200.}
+		@sup_1@IOS @sub_5@@sub_4@ 30000
+		RFD @sub_4@@sub_5@ 45SF2
+		JPD #
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=130 doc_page=128 type=code]
+[Page header: "LMH GX7A 025"]
+
+45IT2@arr@	@sup_1@TSD { 400.,,200.}
+		@sup_1@IOS @sub_5@@sub_4@ 30000
+		RFD @sub_4@@sub_5@ 45SR2
+		JPD #
+45IT3@arr@	@sup_2@TSD { 400.,,200.}
+		@sup_1@IOS @sub_5@@sub_4@ 30000
+		RFD @sub_4@@sub_5@ 45ERR
+		JPD #
+45TYPECHK@arr@
+		@sup_1@STE 45TYPECHKX
+45TC1@arr@	h@sup_1@IOS @sub_4@@sub_6@@sub_L@@sub_W@ 0
+		hSKN @sub_2@@sub_dot@@sub_6@ E	**CONNECTED?
+		JPQ 45TYPECHKX*
+		hSKN @sub_2@@sub_dot@@sub_8@ E	**STATUS?
+		JPQ 45TC1
+		SKN @sub_2@@sub_dot@@sub_9@ E	**FLAG
+45TYPECHKX@arr@
+		JPQ ?
+		JPQ 45TC1
+		**ERROR ROUTINES
+45ERR@arr@	h@sup_1@STE 45ERRSTOP	
+		h45SRM
+		45DELAY@hamb@20000.
+		@sup_1@DPX 45CURRENT
+		45RWD [in the listing statements like this one are offset by one space, is it significant?]
+		45DELAY@hamb@31600.
+		@sup_1@IOS @sub_4@@sub_5@ 20000
+		MKN @sub_M@@sub_E@@sub_T@@sub_A@ 45NORMSG
+		RXF @sub_7@@sub_6@ 45EXIT*
+		JPQ 45MSG
+45ERRSTOP@arr@
+		0
+45MW@arr@	@sup_4@TSD 45MK2***W [should be interpreted as 45MK2* **W]
+		JPQ 45M2
+45MWA@arr@	0
+		0
+		0
+45MWA2@arr@	0
+45MWA3@arr@	0
+45B@arr@	0
+45MERGE@arr@
+		@sup_1@@sup_1@RSX @sub_alpha@ LIST
+		INX @sub_alpha@ 1
+		@sup_1@DPX @sub_alpha@ LIST2
+		INX @sub_alpha@ MASTERS-LIST
+LIST2@arr@	SKX @sub_gamma@ ?	** REL RD ADDR	[syntax]
+		@sup_1@@sup_1@RSX @sub_?@ 45TSD	**END OF RD AREA [maybe @sub_beta@?]
+		DEX @sub_beta@ LIST
+45MCA1@arr@	SKX @sub_S@@sub_pipe@@sub_alpha@ 0
+		@sup_1@@sup_5@AUX @sub_S@@sub_pipe@@sub_alpha@ LIST
+		
+[meta file_name=102726903-05-01-acc.pdf pdf_page=131 doc_page=129 type=code]
+[Page header: "LMH GX7A 026"]
 
