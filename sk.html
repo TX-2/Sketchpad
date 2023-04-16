@@ -7,7 +7,7 @@ I2&rarr;		JPQ FRESH START
  200050|
 		JPQ 47FIXL
 		JPQ 47LOSTPEN
-I52&rarr;	hJMP BLOCKMAKER
+I52&rarr;		hJMP BLOCKMAKER
 		hJMP GETBLOCKER
  200066|
 		hJMP READIT
@@ -28,7 +28,7 @@ FRESH START&rarr;
 [Handwritten: "BUILD"]
 [Handwritten: "RDTX2=200126"]
 
-STARTS&rarr;	RXF <sub>4</sub><sub>7</sub> 47START
+STARTS&rarr;		RXF <sub>4</sub><sub>7</sub> 47START
 		DPX ATBITS
 		MKZ MOVINGDONE
 		DPX 0
@@ -46,7 +46,7 @@ STARTS&rarr;	RXF <sub>4</sub><sub>7</sub> 47START
 		JPD #
 47START&rarr;
 		CSQ<sub>4</sub><sub>7</sub>
-47FIXL&rarr;	DPX PAGE1 				[Clear *PAGE1]
+47FIXL&rarr;		DPX PAGE1 				[Clear *PAGE1]
 		hRSX <sub>4</sub><sub>7</sub> ATBITS 		[X_47 = R(*ATBITS)]
 		SXD <sub>4</sub><sub>7</sub> 1 			[if X_47 != 1 skip to JPQ 47LITEIT]
 		JPQ #+2              			[else skip past it]
@@ -104,8 +104,8 @@ STARTS&rarr;	RXF <sub>4</sub><sub>7</sub> 47START
 		MOVE|SWITCH1&rarr;SWITCH2
 		hLDE 47BUT
 		SED { 0}
-47TSD&rarr;	JPD #
-47BOTH&rarr;	hRSX <sub>4</sub><sub>7</sub> 47TABLE
+47TSD&rarr;		JPD #
+47BOTH&rarr;		hRSX <sub>4</sub><sub>7</sub> 47TABLE
 		hLDE 47BUT
 		hSTE <sub>4</sub><sub>7</sub> 47TABLE+1
 		hINX <sub>4</sub><sub>7</sub> 1
@@ -119,7 +119,7 @@ STARTS&rarr;	RXF <sub>4</sub><sub>7</sub> 47START
 47TABLE&rarr;
 		0
  47TABLE+20|
-READIT&rarr;	<sup>1</sup>STE READITEX
+READIT&rarr;		<sup>1</sup>STE READITEX
 		REX <sub>&alpha;</sub> 0
 		hSXL <sub>&alpha;</sub> *47TABLE
 		hJPQ ALLREAD
@@ -127,7 +127,7 @@ READIT&rarr;	<sup>1</sup>STE READITEX
 		STA 76BUT
 		INX <sub>?</sub> 1
 		DPX <sub>?</sub> 76TABLE
-PAGE1D&rarr;	SKZ <sub>1</sub><sub>.</sub><sub>6</sub> 76BUT
+PAGE1D&rarr;		SKZ <sub>1</sub><sub>.</sub><sub>6</sub> 76BUT
 		hJPQ STOPMOVEP
 		SKZ <sub>1</sub><sub>.</sub><sub>?</sub> 76BUT
 		hJPQ STARTDRAW
@@ -158,7 +158,7 @@ PAGE1D&rarr;	SKZ <sub>1</sub><sub>.</sub><sub>6</sub> 76BUT
 		hJPQ MGPSTART
 		SKZ <sub>2</sub><sub>.</sub><sub>?</sub> 76BUT [Handwritten: "<- 1.1"]
 		hJPQ MAKECONS
-PAGE1E&rarr;	SKZ <sub>2</sub><sub>.</sub><sub>?</sub> 76BUT [Handwritten: "<- 1.2"]
+PAGE1E&rarr;		SKZ <sub>2</sub><sub>.</sub><sub>?</sub> 76BUT [Handwritten: "<- 1.2"]
 		hJPQ TRUEUP
 		SKZ <sub>2</sub><sub>.</sub><sub>6</sub> 76BUT [Handwritten: "<- 1.4"]
 		hJPQ MAKPATA
@@ -188,7 +188,7 @@ PAGE1E&rarr;	SKZ <sub>2</sub><sub>.</sub><sub>?</sub> 76BUT [Handwritten: "<- 1.
 		hJPQ ORDSTARTB	** BEST
 		SKZ <sub>4</sub><sub>.</sub><sub>5</sub> 76BUT
 		hJPQ ORDSTARTW  ** WORST
-PAGE1F&rarr;	SKN <sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub> SWITCH ** IF ONE, DO DEADLY DELETIONS
+PAGE1F&rarr;		SKN <sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub> SWITCH ** IF ONE, DO DEADLY DELETIONS
 		JPQ PAGE1G
 		SKZ <sub>1</sub><sub>.</sub><sub>2</sub> 76BUT
 		hJPQ CONSTOUT
@@ -208,7 +208,7 @@ PAGE1F&rarr;	SKN <sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub> SWITCH ** IF O
 		JPQ #+2
 		hJPQ WIBMN
 		JPQ ALLREAD-2 [some trailing symbol, interpreting as junk]
-PAGE1G&rarr;	SKN <sub>4</sub><sub>.</sub><sub>3</sub> 76BUT
+PAGE1G&rarr;		SKN <sub>4</sub><sub>.</sub><sub>3</sub> 76BUT
 		JPQ #+10
 		SKN <sub>4</sub><sub>.</sub><sub>2</sub> SWITCH
 		JPQ #+3
@@ -227,20 +227,20 @@ ALLREAD&rarr;
 		hDPX 47TABLE
 READITEX&rarr;
 		JPQ #
-CPY1&rarr;	<sup>1</sup> STE CPY1X
+CPY1&rarr;		<sup>1</sup> STE CPY1X
 		LDA 377723
 		JPQ CPY1T
-CPY2&rarr;	<sup>1</sup>STE CPY1X
+CPY2&rarr;		<sup>1</sup>STE CPY1X
 		LDA 377722
 		JPQ CPY1T
-CPY3&rarr;	<sup>1</sup>STE CPY1X
+CPY3&rarr;		<sup>1</sup>STE CPY1X
 		LDA 377721
 		JPQ CPY1T
-CPY3&rarr;	<sup>1</sup>STE CPY1X
+CPY3&rarr;		<sup>1</sup>STE CPY1X
 		LDA 377720
-CPY1T&rarr;	STA COPYNUM
+CPY1T&rarr;		STA COPYNUM
 		hJPQ COPYIST
-CPY1X&rarr;	JPQ #
+CPY1X&rarr;		JPQ #
 ORDSTARTB&rarr;
 		<sup>1</sup>STE #+3
 		MKZ ORDWORST
@@ -271,7 +271,7 @@ CONSOUTSUB&rarr;
 		hJPQ DELETE
 CONSOUTSUBX&rarr;
 		JPQ #
-PICOUT&rarr;	<sup>1</sup>STE PICOUTGRX
+PICOUT&rarr;		<sup>1</sup>STE PICOUTGRX
 		MKN MOVED
 		REX <sub>&alpha;</sub> CURPICS-LIST
 		LGORR&equiv;SPECB&times;&alpha;=S&rarr;PICOUT1
@@ -353,7 +353,7 @@ PTSOUT2&rarr;
 		MKN MOVED
 		JPQ PTSOUT1X
 		** MAKE POINT &alpha; BE ON CIRCLE &beta;
-MPBOC&rarr;	<sup>1</sup>STE MPBOCX
+MPBOC&rarr;		<sup>1</sup>STE MPBOCX
 		MAKA&equiv;ONCIRCLES&rarr;&gamma;
 		PUT|PBOCP,&gamma;&rarr;VCON,&alpha;
 		RSX <sub>S</sub><sub>|</sub><sub>&beta;</sub> CIRCEN+LIST
@@ -364,21 +364,21 @@ MPBOC&rarr;	<sup>1</sup>STE MPBOCX
 [Page header: "IES 2XMX 007"]
 
 		PUT|PBOCS,&gamma;&rarr;VCON,S
-MPBOCX&rarr;	JPQ #
+MPBOCX&rarr;		JPQ #
 		** MAKE POINT &alpha; BE ON LINE &beta;
-MPBOL&rarr;	<sup>1</sup>STE MPBOLX
+MPBOL&rarr;		<sup>1</sup>STE MPBOLX
 		MAKA&equiv;ONLINES&rarr;&gamma;
 		PUT|PBOLP,&gamma;&rarr;VCON,&alpha;
 		RSX <sub>S</sub><sub>|</sub><sub>&beta;</sub> LSP+LIST
 		PUT|PBOLS,&gamma;&rarr;VCON,S
 		RSX <sub>S</sub><sub>|</sub><sub>&beta;</sub> LEP+LIST
 		PUT|PBOLE,&gamma;&rarr;VCON,S
-MPBOLX&rarr;	JPQ #
+MPBOLX&rarr;		JPQ #
 		**CONSTRAIN A POINT
-CONAP&rarr;	<sup>1</sup>STE MACAPX
+CONAP&rarr;		<sup>1</sup>STE MACAPX
 		JPQ MACAPT
 		**MAKE AND CONSTRAIN A POINT
-MACAP&rarr;	<sup>1</sup>STE MACAPX
+MACAP&rarr;		<sup>1</sup>STE MACAPX
 		RSX <sub>&gamma;</sub> ATBITS
 		SXG <sub>&gamma;</sub> 0
 		JPQ #+5
@@ -397,9 +397,9 @@ MACAP&rarr;	<sup>1</sup>STE MACAPX
 		RSX <sub>&gamma;</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
 		<sup>2</sup>DPX <sub>&gamma;</sub> ATBITS+1
 		JPQ MACAPX
-MACAPT&rarr;	RSX <sub>&gamma;</sub> ATBITS
+MACAPT&rarr;		RSX <sub>&gamma;</sub> ATBITS
 		JPQ MACAPTX+1
-MACAPA&rarr;	<sup>1</sup>DPX <sub>&gamma;</sub> MACAPTX
+MACAPA&rarr;		<sup>1</sup>DPX <sub>&gamma;</sub> MACAPTX
 		SXD <sub>&gamma;</sub> 0
 		DPX MACAPTX [something between DPX and MACAPTX, interpreting as junk]
 		RSX <sub>&beta;</sub><sub>|</sub><sub>&gamma;</sub> ATBITS+1
@@ -418,8 +418,8 @@ MACAPTX&rarr;
 [Page header: "IES 2XMX 010" (octal numbering, previous page had 007)]
 
 		JPQ MACAPX
-MACAP1&rarr;	RSX <sub>&alpha;</sub> ATBITS+1
-MACAPX&rarr;	JPQ #
+MACAP1&rarr;		RSX <sub>&alpha;</sub> ATBITS+1
+MACAPX&rarr;		JPQ #
 MAKETEXT&rarr;
 		<sup>1</sup>STE MAKETEXTX
 		SKZ LPLOST
@@ -479,11 +479,11 @@ MAKECONS1&rarr;
 		LGORR&equiv;SPECB&times;&Delta;=S&rarr;MKCN1
 MAKECONSX&rarr;
 		JPQ #
-MKCN1&rarr;	<sup>1</sup>STE MKCN1X
+MKCN1&rarr;		<sup>1</sup>STE MKCN1X
 		hLDE <sub>&Delta;</sub> LIST+CONLET
 		<sup>3</sup>SED NEWCONTOG
 		JPQ #+2
-MKCN1X&rarr;	JPQ #
+MKCN1X&rarr;		JPQ #
 		MAKA&rarr;&alpha;
 		<sup>1</sup>DPX <sub>&alpha;</sub> MKCN3
 		<sup>1</sup><sup>5</sup> RSX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
@@ -494,7 +494,7 @@ MKCN1X&rarr;	JPQ #
 		DEX <sub>&beta;</sub> CVTS+2
 		INX <sub>?</sub> CVTS+2 [sub_alpha?]
 		JPQ MKCN2X
-MKCN2&rarr;	MAKA&equiv;TPVALS&rarr;&gamma;
+MKCN2&rarr;		MAKA&equiv;TPVALS&rarr;&gamma;
 		PUTL&equiv;?&times;&alpha;&rarr;VCON&times;&gamma;
 		STA MKCN2A
 		STB MKCN2B
@@ -507,8 +507,8 @@ MKCN2&rarr;	MAKA&equiv;TPVALS&rarr;&gamma;
 		LDB MKCN2A
 		LDA MKCN2B
 		INX <sub>?</sub> 2
-MKCN2X&rarr;	<sup>-</sup><sup>2</sup>JPX <sub>&beta;</sub> MKCN2
-MKCN3&rarr;	REX <sub>&alpha;</sub> #
+MKCN2X&rarr;		<sup>-</sup><sup>2</sup>JPX <sub>&beta;</sub> MKCN2
+MKCN3&rarr;		REX <sub>&alpha;</sub> #
 		hJPQ MOVE&alpha;
 		JPQ MAKECONSX
 MOVEPIC&rarr;
@@ -526,7 +526,7 @@ MOVEPICEX&rarr;
 <hr>
 [Page header: "IES 2XMX 012"]
 
-MTDIS&rarr;	<sup>1</sup>STE MOVETHISX
+MTDIS&rarr;		<sup>1</sup>STE MOVETHISX
 		RSX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+BWHOS
 		MOVEL&equiv;BWHOS&times;&alpha;&rarr;PPARTM&times;&beta;
 		JPQ #+2
@@ -537,7 +537,7 @@ MOVETHIS&rarr;
 		<sup>1</sup>DPX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> VORD+LIST
 MOVETHISX&rarr;
 		JPQ #
-SUBPIC&rarr;	<sup>1</sup>STE SUBPICEX
+SUBPIC&rarr;		<sup>1</sup>STE SUBPICEX
 		SKZ LPLOST
 		JPQ SUBPICEX
 		RSX <sub>S</sub> MOVINGS+SPECB+1
@@ -555,7 +555,7 @@ SUBPIC2&rarr;
 		STAB&equiv;NIRR
 		&alpha;&#9635;IWHAT,S [call to macro named with a composite character]
 		JPQ SUBPICS
-SUBPIC3&rarr;	MOVE|NITOG&rarr;NINAME
+SUBPIC3&rarr;		MOVE|NITOG&rarr;NINAME
 		MOVE|SCSZ&rarr;NIRR
 		MZR <sub>1</sub><sub>.</sub><sub>1</sub> NIRR
 		MZR <sub>1</sub><sub>.</sub><sub>1</sub> NIRR
@@ -584,7 +584,7 @@ SUBPICS&rarr;
 		STAB&equiv;IP<sub>&alpha;</sub>
 		PUT|IWHAT,&alpha;&rarr;PINS,&gamma;
 		LGORR&equiv;PATAP&times;&gamma;=S&rarr;SUBPIT&rarr;SUBPIT1
-SUBPIT&rarr;	<sup>1</sup>STE SUBPITX
+SUBPIT&rarr;		<sup>1</sup>STE SUBPITX
 		RSX <sub>S</sub><sub>|</sub><sub>&gamma;</sub> LIST+TYPE
 		SXD <sub>S</sub> POINTS-LIST
 		JPQ #+2
@@ -603,10 +603,10 @@ SUBPIT1&rarr;
 		hJPQ MOVE&alpha; [maybe not alpha? MOVE&alpha; was seen before.]
 SUBPICEX&rarr;
 		JPQ #
-NINAME&rarr;	0
-NIRR&rarr;	0
+NINAME&rarr;		0
+NIRR&rarr;		0
 		0
-FIXIT&rarr;	<sup>1</sup>STE FIXITEX
+FIXIT&rarr;		<sup>1</sup>STE FIXITEX
 		REX <sub>&beta;</sub> FIXEDS-LIST
 		SKZ LPLOST
 		JPQ FIXITEX
@@ -622,14 +622,14 @@ DESIGIT&rarr;
 		<sup>1</sup>STE FIXITEX
 		REX <sub>&beta;</sub> DESIGS-LIST
 		JPQ FIXIT+2
-UNFIX&rarr;	<sup>1</sup>STE UNFIXEX
+UNFIX&rarr;		<sup>1</sup>STE UNFIXEX
 		RES <sub>&alpha;</sub> FIXEDS-LIST
 		LGORR&equiv;SPECB&times;&alpha;=S&rarr;UNFIX1
 		REX <sub>&alpha;</sub> DESIGS-LIST
 		LGORR&equiv;SPECB&times;&alpha;=S&rarr;UNFIX1
 UNFIXEX&rarr;
 		JPQ #
-UNFIX1&rarr;	SUBR&equiv;(LTAKE&equiv;VORD&times;&alpha;) [maybe not alpha?]
+UNFIX1&rarr;		SUBR&equiv;(LTAKE&equiv;VORD&times;&alpha;) [maybe not alpha?]
 MAKPATA&rarr;
 		<sup>1</sup>STE MAKPATAX
 
@@ -646,7 +646,7 @@ MAKPATA&rarr;
 		<sup>1</sup>DPX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+ATATAP
 MAKPATAX&rarr;
 		JPQ #
-TRUEUP&rarr;	<sup>1</sup>STE TRUEUPX
+TRUEUP&rarr;		<sup>1</sup>STE TRUEUPX
 		SKN ATLINE
 		JPQ TRUEUP1
 		MAKA&equiv;HOVS&rarr;9 [maybe alpha, not 9? or q?]
@@ -676,7 +676,7 @@ STARTDRAW&rarr;
 		STAB&equiv;&gamma;A<sub>&gamma;</sub> [is &gamma;A a symex here?]
 		SNZ DESIGNATED
 		JPQ STARTL
-STARTC&rarr;	MAKA&equiv;CIRCLES&rarr;&beta;
+STARTC&rarr;		MAKA&equiv;CIRCLES&rarr;&beta;
 		<sup>1</sup>DPX <sub>&beta;</sub> STARTCA
 		MAKA&equiv;ONCIRCLES&rarr;&beta;
 		PUT|PBOCS,&beta;&rarr;VCON,&alpha;
@@ -694,10 +694,10 @@ STARTCA&rarr;
 		RSX <sub>&Delta;</sub> CCENT
 		PUT|CIRCEN,&beta;&rarr;PLS,&Delta;
 		JPQ STARTT
-STARTL&rarr;	MAKA&equiv;LINES&rarr;&beta;
+STARTL&rarr;		MAKA&equiv;LINES&rarr;&beta;
 		PUT|LSP,&beta;&rarr;PLS,&alpha;
 		PUT|LEP,&beta;&rarr;PLS,&gamma;
-STARTT&rarr;	REX <sub>&alpha;</sub><sub>|</sub><sub>&gamma;</sub> [missing operand?]
+STARTT&rarr;		REX <sub>&alpha;</sub><sub>|</sub><sub>&gamma;</sub> [missing operand?]
 		hJPQ MOVE&alpha;
 STARTDRAWEX&rarr;
 		JPQ #
@@ -731,7 +731,7 @@ MOVEPOINT&rarr;
 		MKN MOVED
 MOVEPOINTEX&rarr;
 		JPQ #
-MOVE&alpha;&rarr;	<sup>1</sup>STE MOVE&alpha;X
+MOVE&alpha;&rarr;		<sup>1</sup>STE MOVE&alpha;X
 		RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
 		RSX <sub>T</sub><sub>|</sub><sub>S</sub> LIST+TYPE
 		SXD <sub>T</sub> CONSTRAINTS-LIST
@@ -745,10 +745,10 @@ MOVE&alpha;&rarr;	<sup>1</sup>STE MOVE&alpha;X
 [Page header: "IES 2XMX 016"]
 
 		JPQ MOVE&alpha;X
-MOVE&alpha;C&rarr;	RSX <sub>T</sub><sub>|</sub><sub>S</sub> LIST+CHVAR
+MOVE&alpha;C&rarr;		RSX <sub>T</sub><sub>|</sub><sub>S</sub> LIST+CHVAR
 		INX <sub>T</sub><sub>|</sub><sub>T</sub>
 		JPQ MOVE&alpha;CT
-MOVE&alpha;T&rarr;	SXD <sub>S</sub> PICTURES-LIST
+MOVE&alpha;T&rarr;		SXD <sub>S</sub> PICTURES-LIST
 		ERROR&equiv;&alpha;&rarr;MOVE&alpha;X
 		<sup>1</sup><sup>5</sup>RSX <sub>T</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
 		DEX <sub>T</sub> VORD+2
@@ -770,10 +770,10 @@ MOVE&alpha;CT1&rarr;
 		hJPQ MOVE&alpha;VSS
 		RSX <sub>T</sub> MOVE&alpha;CT1-2
 		JPQ MOVE&alpha;CT+1
-MOVE&alpha;V&rarr;	hJPQ MOVE&alpha;VSS
+MOVE&alpha;V&rarr;		hJPQ MOVE&alpha;VSS
 		JPQ #+2
-MOVE&alpha;D&rarr;	hJPQ MOVE&alpha;MVG
-MOVE&alpha;X&rarr;	JPQ #
+MOVE&alpha;D&rarr;		hJPQ MOVE&alpha;MVG
+MOVE&alpha;X&rarr;		JPQ #
 MOVE&alpha;VSS&rarr;
 		<sup>1</sup>STE MOVE&alpha;VSSX
 		SXD <sub>S</sub> INSTANCES-LIST
@@ -920,15 +920,15 @@ STOPMOVEP2X&rarr;
 		JPQ #
 STOPTAKE&rarr;
 		SUBR&equiv;(LTAKE&equiv;VORD&times;&alpha;)
-STOPM1&rarr;	<sup>1</sup>STE STOPM1X
+STOPM1&rarr;		<sup>1</sup>STE STOPM1X
 		RSX <sub>&gamma;</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
 		SXD <sub>&gamma;</sub> POINTS-LIST
 		JPQ STOPM2
 STOPM1X&rarr;
 		JPQ #
-STOPM2&rarr;	<sup>1</sup>DPX <sub>&alpha;</sub> STOPM3T
+STOPM2&rarr;		<sup>1</sup>DPX <sub>&alpha;</sub> STOPM3T
 		LGORR&equiv;VCON&times;&alpha;=S&rarr;STOPM3&rarr;STOPM4
-STOPM3&rarr;	<sup>1</sup>STE STOPM3X
+STOPM3&rarr;		<sup>1</sup>STE STOPM3X
 		hLDE <sub>&alpha;</sub> LIST+TYPE
 		h<sup>1</sup>SED { ONLINES-LIST}
 		JPQ STOPM3L
@@ -981,10 +981,10 @@ STOPM3AT&rarr;
 STOPM3AI&rarr;
 		<sup>-</sup><sup>1</sup>JPX <sub>S</sub> STOPM3A
 		JPQ STOPM3X
-STOPM4&rarr;	hJPQ CONAP
+STOPM4&rarr;		hJPQ CONAP
 		JPQ STOPM1X
 		** MERGE &alpha; AND &beta;
-MERGER&rarr;	<sup>1</sup>STE MERGEX
+MERGER&rarr;		<sup>1</sup>STE MERGEX
 		MKN MRGRFTT **FIRST TIME THRU
 		SXD <sub>&alpha;</sub><sub>|</sub><sub>&beta;</sub> [same again, valid without operand?]
 		JPQ MERGEX
@@ -1035,7 +1035,7 @@ MERGERA&rarr;
 		<sup>1</sup><sup>5</sup>RSX <sub>&gamma;</sub><sub>|</sub><sub>&beta;</sub> LIST+TYPE
 		DEX <sub>&gamma;</sub> 2
 		JPQ MRGRX
-MRGR1&rarr;	hLDE <sub>&beta;</sub> LIST
+MRGR1&rarr;		hLDE <sub>&beta;</sub> LIST
 		hSED <sub>&alpha;</sub> LIST
 		JPQ MRGR4  ** BOTH ARE SAME
 		<sup>2</sup><sup>1</sup>SED <sub>&alpha;</sub> LIST
@@ -1048,7 +1048,7 @@ MRGR1&rarr;	hLDE <sub>&beta;</sub> LIST
 		<sup>1</sup>SED { 0}
 		JPQ MRGR3
 		JPQ MRGR6
-MRGR2&rarr;	h<sup>1</sup><sup>7</sup>LDE <sub>&beta;</sub> LIST+1
+MRGR2&rarr;		h<sup>1</sup><sup>7</sup>LDE <sub>&beta;</sub> LIST+1
 		hRSX <sub>S</sub> E
 		<sup>1</sup>SED <sub>&beta;</sub> LIST+1
 		JPQ #+2
@@ -1056,7 +1056,7 @@ MRGR2&rarr;	h<sup>1</sup><sup>7</sup>LDE <sub>&beta;</sub> LIST+1
 		SXD <sub>S</sub><sub>|</sub><sub>&beta;</sub> 1
 		JPQ MRGRX
 		ERROR&equiv;&alpha;&rarr;MERGEX	** NOT EMPTY KEY
-MRGR3&rarr;	h<sup>1</sup><sup>7</sup>LDE <sub>&alpha;</sub> LIST+1
+MRGR3&rarr;		h<sup>1</sup><sup>7</sup>LDE <sub>&alpha;</sub> LIST+1
 		hRSX <sub>S</sub> E
 		<sup>1</sup>SED <sub>&alpha;</sub> LIST+1
 		JPQ #+2
@@ -1064,7 +1064,7 @@ MRGR3&rarr;	h<sup>1</sup><sup>7</sup>LDE <sub>&alpha;</sub> LIST+1
 		SXD <sub>S</sub><sub>|</sub><sub>&alpha;</sub> 1
 		JPQ MRGR3A
 		ERROR&equiv;&alpha;&rarr;MERGEX	** NOT EMPTY KEY
-MRGR3A&rarr;	MOVE|LIST<sub>&beta;</sub>&rarr;LIST<sub>&alpha;</sub>
+MRGR3A&rarr;		MOVE|LIST<sub>&beta;</sub>&rarr;LIST<sub>&alpha;</sub>
 
 <hr>
 [Page header: "IES 2XMX 024"]
@@ -1081,20 +1081,20 @@ MRGR3A&rarr;	MOVE|LIST<sub>&beta;</sub>&rarr;LIST<sub>&alpha;</sub>
 		h<sup>2</sup>DPX <sub>T</sub> E
 		STE <sub>&beta;</sub> LIST+1
 		JPQ MRGRX
-MRGR4&rarr;	hLDE <sub>&alpha;</sub> LIST
+MRGR4&rarr;		hLDE <sub>&alpha;</sub> LIST
 		<sup>1</sup> SED { 0}
 		JPQ MRGR5
 		LTAKE&equiv;&alpha;&times;&beta;
 		JPQ MRGRX
-MRGR5&rarr;	DPX <sub>&beta;</sub> MRGRTS
+MRGR5&rarr;		DPX <sub>&beta;</sub> MRGRTS
 		RSX <sub>&beta;</sub><sub>|</sub><sub>&beta;</sub> LIST+1
-MRGR5A&rarr;	hLDE <sub>&beta;</sub> LIST-1
+MRGR5A&rarr;		hLDE <sub>&beta;</sub> LIST-1
 		<sup>1</sup> SED { 0}
 		JPQ MRGR5B
 		MOVE|MRGRL&rarr;<sup>1</sup> LIST-1<sub>&beta;</sub> [unkown syntax, what does it mean?]
 		RSX <sub>&beta;</sub><sub>|</sub><sub>&beta;</sub> LIST
 		JPQ MRGR5A
-MRGR5B&rarr;	RSX <sub>&beta;</sub> MRGRTS
+MRGR5B&rarr;		RSX <sub>&beta;</sub> MRGRTS
 		RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LIST+1
 		<sup>2</sup>RSX <sub>T</sub><sub>|</sub><sub>&beta;</sub> LIST+1
 		<sup>2</sup>DPX <sub>T</sub><sub>|</sub><sub>S</sub> LIST
@@ -1107,18 +1107,18 @@ MRGR5B&rarr;	RSX <sub>&beta;</sub> MRGRTS
 		hDPX <sub>T</sub> E
 		h<sup>2</sup>DPX<sub>T</sub> E
 		STE <sub>&beta;</sub> LIST+1
-MRGRX&rarr;	<sup>-</sup><sup>2</sup>JPX <sub>&gamma;</sub> MRGRXA
-MRGR7&rarr;	RSX <sub>&alpha;</sub> MRGRU
+MRGRX&rarr;		<sup>-</sup><sup>2</sup>JPX <sub>&gamma;</sub> MRGRXA
+MRGR7&rarr;		RSX <sub>&alpha;</sub> MRGRU
 		hJPQ DELETE
-MRGR8&rarr;	REX <sub>&alpha;</sub> MERGERS-LIST
+MRGR8&rarr;		REX <sub>&alpha;</sub> MERGERS-LIST
 		LGORR&equiv;SPECB&times;&alpha;=S&rarr;MRGR10&rarr;MRGR9
-MRGR10&rarr;	RSX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+VORD+1
+MRGR10&rarr;		RSX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+VORD+1
 		DEX <sub>&beta;</sub> 1
 		<sup>1</sup><sup>6</sup>AUX <sub>&beta;</sub><sub>|</sub><sub>&beta;</sub> LIST
 		LTAKE&equiv;VORD&times;&alpha;
 		LTAKE&equiv;VORD&times;&beta;
 		JPQ MERGERBAC
-MRGR6&rarr;	RSX <sub>&Delta;</sub><sub>|</sub><sub>&alpha;</sub> LIST ** &Delta; IS POINTED AT THING
+MRGR6&rarr;		RSX <sub>&Delta;</sub><sub>|</sub><sub>&alpha;</sub> LIST ** &Delta; IS POINTED AT THING
 
 <hr>
 [Page header: "IES 2XMX 025"]
@@ -1141,16 +1141,16 @@ MRGR6&rarr;	RSX <sub>&Delta;</sub><sub>|</sub><sub>&alpha;</sub> LIST ** &Delta;
 		REX <sub>&epsilon;</sub> MERGERS-LIST
 		MOVEL&equiv;VORD&times;&Delta;&rarr;SPECB&times;&epsilon;
 		<sup>1</sup>DPX <sub>&epsilon;</sub><sub>|</sub><sub>&Delta;</sub> VORD+LIST
-MRGR6A&rarr;	REX <sub>&Delta;</sub> #
+MRGR6A&rarr;		REX <sub>&Delta;</sub> #
 		MOVEL&equiv;VORD&times;&Delta;&rarr;SPECB&times;&epsilon;
 		<sup>1</sup>DPX <sub>&epsilon;</sub><sub>|</sub><sub>&Delta;</sub> LIST+VORD
 		JPQ MRGRX
-MRGRXA&rarr;	INX <sub>&alpha;</sub> 2
+MRGRXA&rarr;		INX <sub>&alpha;</sub> 2
 		INX <sub>&beta;</sub> 2
 		JPQ MRGR1
-MRGR9&rarr;	REX <sub>&alpha;</sub> #	** FIRST MERGER RESULT
-MERGEX&rarr;	JPQ #
-DUMMY&rarr;	<sup>1</sup>STE DUMMEX
+MRGR9&rarr;		REX <sub>&alpha;</sub> #	** FIRST MERGER RESULT
+MERGEX&rarr;		JPQ #
+DUMMY&rarr;		<sup>1</sup>STE DUMMEX
 		REX <sub>&alpha;</sub> MOVINGS-LIST
 		LGORR&equiv;SPECB&times;&alpha;=S&rarr;DUMMYA
 		SKN ATINS
@@ -1158,32 +1158,32 @@ DUMMY&rarr;	<sup>1</sup>STE DUMMEX
 		RSX <sub>&alpha;</sub> ATBITS+1	** OLD INSTANCE
 		MKN MOVED
 		JPQ DUMMYB
-DUMMYA&rarr;	<sup>1</sup>STE DUMMYAX
+DUMMYA&rarr;		<sup>1</sup>STE DUMMYAX
 		RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
 		SXD <sub>S</sub> INSTANCES-LIST
 		JPQ DUMMYB
 DUMMYAX&rarr;
 		JPQ #
-DUMMYB&rarr;	REX <sub>&gamma;</sub> PICTURES-LIST
+DUMMYB&rarr;		REX <sub>&gamma;</sub> PICTURES-LIST
 		LGORR&equiv;SPECB&times;&gamma;=S&rarr;DUM1&rarr;DUMEX
-DUM1&rarr;	<sup>1</sup>STE #+4
+DUM1&rarr;		<sup>1</sup>STE #+4
 		hLDE <sub>&gamma;</sub> LIST+PNAME
 		<sup>1</sup>SED NITOG
 		JPQ DUM2
 		JPQ #
-DUM2&rarr;	MOVEL&equiv;IWHAT&times;&alpha;&rarr;PINS&times;&gamma;
+DUM2&rarr;		MOVEL&equiv;IWHAT&times;&alpha;&rarr;PINS&times;&gamma;
 		<sup>1</sup>DPX <sub>&gamma;</sub><sub>|</sub><sub>&alpha;</sub> LIST+IWHAT
 
 <hr>
 [Page header: "IES 2XMX 026"]
 
-DUM3&rarr;	<sup>1</sup>RSX <sub>&gamma;</sub><sub>|</sub><sub>&gamma;</sub> LIST+PATAP+1
+DUM3&rarr;		<sup>1</sup>RSX <sub>&gamma;</sub><sub>|</sub><sub>&gamma;</sub> LIST+PATAP+1
 		LGORR&equiv;VCON&times;&alpha;=S&rarr;DUM4&rarr;DUM6
-DUM4&rarr;	<sup>1</sup>STE DUM4X
+DUM4&rarr;		<sup>1</sup>STE DUM4X
 		hLDE <sub>&alpha;</sub> LIST 	** &alpha; IS IPCON? [how are we supposed to know? :)]
 		<sup>1</sup>SED { IPCONS-LIST}
 		JPQ #+2
-DUM4X&rarr;	JPQ #
+DUM4X&rarr;		JPQ #
 		hLDE <sub>&gamma;</sub> LIST-1
 		h<sup>1</sup>SED { 0}
 		JPQ DUM5	** OUT OF POINTS
@@ -1194,11 +1194,11 @@ DUM4X&rarr;	JPQ #
 		<sup>1</sup>DPX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> IPCV+LIST
 		<sup>1</sup>RSX <sub>&gamma;</sub><sub>|</sub><sub>&gamma;</sub> LIST
 		JPQ DUM4X
-DUM5&rarr;	DPX <sub>&gamma;</sub> #+2
+DUM5&rarr;		DPX <sub>&gamma;</sub> #+2
 		hJPQ DELETE
 		REX <sub>&gamma;</sub> #
 		JPQ DUM4X
-DUM4&rarr;	hLDE <sub>&gamma;</sub> LIST-1
+DUM4&rarr;		hLDE <sub>&gamma;</sub> LIST-1
 		h<sup>1</sup>SED { 0}
 		JPQ DUM7
 		<sup>1</sup><sup>6</sup>RSX <sub>&alpha;</sub> E	** NEED MORE POINTS
@@ -1212,19 +1212,19 @@ DUM4&rarr;	hLDE <sub>&gamma;</sub> LIST-1
 		PUT|IPCP,&beta;&rarr;VCON,&alpha;
 		<sup>1</sup>RSX <sub>&gamma;</sub><sub>|</sub><sub>&gamma;</sub> LIST
 		JPQ DUM6
-DUM7&rarr;	RSX <sub>&alpha;</sub> ATBITS+1
+DUM7&rarr;		RSX <sub>&alpha;</sub> ATBITS+1
 		LDAE&equiv;LIST+IVAL<sub>&alpha;</sub>
 		STAE&equiv;MATM
 		RSX <sub>&gamma;</sub><sub>|</sub><sub>&alpha;</sub> LIST+IWHAT
 		LDA <sub>&gamma;</sub> LIST+PSIZE
 		STA MATD
 		LGORR&equiv;VCON&times;&alpha;=S&rarr;DUM8 [really 8?]
-DUMMEX&rarr;	JPQ #
-DUM8&rarr;	<sup>1</sup>STE DUM8X
+DUMMEX&rarr;		JPQ #
+DUM8&rarr;		<sup>1</sup>STE DUM8X
 		RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
 		SXD <sub>S</sub> IPCONS-LIST
 		JPQ #+2
-DUM8X&rarr;	JPQ #
+DUM8X&rarr;		JPQ #
 		RSX <sub>T</sub><sub>|</sub><sub>&alpha;</sub> LIST+IPCV
 		LDAB&equiv;VA<sub>T</sub>
 
@@ -1237,7 +1237,7 @@ DUM8X&rarr;	JPQ #
 		hBPQ <sub>S</sub> LIST+MOVIT
 		JPQ DUM8X
 		** DEVELOP LINES FROM INSTANCE
-UNMAC&rarr;	<sup>1</sup>STE UNMACEX
+UNMAC&rarr;		<sup>1</sup>STE UNMACEX
 		SKZ LPLOST
 		JPQ UNMACEX
 		SKN ATINS
@@ -1248,16 +1248,16 @@ UNMAC&rarr;	<sup>1</sup>STE UNMACEX
 		STA <sub>S</sub> MATM
 		<sup>-</sup><sup>1</sup>JPX <sub>S</sub> #-2
 		RSX <sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub> LIST+IWHAT
-UNMAC1&rarr;	LDA <sub>&alpha;</sub> LIST+PSIZE
+UNMAC1&rarr;		LDA <sub>&alpha;</sub> LIST+PSIZE
 		STA MATD
 		LDAB&equiv;MATM
 		hJPQ PYTHAGORIAN
 		STA MATS
 		hJPQ COPYINT	** COPY STUFF
 		hJPQ STOPMOVEP
-UNMAC2&rarr;	RSX <sub>&alpha;</sub> ATBITS+1
+UNMAC2&rarr;		RSX <sub>&alpha;</sub> ATBITS+1
 		LGORR&equiv;VCON&times;&alpha;=S&rarr;UNMAC3&rarr;UNMAC4
-UNMAC3&rarr;	<sup>1</sup>STE UNMAC3X
+UNMAC3&rarr;		<sup>1</sup>STE UNMAC3X
 		hLDE <sub>&alpha;</sub> LIST+TYPE
 		<sup>1</sup>SED { IPCONS-LIST}
 		JPQ #+2
@@ -1271,7 +1271,7 @@ UNMAC3X&rarr;
 		STAB&equiv;VA<sub>&alpha;</sub>
 		hJPQ MERGER
 		JPQ UNMAC3X
-UNMAC4&rarr;	RSX <sub>&alpha;</sub> ATBITS+1
+UNMAC4&rarr;		RSX <sub>&alpha;</sub> ATBITS+1
 		hJPQ DELETE
 		DPX ATBITS
 		MKN MOVED
@@ -1292,12 +1292,12 @@ COPYIST&rarr;
 		hJPQ STOPMOVEP
 		REX <sub>&alpha;</sub> PICTURES-LIST
 		LGORR&equiv;SPECB&times;&alpha;=S&rarr;COPY1&rarr;COPYX
-COPY1&rarr;	<sup>1</sup>STE COPY1X
+COPY1&rarr;		<sup>1</sup>STE COPY1X
 		hLDE <sub>&alpha;</sub> LIST+PNAME
 		<sup>1</sup>SED COPYNUM	** ?PIC TO COPY [possibly #?]
 		JPQ COPYIT
-COPY1X&rarr;	JPQ #
-COPYIT&rarr;	LDA SCSZ
+COPY1X&rarr;		JPQ #
+COPYIT&rarr;		LDA SCSZ
 		MUL { 100.}
 		STA MATM
 		STA MATS
@@ -1388,7 +1388,7 @@ COPYFIXC&rarr;
 COPYFIXI&rarr;
 		REX <sub>S</sub> #
 		JPQ COPYFIXEX-2
-COPIED&rarr;	JPQ #	** EXIT FOR UNMAC
+COPIED&rarr;		JPQ #	** EXIT FOR UNMAC
 
 <hr>
 [Page header: "IES 2XMX 032"]
@@ -1461,29 +1461,29 @@ COPYMOVE2AX&rarr;
 COPYNOMOVE&rarr;
 		hJPQ STOPMOVEP
 		MKN MOVED
-COPYX&rarr;	JPQ #
-ERASE&rarr;	<sup>1</sup>STE ERASEX
+COPYX&rarr;		JPQ #
+ERASE&rarr;		<sup>1</sup>STE ERASEX
 		SKZ LPLOST
 		JPQ ERASEX
 		RSX <sub>&alpha;</sub> MOVINGS+SPECB+1
 		SXD <sub>&alpha;</sub> MOVINGS-LIST+SPECB+1
 		JPQ ERASE1
-ERASE1&rarr;	<sup>1</sup><sup>6</sup>AUX <sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub> LIST-1
+ERASE1&rarr;		<sup>1</sup><sup>6</sup>AUX <sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub> LIST-1
 		DEX <sub>&alpha;</sub> 1
 		hJPQ DELETE
 		RSX <sub>&alpha;</sub> MOVINGS+SPECB+1
 		SXD <sub>&alpha;</sub> MOVINGS+SPECB-LIST+1
 		JPQ ERASEX-1
 		JPQ ERASEA
-ERASE1&rarr;	RSX <sub>&alpha;</sub> ATBITS
+ERASE1&rarr;		RSX <sub>&alpha;</sub> ATBITS
 		SXD <sub>&alpha;</sub> 1
 		JPQ ERASE2
 		JPQ ERASEX
-ERASE2&rarr;	RSX <sub>&alpha;</sub> ATBITS+1
+ERASE2&rarr;		RSX <sub>&alpha;</sub> ATBITS+1
 		hJPQ DELETE
 		MKN MOVED
-ERASEX&rarr;	JPQ #
-DELETE&rarr;	<sup>1</sup>STE DELETEX
+ERASEX&rarr;		JPQ #
+DELETE&rarr;		<sup>1</sup>STE DELETEX
 DELETER&rarr;
 		&beta;&#9635;TYPE,&alpha;	** IS &alpha; FORBIDDEN TYPE
 		SXD <sub>&beta;</sub> 0
@@ -1491,7 +1491,7 @@ DELETER&rarr;
 		REX <sub>&beta;</sub> DEADS-LIST
 		MOVEL&equiv;TYPE&times;&alpha;&rarr;SPECB&times;&beta;
 		<sup>1</sup>DPX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
-DEL1&rarr;	RSX <sub>&alpha;</sub> DEADS+SPECB+1
+DEL1&rarr;		RSX <sub>&alpha;</sub> DEADS+SPECB+1
 		hLDE <sub>&alpha;</sub> LIST-1
 		<sup>1</sup>SED { 0}
 		JPQ DELETEX ** DONE
@@ -1503,22 +1503,22 @@ DEL1&rarr;	RSX <sub>&alpha;</sub> DEADS+SPECB+1
 		<sup>1</sup><sup>5</sup>RSX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST
 		DEX <sub>&beta;</sub> 2
 		JPQ DEL2X
-DEL2&rarr;	INX <sub>&alpha;</sub> 2	** NEXT TIE
+DEL2&rarr;		INX <sub>&alpha;</sub> 2	** NEXT TIE
 		RSX <sub>&gamma;</sub><sub>|</sub><sub>&alpha;</sub> LIST+1
 		SXD <sub>&gamma;</sub><sub>|</sub><sub>&alpha;</sub> 1	** SKIP IF NON EMPTY
 		JPQ DEL2X
-DEL3&rarr;	hLDE { 0}
+DEL3&rarr;		hLDE { 0}
 		<sup>1</sup>SED <sub>&alpha;</sub> LIST 	** SKIP IF NON KEY
 		JPQ DEL5
 		LTAKE&equiv;0&times;&alpha; [pretty clearly zero here as first parameter]
-DEL2X&rarr;	<sup>-</sup><sup>2</sup>JPX <sub>&beta;</sub> DEL2 [possibly DEL3?]
-DEL4&rarr;	RSX <sub>&alpha;</sub> DEADS+SPECB+1
+DEL2X&rarr;		<sup>-</sup><sup>2</sup>JPX <sub>&beta;</sub> DEL2 [possibly DEL3?]
+DEL4&rarr;		RSX <sub>&alpha;</sub> DEADS+SPECB+1
 		DEX <sub>&alpha;</sub> 1	** FREE STORAGE LIST
 		REX <sub>&beta;</sub> FREES-LIST
 		MOVEL&equiv;TYPE&times;&alpha;&rarr;SPECB&times;&beta;
 		<sup>1</sup>DPX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
 		JPQ DEL1
-DEL5&rarr;	DEX <sub>&gamma;</sub> 1	** DELETE A THING IN A
+DEL5&rarr;		DEX <sub>&gamma;</sub> 1	** DELETE A THING IN A
 		LTAKE&equiv;0&times;&gamma;
 		<sup>1</sup><sup>6</sup>RSX <sub>&alpha;</sub><sub>|</sub><sub>&gamma;</sub> LIST
 		INX <sub>&alpha;</sub><sub>|</sub><sub>&gamma;</sub>
@@ -1532,19 +1532,19 @@ GARBAGE&rarr;
 		RSX <sub>S</sub> FREES+SPECB+1
 		SXD <sub>S</sub> FREES+SPECB-LIST+1
 		JPQ GARBEX
-GARB1&rarr;	SXL <sub>S</sub> 377777
+GARB1&rarr;		SXL <sub>S</sub> 377777
 		JPQ #+2			[Handwritten: FREE3]
 		<sup>1</sup>DPX <sub>S</sub> GARB1
 		RSX <sub>S</sub><sub>|</sub><sub>S</sub> LIST
 		SXD <sub>S</sub> FREES+SPECB-LIST+1
 		JPQ GARB2
 		JPQ GARB1
-GARB2&rarr;	RSX <sub>&alpha;</sub> GARB1
+GARB2&rarr;		RSX <sub>&alpha;</sub> GARB1
 		DEX <sub>&alpha;</sub> 1
 		REX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub>
-GARB3&rarr;	LTAKE&equiv;TYPE&times;&beta;
-GARB4&rarr;	<sup>1</sup><sup>6</sup>AUX <sub>&beta;</sub><sub>|</sub><sub>&beta;</sub> LIST
-GARB4A&rarr;	SXL <sub>&beta;</sub>* AFFB
+GARB3&rarr;		LTAKE&equiv;TYPE&times;&beta;
+GARB4&rarr;		<sup>1</sup><sup>6</sup>AUX <sub>&beta;</sub><sub>|</sub><sub>&beta;</sub> LIST
+GARB4A&rarr;		SXL <sub>&beta;</sub>* AFFB
 		JPQ GARBDONE
 		RSX <sub>T</sub><sub>|</sub><sub>&beta;</sub> LIST
 		SXD <sub>T</sub> FREES-LIST
@@ -1559,7 +1559,7 @@ GARB4A&rarr;	SXL <sub>&beta;</sub>* AFFB
 		INX <sub>&alpha;</sub> 1
 		<sup>1</sup><sup>5</sup>RSX <sub>T</sub><sub>|</sub><sub>&beta;</sub> LIST
 		JPQ GARB5
-GARB5A&rarr;	RSX <sub>S</sub><sub>|</sub><sub>&beta;</sub> LIST+1
+GARB5A&rarr;		RSX <sub>S</sub><sub>|</sub><sub>&beta;</sub> LIST+1
 		<sup>2</sup>RSX <sub>&gamma;</sub><sub>|</sub><sub>&beta;</sub> LIST+1
 		<sup>2</sup>DPX <sub>&alpha;</sub><sub>|</sub><sub>S</sub> LIST
 		<sup>1</sup>DPX <sub>&alpha;</sub><sub>|</sub><sub>&gamma;</sub> LIST
@@ -1571,8 +1571,8 @@ GARB5A&rarr;	RSX <sub>S</sub><sub>|</sub><sub>&beta;</sub> LIST+1
 		hSTE <sub>&alpha;</sub> LIST-3
 		<sup>1</sup>SED { 0}
 		JPQ GARB6
-GARB5&rarr;	<sup>-</sup><sup>2</sup>JPX <sub>T</sub> GARB5A
-GARB7&rarr;	RSX <sub>&alpha;</sub> GARBA
+GARB5&rarr;		<sup>-</sup><sup>2</sup>JPX <sub>T</sub> GARB5A
+GARB7&rarr;		RSX <sub>&alpha;</sub> GARBA
 		RSX <sub>&beta;</sub> GARBB
 		<sup>1</sup><sup>5</sup>RSX <sub>T</sub><sub>|</sub><sub>&alpha;</sub> LIST
 		<sup>1</sup>REX <sub>S</sub><sub>|</sub><sub>T</sub>
@@ -1582,9 +1582,9 @@ GARB7&rarr;	RSX <sub>&alpha;</sub> GARBA
 		STE <sub>T</sub><sub>|</sub><sub>&alpha;</sub> LIST
 		INX <sub>T</sub> 1
 		<sup>-</sup><sup>1</sup>AUX <sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub> LIST
-GARBS&rarr;	INX <sub>&beta;</sub> 0
+GARBS&rarr;		INX <sub>&beta;</sub> 0
 		JPQ GARB4A
-GARB6&rarr;	hLDE <sub>S</sub> LIST-1
+GARB6&rarr;		hLDE <sub>S</sub> LIST-1
 		<sup>1</sup>SED { 0}
 		JPQ GARB?
 		hLDE GARBA
@@ -1593,7 +1593,7 @@ GARB6&rarr;	hLDE <sub>S</sub> LIST-1
 		JPQ GARB6
 GARBDONE&rarr;
 		DPX <sub>&alpha;</sub> AFFB
-GARBEX&rarr;	JPQ #
+GARBEX&rarr;		JPQ #
 BLOCKMAKER&rarr;
 		<sup>1</sup>STE BLOCKMAKEREX
 		<sup>1</sup><sup>6</sup>RSX <sub>S</sub><sub>|</sub><sub>&Delta;</sub> SIZE+LIST
@@ -1618,7 +1618,7 @@ BLOCKMAKER&rarr;
 		SED { JUNKK}
 		JPQ BLOCKM1
 		ERROR&equiv;&Delta;&rarr;BLOCKMAKEREX
-BLOCKM1&rarr;	PUT|BWHOS,S&rarr;PICBLKS,&Delta;
+BLOCKM1&rarr;		PUT|BWHOS,S&rarr;PICBLKS,&Delta;
 		JPQ BLOCKMAKEREX-1
 BLOCKM2&rarr;
 		PUT|BWHOS,S&rarr;PPART,&Delta;
@@ -1686,9 +1686,9 @@ ORDGRPI1&rarr;
 		h<sup>1</sup>JPX <sub>&Delta;</sub> ORDGRPIEXIT*
 		JPQ ORDGRPIEXIT*
 		** ORDER INSTANCES
-ORDI&rarr;	h<sup>-</sup><sup>1</sup>JPX <sub>&Delta;</sub> #+2
+ORDI&rarr;		h<sup>-</sup><sup>1</sup>JPX <sub>&Delta;</sub> #+2
 		JPQ ORDGRPP
-ORDI2&rarr;	SKX <sub>&epsilon;</sub><sub>|</sub><sub>&Delta;</sub> 0 [can also be alpha instead of 0?]
+ORDI2&rarr;		SKX <sub>&epsilon;</sub><sub>|</sub><sub>&Delta;</sub> 0 [can also be alpha instead of 0?]
 		<sup>1</sup>DPX ORDNXTPNT
 		REX <sub>&alpha;</sub><sub>|</sub><sub>&gamma;</sub>
 		LDA {-(?)}
@@ -1703,7 +1703,7 @@ ORDCALC&rarr;
 		<sup>1</sup><sup>1</sup>RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
 		hBPQ <sub>S</sub> LIST+WHERE
 		STB ORDWA3	** A=X, B=Y
-ORDC?&rarr;	SUB ORDPX
+ORDC?&rarr;		SUB ORDPX
 		SCA {-1.}
 		SKZ <sub>4</sub><sub>.</sub><sub>9</sub> A [guessing about subscripts, incorrect?]
 		COM A
@@ -1725,12 +1725,12 @@ ORDC?&rarr;	SUB ORDPX
 		LDA ORDWA1
 		STA ORDWA2
 		JPQ #+2
-ORDC1&rarr;	LDA ORDWA2
+ORDC1&rarr;		LDA ORDWA2
 		SUB ORDMIND
 		SKZ ORDWORST
 		JPQ ORDWORST1
 		JPA ORDC2
-ORDC1A&rarr;	LDA ORDWA2
+ORDC1A&rarr;		LDA ORDWA2
 		STA ORDMIND
 		<sup>1</sup>DPX <sub>&alpha;</sub> ORDNXTPNT
 ORDCALCEXIT&rarr;
@@ -1772,8 +1772,8 @@ ORDGRPP1&rarr;
 		h<sup>1</sup>JPX <sub>&Delta;</sub> ORDGRPIEXIT*
 		JPQ ORDGRPIEXIT*
 		** ORDER POINTS
-ORDP&rarr;	LGORR&equiv;PLS&times;&alpha;=&beta;&rarr;ORDP1&rarr;ORDMP+1
-ORDP1&rarr;	<sup>1</sup>STE ORDPEXIT
+ORDP&rarr;		LGORR&equiv;PLS&times;&alpha;=&beta;&rarr;ORDP1&rarr;ORDMP+1
+ORDP1&rarr;		<sup>1</sup>STE ORDPEXIT
 		<sup>1</sup><sup>2</sup>RSX <sub>&beta;</sub><sub>|</sub><sub>&beta;</sub> LIST
 		SKZ <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub><sub>|</sub><sub>&alpha;</sub> LIST
 		JPQ ORDMP
@@ -1786,17 +1786,17 @@ ORDP1&rarr;	<sup>1</sup>STE ORDPEXIT
 		<sup>1</sup>EXX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+LEP
 		<sup>1</sup>DPX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+LSP
 		JPQ #+2
-ORDP1A&rarr;	<sup>1</sup><sup>1</sup>RSX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+LSP
+ORDP1A&rarr;		<sup>1</sup><sup>1</sup>RSX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+LSP
 		MOVEL&equiv;LSP&times;&alpha;&rarr;PLS&times;&beta;
 		<sup>1</sup><sup>1</sup>RSX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+LEP
 		MOVEL&equiv;LEP&times;&alpha;&rarr;PLS&times;&beta;
-ORDP2&rarr;	MKN <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub><sub>|</sub><sub>&alpha;</sub> LIST
+ORDP2&rarr;		MKN <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub><sub>|</sub><sub>&alpha;</sub> LIST
 		hJPQ ORDMOVEL
 		<sup>1</sup><sup>1</sup>RSX <sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub> LIST+LEP
 		LDA <sub>&alpha;</sub> LIST+PVAL
 		STA ORDPX
 		LDA <sub>&alpha;</sub> LIST+PVAL+1
-ORDP4&rarr;	STA ORDPY
+ORDP4&rarr;		STA ORDPY
 		SKX ORDWORST
 		JPQ ORDI2
 		JPQ ORDP
@@ -1835,15 +1835,15 @@ ORDCIRC3&rarr;
 		LDA <sub>S</sub> LIST+PVAL+1
 		SKX <sub>&alpha;</sub><sub>|</sub><sub>S</sub> 0
 		JPQ ORDP4
-ORDMP&rarr;	<sup>1</sup><sup>1</sup>RSX <sub>&alpha;</sub><sub>|</sub><sub>&beta;</sub> LIST-1
+ORDMP&rarr;		<sup>1</sup><sup>1</sup>RSX <sub>&alpha;</sub><sub>|</sub><sub>&beta;</sub> LIST-1
 		MKZ <sup>3</sup><sub>.</sub><sub>?</sub> ORDMPSW	** MAKE JPQ
 		MOVEL&equiv;BWHOS&times;&alpha;&rarr;PICBLKS&times;&gamma;
 ORDMPSW&rarr;
 		JPQ ORDI	** CHGD TO <sup>1</sup><sup>4</sup>JNX ORDI
 		h<sup>-</sup><sup>1</sup>JPX <sub>&Delta;</sub> ORDCALCEXIT
 		JPQ ORDCALCEXIT
-ORDP3&rarr;	LGORR&equiv;PICBLKS&times;&alpha;=&beta;&rarr;ORDP5&rarr;ORDERROR
-ORDP5&rarr;	<sup>1</sup>STE ORDCALCEXIT
+ORDP3&rarr;		LGORR&equiv;PICBLKS&times;&alpha;=&beta;&rarr;ORDP5&rarr;ORDERROR
+ORDP5&rarr;		<sup>1</sup>STE ORDCALCEXIT
 		MKN <sup>3</sup><sub>.</sub><sub>?</sub> ORDMPSW	** MAKE <sup>1</sup><sup>4</sup>JNX
 		<sup>1</sup><sup>1</sup>RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LIST+PLS+1
 		<sup>1</sup><sup>6</sup>AUX <sub>S</sub><sub>|</sub><sub>S</sub> LIST-1
@@ -1862,11 +1862,11 @@ ORDERROR&rarr;
 		JPQ ORDSTART+2
 ORDSWITCHES&rarr;
 		0
-ORDPX&rarr;	0
-ORDPY&rarr;	0
-ORDWA1&rarr;	0
-ORDWA2&rarr;	0
-ORDWA3&rarr;	0
+ORDPX&rarr;		0
+ORDPY&rarr;		0
+ORDWA1&rarr;		0
+ORDWA2&rarr;		0
+ORDWA3&rarr;		0
 ORDMIND&rarr;
 		0
 ORDNXTPNT&rarr;
@@ -1901,7 +1901,7 @@ MGPMOVP1X&rarr;
 		MOVER&equiv;BWHOS&times;&beta;&rarr;PICBLKS&times;&alpha;
 		h<sup>1</sup>JPX <sub>&lambda;</sub> MGPMOVPIX*
 		JPQ MGPMOVP1X*
-MGPMGP&rarr;	SXL <sub>&lambda;</sub> 2
+MGPMGP&rarr;		SXL <sub>&lambda;</sub> 2
 		JPQ #+2
 MGPMOVPX&rarr;
 		JPQ #	** ALL PNTS IN PICTURE ARE MERGED
@@ -1912,20 +1912,20 @@ MGP1&rarr;
 		<sup>1</sup><sup>1</sup>RSX <sub>&beta;</sub> MGPCURPIC
 		MKZ <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> MGPSW
 		LGORR&equiv;PICBLKS&times;&beta;=S&rarr;MGP2&rarr;MGPERROR
-MGP2&rarr;	<sup>1</sup>STE MGP2X
-MGPSW&rarr;	SZN <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> #
+MGP2&rarr;		<sup>1</sup>STE MGP2X
+MGPSW&rarr;		SZN <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> #
 		JPQ MGP1
 		<sup>1</sup>DPX <sub>&beta;</sub> MGPC
 		LDA <sub>&beta;</sub> LIST+PVAL
 		STA MGPVAL
-MGPK&rarr;	LDA <sub>&beta;</sub> LIST+PVAL+1
+MGPK&rarr;		LDA <sub>&beta;</sub> LIST+PVAL+1
 		STA MGPVAL+1
-MGP2X&rarr;	h<sup>-</sup><sup>1</sup>JPX <sub>&epsilon;</sub> #	** MOD
+MGP2X&rarr;		h<sup>-</sup><sup>1</sup>JPX <sub>&epsilon;</sub> #	** MOD
 		<sup>1</sup><sup>1</sup>RSX <sub>&alpha;</sub> MGPCURPIC
 		<sup>1</sup><sup>1</sup>RSX <sub>&beta;</sub> MGPC
 		MOVEL&equiv;BWHOS&times;&beta;&rarr;PICBLKS&times;&alpha;
 		JPQ MGPMGP
-MGP3&rarr;	<sup>1</sup>SKX <sub>&alpha;</sub> 1
+MGP3&rarr;		<sup>1</sup>SKX <sub>&alpha;</sub> 1
 		LDA <sub>&alpha;</sub> MGPK*
 		SUB <sub>&alpha;</sub> MGPVAL+1
 
@@ -1946,8 +1946,8 @@ MGP3&rarr;	<sup>1</sup>SKX <sub>&alpha;</sub> 1
 		JPQ MGPMGP
 MGPCURPIC&rarr;
 		0
-MGPC&rarr;	0
-MGPVAL&rarr;	0
+MGPC&rarr;		0
+MGPVAL&rarr;		0
 		0
 MGPERROR&rarr;
 		<sup>1</sup>STE #+1
@@ -1958,7 +1958,7 @@ MGPLAST INSTR&rarr;
 RI&rarr;		JPQ 377750
 CL&rarr;		JPQ 200000
 ST&rarr;		JPQ 200001
-LAST&rarr;	ZZLAST
+LAST&rarr;		ZZLAST
 
 <hr>
 [Page header: "IES OPLW 001"]
@@ -2115,9 +2115,9 @@ MKN <sub>T</sub><sub>2</sub>D
 <sup>1</sup>DPX<sub>&alpha;</sub>T2+(C)-(C)
 INX<sub>&alpha;</sub>A+1
 JPQ T1+(C)-(C)
-T2&rarr;	REX<sub>&alpha;</sub>0+(C)-(C)
+T2&rarr;		REX<sub>&alpha;</sub>0+(C)-(C)
 JPQ C
-T1&rarr;	RSX<sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub>LIST
+T1&rarr;		RSX<sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub>LIST
 <sup>1</sup><sup>6</sup>RSX<sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub>LIST-1
 INX<sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub>0
 DEX<sub>&beta;</sub>1
@@ -2190,11 +2190,11 @@ STE<sub>S</sub>LIST
 GORREXIT=LEXIT
 <sup>1</sup>DPX<sub>X</sub><sub>R</sub>LGORR1
 <sup>1</sup><sup>1</sup>RSX<sub>X</sub><sub>R</sub><sub>2</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST+(N)+1
-LGORR0&rarr;	<sup>1</sup><sup>6</sup>RSX<sub>X</sub><sub>R</sub><sub>2</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST-1
+LGORR0&rarr;		<sup>1</sup><sup>6</sup>RSX<sub>X</sub><sub>R</sub><sub>2</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST-1
 h<sup>-</sup><sup>1</sup>JNX<sub>X</sub><sub>R</sub>#+2
 <sup>1</sup>SKX<sub>X</sub><sub>R</sub>1
 INX<sub>X</sub><sub>R</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>0
-LGORR1&rarr;	SXD<sub>X</sub><sub>R</sub>#	** MODIFIED
+LGORR1&rarr;		SXD<sub>X</sub><sub>R</sub>#	** MODIFIED
 hJPQ GORREXIT+(GORREXIT/GORREXIT&#9419;1&times;(LGORREND+1))
 <sup>1</sup><sup>1</sup>RSX<sub>X</sub><sub>R</sub><sub>2</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST
 <sup>1</sup>DPX<sub>X</sub><sub>R</sub><sub>2</sub>LGORR2
@@ -2203,7 +2203,7 @@ hJPQ SUBR
 <hr>
 [Page header: "IES OPLW 016"]
 
-LGORR2&rarr;	SKX<sub>X</sub><sub>R</sub><sub>2</sub>#	**MODIFIED
+LGORR2&rarr;		SKX<sub>X</sub><sub>R</sub><sub>2</sub>#	**MODIFIED
 LGORREND&rarr;	JPQ LGORR0
 &#9755;&#9755;EMD
 
@@ -2250,7 +2250,7 @@ SKX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>0
 &#9755;&#9755;DEF SUBR&equiv;A
 		<sup>1</sup>STE SUBR1
 		A
-SUBR1&rarr;	JPQ #
+SUBR1&rarr;		JPQ #
 &#9755;&#9755;EMD
 
 <hr>
@@ -2305,14 +2305,14 @@ SUBR1&rarr;	JPQ #
  200067|
 		JPQ STARTS
  200070|
-MATS&rarr;	0
-MATM&rarr;	0
-MATO&rarr;	0
-MATRX&rarr;	0
-MATRY&rarr;	0
-MATD&rarr;	0
+MATS&rarr;		0
+MATM&rarr;		0
+MATO&rarr;		0
+MATRX&rarr;		0
+MATRY&rarr;		0
+MATD&rarr;		0
  200100|
-BADOV&rarr;	h<sup>1</sup>STE #+2
+BADOV&rarr;		h<sup>1</sup>STE #+2
 		hSKZ OVERFLOSTOP
 		<sup>2</sup>#<sub>7</sub><sub>6</sub> [very useful as right column contains numeric code]
 		JPQ 200001
@@ -2320,31 +2320,31 @@ BADOV&rarr;	h<sup>1</sup>STE #+2
 		hJMP MAGCON [placed at 200777?]
  NLIST|
 		HOVS-LIST+MASBL [placed at 022000]
-MM0&rarr;	SMASBL,4,,0 **MASTERS
+MM0&rarr;		SMASBL,4,,0 **MASTERS
 		SPLAT
 		-2,0 [resulting octal is |775000 000000|, so -2 goes into top quarter]
 		MM4-NLIST+1,,MM1-NLIST+1
 		45,30,,35,44	**UNIV
 		0
-MM1&rarr;	UNIVBH	**VARIABLES
+MM1&rarr;		UNIVBH	**VARIABLES
 		MM0-NLIST+SPECB+1,,SPLATT
 		-2,
 		V6-NLIST+1,,V1-NLIST+1
 		42,41,,,20,45	**VARS
 		0
-MM2&rarr;	UNIVBH	**HOLDERS
+MM2&rarr;		UNIVBH	**HOLDERS
 		SPLATT
 		-2,
 		H10-NLIST+1,,H1-NLIST+1
 		42,23,,33,27	**HLDS
 		0
-MM3&rarr;	UNIVBH	**TOPOS
+MM3&rarr;		UNIVBH	**TOPOS
 		SPLATT
 		-2,
 		L3-NLIST+1,,L1-NLIST+1
 		36,37,,36,43	**TOPO
 		0
-MM4&rarr;	UNIVBH	**CONSTRAINTS
+MM4&rarr;		UNIVBH	**CONSTRAINTS
 		#-NLIST-SMASBL,,MM0-NLIST+SPECB+1
 		-2,
 		IPCONS-LIST+1,,ONLINES-LIST+1
@@ -2420,28 +2420,28 @@ H9&rarr;		HEADER&equiv;HOLDERS&rarr;(22,37,,44,22)	**CURPICS
 		SPLAT
 		(22,37,,44,22)
 		T1
-H9.1&rarr;	HEADER&equiv;HOLDERS&rarr;(35,22,,47,35)
+H9.1&rarr;		HEADER&equiv;HOLDERS&rarr;(35,22,,47,35)
 		SMASBL,4,,HOLDERS-LIST
 		#-NLIST-SMASBL..#+SMASBL-NLIST
 [h-n: "?"]	-2,0	[handwritten: "NCXN"]
 		SPLAT
 		(35,22,,47,35)
 		T1
-H9.2&rarr;	HEADER&equiv;HOLDERS&rarr;(1,41,,37,42)
+H9.2&rarr;		HEADER&equiv;HOLDERS&rarr;(1,41,,37,42)
 		SMASBL,4,,HOLDERS-LIST
 		#-NLIST-SMASBL,,#+SMASBL-NLIST
 		-2,0
 		SPLAT
 		(1,41,,37,42)
 		T1
-H9.3&rarr;	HEADERS&equiv;HOLDERS&rarr;(2,41,,37,42)
+H9.3&rarr;		HEADERS&equiv;HOLDERS&rarr;(2,41,,37,42)
 		SMASBL,4,,HOLDERS-LIST
 		#-NLIST-SMASBL,,#+SMASBL-NLIST
 		-2,0
 		SPLAT
 		(2,41,,37,42)
 		T1
-H10&rarr;	SMASBL,4,MM2-NLIST
+H10&rarr;		SMASBL,4,MM2-NLIST
 		#-NLIST-SMASBL,,MM2-NLIST+SPECB+1
 		-2,
 		SPLAT
@@ -2552,7 +2552,7 @@ V3&rarr;		MASTER&equiv;VARIABLES&rarr;(41,45,,37,43)
 		hJMP TRANSFORM 	**MOVIT
 		16,14,,0	**SIZE
 		hJMP WHERESUB	**WHERE
-Q14&rarr;	JUNKK
+Q14&rarr;		JUNKK
 		2	**TUPLE
 		TPVAL	**VARLOC
  INSTANCES+NLIST-LIST|
@@ -2846,7 +2846,7 @@ STB A+1
 GORREXIT=LEXIT
 	<sup>1</sup>DPX<sub>X</sub><sub>R</sub>LGORR1
 	<sup>1</sup><sup>1</sup>RSX<sub>X</sub><sub>R</sub><sub>2</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST+(N)+1
-LGORR0&rarr;	<sup>1</sup><sup>6</sup>RSX<sub>X</sub><sub>R</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>LIST-1
+LGORR0&rarr;		<sup>1</sup><sup>6</sup>RSX<sub>X</sub><sub>R</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>LIST-1
 	h<sup>-</sup><sup>1</sup>JNX<sub>X</sub><sub>R</sub>#+2
 	<sup>1</sup>SKX<sub>X</sub><sub>R</sub>1
 	INX<sub>X</sub><sub>R</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>0
@@ -2867,7 +2867,7 @@ LGORREND&rarr;   JPQ LGORR0
 GORLEXIT=LEXIT
 	<sup>1</sup>DPX<sub>X</sub><sub>R</sub>LGORL1
 	<sup>1</sup><sup>2</sup>RSX<sub>X</sub><sub>R</sub><sub>2</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST+(N)+1
-LGORL0&rarr;	<sup>1</sup><sup>6</sup>RSX<sub>X</sub><sub>R</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>LIST-1
+LGORL0&rarr;		<sup>1</sup><sup>6</sup>RSX<sub>X</sub><sub>R</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>LIST-1
 	h<sup>-</sup><sup>1</sup>JNX<sub>X</sub><sub>R</sub>#+2
 	<sup>1</sup>SKX<sub>X</sub><sub>R</sub>1
 	INX<sub>X</sub><sub>R</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>0
@@ -2884,7 +2884,7 @@ LGORLEND&rarr;   JPQ LGORL0
 GORRIEXIT=LEXIT
 	<sup>1</sup>DPX<sub>X</sub><sub>R</sub>LGORRI1
 	<sup>1</sup><sup>1</sup>RSX<sub>X</sub><sub>R</sub><sub>2</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST+(N)+1
-LGORRI0&rarr;	<sup>1</sup><sup>6</sup>RSX<sub>X</sub><sub>R</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>LIST-1
+LGORRI0&rarr;		<sup>1</sup><sup>6</sup>RSX<sub>X</sub><sub>R</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>LIST-1
 	h<sup>-</sup><sup>1</sup>JNX<sub>X</sub><sub>R</sub>#+2
 	<sup>1</sup>SKX<sub>X</sub><sub>R</sub>1
 	INX<sub>X</sub><sub>R</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>0
@@ -2903,7 +2903,7 @@ LGORRIEND&rarr;   JPQ LGORRI0
 GORLIEXIT=LEXIT
 	<sup>1</sup>DPX<sub>X</sub><sub>R</sub>LGORLI1
 	<sup>1</sup><sup>2</sup>RSX<sub>X</sub><sub>R</sub><sub>2</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST+(N)+1
-LGORLI0&rarr;	<sup>1</sup><sup>6</sup>RSX<sub>X</sub><sub>R</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>LIST-1
+LGORLI0&rarr;		<sup>1</sup><sup>6</sup>RSX<sub>X</sub><sub>R</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>LIST-1
 	h<sup>-</sup><sup>1</sup>JNX<sub>X</sub><sub>R</sub>#+2
 	<sup>1</sup>SKX<sub>X</sub><sub>R</sub>1
 	INX<sub>X</sub><sub>R</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>0
@@ -2927,9 +2927,9 @@ LGORLIEND&rarr;   JPQ LGORLI0
 	SKX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>0
 	<sup>1</sup><sup>2</sup>AUX<sub>X</sub><sub>R</sub>{(N)+1,,-((N)+1)}
 	<sup>1</sup><sup>1</sup>RSX<sub>T</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST
-NEWH1&rarr;	SXD<sub>T</sub><sub>|</sub><sub>X</sub><sub>R</sub>0
+NEWH1&rarr;		SXD<sub>T</sub><sub>|</sub><sub>X</sub><sub>R</sub>0
 	JPQ NEWH2
-NEWH2&rarr;	<sup>1</sup><sup>1</sup>AUX<sub>X</sub><sub>R</sub>{(N)+1,,-((N)+1)}
+NEWH2&rarr;		<sup>1</sup><sup>1</sup>AUX<sub>X</sub><sub>R</sub>{(N)+1,,-((N)+1)}
 &#9755;&#9755;EMD
 
 &#9755;&#9755;DEF COMBHR&equiv;NN&times;XRR&rarr;MM&times;XRR2
@@ -2979,10 +2979,10 @@ NEWH2&rarr;	<sup>1</sup><sup>1</sup>AUX<sub>X</sub><sub>R</sub>{(N)+1,,-((N)+1)}
 
 &#9755;&#9755;DEF TYPE&beta;
 XXX&beta;=0
-NENTRY&beta;&rarr;	hMKZ<sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub>LSW&beta;
+NENTRY&beta;&rarr;		hMKZ<sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub>LSW&beta;
 		hJPQ #+2
-LENTRY&beta;&rarr;	hMKN<sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub>LSW&beta;
-MTLOOP&beta;&rarr;	h<sup>1</sup>DPX<sub>6</sub><sub>6</sub>TYPEXIT&beta;
+LENTRY&beta;&rarr;		hMKN<sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub>LSW&beta;
+MTLOOP&beta;&rarr;		h<sup>1</sup>DPX<sub>6</sub><sub>6</sub>TYPEXIT&beta;
 		hDEX<sub>6</sub><sub>6</sub>2
 		LDA<sub>6</sub><sub>6</sub>0
 		RFD<sub>6</sub><sub>6</sub>#+1
@@ -2992,7 +2992,7 @@ MTLOOP&beta;&rarr;	h<sup>1</sup>DPX<sub>6</sub><sub>6</sub>TYPEXIT&beta;
 		<sup>2</sup><sup>5</sup>INS TYPECNTR&beta;
 		LDB C
 TYPELOOP&beta;&rarr;	<sup>3</sup>DPX A
-LSW&beta;&rarr;	SKZ<sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub>
+LSW&beta;&rarr;		SKZ<sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub>
 		CAB {3,77,,77}
 		CAB #-1*
 		<sup>3</sup>TSD A
@@ -3026,12 +3026,12 @@ TYPEEXIT&beta;&rarr;	JPQ XXX&beta;
 		TYPEL,6<sub>3</sub><sub>6</sub>&times;{603536,,704641} [6<sub>3</sub><sub>6</sub>??]
 		SKX<sub>3</sub><sub>6</sub>0 [another symbol on the line, junk?]
 		RFD<sub>4</sub><sub>6</sub>{TPK&beta;}+2*
-CMP1&rarr;	SKX<sub>3</sub><sub>6</sub>1
+CMP1&rarr;		SKX<sub>3</sub><sub>6</sub>1
 		JPQ {TPK&beta;}+2*
 &#9755;&#9755;EMD
 
 &#9755;&#9755;DEF IOA&beta;
-IOASCH&beta;&rarr;	h<sup>2</sup>STE {TPK&beta;}+6	**PGM ADDR
+IOASCH&beta;&rarr;		h<sup>2</sup>STE {TPK&beta;}+6	**PGM ADDR
 		MKN<sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub>IOASCHSW&beta;
 		JPQ #+3
 IOANOTSCH&beta;&rarr;	h<sup>2</sup>STE {TPK&beta;}+6	**PGM ADDR
@@ -3057,7 +3057,7 @@ EIAFNDR&beta;&rarr;	SKN<sub>4</sub><sub>.</sub><sub>1</sub>EIALOOP&beta;*	**SKIP
 		JPQ EIALD&beta;
 		SKN<sub>1</sub><sub>.</sub><sub>9</sub>{TPK&beta;}+7	**SKIP IF WRITING
 		h<sup>1</sup>JNX<sub>3</sub><sub>4</sub>EIALOOP&beta;		**IGNORE CONDITION
-EIALD&beta;&rarr;	<sup>2</sup><sup>2</sup>LDC<sub>3</sub><sub>4</sub>LIOAMSG&beta;	**TYPE OF ERROR
+EIALD&beta;&rarr;		<sup>2</sup><sup>2</sup>LDC<sub>3</sub><sub>4</sub>LIOAMSG&beta;	**TYPE OF ERROR
 		RFD<sub>4</sub><sub>6</sub>{ERRLOOP&beta;}*
 		JPD #	**NOT USED
 FIOAMSG&beta;&rarr;	0,744,,343042	**MIS 2.4
@@ -3090,7 +3090,7 @@ NORMENTRY&beta;&rarr;	<sup>5</sup>DPX {TPK&beta;}+8.	**CLR ERR TYPE
 NTFENTRY&beta;&rarr;	SKX<sub>3</sub><sub>6</sub>5
 		JPQ ALLERRS&beta;
 SCENTRY&beta;&rarr;	<sup>2</sup><sup>2</sup>SUB {TPK&beta;}+9.	**10 OR 0
-SCEBME&beta;&rarr;	<sup>2</sup><sup>1</sup>LDC {422224,,213424}	**SCE
+SCEBME&beta;&rarr;		<sup>2</sup><sup>1</sup>LDC {422224,,213424}	**SCE
 ALLERRS&beta;&rarr;	<sup>5</sup>DPX<sub>3</sub><sub>6</sub>{TPK&beta;}+8.	**SAVE ERR TYPE
 		<sup>2</sup><sup>1</sup> {TPK&beta;}+5	**BLK NO
 		[Device 41 is "Alarm, in-out", table 7-1.]
@@ -3098,7 +3098,7 @@ ALLERRS&beta;&rarr;	<sup>5</sup>DPX<sub>3</sub><sub>6</sub>{TPK&beta;}+8.	**SAVE
 NTFNDMSG&beta;&rarr;	<sup>1</sup>LDC {354325,,703443}	**MT
 		TYPEL&sup;{60},6<sub>3</sub><sub>4</sub> [<sub>3</sub><sub>4</sub> propagates to instruction in the macro?]
 		<sup>1</sup>SKX<sub>3</sub><sub>5</sub>(LXSET&beta;-XSETK&beta;)	**WD CNTR
-WRSP&beta;&rarr;	h<sup>3</sup>TSD {70}	**SPACE
+WRSP&beta;&rarr;		h<sup>3</sup>TSD {70}	**SPACE
 		h<sup>3</sup>TSD {70}	**SPACE
 		h<sup>3</sup>TSD {70}	**SPACE
 		h<sup>1</sup>JNX<sub>3</sub><sub>5</sub>ELOOPMSG1&beta;
@@ -3121,15 +3121,15 @@ NORMEXIT&beta;&rarr;	<sup>1</sup>RSX<sub>3</sub><sub>4</sub>{TPK&beta;}+1	**RESE
 		JPQ {TPK&beta;}+2*	**RETURN TO PGM
 BMENTRY&beta;&rarr;	<sup>2</sup><sup>2</sup>LDC SCEBME&beta;*		**BME
 		JPQ ALLERRS&beta;	**WRITE MSG
-XSETK&beta;&rarr;	LXSET&beta;<sub>3</sub><sub>5</sub> [syntax]
-XSET&beta;&rarr;	9.,-1
+XSETK&beta;&rarr;		LXSET&beta;<sub>3</sub><sub>5</sub> [syntax]
+XSET&beta;&rarr;		9.,-1
 
 <hr>
 [Page header: "LMH GX7A 025"]
 
 		-1
 		-3
-LXSET&beta;&rarr;	0
+LXSET&beta;&rarr;		0
 
 &#9755;&#9755;DEF TURNOFF&Delta;
 		h<sup>2</sup>STE {TPK&beta;}+6	**PGM ADDR
@@ -3172,7 +3172,7 @@ SCHENTRY&rarr;	h<sup>1</sup>STE {TPK&beta;}+2	**SAVE RETURN
 		hJNX<sub>4</sub><sub>6</sub>TAFREVDIR	**LEAVE REV?
 		hMKZ<sub>1</sub><sub>.</sub><sub>1</sub>XCHKSW	**SET FOR FWD
 		hLDE TAFDKF	**FWD CONSTANTS
-TAFSCHK&rarr;	h<sup>1</sup>STE TAFST
+TAFSCHK&rarr;		h<sup>1</sup>STE TAFST
 		h<sup>2</sup><sup>1</sup>STE TAFST-1
 		hLDE TAFSPDK
 		hSXD<sub>4</sub><sub>6</sub>2	**CHK FOR SPD2 EXIT
@@ -3191,7 +3191,7 @@ TAFSCHK&rarr;	h<sup>1</sup>STE TAFST
 		<sup>2</sup><sup>1</sup>COM TAFBL 	** -(ORIG NO.) [some smudge  after COM, interpreting as junk]
 		<sup>2</sup>DPX<sub>3</sub><sub>5</sub>{TPK&beta;}+1	** SAVE X<sub>3</sub><sub>5</sub>
 		<sup>1</sup>DPX<sub>3</sub><sub>7</sub>{TPK&beta;}+8.	** SAVE X<sub>3</sub><sub>7</sub>
-EOTCHK&rarr;	h<sup>1</sup>IOS<sub>4</sub><sub>6</sub>0	**GET REPORT
+EOTCHK&rarr;		h<sup>1</sup>IOS<sub>4</sub><sub>6</sub>0	**GET REPORT
 		hSKN<sub>4</sub><sub>.</sub><sub>3</sub>E	**SELECTION COMPLETE?
 		JPQ EOTCHK	**WAIT
 		SKU<sup>3</sup><sub>.</sub><sub>7</sub>	**OPERABLE SPEED?
@@ -3223,11 +3223,11 @@ TAFGOFWD&rarr;	SKX<sub>3</sub><sub>4</sub>0
 		JPQ TAFIOS
 		** FAST LOOPS
 		** GO MORE IN REVERSE DIRECTION
-TAF3R&rarr;	SXD<sub>3</sub><sub>4</sub>3
+TAF3R&rarr;		SXD<sub>3</sub><sub>4</sub>3
 		h<sup>-</sup><sup>1</sup>JPX<sub>3</sub><sub>4</sub>TAFIOS	**GO TO SLOW LOOP SPD 2 FWD
 		h<sup>-</sup><sup>1</sup>JPX<sub>3</sub><sub>4</sub>TAF4F+1	**SLOW TO SPD 3 FWD
-TAF0R&rarr;	<sup>1</sup>SKX<sub>3</sub><sub>4</sub>5	**REV SPD4
-TAF4F&rarr;	<sup>3</sup>DPX {TPK&beta;}	**CLR FINE MK
+TAF0R&rarr;		<sup>1</sup>SKX<sub>3</sub><sub>4</sub>5	**REV SPD4
+TAF4F&rarr;		<sup>3</sup>DPX {TPK&beta;}	**CLR FINE MK
 		hLDE TAFIOS*
 
 <hr>
@@ -3237,7 +3237,7 @@ TAF4F&rarr;	<sup>3</sup>DPX {TPK&beta;}	**CLR FINE MK
 		h<sup>1</sup>IOS<sub>4</sub><sub>6</sub>XXX	**RD MKS
 		STE {TPK&beta;}+7
 		h<sup>1</sup><sup>1</sup>LDE {TPK&beta;}	**CURRENT BLK
-TAF4R&rarr;	<sup>2</sup>STE {TPK&beta;}	**EXPECTED BLK
+TAF4R&rarr;		<sup>2</sup>STE {TPK&beta;}	**EXPECTED BLK
 		h<sup>4</sup>TSD {TPK&beta;}	**COARSE MK
 		hSKZ<sub>2</sub><sub>.</sub><sub>9</sub>E	**NEG MK?
 		hJMP TAF4R+1	**IGNORE
@@ -3251,13 +3251,13 @@ TAF4R&rarr;	<sup>2</sup>STE {TPK&beta;}	**EXPECTED BLK
 		<sup>2</sup>AUX<sub>3</sub><sub>5</sub>TAFSTK*
 		hJPX<sub>3</sub><sub>5</sub>TAF4R-1	**CONTINUE AT SAME SPEED
 		**GO MORE IN FORWARD DIRECTION
-TAF0F&Delta;&rarr;	<sup>1</sup>SXD<sub>3</sub><sub>4</sub>4
+TAF0F&Delta;&rarr;		<sup>1</sup>SXD<sub>3</sub><sub>4</sub>4
 		h<sup>1</sup>JNX<sub>3</sub><sub>4</sub>TAFIOS	**GO TO SLOW LOOP SPD 2 REV
 		h<sup>1</sup>JNX<sub>3</sub><sub>4</sub>TAF4F+1	**SLOW TO SPD 3 REV
-TAF0F&rarr;	SKX<sub>3</sub><sub>4</sub>4 **FWD SPD 4
+TAF0F&rarr;		SKX<sub>3</sub><sub>4</sub>4 **FWD SPD 4
 		JPQ TAF4F
 		**SLOW LOOPS
-TAFCON&rarr;	<sup>2</sup>AUX<sub>3</sub><sub>5</sub>TAFBL	**-(ORIG BLK)
+TAFCON&rarr;		<sup>2</sup>AUX<sub>3</sub><sub>5</sub>TAFBL	**-(ORIG BLK)
 		<sup>1</sup>AUX<sub>3</sub><sub>5</sub>TAFSTK*	**LIMIT AT THIS SPEED
 		hJPX<sub>3</sub><sub>5</sub>TAFREV
 		<sup>2</sup>AUX<sub>3</sub><sub>5</sub>TAFSTK*
@@ -3267,10 +3267,10 @@ TAFIOSRET&rarr;	h<sup>1</sup><sup>2</sup>RSX<sub>3</sub><sub>7</sub>{TPK&beta;}	
 		DEX<sub>3</sub><sub>5</sub>10	**PRECEDING BLK
 		SXL<sub>3</sub><sub>4</sub>0	**REV?
 		INX<sub>3</sub><sub>5</sub>20	**NXT BLK
-TAF1F&rarr;	h<sup>4</sup>TSD {TPK&beta;}	**BLK MK
-TAF2F&rarr;	h<sup>1</sup>IOS<sub>4</sub><sub>6</sub>XXX	**RD LINES
+TAF1F&rarr;		h<sup>4</sup>TSD {TPK&beta;}	**BLK MK
+TAF2F&rarr;		h<sup>1</sup>IOS<sub>4</sub><sub>6</sub>XXX	**RD LINES
 		h<sup>3</sup>TSD {TPK&beta;} **FINE MK
-TAF3F&rarr;	<sup>1</sup>IOS<sub>4</sub><sub>6</sub>XXX	**RD MKS
+TAF3F&rarr;		<sup>1</sup>IOS<sub>4</sub><sub>6</sub>XXX	**RD MKS
 		h<sup>1</sup><sup>1</sup>RSX<sub>3</sub><sub>5</sub>{TPK&beta;}	**BM READ
 		hJNX<sub>3</sub><sub>5</sub>TAFNEGMK
 		<sup>2</sup>SED E	**BM PREDICTED
@@ -3280,35 +3280,35 @@ TAF3F&rarr;	<sup>1</sup>IOS<sub>4</sub><sub>6</sub>XXX	**RD MKS
 		INX<sub>3</sub><sub>7</sub>20	**FOR FWD
 		SXD<sub>3</sub><sub>7</sub><sub>|</sub><sub>3</sub><sub>5</sub>0	**1>LAST PREDICTION?
 		JPQ TAFCON	**CONTINUE
-XCHKSW&rarr;	<sup>1</sup>SXD<sub>3</sub><sub>4</sub>0	**MOD TO <sup>1</sup>SXD<sub>3</sub><sub>4</sub>1 FOR REV
+XCHKSW&rarr;		<sup>1</sup>SXD<sub>3</sub><sub>4</sub>0	**MOD TO <sup>1</sup>SXD<sub>3</sub><sub>4</sub>1 FOR REV
 
 <hr>
 [Page header: "LMH GX7A 030"]
 
 		JPQ XCHK
 		JPQ TAFIOSRET	**IGNORE WHAT WAS READ
-TAFFOR&rarr;	h<sup>1</sup>JNX<sub>3</sub><sub>4</sub>TAFLVREV
+TAFFOR&rarr;		h<sup>1</sup>JNX<sub>3</sub><sub>4</sub>TAFLVREV
 		SXL<sub>3</sub><sub>4</sub>4
 		JPQ TAF4F	**FWD SPD4
-TAFIOS&rarr;	hLDE<sub>3</sub><sub>4</sub>XXX	**IOS K
+TAFIOS&rarr;		hLDE<sub>3</sub><sub>4</sub>XXX	**IOS K
 		h<sup>2</sup><sup>2</sup>STE TAF2F	**RD LINES
 		h<sup>1</sup>STE TAF3F	**RD MKS
 		<sup>1</sup>STE #+1		**RD MKS
 		h<sup>1</sup>IOS<sub>4</sub><sub>6</sub>XXX	**RD MKS
 		STE {TPK&beta;}+7	**SAVE REPORT
 		JPQ TAFIOSRET
-TAFREV&rarr;	h<sup>-</sup><sup>1</sup>JPX<sub>3</sub><sub>4</sub>TAFIOS
+TAFREV&rarr;		h<sup>-</sup><sup>1</sup>JPX<sub>3</sub><sub>4</sub>TAFIOS
 		SXG<sub>3</sub><sub>4</sub>5
 		JPQ TAF4F	**SPD4 LOOP
 TAFREVSW&rarr;	SKZ<sub>1</sub><sub>.</sub><sub>1</sub>XCHKSW	**LV FWD?
 		JPQ TAFIOS
 		SXG<sub>3</sub><sub>4</sub>2
 		JPQ TAFIOS
-TAFCOMP&rarr;	h<sup>1</sup>LDE {TPK&beta;}	**BLK READ
+TAFCOMP&rarr;		h<sup>1</sup>LDE {TPK&beta;}	**BLK READ
 		<sup>1</sup>SED {TPK&beta;}+1	**BLK NEEDED
 		JPQ {ERRLOOP&beta;}+6	**LEAVE SEARCH, BLK FOUND
 TAFERRSW&rarr;	h<sup>1</sup>JNX<sub>3</sub><sub>6</sub>TAFIOS	**ERR CNTR
-TAFERR&rarr;	hJPQ{TURNOFF&Delta;}	**PGM ADDR
+TAFERR&rarr;		hJPQ{TURNOFF&Delta;}	**PGM ADDR
 		<sup>2</sup><sup>1</sup>LDC {354325,,703443}	**NTF
 		SKX<sub>3</sub><sub>6</sub>0
 TAFERREXIT&rarr;	<sup>2</sup><sup>2</sup>LDA {TPK&beta;}+1	**ORIGINAL NO
@@ -3321,7 +3321,7 @@ TAFLVREV&rarr;	hJNX<sub>3</sub><sub>4</sub>TAFIOS	**CHK FOR CHG OF DIR
 		SKN<sub>1</sub><sub>.</sub><sub>1</sub>XCHKSW	**LV REV?
 		JPQ TAFIOS
 		JPQ TAFCOMP
-XCHK&rarr;	h<sup>1</sup><sup>1</sup>LDE {TPK&beta;}	**BM READ
+XCHK&rarr;		h<sup>1</sup><sup>1</sup>LDE {TPK&beta;}	**BM READ
 		<sup>1</sup>SED {TPK&beta;}+1	**BM NEEDED
 		JPQ {ERRLOOP&beta;}+6	**LEAVE SEARCH, BLK FOUND
 		JPQ TAFIOSRET	**IGNORE
@@ -3331,23 +3331,23 @@ TAFNOTREADY&rarr;	<sup>2</sup>STE {TPK&beta;}+6	**PGM ADDR
 		JPQ TAFERREXIT	**EIA ENTRY
 TAFNEGMK&rarr;	<sup>2</sup><sup>2</sup>STE {TPK&beta;}	**TAKE PREDICTION
 		JPQ TAFIOSRET
-TAFWA1&rarr;	0
-TAFBL&rarr;	0
-TAFSPDK&rarr;	TAF2R,,TAF1R
-TAFSTK&rarr;	TAFST<sub>3</sub><sub>4</sub>
+TAFWA1&rarr;		0
+TAFBL&rarr;		0
+TAFSPDK&rarr;		TAF2R,,TAF1R
+TAFSTK&rarr;		TAFST<sub>3</sub><sub>4</sub>
 
 <hr>
 [Page header: "LMH GX7A 031"]
 
-TAFDKF&rarr;	TAPEK1+10,,10
-TAFDKR&rarr;	TAPEK1-10,,-10
+TAFDKF&rarr;		TAPEK1+10,,10
+TAFDKR&rarr;		TAPEK1-10,,-10
 		**SPEED TABLES
 		377777-TAPEK4,,-377777
 		TAPEK4-TAPEK3,,-TAPEK4
 		TAPEK3-TAPEK2,,-TAPEK3
 		TAPEK2-TAPEK1,,-TAPEK2
 		TAPEK1+10,,-TAPEK1	**MOD TO TAPEK1-10,,-TAPEK1
-TAFST&rarr;	TAPEK1-10,,10		**MOD TO TAPEK1-10,,-10
+TAFST&rarr;		TAPEK1-10,,10		**MOD TO TAPEK1-10,,-10
 		TAPEK2-TAPEK1,,TAPEK1
 		TAPER3-TAPEK2,,TAPEK2
 		TAPEK4-TAPER3,,TAPEK3
@@ -3357,7 +3357,7 @@ TAFST&rarr;	TAPEK1-10,,10		**MOD TO TAPEK1-10,,-10
 		RL+REV+SPD2,,RM+REV+SPD2
 		RL+REV+SPD1,,RM+REV+SPD1
 		RL+REV,,RM+REV
-TAF1R&rarr;	RL,,RM
+TAF1R&rarr;		RL,,RM
 		RL+SPD1,,RM+SPD1
 		RL+SPD2,,RM+SPD2
 		RL+SPD3,,RM+SPD3
@@ -3367,7 +3367,7 @@ TAF1R&rarr;	RL,,RM
 		RL+REV+SPD2,,RM+REV+SPD2
 		RL+REV+SPD2,,RM+REV+SPD2
 		RL+REV+SPD2,,RM+REV+SPD2
-TAF2R&rarr;	RL+SPD2,,RM+SPD2
+TAF2R&rarr;		RL+SPD2,,RM+SPD2
 		RL+SPD2,,RM+SPD2
 		RL+SPD2,,RM+SPD2
 		RL+SPD3,,RM+SPD4
@@ -3422,14 +3422,14 @@ SRCENTRY&rarr;	SKX<sub>4</sub><sub>1</sub>{IOAB}+3	**SET IOA SEQ
 		<sup>1</sup>STB SCRM	**IOS RM
 		<sup>1</sup>STB SCRL	**IOS RL
 		MKZ<sub>1</sub><sub>.</sub><sub>7</sub>SCRL	**CHG TO RL
-SCRM&rarr;	<sup>1</sup>IOS<sub>4</sub><sub>6</sub>XXX	**RM
+SCRM&rarr;		<sup>1</sup>IOS<sub>4</sub><sub>6</sub>XXX	**RM
 		h<sup>6</sup>TSB B	**COARSE MK
-SCRL&rarr;	h<sup>1</sup>IOS<sub>4</sub><sub>6</sub>XXX	**RL
+SCRL&rarr;		h<sup>1</sup>IOS<sub>4</sub><sub>6</sub>XXX	**RL
 		hJPQ BMCHK	**CHK FOR BLK MK
-SCRET&rarr;	h<sup>3</sup>TSD A	**SUMCHK L.O.
+SCRET&rarr;		h<sup>3</sup>TSD A	**SUMCHK L.O.
 		SKX<sub>3</sub><sub>4</sub>177	**DATA CNTR
 		h<sup>4</sup>TSD D	**DATA
-SCDATA&rarr;	h<sup>3</sup>TSD D	**DATA
+SCDATA&rarr;		h<sup>3</sup>TSD D	**DATA
 		<sup>1</sup>ADD D	**TO SUMCHK
 		h<sup>4</sup>TSD D	**DATA
 		h<sup>3</sup>TSD D	**DATA
@@ -3438,7 +3438,7 @@ SCDATA&rarr;	h<sup>3</sup>TSD D	**DATA
 		h<sup>-</sup><sup>1</sup>JPX<sub>3</sub><sub>4</sub>SCDATA	**MORE DATA?
 		h<sup>3</sup>TSD D	**SUMCHK
 		<sup>2</sup><sup>0</sup>ADD D	**BM,,SUMCHK
-SCADD&rarr;	h<sup>4</sup>TSD B	**DUMMY
+SCADD&rarr;		h<sup>4</sup>TSD B	**DUMMY
 		h<sup>1</sup>JNA {TURNOFF&Delta;}	**SUMCHK ERR
 		h<sup>1</sup>JNA {ERRLOOP&beta;}*	**SUMCHK ERR
 		h<sup>3</sup>TSD B	**FINE MK
@@ -3449,16 +3449,16 @@ SCADD&rarr;	h<sup>4</sup>TSD B	**DUMMY
 		h<sup>1</sup>JPA {TURNOFF&Delta;}	**SUMCHK ERR
 		h<sup>1</sup>JPA {ERRLOOP&beta;}*	**SUMCHK ERR
 		h<sup>6</sup>TSD B	**COARSE MK
-BMCHK&rarr;	<sup>2</sup><sup>1</sup> {TPK&beta;}	**EXPECTED BM
+BMCHK&rarr;		<sup>2</sup><sup>1</sup> {TPK&beta;}	**EXPECTED BM
 		<sup>5</sup>TSD B	**FINE MK
 		<sup>2</sup><sup>2</sup>STB {TPK&beta;}	**BM READ
 		h<sup>4</sup>TSD B	**DUMMY
 		h<sup>2</sup><sup>1</sup>SED A	**CHK AGAINST EXPECTED
 		hJPQ GOODBM	**CORRECT BM
-BMERR&rarr;	hJPQ {TURNOFF&Delta;}
+BMERR&rarr;		hJPQ {TURNOFF&Delta;}
 		SKX<sub>3</sub><sub>6</sub>2
 		hJPQ {ERRLOOP&beta;}*	**TO ERR MSG
-GOODBM&rarr;	h<sup>4</sup>TSD A	**SUMCHK H.O.
+GOODBM&rarr;		h<sup>4</sup>TSD A	**SUMCHK H.O.
 		h<sup>-</sup><sup>1</sup><sup>0</sup>JPX<sub>3</sub><sub>5</sub>SCRET	**DONE?
 		hJPQ {TURNOFF&Delta;}
 		<sup>1</sup>IOS<sub>4</sub><sub>1</sub>20000
@@ -3474,14 +3474,14 @@ GOODBM&rarr;	h<sup>4</sup>TSD A	**SUMCHK H.O.
 		<sup>1</sup><sup>1</sup>RSX<sub>3</sub><sub>4</sub>{TPK&beta;}+1	**LOW ADDR
 		<sup>2</sup>DPX<sub>3</sub><sub>5</sub>A	**SET A
 		<sup>2</sup><sup>1</sup>ADD {-10,,10}	**-10&rarr;D<sub>3</sub>
-SCRAST&rarr;	<sup>2</sup><sup>1</sup>STA{TPK&beta;}+1	**SAVE HIGH ADDR
+SCRAST&rarr;		<sup>2</sup><sup>1</sup>STA{TPK&beta;}+1	**SAVE HIGH ADDR
 		JPQ {SCF2&Delta;}+6	**TO SUMCHK RTNE
 &#9755;&#9755;EMD
 
 &#9755;&#9755;DEF WR2&Delta;
 XXX=0
 		**DO NOT WRITE BLOCK MARKS
-WRENTRY&rarr;	<sup>1</sup>STE {TPK&beta;}+2	**RETURN
+WRENTRY&rarr;		<sup>1</sup>STE {TPK&beta;}+2	**RETURN
 		<sup>2</sup>DPX<sub>3</sub><sub>5</sub>{TPK&beta;}+1	**X<sub>3</sub><sub>5</sub>
 		<sup>1</sup>DPX<sub>3</sub><sub>7</sub>{TPK&beta;}+8	**X<sub>3</sub><sub>7</sub>
 		<sup>2</sup>DPX<sub>3</sub><sub>4</sub>A	**PREV BLOCK
@@ -3492,7 +3492,7 @@ WRENTRY&rarr;	<sup>1</sup>STE {TPK&beta;}+2	**RETURN
 		<sup>1</sup>DPX<sub>3</sub><sub>7</sub>WRLD	**STARTING CORE ADDR
 		MKZ<sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub>WRESW
 		SKX<sub>4</sub><sub>1</sub>{IOA&beta;}+3
-WRELOOP&rarr;	<sup>2</sup><sup>1</sup>STA {TPK&beta;}	**PREDICTED BM
+WRELOOP&rarr;		<sup>2</sup><sup>1</sup>STA {TPK&beta;}	**PREDICTED BM
 		<sup>1</sup>IOS<sub>4</sub><sub>6</sub>30100	**RMF0
 		h<sup>4</sup>TSD {TPK&beta;}	**COARSE MK
 		<sup>1</sup>IOS<sub>4</sub><sub>6</sub>30000	**RLF0
@@ -3503,17 +3503,17 @@ WRELOOP&rarr;	<sup>2</sup><sup>1</sup>STA {TPK&beta;}	**PREDICTED BM
 		h<sup>3</sup>TSD {TPK&beta;} **FINE MK
 		<sup>2</sup>SED A	**COMP WITH EXPECTED
 		JPQ WRESW
-WRLBM&rarr;	hJPQ {TURNOFF&Delta;}
+WRLBM&rarr;		hJPQ {TURNOFF&Delta;}
 		SKX<sub>3</sub><sub>6</sub>2
 		hJPQ {ERRLOOP&beta;}*	**ERR LOOP
-WRESW&rarr;	SZN<sub>4</sub>abo<sub>1</sub><sub>0</sub>#
+WRESW&rarr;		SZN<sub>4</sub>abo<sub>1</sub><sub>0</sub>#
 		JPQ WRSC
 WRMAINLOOP&rarr;	<sup>1</sup>IOS<sub>4</sub><sub>6</sub>30400	**WLF0
 		<sup>1</sup>LDA {0,,-0}	**FOR SUM CHK
 		<sup>3</sup>TSD A	**SUM CHK H.O.
 		<sup>3</sup>TSD A
 		<sup>1</sup>SKX<sub>3</sub><sub>4</sub>177
-WRLD&rarr;	LDB<sub>3</sub><sub>5</sub>XXX	**WD FROM CORE
+WRLD&rarr;		LDB<sub>3</sub><sub>5</sub>XXX	**WD FROM CORE
 		<sup>6</sup>TSD B	**DATA
 		<sup>5</sup>TSD B	**DATA
 		<sup>2</sup>ADD B	**FOR SUM CHK
@@ -3541,15 +3541,15 @@ WRLD&rarr;	LDB<sub>3</sub><sub>5</sub>XXX	**WD FROM CORE
 		<sup>2</sup><sup>1</sup>{TPK&beta;}+3	**LAST BM WRITTEN
 		<sup>2</sup><sup>2</sup>ADD {-10,,10}
 		JPQ WRELOOP
-WRSC&rarr;	hJPQ {TURNOFF&Delta;}
+WRSC&rarr;		hJPQ {TURNOFF&Delta;}
 		<sup>1</sup>IOS<sub>4</sub><sub>1</sub>20000
 		<sup>1</sup>STA {TPK&beta;}+10.	**SAVE LAST SUM CHK
 		JPQ {ERRLOOP&beta;}+6	**NORMAL EXIT
-WRSPL&rarr;	hJPQ {TURNOFF&Delta;}
+WRSPL&rarr;		hJPQ {TURNOFF&Delta;}
 		SKX<sub>3</sub><sub>6</sub>2
 		<sup>2</sup><sup>2</sup>LDC {223437,,423733}	**SPL
 		hJPQ {ERRLOOP&beta;}+4*
-WRCONT&rarr;	h<sup>1</sup>JNX<sub>3</sub><sub>5</sub>WRLD	**ANY DATA LEFT?
+WRCONT&rarr;		h<sup>1</sup>JNX<sub>3</sub><sub>5</sub>WRLD	**ANY DATA LEFT?
 
 <hr>
 [Page header: "LMH GX7A 035"]
@@ -3584,21 +3584,21 @@ ERRS=ERROR
 
  200014|
 		hJMP TEXTMAG	**TEXT
-I15&rarr;	hJMP LETMAG	**LETTERS
+I15&rarr;		hJMP LETMAG	**LETTERS
 		hJMP NUMMAG	**NUMBERS
  200076|
 		JPQ STARTS
 		hJMP TEXTCNG
  200120|
-RIBM&rarr;	hJMP 45SR
-RIBMN&rarr;	hJMP 45SRN
-WIBM&rarr;	hJMP 45SW
-WIBMN&rarr;	hJMP 45SWN
-RGARB&rarr;	hJMP 45GARB
+RIBM&rarr;		hJMP 45SR
+RIBMN&rarr;		hJMP 45SRN
+WIBM&rarr;		hJMP 45SW
+WIBMN&rarr;		hJMP 45SWN
+RGARB&rarr;		hJMP 45GARB
 45CURRENT&rarr;
 		0
-RDTX2&rarr;	hJMP TX2RD
-WRTX2&rarr;	hJMP TX2WR
+RDTX2&rarr;		hJMP TX2RD
+WRTX2&rarr;		hJMP TX2WR
  ORIGIN|
 
 <hr>
@@ -3606,7 +3606,7 @@ WRTX2&rarr;	hJMP TX2WR
 [This page header was seen before, see pdf_page 80. Significance is not clear.]
 [First few lines of code are crossed out by hand.]
 
-STARTS&rarr;	RXF<sub>6</sub><sub>5</sub> KEYSTART
+STARTS&rarr;		RXF<sub>6</sub><sub>5</sub> KEYSTART
 		DPX 45CURRENT
 		RXF <sub>6</sub><sub>6</sub> TYPESTART
 		**TYPEWRITER INPUT
@@ -3631,7 +3631,7 @@ TYPESTART&rarr;
 		JPD #-1
 		hTSD <sub>T</sub><sub>A</sub> KEYTAB
 		<sup>-</sup><sup>1</sup>JPX <sub>T</sub><sub>A</sub>#-3
-KEYTAB&rarr;	0
+KEYTAB&rarr;		0
 		0
 		0
 		0
@@ -3672,11 +3672,11 @@ TEXTCNGX&rarr;
 		SXL <sub>&gamma;</sub> 44
 		JPQ TEXTCNGX
 		<sup>1</sup><sup>3</sup>RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> KEYTAB
-TXCG1&rarr;	SXD <sub>S</sub> 62	**BACKSPACE
+TXCG1&rarr;		SXD <sub>S</sub> 62	**BACKSPACE
 		JPQ TXCGBAC
 		SXD <sub>S</sub> 16	**NO
 		JPQ TXCGNO
-TXCG2&rarr;	DPX <sub>&gamma;</sub> A
+TXCG2&rarr;		DPX <sub>&gamma;</sub> A
 		CYA {-2,}
 		<sup>2</sup><sup>1</sup>CYA {-4,}
 		ADD {<sup>1</sup><sup>3</sup>STB <sub>&beta;</sub> LIST+TXTS+1}
@@ -3684,14 +3684,14 @@ TXCG2&rarr;	DPX <sub>&gamma;</sub> A
 		STA #+1
 		#**<sup>1</sup><sup>?</sup>STB<sub>&beta;</sub>LIST+TXTS+1+N [strange line, actual question mark in the listing]
 		INX <sub>&gamma;</sub> 1
-TXCG3&rarr;	DPX <sub>&gamma;</sub><sub>|</sub><sub>&beta;</sub> TXTS+LIST
+TXCG3&rarr;		DPX <sub>&gamma;</sub><sub>|</sub><sub>&beta;</sub> TXTS+LIST
 		<sup>-</sup><sup>1</sup>JPX <sub>&alpha;</sub>#+2
 		REX <sub>&alpha;</sub> 17
 		DPX <sub>&alpha;</sub> TEXTPLACE
 		JPQ TEXTCNG+1
 TXCGBAC&rarr;
 		<sup>-</sup><sup>1</sup>JPX <sub>&gamma;</sub> TXCG3
-TXCGNO&rarr;	REX <sub>&gamma;</sub> 0
+TXCGNO&rarr;		REX <sub>&gamma;</sub> 0
 		JPQ TXCG3
 TEXTMAG&rarr;
 		<sup>1</sup>STE TEXTMAGEX
@@ -3739,7 +3739,7 @@ TEXTMAG1T&rarr;
 		<sup>1</sup><sup>5</sup>LDA *TEXT
 		<sup>1</sup><sup>4</sup>LDA *TEXT
 		<sup>1</sup><sup>3</sup>LDA *TEXT
-NUMMAG&rarr;	<sup>1</sup>STE NUMMAGEX
+NUMMAG&rarr;		<sup>1</sup>STE NUMMAGEX
 		LDAE&equiv;200022,1,2,3
 		STAE&equiv;RCOS,1,2,3
 		MOVE|200026&rarr;NUMBER
@@ -3763,7 +3763,7 @@ NUMMAG1&rarr;
 		SUMM&rarr; A&rarr;BADOV
 		SUMM&rarr; B&rarr;BADOV
 		JNA NUMMAGEX
-NUMMON&rarr;	REX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 4
+NUMMON&rarr;		REX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 4
 
 <hr>
 [Page header: "LMH GX7A 004"]
@@ -3807,7 +3807,7 @@ NUMMON2&rarr;
 		hJPQ LETMAGINT
 NUMMAGEX&rarr;
 		JPQ #
-LETMAG&rarr;	<sup>1</sup>STE LETMAGEX
+LETMAG&rarr;		<sup>1</sup>STE LETMAGEX
 		LDAE&equiv;200022,1,2,3
 		STAE&equiv;RCOS,1,2,3
 		MOVE|200026&rarr;LETTER
@@ -3836,7 +3836,7 @@ LETMAG1&rarr;
 		SUMM&rarr; C&rarr;BADOV
 		SUMM&rarr; B&rarr;BADOV
 		JNA LETMAGEX	**OFF SCOPE
-LETMON&rarr;	RSX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> LETTER
+LETMON&rarr;		RSX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> LETTER
 		SXL <sub>C</sub><sub>M</sub><sub>&alpha;</sub> LETDISLAST-LETDIS+1
 		JPQ LETMAGEX
 		JNX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> LETMAGEX
@@ -3887,7 +3887,7 @@ LETMAGE3&rarr;
 LETMAG3X&rarr;
 		JPQ #
 		[Looks like what follows is a symbol table for display.]
-LETDIS&rarr;	ZERO
+LETDIS&rarr;		ZERO
 		ONE
 		TWO
 		THREE
@@ -3942,14 +3942,14 @@ LETDIS1&rarr;
 		DOT
 LETDISLAST&rarr;
 		SPACE
-RCOS&rarr;	0
-RSIN&rarr;	0
-XPOS&rarr;	0
-YPOS&rarr;	0
-LETTER&rarr;	0
-SPACE&rarr;	0
+RCOS&rarr;		0
+RSIN&rarr;		0
+XPOS&rarr;		0
+YPOS&rarr;		0
+LETTER&rarr;		0
+SPACE&rarr;		0
 		[Table with data structures describing how to draw symbols.]
-ONE&rarr;	3,	**#PARTS, LINE-CIRC,,ANGLE
+ONE&rarr;		3,	**#PARTS, LINE-CIRC,,ANGLE
 		-SIZE/4,,3&times;SIZE/4	**START POINT
 		SIZE	**CENTER OR END
 		0
@@ -3958,7 +3958,7 @@ ONE&rarr;	3,	**#PARTS, LINE-CIRC,,ANGLE
 		0
 		-SIZE/4,,-SIZE
 		SIZE/4,,,-SIZE
-TWO&rarr;	3001,,525425
+TWO&rarr;		3001,,525425
 		-SIZE/2,,4071&times;SIZE/10000
 		(424.)&times;SIZE/(1000.)
 		1,,62446
@@ -3967,7 +3967,7 @@ TWO&rarr;	3001,,525425
 		0
 		BL
 		BR
-THREE&rarr;	3,
+THREE&rarr;		3,
 		-SIZE/2,,SIZE
 		2&times;SIZE/3,,SIZE
 		0
@@ -3976,7 +3976,7 @@ THREE&rarr;	3,
 		1,,-240000
 		SIZE/3
 		0,,-SIZE/3
-FOUR&rarr;	3,
+FOUR&rarr;		3,
 		SIZE/6,,SIZE
 		-2&times;SIZE/3,,-SIZE/3
 		0
@@ -3989,7 +3989,7 @@ FOUR&rarr;	3,
 		0
 		SIZE/6,,SIZE
 		SIZE/6,,-SIZE
-FIVE&rarr;	3,
+FIVE&rarr;		3,
 		-(1732.)&times;SIZE/(3160.),,SIZE
 		-(1732.)&times;SIZE/(3160.),,
 		1,,-5&times;400000/6
@@ -3998,7 +3998,7 @@ FIVE&rarr;	3,
 		0
 		-(1732.)&times;SIZE/(3160.),,SIZE
 		SIZE/2,,SIZE
-SIX&rarr;	3,1,,140,0
+SIX&rarr;		3,1,,140,0
 		(1574.)&times;SIZE/(4000.),,(3414.)&times;SIZE/(4000.)
 		SIZE/2
 		0
@@ -4007,7 +4007,7 @@ SIX&rarr;	3,1,,140,0
 		1,,-400000
 		-SIZE/2,,-SIZE/2
 		-SIZE/2
-SEVEN&rarr;	3,
+SEVEN&rarr;		3,
 		-SIZE/2,,SIZE
 		SIZE/2,,SIZE
 		0
@@ -4016,13 +4016,13 @@ SEVEN&rarr;	3,
 		0
 		SIZE/3
 		SIZE/2,,SIZE/3
-EIGHT&rarr;	2,1,,377,777
+EIGHT&rarr;		2,1,,377,777
 		SIZE
 		3&times;SIZE/5
 		1,,377777
 		SIZE/5
 		0,,-2&times;SIZE/5
-NINE&rarr;	3,1,,400,0
+NINE&rarr;		3,1,,400,0
 		SIZE/2,,SIZE/2
 		SIZE/2
 		0
@@ -4031,7 +4031,7 @@ NINE&rarr;	3,1,,400,0
 		1,,-200000
 		SIZE/2,,-SIZE/2
 		0,,-SIZE/2
-ZERO&rarr;	4,1,,-200,-0
+ZERO&rarr;		4,1,,-200,-0
 		-SIZE/2,,SIZE/2
 		SIZE/2
 		0
@@ -4056,7 +4056,7 @@ I2&rarr;		JPQ FRESH START
  200050|
 		JPQ 47FIXL
 		JPQ 47LOSTPEN
-I52&rarr;	hJMP BLOCKMAKER
+I52&rarr;		hJMP BLOCKMAKER
 		hJMP GETBLOCKER
  200066|
 		hJMP READIT
@@ -4077,7 +4077,7 @@ FRESH START&rarr;
 [Handwritten: "BUILD"]
 [Handwritten: "RDTX2=200126"]
 
-STARTS&rarr;	RXF <sub>4</sub><sub>7</sub> 47START
+STARTS&rarr;		RXF <sub>4</sub><sub>7</sub> 47START
 		DPX ATBITS
 		MKZ MOVINGDONE
 		DPX 0
@@ -4095,7 +4095,7 @@ STARTS&rarr;	RXF <sub>4</sub><sub>7</sub> 47START
 		JPD #
 47START&rarr;
 		CSQ<sub>4</sub><sub>7</sub>
-47FIXL&rarr;	DPX PAGE1 				[Clear *PAGE1]
+47FIXL&rarr;		DPX PAGE1 				[Clear *PAGE1]
 		hRSX <sub>4</sub><sub>7</sub> ATBITS 		[X_47 = R(*ATBITS)]
 		SXD <sub>4</sub><sub>7</sub> 1 			[if X_47 != 1 skip to JPQ 47LITEIT]
 		JPQ #+2              			[else skip past it]
@@ -4153,8 +4153,8 @@ STARTS&rarr;	RXF <sub>4</sub><sub>7</sub> 47START
 		MOVE|SWITCH1&rarr;SWITCH2
 		hLDE 47BUT
 		SED { 0}
-47TSD&rarr;	JPD #
-47BOTH&rarr;	hRSX <sub>4</sub><sub>7</sub> 47TABLE
+47TSD&rarr;		JPD #
+47BOTH&rarr;		hRSX <sub>4</sub><sub>7</sub> 47TABLE
 		hLDE 47BUT
 		hSTE <sub>4</sub><sub>7</sub> 47TABLE+1
 		hINX <sub>4</sub><sub>7</sub> 1
@@ -4168,7 +4168,7 @@ STARTS&rarr;	RXF <sub>4</sub><sub>7</sub> 47START
 47TABLE&rarr;
 		0
  47TABLE+20|
-READIT&rarr;	<sup>1</sup>STE READITEX
+READIT&rarr;		<sup>1</sup>STE READITEX
 		REX <sub>&alpha;</sub> 0
 		hSXL <sub>&alpha;</sub> *47TABLE
 		hJPQ ALLREAD
@@ -4176,7 +4176,7 @@ READIT&rarr;	<sup>1</sup>STE READITEX
 		STA 76BUT
 		INX <sub>?</sub> 1
 		DPX <sub>?</sub> 76TABLE
-PAGE1D&rarr;	SKZ <sub>1</sub><sub>.</sub><sub>6</sub> 76BUT
+PAGE1D&rarr;		SKZ <sub>1</sub><sub>.</sub><sub>6</sub> 76BUT
 		hJPQ STOPMOVEP
 		SKZ <sub>1</sub><sub>.</sub><sub>?</sub> 76BUT
 		hJPQ STARTDRAW
@@ -4207,7 +4207,7 @@ PAGE1D&rarr;	SKZ <sub>1</sub><sub>.</sub><sub>6</sub> 76BUT
 		hJPQ MGPSTART
 		SKZ <sub>2</sub><sub>.</sub><sub>?</sub> 76BUT [Handwritten: "<- 1.1"]
 		hJPQ MAKECONS
-PAGE1E&rarr;	SKZ <sub>2</sub><sub>.</sub><sub>?</sub> 76BUT [Handwritten: "<- 1.2"]
+PAGE1E&rarr;		SKZ <sub>2</sub><sub>.</sub><sub>?</sub> 76BUT [Handwritten: "<- 1.2"]
 		hJPQ TRUEUP
 		SKZ <sub>2</sub><sub>.</sub><sub>6</sub> 76BUT [Handwritten: "<- 1.4"]
 		hJPQ MAKPATA
@@ -4237,7 +4237,7 @@ PAGE1E&rarr;	SKZ <sub>2</sub><sub>.</sub><sub>?</sub> 76BUT [Handwritten: "<- 1.
 		hJPQ ORDSTARTB	** BEST
 		SKZ <sub>4</sub><sub>.</sub><sub>5</sub> 76BUT
 		hJPQ ORDSTARTW  ** WORST
-PAGE1F&rarr;	SKN <sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub> SWITCH ** IF ONE, DO DEADLY DELETIONS
+PAGE1F&rarr;		SKN <sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub> SWITCH ** IF ONE, DO DEADLY DELETIONS
 		JPQ PAGE1G
 		SKZ <sub>1</sub><sub>.</sub><sub>2</sub> 76BUT
 		hJPQ CONSTOUT
@@ -4257,7 +4257,7 @@ PAGE1F&rarr;	SKN <sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub> SWITCH ** IF O
 		JPQ #+2
 		hJPQ WIBMN
 		JPQ ALLREAD-2 [some trailing symbol, interpreting as junk]
-PAGE1G&rarr;	SKN <sub>4</sub><sub>.</sub><sub>3</sub> 76BUT
+PAGE1G&rarr;		SKN <sub>4</sub><sub>.</sub><sub>3</sub> 76BUT
 		JPQ #+10
 		SKN <sub>4</sub><sub>.</sub><sub>2</sub> SWITCH
 		JPQ #+3
@@ -4276,20 +4276,20 @@ ALLREAD&rarr;
 		hDPX 47TABLE
 READITEX&rarr;
 		JPQ #
-CPY1&rarr;	<sup>1</sup> STE CPY1X
+CPY1&rarr;		<sup>1</sup> STE CPY1X
 		LDA 377723
 		JPQ CPY1T
-CPY2&rarr;	<sup>1</sup>STE CPY1X
+CPY2&rarr;		<sup>1</sup>STE CPY1X
 		LDA 377722
 		JPQ CPY1T
-CPY3&rarr;	<sup>1</sup>STE CPY1X
+CPY3&rarr;		<sup>1</sup>STE CPY1X
 		LDA 377721
 		JPQ CPY1T
-CPY3&rarr;	<sup>1</sup>STE CPY1X
+CPY3&rarr;		<sup>1</sup>STE CPY1X
 		LDA 377720
-CPY1T&rarr;	STA COPYNUM
+CPY1T&rarr;		STA COPYNUM
 		hJPQ COPYIST
-CPY1X&rarr;	JPQ #
+CPY1X&rarr;		JPQ #
 ORDSTARTB&rarr;
 		<sup>1</sup>STE #+3
 		MKZ ORDWORST
@@ -4320,7 +4320,7 @@ CONSOUTSUB&rarr;
 		hJPQ DELETE
 CONSOUTSUBX&rarr;
 		JPQ #
-PICOUT&rarr;	<sup>1</sup>STE PICOUTGRX
+PICOUT&rarr;		<sup>1</sup>STE PICOUTGRX
 		MKN MOVED
 		REX <sub>&alpha;</sub> CURPICS-LIST
 		LGORR&equiv;SPECB&times;&alpha;=S&rarr;PICOUT1
@@ -4402,7 +4402,7 @@ PTSOUT2&rarr;
 		MKN MOVED
 		JPQ PTSOUT1X
 		** MAKE POINT &alpha; BE ON CIRCLE &beta;
-MPBOC&rarr;	<sup>1</sup>STE MPBOCX
+MPBOC&rarr;		<sup>1</sup>STE MPBOCX
 		MAKA&equiv;ONCIRCLES&rarr;&gamma;
 		PUT|PBOCP,&gamma;&rarr;VCON,&alpha;
 		RSX <sub>S</sub><sub>|</sub><sub>&beta;</sub> CIRCEN+LIST
@@ -4413,21 +4413,21 @@ MPBOC&rarr;	<sup>1</sup>STE MPBOCX
 [Page header: "IES 2XMX 007"]
 
 		PUT|PBOCS,&gamma;&rarr;VCON,S
-MPBOCX&rarr;	JPQ #
+MPBOCX&rarr;		JPQ #
 		** MAKE POINT &alpha; BE ON LINE &beta;
-MPBOL&rarr;	<sup>1</sup>STE MPBOLX
+MPBOL&rarr;		<sup>1</sup>STE MPBOLX
 		MAKA&equiv;ONLINES&rarr;&gamma;
 		PUT|PBOLP,&gamma;&rarr;VCON,&alpha;
 		RSX <sub>S</sub><sub>|</sub><sub>&beta;</sub> LSP+LIST
 		PUT|PBOLS,&gamma;&rarr;VCON,S
 		RSX <sub>S</sub><sub>|</sub><sub>&beta;</sub> LEP+LIST
 		PUT|PBOLE,&gamma;&rarr;VCON,S
-MPBOLX&rarr;	JPQ #
+MPBOLX&rarr;		JPQ #
 		**CONSTRAIN A POINT
-CONAP&rarr;	<sup>1</sup>STE MACAPX
+CONAP&rarr;		<sup>1</sup>STE MACAPX
 		JPQ MACAPT
 		**MAKE AND CONSTRAIN A POINT
-MACAP&rarr;	<sup>1</sup>STE MACAPX
+MACAP&rarr;		<sup>1</sup>STE MACAPX
 		RSX <sub>&gamma;</sub> ATBITS
 		SXG <sub>&gamma;</sub> 0
 		JPQ #+5
@@ -4446,9 +4446,9 @@ MACAP&rarr;	<sup>1</sup>STE MACAPX
 		RSX <sub>&gamma;</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
 		<sup>2</sup>DPX <sub>&gamma;</sub> ATBITS+1
 		JPQ MACAPX
-MACAPT&rarr;	RSX <sub>&gamma;</sub> ATBITS
+MACAPT&rarr;		RSX <sub>&gamma;</sub> ATBITS
 		JPQ MACAPTX+1
-MACAPA&rarr;	<sup>1</sup>DPX <sub>&gamma;</sub> MACAPTX
+MACAPA&rarr;		<sup>1</sup>DPX <sub>&gamma;</sub> MACAPTX
 		SXD <sub>&gamma;</sub> 0
 		DPX MACAPTX [something between DPX and MACAPTX, interpreting as junk]
 		RSX <sub>&beta;</sub><sub>|</sub><sub>&gamma;</sub> ATBITS+1
@@ -4467,8 +4467,8 @@ MACAPTX&rarr;
 [Page header: "IES 2XMX 010" (octal numbering, previous page had 007)]
 
 		JPQ MACAPX
-MACAP1&rarr;	RSX <sub>&alpha;</sub> ATBITS+1
-MACAPX&rarr;	JPQ #
+MACAP1&rarr;		RSX <sub>&alpha;</sub> ATBITS+1
+MACAPX&rarr;		JPQ #
 MAKETEXT&rarr;
 		<sup>1</sup>STE MAKETEXTX
 		SKZ LPLOST
@@ -4528,11 +4528,11 @@ MAKECONS1&rarr;
 		LGORR&equiv;SPECB&times;&Delta;=S&rarr;MKCN1
 MAKECONSX&rarr;
 		JPQ #
-MKCN1&rarr;	<sup>1</sup>STE MKCN1X
+MKCN1&rarr;		<sup>1</sup>STE MKCN1X
 		hLDE <sub>&Delta;</sub> LIST+CONLET
 		<sup>3</sup>SED NEWCONTOG
 		JPQ #+2
-MKCN1X&rarr;	JPQ #
+MKCN1X&rarr;		JPQ #
 		MAKA&rarr;&alpha;
 		<sup>1</sup>DPX <sub>&alpha;</sub> MKCN3
 		<sup>1</sup><sup>5</sup> RSX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
@@ -4543,7 +4543,7 @@ MKCN1X&rarr;	JPQ #
 		DEX <sub>&beta;</sub> CVTS+2
 		INX <sub>?</sub> CVTS+2 [sub_alpha?]
 		JPQ MKCN2X
-MKCN2&rarr;	MAKA&equiv;TPVALS&rarr;&gamma;
+MKCN2&rarr;		MAKA&equiv;TPVALS&rarr;&gamma;
 		PUTL&equiv;?&times;&alpha;&rarr;VCON&times;&gamma;
 		STA MKCN2A
 		STB MKCN2B
@@ -4556,8 +4556,8 @@ MKCN2&rarr;	MAKA&equiv;TPVALS&rarr;&gamma;
 		LDB MKCN2A
 		LDA MKCN2B
 		INX <sub>?</sub> 2
-MKCN2X&rarr;	<sup>-</sup><sup>2</sup>JPX <sub>&beta;</sub> MKCN2
-MKCN3&rarr;	REX <sub>&alpha;</sub> #
+MKCN2X&rarr;		<sup>-</sup><sup>2</sup>JPX <sub>&beta;</sub> MKCN2
+MKCN3&rarr;		REX <sub>&alpha;</sub> #
 		hJPQ MOVE&alpha;
 		JPQ MAKECONSX
 MOVEPIC&rarr;
@@ -4575,7 +4575,7 @@ MOVEPICEX&rarr;
 <hr>
 [Page header: "IES 2XMX 012"]
 
-MTDIS&rarr;	<sup>1</sup>STE MOVETHISX
+MTDIS&rarr;		<sup>1</sup>STE MOVETHISX
 		RSX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+BWHOS
 		MOVEL&equiv;BWHOS&times;&alpha;&rarr;PPARTM&times;&beta;
 		JPQ #+2
@@ -4586,7 +4586,7 @@ MOVETHIS&rarr;
 		<sup>1</sup>DPX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> VORD+LIST
 MOVETHISX&rarr;
 		JPQ #
-SUBPIC&rarr;	<sup>1</sup>STE SUBPICEX
+SUBPIC&rarr;		<sup>1</sup>STE SUBPICEX
 		SKZ LPLOST
 		JPQ SUBPICEX
 		RSX <sub>S</sub> MOVINGS+SPECB+1
@@ -4604,7 +4604,7 @@ SUBPIC2&rarr;
 		STAB&equiv;NIRR
 		&alpha;&#9635;IWHAT,S [call to macro named with a composite character]
 		JPQ SUBPICS
-SUBPIC3&rarr;	MOVE|NITOG&rarr;NINAME
+SUBPIC3&rarr;		MOVE|NITOG&rarr;NINAME
 		MOVE|SCSZ&rarr;NIRR
 		MZR <sub>1</sub><sub>.</sub><sub>1</sub> NIRR
 		MZR <sub>1</sub><sub>.</sub><sub>1</sub> NIRR
@@ -4633,7 +4633,7 @@ SUBPICS&rarr;
 		STAB&equiv;IP<sub>&alpha;</sub>
 		PUT|IWHAT,&alpha;&rarr;PINS,&gamma;
 		LGORR&equiv;PATAP&times;&gamma;=S&rarr;SUBPIT&rarr;SUBPIT1
-SUBPIT&rarr;	<sup>1</sup>STE SUBPITX
+SUBPIT&rarr;		<sup>1</sup>STE SUBPITX
 		RSX <sub>S</sub><sub>|</sub><sub>&gamma;</sub> LIST+TYPE
 		SXD <sub>S</sub> POINTS-LIST
 		JPQ #+2
@@ -4652,10 +4652,10 @@ SUBPIT1&rarr;
 		hJPQ MOVE&alpha; [maybe not alpha? MOVE&alpha; was seen before.]
 SUBPICEX&rarr;
 		JPQ #
-NINAME&rarr;	0
-NIRR&rarr;	0
+NINAME&rarr;		0
+NIRR&rarr;		0
 		0
-FIXIT&rarr;	<sup>1</sup>STE FIXITEX
+FIXIT&rarr;		<sup>1</sup>STE FIXITEX
 		REX <sub>&beta;</sub> FIXEDS-LIST
 		SKZ LPLOST
 		JPQ FIXITEX
@@ -4671,14 +4671,14 @@ DESIGIT&rarr;
 		<sup>1</sup>STE FIXITEX
 		REX <sub>&beta;</sub> DESIGS-LIST
 		JPQ FIXIT+2
-UNFIX&rarr;	<sup>1</sup>STE UNFIXEX
+UNFIX&rarr;		<sup>1</sup>STE UNFIXEX
 		RES <sub>&alpha;</sub> FIXEDS-LIST
 		LGORR&equiv;SPECB&times;&alpha;=S&rarr;UNFIX1
 		REX <sub>&alpha;</sub> DESIGS-LIST
 		LGORR&equiv;SPECB&times;&alpha;=S&rarr;UNFIX1
 UNFIXEX&rarr;
 		JPQ #
-UNFIX1&rarr;	SUBR&equiv;(LTAKE&equiv;VORD&times;&alpha;) [maybe not alpha?]
+UNFIX1&rarr;		SUBR&equiv;(LTAKE&equiv;VORD&times;&alpha;) [maybe not alpha?]
 MAKPATA&rarr;
 		<sup>1</sup>STE MAKPATAX
 
@@ -4695,7 +4695,7 @@ MAKPATA&rarr;
 		<sup>1</sup>DPX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+ATATAP
 MAKPATAX&rarr;
 		JPQ #
-TRUEUP&rarr;	<sup>1</sup>STE TRUEUPX
+TRUEUP&rarr;		<sup>1</sup>STE TRUEUPX
 		SKN ATLINE
 		JPQ TRUEUP1
 		MAKA&equiv;HOVS&rarr;9 [maybe alpha, not 9? or q?]
@@ -4725,7 +4725,7 @@ STARTDRAW&rarr;
 		STAB&equiv;&gamma;A<sub>&gamma;</sub> [is &gamma;A a symex here?]
 		SNZ DESIGNATED
 		JPQ STARTL
-STARTC&rarr;	MAKA&equiv;CIRCLES&rarr;&beta;
+STARTC&rarr;		MAKA&equiv;CIRCLES&rarr;&beta;
 		<sup>1</sup>DPX <sub>&beta;</sub> STARTCA
 		MAKA&equiv;ONCIRCLES&rarr;&beta;
 		PUT|PBOCS,&beta;&rarr;VCON,&alpha;
@@ -4743,10 +4743,10 @@ STARTCA&rarr;
 		RSX <sub>&Delta;</sub> CCENT
 		PUT|CIRCEN,&beta;&rarr;PLS,&Delta;
 		JPQ STARTT
-STARTL&rarr;	MAKA&equiv;LINES&rarr;&beta;
+STARTL&rarr;		MAKA&equiv;LINES&rarr;&beta;
 		PUT|LSP,&beta;&rarr;PLS,&alpha;
 		PUT|LEP,&beta;&rarr;PLS,&gamma;
-STARTT&rarr;	REX <sub>&alpha;</sub><sub>|</sub><sub>&gamma;</sub> [missing operand?]
+STARTT&rarr;		REX <sub>&alpha;</sub><sub>|</sub><sub>&gamma;</sub> [missing operand?]
 		hJPQ MOVE&alpha;
 STARTDRAWEX&rarr;
 		JPQ #
@@ -4780,7 +4780,7 @@ MOVEPOINT&rarr;
 		MKN MOVED
 MOVEPOINTEX&rarr;
 		JPQ #
-MOVE&alpha;&rarr;	<sup>1</sup>STE MOVE&alpha;X
+MOVE&alpha;&rarr;		<sup>1</sup>STE MOVE&alpha;X
 		RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
 		RSX <sub>T</sub><sub>|</sub><sub>S</sub> LIST+TYPE
 		SXD <sub>T</sub> CONSTRAINTS-LIST
@@ -4794,10 +4794,10 @@ MOVE&alpha;&rarr;	<sup>1</sup>STE MOVE&alpha;X
 [Page header: "IES 2XMX 016"]
 
 		JPQ MOVE&alpha;X
-MOVE&alpha;C&rarr;	RSX <sub>T</sub><sub>|</sub><sub>S</sub> LIST+CHVAR
+MOVE&alpha;C&rarr;		RSX <sub>T</sub><sub>|</sub><sub>S</sub> LIST+CHVAR
 		INX <sub>T</sub><sub>|</sub><sub>T</sub>
 		JPQ MOVE&alpha;CT
-MOVE&alpha;T&rarr;	SXD <sub>S</sub> PICTURES-LIST
+MOVE&alpha;T&rarr;		SXD <sub>S</sub> PICTURES-LIST
 		ERROR&equiv;&alpha;&rarr;MOVE&alpha;X
 		<sup>1</sup><sup>5</sup>RSX <sub>T</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
 		DEX <sub>T</sub> VORD+2
@@ -4819,10 +4819,10 @@ MOVE&alpha;CT1&rarr;
 		hJPQ MOVE&alpha;VSS
 		RSX <sub>T</sub> MOVE&alpha;CT1-2
 		JPQ MOVE&alpha;CT+1
-MOVE&alpha;V&rarr;	hJPQ MOVE&alpha;VSS
+MOVE&alpha;V&rarr;		hJPQ MOVE&alpha;VSS
 		JPQ #+2
-MOVE&alpha;D&rarr;	hJPQ MOVE&alpha;MVG
-MOVE&alpha;X&rarr;	JPQ #
+MOVE&alpha;D&rarr;		hJPQ MOVE&alpha;MVG
+MOVE&alpha;X&rarr;		JPQ #
 MOVE&alpha;VSS&rarr;
 		<sup>1</sup>STE MOVE&alpha;VSSX
 		SXD <sub>S</sub> INSTANCES-LIST
@@ -4969,15 +4969,15 @@ STOPMOVEP2X&rarr;
 		JPQ #
 STOPTAKE&rarr;
 		SUBR&equiv;(LTAKE&equiv;VORD&times;&alpha;)
-STOPM1&rarr;	<sup>1</sup>STE STOPM1X
+STOPM1&rarr;		<sup>1</sup>STE STOPM1X
 		RSX <sub>&gamma;</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
 		SXD <sub>&gamma;</sub> POINTS-LIST
 		JPQ STOPM2
 STOPM1X&rarr;
 		JPQ #
-STOPM2&rarr;	<sup>1</sup>DPX <sub>&alpha;</sub> STOPM3T
+STOPM2&rarr;		<sup>1</sup>DPX <sub>&alpha;</sub> STOPM3T
 		LGORR&equiv;VCON&times;&alpha;=S&rarr;STOPM3&rarr;STOPM4
-STOPM3&rarr;	<sup>1</sup>STE STOPM3X
+STOPM3&rarr;		<sup>1</sup>STE STOPM3X
 		hLDE <sub>&alpha;</sub> LIST+TYPE
 		h<sup>1</sup>SED { ONLINES-LIST}
 		JPQ STOPM3L
@@ -5030,10 +5030,10 @@ STOPM3AT&rarr;
 STOPM3AI&rarr;
 		<sup>-</sup><sup>1</sup>JPX <sub>S</sub> STOPM3A
 		JPQ STOPM3X
-STOPM4&rarr;	hJPQ CONAP
+STOPM4&rarr;		hJPQ CONAP
 		JPQ STOPM1X
 		** MERGE &alpha; AND &beta;
-MERGER&rarr;	<sup>1</sup>STE MERGEX
+MERGER&rarr;		<sup>1</sup>STE MERGEX
 		MKN MRGRFTT **FIRST TIME THRU
 		SXD <sub>&alpha;</sub><sub>|</sub><sub>&beta;</sub> [same again, valid without operand?]
 		JPQ MERGEX
@@ -5084,7 +5084,7 @@ MERGERA&rarr;
 		<sup>1</sup><sup>5</sup>RSX <sub>&gamma;</sub><sub>|</sub><sub>&beta;</sub> LIST+TYPE
 		DEX <sub>&gamma;</sub> 2
 		JPQ MRGRX
-MRGR1&rarr;	hLDE <sub>&beta;</sub> LIST
+MRGR1&rarr;		hLDE <sub>&beta;</sub> LIST
 		hSED <sub>&alpha;</sub> LIST
 		JPQ MRGR4  ** BOTH ARE SAME
 		<sup>2</sup><sup>1</sup>SED <sub>&alpha;</sub> LIST
@@ -5097,7 +5097,7 @@ MRGR1&rarr;	hLDE <sub>&beta;</sub> LIST
 		<sup>1</sup>SED { 0}
 		JPQ MRGR3
 		JPQ MRGR6
-MRGR2&rarr;	h<sup>1</sup><sup>7</sup>LDE <sub>&beta;</sub> LIST+1
+MRGR2&rarr;		h<sup>1</sup><sup>7</sup>LDE <sub>&beta;</sub> LIST+1
 		hRSX <sub>S</sub> E
 		<sup>1</sup>SED <sub>&beta;</sub> LIST+1
 		JPQ #+2
@@ -5105,7 +5105,7 @@ MRGR2&rarr;	h<sup>1</sup><sup>7</sup>LDE <sub>&beta;</sub> LIST+1
 		SXD <sub>S</sub><sub>|</sub><sub>&beta;</sub> 1
 		JPQ MRGRX
 		ERROR&equiv;&alpha;&rarr;MERGEX	** NOT EMPTY KEY
-MRGR3&rarr;	h<sup>1</sup><sup>7</sup>LDE <sub>&alpha;</sub> LIST+1
+MRGR3&rarr;		h<sup>1</sup><sup>7</sup>LDE <sub>&alpha;</sub> LIST+1
 		hRSX <sub>S</sub> E
 		<sup>1</sup>SED <sub>&alpha;</sub> LIST+1
 		JPQ #+2
@@ -5113,7 +5113,7 @@ MRGR3&rarr;	h<sup>1</sup><sup>7</sup>LDE <sub>&alpha;</sub> LIST+1
 		SXD <sub>S</sub><sub>|</sub><sub>&alpha;</sub> 1
 		JPQ MRGR3A
 		ERROR&equiv;&alpha;&rarr;MERGEX	** NOT EMPTY KEY
-MRGR3A&rarr;	MOVE|LIST<sub>&beta;</sub>&rarr;LIST<sub>&alpha;</sub>
+MRGR3A&rarr;		MOVE|LIST<sub>&beta;</sub>&rarr;LIST<sub>&alpha;</sub>
 
 <hr>
 [Page header: "IES 2XMX 024"]
@@ -5130,20 +5130,20 @@ MRGR3A&rarr;	MOVE|LIST<sub>&beta;</sub>&rarr;LIST<sub>&alpha;</sub>
 		h<sup>2</sup>DPX <sub>T</sub> E
 		STE <sub>&beta;</sub> LIST+1
 		JPQ MRGRX
-MRGR4&rarr;	hLDE <sub>&alpha;</sub> LIST
+MRGR4&rarr;		hLDE <sub>&alpha;</sub> LIST
 		<sup>1</sup> SED { 0}
 		JPQ MRGR5
 		LTAKE&equiv;&alpha;&times;&beta;
 		JPQ MRGRX
-MRGR5&rarr;	DPX <sub>&beta;</sub> MRGRTS
+MRGR5&rarr;		DPX <sub>&beta;</sub> MRGRTS
 		RSX <sub>&beta;</sub><sub>|</sub><sub>&beta;</sub> LIST+1
-MRGR5A&rarr;	hLDE <sub>&beta;</sub> LIST-1
+MRGR5A&rarr;		hLDE <sub>&beta;</sub> LIST-1
 		<sup>1</sup> SED { 0}
 		JPQ MRGR5B
 		MOVE|MRGRL&rarr;<sup>1</sup> LIST-1<sub>&beta;</sub> [unkown syntax, what does it mean?]
 		RSX <sub>&beta;</sub><sub>|</sub><sub>&beta;</sub> LIST
 		JPQ MRGR5A
-MRGR5B&rarr;	RSX <sub>&beta;</sub> MRGRTS
+MRGR5B&rarr;		RSX <sub>&beta;</sub> MRGRTS
 		RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LIST+1
 		<sup>2</sup>RSX <sub>T</sub><sub>|</sub><sub>&beta;</sub> LIST+1
 		<sup>2</sup>DPX <sub>T</sub><sub>|</sub><sub>S</sub> LIST
@@ -5156,18 +5156,18 @@ MRGR5B&rarr;	RSX <sub>&beta;</sub> MRGRTS
 		hDPX <sub>T</sub> E
 		h<sup>2</sup>DPX<sub>T</sub> E
 		STE <sub>&beta;</sub> LIST+1
-MRGRX&rarr;	<sup>-</sup><sup>2</sup>JPX <sub>&gamma;</sub> MRGRXA
-MRGR7&rarr;	RSX <sub>&alpha;</sub> MRGRU
+MRGRX&rarr;		<sup>-</sup><sup>2</sup>JPX <sub>&gamma;</sub> MRGRXA
+MRGR7&rarr;		RSX <sub>&alpha;</sub> MRGRU
 		hJPQ DELETE
-MRGR8&rarr;	REX <sub>&alpha;</sub> MERGERS-LIST
+MRGR8&rarr;		REX <sub>&alpha;</sub> MERGERS-LIST
 		LGORR&equiv;SPECB&times;&alpha;=S&rarr;MRGR10&rarr;MRGR9
-MRGR10&rarr;	RSX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+VORD+1
+MRGR10&rarr;		RSX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+VORD+1
 		DEX <sub>&beta;</sub> 1
 		<sup>1</sup><sup>6</sup>AUX <sub>&beta;</sub><sub>|</sub><sub>&beta;</sub> LIST
 		LTAKE&equiv;VORD&times;&alpha;
 		LTAKE&equiv;VORD&times;&beta;
 		JPQ MERGERBAC
-MRGR6&rarr;	RSX <sub>&Delta;</sub><sub>|</sub><sub>&alpha;</sub> LIST ** &Delta; IS POINTED AT THING
+MRGR6&rarr;		RSX <sub>&Delta;</sub><sub>|</sub><sub>&alpha;</sub> LIST ** &Delta; IS POINTED AT THING
 
 <hr>
 [Page header: "IES 2XMX 025"]
@@ -5190,16 +5190,16 @@ MRGR6&rarr;	RSX <sub>&Delta;</sub><sub>|</sub><sub>&alpha;</sub> LIST ** &Delta;
 		REX <sub>&epsilon;</sub> MERGERS-LIST
 		MOVEL&equiv;VORD&times;&Delta;&rarr;SPECB&times;&epsilon;
 		<sup>1</sup>DPX <sub>&epsilon;</sub><sub>|</sub><sub>&Delta;</sub> VORD+LIST
-MRGR6A&rarr;	REX <sub>&Delta;</sub> #
+MRGR6A&rarr;		REX <sub>&Delta;</sub> #
 		MOVEL&equiv;VORD&times;&Delta;&rarr;SPECB&times;&epsilon;
 		<sup>1</sup>DPX <sub>&epsilon;</sub><sub>|</sub><sub>&Delta;</sub> LIST+VORD
 		JPQ MRGRX
-MRGRXA&rarr;	INX <sub>&alpha;</sub> 2
+MRGRXA&rarr;		INX <sub>&alpha;</sub> 2
 		INX <sub>&beta;</sub> 2
 		JPQ MRGR1
-MRGR9&rarr;	REX <sub>&alpha;</sub> #	** FIRST MERGER RESULT
-MERGEX&rarr;	JPQ #
-DUMMY&rarr;	<sup>1</sup>STE DUMMEX
+MRGR9&rarr;		REX <sub>&alpha;</sub> #	** FIRST MERGER RESULT
+MERGEX&rarr;		JPQ #
+DUMMY&rarr;		<sup>1</sup>STE DUMMEX
 		REX <sub>&alpha;</sub> MOVINGS-LIST
 		LGORR&equiv;SPECB&times;&alpha;=S&rarr;DUMMYA
 		SKN ATINS
@@ -5207,32 +5207,32 @@ DUMMY&rarr;	<sup>1</sup>STE DUMMEX
 		RSX <sub>&alpha;</sub> ATBITS+1	** OLD INSTANCE
 		MKN MOVED
 		JPQ DUMMYB
-DUMMYA&rarr;	<sup>1</sup>STE DUMMYAX
+DUMMYA&rarr;		<sup>1</sup>STE DUMMYAX
 		RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
 		SXD <sub>S</sub> INSTANCES-LIST
 		JPQ DUMMYB
 DUMMYAX&rarr;
 		JPQ #
-DUMMYB&rarr;	REX <sub>&gamma;</sub> PICTURES-LIST
+DUMMYB&rarr;		REX <sub>&gamma;</sub> PICTURES-LIST
 		LGORR&equiv;SPECB&times;&gamma;=S&rarr;DUM1&rarr;DUMEX
-DUM1&rarr;	<sup>1</sup>STE #+4
+DUM1&rarr;		<sup>1</sup>STE #+4
 		hLDE <sub>&gamma;</sub> LIST+PNAME
 		<sup>1</sup>SED NITOG
 		JPQ DUM2
 		JPQ #
-DUM2&rarr;	MOVEL&equiv;IWHAT&times;&alpha;&rarr;PINS&times;&gamma;
+DUM2&rarr;		MOVEL&equiv;IWHAT&times;&alpha;&rarr;PINS&times;&gamma;
 		<sup>1</sup>DPX <sub>&gamma;</sub><sub>|</sub><sub>&alpha;</sub> LIST+IWHAT
 
 <hr>
 [Page header: "IES 2XMX 026"]
 
-DUM3&rarr;	<sup>1</sup>RSX <sub>&gamma;</sub><sub>|</sub><sub>&gamma;</sub> LIST+PATAP+1
+DUM3&rarr;		<sup>1</sup>RSX <sub>&gamma;</sub><sub>|</sub><sub>&gamma;</sub> LIST+PATAP+1
 		LGORR&equiv;VCON&times;&alpha;=S&rarr;DUM4&rarr;DUM6
-DUM4&rarr;	<sup>1</sup>STE DUM4X
+DUM4&rarr;		<sup>1</sup>STE DUM4X
 		hLDE <sub>&alpha;</sub> LIST 	** &alpha; IS IPCON? [how are we supposed to know? :)]
 		<sup>1</sup>SED { IPCONS-LIST}
 		JPQ #+2
-DUM4X&rarr;	JPQ #
+DUM4X&rarr;		JPQ #
 		hLDE <sub>&gamma;</sub> LIST-1
 		h<sup>1</sup>SED { 0}
 		JPQ DUM5	** OUT OF POINTS
@@ -5243,11 +5243,11 @@ DUM4X&rarr;	JPQ #
 		<sup>1</sup>DPX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> IPCV+LIST
 		<sup>1</sup>RSX <sub>&gamma;</sub><sub>|</sub><sub>&gamma;</sub> LIST
 		JPQ DUM4X
-DUM5&rarr;	DPX <sub>&gamma;</sub> #+2
+DUM5&rarr;		DPX <sub>&gamma;</sub> #+2
 		hJPQ DELETE
 		REX <sub>&gamma;</sub> #
 		JPQ DUM4X
-DUM4&rarr;	hLDE <sub>&gamma;</sub> LIST-1
+DUM4&rarr;		hLDE <sub>&gamma;</sub> LIST-1
 		h<sup>1</sup>SED { 0}
 		JPQ DUM7
 		<sup>1</sup><sup>6</sup>RSX <sub>&alpha;</sub> E	** NEED MORE POINTS
@@ -5261,19 +5261,19 @@ DUM4&rarr;	hLDE <sub>&gamma;</sub> LIST-1
 		PUT|IPCP,&beta;&rarr;VCON,&alpha;
 		<sup>1</sup>RSX <sub>&gamma;</sub><sub>|</sub><sub>&gamma;</sub> LIST
 		JPQ DUM6
-DUM7&rarr;	RSX <sub>&alpha;</sub> ATBITS+1
+DUM7&rarr;		RSX <sub>&alpha;</sub> ATBITS+1
 		LDAE&equiv;LIST+IVAL<sub>&alpha;</sub>
 		STAE&equiv;MATM
 		RSX <sub>&gamma;</sub><sub>|</sub><sub>&alpha;</sub> LIST+IWHAT
 		LDA <sub>&gamma;</sub> LIST+PSIZE
 		STA MATD
 		LGORR&equiv;VCON&times;&alpha;=S&rarr;DUM8 [really 8?]
-DUMMEX&rarr;	JPQ #
-DUM8&rarr;	<sup>1</sup>STE DUM8X
+DUMMEX&rarr;		JPQ #
+DUM8&rarr;		<sup>1</sup>STE DUM8X
 		RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
 		SXD <sub>S</sub> IPCONS-LIST
 		JPQ #+2
-DUM8X&rarr;	JPQ #
+DUM8X&rarr;		JPQ #
 		RSX <sub>T</sub><sub>|</sub><sub>&alpha;</sub> LIST+IPCV
 		LDAB&equiv;VA<sub>T</sub>
 
@@ -5286,7 +5286,7 @@ DUM8X&rarr;	JPQ #
 		hBPQ <sub>S</sub> LIST+MOVIT
 		JPQ DUM8X
 		** DEVELOP LINES FROM INSTANCE
-UNMAC&rarr;	<sup>1</sup>STE UNMACEX
+UNMAC&rarr;		<sup>1</sup>STE UNMACEX
 		SKZ LPLOST
 		JPQ UNMACEX
 		SKN ATINS
@@ -5297,16 +5297,16 @@ UNMAC&rarr;	<sup>1</sup>STE UNMACEX
 		STA <sub>S</sub> MATM
 		<sup>-</sup><sup>1</sup>JPX <sub>S</sub> #-2
 		RSX <sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub> LIST+IWHAT
-UNMAC1&rarr;	LDA <sub>&alpha;</sub> LIST+PSIZE
+UNMAC1&rarr;		LDA <sub>&alpha;</sub> LIST+PSIZE
 		STA MATD
 		LDAB&equiv;MATM
 		hJPQ PYTHAGORIAN
 		STA MATS
 		hJPQ COPYINT	** COPY STUFF
 		hJPQ STOPMOVEP
-UNMAC2&rarr;	RSX <sub>&alpha;</sub> ATBITS+1
+UNMAC2&rarr;		RSX <sub>&alpha;</sub> ATBITS+1
 		LGORR&equiv;VCON&times;&alpha;=S&rarr;UNMAC3&rarr;UNMAC4
-UNMAC3&rarr;	<sup>1</sup>STE UNMAC3X
+UNMAC3&rarr;		<sup>1</sup>STE UNMAC3X
 		hLDE <sub>&alpha;</sub> LIST+TYPE
 		<sup>1</sup>SED { IPCONS-LIST}
 		JPQ #+2
@@ -5320,7 +5320,7 @@ UNMAC3X&rarr;
 		STAB&equiv;VA<sub>&alpha;</sub>
 		hJPQ MERGER
 		JPQ UNMAC3X
-UNMAC4&rarr;	RSX <sub>&alpha;</sub> ATBITS+1
+UNMAC4&rarr;		RSX <sub>&alpha;</sub> ATBITS+1
 		hJPQ DELETE
 		DPX ATBITS
 		MKN MOVED
@@ -5341,12 +5341,12 @@ COPYIST&rarr;
 		hJPQ STOPMOVEP
 		REX <sub>&alpha;</sub> PICTURES-LIST
 		LGORR&equiv;SPECB&times;&alpha;=S&rarr;COPY1&rarr;COPYX
-COPY1&rarr;	<sup>1</sup>STE COPY1X
+COPY1&rarr;		<sup>1</sup>STE COPY1X
 		hLDE <sub>&alpha;</sub> LIST+PNAME
 		<sup>1</sup>SED COPYNUM	** ?PIC TO COPY [possibly #?]
 		JPQ COPYIT
-COPY1X&rarr;	JPQ #
-COPYIT&rarr;	LDA SCSZ
+COPY1X&rarr;		JPQ #
+COPYIT&rarr;		LDA SCSZ
 		MUL { 100.}
 		STA MATM
 		STA MATS
@@ -5437,7 +5437,7 @@ COPYFIXC&rarr;
 COPYFIXI&rarr;
 		REX <sub>S</sub> #
 		JPQ COPYFIXEX-2
-COPIED&rarr;	JPQ #	** EXIT FOR UNMAC
+COPIED&rarr;		JPQ #	** EXIT FOR UNMAC
 
 <hr>
 [Page header: "IES 2XMX 032"]
@@ -5510,29 +5510,29 @@ COPYMOVE2AX&rarr;
 COPYNOMOVE&rarr;
 		hJPQ STOPMOVEP
 		MKN MOVED
-COPYX&rarr;	JPQ #
-ERASE&rarr;	<sup>1</sup>STE ERASEX
+COPYX&rarr;		JPQ #
+ERASE&rarr;		<sup>1</sup>STE ERASEX
 		SKZ LPLOST
 		JPQ ERASEX
 		RSX <sub>&alpha;</sub> MOVINGS+SPECB+1
 		SXD <sub>&alpha;</sub> MOVINGS-LIST+SPECB+1
 		JPQ ERASE1
-ERASE1&rarr;	<sup>1</sup><sup>6</sup>AUX <sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub> LIST-1
+ERASE1&rarr;		<sup>1</sup><sup>6</sup>AUX <sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub> LIST-1
 		DEX <sub>&alpha;</sub> 1
 		hJPQ DELETE
 		RSX <sub>&alpha;</sub> MOVINGS+SPECB+1
 		SXD <sub>&alpha;</sub> MOVINGS+SPECB-LIST+1
 		JPQ ERASEX-1
 		JPQ ERASEA
-ERASE1&rarr;	RSX <sub>&alpha;</sub> ATBITS
+ERASE1&rarr;		RSX <sub>&alpha;</sub> ATBITS
 		SXD <sub>&alpha;</sub> 1
 		JPQ ERASE2
 		JPQ ERASEX
-ERASE2&rarr;	RSX <sub>&alpha;</sub> ATBITS+1
+ERASE2&rarr;		RSX <sub>&alpha;</sub> ATBITS+1
 		hJPQ DELETE
 		MKN MOVED
-ERASEX&rarr;	JPQ #
-DELETE&rarr;	<sup>1</sup>STE DELETEX
+ERASEX&rarr;		JPQ #
+DELETE&rarr;		<sup>1</sup>STE DELETEX
 DELETER&rarr;
 		&beta;&#9635;TYPE,&alpha;	** IS &alpha; FORBIDDEN TYPE
 		SXD <sub>&beta;</sub> 0
@@ -5540,7 +5540,7 @@ DELETER&rarr;
 		REX <sub>&beta;</sub> DEADS-LIST
 		MOVEL&equiv;TYPE&times;&alpha;&rarr;SPECB&times;&beta;
 		<sup>1</sup>DPX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
-DEL1&rarr;	RSX <sub>&alpha;</sub> DEADS+SPECB+1
+DEL1&rarr;		RSX <sub>&alpha;</sub> DEADS+SPECB+1
 		hLDE <sub>&alpha;</sub> LIST-1
 		<sup>1</sup>SED { 0}
 		JPQ DELETEX ** DONE
@@ -5552,22 +5552,22 @@ DEL1&rarr;	RSX <sub>&alpha;</sub> DEADS+SPECB+1
 		<sup>1</sup><sup>5</sup>RSX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST
 		DEX <sub>&beta;</sub> 2
 		JPQ DEL2X
-DEL2&rarr;	INX <sub>&alpha;</sub> 2	** NEXT TIE
+DEL2&rarr;		INX <sub>&alpha;</sub> 2	** NEXT TIE
 		RSX <sub>&gamma;</sub><sub>|</sub><sub>&alpha;</sub> LIST+1
 		SXD <sub>&gamma;</sub><sub>|</sub><sub>&alpha;</sub> 1	** SKIP IF NON EMPTY
 		JPQ DEL2X
-DEL3&rarr;	hLDE { 0}
+DEL3&rarr;		hLDE { 0}
 		<sup>1</sup>SED <sub>&alpha;</sub> LIST 	** SKIP IF NON KEY
 		JPQ DEL5
 		LTAKE&equiv;0&times;&alpha; [pretty clearly zero here as first parameter]
-DEL2X&rarr;	<sup>-</sup><sup>2</sup>JPX <sub>&beta;</sub> DEL2 [possibly DEL3?]
-DEL4&rarr;	RSX <sub>&alpha;</sub> DEADS+SPECB+1
+DEL2X&rarr;		<sup>-</sup><sup>2</sup>JPX <sub>&beta;</sub> DEL2 [possibly DEL3?]
+DEL4&rarr;		RSX <sub>&alpha;</sub> DEADS+SPECB+1
 		DEX <sub>&alpha;</sub> 1	** FREE STORAGE LIST
 		REX <sub>&beta;</sub> FREES-LIST
 		MOVEL&equiv;TYPE&times;&alpha;&rarr;SPECB&times;&beta;
 		<sup>1</sup>DPX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
 		JPQ DEL1
-DEL5&rarr;	DEX <sub>&gamma;</sub> 1	** DELETE A THING IN A
+DEL5&rarr;		DEX <sub>&gamma;</sub> 1	** DELETE A THING IN A
 		LTAKE&equiv;0&times;&gamma;
 		<sup>1</sup><sup>6</sup>RSX <sub>&alpha;</sub><sub>|</sub><sub>&gamma;</sub> LIST
 		INX <sub>&alpha;</sub><sub>|</sub><sub>&gamma;</sub>
@@ -5581,19 +5581,19 @@ GARBAGE&rarr;
 		RSX <sub>S</sub> FREES+SPECB+1
 		SXD <sub>S</sub> FREES+SPECB-LIST+1
 		JPQ GARBEX
-GARB1&rarr;	SXL <sub>S</sub> 377777
+GARB1&rarr;		SXL <sub>S</sub> 377777
 		JPQ #+2			[Handwritten: FREE3]
 		<sup>1</sup>DPX <sub>S</sub> GARB1
 		RSX <sub>S</sub><sub>|</sub><sub>S</sub> LIST
 		SXD <sub>S</sub> FREES+SPECB-LIST+1
 		JPQ GARB2
 		JPQ GARB1
-GARB2&rarr;	RSX <sub>&alpha;</sub> GARB1
+GARB2&rarr;		RSX <sub>&alpha;</sub> GARB1
 		DEX <sub>&alpha;</sub> 1
 		REX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub>
-GARB3&rarr;	LTAKE&equiv;TYPE&times;&beta;
-GARB4&rarr;	<sup>1</sup><sup>6</sup>AUX <sub>&beta;</sub><sub>|</sub><sub>&beta;</sub> LIST
-GARB4A&rarr;	SXL <sub>&beta;</sub>* AFFB
+GARB3&rarr;		LTAKE&equiv;TYPE&times;&beta;
+GARB4&rarr;		<sup>1</sup><sup>6</sup>AUX <sub>&beta;</sub><sub>|</sub><sub>&beta;</sub> LIST
+GARB4A&rarr;		SXL <sub>&beta;</sub>* AFFB
 		JPQ GARBDONE
 		RSX <sub>T</sub><sub>|</sub><sub>&beta;</sub> LIST
 		SXD <sub>T</sub> FREES-LIST
@@ -5608,7 +5608,7 @@ GARB4A&rarr;	SXL <sub>&beta;</sub>* AFFB
 		INX <sub>&alpha;</sub> 1
 		<sup>1</sup><sup>5</sup>RSX <sub>T</sub><sub>|</sub><sub>&beta;</sub> LIST
 		JPQ GARB5
-GARB5A&rarr;	RSX <sub>S</sub><sub>|</sub><sub>&beta;</sub> LIST+1
+GARB5A&rarr;		RSX <sub>S</sub><sub>|</sub><sub>&beta;</sub> LIST+1
 		<sup>2</sup>RSX <sub>&gamma;</sub><sub>|</sub><sub>&beta;</sub> LIST+1
 		<sup>2</sup>DPX <sub>&alpha;</sub><sub>|</sub><sub>S</sub> LIST
 		<sup>1</sup>DPX <sub>&alpha;</sub><sub>|</sub><sub>&gamma;</sub> LIST
@@ -5620,8 +5620,8 @@ GARB5A&rarr;	RSX <sub>S</sub><sub>|</sub><sub>&beta;</sub> LIST+1
 		hSTE <sub>&alpha;</sub> LIST-3
 		<sup>1</sup>SED { 0}
 		JPQ GARB6
-GARB5&rarr;	<sup>-</sup><sup>2</sup>JPX <sub>T</sub> GARB5A
-GARB7&rarr;	RSX <sub>&alpha;</sub> GARBA
+GARB5&rarr;		<sup>-</sup><sup>2</sup>JPX <sub>T</sub> GARB5A
+GARB7&rarr;		RSX <sub>&alpha;</sub> GARBA
 		RSX <sub>&beta;</sub> GARBB
 		<sup>1</sup><sup>5</sup>RSX <sub>T</sub><sub>|</sub><sub>&alpha;</sub> LIST
 		<sup>1</sup>REX <sub>S</sub><sub>|</sub><sub>T</sub>
@@ -5631,9 +5631,9 @@ GARB7&rarr;	RSX <sub>&alpha;</sub> GARBA
 		STE <sub>T</sub><sub>|</sub><sub>&alpha;</sub> LIST
 		INX <sub>T</sub> 1
 		<sup>-</sup><sup>1</sup>AUX <sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub> LIST
-GARBS&rarr;	INX <sub>&beta;</sub> 0
+GARBS&rarr;		INX <sub>&beta;</sub> 0
 		JPQ GARB4A
-GARB6&rarr;	hLDE <sub>S</sub> LIST-1
+GARB6&rarr;		hLDE <sub>S</sub> LIST-1
 		<sup>1</sup>SED { 0}
 		JPQ GARB?
 		hLDE GARBA
@@ -5642,7 +5642,7 @@ GARB6&rarr;	hLDE <sub>S</sub> LIST-1
 		JPQ GARB6
 GARBDONE&rarr;
 		DPX <sub>&alpha;</sub> AFFB
-GARBEX&rarr;	JPQ #
+GARBEX&rarr;		JPQ #
 BLOCKMAKER&rarr;
 		<sup>1</sup>STE BLOCKMAKEREX
 		<sup>1</sup><sup>6</sup>RSX <sub>S</sub><sub>|</sub><sub>&Delta;</sub> SIZE+LIST
@@ -5667,7 +5667,7 @@ BLOCKMAKER&rarr;
 		SED { JUNKK}
 		JPQ BLOCKM1
 		ERROR&equiv;&Delta;&rarr;BLOCKMAKEREX
-BLOCKM1&rarr;	PUT|BWHOS,S&rarr;PICBLKS,&Delta;
+BLOCKM1&rarr;		PUT|BWHOS,S&rarr;PICBLKS,&Delta;
 		JPQ BLOCKMAKEREX-1
 BLOCKM2&rarr;
 		PUT|BWHOS,S&rarr;PPART,&Delta;
@@ -5735,9 +5735,9 @@ ORDGRPI1&rarr;
 		h<sup>1</sup>JPX <sub>&Delta;</sub> ORDGRPIEXIT*
 		JPQ ORDGRPIEXIT*
 		** ORDER INSTANCES
-ORDI&rarr;	h<sup>-</sup><sup>1</sup>JPX <sub>&Delta;</sub> #+2
+ORDI&rarr;		h<sup>-</sup><sup>1</sup>JPX <sub>&Delta;</sub> #+2
 		JPQ ORDGRPP
-ORDI2&rarr;	SKX <sub>&epsilon;</sub><sub>|</sub><sub>&Delta;</sub> 0 [can also be alpha instead of 0?]
+ORDI2&rarr;		SKX <sub>&epsilon;</sub><sub>|</sub><sub>&Delta;</sub> 0 [can also be alpha instead of 0?]
 		<sup>1</sup>DPX ORDNXTPNT
 		REX <sub>&alpha;</sub><sub>|</sub><sub>&gamma;</sub>
 		LDA {-(?)}
@@ -5752,7 +5752,7 @@ ORDCALC&rarr;
 		<sup>1</sup><sup>1</sup>RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
 		hBPQ <sub>S</sub> LIST+WHERE
 		STB ORDWA3	** A=X, B=Y
-ORDC?&rarr;	SUB ORDPX
+ORDC?&rarr;		SUB ORDPX
 		SCA {-1.}
 		SKZ <sub>4</sub><sub>.</sub><sub>9</sub> A [guessing about subscripts, incorrect?]
 		COM A
@@ -5774,12 +5774,12 @@ ORDC?&rarr;	SUB ORDPX
 		LDA ORDWA1
 		STA ORDWA2
 		JPQ #+2
-ORDC1&rarr;	LDA ORDWA2
+ORDC1&rarr;		LDA ORDWA2
 		SUB ORDMIND
 		SKZ ORDWORST
 		JPQ ORDWORST1
 		JPA ORDC2
-ORDC1A&rarr;	LDA ORDWA2
+ORDC1A&rarr;		LDA ORDWA2
 		STA ORDMIND
 		<sup>1</sup>DPX <sub>&alpha;</sub> ORDNXTPNT
 ORDCALCEXIT&rarr;
@@ -5821,8 +5821,8 @@ ORDGRPP1&rarr;
 		h<sup>1</sup>JPX <sub>&Delta;</sub> ORDGRPIEXIT*
 		JPQ ORDGRPIEXIT*
 		** ORDER POINTS
-ORDP&rarr;	LGORR&equiv;PLS&times;&alpha;=&beta;&rarr;ORDP1&rarr;ORDMP+1
-ORDP1&rarr;	<sup>1</sup>STE ORDPEXIT
+ORDP&rarr;		LGORR&equiv;PLS&times;&alpha;=&beta;&rarr;ORDP1&rarr;ORDMP+1
+ORDP1&rarr;		<sup>1</sup>STE ORDPEXIT
 		<sup>1</sup><sup>2</sup>RSX <sub>&beta;</sub><sub>|</sub><sub>&beta;</sub> LIST
 		SKZ <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub><sub>|</sub><sub>&alpha;</sub> LIST
 		JPQ ORDMP
@@ -5835,17 +5835,17 @@ ORDP1&rarr;	<sup>1</sup>STE ORDPEXIT
 		<sup>1</sup>EXX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+LEP
 		<sup>1</sup>DPX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+LSP
 		JPQ #+2
-ORDP1A&rarr;	<sup>1</sup><sup>1</sup>RSX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+LSP
+ORDP1A&rarr;		<sup>1</sup><sup>1</sup>RSX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+LSP
 		MOVEL&equiv;LSP&times;&alpha;&rarr;PLS&times;&beta;
 		<sup>1</sup><sup>1</sup>RSX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+LEP
 		MOVEL&equiv;LEP&times;&alpha;&rarr;PLS&times;&beta;
-ORDP2&rarr;	MKN <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub><sub>|</sub><sub>&alpha;</sub> LIST
+ORDP2&rarr;		MKN <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub><sub>|</sub><sub>&alpha;</sub> LIST
 		hJPQ ORDMOVEL
 		<sup>1</sup><sup>1</sup>RSX <sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub> LIST+LEP
 		LDA <sub>&alpha;</sub> LIST+PVAL
 		STA ORDPX
 		LDA <sub>&alpha;</sub> LIST+PVAL+1
-ORDP4&rarr;	STA ORDPY
+ORDP4&rarr;		STA ORDPY
 		SKX ORDWORST
 		JPQ ORDI2
 		JPQ ORDP
@@ -5884,15 +5884,15 @@ ORDCIRC3&rarr;
 		LDA <sub>S</sub> LIST+PVAL+1
 		SKX <sub>&alpha;</sub><sub>|</sub><sub>S</sub> 0
 		JPQ ORDP4
-ORDMP&rarr;	<sup>1</sup><sup>1</sup>RSX <sub>&alpha;</sub><sub>|</sub><sub>&beta;</sub> LIST-1
+ORDMP&rarr;		<sup>1</sup><sup>1</sup>RSX <sub>&alpha;</sub><sub>|</sub><sub>&beta;</sub> LIST-1
 		MKZ <sup>3</sup><sub>.</sub><sub>?</sub> ORDMPSW	** MAKE JPQ
 		MOVEL&equiv;BWHOS&times;&alpha;&rarr;PICBLKS&times;&gamma;
 ORDMPSW&rarr;
 		JPQ ORDI	** CHGD TO <sup>1</sup><sup>4</sup>JNX ORDI
 		h<sup>-</sup><sup>1</sup>JPX <sub>&Delta;</sub> ORDCALCEXIT
 		JPQ ORDCALCEXIT
-ORDP3&rarr;	LGORR&equiv;PICBLKS&times;&alpha;=&beta;&rarr;ORDP5&rarr;ORDERROR
-ORDP5&rarr;	<sup>1</sup>STE ORDCALCEXIT
+ORDP3&rarr;		LGORR&equiv;PICBLKS&times;&alpha;=&beta;&rarr;ORDP5&rarr;ORDERROR
+ORDP5&rarr;		<sup>1</sup>STE ORDCALCEXIT
 		MKN <sup>3</sup><sub>.</sub><sub>?</sub> ORDMPSW	** MAKE <sup>1</sup><sup>4</sup>JNX
 		<sup>1</sup><sup>1</sup>RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LIST+PLS+1
 		<sup>1</sup><sup>6</sup>AUX <sub>S</sub><sub>|</sub><sub>S</sub> LIST-1
@@ -5911,11 +5911,11 @@ ORDERROR&rarr;
 		JPQ ORDSTART+2
 ORDSWITCHES&rarr;
 		0
-ORDPX&rarr;	0
-ORDPY&rarr;	0
-ORDWA1&rarr;	0
-ORDWA2&rarr;	0
-ORDWA3&rarr;	0
+ORDPX&rarr;		0
+ORDPY&rarr;		0
+ORDWA1&rarr;		0
+ORDWA2&rarr;		0
+ORDWA3&rarr;		0
 ORDMIND&rarr;
 		0
 ORDNXTPNT&rarr;
@@ -5950,7 +5950,7 @@ MGPMOVP1X&rarr;
 		MOVER&equiv;BWHOS&times;&beta;&rarr;PICBLKS&times;&alpha;
 		h<sup>1</sup>JPX <sub>&lambda;</sub> MGPMOVPIX*
 		JPQ MGPMOVP1X*
-MGPMGP&rarr;	SXL <sub>&lambda;</sub> 2
+MGPMGP&rarr;		SXL <sub>&lambda;</sub> 2
 		JPQ #+2
 MGPMOVPX&rarr;
 		JPQ #	** ALL PNTS IN PICTURE ARE MERGED
@@ -5961,20 +5961,20 @@ MGP1&rarr;
 		<sup>1</sup><sup>1</sup>RSX <sub>&beta;</sub> MGPCURPIC
 		MKZ <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> MGPSW
 		LGORR&equiv;PICBLKS&times;&beta;=S&rarr;MGP2&rarr;MGPERROR
-MGP2&rarr;	<sup>1</sup>STE MGP2X
-MGPSW&rarr;	SZN <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> #
+MGP2&rarr;		<sup>1</sup>STE MGP2X
+MGPSW&rarr;		SZN <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> #
 		JPQ MGP1
 		<sup>1</sup>DPX <sub>&beta;</sub> MGPC
 		LDA <sub>&beta;</sub> LIST+PVAL
 		STA MGPVAL
-MGPK&rarr;	LDA <sub>&beta;</sub> LIST+PVAL+1
+MGPK&rarr;		LDA <sub>&beta;</sub> LIST+PVAL+1
 		STA MGPVAL+1
-MGP2X&rarr;	h<sup>-</sup><sup>1</sup>JPX <sub>&epsilon;</sub> #	** MOD
+MGP2X&rarr;		h<sup>-</sup><sup>1</sup>JPX <sub>&epsilon;</sub> #	** MOD
 		<sup>1</sup><sup>1</sup>RSX <sub>&alpha;</sub> MGPCURPIC
 		<sup>1</sup><sup>1</sup>RSX <sub>&beta;</sub> MGPC
 		MOVEL&equiv;BWHOS&times;&beta;&rarr;PICBLKS&times;&alpha;
 		JPQ MGPMGP
-MGP3&rarr;	<sup>1</sup>SKX <sub>&alpha;</sub> 1
+MGP3&rarr;		<sup>1</sup>SKX <sub>&alpha;</sub> 1
 		LDA <sub>&alpha;</sub> MGPK*
 		SUB <sub>&alpha;</sub> MGPVAL+1
 
@@ -5995,8 +5995,8 @@ MGP3&rarr;	<sup>1</sup>SKX <sub>&alpha;</sub> 1
 		JPQ MGPMGP
 MGPCURPIC&rarr;
 		0
-MGPC&rarr;	0
-MGPVAL&rarr;	0
+MGPC&rarr;		0
+MGPVAL&rarr;		0
 		0
 MGPERROR&rarr;
 		<sup>1</sup>STE #+1
@@ -6007,7 +6007,7 @@ MGPLAST INSTR&rarr;
 RI&rarr;		JPQ 377750
 CL&rarr;		JPQ 200000
 ST&rarr;		JPQ 200001
-LAST&rarr;	ZZLAST
+LAST&rarr;		ZZLAST
 
 <hr>
 [Page header: "IES OPLW 001"]
@@ -6164,9 +6164,9 @@ MKN <sub>T</sub><sub>2</sub>D
 <sup>1</sup>DPX<sub>&alpha;</sub>T2+(C)-(C)
 INX<sub>&alpha;</sub>A+1
 JPQ T1+(C)-(C)
-T2&rarr;	REX<sub>&alpha;</sub>0+(C)-(C)
+T2&rarr;		REX<sub>&alpha;</sub>0+(C)-(C)
 JPQ C
-T1&rarr;	RSX<sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub>LIST
+T1&rarr;		RSX<sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub>LIST
 <sup>1</sup><sup>6</sup>RSX<sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub>LIST-1
 INX<sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub>0
 DEX<sub>&beta;</sub>1
@@ -6239,11 +6239,11 @@ STE<sub>S</sub>LIST
 GORREXIT=LEXIT
 <sup>1</sup>DPX<sub>X</sub><sub>R</sub>LGORR1
 <sup>1</sup><sup>1</sup>RSX<sub>X</sub><sub>R</sub><sub>2</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST+(N)+1
-LGORR0&rarr;	<sup>1</sup><sup>6</sup>RSX<sub>X</sub><sub>R</sub><sub>2</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST-1
+LGORR0&rarr;		<sup>1</sup><sup>6</sup>RSX<sub>X</sub><sub>R</sub><sub>2</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST-1
 h<sup>-</sup><sup>1</sup>JNX<sub>X</sub><sub>R</sub>#+2
 <sup>1</sup>SKX<sub>X</sub><sub>R</sub>1
 INX<sub>X</sub><sub>R</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>0
-LGORR1&rarr;	SXD<sub>X</sub><sub>R</sub>#	** MODIFIED
+LGORR1&rarr;		SXD<sub>X</sub><sub>R</sub>#	** MODIFIED
 hJPQ GORREXIT+(GORREXIT/GORREXIT&#9419;1&times;(LGORREND+1))
 <sup>1</sup><sup>1</sup>RSX<sub>X</sub><sub>R</sub><sub>2</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST
 <sup>1</sup>DPX<sub>X</sub><sub>R</sub><sub>2</sub>LGORR2
@@ -6252,7 +6252,7 @@ hJPQ SUBR
 <hr>
 [Page header: "IES OPLW 016"]
 
-LGORR2&rarr;	SKX<sub>X</sub><sub>R</sub><sub>2</sub>#	**MODIFIED
+LGORR2&rarr;		SKX<sub>X</sub><sub>R</sub><sub>2</sub>#	**MODIFIED
 LGORREND&rarr;	JPQ LGORR0
 &#9755;&#9755;EMD
 
@@ -6299,7 +6299,7 @@ SKX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>0
 &#9755;&#9755;DEF SUBR&equiv;A
 		<sup>1</sup>STE SUBR1
 		A
-SUBR1&rarr;	JPQ #
+SUBR1&rarr;		JPQ #
 &#9755;&#9755;EMD
 
 <hr>
@@ -6354,14 +6354,14 @@ SUBR1&rarr;	JPQ #
  200067|
 		JPQ STARTS
  200070|
-MATS&rarr;	0
-MATM&rarr;	0
-MATO&rarr;	0
-MATRX&rarr;	0
-MATRY&rarr;	0
-MATD&rarr;	0
+MATS&rarr;		0
+MATM&rarr;		0
+MATO&rarr;		0
+MATRX&rarr;		0
+MATRY&rarr;		0
+MATD&rarr;		0
  200100|
-BADOV&rarr;	h<sup>1</sup>STE #+2
+BADOV&rarr;		h<sup>1</sup>STE #+2
 		hSKZ OVERFLOSTOP
 		<sup>2</sup>#<sub>7</sub><sub>6</sub> [very useful as right column contains numeric code]
 		JPQ 200001
@@ -6369,31 +6369,31 @@ BADOV&rarr;	h<sup>1</sup>STE #+2
 		hJMP MAGCON [placed at 200777?]
  NLIST|
 		HOVS-LIST+MASBL [placed at 022000]
-MM0&rarr;	SMASBL,4,,0 **MASTERS
+MM0&rarr;		SMASBL,4,,0 **MASTERS
 		SPLAT
 		-2,0 [resulting octal is |775000 000000|, so -2 goes into top quarter]
 		MM4-NLIST+1,,MM1-NLIST+1
 		45,30,,35,44	**UNIV
 		0
-MM1&rarr;	UNIVBH	**VARIABLES
+MM1&rarr;		UNIVBH	**VARIABLES
 		MM0-NLIST+SPECB+1,,SPLATT
 		-2,
 		V6-NLIST+1,,V1-NLIST+1
 		42,41,,,20,45	**VARS
 		0
-MM2&rarr;	UNIVBH	**HOLDERS
+MM2&rarr;		UNIVBH	**HOLDERS
 		SPLATT
 		-2,
 		H10-NLIST+1,,H1-NLIST+1
 		42,23,,33,27	**HLDS
 		0
-MM3&rarr;	UNIVBH	**TOPOS
+MM3&rarr;		UNIVBH	**TOPOS
 		SPLATT
 		-2,
 		L3-NLIST+1,,L1-NLIST+1
 		36,37,,36,43	**TOPO
 		0
-MM4&rarr;	UNIVBH	**CONSTRAINTS
+MM4&rarr;		UNIVBH	**CONSTRAINTS
 		#-NLIST-SMASBL,,MM0-NLIST+SPECB+1
 		-2,
 		IPCONS-LIST+1,,ONLINES-LIST+1
@@ -6469,28 +6469,28 @@ H9&rarr;		HEADER&equiv;HOLDERS&rarr;(22,37,,44,22)	**CURPICS
 		SPLAT
 		(22,37,,44,22)
 		T1
-H9.1&rarr;	HEADER&equiv;HOLDERS&rarr;(35,22,,47,35)
+H9.1&rarr;		HEADER&equiv;HOLDERS&rarr;(35,22,,47,35)
 		SMASBL,4,,HOLDERS-LIST
 		#-NLIST-SMASBL..#+SMASBL-NLIST
 [h-n: "?"]	-2,0	[handwritten: "NCXN"]
 		SPLAT
 		(35,22,,47,35)
 		T1
-H9.2&rarr;	HEADER&equiv;HOLDERS&rarr;(1,41,,37,42)
+H9.2&rarr;		HEADER&equiv;HOLDERS&rarr;(1,41,,37,42)
 		SMASBL,4,,HOLDERS-LIST
 		#-NLIST-SMASBL,,#+SMASBL-NLIST
 		-2,0
 		SPLAT
 		(1,41,,37,42)
 		T1
-H9.3&rarr;	HEADERS&equiv;HOLDERS&rarr;(2,41,,37,42)
+H9.3&rarr;		HEADERS&equiv;HOLDERS&rarr;(2,41,,37,42)
 		SMASBL,4,,HOLDERS-LIST
 		#-NLIST-SMASBL,,#+SMASBL-NLIST
 		-2,0
 		SPLAT
 		(2,41,,37,42)
 		T1
-H10&rarr;	SMASBL,4,MM2-NLIST
+H10&rarr;		SMASBL,4,MM2-NLIST
 		#-NLIST-SMASBL,,MM2-NLIST+SPECB+1
 		-2,
 		SPLAT
@@ -6601,7 +6601,7 @@ V3&rarr;		MASTER&equiv;VARIABLES&rarr;(41,45,,37,43)
 		hJMP TRANSFORM 	**MOVIT
 		16,14,,0	**SIZE
 		hJMP WHERESUB	**WHERE
-Q14&rarr;	JUNKK
+Q14&rarr;		JUNKK
 		2	**TUPLE
 		TPVAL	**VARLOC
  INSTANCES+NLIST-LIST|
@@ -6895,7 +6895,7 @@ STB A+1
 GORREXIT=LEXIT
 	<sup>1</sup>DPX<sub>X</sub><sub>R</sub>LGORR1
 	<sup>1</sup><sup>1</sup>RSX<sub>X</sub><sub>R</sub><sub>2</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST+(N)+1
-LGORR0&rarr;	<sup>1</sup><sup>6</sup>RSX<sub>X</sub><sub>R</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>LIST-1
+LGORR0&rarr;		<sup>1</sup><sup>6</sup>RSX<sub>X</sub><sub>R</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>LIST-1
 	h<sup>-</sup><sup>1</sup>JNX<sub>X</sub><sub>R</sub>#+2
 	<sup>1</sup>SKX<sub>X</sub><sub>R</sub>1
 	INX<sub>X</sub><sub>R</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>0
@@ -6916,7 +6916,7 @@ LGORREND&rarr;   JPQ LGORR0
 GORLEXIT=LEXIT
 	<sup>1</sup>DPX<sub>X</sub><sub>R</sub>LGORL1
 	<sup>1</sup><sup>2</sup>RSX<sub>X</sub><sub>R</sub><sub>2</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST+(N)+1
-LGORL0&rarr;	<sup>1</sup><sup>6</sup>RSX<sub>X</sub><sub>R</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>LIST-1
+LGORL0&rarr;		<sup>1</sup><sup>6</sup>RSX<sub>X</sub><sub>R</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>LIST-1
 	h<sup>-</sup><sup>1</sup>JNX<sub>X</sub><sub>R</sub>#+2
 	<sup>1</sup>SKX<sub>X</sub><sub>R</sub>1
 	INX<sub>X</sub><sub>R</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>0
@@ -6933,7 +6933,7 @@ LGORLEND&rarr;   JPQ LGORL0
 GORRIEXIT=LEXIT
 	<sup>1</sup>DPX<sub>X</sub><sub>R</sub>LGORRI1
 	<sup>1</sup><sup>1</sup>RSX<sub>X</sub><sub>R</sub><sub>2</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST+(N)+1
-LGORRI0&rarr;	<sup>1</sup><sup>6</sup>RSX<sub>X</sub><sub>R</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>LIST-1
+LGORRI0&rarr;		<sup>1</sup><sup>6</sup>RSX<sub>X</sub><sub>R</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>LIST-1
 	h<sup>-</sup><sup>1</sup>JNX<sub>X</sub><sub>R</sub>#+2
 	<sup>1</sup>SKX<sub>X</sub><sub>R</sub>1
 	INX<sub>X</sub><sub>R</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>0
@@ -6952,7 +6952,7 @@ LGORRIEND&rarr;   JPQ LGORRI0
 GORLIEXIT=LEXIT
 	<sup>1</sup>DPX<sub>X</sub><sub>R</sub>LGORLI1
 	<sup>1</sup><sup>2</sup>RSX<sub>X</sub><sub>R</sub><sub>2</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST+(N)+1
-LGORLI0&rarr;	<sup>1</sup><sup>6</sup>RSX<sub>X</sub><sub>R</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>LIST-1
+LGORLI0&rarr;		<sup>1</sup><sup>6</sup>RSX<sub>X</sub><sub>R</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>LIST-1
 	h<sup>-</sup><sup>1</sup>JNX<sub>X</sub><sub>R</sub>#+2
 	<sup>1</sup>SKX<sub>X</sub><sub>R</sub>1
 	INX<sub>X</sub><sub>R</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>0
@@ -6976,9 +6976,9 @@ LGORLIEND&rarr;   JPQ LGORLI0
 	SKX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>0
 	<sup>1</sup><sup>2</sup>AUX<sub>X</sub><sub>R</sub>{(N)+1,,-((N)+1)}
 	<sup>1</sup><sup>1</sup>RSX<sub>T</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST
-NEWH1&rarr;	SXD<sub>T</sub><sub>|</sub><sub>X</sub><sub>R</sub>0
+NEWH1&rarr;		SXD<sub>T</sub><sub>|</sub><sub>X</sub><sub>R</sub>0
 	JPQ NEWH2
-NEWH2&rarr;	<sup>1</sup><sup>1</sup>AUX<sub>X</sub><sub>R</sub>{(N)+1,,-((N)+1)}
+NEWH2&rarr;		<sup>1</sup><sup>1</sup>AUX<sub>X</sub><sub>R</sub>{(N)+1,,-((N)+1)}
 &#9755;&#9755;EMD
 
 &#9755;&#9755;DEF COMBHR&equiv;NN&times;XRR&rarr;MM&times;XRR2
@@ -7028,10 +7028,10 @@ NEWH2&rarr;	<sup>1</sup><sup>1</sup>AUX<sub>X</sub><sub>R</sub>{(N)+1,,-((N)+1)}
 
 &#9755;&#9755;DEF TYPE&beta;
 XXX&beta;=0
-NENTRY&beta;&rarr;	hMKZ<sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub>LSW&beta;
+NENTRY&beta;&rarr;		hMKZ<sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub>LSW&beta;
 		hJPQ #+2
-LENTRY&beta;&rarr;	hMKN<sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub>LSW&beta;
-MTLOOP&beta;&rarr;	h<sup>1</sup>DPX<sub>6</sub><sub>6</sub>TYPEXIT&beta;
+LENTRY&beta;&rarr;		hMKN<sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub>LSW&beta;
+MTLOOP&beta;&rarr;		h<sup>1</sup>DPX<sub>6</sub><sub>6</sub>TYPEXIT&beta;
 		hDEX<sub>6</sub><sub>6</sub>2
 		LDA<sub>6</sub><sub>6</sub>0
 		RFD<sub>6</sub><sub>6</sub>#+1
@@ -7041,7 +7041,7 @@ MTLOOP&beta;&rarr;	h<sup>1</sup>DPX<sub>6</sub><sub>6</sub>TYPEXIT&beta;
 		<sup>2</sup><sup>5</sup>INS TYPECNTR&beta;
 		LDB C
 TYPELOOP&beta;&rarr;	<sup>3</sup>DPX A
-LSW&beta;&rarr;	SKZ<sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub>
+LSW&beta;&rarr;		SKZ<sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub>
 		CAB {3,77,,77}
 		CAB #-1*
 		<sup>3</sup>TSD A
@@ -7075,12 +7075,12 @@ TYPEEXIT&beta;&rarr;	JPQ XXX&beta;
 		TYPEL,6<sub>3</sub><sub>6</sub>&times;{603536,,704641} [6<sub>3</sub><sub>6</sub>??]
 		SKX<sub>3</sub><sub>6</sub>0 [another symbol on the line, junk?]
 		RFD<sub>4</sub><sub>6</sub>{TPK&beta;}+2*
-CMP1&rarr;	SKX<sub>3</sub><sub>6</sub>1
+CMP1&rarr;		SKX<sub>3</sub><sub>6</sub>1
 		JPQ {TPK&beta;}+2*
 &#9755;&#9755;EMD
 
 &#9755;&#9755;DEF IOA&beta;
-IOASCH&beta;&rarr;	h<sup>2</sup>STE {TPK&beta;}+6	**PGM ADDR
+IOASCH&beta;&rarr;		h<sup>2</sup>STE {TPK&beta;}+6	**PGM ADDR
 		MKN<sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub>IOASCHSW&beta;
 		JPQ #+3
 IOANOTSCH&beta;&rarr;	h<sup>2</sup>STE {TPK&beta;}+6	**PGM ADDR
@@ -7106,7 +7106,7 @@ EIAFNDR&beta;&rarr;	SKN<sub>4</sub><sub>.</sub><sub>1</sub>EIALOOP&beta;*	**SKIP
 		JPQ EIALD&beta;
 		SKN<sub>1</sub><sub>.</sub><sub>9</sub>{TPK&beta;}+7	**SKIP IF WRITING
 		h<sup>1</sup>JNX<sub>3</sub><sub>4</sub>EIALOOP&beta;		**IGNORE CONDITION
-EIALD&beta;&rarr;	<sup>2</sup><sup>2</sup>LDC<sub>3</sub><sub>4</sub>LIOAMSG&beta;	**TYPE OF ERROR
+EIALD&beta;&rarr;		<sup>2</sup><sup>2</sup>LDC<sub>3</sub><sub>4</sub>LIOAMSG&beta;	**TYPE OF ERROR
 		RFD<sub>4</sub><sub>6</sub>{ERRLOOP&beta;}*
 		JPD #	**NOT USED
 FIOAMSG&beta;&rarr;	0,744,,343042	**MIS 2.4
@@ -7139,7 +7139,7 @@ NORMENTRY&beta;&rarr;	<sup>5</sup>DPX {TPK&beta;}+8.	**CLR ERR TYPE
 NTFENTRY&beta;&rarr;	SKX<sub>3</sub><sub>6</sub>5
 		JPQ ALLERRS&beta;
 SCENTRY&beta;&rarr;	<sup>2</sup><sup>2</sup>SUB {TPK&beta;}+9.	**10 OR 0
-SCEBME&beta;&rarr;	<sup>2</sup><sup>1</sup>LDC {422224,,213424}	**SCE
+SCEBME&beta;&rarr;		<sup>2</sup><sup>1</sup>LDC {422224,,213424}	**SCE
 ALLERRS&beta;&rarr;	<sup>5</sup>DPX<sub>3</sub><sub>6</sub>{TPK&beta;}+8.	**SAVE ERR TYPE
 		<sup>2</sup><sup>1</sup> {TPK&beta;}+5	**BLK NO
 		[Device 41 is "Alarm, in-out", table 7-1.]
@@ -7147,7 +7147,7 @@ ALLERRS&beta;&rarr;	<sup>5</sup>DPX<sub>3</sub><sub>6</sub>{TPK&beta;}+8.	**SAVE
 NTFNDMSG&beta;&rarr;	<sup>1</sup>LDC {354325,,703443}	**MT
 		TYPEL&sup;{60},6<sub>3</sub><sub>4</sub> [<sub>3</sub><sub>4</sub> propagates to instruction in the macro?]
 		<sup>1</sup>SKX<sub>3</sub><sub>5</sub>(LXSET&beta;-XSETK&beta;)	**WD CNTR
-WRSP&beta;&rarr;	h<sup>3</sup>TSD {70}	**SPACE
+WRSP&beta;&rarr;		h<sup>3</sup>TSD {70}	**SPACE
 		h<sup>3</sup>TSD {70}	**SPACE
 		h<sup>3</sup>TSD {70}	**SPACE
 		h<sup>1</sup>JNX<sub>3</sub><sub>5</sub>ELOOPMSG1&beta;
@@ -7170,15 +7170,15 @@ NORMEXIT&beta;&rarr;	<sup>1</sup>RSX<sub>3</sub><sub>4</sub>{TPK&beta;}+1	**RESE
 		JPQ {TPK&beta;}+2*	**RETURN TO PGM
 BMENTRY&beta;&rarr;	<sup>2</sup><sup>2</sup>LDC SCEBME&beta;*		**BME
 		JPQ ALLERRS&beta;	**WRITE MSG
-XSETK&beta;&rarr;	LXSET&beta;<sub>3</sub><sub>5</sub> [syntax]
-XSET&beta;&rarr;	9.,-1
+XSETK&beta;&rarr;		LXSET&beta;<sub>3</sub><sub>5</sub> [syntax]
+XSET&beta;&rarr;		9.,-1
 
 <hr>
 [Page header: "LMH GX7A 025"]
 
 		-1
 		-3
-LXSET&beta;&rarr;	0
+LXSET&beta;&rarr;		0
 
 &#9755;&#9755;DEF TURNOFF&Delta;
 		h<sup>2</sup>STE {TPK&beta;}+6	**PGM ADDR
@@ -7221,7 +7221,7 @@ SCHENTRY&rarr;	h<sup>1</sup>STE {TPK&beta;}+2	**SAVE RETURN
 		hJNX<sub>4</sub><sub>6</sub>TAFREVDIR	**LEAVE REV?
 		hMKZ<sub>1</sub><sub>.</sub><sub>1</sub>XCHKSW	**SET FOR FWD
 		hLDE TAFDKF	**FWD CONSTANTS
-TAFSCHK&rarr;	h<sup>1</sup>STE TAFST
+TAFSCHK&rarr;		h<sup>1</sup>STE TAFST
 		h<sup>2</sup><sup>1</sup>STE TAFST-1
 		hLDE TAFSPDK
 		hSXD<sub>4</sub><sub>6</sub>2	**CHK FOR SPD2 EXIT
@@ -7240,7 +7240,7 @@ TAFSCHK&rarr;	h<sup>1</sup>STE TAFST
 		<sup>2</sup><sup>1</sup>COM TAFBL 	** -(ORIG NO.) [some smudge  after COM, interpreting as junk]
 		<sup>2</sup>DPX<sub>3</sub><sub>5</sub>{TPK&beta;}+1	** SAVE X<sub>3</sub><sub>5</sub>
 		<sup>1</sup>DPX<sub>3</sub><sub>7</sub>{TPK&beta;}+8.	** SAVE X<sub>3</sub><sub>7</sub>
-EOTCHK&rarr;	h<sup>1</sup>IOS<sub>4</sub><sub>6</sub>0	**GET REPORT
+EOTCHK&rarr;		h<sup>1</sup>IOS<sub>4</sub><sub>6</sub>0	**GET REPORT
 		hSKN<sub>4</sub><sub>.</sub><sub>3</sub>E	**SELECTION COMPLETE?
 		JPQ EOTCHK	**WAIT
 		SKU<sup>3</sup><sub>.</sub><sub>7</sub>	**OPERABLE SPEED?
@@ -7272,11 +7272,11 @@ TAFGOFWD&rarr;	SKX<sub>3</sub><sub>4</sub>0
 		JPQ TAFIOS
 		** FAST LOOPS
 		** GO MORE IN REVERSE DIRECTION
-TAF3R&rarr;	SXD<sub>3</sub><sub>4</sub>3
+TAF3R&rarr;		SXD<sub>3</sub><sub>4</sub>3
 		h<sup>-</sup><sup>1</sup>JPX<sub>3</sub><sub>4</sub>TAFIOS	**GO TO SLOW LOOP SPD 2 FWD
 		h<sup>-</sup><sup>1</sup>JPX<sub>3</sub><sub>4</sub>TAF4F+1	**SLOW TO SPD 3 FWD
-TAF0R&rarr;	<sup>1</sup>SKX<sub>3</sub><sub>4</sub>5	**REV SPD4
-TAF4F&rarr;	<sup>3</sup>DPX {TPK&beta;}	**CLR FINE MK
+TAF0R&rarr;		<sup>1</sup>SKX<sub>3</sub><sub>4</sub>5	**REV SPD4
+TAF4F&rarr;		<sup>3</sup>DPX {TPK&beta;}	**CLR FINE MK
 		hLDE TAFIOS*
 
 <hr>
@@ -7286,7 +7286,7 @@ TAF4F&rarr;	<sup>3</sup>DPX {TPK&beta;}	**CLR FINE MK
 		h<sup>1</sup>IOS<sub>4</sub><sub>6</sub>XXX	**RD MKS
 		STE {TPK&beta;}+7
 		h<sup>1</sup><sup>1</sup>LDE {TPK&beta;}	**CURRENT BLK
-TAF4R&rarr;	<sup>2</sup>STE {TPK&beta;}	**EXPECTED BLK
+TAF4R&rarr;		<sup>2</sup>STE {TPK&beta;}	**EXPECTED BLK
 		h<sup>4</sup>TSD {TPK&beta;}	**COARSE MK
 		hSKZ<sub>2</sub><sub>.</sub><sub>9</sub>E	**NEG MK?
 		hJMP TAF4R+1	**IGNORE
@@ -7300,13 +7300,13 @@ TAF4R&rarr;	<sup>2</sup>STE {TPK&beta;}	**EXPECTED BLK
 		<sup>2</sup>AUX<sub>3</sub><sub>5</sub>TAFSTK*
 		hJPX<sub>3</sub><sub>5</sub>TAF4R-1	**CONTINUE AT SAME SPEED
 		**GO MORE IN FORWARD DIRECTION
-TAF0F&Delta;&rarr;	<sup>1</sup>SXD<sub>3</sub><sub>4</sub>4
+TAF0F&Delta;&rarr;		<sup>1</sup>SXD<sub>3</sub><sub>4</sub>4
 		h<sup>1</sup>JNX<sub>3</sub><sub>4</sub>TAFIOS	**GO TO SLOW LOOP SPD 2 REV
 		h<sup>1</sup>JNX<sub>3</sub><sub>4</sub>TAF4F+1	**SLOW TO SPD 3 REV
-TAF0F&rarr;	SKX<sub>3</sub><sub>4</sub>4 **FWD SPD 4
+TAF0F&rarr;		SKX<sub>3</sub><sub>4</sub>4 **FWD SPD 4
 		JPQ TAF4F
 		**SLOW LOOPS
-TAFCON&rarr;	<sup>2</sup>AUX<sub>3</sub><sub>5</sub>TAFBL	**-(ORIG BLK)
+TAFCON&rarr;		<sup>2</sup>AUX<sub>3</sub><sub>5</sub>TAFBL	**-(ORIG BLK)
 		<sup>1</sup>AUX<sub>3</sub><sub>5</sub>TAFSTK*	**LIMIT AT THIS SPEED
 		hJPX<sub>3</sub><sub>5</sub>TAFREV
 		<sup>2</sup>AUX<sub>3</sub><sub>5</sub>TAFSTK*
@@ -7316,10 +7316,10 @@ TAFIOSRET&rarr;	h<sup>1</sup><sup>2</sup>RSX<sub>3</sub><sub>7</sub>{TPK&beta;}	
 		DEX<sub>3</sub><sub>5</sub>10	**PRECEDING BLK
 		SXL<sub>3</sub><sub>4</sub>0	**REV?
 		INX<sub>3</sub><sub>5</sub>20	**NXT BLK
-TAF1F&rarr;	h<sup>4</sup>TSD {TPK&beta;}	**BLK MK
-TAF2F&rarr;	h<sup>1</sup>IOS<sub>4</sub><sub>6</sub>XXX	**RD LINES
+TAF1F&rarr;		h<sup>4</sup>TSD {TPK&beta;}	**BLK MK
+TAF2F&rarr;		h<sup>1</sup>IOS<sub>4</sub><sub>6</sub>XXX	**RD LINES
 		h<sup>3</sup>TSD {TPK&beta;} **FINE MK
-TAF3F&rarr;	<sup>1</sup>IOS<sub>4</sub><sub>6</sub>XXX	**RD MKS
+TAF3F&rarr;		<sup>1</sup>IOS<sub>4</sub><sub>6</sub>XXX	**RD MKS
 		h<sup>1</sup><sup>1</sup>RSX<sub>3</sub><sub>5</sub>{TPK&beta;}	**BM READ
 		hJNX<sub>3</sub><sub>5</sub>TAFNEGMK
 		<sup>2</sup>SED E	**BM PREDICTED
@@ -7329,35 +7329,35 @@ TAF3F&rarr;	<sup>1</sup>IOS<sub>4</sub><sub>6</sub>XXX	**RD MKS
 		INX<sub>3</sub><sub>7</sub>20	**FOR FWD
 		SXD<sub>3</sub><sub>7</sub><sub>|</sub><sub>3</sub><sub>5</sub>0	**1>LAST PREDICTION?
 		JPQ TAFCON	**CONTINUE
-XCHKSW&rarr;	<sup>1</sup>SXD<sub>3</sub><sub>4</sub>0	**MOD TO <sup>1</sup>SXD<sub>3</sub><sub>4</sub>1 FOR REV
+XCHKSW&rarr;		<sup>1</sup>SXD<sub>3</sub><sub>4</sub>0	**MOD TO <sup>1</sup>SXD<sub>3</sub><sub>4</sub>1 FOR REV
 
 <hr>
 [Page header: "LMH GX7A 030"]
 
 		JPQ XCHK
 		JPQ TAFIOSRET	**IGNORE WHAT WAS READ
-TAFFOR&rarr;	h<sup>1</sup>JNX<sub>3</sub><sub>4</sub>TAFLVREV
+TAFFOR&rarr;		h<sup>1</sup>JNX<sub>3</sub><sub>4</sub>TAFLVREV
 		SXL<sub>3</sub><sub>4</sub>4
 		JPQ TAF4F	**FWD SPD4
-TAFIOS&rarr;	hLDE<sub>3</sub><sub>4</sub>XXX	**IOS K
+TAFIOS&rarr;		hLDE<sub>3</sub><sub>4</sub>XXX	**IOS K
 		h<sup>2</sup><sup>2</sup>STE TAF2F	**RD LINES
 		h<sup>1</sup>STE TAF3F	**RD MKS
 		<sup>1</sup>STE #+1		**RD MKS
 		h<sup>1</sup>IOS<sub>4</sub><sub>6</sub>XXX	**RD MKS
 		STE {TPK&beta;}+7	**SAVE REPORT
 		JPQ TAFIOSRET
-TAFREV&rarr;	h<sup>-</sup><sup>1</sup>JPX<sub>3</sub><sub>4</sub>TAFIOS
+TAFREV&rarr;		h<sup>-</sup><sup>1</sup>JPX<sub>3</sub><sub>4</sub>TAFIOS
 		SXG<sub>3</sub><sub>4</sub>5
 		JPQ TAF4F	**SPD4 LOOP
 TAFREVSW&rarr;	SKZ<sub>1</sub><sub>.</sub><sub>1</sub>XCHKSW	**LV FWD?
 		JPQ TAFIOS
 		SXG<sub>3</sub><sub>4</sub>2
 		JPQ TAFIOS
-TAFCOMP&rarr;	h<sup>1</sup>LDE {TPK&beta;}	**BLK READ
+TAFCOMP&rarr;		h<sup>1</sup>LDE {TPK&beta;}	**BLK READ
 		<sup>1</sup>SED {TPK&beta;}+1	**BLK NEEDED
 		JPQ {ERRLOOP&beta;}+6	**LEAVE SEARCH, BLK FOUND
 TAFERRSW&rarr;	h<sup>1</sup>JNX<sub>3</sub><sub>6</sub>TAFIOS	**ERR CNTR
-TAFERR&rarr;	hJPQ{TURNOFF&Delta;}	**PGM ADDR
+TAFERR&rarr;		hJPQ{TURNOFF&Delta;}	**PGM ADDR
 		<sup>2</sup><sup>1</sup>LDC {354325,,703443}	**NTF
 		SKX<sub>3</sub><sub>6</sub>0
 TAFERREXIT&rarr;	<sup>2</sup><sup>2</sup>LDA {TPK&beta;}+1	**ORIGINAL NO
@@ -7370,7 +7370,7 @@ TAFLVREV&rarr;	hJNX<sub>3</sub><sub>4</sub>TAFIOS	**CHK FOR CHG OF DIR
 		SKN<sub>1</sub><sub>.</sub><sub>1</sub>XCHKSW	**LV REV?
 		JPQ TAFIOS
 		JPQ TAFCOMP
-XCHK&rarr;	h<sup>1</sup><sup>1</sup>LDE {TPK&beta;}	**BM READ
+XCHK&rarr;		h<sup>1</sup><sup>1</sup>LDE {TPK&beta;}	**BM READ
 		<sup>1</sup>SED {TPK&beta;}+1	**BM NEEDED
 		JPQ {ERRLOOP&beta;}+6	**LEAVE SEARCH, BLK FOUND
 		JPQ TAFIOSRET	**IGNORE
@@ -7380,23 +7380,23 @@ TAFNOTREADY&rarr;	<sup>2</sup>STE {TPK&beta;}+6	**PGM ADDR
 		JPQ TAFERREXIT	**EIA ENTRY
 TAFNEGMK&rarr;	<sup>2</sup><sup>2</sup>STE {TPK&beta;}	**TAKE PREDICTION
 		JPQ TAFIOSRET
-TAFWA1&rarr;	0
-TAFBL&rarr;	0
-TAFSPDK&rarr;	TAF2R,,TAF1R
-TAFSTK&rarr;	TAFST<sub>3</sub><sub>4</sub>
+TAFWA1&rarr;		0
+TAFBL&rarr;		0
+TAFSPDK&rarr;		TAF2R,,TAF1R
+TAFSTK&rarr;		TAFST<sub>3</sub><sub>4</sub>
 
 <hr>
 [Page header: "LMH GX7A 031"]
 
-TAFDKF&rarr;	TAPEK1+10,,10
-TAFDKR&rarr;	TAPEK1-10,,-10
+TAFDKF&rarr;		TAPEK1+10,,10
+TAFDKR&rarr;		TAPEK1-10,,-10
 		**SPEED TABLES
 		377777-TAPEK4,,-377777
 		TAPEK4-TAPEK3,,-TAPEK4
 		TAPEK3-TAPEK2,,-TAPEK3
 		TAPEK2-TAPEK1,,-TAPEK2
 		TAPEK1+10,,-TAPEK1	**MOD TO TAPEK1-10,,-TAPEK1
-TAFST&rarr;	TAPEK1-10,,10		**MOD TO TAPEK1-10,,-10
+TAFST&rarr;		TAPEK1-10,,10		**MOD TO TAPEK1-10,,-10
 		TAPEK2-TAPEK1,,TAPEK1
 		TAPER3-TAPEK2,,TAPEK2
 		TAPEK4-TAPER3,,TAPEK3
@@ -7406,7 +7406,7 @@ TAFST&rarr;	TAPEK1-10,,10		**MOD TO TAPEK1-10,,-10
 		RL+REV+SPD2,,RM+REV+SPD2
 		RL+REV+SPD1,,RM+REV+SPD1
 		RL+REV,,RM+REV
-TAF1R&rarr;	RL,,RM
+TAF1R&rarr;		RL,,RM
 		RL+SPD1,,RM+SPD1
 		RL+SPD2,,RM+SPD2
 		RL+SPD3,,RM+SPD3
@@ -7416,7 +7416,7 @@ TAF1R&rarr;	RL,,RM
 		RL+REV+SPD2,,RM+REV+SPD2
 		RL+REV+SPD2,,RM+REV+SPD2
 		RL+REV+SPD2,,RM+REV+SPD2
-TAF2R&rarr;	RL+SPD2,,RM+SPD2
+TAF2R&rarr;		RL+SPD2,,RM+SPD2
 		RL+SPD2,,RM+SPD2
 		RL+SPD2,,RM+SPD2
 		RL+SPD3,,RM+SPD4
@@ -7471,14 +7471,14 @@ SRCENTRY&rarr;	SKX<sub>4</sub><sub>1</sub>{IOAB}+3	**SET IOA SEQ
 		<sup>1</sup>STB SCRM	**IOS RM
 		<sup>1</sup>STB SCRL	**IOS RL
 		MKZ<sub>1</sub><sub>.</sub><sub>7</sub>SCRL	**CHG TO RL
-SCRM&rarr;	<sup>1</sup>IOS<sub>4</sub><sub>6</sub>XXX	**RM
+SCRM&rarr;		<sup>1</sup>IOS<sub>4</sub><sub>6</sub>XXX	**RM
 		h<sup>6</sup>TSB B	**COARSE MK
-SCRL&rarr;	h<sup>1</sup>IOS<sub>4</sub><sub>6</sub>XXX	**RL
+SCRL&rarr;		h<sup>1</sup>IOS<sub>4</sub><sub>6</sub>XXX	**RL
 		hJPQ BMCHK	**CHK FOR BLK MK
-SCRET&rarr;	h<sup>3</sup>TSD A	**SUMCHK L.O.
+SCRET&rarr;		h<sup>3</sup>TSD A	**SUMCHK L.O.
 		SKX<sub>3</sub><sub>4</sub>177	**DATA CNTR
 		h<sup>4</sup>TSD D	**DATA
-SCDATA&rarr;	h<sup>3</sup>TSD D	**DATA
+SCDATA&rarr;		h<sup>3</sup>TSD D	**DATA
 		<sup>1</sup>ADD D	**TO SUMCHK
 		h<sup>4</sup>TSD D	**DATA
 		h<sup>3</sup>TSD D	**DATA
@@ -7487,7 +7487,7 @@ SCDATA&rarr;	h<sup>3</sup>TSD D	**DATA
 		h<sup>-</sup><sup>1</sup>JPX<sub>3</sub><sub>4</sub>SCDATA	**MORE DATA?
 		h<sup>3</sup>TSD D	**SUMCHK
 		<sup>2</sup><sup>0</sup>ADD D	**BM,,SUMCHK
-SCADD&rarr;	h<sup>4</sup>TSD B	**DUMMY
+SCADD&rarr;		h<sup>4</sup>TSD B	**DUMMY
 		h<sup>1</sup>JNA {TURNOFF&Delta;}	**SUMCHK ERR
 		h<sup>1</sup>JNA {ERRLOOP&beta;}*	**SUMCHK ERR
 		h<sup>3</sup>TSD B	**FINE MK
@@ -7498,16 +7498,16 @@ SCADD&rarr;	h<sup>4</sup>TSD B	**DUMMY
 		h<sup>1</sup>JPA {TURNOFF&Delta;}	**SUMCHK ERR
 		h<sup>1</sup>JPA {ERRLOOP&beta;}*	**SUMCHK ERR
 		h<sup>6</sup>TSD B	**COARSE MK
-BMCHK&rarr;	<sup>2</sup><sup>1</sup> {TPK&beta;}	**EXPECTED BM
+BMCHK&rarr;		<sup>2</sup><sup>1</sup> {TPK&beta;}	**EXPECTED BM
 		<sup>5</sup>TSD B	**FINE MK
 		<sup>2</sup><sup>2</sup>STB {TPK&beta;}	**BM READ
 		h<sup>4</sup>TSD B	**DUMMY
 		h<sup>2</sup><sup>1</sup>SED A	**CHK AGAINST EXPECTED
 		hJPQ GOODBM	**CORRECT BM
-BMERR&rarr;	hJPQ {TURNOFF&Delta;}
+BMERR&rarr;		hJPQ {TURNOFF&Delta;}
 		SKX<sub>3</sub><sub>6</sub>2
 		hJPQ {ERRLOOP&beta;}*	**TO ERR MSG
-GOODBM&rarr;	h<sup>4</sup>TSD A	**SUMCHK H.O.
+GOODBM&rarr;		h<sup>4</sup>TSD A	**SUMCHK H.O.
 		h<sup>-</sup><sup>1</sup><sup>0</sup>JPX<sub>3</sub><sub>5</sub>SCRET	**DONE?
 		hJPQ {TURNOFF&Delta;}
 		<sup>1</sup>IOS<sub>4</sub><sub>1</sub>20000
@@ -7523,14 +7523,14 @@ GOODBM&rarr;	h<sup>4</sup>TSD A	**SUMCHK H.O.
 		<sup>1</sup><sup>1</sup>RSX<sub>3</sub><sub>4</sub>{TPK&beta;}+1	**LOW ADDR
 		<sup>2</sup>DPX<sub>3</sub><sub>5</sub>A	**SET A
 		<sup>2</sup><sup>1</sup>ADD {-10,,10}	**-10&rarr;D<sub>3</sub>
-SCRAST&rarr;	<sup>2</sup><sup>1</sup>STA{TPK&beta;}+1	**SAVE HIGH ADDR
+SCRAST&rarr;		<sup>2</sup><sup>1</sup>STA{TPK&beta;}+1	**SAVE HIGH ADDR
 		JPQ {SCF2&Delta;}+6	**TO SUMCHK RTNE
 &#9755;&#9755;EMD
 
 &#9755;&#9755;DEF WR2&Delta;
 XXX=0
 		**DO NOT WRITE BLOCK MARKS
-WRENTRY&rarr;	<sup>1</sup>STE {TPK&beta;}+2	**RETURN
+WRENTRY&rarr;		<sup>1</sup>STE {TPK&beta;}+2	**RETURN
 		<sup>2</sup>DPX<sub>3</sub><sub>5</sub>{TPK&beta;}+1	**X<sub>3</sub><sub>5</sub>
 		<sup>1</sup>DPX<sub>3</sub><sub>7</sub>{TPK&beta;}+8	**X<sub>3</sub><sub>7</sub>
 		<sup>2</sup>DPX<sub>3</sub><sub>4</sub>A	**PREV BLOCK
@@ -7541,7 +7541,7 @@ WRENTRY&rarr;	<sup>1</sup>STE {TPK&beta;}+2	**RETURN
 		<sup>1</sup>DPX<sub>3</sub><sub>7</sub>WRLD	**STARTING CORE ADDR
 		MKZ<sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub>WRESW
 		SKX<sub>4</sub><sub>1</sub>{IOA&beta;}+3
-WRELOOP&rarr;	<sup>2</sup><sup>1</sup>STA {TPK&beta;}	**PREDICTED BM
+WRELOOP&rarr;		<sup>2</sup><sup>1</sup>STA {TPK&beta;}	**PREDICTED BM
 		<sup>1</sup>IOS<sub>4</sub><sub>6</sub>30100	**RMF0
 		h<sup>4</sup>TSD {TPK&beta;}	**COARSE MK
 		<sup>1</sup>IOS<sub>4</sub><sub>6</sub>30000	**RLF0
@@ -7552,17 +7552,17 @@ WRELOOP&rarr;	<sup>2</sup><sup>1</sup>STA {TPK&beta;}	**PREDICTED BM
 		h<sup>3</sup>TSD {TPK&beta;} **FINE MK
 		<sup>2</sup>SED A	**COMP WITH EXPECTED
 		JPQ WRESW
-WRLBM&rarr;	hJPQ {TURNOFF&Delta;}
+WRLBM&rarr;		hJPQ {TURNOFF&Delta;}
 		SKX<sub>3</sub><sub>6</sub>2
 		hJPQ {ERRLOOP&beta;}*	**ERR LOOP
-WRESW&rarr;	SZN<sub>4</sub>abo<sub>1</sub><sub>0</sub>#
+WRESW&rarr;		SZN<sub>4</sub>abo<sub>1</sub><sub>0</sub>#
 		JPQ WRSC
 WRMAINLOOP&rarr;	<sup>1</sup>IOS<sub>4</sub><sub>6</sub>30400	**WLF0
 		<sup>1</sup>LDA {0,,-0}	**FOR SUM CHK
 		<sup>3</sup>TSD A	**SUM CHK H.O.
 		<sup>3</sup>TSD A
 		<sup>1</sup>SKX<sub>3</sub><sub>4</sub>177
-WRLD&rarr;	LDB<sub>3</sub><sub>5</sub>XXX	**WD FROM CORE
+WRLD&rarr;		LDB<sub>3</sub><sub>5</sub>XXX	**WD FROM CORE
 		<sup>6</sup>TSD B	**DATA
 		<sup>5</sup>TSD B	**DATA
 		<sup>2</sup>ADD B	**FOR SUM CHK
@@ -7590,15 +7590,15 @@ WRLD&rarr;	LDB<sub>3</sub><sub>5</sub>XXX	**WD FROM CORE
 		<sup>2</sup><sup>1</sup>{TPK&beta;}+3	**LAST BM WRITTEN
 		<sup>2</sup><sup>2</sup>ADD {-10,,10}
 		JPQ WRELOOP
-WRSC&rarr;	hJPQ {TURNOFF&Delta;}
+WRSC&rarr;		hJPQ {TURNOFF&Delta;}
 		<sup>1</sup>IOS<sub>4</sub><sub>1</sub>20000
 		<sup>1</sup>STA {TPK&beta;}+10.	**SAVE LAST SUM CHK
 		JPQ {ERRLOOP&beta;}+6	**NORMAL EXIT
-WRSPL&rarr;	hJPQ {TURNOFF&Delta;}
+WRSPL&rarr;		hJPQ {TURNOFF&Delta;}
 		SKX<sub>3</sub><sub>6</sub>2
 		<sup>2</sup><sup>2</sup>LDC {223437,,423733}	**SPL
 		hJPQ {ERRLOOP&beta;}+4*
-WRCONT&rarr;	h<sup>1</sup>JNX<sub>3</sub><sub>5</sub>WRLD	**ANY DATA LEFT?
+WRCONT&rarr;		h<sup>1</sup>JNX<sub>3</sub><sub>5</sub>WRLD	**ANY DATA LEFT?
 
 <hr>
 [Page header: "LMH GX7A 035"]
@@ -7633,21 +7633,21 @@ ERRS=ERROR
 
  200014|
 		hJMP TEXTMAG	**TEXT
-I15&rarr;	hJMP LETMAG	**LETTERS
+I15&rarr;		hJMP LETMAG	**LETTERS
 		hJMP NUMMAG	**NUMBERS
  200076|
 		JPQ STARTS
 		hJMP TEXTCNG
  200120|
-RIBM&rarr;	hJMP 45SR
-RIBMN&rarr;	hJMP 45SRN
-WIBM&rarr;	hJMP 45SW
-WIBMN&rarr;	hJMP 45SWN
-RGARB&rarr;	hJMP 45GARB
+RIBM&rarr;		hJMP 45SR
+RIBMN&rarr;		hJMP 45SRN
+WIBM&rarr;		hJMP 45SW
+WIBMN&rarr;		hJMP 45SWN
+RGARB&rarr;		hJMP 45GARB
 45CURRENT&rarr;
 		0
-RDTX2&rarr;	hJMP TX2RD
-WRTX2&rarr;	hJMP TX2WR
+RDTX2&rarr;		hJMP TX2RD
+WRTX2&rarr;		hJMP TX2WR
  ORIGIN|
 
 <hr>
@@ -7655,7 +7655,7 @@ WRTX2&rarr;	hJMP TX2WR
 [This page header was seen before, see pdf_page 80. Significance is not clear.]
 [First few lines of code are crossed out by hand.]
 
-STARTS&rarr;	RXF<sub>6</sub><sub>5</sub> KEYSTART
+STARTS&rarr;		RXF<sub>6</sub><sub>5</sub> KEYSTART
 		DPX 45CURRENT
 		RXF <sub>6</sub><sub>6</sub> TYPESTART
 		**TYPEWRITER INPUT
@@ -7680,7 +7680,7 @@ TYPESTART&rarr;
 		JPD #-1
 		hTSD <sub>T</sub><sub>A</sub> KEYTAB
 		<sup>-</sup><sup>1</sup>JPX <sub>T</sub><sub>A</sub>#-3
-KEYTAB&rarr;	0
+KEYTAB&rarr;		0
 		0
 		0
 		0
@@ -7721,11 +7721,11 @@ TEXTCNGX&rarr;
 		SXL <sub>&gamma;</sub> 44
 		JPQ TEXTCNGX
 		<sup>1</sup><sup>3</sup>RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> KEYTAB
-TXCG1&rarr;	SXD <sub>S</sub> 62	**BACKSPACE
+TXCG1&rarr;		SXD <sub>S</sub> 62	**BACKSPACE
 		JPQ TXCGBAC
 		SXD <sub>S</sub> 16	**NO
 		JPQ TXCGNO
-TXCG2&rarr;	DPX <sub>&gamma;</sub> A
+TXCG2&rarr;		DPX <sub>&gamma;</sub> A
 		CYA {-2,}
 		<sup>2</sup><sup>1</sup>CYA {-4,}
 		ADD {<sup>1</sup><sup>3</sup>STB <sub>&beta;</sub> LIST+TXTS+1}
@@ -7733,14 +7733,14 @@ TXCG2&rarr;	DPX <sub>&gamma;</sub> A
 		STA #+1
 		#**<sup>1</sup><sup>?</sup>STB<sub>&beta;</sub>LIST+TXTS+1+N [strange line, actual question mark in the listing]
 		INX <sub>&gamma;</sub> 1
-TXCG3&rarr;	DPX <sub>&gamma;</sub><sub>|</sub><sub>&beta;</sub> TXTS+LIST
+TXCG3&rarr;		DPX <sub>&gamma;</sub><sub>|</sub><sub>&beta;</sub> TXTS+LIST
 		<sup>-</sup><sup>1</sup>JPX <sub>&alpha;</sub>#+2
 		REX <sub>&alpha;</sub> 17
 		DPX <sub>&alpha;</sub> TEXTPLACE
 		JPQ TEXTCNG+1
 TXCGBAC&rarr;
 		<sup>-</sup><sup>1</sup>JPX <sub>&gamma;</sub> TXCG3
-TXCGNO&rarr;	REX <sub>&gamma;</sub> 0
+TXCGNO&rarr;		REX <sub>&gamma;</sub> 0
 		JPQ TXCG3
 TEXTMAG&rarr;
 		<sup>1</sup>STE TEXTMAGEX
@@ -7788,7 +7788,7 @@ TEXTMAG1T&rarr;
 		<sup>1</sup><sup>5</sup>LDA *TEXT
 		<sup>1</sup><sup>4</sup>LDA *TEXT
 		<sup>1</sup><sup>3</sup>LDA *TEXT
-NUMMAG&rarr;	<sup>1</sup>STE NUMMAGEX
+NUMMAG&rarr;		<sup>1</sup>STE NUMMAGEX
 		LDAE&equiv;200022,1,2,3
 		STAE&equiv;RCOS,1,2,3
 		MOVE|200026&rarr;NUMBER
@@ -7812,7 +7812,7 @@ NUMMAG1&rarr;
 		SUMM&rarr; A&rarr;BADOV
 		SUMM&rarr; B&rarr;BADOV
 		JNA NUMMAGEX
-NUMMON&rarr;	REX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 4
+NUMMON&rarr;		REX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 4
 
 <hr>
 [Page header: "LMH GX7A 004"]
@@ -7856,7 +7856,7 @@ NUMMON2&rarr;
 		hJPQ LETMAGINT
 NUMMAGEX&rarr;
 		JPQ #
-LETMAG&rarr;	<sup>1</sup>STE LETMAGEX
+LETMAG&rarr;		<sup>1</sup>STE LETMAGEX
 		LDAE&equiv;200022,1,2,3
 		STAE&equiv;RCOS,1,2,3
 		MOVE|200026&rarr;LETTER
@@ -7885,7 +7885,7 @@ LETMAG1&rarr;
 		SUMM&rarr; C&rarr;BADOV
 		SUMM&rarr; B&rarr;BADOV
 		JNA LETMAGEX	**OFF SCOPE
-LETMON&rarr;	RSX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> LETTER
+LETMON&rarr;		RSX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> LETTER
 		SXL <sub>C</sub><sub>M</sub><sub>&alpha;</sub> LETDISLAST-LETDIS+1
 		JPQ LETMAGEX
 		JNX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> LETMAGEX
@@ -7936,7 +7936,7 @@ LETMAGE3&rarr;
 LETMAG3X&rarr;
 		JPQ #
 		[Looks like what follows is a symbol table for display.]
-LETDIS&rarr;	ZERO
+LETDIS&rarr;		ZERO
 		ONE
 		TWO
 		THREE
@@ -7991,14 +7991,14 @@ LETDIS1&rarr;
 		DOT
 LETDISLAST&rarr;
 		SPACE
-RCOS&rarr;	0
-RSIN&rarr;	0
-XPOS&rarr;	0
-YPOS&rarr;	0
-LETTER&rarr;	0
-SPACE&rarr;	0
+RCOS&rarr;		0
+RSIN&rarr;		0
+XPOS&rarr;		0
+YPOS&rarr;		0
+LETTER&rarr;		0
+SPACE&rarr;		0
 		[Table with data structures describing how to draw symbols.]
-ONE&rarr;	3,	**#PARTS, LINE-CIRC,,ANGLE
+ONE&rarr;		3,	**#PARTS, LINE-CIRC,,ANGLE
 		-SIZE/4,,3&times;SIZE/4	**START POINT
 		SIZE	**CENTER OR END
 		0
@@ -8007,7 +8007,7 @@ ONE&rarr;	3,	**#PARTS, LINE-CIRC,,ANGLE
 		0
 		-SIZE/4,,-SIZE
 		SIZE/4,,,-SIZE
-TWO&rarr;	3001,,525425
+TWO&rarr;		3001,,525425
 		-SIZE/2,,4071&times;SIZE/10000
 		(424.)&times;SIZE/(1000.)
 		1,,62446
@@ -8016,7 +8016,7 @@ TWO&rarr;	3001,,525425
 		0
 		BL
 		BR
-THREE&rarr;	3,
+THREE&rarr;		3,
 		-SIZE/2,,SIZE
 		2&times;SIZE/3,,SIZE
 		0
@@ -8025,7 +8025,7 @@ THREE&rarr;	3,
 		1,,-240000
 		SIZE/3
 		0,,-SIZE/3
-FOUR&rarr;	3,
+FOUR&rarr;		3,
 		SIZE/6,,SIZE
 		-2&times;SIZE/3,,-SIZE/3
 		0
@@ -8038,7 +8038,7 @@ FOUR&rarr;	3,
 		0
 		SIZE/6,,SIZE
 		SIZE/6,,-SIZE
-FIVE&rarr;	3,
+FIVE&rarr;		3,
 		-(1732.)&times;SIZE/(3160.),,SIZE
 		-(1732.)&times;SIZE/(3160.),,
 		1,,-5&times;400000/6
@@ -8047,7 +8047,7 @@ FIVE&rarr;	3,
 		0
 		-(1732.)&times;SIZE/(3160.),,SIZE
 		SIZE/2,,SIZE
-SIX&rarr;	3,1,,140,0
+SIX&rarr;		3,1,,140,0
 		(1574.)&times;SIZE/(4000.),,(3414.)&times;SIZE/(4000.)
 		SIZE/2
 		0
@@ -8056,7 +8056,7 @@ SIX&rarr;	3,1,,140,0
 		1,,-400000
 		-SIZE/2,,-SIZE/2
 		-SIZE/2
-SEVEN&rarr;	3,
+SEVEN&rarr;		3,
 		-SIZE/2,,SIZE
 		SIZE/2,,SIZE
 		0
@@ -8065,13 +8065,13 @@ SEVEN&rarr;	3,
 		0
 		SIZE/3
 		SIZE/2,,SIZE/3
-EIGHT&rarr;	2,1,,377,777
+EIGHT&rarr;		2,1,,377,777
 		SIZE
 		3&times;SIZE/5
 		1,,377777
 		SIZE/5
 		0,,-2&times;SIZE/5
-NINE&rarr;	3,1,,400,0
+NINE&rarr;		3,1,,400,0
 		SIZE/2,,SIZE/2
 		SIZE/2
 		0
@@ -8080,7 +8080,7 @@ NINE&rarr;	3,1,,400,0
 		1,,-200000
 		SIZE/2,,-SIZE/2
 		0,,-SIZE/2
-ZERO&rarr;	4,1,,-200,-0
+ZERO&rarr;		4,1,,-200,-0
 		-SIZE/2,,SIZE/2
 		SIZE/2
 		0

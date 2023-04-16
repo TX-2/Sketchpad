@@ -85,6 +85,8 @@ class Sub:
     SUB_TABLE = {}
 
     TOKEN_RE = re.compile("(@[a-zA-Z0-9_?]+@)")
+    TABS_RE = re.compile("(\t+)")
+    TAB_WIDTH = 8
 
     def SubLine(self, line):
         """Returns a line with @..@ tokens substituted."""
@@ -96,6 +98,35 @@ class Sub:
         if "@" in line:
             raise ValueError(f'Substitution failed for line: "{line}"')
         return line
+
+    def FixTabs(self, line, text_line):
+        """Fixes tabs to ensure that the code is properly aligned.
+
+        We want the code in the generated listings to be two-tab aligned.
+        This may not happen on the lines with and arrow label, due to
+        substitution tokens occupying more space than the corresponding
+        substitutions. This function attempts to fix the tabs, by examining
+        the length of arrow label, and adding another tab in the situation
+        where the label is less than one tabstop long, and there is only one
+        tab between it and the code.
+        """
+        # Find the location and count of the first tab group.
+        m = self.TABS_RE.search(text_line)
+        if not m:
+            return line
+        start, end = m.span(0)
+        if not start:
+            # Tabs at the beginning of the line, nothing to fix.
+            return line
+        if start > self.TAB_WIDTH or (end - start) != 1:
+            # Code will align properly already.
+            return line
+        # Only one tab where two should be for proper alignment, add another.
+        m = self.TABS_RE.search(line)
+        # A match is guaranteed, since substitutions are not messing with tabs.
+        start, end = m.span(0)
+        fixed_line = line[: start + 1] + "\t" + line[end:]
+        return fixed_line
 
 
 class TextGenerator(Sub):
@@ -109,7 +140,9 @@ class TextGenerator(Sub):
     def Generate(self):
         for line in open(self.file_name):
             line = line.rstrip()
-            print(self.SubLine(line))
+            text_line = self.SubLine(line)
+            fixed_line = self.FixTabs(line, text_line)
+            print(self.SubLine(fixed_line))
 
 
 class HTMLGenerator(Sub):
@@ -122,6 +155,7 @@ class HTMLGenerator(Sub):
 
     def __init__(self, file_name):
         self.file_name = file_name
+        self.text_generator = TextGenerator(file_name)
 
     def Generate(self):
         print("<html><body style='font-size:150%'><pre><code>")
@@ -131,7 +165,9 @@ class HTMLGenerator(Sub):
                 # Page break.
                 print("<hr>")
                 continue
-            print(self.SubLine(line))
+            text_line = self.text_generator.SubLine(line)
+            fixed_line = self.FixTabs(line, text_line)
+            print(self.SubLine(fixed_line))
         print("</code></pre></body></html>")
 
 
