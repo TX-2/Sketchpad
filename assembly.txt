@@ -83,3 +83,18 @@ in the statement. So the above line is equivalent to this more familiar
 form:
 
 h@sup_1@@sup_6@LDE @sub_beta@ LIST
+
+Another, more complicated example:
+
+PROD@hamb@@sup_1@@sup_1@ 1@sub_C@@sub_M@@sub_alpha@@timesRCOS/{ SIZE}@arr@BADOV
+
+Here @hamb@, @times@, / and @arr@ are separator symbols, so macro will receive
+four arguments: @sup_1@@sup_1@ 1@sub_C@@sub_M@@sub_alpha@, RCOS, { SIZE}, and
+BADOV. The first argument (A) of the macro is used like this:
+
+LDA A
+
+Then the expanded version will look like this, in conventional notation:
+
+@sup_1@@sup_1@LDA @sub_C@@sub_M@@sub_alpha@ 1
+
