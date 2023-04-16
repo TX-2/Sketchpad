@@ -4312,6 +4312,166 @@ YY&rarr;		3,
 <hr>
 [Page header: "LMH GX7A 016"]
 
+		0
+		0
+		0,,-SIZE
+		0
+		0
+		TR
+ZZ&rarr;		3,
+		TL
+		TR
+		0
+		TR
+		BL
+		0
+		BL
+		BR
+PLUS&rarr;		2,
+		0,,-SIZE/2
+		SIZE/2
+		0
+		SIZE/2,,
+		-SIZE/2,,
+MINUS&rarr;		1,
+		SIZE/2,,
+		-SIZE/2,,
+DOT&rarr;		1,
+		-SIZE
+		-SIZE
+COMMA&rarr;		1,
+		-SIZE
+		-5&times;SIZE/6
+		**IBM TAPE PROGRAM
+		** IBM 910-24
+45SRN&rarr;		<sup>1</sup>STE 45EXIT
+		MKN 45NSW
+		JPQ #+3
+45SR&rarr;		<sup>1</sup>STE 45EXIT
+		MKZ 45NSW
+		MKZ 45GARBSW
+45SRGARB&rarr;
+		MKZ 45RWSW
+		hJPQ 45TYPECHK
+		<sup>1</sup><sup>1</sup>RSX <sub>4</sub><sub>5</sub><sub>X</sub> LIST
+		INX <sub>4</sub><sub>5</sub><sub>X</sub> LIST+1
+		JPQ 45GO
+45GARB&rarr;		<sup>1</sup>STE 45EXIT
+		MKN 45GARBSW
+		MKZ 45NSW
+		DPX 45CURRENT
+		JPQ 45SRGARB
+45SWN&rarr;		<sup>1</sup>STE 45EXIT
+
+<hr>
+[Page header: "LMH GX7A 017"]
+
+		MKN 45NSW
+		JPQ #+3
+45SW&rarr;		<sup>1</sup>STE 45EXIT
+		MKZ 45NSW
+		MKN 45RWSW
+		hJPQ 45TYPECHK
+		SKX <sub>4</sub><sub>5</sub><sub>X</sub> LIST
+		MKZ 45GARBSW
+45GO&rarr;		DPX <sub>4</sub><sub>5</sub><sub>X</sub> 45B
+		MKZ <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> TX2MSW
+		<sup>3</sup><sup>4</sup>SPG { 604,331,,330,333}
+		<sup>1</sup><sup>1</sup>RSX <sub>4</sub><sub>5</sub><sub>X</sub> 45NUM	**TOGGLE
+		SKZ 45NSW
+		<sup>1</sup><sup>1</sup>RSX <sub>4</sub><sub>5</sub><sub>X</sub> 45CURRENT
+		<sup>2</sup>DPX <sub>4</sub><sub>5</sub><sub>X</sub> 45LIST
+		RFD <sub>4</sub><sub>5</sub>#+2
+		JPD #
+		<sup>1</sup>IOS <sub>4</sub><sub>1</sub> 20000
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30000
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 40000
+		MKZ <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> 45DORWD
+		MKZ 45REVSW
+		SXD 45CURRENT*
+		hJPQ 45DORWD
+45GO2&rarr;		SKZ 45NSW
+		JPQ 45RW?	[syntax, question mark cannot be part of symex]
+		SKZ 45GARBSW
+		JPQ 45READ
+		SXD <sub>4</sub><sub>5</sub><sub>X</sub> 0
+		hJPQ 45DORWD
+		DEX <sub>4</sub><sub>5</sub><sub>X</sub> 45CURRENT*
+		h<sup>-</sup><sup>1</sup>JPX<sub>4</sub><sub>5</sub><sub>X</sub> 45SCHBWD
+		JPQ 45RW?
+45SCHFWD&rarr;
+		SKX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 1
+45SF1&rarr;		45GF
+		SKX <sub>5</sub><sub>4</sub> 3160.
+		SNN 45LPSW
+		SKX <sub>5</sub><sub>4</sub> 16000.
+		hJPQ {SQ45DELAY}
+		45GFR
+45SF1A&rarr;		RXF <sub>5</sub><sub>4</sub> 45SIT1
+		h<sup>1</sup>TSD 45WA
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30000
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30300
+		JPQ #-3
+45SF2&rarr;		45SRM
+		45DELAY&equiv;1300.
+
+<hr>
+[Page header: "LMH GX7A 020"]
+
+		<sup>1</sup>ADX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45CURRENT
+		SKZ 45GARB
+		JPQ 45READ
+		h<sup>-</sup><sup>1</sup>JPX <sub>4</sub><sub>5</sub><sub>X</sub> 45SF1
+45RW?&rarr;		SKZ 45RWSW [so it's just symex with question mark, after all?]
+		JPQ 45WR
+45READ&rarr;		45GF
+		SKX <sub>5</sub><sub>4</sub> 3160.
+		SNN 45LPSW
+		SKX <sub>5</sub><sub>4</sub> 16000.
+		hJPQ {SQ45DELAY}
+		RXF <sub>5</sub><sub>4</sub> 45SIT3
+		45GFR
+		h<sup>1</sup>TSD 45WA
+		<sup>2</sup>SED 45LIST
+		JPQ 45COMMON
+		SKZ 45GARBSW
+		JPQ 45SF1A
+		hJPQ 45ERR
+45COMMON&rarr;
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30300
+		h<sup>1</sup>TSD 45LIST
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30000
+		<sup>1</sup><sup>1</sup>RSX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45LIST
+		<sup>2</sup>AUX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45LIST	**START SC CALC
+		<sup>1</sup><sup>1</sup>RSX <sub>4</sub><sub>5</sub><sub>X</sub> 45LIST
+		<sup>1</sup><sup>1</sup>AUX <sub>4</sub><sub>5</sub><sub>X</sub> 45B
+		DEX <sub>4</sub><sub>5</sub><sub>X</sub> 1
+		<sup>1</sup>DPX <sub>4</sub><sub>5</sub><sub>X</sub> 45TSD
+		SXL <sub>4</sub><sub>5</sub><sub>X</sub> 100000
+		hJPQ 45ERR
+		<sup>1</sup><sup>1</sup>RSX <sub>4</sub><sub>5</sub><sub>X</sub> 45LIST
+		<sup>1</sup>SKX <sub>4</sub><sub>5</sub><sub>X</sub><sub>|</sub><sub>4</sub><sub>5</sub><sub>X</sub> 0
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30300
+		INX <sub>4</sub><sub>5</sub><sub>X</sub> 1
+		h<sup>1</sup>JNX <sub>4</sub><sub>5</sub><sub>X</sub>#+2
+		JPQ 45ENDBLK
+45TSD&rarr;		h<sup>2</sup>TSD <sub>4</sub><sub>5</sub><sub>X</sub> 45LIST	**MOD
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30000
+		<sup>2</sup>AUX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45TSD*
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30300
+		h<sup>1</sup>TSD 45TSD*
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30300
+		<sup>1</sup>AUX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45TSD*
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30300
+		h<sup>1</sup>JNX <sub>4</sub><sub>5</sub><sub>X</sub> 45TSD
+45ENDBLK&rarr;
+		h<sup>1</sup>TSD E	**DUMMY SLOT
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30000
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30300
+
+<hr>
+[Page header: "LMH GX7A 021"]
+
 
 </code></pre></body></html>
 <html><body style='font-size:150%'><pre><code>
@@ -8627,6 +8787,166 @@ YY&rarr;		3,
 
 <hr>
 [Page header: "LMH GX7A 016"]
+
+		0
+		0
+		0,,-SIZE
+		0
+		0
+		TR
+ZZ&rarr;		3,
+		TL
+		TR
+		0
+		TR
+		BL
+		0
+		BL
+		BR
+PLUS&rarr;		2,
+		0,,-SIZE/2
+		SIZE/2
+		0
+		SIZE/2,,
+		-SIZE/2,,
+MINUS&rarr;		1,
+		SIZE/2,,
+		-SIZE/2,,
+DOT&rarr;		1,
+		-SIZE
+		-SIZE
+COMMA&rarr;		1,
+		-SIZE
+		-5&times;SIZE/6
+		**IBM TAPE PROGRAM
+		** IBM 910-24
+45SRN&rarr;		<sup>1</sup>STE 45EXIT
+		MKN 45NSW
+		JPQ #+3
+45SR&rarr;		<sup>1</sup>STE 45EXIT
+		MKZ 45NSW
+		MKZ 45GARBSW
+45SRGARB&rarr;
+		MKZ 45RWSW
+		hJPQ 45TYPECHK
+		<sup>1</sup><sup>1</sup>RSX <sub>4</sub><sub>5</sub><sub>X</sub> LIST
+		INX <sub>4</sub><sub>5</sub><sub>X</sub> LIST+1
+		JPQ 45GO
+45GARB&rarr;		<sup>1</sup>STE 45EXIT
+		MKN 45GARBSW
+		MKZ 45NSW
+		DPX 45CURRENT
+		JPQ 45SRGARB
+45SWN&rarr;		<sup>1</sup>STE 45EXIT
+
+<hr>
+[Page header: "LMH GX7A 017"]
+
+		MKN 45NSW
+		JPQ #+3
+45SW&rarr;		<sup>1</sup>STE 45EXIT
+		MKZ 45NSW
+		MKN 45RWSW
+		hJPQ 45TYPECHK
+		SKX <sub>4</sub><sub>5</sub><sub>X</sub> LIST
+		MKZ 45GARBSW
+45GO&rarr;		DPX <sub>4</sub><sub>5</sub><sub>X</sub> 45B
+		MKZ <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> TX2MSW
+		<sup>3</sup><sup>4</sup>SPG { 604,331,,330,333}
+		<sup>1</sup><sup>1</sup>RSX <sub>4</sub><sub>5</sub><sub>X</sub> 45NUM	**TOGGLE
+		SKZ 45NSW
+		<sup>1</sup><sup>1</sup>RSX <sub>4</sub><sub>5</sub><sub>X</sub> 45CURRENT
+		<sup>2</sup>DPX <sub>4</sub><sub>5</sub><sub>X</sub> 45LIST
+		RFD <sub>4</sub><sub>5</sub>#+2
+		JPD #
+		<sup>1</sup>IOS <sub>4</sub><sub>1</sub> 20000
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30000
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 40000
+		MKZ <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> 45DORWD
+		MKZ 45REVSW
+		SXD 45CURRENT*
+		hJPQ 45DORWD
+45GO2&rarr;		SKZ 45NSW
+		JPQ 45RW?	[syntax, question mark cannot be part of symex]
+		SKZ 45GARBSW
+		JPQ 45READ
+		SXD <sub>4</sub><sub>5</sub><sub>X</sub> 0
+		hJPQ 45DORWD
+		DEX <sub>4</sub><sub>5</sub><sub>X</sub> 45CURRENT*
+		h<sup>-</sup><sup>1</sup>JPX<sub>4</sub><sub>5</sub><sub>X</sub> 45SCHBWD
+		JPQ 45RW?
+45SCHFWD&rarr;
+		SKX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 1
+45SF1&rarr;		45GF
+		SKX <sub>5</sub><sub>4</sub> 3160.
+		SNN 45LPSW
+		SKX <sub>5</sub><sub>4</sub> 16000.
+		hJPQ {SQ45DELAY}
+		45GFR
+45SF1A&rarr;		RXF <sub>5</sub><sub>4</sub> 45SIT1
+		h<sup>1</sup>TSD 45WA
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30000
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30300
+		JPQ #-3
+45SF2&rarr;		45SRM
+		45DELAY&equiv;1300.
+
+<hr>
+[Page header: "LMH GX7A 020"]
+
+		<sup>1</sup>ADX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45CURRENT
+		SKZ 45GARB
+		JPQ 45READ
+		h<sup>-</sup><sup>1</sup>JPX <sub>4</sub><sub>5</sub><sub>X</sub> 45SF1
+45RW?&rarr;		SKZ 45RWSW [so it's just symex with question mark, after all?]
+		JPQ 45WR
+45READ&rarr;		45GF
+		SKX <sub>5</sub><sub>4</sub> 3160.
+		SNN 45LPSW
+		SKX <sub>5</sub><sub>4</sub> 16000.
+		hJPQ {SQ45DELAY}
+		RXF <sub>5</sub><sub>4</sub> 45SIT3
+		45GFR
+		h<sup>1</sup>TSD 45WA
+		<sup>2</sup>SED 45LIST
+		JPQ 45COMMON
+		SKZ 45GARBSW
+		JPQ 45SF1A
+		hJPQ 45ERR
+45COMMON&rarr;
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30300
+		h<sup>1</sup>TSD 45LIST
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30000
+		<sup>1</sup><sup>1</sup>RSX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45LIST
+		<sup>2</sup>AUX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45LIST	**START SC CALC
+		<sup>1</sup><sup>1</sup>RSX <sub>4</sub><sub>5</sub><sub>X</sub> 45LIST
+		<sup>1</sup><sup>1</sup>AUX <sub>4</sub><sub>5</sub><sub>X</sub> 45B
+		DEX <sub>4</sub><sub>5</sub><sub>X</sub> 1
+		<sup>1</sup>DPX <sub>4</sub><sub>5</sub><sub>X</sub> 45TSD
+		SXL <sub>4</sub><sub>5</sub><sub>X</sub> 100000
+		hJPQ 45ERR
+		<sup>1</sup><sup>1</sup>RSX <sub>4</sub><sub>5</sub><sub>X</sub> 45LIST
+		<sup>1</sup>SKX <sub>4</sub><sub>5</sub><sub>X</sub><sub>|</sub><sub>4</sub><sub>5</sub><sub>X</sub> 0
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30300
+		INX <sub>4</sub><sub>5</sub><sub>X</sub> 1
+		h<sup>1</sup>JNX <sub>4</sub><sub>5</sub><sub>X</sub>#+2
+		JPQ 45ENDBLK
+45TSD&rarr;		h<sup>2</sup>TSD <sub>4</sub><sub>5</sub><sub>X</sub> 45LIST	**MOD
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30000
+		<sup>2</sup>AUX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45TSD*
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30300
+		h<sup>1</sup>TSD 45TSD*
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30300
+		<sup>1</sup>AUX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45TSD*
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30300
+		h<sup>1</sup>JNX <sub>4</sub><sub>5</sub><sub>X</sub> 45TSD
+45ENDBLK&rarr;
+		h<sup>1</sup>TSD E	**DUMMY SLOT
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30000
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30300
+
+<hr>
+[Page header: "LMH GX7A 021"]
 
 
 </code></pre></body></html>
