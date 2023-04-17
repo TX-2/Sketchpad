@@ -15,14 +15,12 @@ I52&rarr;		hJMP BLOCKMAKER
  ORIGIN|
 FRESH START&rarr;
 		CSQ<sub>4</sub><sub>0</sub> [opcode not mentioned in the handbook?]
-		MOVEIN AFFB&rarr;AFFB
+		MOVE|NAFFB&rarr;AFFB
 		hLDE NAFFB
 		STE AFFB
 		RSX <sub>&alpha;</sub> AFFB
 		LDA <sub>&alpha;</sub> NLIST
 		STA <sub>&alpha;</sub> LIST
-		[<sub>&alpha;</sub> may also be <sub>0</sub> on the next line.]
-		[May be possible to deduce from octal representation.]
 		<sup>-</sup><sup>1</sup>JPX <sub>&alpha;</sub> #-2
 
 <hr>
@@ -37,10 +35,7 @@ STARTS&rarr;		RXF <sub>4</sub><sub>7</sub> 47START
 		DPX 1
 		DPX 2
 		DPX 47TABLE
-		[Assuming that symbol before address is junk otnl.]
-		[Otherwise it would be some unknown syntax.]
-		[Unless it's * for deferred address, but it does not look like *.]
-		RXF <sub>5</sub><sub>4</sub> 200040
+		RXF <sub>5</sub><sub>4</sub> 200040 [some smudge before address, assuming junk]
 		RXF <sub>6</sub><sub>5</sub> KEYSTART
 		RXF <sub>7</sub><sub>6</sub> START76
 		MKZ MOVED
@@ -48,20 +43,20 @@ STARTS&rarr;		RXF <sub>4</sub><sub>7</sub> 47START
 		JPD #
 47START&rarr;
 		CSQ<sub>4</sub><sub>7</sub>
-47FIXL&rarr;		DPX PAGE1 				[Clear *PAGE1]
-		hRSX <sub>4</sub><sub>7</sub> ATBITS 		[X_47 = R(*ATBITS)]
-		SXD <sub>4</sub><sub>7</sub> 1 			[if X_47 != 1 skip to JPQ 47LITEIT]
-		JPQ #+2              			[else skip past it]
+47FIXL&rarr;		DPX PAGE1
+		hRSX <sub>4</sub><sub>7</sub> ATBITS
+		SXD <sub>4</sub><sub>7</sub> 1
+		JPQ #+2
 		JPQ 47LITEIT
-		<sup>2</sup>DPX <sub>?</sub> PAGE1 		[Load X_? into L(PAGE1)]
-		RSX <sub>?</sub> ATBITS+1
+		<sup>2</sup>DPX <sub>&alpha;</sub> PAGE1
+		RSX <sub>&alpha;</sub> ATBITS+1
 		RSX <sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
 		SXD <sub>&alpha;</sub> LINES-LIST
 		MKN <sub>1</sub><sub>.</sub><sub>6</sub> PAGE1
 		SXD <sub>&alpha;</sub> CIRCLES-LIST
 		MKN <sub>1</sub><sub>.</sub><sub>6</sub> PAGE1
 		SXD <sub>&alpha;</sub> SCALERS-LIST
-		MKN <sub>1</sub><sub>.</sub><sub>?</sub> PAGE1
+		MKN <sub>1</sub><sub>.</sub><sub>9</sub> PAGE1 [guessing that it's <sub>9</sub>, not legible]
 47FIXL1&rarr;
 		SXD <sub>&alpha;</sub> POINTS-LIST
 		MKN <sub>1</sub><sub>.</sub><sub>5</sub> PAGE1
@@ -75,7 +70,7 @@ STARTS&rarr;		RXF <sub>4</sub><sub>7</sub> 47START
 		MKN <sub>1</sub><sub>.</sub><sub>?</sub> PAGE1
 		RSX <sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
 		SXD <sub>&alpha;</sub> CONSTRAINTS-LIST
-		MKN <sub>1</sub><sub>.</sub><sub>?</sub> PAGE1
+		MKN <sub>1</sub><sub>.</sub><sub>3</sub> PAGE1
 		RSX <sub>&alpha;</sub> ATBITS+1
 		RSX <sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub> LIST+ATATAP
 		SXD <sub>&alpha;</sub> 0
@@ -89,7 +84,7 @@ STARTS&rarr;		RXF <sub>4</sub><sub>7</sub> 47START
 
 		SXD <sub>&alpha;</sub> FIXEDS-LIST
 		MKN <sub>1</sub><sub>.</sub><sub>7</sub> PAGE1
-		<sup>2</sup> RSX <sub>&alpha;</sub> PAGE1
+		<sup>2</sup> RSX<sub>&alpha;</sub> PAGE1
 47LITEIT&rarr;
 		MOVEB&times;DESIGNATED&rarr;22&times;PAGE1
 		hLDE PAGE1
@@ -101,8 +96,8 @@ STARTS&rarr;		RXF <sub>4</sub><sub>7</sub> 47START
 		hSTE SWITCH1
 		SED SWITCH2
 		JPQ 47TSD
-		hCOM SWITCH2
-		hITE SWITCH1
+		hCOM SWITCH2	** GET ALL NEW
+		hITE SWITCH1	** ONES INTO 47BUT
 		STE 47BUT
 		MOVE|SWITCH1&rarr;SWITCH2
 		hLDE 47BUT
@@ -115,7 +110,7 @@ STARTS&rarr;		RXF <sub>4</sub><sub>7</sub> 47START
 		DPX <sub>4</sub><sub>7</sub> 47TABLE
 		JPQ 47TSD
 47LOSTPEN&rarr;
-		SKZ <sub>4</sub><sub>.</sub><sub>?</sub> SWITCH	**HOLD
+		SKZ <sub>4</sub><sub>.</sub><sub>9</sub> SWITCH	**HOLD
 		JPQ 47TSD
 		MOVE|{ 40}&rarr;47BUT
 		JPQ 47BOTH
@@ -130,7 +125,7 @@ READIT&rarr;		<sup>1</sup>STE READITEX
 		STA 76BUT
 		INX <sub>?</sub> 1
 		DPX <sub>?</sub> 76TABLE
-PAGE1D&rarr;		SKZ <sub>1</sub><sub>.</sub><sub>6</sub> 76BUT
+PAGE1D&rarr;		SKZ <sub>1</sub><sub>.</sub><sub>6</sub> 76BUT [Handwritten "<- JUNK 2.1", "JUNK" is crossed out]
 		hJPQ STOPMOVEP
 		SKZ <sub>1</sub><sub>.</sub><sub>?</sub> 76BUT
 		hJPQ STARTDRAW
@@ -5494,14 +5489,12 @@ I52&rarr;		hJMP BLOCKMAKER
  ORIGIN|
 FRESH START&rarr;
 		CSQ<sub>4</sub><sub>0</sub> [opcode not mentioned in the handbook?]
-		MOVEIN AFFB&rarr;AFFB
+		MOVE|NAFFB&rarr;AFFB
 		hLDE NAFFB
 		STE AFFB
 		RSX <sub>&alpha;</sub> AFFB
 		LDA <sub>&alpha;</sub> NLIST
 		STA <sub>&alpha;</sub> LIST
-		[<sub>&alpha;</sub> may also be <sub>0</sub> on the next line.]
-		[May be possible to deduce from octal representation.]
 		<sup>-</sup><sup>1</sup>JPX <sub>&alpha;</sub> #-2
 
 <hr>
@@ -5516,10 +5509,7 @@ STARTS&rarr;		RXF <sub>4</sub><sub>7</sub> 47START
 		DPX 1
 		DPX 2
 		DPX 47TABLE
-		[Assuming that symbol before address is junk otnl.]
-		[Otherwise it would be some unknown syntax.]
-		[Unless it's * for deferred address, but it does not look like *.]
-		RXF <sub>5</sub><sub>4</sub> 200040
+		RXF <sub>5</sub><sub>4</sub> 200040 [some smudge before address, assuming junk]
 		RXF <sub>6</sub><sub>5</sub> KEYSTART
 		RXF <sub>7</sub><sub>6</sub> START76
 		MKZ MOVED
@@ -5527,20 +5517,20 @@ STARTS&rarr;		RXF <sub>4</sub><sub>7</sub> 47START
 		JPD #
 47START&rarr;
 		CSQ<sub>4</sub><sub>7</sub>
-47FIXL&rarr;		DPX PAGE1 				[Clear *PAGE1]
-		hRSX <sub>4</sub><sub>7</sub> ATBITS 		[X_47 = R(*ATBITS)]
-		SXD <sub>4</sub><sub>7</sub> 1 			[if X_47 != 1 skip to JPQ 47LITEIT]
-		JPQ #+2              			[else skip past it]
+47FIXL&rarr;		DPX PAGE1
+		hRSX <sub>4</sub><sub>7</sub> ATBITS
+		SXD <sub>4</sub><sub>7</sub> 1
+		JPQ #+2
 		JPQ 47LITEIT
-		<sup>2</sup>DPX <sub>?</sub> PAGE1 		[Load X_? into L(PAGE1)]
-		RSX <sub>?</sub> ATBITS+1
+		<sup>2</sup>DPX <sub>&alpha;</sub> PAGE1
+		RSX <sub>&alpha;</sub> ATBITS+1
 		RSX <sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
 		SXD <sub>&alpha;</sub> LINES-LIST
 		MKN <sub>1</sub><sub>.</sub><sub>6</sub> PAGE1
 		SXD <sub>&alpha;</sub> CIRCLES-LIST
 		MKN <sub>1</sub><sub>.</sub><sub>6</sub> PAGE1
 		SXD <sub>&alpha;</sub> SCALERS-LIST
-		MKN <sub>1</sub><sub>.</sub><sub>?</sub> PAGE1
+		MKN <sub>1</sub><sub>.</sub><sub>9</sub> PAGE1 [guessing that it's <sub>9</sub>, not legible]
 47FIXL1&rarr;
 		SXD <sub>&alpha;</sub> POINTS-LIST
 		MKN <sub>1</sub><sub>.</sub><sub>5</sub> PAGE1
@@ -5554,7 +5544,7 @@ STARTS&rarr;		RXF <sub>4</sub><sub>7</sub> 47START
 		MKN <sub>1</sub><sub>.</sub><sub>?</sub> PAGE1
 		RSX <sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
 		SXD <sub>&alpha;</sub> CONSTRAINTS-LIST
-		MKN <sub>1</sub><sub>.</sub><sub>?</sub> PAGE1
+		MKN <sub>1</sub><sub>.</sub><sub>3</sub> PAGE1
 		RSX <sub>&alpha;</sub> ATBITS+1
 		RSX <sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub> LIST+ATATAP
 		SXD <sub>&alpha;</sub> 0
@@ -5568,7 +5558,7 @@ STARTS&rarr;		RXF <sub>4</sub><sub>7</sub> 47START
 
 		SXD <sub>&alpha;</sub> FIXEDS-LIST
 		MKN <sub>1</sub><sub>.</sub><sub>7</sub> PAGE1
-		<sup>2</sup> RSX <sub>&alpha;</sub> PAGE1
+		<sup>2</sup> RSX<sub>&alpha;</sub> PAGE1
 47LITEIT&rarr;
 		MOVEB&times;DESIGNATED&rarr;22&times;PAGE1
 		hLDE PAGE1
@@ -5580,8 +5570,8 @@ STARTS&rarr;		RXF <sub>4</sub><sub>7</sub> 47START
 		hSTE SWITCH1
 		SED SWITCH2
 		JPQ 47TSD
-		hCOM SWITCH2
-		hITE SWITCH1
+		hCOM SWITCH2	** GET ALL NEW
+		hITE SWITCH1	** ONES INTO 47BUT
 		STE 47BUT
 		MOVE|SWITCH1&rarr;SWITCH2
 		hLDE 47BUT
@@ -5594,7 +5584,7 @@ STARTS&rarr;		RXF <sub>4</sub><sub>7</sub> 47START
 		DPX <sub>4</sub><sub>7</sub> 47TABLE
 		JPQ 47TSD
 47LOSTPEN&rarr;
-		SKZ <sub>4</sub><sub>.</sub><sub>?</sub> SWITCH	**HOLD
+		SKZ <sub>4</sub><sub>.</sub><sub>9</sub> SWITCH	**HOLD
 		JPQ 47TSD
 		MOVE|{ 40}&rarr;47BUT
 		JPQ 47BOTH
@@ -5609,7 +5599,7 @@ READIT&rarr;		<sup>1</sup>STE READITEX
 		STA 76BUT
 		INX <sub>?</sub> 1
 		DPX <sub>?</sub> 76TABLE
-PAGE1D&rarr;		SKZ <sub>1</sub><sub>.</sub><sub>6</sub> 76BUT
+PAGE1D&rarr;		SKZ <sub>1</sub><sub>.</sub><sub>6</sub> 76BUT [Handwritten "<- JUNK 2.1", "JUNK" is crossed out]
 		hJPQ STOPMOVEP
 		SKZ <sub>1</sub><sub>.</sub><sub>?</sub> 76BUT
 		hJPQ STARTDRAW
