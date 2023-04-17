@@ -5122,6 +5122,225 @@ LAST&rarr;		ZZLAST
 [Page header: "IES BOO7 001"]
 [Handwritten: "CONS 15 SEPT"]
 
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=137 doc_page=135 type=symex]
+[Page header: "IES BOO7 002"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=138 doc_page=136 type=equalities]
+[Page header: "IES BOO7 003"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=139 doc_page=137 type=equalities]
+[Page header: "IES BOO7 004"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=140 doc_page=138 type=macros]
+[Page header: "IES BOO7 005"]
+[No idea why some instructions are flush with left margin, preserving]
+
+&#9755;&#9755;DEF EITHER&equiv;P,Q,R,T,U,V&rarr;CODE
+RSX<sub>S</sub><sub>|</sub><sub>&alpha;</sub>LIST+CODE
+		JPX<sub>S</sub>EITH3
+EITH1&rarr;		LDA {-(?)} [seen this construction before, maybe &beta;?]
+		STA EITH
+		<sup>1</sup>DPX<sub>&alpha;</sub>EITH-5
+		REX<sub>S</sub>EITH3-EITH2-2
+		<sup>1</sup>DPX<sub>S</sub>EITH2
+		hBPQ <sub>S</sub>EITH2+1
+		RSX<sub>S</sub>EITH2
+		JPA #+2
+		COM A
+		SUB EITH
+		JPA #+4
+		ADD EITH
+		STA EITH
+		<sup>2</sup>DPX<sub>S</sub>EITH2
+<sup>-</sup><sup>1</sup>JPX<sub>S</sub>EITH1+4
+		REX<sub>&alpha;</sub>#
+		<sup>2</sup>RSX<sub>S</sub>EITH2
+INX<sub>S</sub>1
+		DPX<sub>S</sub><sub>|</sub><sub>&alpha;</sub>LIST+CODE
+		JPQ EITH3+2
+EITH&rarr;		0
+EITH2&rarr;		0	**BEST S,,S
+		hJMP P
+		hJMP Q
+		hJMP R
+		hJMP T
+		hJMP U
+		hJMP V
+EITH3&rarr;		SXL<sub>S</sub>EITH3-EITH2
+		JPQ EITH1
+		hBPQ<sub>S</sub>EITH2
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF DIFF&equiv;A&rarr;B=C&rarr;D
+LDA A
+SUB B
+hJOV D
+STA C
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF LDAB&equiv;P
+LDA P
+LDB P+1
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF STAB&equiv;P
+STA P
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=141 doc_page=139 type=macros]
+[Page header: "IES BOO7 006"]
+
+STB P+1
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF SUMM&equiv;A&rarr;B=C&rarr;D
+LDA A
+ADD B
+hJOV D
+STA C
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF PROD&equiv;A&times;B/C=D&rarr;E
+LDA A
+MUL B
+DIV C
+hJOV E
+STA D
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF SET|X&equiv;S,&beta;,&gamma;,&Delta;,&epsilon;,&lambda;
+		RSX<sub>S</sub><sub>|</sub><sub>&alpha;</sub>LIST+CVTS+2
+		RSX<sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub>LIST+CVTS+4
+		RSX<sub>&gamma;</sub><sub>|</sub><sub>&alpha;</sub>LIST+CVTS+6
+		RSX<sub>&Delta;</sub><sub>|</sub><sub>&alpha;</sub>LIST+CVTS+10
+		RSX<sub>&epsilon;</sub><sub>|</sub><sub>&alpha;</sub>LIST+CVTS+12
+		RSX<sub>&lambda;</sub><sub>|</sub><sub>&alpha;</sub>LIST+CVTS+14
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF NCONGEN&equiv;NAME,SIZE,LET,COMP,NCON,CHVAR
+		MASBL,4,,CONSTRAINTS-LIST
+		#-MASBL-NLIST,,#+MASBL-NLIST
+		-2,
+		#-NLIST,,#-NLIST
+		NAME
+hJMP CCFR+1
+		DEGEN	**HOWBIG
+		0	**GETIT
+		DEGEN	**MOVEIT
+		SIZE
+		LET
+		CONSTK
+		0	**TUPLE
+		0	**VARLOC
+hJMP CCFR-COMP
+		NCON
+		CHVAR
+		0
+		0
+		0
+&#9755;&#9755;EMD
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=142 doc_page=140 type=macros]
+[Page header: "IES BOO7 007"]
+
+&#9755;&#9755;DEF WHEREIS&equiv;&beta;&rarr;P
+		REX <sub>&alpha;</sub><sub>|</sub><sub>&beta;</sub>
+		RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub>LIST+TYPE
+		hBPQ<sub>S</sub>LIST+WHERE
+		STA P
+		STB P+1
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF DISTANCE&equiv;&gamma;&rarr;&Delta;=R&rarr;BADOV
+		WHEREIS&equiv;&gamma;&rarr;DELTA1
+		WHEREIS&equiv;&Delta;
+		SUB DELTA1
+		hJOV BADOV
+		EXA B
+		SUB DELTA1+1
+		hJOV BADOV
+		hJPQ PYTHAGORIAN
+		hJOV BADOV
+		STA R
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF GETVAL&equiv;P,Q,R,U&times;&alpha;&rarr;V
+		RSX<sub>S</sub><sub>|</sub><sub>&alpha;</sub>LIST+TYPE
+		RSX<sub>S</sub><sub>|</sub><sub>S</sub>LIST+VARLOC
+		LDA<sub>S</sub><sub>|</sub><sub>&alpha;</sub>LIST+P
+		STA V+P
+		LDB<sub>S</sub><sub>|</sub><sub>&alpha;</sub>LIST+Q
+		STB V+Q
+		LDC<sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub>LIST+R
+		STC V+R
+		LDD<sub>S</sub><sub>|</sub><sub>&alpha;</sub>LIST+U
+		STD V+U
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF CDIFF&equiv;&beta;&rarr;&gamma;=R&rarr;BADOV
+		WHEREIS&equiv;&gamma;&rarr;R
+		WHEREIS&equiv;&beta;
+		SUB R
+		hJOV BADOV
+		STA R
+		DIFF&equiv;B&rarr;R+1=R+1&rarr;BADOV
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF NCONGENSP&equiv;CODE,NAME,SIZE,LET,COMP,NCON,CHVAR
+		MASBL,4,,CONSTRAINTS-LIST
+		CODE
+		-2,
+		#-NLIST,,#-NLIST
+		NAME
+		hJMP CCFR+1	**DISPLAY
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=143 doc_page=141 type=macros]
+[Page header: "IES BOO7 010"]
+
+		DEGEN	**HOWBIG
+		0
+		DEGEN	**MOVIT
+		SIZE
+		LET
+		CONSTK
+		0	**TUPLE
+		0	**VARLOC
+		hJMP CCFR-COMP
+		NCON
+		CHVAR
+		0
+		0
+		0
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF SUBR&equiv;P
+		<sup>1</sup>STE SUBR1
+		P
+SUBR1&rarr;		JPQ #
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF PYTH&equiv;P&rarr;Q=R&rarr;U
+		LDA P
+		LDB P+1
+		SUB Q
+		hJOV U-(Q)+(Q)
+		EXA B-(Q)+(Q)
+		SUB Q+1
+		hJOV U-(Q)+(Q)
+hJPQ PYTHAGORIAN
+		hJOV U
+		STA R
+&#9755;&#9755;EMD
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=144 doc_page=142 type=main]
+[Page header: "IES BOO7 011"]
 
 </code></pre></body></html>
 <html><body style='font-size:150%'><pre><code>
@@ -10248,5 +10467,224 @@ LAST&rarr;		ZZLAST
 [Page header: "IES BOO7 001"]
 [Handwritten: "CONS 15 SEPT"]
 
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=137 doc_page=135 type=symex]
+[Page header: "IES BOO7 002"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=138 doc_page=136 type=equalities]
+[Page header: "IES BOO7 003"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=139 doc_page=137 type=equalities]
+[Page header: "IES BOO7 004"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=140 doc_page=138 type=macros]
+[Page header: "IES BOO7 005"]
+[No idea why some instructions are flush with left margin, preserving]
+
+&#9755;&#9755;DEF EITHER&equiv;P,Q,R,T,U,V&rarr;CODE
+RSX<sub>S</sub><sub>|</sub><sub>&alpha;</sub>LIST+CODE
+		JPX<sub>S</sub>EITH3
+EITH1&rarr;		LDA {-(?)} [seen this construction before, maybe &beta;?]
+		STA EITH
+		<sup>1</sup>DPX<sub>&alpha;</sub>EITH-5
+		REX<sub>S</sub>EITH3-EITH2-2
+		<sup>1</sup>DPX<sub>S</sub>EITH2
+		hBPQ <sub>S</sub>EITH2+1
+		RSX<sub>S</sub>EITH2
+		JPA #+2
+		COM A
+		SUB EITH
+		JPA #+4
+		ADD EITH
+		STA EITH
+		<sup>2</sup>DPX<sub>S</sub>EITH2
+<sup>-</sup><sup>1</sup>JPX<sub>S</sub>EITH1+4
+		REX<sub>&alpha;</sub>#
+		<sup>2</sup>RSX<sub>S</sub>EITH2
+INX<sub>S</sub>1
+		DPX<sub>S</sub><sub>|</sub><sub>&alpha;</sub>LIST+CODE
+		JPQ EITH3+2
+EITH&rarr;		0
+EITH2&rarr;		0	**BEST S,,S
+		hJMP P
+		hJMP Q
+		hJMP R
+		hJMP T
+		hJMP U
+		hJMP V
+EITH3&rarr;		SXL<sub>S</sub>EITH3-EITH2
+		JPQ EITH1
+		hBPQ<sub>S</sub>EITH2
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF DIFF&equiv;A&rarr;B=C&rarr;D
+LDA A
+SUB B
+hJOV D
+STA C
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF LDAB&equiv;P
+LDA P
+LDB P+1
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF STAB&equiv;P
+STA P
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=141 doc_page=139 type=macros]
+[Page header: "IES BOO7 006"]
+
+STB P+1
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF SUMM&equiv;A&rarr;B=C&rarr;D
+LDA A
+ADD B
+hJOV D
+STA C
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF PROD&equiv;A&times;B/C=D&rarr;E
+LDA A
+MUL B
+DIV C
+hJOV E
+STA D
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF SET|X&equiv;S,&beta;,&gamma;,&Delta;,&epsilon;,&lambda;
+		RSX<sub>S</sub><sub>|</sub><sub>&alpha;</sub>LIST+CVTS+2
+		RSX<sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub>LIST+CVTS+4
+		RSX<sub>&gamma;</sub><sub>|</sub><sub>&alpha;</sub>LIST+CVTS+6
+		RSX<sub>&Delta;</sub><sub>|</sub><sub>&alpha;</sub>LIST+CVTS+10
+		RSX<sub>&epsilon;</sub><sub>|</sub><sub>&alpha;</sub>LIST+CVTS+12
+		RSX<sub>&lambda;</sub><sub>|</sub><sub>&alpha;</sub>LIST+CVTS+14
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF NCONGEN&equiv;NAME,SIZE,LET,COMP,NCON,CHVAR
+		MASBL,4,,CONSTRAINTS-LIST
+		#-MASBL-NLIST,,#+MASBL-NLIST
+		-2,
+		#-NLIST,,#-NLIST
+		NAME
+hJMP CCFR+1
+		DEGEN	**HOWBIG
+		0	**GETIT
+		DEGEN	**MOVEIT
+		SIZE
+		LET
+		CONSTK
+		0	**TUPLE
+		0	**VARLOC
+hJMP CCFR-COMP
+		NCON
+		CHVAR
+		0
+		0
+		0
+&#9755;&#9755;EMD
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=142 doc_page=140 type=macros]
+[Page header: "IES BOO7 007"]
+
+&#9755;&#9755;DEF WHEREIS&equiv;&beta;&rarr;P
+		REX <sub>&alpha;</sub><sub>|</sub><sub>&beta;</sub>
+		RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub>LIST+TYPE
+		hBPQ<sub>S</sub>LIST+WHERE
+		STA P
+		STB P+1
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF DISTANCE&equiv;&gamma;&rarr;&Delta;=R&rarr;BADOV
+		WHEREIS&equiv;&gamma;&rarr;DELTA1
+		WHEREIS&equiv;&Delta;
+		SUB DELTA1
+		hJOV BADOV
+		EXA B
+		SUB DELTA1+1
+		hJOV BADOV
+		hJPQ PYTHAGORIAN
+		hJOV BADOV
+		STA R
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF GETVAL&equiv;P,Q,R,U&times;&alpha;&rarr;V
+		RSX<sub>S</sub><sub>|</sub><sub>&alpha;</sub>LIST+TYPE
+		RSX<sub>S</sub><sub>|</sub><sub>S</sub>LIST+VARLOC
+		LDA<sub>S</sub><sub>|</sub><sub>&alpha;</sub>LIST+P
+		STA V+P
+		LDB<sub>S</sub><sub>|</sub><sub>&alpha;</sub>LIST+Q
+		STB V+Q
+		LDC<sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub>LIST+R
+		STC V+R
+		LDD<sub>S</sub><sub>|</sub><sub>&alpha;</sub>LIST+U
+		STD V+U
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF CDIFF&equiv;&beta;&rarr;&gamma;=R&rarr;BADOV
+		WHEREIS&equiv;&gamma;&rarr;R
+		WHEREIS&equiv;&beta;
+		SUB R
+		hJOV BADOV
+		STA R
+		DIFF&equiv;B&rarr;R+1=R+1&rarr;BADOV
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF NCONGENSP&equiv;CODE,NAME,SIZE,LET,COMP,NCON,CHVAR
+		MASBL,4,,CONSTRAINTS-LIST
+		CODE
+		-2,
+		#-NLIST,,#-NLIST
+		NAME
+		hJMP CCFR+1	**DISPLAY
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=143 doc_page=141 type=macros]
+[Page header: "IES BOO7 010"]
+
+		DEGEN	**HOWBIG
+		0
+		DEGEN	**MOVIT
+		SIZE
+		LET
+		CONSTK
+		0	**TUPLE
+		0	**VARLOC
+		hJMP CCFR-COMP
+		NCON
+		CHVAR
+		0
+		0
+		0
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF SUBR&equiv;P
+		<sup>1</sup>STE SUBR1
+		P
+SUBR1&rarr;		JPQ #
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF PYTH&equiv;P&rarr;Q=R&rarr;U
+		LDA P
+		LDB P+1
+		SUB Q
+		hJOV U-(Q)+(Q)
+		EXA B-(Q)+(Q)
+		SUB Q+1
+		hJOV U-(Q)+(Q)
+hJPQ PYTHAGORIAN
+		hJOV U
+		STA R
+&#9755;&#9755;EMD
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=144 doc_page=142 type=main]
+[Page header: "IES BOO7 011"]
 
 </code></pre></body></html>

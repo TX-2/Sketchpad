@@ -5008,4 +5008,215 @@ LAST@arr@	ZZLAST
 [Page header: "IES BOO7 001"]
 [Handwritten: "CONS 15 SEPT"]
 
+[meta file_name=102726903-05-01-acc.pdf pdf_page=137 doc_page=135 type=symex]
+[Page header: "IES BOO7 002"]
 
+[meta file_name=102726903-05-01-acc.pdf pdf_page=138 doc_page=136 type=equalities]
+[Page header: "IES BOO7 003"]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=139 doc_page=137 type=equalities]
+[Page header: "IES BOO7 004"]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=140 doc_page=138 type=macros]
+[Page header: "IES BOO7 005"]
+[No idea why some instructions are flush with left margin, preserving]
+
+@hand@@hand@DEF EITHER@hamb@P,Q,R,T,U,V@arr@CODE
+RSX@sub_S@@sub_pipe@@sub_alpha@LIST+CODE
+		JPX@sub_S@EITH3
+EITH1@arr@	LDA {-(?)} [seen this construction before, maybe @beta@?]
+		STA EITH
+		@sup_1@DPX@sub_alpha@EITH-5
+		REX@sub_S@EITH3-EITH2-2
+		@sup_1@DPX@sub_S@EITH2
+		hBPQ @sub_S@EITH2+1
+		RSX@sub_S@EITH2
+		JPA #+2
+		COM A
+		SUB EITH
+		JPA #+4
+		ADD EITH
+		STA EITH
+		@sup_2@DPX@sub_S@EITH2
+@sup_minus@@sup_1@JPX@sub_S@EITH1+4
+		REX@sub_alpha@#
+		@sup_2@RSX@sub_S@EITH2
+INX@sub_S@1
+		DPX@sub_S@@sub_pipe@@sub_alpha@LIST+CODE
+		JPQ EITH3+2
+EITH@arr@	0
+EITH2@arr@	0	**BEST S,,S
+		hJMP P
+		hJMP Q
+		hJMP R
+		hJMP T
+		hJMP U
+		hJMP V
+EITH3@arr@	SXL@sub_S@EITH3-EITH2
+		JPQ EITH1
+		hBPQ@sub_S@EITH2
+@hand@@hand@EMD
+
+@hand@@hand@DEF DIFF@hamb@A@arr@B=C@arr@D
+LDA A
+SUB B
+hJOV D
+STA C
+@hand@@hand@EMD
+
+@hand@@hand@DEF LDAB@hamb@P
+LDA P
+LDB P+1
+@hand@@hand@EMD
+
+@hand@@hand@DEF STAB@hamb@P
+STA P
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=141 doc_page=139 type=macros]
+[Page header: "IES BOO7 006"]
+
+STB P+1
+@hand@@hand@EMD
+
+@hand@@hand@DEF SUMM@hamb@A@arr@B=C@arr@D
+LDA A
+ADD B
+hJOV D
+STA C
+@hand@@hand@EMD
+
+@hand@@hand@DEF PROD@hamb@A@times@B/C=D@arr@E
+LDA A
+MUL B
+DIV C
+hJOV E
+STA D
+@hand@@hand@EMD
+
+@hand@@hand@DEF SET|X@hamb@S,@beta@,@gamma@,@delta@,@eps@,@lambda@
+		RSX@sub_S@@sub_pipe@@sub_alpha@LIST+CVTS+2
+		RSX@sub_beta@@sub_pipe@@sub_alpha@LIST+CVTS+4
+		RSX@sub_gamma@@sub_pipe@@sub_alpha@LIST+CVTS+6
+		RSX@sub_delta@@sub_pipe@@sub_alpha@LIST+CVTS+10
+		RSX@sub_eps@@sub_pipe@@sub_alpha@LIST+CVTS+12
+		RSX@sub_lambda@@sub_pipe@@sub_alpha@LIST+CVTS+14
+@hand@@hand@EMD
+
+@hand@@hand@DEF NCONGEN@hamb@NAME,SIZE,LET,COMP,NCON,CHVAR
+		MASBL,4,,CONSTRAINTS-LIST
+		#-MASBL-NLIST,,#+MASBL-NLIST
+		-2,
+		#-NLIST,,#-NLIST
+		NAME
+hJMP CCFR+1
+		DEGEN	**HOWBIG
+		0	**GETIT
+		DEGEN	**MOVEIT
+		SIZE
+		LET
+		CONSTK
+		0	**TUPLE
+		0	**VARLOC
+hJMP CCFR-COMP
+		NCON
+		CHVAR
+		0
+		0
+		0
+@hand@@hand@EMD
+	
+[meta file_name=102726903-05-01-acc.pdf pdf_page=142 doc_page=140 type=macros]
+[Page header: "IES BOO7 007"]
+
+@hand@@hand@DEF WHEREIS@hamb@@beta@@arr@P
+		REX @sub_alpha@@sub_pipe@@sub_beta@
+		RSX @sub_S@@sub_pipe@@sub_alpha@LIST+TYPE
+		hBPQ@sub_S@LIST+WHERE
+		STA P
+		STB P+1
+@hand@@hand@EMD
+
+@hand@@hand@DEF DISTANCE@hamb@@gamma@@arr@@delta@=R@arr@BADOV
+		WHEREIS@hamb@@gamma@@arr@DELTA1
+		WHEREIS@hamb@@delta@
+		SUB DELTA1
+		hJOV BADOV
+		EXA B
+		SUB DELTA1+1
+		hJOV BADOV
+		hJPQ PYTHAGORIAN
+		hJOV BADOV
+		STA R
+@hand@@hand@EMD
+
+@hand@@hand@DEF GETVAL@hamb@P,Q,R,U@times@@alpha@@arr@V
+		RSX@sub_S@@sub_pipe@@sub_alpha@LIST+TYPE
+		RSX@sub_S@@sub_pipe@@sub_S@LIST+VARLOC
+		LDA@sub_S@@sub_pipe@@sub_alpha@LIST+P
+		STA V+P
+		LDB@sub_S@@sub_pipe@@sub_alpha@LIST+Q
+		STB V+Q
+		LDC@sub_alpha@@sub_pipe@@sub_alpha@LIST+R
+		STC V+R
+		LDD@sub_S@@sub_pipe@@sub_alpha@LIST+U
+		STD V+U
+@hand@@hand@EMD
+
+@hand@@hand@DEF CDIFF@hamb@@beta@@arr@@gamma@=R@arr@BADOV
+		WHEREIS@hamb@@gamma@@arr@R
+		WHEREIS@hamb@@beta@
+		SUB R
+		hJOV BADOV
+		STA R
+		DIFF@hamb@B@arr@R+1=R+1@arr@BADOV
+@hand@@hand@EMD
+
+@hand@@hand@DEF NCONGENSP@hamb@CODE,NAME,SIZE,LET,COMP,NCON,CHVAR
+		MASBL,4,,CONSTRAINTS-LIST
+		CODE
+		-2,
+		#-NLIST,,#-NLIST
+		NAME
+		hJMP CCFR+1	**DISPLAY
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=143 doc_page=141 type=macros]
+[Page header: "IES BOO7 010"]
+
+		DEGEN	**HOWBIG
+		0
+		DEGEN	**MOVIT
+		SIZE
+		LET
+		CONSTK
+		0	**TUPLE
+		0	**VARLOC
+		hJMP CCFR-COMP
+		NCON
+		CHVAR
+		0
+		0
+		0
+@hand@@hand@EMD
+
+@hand@@hand@DEF SUBR@hamb@P
+		@sup_1@STE SUBR1
+		P
+SUBR1@arr@	JPQ #
+@hand@@hand@EMD
+
+@hand@@hand@DEF PYTH@hamb@P@arr@Q=R@arr@U
+		LDA P
+		LDB P+1
+		SUB Q
+		hJOV U-(Q)+(Q)
+		EXA B-(Q)+(Q)
+		SUB Q+1
+		hJOV U-(Q)+(Q)
+hJPQ PYTHAGORIAN
+		hJOV U
+		STA R
+@hand@@hand@EMD
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=144 doc_page=142 type=main]
+[Page header: "IES BOO7 011"]
+	
