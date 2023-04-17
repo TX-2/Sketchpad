@@ -5219,4 +5219,130 @@ hJPQ PYTHAGORIAN
 
 [meta file_name=102726903-05-01-acc.pdf pdf_page=144 doc_page=142 type=main]
 [Page header: "IES BOO7 011"]
-	
+
+ NLIST|
+NLISTTT@arr@
+		CNLAST-NLIST
+ IPCONS-LIST+NLIST|
+		[Listing below contains macro invocations, followed by their   ]
+                [expansions. The expansions are omitted from the transcription,]
+                [where indicated, since assembler should produce them from the ]
+                [macro definitions anyway. Long lines are broken down in the   ]
+                [listing using minus-before-carriage-return line continuation  ]
+                [trick, those are omitted from transcription as well.          ]
+		**INSTANCE - POINT
+C1@arr@		NCONGENSP@hamb@(CN10-NLIST+1,,CONSTRAINTS+SPECB+1-LIST),(35,22,,37,30),(16,16,,0),43,1,2,2
+		[Macro expansion omitted]
+		**THING ON LINE
+C2@arr@		NCONGENSP@hamb@(CONSTRAINTS+SPECB+1-LIST,,#-NLIST+MASBL),(35,30,,33,36),(16,16,,0),33,2,1,3
+		[Macro expansion omitted]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=145 doc_page=143 type=main]
+[Page header: "IES BOO7 012"]
+
+		[Macro expansion (carried over from previous page) omitted]
+		**THING ON A CIRCLE
+C3@arr@		NCONGEN@hamb@(41,31,,22,36),(16,16,,0),22,3,1,3
+		[Macro expanson omitted]
+		**VERTICAL THING
+C4@arr@		NCONGEN@hamb@(41,45,,21,30),(14,12,,0),24,4,1,1
+		[Macro expanson omitted]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=146 doc_page=144 type=main]
+[Page header: "IES BOO7 013"]
+
+		[Macro expansion (carried over from the previous page) omitted]
+		**HORIZ OR VERT LINE
+C5@arr@		NCONGEN@hamb@(42,45,,36,27),(16,14,,0),27,5,1,2
+		[Macro expansion omitted]
+		**THING PARALLEL TO LINE
+C6@arr@		NCONGEN@hamb@(33,43,,37,43),(16,16,,0),30,7,1,3
+		[Macro expansion omitted]
+		**MULTIPLE DISTANCE
+C7@arr@		NCONGEN@hamb@(42,30,,23,34),(22,20,,0),34,10,1,4
+		[Macro expansion omitted]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=147 doc_page=145 type=main]
+[Page header: "IES BOO7 014"]
+
+		[Macro expansion (carried over from the previous page) omitted]
+		** MULTIPLE SIZE
+C8@arr@		NCONGEN@hamb@(24,51,,30,42),(16,16,,0),42,11,1,2
+		[Macro expansion omitted]
+		**SCALER = DISTANCE
+C9@arr@		NCONGEN@hamb@(30,23,,24,42),(16,16,,0),23,12,1,3
+		[Macro expansion omitted]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=148 doc_page=146 type=main]
+[Page header: "IES BOO7 015"]
+
+		[Macro expansion (carried over from the previous page) omitted]
+		**SCALER = SIZE
+C10@arr@	NCONGEN@hamb@(30,42,,24,42),(14,14,,0),21,13,1,2
+		[Macro expansion omitted]
+		**FULL SIZE INSTANCE
+C11@arr@	NCONGEN@hamb@(33,33,,44,25),(12,12,,0),25,14,1,1
+		[Macro expansion omitted]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=149 doc_page=147 type=main]
+[Page header: "IES BOO7 016"]
+
+		[Macro expansion (carried over from the previous page) omitted]
+		**MID POINT
+C12@arr@	NCONGEN@hamb@(37,23,,30,34),(16,16,,0),47,20,2,3
+		[Macro expansion omitted]
+		**FOLD SIZE CONTROL
+C13@arr@	NCONGEN@hamb@(22,42,,25,6),(14,12,,0),6,21,1,1
+		[Macro expansion omitted]
+		
+[meta file_name=102726903-05-01-acc.pdf pdf_page=150 doc_page=148 type=main]
+[Page header: "IES BOO7 017"]
+
+		[Macro expansion (carried over from the previous page) omitted]
+		**POINTS NEXT NUMBER
+C14@arr@	NCONGEN@hamb@(35,39,,20,37),(16,14,,0),36,23,2,2
+		[Macro expansion omitted]
+		**HOLD LENGTH
+C15@arr@	NCONGEN@hamb@(23,23,,36,27),(16,14,,0),46,24,1,2
+		[Macro expansion omitted]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=151 doc_page=149 type=main]
+[Page header: "IES BOO7 020"]
+
+		[Macro expansion (carried over from the previous page) omitted]
+		** # = FORCE
+C16@arr@	NCONGEN@hamb@(24,22,,41,25),(20,16,,0),50,25,1,1
+		[Macro expansion omitted]
+		**PARPLLEL LINES [sic, typo in the listing]
+CN10@arr@	NCONGENSP@hamb@(#-NLIST-MASBL,,C1-NLIST+1),(37,41,,36,37),(22,20,,0),37,6,1,4
+		[Macro expansion omitted]
+		
+[meta file_name=102726903-05-01-acc.pdf pdf_page=152 doc_page=150 type=main]
+[Page header: "IES BOO7 021"]
+
+		[Macro expansion (carried over from the previous page) omitted]
+CNLAST@arr@	0
+ CCFR-30|
+CCFR30@arr@	0
+		0
+		0
+		hJMP FORCE
+		hJMP HOLDL
+		hJMP PNNU1
+		hJMP PNNU2
+		hJMP 6FSC
+CCFR20@arr@	hJMP MIDP1
+		hJMP MIDP2
+DEGEN1@arr@	@sup_1@STE #+1
+		JPQ #
+CCFR14@arr@	hJMP IBFSCOMP
+		hJMP SIZECOMP
+		hJMP DISTCOMP
+		hJMP MSCOMP
+CCFR10@arr@	hJMP MDISCOMP
+		hJMP TPTLCOMP
+		hJMP PRLCOMP
+		hJMP IBVERTCOMP
+		hJMP ONCIRCCOMP
+CCFR2@arr@	hJMP ONLINECOMP
+ ORIGIN|
