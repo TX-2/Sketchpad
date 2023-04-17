@@ -4740,3 +4740,272 @@ LIST2@arr@	SKX @sub_gamma@ ?	** REL RD ADDR	[syntax]
 [meta file_name=102726903-05-01-acc.pdf pdf_page=131 doc_page=129 type=code]
 [Page header: "LMH GX7A 026"]
 
+		JPQ 45MCA3
+45MCA2@arr@	@sup_1@@sup_1@RSX @sub_T@@sub_pipe@@sub_S@ LIST
+		SXD @sub_T@ 0
+		JPQ #+2
+		@sup_1@ADX @sub_gamma@@sub_pipe@@sub_S@ LIST
+		@sup_1@ADX @sub_gamma@@sub_pipe@@sub_S@ LIST+1
+		@sup_2@ADX @sub_gamma@@sub_pipe@@sub_S@ LIST+1
+45MCA3@arr@	DEX @sub_S@ 2
+		SXL @sub_S@@sub_pipe@@sub_alpha@ 0
+		JPQ 45MCA2
+		@sup_1@@sup_6@AUX @sub_alpha@@sub_pipe@@sub_alpha@ LIST
+		SXL @sub_beta@@sub_pipe@@sub_alpha@ 0
+		JPQ 45MCA1
+45MERGE2@arr@
+		@sup_1@@sup_1@RSX @sub_alpha@ LIST2
+		INX @sub_alpha@ MASTERS-LIST
+		LGORR@hamb@SPECB@times@@sub_alpha@=S@arr@45MG3
+		hJPQ 45PUT
+		@sup_1@@sup_1@RSX @sub_beta@ LIST2
+		@sup_1@@sup_1@AUX @sub_beta@@sub_pipe@@sub_beta@ LIST
+		@sup_1@DPX @sub_beta@ LIST
+		DEX @sub_alpha@ 2
+		SKX @sub_beta@ 2002
+		@sup_2@DPX @sub_beta@@sub_pipe@@sub_alpha@ LIST
+		hJPQ 45PUT
+45EXIT@arr@	JPQ ?
+45MG3@arr@	@sup_1@STE 45MG3X
+		SKX @sub_beta@ MASTERS-LIST	** @beta@=OLD RINGS
+		LGORR@hamb@SPECB@times@@beta@=S@arr@45MG4
+		hJPQ 45SWITCHRINGS
+45MG3X@arr@	JPQ ?
+45MG4@arr@	@sup_1@STE 45MG4X
+		hLDE @sub_beta@ LIST+NAME
+		SED @sub_alpha@ LIST+NAME
+		JPQ #+2
+45MG4X@arr@	JPQ ?
+		@sup_1@DPX @sub_beta@ 45MG5A	**SAVE @beta@ LEVEL
+		LGORR@hamb@SPECB@times@@alpha@=S@arr@45MG5
+		hJPQ 45FREE
+		JPQ 45MG3X*
+45MG5@arr@	@sup_1@STE 45MG5X*
+45MG5A@arr@	SKX @sub_beta@ ?
+		LGORR@hamb@SPECB@times@@beta@=S@arr@45MG6
+		hJPQ 45SWITCHRINGS
+45MG5X@arr@	JPQ ?
+45MG6@arr@	@sup_1@STE 45MG6X
+		hLDE @sub_beta@ LIST+NAME
+		SED @sub_alpha@ LIST+NAME
+		JPQ #+2
+45MG6X@arr@	JPQ ?
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=132 doc_page=130 type=code]
+[Page header: "LMH GX7A 027"]
+
+		@sup_1@@sup_1@RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+(SPECB)+1
+		SXD @sub_S@@sub_pipe@@sub_alpha@ SPECB+1	**RING EMPTY?
+		JPQ 45MG7
+		COMBHL@hamb@SPECB@times@@alpha@@arr@SPECB@times@@beta@
+45MG7@arr@	hJPQ 45FREE
+		JPQ 45MG5X*
+45SWITCHRINGS@arr@
+		hSKX @sub_gamma@@sub_pipe@@sub_beta@ 0
+		hJMP #+2
+45FREE@arr@	hSKX @sub_gamma@ FREES-LIST
+		@sup_1@STE 45FREEX
+		CHGRL@hamb@TYPE@times@@alpha@@arr@SPECB@times@@gamma@
+45FREEX@arr@
+		JPQ ?
+45PUT@arr@	@sup_1@STE 45PUTX
+		SKX @sub_gamma@ FREES-LIST
+		PUTL@hamb@TYPE@times@@alpha@@arr@SPECB@times@@gamma@
+45PUTX@arr@	JPQ ?
+45LAST INSTR@arr@
+		#-45SRN+1
+		**TX-2 TAPE PROGRAMS
+		**TX2 921-3
+TX2WR@arr@	@sup_1@STE 45EXIT
+		hJPQ 45TYPECHK
+		hJPQ TX2SCOPE
+		MKN 45RWSW
+		JES @sub_3@@sub_5@ TX2TOGCHK
+		@sup_2@DPX @sub_3@@sub_4@ 45MWA3
+		SKX @sub_3@@sub_5@ LIST	**START CORE
+		@sup_1@DPX @sub_3@@sub_5@ 45B
+		@sup_1@@sup_1@RSX @sub_3@@sub_7@ LIST
+		INX @sub_3@@sub_7@ LIST-1	**END CORE
+TX2K1@arr@	SKX @sub_3@@sub_6@ 333427
+		@sup_2@DPX @sub_3@@sub_6@ LIST
+		@sup_1@DPX 45WA	**SUM CHK
+		WR@delta@,TX2ERR
+TX2MSG@arr@	hJPQ TX2RESET
+		@sup_1@@sup_1@RSX @sub_4@@sub_5@@sub_X@ 45LIST	**LENGTH
+		@sup_1@DPX @sub_4@@sub_5@@sub_X@ TX2WA3
+		MKZ 45GARBSW
+		MKZ @sub_M@@sub_E@@sub_T@@sub_A@ 45NORMSG
+		@sup_1@@sup_2@RSX @sub_4@@sub_5@@sub_X@{TPK@beta@}+3	**NXT FREE BLOCK
+		@sup_1@DPX @sub_4@@sub_5@@sub_X@ 45MWA3
+		RXF @sub_7@@sub_6@ 45EXIT*
+		SKN 45RSW
+		RXF @sub_7@@sub_6@ 45MERGE
+		RFD @sub_4@@sub_5@@sub_L@@sub_W@30000
+		@sup_6@TSD 45MK1***CR
+TX2K2@arr@	@sup_6@TSD { 43,47,,55,2}	**TX-2
+		
+[meta file_name=102726903-05-01-acc.pdf pdf_page=133 doc_page=131 type=code]
+[Page header: "LMH GX7A 030"]
+
+		@sup_5@TSD TX2K2*
+		@sup_4@TSD TX2K2*
+		@sup_3@TSD TX2K2*
+		@sup_6@TSD 45MK2***SP
+		@sup_3@TSD 45MK1***M
+		@sup_6@TSD TX2K2***T
+		JPQ 45MK2
+TX2SCOPE@arr@
+		@sup_1@STE TX2SCOPEX
+		h@sup_1@IOS @sub_5@@sub_4@ 30000
+		@sup_1@IOS @sub_5@@sub_4@ 40000
+		@sup_1@DPX @sub_4@@sub_5@@sub_L@@sub_W@ 45LWRET
+		h@sup_1@DPX @sub_6@@sub_0@ TX2SCOPERET
+		SKX @sub_6@@sub_0@{JPD #}	[syntax, how is this interpreted?]
+		@sup_2@DPX @sub_3@@sub_4@ TX2WA1
+		@sup_1@DPX @sub_3@@sub_5@ TX2WA1
+		@sup_2@DPX @sub_3@@sub_6@ TX2WA2
+		@sup_1@DPX @sub_3@@sub_7@ TX2WA2
+		MKN @sub_M@@sub_E@@sub_T@@sub_A@ TX2MSW
+TX2SCOPEX@arr@
+		JPQ ?
+TX2ERR@arr@	hJPQ TX2RESET
+		SKX @sub_4@@sub_5@@sub_L@@sub_W@ 45LWRET*
+		RFD @sub_7@@sub_6@ 45EXIT*
+TX2RESET@arr@
+		@sup_1@STE TX2RESETX
+		@sup_1@@sup_2@RSX @sub_3@@sub_4@ TX2WA1
+		@sup_1@@sup_1@RSX @sub_3@@sub_5@ TX2WA1
+		@sup_1@@sup_2@RSX @sub_3@@sub_6@ TX2WA2
+		@sup_1@@sup_1@RSX @sub_3@@sub_7@ TX2WA2
+TX2SCOPERET@arr@
+		RXF @sub_6@@sub_0@ ?
+		@sup_2@DPX 45LIST
+		RXF @sub_5@@sub_4@ 45RESETIT
+TX2RESETX@arr@
+		JPQ ?
+TX2WA1@arr@	0
+TX2WA2@arr@	0
+TX2WA3@arr@	0
+TX2RD@arr@	@sup_1@STE 45EXIT
+		hJPQ 45TYPECHK
+		hJPQ TX2SCOPE
+		MKZ 45RWSW
+		JES @sub_3@@sub_5@ TX2TOGCHK
+		@sup_2@DPX @sub_3@@sub_4@ 45MWA3
+		@sup_1@@sup_1@RSX @sub_3@@sub_5@ LIST
+		INX @sub_3@@sub_5@ LIST+1	**LOW CORE
+		@sup_1@DPX @sub_3@@sub_5@ 45B
+		@sup_1@DPX @sub_3@@sub_5@ TX2ST
+		DEX @sub_3@@sub_4@ 10
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=134 doc_page=132 type=code]
+[Page header: "LMH GX7A 031"]
+
+		@sup_1@DPX 45WA	**SUM CHK
+		hJPQ {SEARCH@delta@}
+		JPQ TX2ERR
+		hJPQ TX2RDLOOP
+		JPQ TX2ERR
+		JPQ TX2MSG
+TX2RDLOOP@arr@
+		@sup_1@STE {TPK@beta@}+2
+		MKN @sub_1@@sub_dot@@sub_4@{TPK@beta@}+9.
+		MKZ @sub_3@@sub_dot@@sub_8@ TX21STRD	**MAKE JPQ
+		SKX @sub_4@@sub_1@{IOA@beta@}+3
+		@sup_2@DPX @sub_3@@sub_5@{TPK@beta@}+1
+		@sup_2@DPX @sub_3@@sub_4@ A
+		@sup_2@@sup_2@ADD {-10,,10}
+		@sup_2@@sup_2@STA {TPK@beta@}+1
+		MKZ @sub_M@@sub_E@@sub_T@@sub_A@ TX2ST
+		SKX @sub_3@@sub_6@ 1
+		SKX @sub_3@@sub_5@ 0
+		@sup_1@IOS @sub_4@@sub_6@ 30100
+TX2RD1@arr@	h@sup_6@TSD B	**CM
+		@sup_1@IOS @sub_4@@sub_6@ 30020	**RLF2
+		@sup_2@@sup_1@STA {TPK@beta@}
+		h@sup_5@TSD B	**FM
+		@sup_2@@sup_2@STB {TPK@beta@}
+		h@sup_4@TSD B	**DUMMY
+		@sup_2@@sup_1@SED A
+		JPQ TX2GBM
+TX2BMERR@arr@
+		hJPQ {TURNOFF@delta@}
+		SKX @sub_3@@sub_6@ 2
+		hJPQ {ERRLOOP@beta@}*
+TX2GBM@arr@	h@sup_4@TSD A	**SUMCHK1
+		h@sup_3@TSD A	**SC2
+		@sup_1@SKX @sub_3@@sub_4@ 177
+		h@sup_6@TSD B
+TX2DATA@arr@
+		h@sup_5@TSD B
+		@sup_2@ADD B
+		h@sup_4@TSD B
+		h@sup_3@TSD B
+		@sup_1@ADD B
+		SKN @sub_M@@sub_E@@sub_T@@sub_A@ TX2ST
+TX2ST@arr@	STB @sub_3@@sub_5@ 45LIST	**MOD
+TX21STRD@arr@
+		hJPQ TX2RD3	**MOD TO h@sup_1@@sup_4@JNX TX2RD3
+		h@sup_6@TSD B	**DATA OR SC1
+		h@sup_1@JNK @sub_3@@sub_4@ TX2RDCONT
+TX2RD2@arr@	h@sup_3@TSD B	**SC2 [guessing the superscript, maybe not 3?]
+		@sup_1@IOS @sub_4@@sub_5@ 30120
+		@sup_2@ADD B
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=135 doc_page=133 type=code]
+[Page header: "LMH GX7A 031"]
+
+		h@sup_1@JNA {TURNOFF@delta@}
+		h@sup_1@JNA {ERRLOOP@beta@}*
+		h@sup_1@JPA {TURNOFF@delta@}
+		h@sup_1@JPA {ERRLOOP@beta@}*
+		@sup_2@@sup_2@ADD {-10,,10}
+		@sup_1@@sup_2@RSX @sub_3@@sub_4@ B
+		@sup_1@ADX @sub_3@@sub_4@ 45WA**CONT SC
+		h@sup_1@JNX @sub_3@@sub_5@ TX2RD1
+		hJPQ {TURNOFF@delta@}
+		@sup_2@@sup_1@STA {TPK@beta@}+3
+		@sup_1@IOS @sub_4@@sub_1@ 20000
+		JPQ {ERRLOOP@beta@}+6
+TX2RDCONT@arr@
+		h@sup_1@JNX @sub_3@@sub_5@ TX2DATA
+		MKN @sub_M@@sub_E@@sub_T@@sub_A@ TX2ST
+		JPQ TX2DATA
+TX2RD3@arr@	h@sup_1@@sup_1@RSX @sub_3@@sub_7@ 45LIST	**LENGTH
+		@sup_2@@sup_2@SED TX2K1	**IDENT
+		JPQ TX2RD4
+TX2RD3A@arr@
+		hJPQ {TURNOFF@delta@}
+TX2RD3B@arr@
+		TYPEL,6@sub_3@@sub_5@@times@{ 606735,,366360}
+		RFD @sub_4@@sub_6@ TX2ERR
+TX2RD4@arr@	@sup_1@@sup_1@AUX @sub_3@@sub_7@ 45B
+		DEX @sub_3@@sub_7@ 1
+		h@sup_6@TSD B	**DATA OR SC1
+		@sup_1@DPX @sub_3@@sub_7@ TX2ST
+		@sup_1@DPX @sub_3@@sub_7@ 45TSD
+		SXL @sub_3@@sub_7@ 100000
+		JPQ TX2RD3A
+		@sup_1@@sup_1@RSX @sub_3@@sub_5@ 45B
+		DEX @sub_3@@sub_5@@sub_pipe@@sub_3@@sub_7@ 0
+		MKN @sub_3@@sub_dot@@sub_8@ TX21STRD	**MAKE JNX
+		h@sup_1@JNX @sub_3@@sub_4@ TX2RDCONT
+		JPQ TX2RD2
+TX2TOGCHK@arr@
+		RFD @sub_4@@sub_6@#+2
+		JPD #
+		h@sup_1@@sup_1@RSX @sub_3@@sub_4@ TX2TOG
+		h@sup_3@ITE TX2IK
+		@sup_4@SED TX2IK
+		hJPX @sub_3@@sub_4@@sub_pipe@@sub_3@@sub_5@ 0
+		JPQ TX2RD3B
+RI@arr@		JPQ 377750
+CL@arr@		JPQ 200000
+ST@arr@		JPQ 200001
+LAST@arr@	ZZLAST
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=136 doc_page=134 type=symex]
+[Page header: "IES BOO7 001"]
+[Handwritten: "CONS 15 SEPT"]
+
+

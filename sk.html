@@ -4849,6 +4849,280 @@ LIST2&rarr;		SKX <sub>&gamma;</sub> ?	** REL RD ADDR	[syntax]
 [meta file_name=102726903-05-01-acc.pdf pdf_page=131 doc_page=129 type=code]
 [Page header: "LMH GX7A 026"]
 
+		JPQ 45MCA3
+45MCA2&rarr;		<sup>1</sup><sup>1</sup>RSX <sub>T</sub><sub>|</sub><sub>S</sub> LIST
+		SXD <sub>T</sub> 0
+		JPQ #+2
+		<sup>1</sup>ADX <sub>&gamma;</sub><sub>|</sub><sub>S</sub> LIST
+		<sup>1</sup>ADX <sub>&gamma;</sub><sub>|</sub><sub>S</sub> LIST+1
+		<sup>2</sup>ADX <sub>&gamma;</sub><sub>|</sub><sub>S</sub> LIST+1
+45MCA3&rarr;		DEX <sub>S</sub> 2
+		SXL <sub>S</sub><sub>|</sub><sub>&alpha;</sub> 0
+		JPQ 45MCA2
+		<sup>1</sup><sup>6</sup>AUX <sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub> LIST
+		SXL <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> 0
+		JPQ 45MCA1
+45MERGE2&rarr;
+		<sup>1</sup><sup>1</sup>RSX <sub>&alpha;</sub> LIST2
+		INX <sub>&alpha;</sub> MASTERS-LIST
+		LGORR&equiv;SPECB&times;<sub>&alpha;</sub>=S&rarr;45MG3
+		hJPQ 45PUT
+		<sup>1</sup><sup>1</sup>RSX <sub>&beta;</sub> LIST2
+		<sup>1</sup><sup>1</sup>AUX <sub>&beta;</sub><sub>|</sub><sub>&beta;</sub> LIST
+		<sup>1</sup>DPX <sub>&beta;</sub> LIST
+		DEX <sub>&alpha;</sub> 2
+		SKX <sub>&beta;</sub> 2002
+		<sup>2</sup>DPX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST
+		hJPQ 45PUT
+45EXIT&rarr;		JPQ ?
+45MG3&rarr;		<sup>1</sup>STE 45MG3X
+		SKX <sub>&beta;</sub> MASTERS-LIST	** &beta;=OLD RINGS
+		LGORR&equiv;SPECB&times;&beta;=S&rarr;45MG4
+		hJPQ 45SWITCHRINGS
+45MG3X&rarr;		JPQ ?
+45MG4&rarr;		<sup>1</sup>STE 45MG4X
+		hLDE <sub>&beta;</sub> LIST+NAME
+		SED <sub>&alpha;</sub> LIST+NAME
+		JPQ #+2
+45MG4X&rarr;		JPQ ?
+		<sup>1</sup>DPX <sub>&beta;</sub> 45MG5A	**SAVE &beta; LEVEL
+		LGORR&equiv;SPECB&times;&alpha;=S&rarr;45MG5
+		hJPQ 45FREE
+		JPQ 45MG3X*
+45MG5&rarr;		<sup>1</sup>STE 45MG5X*
+45MG5A&rarr;		SKX <sub>&beta;</sub> ?
+		LGORR&equiv;SPECB&times;&beta;=S&rarr;45MG6
+		hJPQ 45SWITCHRINGS
+45MG5X&rarr;		JPQ ?
+45MG6&rarr;		<sup>1</sup>STE 45MG6X
+		hLDE <sub>&beta;</sub> LIST+NAME
+		SED <sub>&alpha;</sub> LIST+NAME
+		JPQ #+2
+45MG6X&rarr;		JPQ ?
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=132 doc_page=130 type=code]
+[Page header: "LMH GX7A 027"]
+
+		<sup>1</sup><sup>1</sup>RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LIST+(SPECB)+1
+		SXD <sub>S</sub><sub>|</sub><sub>&alpha;</sub> SPECB+1	**RING EMPTY?
+		JPQ 45MG7
+		COMBHL&equiv;SPECB&times;&alpha;&rarr;SPECB&times;&beta;
+45MG7&rarr;		hJPQ 45FREE
+		JPQ 45MG5X*
+45SWITCHRINGS&rarr;
+		hSKX <sub>&gamma;</sub><sub>|</sub><sub>&beta;</sub> 0
+		hJMP #+2
+45FREE&rarr;		hSKX <sub>&gamma;</sub> FREES-LIST
+		<sup>1</sup>STE 45FREEX
+		CHGRL&equiv;TYPE&times;&alpha;&rarr;SPECB&times;&gamma;
+45FREEX&rarr;
+		JPQ ?
+45PUT&rarr;		<sup>1</sup>STE 45PUTX
+		SKX <sub>&gamma;</sub> FREES-LIST
+		PUTL&equiv;TYPE&times;&alpha;&rarr;SPECB&times;&gamma;
+45PUTX&rarr;		JPQ ?
+45LAST INSTR&rarr;
+		#-45SRN+1
+		**TX-2 TAPE PROGRAMS
+		**TX2 921-3
+TX2WR&rarr;		<sup>1</sup>STE 45EXIT
+		hJPQ 45TYPECHK
+		hJPQ TX2SCOPE
+		MKN 45RWSW
+		JES <sub>3</sub><sub>5</sub> TX2TOGCHK
+		<sup>2</sup>DPX <sub>3</sub><sub>4</sub> 45MWA3
+		SKX <sub>3</sub><sub>5</sub> LIST	**START CORE
+		<sup>1</sup>DPX <sub>3</sub><sub>5</sub> 45B
+		<sup>1</sup><sup>1</sup>RSX <sub>3</sub><sub>7</sub> LIST
+		INX <sub>3</sub><sub>7</sub> LIST-1	**END CORE
+TX2K1&rarr;		SKX <sub>3</sub><sub>6</sub> 333427
+		<sup>2</sup>DPX <sub>3</sub><sub>6</sub> LIST
+		<sup>1</sup>DPX 45WA	**SUM CHK
+		WR&Delta;,TX2ERR
+TX2MSG&rarr;		hJPQ TX2RESET
+		<sup>1</sup><sup>1</sup>RSX <sub>4</sub><sub>5</sub><sub>X</sub> 45LIST	**LENGTH
+		<sup>1</sup>DPX <sub>4</sub><sub>5</sub><sub>X</sub> TX2WA3
+		MKZ 45GARBSW
+		MKZ <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> 45NORMSG
+		<sup>1</sup><sup>2</sup>RSX <sub>4</sub><sub>5</sub><sub>X</sub>{TPK&beta;}+3	**NXT FREE BLOCK
+		<sup>1</sup>DPX <sub>4</sub><sub>5</sub><sub>X</sub> 45MWA3
+		RXF <sub>7</sub><sub>6</sub> 45EXIT*
+		SKN 45RSW
+		RXF <sub>7</sub><sub>6</sub> 45MERGE
+		RFD <sub>4</sub><sub>5</sub><sub>L</sub><sub>W</sub>30000
+		<sup>6</sup>TSD 45MK1***CR
+TX2K2&rarr;		<sup>6</sup>TSD { 43,47,,55,2}	**TX-2
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=133 doc_page=131 type=code]
+[Page header: "LMH GX7A 030"]
+
+		<sup>5</sup>TSD TX2K2*
+		<sup>4</sup>TSD TX2K2*
+		<sup>3</sup>TSD TX2K2*
+		<sup>6</sup>TSD 45MK2***SP
+		<sup>3</sup>TSD 45MK1***M
+		<sup>6</sup>TSD TX2K2***T
+		JPQ 45MK2
+TX2SCOPE&rarr;
+		<sup>1</sup>STE TX2SCOPEX
+		h<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30000
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 40000
+		<sup>1</sup>DPX <sub>4</sub><sub>5</sub><sub>L</sub><sub>W</sub> 45LWRET
+		h<sup>1</sup>DPX <sub>6</sub><sub>0</sub> TX2SCOPERET
+		SKX <sub>6</sub><sub>0</sub>{JPD #}	[syntax, how is this interpreted?]
+		<sup>2</sup>DPX <sub>3</sub><sub>4</sub> TX2WA1
+		<sup>1</sup>DPX <sub>3</sub><sub>5</sub> TX2WA1
+		<sup>2</sup>DPX <sub>3</sub><sub>6</sub> TX2WA2
+		<sup>1</sup>DPX <sub>3</sub><sub>7</sub> TX2WA2
+		MKN <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> TX2MSW
+TX2SCOPEX&rarr;
+		JPQ ?
+TX2ERR&rarr;		hJPQ TX2RESET
+		SKX <sub>4</sub><sub>5</sub><sub>L</sub><sub>W</sub> 45LWRET*
+		RFD <sub>7</sub><sub>6</sub> 45EXIT*
+TX2RESET&rarr;
+		<sup>1</sup>STE TX2RESETX
+		<sup>1</sup><sup>2</sup>RSX <sub>3</sub><sub>4</sub> TX2WA1
+		<sup>1</sup><sup>1</sup>RSX <sub>3</sub><sub>5</sub> TX2WA1
+		<sup>1</sup><sup>2</sup>RSX <sub>3</sub><sub>6</sub> TX2WA2
+		<sup>1</sup><sup>1</sup>RSX <sub>3</sub><sub>7</sub> TX2WA2
+TX2SCOPERET&rarr;
+		RXF <sub>6</sub><sub>0</sub> ?
+		<sup>2</sup>DPX 45LIST
+		RXF <sub>5</sub><sub>4</sub> 45RESETIT
+TX2RESETX&rarr;
+		JPQ ?
+TX2WA1&rarr;		0
+TX2WA2&rarr;		0
+TX2WA3&rarr;		0
+TX2RD&rarr;		<sup>1</sup>STE 45EXIT
+		hJPQ 45TYPECHK
+		hJPQ TX2SCOPE
+		MKZ 45RWSW
+		JES <sub>3</sub><sub>5</sub> TX2TOGCHK
+		<sup>2</sup>DPX <sub>3</sub><sub>4</sub> 45MWA3
+		<sup>1</sup><sup>1</sup>RSX <sub>3</sub><sub>5</sub> LIST
+		INX <sub>3</sub><sub>5</sub> LIST+1	**LOW CORE
+		<sup>1</sup>DPX <sub>3</sub><sub>5</sub> 45B
+		<sup>1</sup>DPX <sub>3</sub><sub>5</sub> TX2ST
+		DEX <sub>3</sub><sub>4</sub> 10
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=134 doc_page=132 type=code]
+[Page header: "LMH GX7A 031"]
+
+		<sup>1</sup>DPX 45WA	**SUM CHK
+		hJPQ {SEARCH&Delta;}
+		JPQ TX2ERR
+		hJPQ TX2RDLOOP
+		JPQ TX2ERR
+		JPQ TX2MSG
+TX2RDLOOP&rarr;
+		<sup>1</sup>STE {TPK&beta;}+2
+		MKN <sub>1</sub><sub>.</sub><sub>4</sub>{TPK&beta;}+9.
+		MKZ <sub>3</sub><sub>.</sub><sub>8</sub> TX21STRD	**MAKE JPQ
+		SKX <sub>4</sub><sub>1</sub>{IOA&beta;}+3
+		<sup>2</sup>DPX <sub>3</sub><sub>5</sub>{TPK&beta;}+1
+		<sup>2</sup>DPX <sub>3</sub><sub>4</sub> A
+		<sup>2</sup><sup>2</sup>ADD {-10,,10}
+		<sup>2</sup><sup>2</sup>STA {TPK&beta;}+1
+		MKZ <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> TX2ST
+		SKX <sub>3</sub><sub>6</sub> 1
+		SKX <sub>3</sub><sub>5</sub> 0
+		<sup>1</sup>IOS <sub>4</sub><sub>6</sub> 30100
+TX2RD1&rarr;		h<sup>6</sup>TSD B	**CM
+		<sup>1</sup>IOS <sub>4</sub><sub>6</sub> 30020	**RLF2
+		<sup>2</sup><sup>1</sup>STA {TPK&beta;}
+		h<sup>5</sup>TSD B	**FM
+		<sup>2</sup><sup>2</sup>STB {TPK&beta;}
+		h<sup>4</sup>TSD B	**DUMMY
+		<sup>2</sup><sup>1</sup>SED A
+		JPQ TX2GBM
+TX2BMERR&rarr;
+		hJPQ {TURNOFF&Delta;}
+		SKX <sub>3</sub><sub>6</sub> 2
+		hJPQ {ERRLOOP&beta;}*
+TX2GBM&rarr;		h<sup>4</sup>TSD A	**SUMCHK1
+		h<sup>3</sup>TSD A	**SC2
+		<sup>1</sup>SKX <sub>3</sub><sub>4</sub> 177
+		h<sup>6</sup>TSD B
+TX2DATA&rarr;
+		h<sup>5</sup>TSD B
+		<sup>2</sup>ADD B
+		h<sup>4</sup>TSD B
+		h<sup>3</sup>TSD B
+		<sup>1</sup>ADD B
+		SKN <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> TX2ST
+TX2ST&rarr;		STB <sub>3</sub><sub>5</sub> 45LIST	**MOD
+TX21STRD&rarr;
+		hJPQ TX2RD3	**MOD TO h<sup>1</sup><sup>4</sup>JNX TX2RD3
+		h<sup>6</sup>TSD B	**DATA OR SC1
+		h<sup>1</sup>JNK <sub>3</sub><sub>4</sub> TX2RDCONT
+TX2RD2&rarr;		h<sup>3</sup>TSD B	**SC2 [guessing the superscript, maybe not 3?]
+		<sup>1</sup>IOS <sub>4</sub><sub>5</sub> 30120
+		<sup>2</sup>ADD B
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=135 doc_page=133 type=code]
+[Page header: "LMH GX7A 031"]
+
+		h<sup>1</sup>JNA {TURNOFF&Delta;}
+		h<sup>1</sup>JNA {ERRLOOP&beta;}*
+		h<sup>1</sup>JPA {TURNOFF&Delta;}
+		h<sup>1</sup>JPA {ERRLOOP&beta;}*
+		<sup>2</sup><sup>2</sup>ADD {-10,,10}
+		<sup>1</sup><sup>2</sup>RSX <sub>3</sub><sub>4</sub> B
+		<sup>1</sup>ADX <sub>3</sub><sub>4</sub> 45WA**CONT SC
+		h<sup>1</sup>JNX <sub>3</sub><sub>5</sub> TX2RD1
+		hJPQ {TURNOFF&Delta;}
+		<sup>2</sup><sup>1</sup>STA {TPK&beta;}+3
+		<sup>1</sup>IOS <sub>4</sub><sub>1</sub> 20000
+		JPQ {ERRLOOP&beta;}+6
+TX2RDCONT&rarr;
+		h<sup>1</sup>JNX <sub>3</sub><sub>5</sub> TX2DATA
+		MKN <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> TX2ST
+		JPQ TX2DATA
+TX2RD3&rarr;		h<sup>1</sup><sup>1</sup>RSX <sub>3</sub><sub>7</sub> 45LIST	**LENGTH
+		<sup>2</sup><sup>2</sup>SED TX2K1	**IDENT
+		JPQ TX2RD4
+TX2RD3A&rarr;
+		hJPQ {TURNOFF&Delta;}
+TX2RD3B&rarr;
+		TYPEL,6<sub>3</sub><sub>5</sub>&times;{ 606735,,366360}
+		RFD <sub>4</sub><sub>6</sub> TX2ERR
+TX2RD4&rarr;		<sup>1</sup><sup>1</sup>AUX <sub>3</sub><sub>7</sub> 45B
+		DEX <sub>3</sub><sub>7</sub> 1
+		h<sup>6</sup>TSD B	**DATA OR SC1
+		<sup>1</sup>DPX <sub>3</sub><sub>7</sub> TX2ST
+		<sup>1</sup>DPX <sub>3</sub><sub>7</sub> 45TSD
+		SXL <sub>3</sub><sub>7</sub> 100000
+		JPQ TX2RD3A
+		<sup>1</sup><sup>1</sup>RSX <sub>3</sub><sub>5</sub> 45B
+		DEX <sub>3</sub><sub>5</sub><sub>|</sub><sub>3</sub><sub>7</sub> 0
+		MKN <sub>3</sub><sub>.</sub><sub>8</sub> TX21STRD	**MAKE JNX
+		h<sup>1</sup>JNX <sub>3</sub><sub>4</sub> TX2RDCONT
+		JPQ TX2RD2
+TX2TOGCHK&rarr;
+		RFD <sub>4</sub><sub>6</sub>#+2
+		JPD #
+		h<sup>1</sup><sup>1</sup>RSX <sub>3</sub><sub>4</sub> TX2TOG
+		h<sup>3</sup>ITE TX2IK
+		<sup>4</sup>SED TX2IK
+		hJPX <sub>3</sub><sub>4</sub><sub>|</sub><sub>3</sub><sub>5</sub> 0
+		JPQ TX2RD3B
+RI&rarr;		JPQ 377750
+CL&rarr;		JPQ 200000
+ST&rarr;		JPQ 200001
+LAST&rarr;		ZZLAST
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=136 doc_page=134 type=symex]
+[Page header: "IES BOO7 001"]
+[Handwritten: "CONS 15 SEPT"]
+
+
 </code></pre></body></html>
 <html><body style='font-size:150%'><pre><code>
 <hr>
@@ -9700,5 +9974,279 @@ LIST2&rarr;		SKX <sub>&gamma;</sub> ?	** REL RD ADDR	[syntax]
 <hr>
 [meta file_name=102726903-05-01-acc.pdf pdf_page=131 doc_page=129 type=code]
 [Page header: "LMH GX7A 026"]
+
+		JPQ 45MCA3
+45MCA2&rarr;		<sup>1</sup><sup>1</sup>RSX <sub>T</sub><sub>|</sub><sub>S</sub> LIST
+		SXD <sub>T</sub> 0
+		JPQ #+2
+		<sup>1</sup>ADX <sub>&gamma;</sub><sub>|</sub><sub>S</sub> LIST
+		<sup>1</sup>ADX <sub>&gamma;</sub><sub>|</sub><sub>S</sub> LIST+1
+		<sup>2</sup>ADX <sub>&gamma;</sub><sub>|</sub><sub>S</sub> LIST+1
+45MCA3&rarr;		DEX <sub>S</sub> 2
+		SXL <sub>S</sub><sub>|</sub><sub>&alpha;</sub> 0
+		JPQ 45MCA2
+		<sup>1</sup><sup>6</sup>AUX <sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub> LIST
+		SXL <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> 0
+		JPQ 45MCA1
+45MERGE2&rarr;
+		<sup>1</sup><sup>1</sup>RSX <sub>&alpha;</sub> LIST2
+		INX <sub>&alpha;</sub> MASTERS-LIST
+		LGORR&equiv;SPECB&times;<sub>&alpha;</sub>=S&rarr;45MG3
+		hJPQ 45PUT
+		<sup>1</sup><sup>1</sup>RSX <sub>&beta;</sub> LIST2
+		<sup>1</sup><sup>1</sup>AUX <sub>&beta;</sub><sub>|</sub><sub>&beta;</sub> LIST
+		<sup>1</sup>DPX <sub>&beta;</sub> LIST
+		DEX <sub>&alpha;</sub> 2
+		SKX <sub>&beta;</sub> 2002
+		<sup>2</sup>DPX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST
+		hJPQ 45PUT
+45EXIT&rarr;		JPQ ?
+45MG3&rarr;		<sup>1</sup>STE 45MG3X
+		SKX <sub>&beta;</sub> MASTERS-LIST	** &beta;=OLD RINGS
+		LGORR&equiv;SPECB&times;&beta;=S&rarr;45MG4
+		hJPQ 45SWITCHRINGS
+45MG3X&rarr;		JPQ ?
+45MG4&rarr;		<sup>1</sup>STE 45MG4X
+		hLDE <sub>&beta;</sub> LIST+NAME
+		SED <sub>&alpha;</sub> LIST+NAME
+		JPQ #+2
+45MG4X&rarr;		JPQ ?
+		<sup>1</sup>DPX <sub>&beta;</sub> 45MG5A	**SAVE &beta; LEVEL
+		LGORR&equiv;SPECB&times;&alpha;=S&rarr;45MG5
+		hJPQ 45FREE
+		JPQ 45MG3X*
+45MG5&rarr;		<sup>1</sup>STE 45MG5X*
+45MG5A&rarr;		SKX <sub>&beta;</sub> ?
+		LGORR&equiv;SPECB&times;&beta;=S&rarr;45MG6
+		hJPQ 45SWITCHRINGS
+45MG5X&rarr;		JPQ ?
+45MG6&rarr;		<sup>1</sup>STE 45MG6X
+		hLDE <sub>&beta;</sub> LIST+NAME
+		SED <sub>&alpha;</sub> LIST+NAME
+		JPQ #+2
+45MG6X&rarr;		JPQ ?
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=132 doc_page=130 type=code]
+[Page header: "LMH GX7A 027"]
+
+		<sup>1</sup><sup>1</sup>RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LIST+(SPECB)+1
+		SXD <sub>S</sub><sub>|</sub><sub>&alpha;</sub> SPECB+1	**RING EMPTY?
+		JPQ 45MG7
+		COMBHL&equiv;SPECB&times;&alpha;&rarr;SPECB&times;&beta;
+45MG7&rarr;		hJPQ 45FREE
+		JPQ 45MG5X*
+45SWITCHRINGS&rarr;
+		hSKX <sub>&gamma;</sub><sub>|</sub><sub>&beta;</sub> 0
+		hJMP #+2
+45FREE&rarr;		hSKX <sub>&gamma;</sub> FREES-LIST
+		<sup>1</sup>STE 45FREEX
+		CHGRL&equiv;TYPE&times;&alpha;&rarr;SPECB&times;&gamma;
+45FREEX&rarr;
+		JPQ ?
+45PUT&rarr;		<sup>1</sup>STE 45PUTX
+		SKX <sub>&gamma;</sub> FREES-LIST
+		PUTL&equiv;TYPE&times;&alpha;&rarr;SPECB&times;&gamma;
+45PUTX&rarr;		JPQ ?
+45LAST INSTR&rarr;
+		#-45SRN+1
+		**TX-2 TAPE PROGRAMS
+		**TX2 921-3
+TX2WR&rarr;		<sup>1</sup>STE 45EXIT
+		hJPQ 45TYPECHK
+		hJPQ TX2SCOPE
+		MKN 45RWSW
+		JES <sub>3</sub><sub>5</sub> TX2TOGCHK
+		<sup>2</sup>DPX <sub>3</sub><sub>4</sub> 45MWA3
+		SKX <sub>3</sub><sub>5</sub> LIST	**START CORE
+		<sup>1</sup>DPX <sub>3</sub><sub>5</sub> 45B
+		<sup>1</sup><sup>1</sup>RSX <sub>3</sub><sub>7</sub> LIST
+		INX <sub>3</sub><sub>7</sub> LIST-1	**END CORE
+TX2K1&rarr;		SKX <sub>3</sub><sub>6</sub> 333427
+		<sup>2</sup>DPX <sub>3</sub><sub>6</sub> LIST
+		<sup>1</sup>DPX 45WA	**SUM CHK
+		WR&Delta;,TX2ERR
+TX2MSG&rarr;		hJPQ TX2RESET
+		<sup>1</sup><sup>1</sup>RSX <sub>4</sub><sub>5</sub><sub>X</sub> 45LIST	**LENGTH
+		<sup>1</sup>DPX <sub>4</sub><sub>5</sub><sub>X</sub> TX2WA3
+		MKZ 45GARBSW
+		MKZ <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> 45NORMSG
+		<sup>1</sup><sup>2</sup>RSX <sub>4</sub><sub>5</sub><sub>X</sub>{TPK&beta;}+3	**NXT FREE BLOCK
+		<sup>1</sup>DPX <sub>4</sub><sub>5</sub><sub>X</sub> 45MWA3
+		RXF <sub>7</sub><sub>6</sub> 45EXIT*
+		SKN 45RSW
+		RXF <sub>7</sub><sub>6</sub> 45MERGE
+		RFD <sub>4</sub><sub>5</sub><sub>L</sub><sub>W</sub>30000
+		<sup>6</sup>TSD 45MK1***CR
+TX2K2&rarr;		<sup>6</sup>TSD { 43,47,,55,2}	**TX-2
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=133 doc_page=131 type=code]
+[Page header: "LMH GX7A 030"]
+
+		<sup>5</sup>TSD TX2K2*
+		<sup>4</sup>TSD TX2K2*
+		<sup>3</sup>TSD TX2K2*
+		<sup>6</sup>TSD 45MK2***SP
+		<sup>3</sup>TSD 45MK1***M
+		<sup>6</sup>TSD TX2K2***T
+		JPQ 45MK2
+TX2SCOPE&rarr;
+		<sup>1</sup>STE TX2SCOPEX
+		h<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30000
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 40000
+		<sup>1</sup>DPX <sub>4</sub><sub>5</sub><sub>L</sub><sub>W</sub> 45LWRET
+		h<sup>1</sup>DPX <sub>6</sub><sub>0</sub> TX2SCOPERET
+		SKX <sub>6</sub><sub>0</sub>{JPD #}	[syntax, how is this interpreted?]
+		<sup>2</sup>DPX <sub>3</sub><sub>4</sub> TX2WA1
+		<sup>1</sup>DPX <sub>3</sub><sub>5</sub> TX2WA1
+		<sup>2</sup>DPX <sub>3</sub><sub>6</sub> TX2WA2
+		<sup>1</sup>DPX <sub>3</sub><sub>7</sub> TX2WA2
+		MKN <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> TX2MSW
+TX2SCOPEX&rarr;
+		JPQ ?
+TX2ERR&rarr;		hJPQ TX2RESET
+		SKX <sub>4</sub><sub>5</sub><sub>L</sub><sub>W</sub> 45LWRET*
+		RFD <sub>7</sub><sub>6</sub> 45EXIT*
+TX2RESET&rarr;
+		<sup>1</sup>STE TX2RESETX
+		<sup>1</sup><sup>2</sup>RSX <sub>3</sub><sub>4</sub> TX2WA1
+		<sup>1</sup><sup>1</sup>RSX <sub>3</sub><sub>5</sub> TX2WA1
+		<sup>1</sup><sup>2</sup>RSX <sub>3</sub><sub>6</sub> TX2WA2
+		<sup>1</sup><sup>1</sup>RSX <sub>3</sub><sub>7</sub> TX2WA2
+TX2SCOPERET&rarr;
+		RXF <sub>6</sub><sub>0</sub> ?
+		<sup>2</sup>DPX 45LIST
+		RXF <sub>5</sub><sub>4</sub> 45RESETIT
+TX2RESETX&rarr;
+		JPQ ?
+TX2WA1&rarr;		0
+TX2WA2&rarr;		0
+TX2WA3&rarr;		0
+TX2RD&rarr;		<sup>1</sup>STE 45EXIT
+		hJPQ 45TYPECHK
+		hJPQ TX2SCOPE
+		MKZ 45RWSW
+		JES <sub>3</sub><sub>5</sub> TX2TOGCHK
+		<sup>2</sup>DPX <sub>3</sub><sub>4</sub> 45MWA3
+		<sup>1</sup><sup>1</sup>RSX <sub>3</sub><sub>5</sub> LIST
+		INX <sub>3</sub><sub>5</sub> LIST+1	**LOW CORE
+		<sup>1</sup>DPX <sub>3</sub><sub>5</sub> 45B
+		<sup>1</sup>DPX <sub>3</sub><sub>5</sub> TX2ST
+		DEX <sub>3</sub><sub>4</sub> 10
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=134 doc_page=132 type=code]
+[Page header: "LMH GX7A 031"]
+
+		<sup>1</sup>DPX 45WA	**SUM CHK
+		hJPQ {SEARCH&Delta;}
+		JPQ TX2ERR
+		hJPQ TX2RDLOOP
+		JPQ TX2ERR
+		JPQ TX2MSG
+TX2RDLOOP&rarr;
+		<sup>1</sup>STE {TPK&beta;}+2
+		MKN <sub>1</sub><sub>.</sub><sub>4</sub>{TPK&beta;}+9.
+		MKZ <sub>3</sub><sub>.</sub><sub>8</sub> TX21STRD	**MAKE JPQ
+		SKX <sub>4</sub><sub>1</sub>{IOA&beta;}+3
+		<sup>2</sup>DPX <sub>3</sub><sub>5</sub>{TPK&beta;}+1
+		<sup>2</sup>DPX <sub>3</sub><sub>4</sub> A
+		<sup>2</sup><sup>2</sup>ADD {-10,,10}
+		<sup>2</sup><sup>2</sup>STA {TPK&beta;}+1
+		MKZ <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> TX2ST
+		SKX <sub>3</sub><sub>6</sub> 1
+		SKX <sub>3</sub><sub>5</sub> 0
+		<sup>1</sup>IOS <sub>4</sub><sub>6</sub> 30100
+TX2RD1&rarr;		h<sup>6</sup>TSD B	**CM
+		<sup>1</sup>IOS <sub>4</sub><sub>6</sub> 30020	**RLF2
+		<sup>2</sup><sup>1</sup>STA {TPK&beta;}
+		h<sup>5</sup>TSD B	**FM
+		<sup>2</sup><sup>2</sup>STB {TPK&beta;}
+		h<sup>4</sup>TSD B	**DUMMY
+		<sup>2</sup><sup>1</sup>SED A
+		JPQ TX2GBM
+TX2BMERR&rarr;
+		hJPQ {TURNOFF&Delta;}
+		SKX <sub>3</sub><sub>6</sub> 2
+		hJPQ {ERRLOOP&beta;}*
+TX2GBM&rarr;		h<sup>4</sup>TSD A	**SUMCHK1
+		h<sup>3</sup>TSD A	**SC2
+		<sup>1</sup>SKX <sub>3</sub><sub>4</sub> 177
+		h<sup>6</sup>TSD B
+TX2DATA&rarr;
+		h<sup>5</sup>TSD B
+		<sup>2</sup>ADD B
+		h<sup>4</sup>TSD B
+		h<sup>3</sup>TSD B
+		<sup>1</sup>ADD B
+		SKN <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> TX2ST
+TX2ST&rarr;		STB <sub>3</sub><sub>5</sub> 45LIST	**MOD
+TX21STRD&rarr;
+		hJPQ TX2RD3	**MOD TO h<sup>1</sup><sup>4</sup>JNX TX2RD3
+		h<sup>6</sup>TSD B	**DATA OR SC1
+		h<sup>1</sup>JNK <sub>3</sub><sub>4</sub> TX2RDCONT
+TX2RD2&rarr;		h<sup>3</sup>TSD B	**SC2 [guessing the superscript, maybe not 3?]
+		<sup>1</sup>IOS <sub>4</sub><sub>5</sub> 30120
+		<sup>2</sup>ADD B
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=135 doc_page=133 type=code]
+[Page header: "LMH GX7A 031"]
+
+		h<sup>1</sup>JNA {TURNOFF&Delta;}
+		h<sup>1</sup>JNA {ERRLOOP&beta;}*
+		h<sup>1</sup>JPA {TURNOFF&Delta;}
+		h<sup>1</sup>JPA {ERRLOOP&beta;}*
+		<sup>2</sup><sup>2</sup>ADD {-10,,10}
+		<sup>1</sup><sup>2</sup>RSX <sub>3</sub><sub>4</sub> B
+		<sup>1</sup>ADX <sub>3</sub><sub>4</sub> 45WA**CONT SC
+		h<sup>1</sup>JNX <sub>3</sub><sub>5</sub> TX2RD1
+		hJPQ {TURNOFF&Delta;}
+		<sup>2</sup><sup>1</sup>STA {TPK&beta;}+3
+		<sup>1</sup>IOS <sub>4</sub><sub>1</sub> 20000
+		JPQ {ERRLOOP&beta;}+6
+TX2RDCONT&rarr;
+		h<sup>1</sup>JNX <sub>3</sub><sub>5</sub> TX2DATA
+		MKN <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> TX2ST
+		JPQ TX2DATA
+TX2RD3&rarr;		h<sup>1</sup><sup>1</sup>RSX <sub>3</sub><sub>7</sub> 45LIST	**LENGTH
+		<sup>2</sup><sup>2</sup>SED TX2K1	**IDENT
+		JPQ TX2RD4
+TX2RD3A&rarr;
+		hJPQ {TURNOFF&Delta;}
+TX2RD3B&rarr;
+		TYPEL,6<sub>3</sub><sub>5</sub>&times;{ 606735,,366360}
+		RFD <sub>4</sub><sub>6</sub> TX2ERR
+TX2RD4&rarr;		<sup>1</sup><sup>1</sup>AUX <sub>3</sub><sub>7</sub> 45B
+		DEX <sub>3</sub><sub>7</sub> 1
+		h<sup>6</sup>TSD B	**DATA OR SC1
+		<sup>1</sup>DPX <sub>3</sub><sub>7</sub> TX2ST
+		<sup>1</sup>DPX <sub>3</sub><sub>7</sub> 45TSD
+		SXL <sub>3</sub><sub>7</sub> 100000
+		JPQ TX2RD3A
+		<sup>1</sup><sup>1</sup>RSX <sub>3</sub><sub>5</sub> 45B
+		DEX <sub>3</sub><sub>5</sub><sub>|</sub><sub>3</sub><sub>7</sub> 0
+		MKN <sub>3</sub><sub>.</sub><sub>8</sub> TX21STRD	**MAKE JNX
+		h<sup>1</sup>JNX <sub>3</sub><sub>4</sub> TX2RDCONT
+		JPQ TX2RD2
+TX2TOGCHK&rarr;
+		RFD <sub>4</sub><sub>6</sub>#+2
+		JPD #
+		h<sup>1</sup><sup>1</sup>RSX <sub>3</sub><sub>4</sub> TX2TOG
+		h<sup>3</sup>ITE TX2IK
+		<sup>4</sup>SED TX2IK
+		hJPX <sub>3</sub><sub>4</sub><sub>|</sub><sub>3</sub><sub>5</sub> 0
+		JPQ TX2RD3B
+RI&rarr;		JPQ 377750
+CL&rarr;		JPQ 200000
+ST&rarr;		JPQ 200001
+LAST&rarr;		ZZLAST
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=136 doc_page=134 type=symex]
+[Page header: "IES BOO7 001"]
+[Handwritten: "CONS 15 SEPT"]
+
 
 </code></pre></body></html>
