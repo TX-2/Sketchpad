@@ -1,4 +1,5 @@
 [meta file_name=102726903-05-01-acc.pdf pdf_page=22 doc_page=20 type=main]
+[Page header: "IES 2XMX 020"]
 
  200002|
 I2@arr@		JPQ FRESH START
@@ -22,6 +23,7 @@ FRESH START@arr@
 		@sup_minus@@sup_1@JPX @sub_alpha@ #-2
  
 [meta file_name=102726903-05-01-acc.pdf pdf_page=23 doc_page=21 type=code]
+[Page header: "IES 2XMX 001"]
 [Handwritten: "BUILD"]
 [Handwritten: "RDTX2=200126"]
 
@@ -77,6 +79,7 @@ STARTS@arr@	RXF @sub_4@@sub_7@ 47START
 		RSX @sub_alpha@@sub_pipe@@sub_alpha@ LIST+VORD
 
 [meta file_name=102726903-05-01-acc.pdf pdf_page=24 doc_page=22 type=code]
+[Page header: "IES 2XMX 002"]
 
 		SXD @sub_alpha@ FIXEDS-LIST
 		MKN @sub_1@@sub_dot@@sub_7@ PAGE1
@@ -131,6 +134,7 @@ PAGE1D@arr@	SKZ @sub_1@@sub_dot@@sub_6@ 76BUT [Handwritten "<- JUNK 2.1", "JUNK"
 		hJPQ ERASE
 
 [meta file_name=102726903-05-01-acc.pdf pdf_page=25 doc_page=23 type=code]
+[Page header: "IES 2XMX 003"]
 [Handwritten: "FOR MOVIE"]
 [Handwritten: "COPY 1.9"]
 [Handwritten: "DRAW 1.8"]
@@ -142,7 +146,7 @@ PAGE1D@arr@	SKZ @sub_1@@sub_dot@@sub_6@ 76BUT [Handwritten "<- JUNK 2.1", "JUNK"
 [Handwritten: "HORV 1.2"]
 [Handwritten: "CONS 1.1"]
 
-		SKZ @sub_2@@sub_dot@@sub_1@ 74BUT
+		SKZ @sub_2@@sub_dot@@sub_1@ 74BUT [Handwritten: "<- 1.6"]
 		hJPQ MOVEPOINT
 		SKZ @sub_3@@sub_dot@@sub_2@ 76BUT
 		hJPQ MAKETEXT
@@ -172,7 +176,7 @@ PAGE1E@arr@	SKZ @sub_2@@sub_dot@@sub_?@ 76BUT [Handwritten: "<- 1.2"]
 		hJPQ DESIGIT
 		SKZ @sub_2@@sub_dot@@sub_7@ 76BUT
 		hJPQ UNFIX
-		SKZ @sub_3@@sub_dot@@sub_3@ 76BUT [maybe 74BUT?]
+		SKZ @sub_3@@sub_dot@@sub_3@ 76BUT
 		hJPQ FIXIT
 		SKZ @sub_4@@sub_dot@@sub_4@ 76BUT
 		hJPQ UNMAC
@@ -182,7 +186,7 @@ PAGE1E@arr@	SKZ @sub_2@@sub_dot@@sub_?@ 76BUT [Handwritten: "<- 1.2"]
 		hJPQ ORDSTARTB	** BEST
 		SKZ @sub_4@@sub_dot@@sub_5@ 76BUT
 		hJPQ ORDSTARTW  ** WORST
-PAGE1F@arr@	SKN @sub_4@@sub_dot@@sub_1@@sub_0@ SWITCH ** IF ONE, DO DEADLY DELETIONS
+PAGE1F@arr@	SKN @sub_4@@sub_dot@@sub_1@@sub_0@ SWITCH	** IF ONE, DO DEADLY DELETIONS
 		JPQ PAGE1G
 		SKZ @sub_1@@sub_dot@@sub_2@ 76BUT
 		hJPQ CONSTOUT
@@ -193,12 +197,13 @@ PAGE1F@arr@	SKN @sub_4@@sub_dot@@sub_1@@sub_0@ SWITCH ** IF ONE, DO DEADLY DELET
 		SKN @sub_4@@sub_dot@@sub_1@ 76BUT
 		
 [meta file_name=102726903-05-01-acc.pdf pdf_page=26 doc_page=24 type=code]
+[Page header: "IES 2XMX 004"]
 
 		JPQ #+7
 		hJPQ GARBAGE
 		SKZ @sub_4@@sub_dot@@sub_2@ SWITCH
 		JPQ #+3
-		hJPQ WIBN
+		hJPQ WIBM
 		JPQ #+2
 		hJPQ WIBMN
 		JPQ ALLREAD-2 [some trailing symbol, interpreting as junk]
@@ -208,7 +213,7 @@ PAGE1G@arr@	SKN @sub_4@@sub_dot@@sub_3@ 76BUT
 		JPQ #+3
 		hJPQ RIBMN
 		JPQ #+2
-		hJPQ RIBN
+		hJPQ RIBM
 		hJPQ GARBAGE
 		MKN MOVED
 		SKN @sub_3@@sub_dot@@sub_?@ 76BUT
@@ -230,7 +235,7 @@ CPY2@arr@	@sup_1@STE CPY1X
 CPY3@arr@	@sup_1@STE CPY1X
 		LDA 377721
 		JPQ CPY1T
-CPY3@arr@	@sup_1@STE CPY1X
+CPY4@arr@	@sup_1@STE CPY1X
 		LDA 377720
 CPY1T@arr@	STA COPYNUM
 		hJPQ COPYIST
@@ -241,7 +246,7 @@ ORDSTARTB@arr@
 		hJPQ ORDSTART
 		JPQ #
 ORDSTARTW@arr@
-		@sup_1@STE #+5
+		@sup_1@STE #+3
 		MKN ORDWORST
 		hJPQ ORDSTART
 		
@@ -260,7 +265,7 @@ CONSTOUT1@arr@
 CONSOUTSUB@arr@
 		@sup_1@STE CONSOUTSUBX
 		RSX @sub_beta@@sub_pipe@@sub_alpha@ LIST+TYPE
-		RSX @sub_beta@@sub_pipe@@sub_alpha@ LIST+TYPE
+		RSX @sub_beta@@sub_pipe@@sub_beta@ LIST+TYPE
 		SXD @sub_beta@ CONSTRAINTS-LIST
 		hJPQ DELETE
 CONSOUTSUBX@arr@
@@ -286,7 +291,7 @@ PICOUT@alpha@@arr@
 		JPQ PICOUT2
 PICOUT3@arr@
 		@sup_1@DPX @sub_alpha@ PICOUT@alpha@1
-		RSX @sub_alpha@@sub_pipe@@sub_alpha@ LIST_PPART+1
+		RSX @sub_alpha@@sub_pipe@@sub_alpha@ LIST+PPART+1
 		@sup_1@@sup_6@AUX @sub_alpha@@sub_pipe@@sub_alpha@ LIST-1
 		DEX @sub_alpha@ 1
 PICOUT@alpha@1@arr@
@@ -295,10 +300,10 @@ PICOUTX@arr@
 		JPQ #
 		hJPQ DELETE
 		RSX @sub_alpha@ PICOUT@alpha@1
-		JPQ PICOUT@?@+1
+		JPQ PICOUT3+1
 		** REMOVE USELESS POINTS
 POINTSOUT@arr@
-		@sup_1@ POINTSOUTGRX
+		@sup_1@STE POINTSOUTGRX
 		
 [meta file_name=102726903-05-01-acc.pdf pdf_page=28 doc_page=26 type=code]
 [Page header: "IES 2XMX 006"]
@@ -314,12 +319,12 @@ POINTSOUTX@arr@
 		JPQ #
 PTSOUT1@arr@
 		@sup_1@STE PTSOUT1X
-		hLDE @sub_alpha@ LIST_TYPE
+		hLDE @sub_alpha@ LIST+TYPE
 		@sup_1@SED { POINTS-LIST}
 		JPQ #+2
 PTSOUT1X@arr@
 		JPQ #
-		hLDE @sub_alpha@ LIST_ATATAP
+		hLDE @sub_alpha@ LIST+ATATAP
 		@sup_1@SED { 0}
 		JPQ #+2
 		JPQ PTSOUT1X
@@ -380,7 +385,7 @@ MACAP@arr@	@sup_1@STE MACAPX
 		RSX @sub_gamma@@sub_pipe@@sub_beta@ LIST+TYPE
 		SXD @sub_gamma@ POINTS-LIST
 		JPQ MACAP1
-		MAKA@hamb@POINTS@arr@0
+		MAKA@hamb@POINTS@arr@@alpha@
 		MOVE|PSPL@arr@VA@sub_alpha@
 		MOVE|PSPL+1@arr@VA+1@sub_alpha@
 		SXD @sub_gamma@ TPVALS-LIST
@@ -395,7 +400,7 @@ MACAPT@arr@	RSX @sub_gamma@ ATBITS
 		JPQ MACAPTX+1
 MACAPA@arr@	@sup_1@DPX @sub_gamma@ MACAPTX
 		SXD @sub_gamma@ 0
-		DPX MACAPTX [something between DPX and MACAPTX, interpreting as junk]
+		DPX MACAPTX [something between DPX and MACAPTX, interpreting as junk, maybe @sup_1@?]
 		RSX @sub_beta@@sub_pipe@@sub_gamma@ ATBITS+1
 		RSX @sub_gamma@@sub_pipe@@sub_beta@ LIST+TYPE
 		SXD @sub_gamma@ LINES-LIST
@@ -420,10 +425,10 @@ MAKETEXT@arr@
 		JPQ MAKETEXTX
 		hJPQ STOPMOVEP
 		MAKA@hamb@TEXTS@arr@@?@
-		LOAB@hamb@PSPL
+		LDAB@hamb@PSPL
 		STAB@hamb@LIST+TVAL+2@sub_alpha@
 		LDA SCSZ
-		MUL { 10.} [zero not very legible, but see next block]
+		MUL { 10,} [zero not very legible, but see next block]
 		DPX B
 		STAB@hamb@LIST+TVAL@sub_alpha@
 		DPX @sub_?@@sub_pipe@@sub_alpha@ LIST+TXTS
@@ -443,7 +448,7 @@ MAKESCALER@arr@
 		LDAB@hamb@PSPL
 		STAB@hamb@NVAL+LIST+2@sub_alpha@
 		LDA SCSZ
-		MUL { 10.}
+		MUL { 10,}
 		DPX B
 		STA SVAL+LIST@sub_beta@
 		STAB@hamb@NVAL+LIST@sub_alpha@
