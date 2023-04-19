@@ -1,3 +1,162 @@
+[meta file_name=102726903-05-01-acc.pdf pdf_page=1 doc_page=0 type=cover]
+[Handwritten: "SKETCHPAD LISTINGS"]
+[Handwritten: "IVAN G. SUTHERLAND"]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=2 doc_page=1 type=equalities]
+[Handwritten: "EQUALITIES"]
+[Page header: "FRE SRV7 005"]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=3 doc_page=2 type=equalities]
+[Page header: "FRE SRV7 006"]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=4 doc_page=3 type=equalities]
+[Page header: "FRE SRV7 007"]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=5 doc_page=4 type=equalities]
+[Page header: "FRE SRV7 010"]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=6 doc_page=5 type=equalities]
+[Page header: "FRE SRV7 010"]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=7 doc_page=6 type=symex]
+[Page header: "IES 2XMX 001"]
+[Handwritten: "BUILD"]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=8 doc_page=7 type=symex]
+[Page header: "IES 2XMX 002"]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=9 doc_page=8 type=symex]
+[Page header: "IES 2XMX 003"]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=10 doc_page=9 type=symex]
+[Page header: "IES 2XMX 004"]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=11 doc_page=10 type=equalities]
+[Page header: "IES 2XMX 005"]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=12 doc_page=11 type=equalities]
+[Page header: "IES 2XMX 006"]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=13 doc_page=11.5 type=equalities]
+[Page header: "IES 2XMX 007"]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=14 doc_page=12 type=equalities]
+[Page header: "IES 2XMX 010"]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=15 doc_page=13 type=equalities]
+[Page header: "IES 2XMX 011"]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=16 doc_page=14 type=macros]
+[Page header: "IES 2XMX 012"]
+
+@hand@@hand@DEF MOVE|A@arr@B
+hLDE A
+STE B
+@hand@@hand@EMD
+
+@hand@@hand@DEF @beta@@rect_dash@A@times@B@times@C@times@D@times@E@times@F@times@G@times@H@times@I,@alpha@
+REX @sub_beta@*{0@sub_alpha@}
+RSX@sub_beta@*{LIST+I@sub_beta@}+(I^(370.))
+RSX@sub_beta@*{LIST+H@sub_beta@}+(H^(370.))
+RSX@sub_beta@*{LIST+G@sub_beta@}+(G^(370.))
+RSX@sub_beta@*{LIST+F@sub_beta@}+(F^(370.))
+RSX@sub_beta@*{LIST+E@sub_beta@}+(E^(370.))
+RSX@sub_beta@*{LIST+D@sub_beta@}+(D^(370.))
+RSX@sub_beta@*{LIST+C@sub_beta@}+(C^(370.))
+RSX@sub_beta@*{LIST+B@sub_beta@}+(B^(370.))
+RSX@sub_beta@*{LIST+A@sub_beta@}+(A^(370.))
+@hand@@hand@EMD
+
+@hand@@hand@DEF MOVEB|A@times@B@arr@C@times@D
+T1=A
+T2=C
+SKN @sub_T@@sub_1@B
+SUZ @sub_T@@sub_2@D
+MKN @sub_T@@sub_2@D
+@hand@@hand@EMD
+
+@hand@@hand@DEF GORR@hamb@A@times@@alpha@=@beta@@arr@B@arr@C
+@sup_1@DPX@sub_alpha@T2+1
+RSX@sub_alpha@@sub_pipe@@sub_alpha@LIST+A+1
+JPQ T3
+T1@arr@		hLDE@sub_alpha@LIST-1
+@sup_1@SED {0}
+JPQ T2+2
+RSX@sub_alpha@@sub_pipe@@sub_alpha@LIST
+hJPQ B
+T3@arr@		@sup_1@@sup_6@RSX@sub_beta@@sub_pipe@@sub_alpha@LIST-1
+JNX@sub_beta@#+2
+REX@sub_beta@0
+INX@sub_beta@@sub_pipe@@sub_alpha@
+DEX@sub_beta@1
+T2@arr@		JPQ T1
+0 [maybe @alpha@?]
+RSX@sub_alpha@#-1
+JPQ C
+@hand@@hand@EMD
+
+@hand@@hand@DEF ERROR@hamb@@alpha@@arr@P
+hJPQ {ERROR1@hamb@@alpha@@arr@P}
+@hand@@hand@EMD
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=17 doc_page=15 type=macros]
+[Page header: "IES 2XMX 013"]
+
+@hand@@hand@DEF ERROR1@hamb@@alpha@@arr@P
+@sup_1@STE #+2
+SKZ ERRORSTOP
+@sup_1@#@sub_alpha@ [syntax]
+JPQ P
+@hand@@hand@EMD
+
+@hand@@hand@DEF MAKA@hamb@A@arr@I
+REX@sub_delta@A-LIST
+hJPQ BLOCKMAKER
+REX@sub_I@@sub_pipe@@sub_delta@
+@hand@@hand@EMD
+
+@hand@@hand@DEF LDAB@hamb@P
+LDA P
+LDB P+1
+@hand@@hand@EMD
+
+@hand@@hand@DEF STAB@hamb@P
+STA P
+STB P+1
+@hand@@hand@EMD
+
+@hand@@hand@DEF LTAKE@hamb@N@times@XR
+@sup_1@@sup_2@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@sup_1@@sup_1@RSX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@sup_1@DPX@sub_T@@sub_pipe@@sub_S@LIST
+@sup_2@EXX@sub_S@@sub_pipe@@sub_T@LIST
+@sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@sup_2@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@sup_1@DPX@sub_0@@sub_pipe@@sub_X@@sub_R@LIST+(N)
+@hand@@hand@EMD
+
+@hand@@hand@DEF PUTL@hamb@N@times@XR@arr@M@times@XR2
+@sup_1@@sup_2@AUX@sub_X@@sub_R@{(N)+1,,-((N)+1)}
+@sup_1@@sup_2@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)+1
+@sup_2@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST
+@sup_1@@sup_1@RSX@sub_T@@sub_pipe@@sub_S@LIST
+@sup_1@DPX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST
+        @sup_2@DPX@sub_X@@sub_R@@sub_pipe@@sub_T@LIST
+        @sup_1@DPX@sub_X@@sub_R@@sub_pipe@@sub_S@LIST
+@sup_1@@sup_1@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)
+hJPX@sub_S@#+2
+SKX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@0
+@sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST-1
+@sup_1@@sup_1@AUX@sub_X@@sub_R@{(N)+1,,-((N)+1)}
+@hand@@hand@EMD
+
+@hand@@hand@DEF PUTLQ@hamb@N@times@XR@arr@M@times@XR2
+@sup_1@@sup_2@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=17 doc_page=15 type=macros]
+[Page header: "IES 2XMX 013"]
+
+
 [meta file_name=102726903-05-01-acc.pdf pdf_page=22 doc_page=20 type=main]
 [Page header: "IES 2XMX 020"]
 

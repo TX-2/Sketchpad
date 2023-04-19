@@ -1,5 +1,182 @@
 <html><body style='font-size:150%'><pre><code>
 <hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=1 doc_page=0 type=cover]
+[Handwritten: "SKETCHPAD LISTINGS"]
+[Handwritten: "IVAN G. SUTHERLAND"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=2 doc_page=1 type=equalities]
+[Handwritten: "EQUALITIES"]
+[Page header: "FRE SRV7 005"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=3 doc_page=2 type=equalities]
+[Page header: "FRE SRV7 006"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=4 doc_page=3 type=equalities]
+[Page header: "FRE SRV7 007"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=5 doc_page=4 type=equalities]
+[Page header: "FRE SRV7 010"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=6 doc_page=5 type=equalities]
+[Page header: "FRE SRV7 010"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=7 doc_page=6 type=symex]
+[Page header: "IES 2XMX 001"]
+[Handwritten: "BUILD"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=8 doc_page=7 type=symex]
+[Page header: "IES 2XMX 002"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=9 doc_page=8 type=symex]
+[Page header: "IES 2XMX 003"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=10 doc_page=9 type=symex]
+[Page header: "IES 2XMX 004"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=11 doc_page=10 type=equalities]
+[Page header: "IES 2XMX 005"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=12 doc_page=11 type=equalities]
+[Page header: "IES 2XMX 006"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=13 doc_page=11.5 type=equalities]
+[Page header: "IES 2XMX 007"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=14 doc_page=12 type=equalities]
+[Page header: "IES 2XMX 010"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=15 doc_page=13 type=equalities]
+[Page header: "IES 2XMX 011"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=16 doc_page=14 type=macros]
+[Page header: "IES 2XMX 012"]
+
+&#9755;&#9755;DEF MOVE|A&rarr;B
+hLDE A
+STE B
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF &beta;&#9635;A&times;B&times;C&times;D&times;E&times;F&times;G&times;H&times;I,&alpha;
+REX <sub>&beta;</sub>*{0<sub>&alpha;</sub>}
+RSX<sub>&beta;</sub>*{LIST+I<sub>&beta;</sub>}+(I^(370.))
+RSX<sub>&beta;</sub>*{LIST+H<sub>&beta;</sub>}+(H^(370.))
+RSX<sub>&beta;</sub>*{LIST+G<sub>&beta;</sub>}+(G^(370.))
+RSX<sub>&beta;</sub>*{LIST+F<sub>&beta;</sub>}+(F^(370.))
+RSX<sub>&beta;</sub>*{LIST+E<sub>&beta;</sub>}+(E^(370.))
+RSX<sub>&beta;</sub>*{LIST+D<sub>&beta;</sub>}+(D^(370.))
+RSX<sub>&beta;</sub>*{LIST+C<sub>&beta;</sub>}+(C^(370.))
+RSX<sub>&beta;</sub>*{LIST+B<sub>&beta;</sub>}+(B^(370.))
+RSX<sub>&beta;</sub>*{LIST+A<sub>&beta;</sub>}+(A^(370.))
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF MOVEB|A&times;B&rarr;C&times;D
+T1=A
+T2=C
+SKN <sub>T</sub><sub>1</sub>B
+SUZ <sub>T</sub><sub>2</sub>D
+MKN <sub>T</sub><sub>2</sub>D
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF GORR&equiv;A&times;&alpha;=&beta;&rarr;B&rarr;C
+<sup>1</sup>DPX<sub>&alpha;</sub>T2+1
+RSX<sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub>LIST+A+1
+JPQ T3
+T1&rarr;		hLDE<sub>&alpha;</sub>LIST-1
+<sup>1</sup>SED {0}
+JPQ T2+2
+RSX<sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub>LIST
+hJPQ B
+T3&rarr;		<sup>1</sup><sup>6</sup>RSX<sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub>LIST-1
+JNX<sub>&beta;</sub>#+2
+REX<sub>&beta;</sub>0
+INX<sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub>
+DEX<sub>&beta;</sub>1
+T2&rarr;		JPQ T1
+0 [maybe &alpha;?]
+RSX<sub>&alpha;</sub>#-1
+JPQ C
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF ERROR&equiv;&alpha;&rarr;P
+hJPQ {ERROR1&equiv;&alpha;&rarr;P}
+&#9755;&#9755;EMD
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=17 doc_page=15 type=macros]
+[Page header: "IES 2XMX 013"]
+
+&#9755;&#9755;DEF ERROR1&equiv;&alpha;&rarr;P
+<sup>1</sup>STE #+2
+SKZ ERRORSTOP
+<sup>1</sup>#<sub>&alpha;</sub> [syntax]
+JPQ P
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF MAKA&equiv;A&rarr;I
+REX<sub>&Delta;</sub>A-LIST
+hJPQ BLOCKMAKER
+REX<sub>I</sub><sub>|</sub><sub>&Delta;</sub>
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF LDAB&equiv;P
+LDA P
+LDB P+1
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF STAB&equiv;P
+STA P
+STB P+1
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF LTAKE&equiv;N&times;XR
+<sup>1</sup><sup>2</sup>RSX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST+(N)+1
+<sup>1</sup><sup>1</sup>RSX<sub>T</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST+(N)+1
+<sup>1</sup>DPX<sub>T</sub><sub>|</sub><sub>S</sub>LIST
+<sup>2</sup>EXX<sub>S</sub><sub>|</sub><sub>T</sub>LIST
+<sup>1</sup>DPX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST+(N)+1
+<sup>2</sup>DPX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST+(N)+1
+<sup>1</sup>DPX<sub>0</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST+(N)
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF PUTL&equiv;N&times;XR&rarr;M&times;XR2
+<sup>1</sup><sup>2</sup>AUX<sub>X</sub><sub>R</sub>{(N)+1,,-((N)+1)}
+<sup>1</sup><sup>2</sup>RSX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>LIST+(M)+1
+<sup>2</sup>DPX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST
+<sup>1</sup><sup>1</sup>RSX<sub>T</sub><sub>|</sub><sub>S</sub>LIST
+<sup>1</sup>DPX<sub>T</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST
+        <sup>2</sup>DPX<sub>X</sub><sub>R</sub><sub>|</sub><sub>T</sub>LIST
+        <sup>1</sup>DPX<sub>X</sub><sub>R</sub><sub>|</sub><sub>S</sub>LIST
+<sup>1</sup><sup>1</sup>RSX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>LIST+(M)
+hJPX<sub>S</sub>#+2
+SKX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>0
+<sup>1</sup>DPX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST-1
+<sup>1</sup><sup>1</sup>AUX<sub>X</sub><sub>R</sub>{(N)+1,,-((N)+1)}
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF PUTLQ&equiv;N&times;XR&rarr;M&times;XR2
+<sup>1</sup><sup>2</sup>RSX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST+(N)+1
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=17 doc_page=15 type=macros]
+[Page header: "IES 2XMX 013"]
+
+
+<hr>
 [meta file_name=102726903-05-01-acc.pdf pdf_page=22 doc_page=20 type=main]
 [Page header: "IES 2XMX 020"]
 
@@ -5478,6 +5655,183 @@ CCFR2&rarr;		hJMP ONLINECOMP
  ORIGIN|
 </code></pre></body></html>
 <html><body style='font-size:150%'><pre><code>
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=1 doc_page=0 type=cover]
+[Handwritten: "SKETCHPAD LISTINGS"]
+[Handwritten: "IVAN G. SUTHERLAND"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=2 doc_page=1 type=equalities]
+[Handwritten: "EQUALITIES"]
+[Page header: "FRE SRV7 005"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=3 doc_page=2 type=equalities]
+[Page header: "FRE SRV7 006"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=4 doc_page=3 type=equalities]
+[Page header: "FRE SRV7 007"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=5 doc_page=4 type=equalities]
+[Page header: "FRE SRV7 010"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=6 doc_page=5 type=equalities]
+[Page header: "FRE SRV7 010"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=7 doc_page=6 type=symex]
+[Page header: "IES 2XMX 001"]
+[Handwritten: "BUILD"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=8 doc_page=7 type=symex]
+[Page header: "IES 2XMX 002"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=9 doc_page=8 type=symex]
+[Page header: "IES 2XMX 003"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=10 doc_page=9 type=symex]
+[Page header: "IES 2XMX 004"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=11 doc_page=10 type=equalities]
+[Page header: "IES 2XMX 005"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=12 doc_page=11 type=equalities]
+[Page header: "IES 2XMX 006"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=13 doc_page=11.5 type=equalities]
+[Page header: "IES 2XMX 007"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=14 doc_page=12 type=equalities]
+[Page header: "IES 2XMX 010"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=15 doc_page=13 type=equalities]
+[Page header: "IES 2XMX 011"]
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=16 doc_page=14 type=macros]
+[Page header: "IES 2XMX 012"]
+
+&#9755;&#9755;DEF MOVE|A&rarr;B
+hLDE A
+STE B
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF &beta;&#9635;A&times;B&times;C&times;D&times;E&times;F&times;G&times;H&times;I,&alpha;
+REX <sub>&beta;</sub>*{0<sub>&alpha;</sub>}
+RSX<sub>&beta;</sub>*{LIST+I<sub>&beta;</sub>}+(I^(370.))
+RSX<sub>&beta;</sub>*{LIST+H<sub>&beta;</sub>}+(H^(370.))
+RSX<sub>&beta;</sub>*{LIST+G<sub>&beta;</sub>}+(G^(370.))
+RSX<sub>&beta;</sub>*{LIST+F<sub>&beta;</sub>}+(F^(370.))
+RSX<sub>&beta;</sub>*{LIST+E<sub>&beta;</sub>}+(E^(370.))
+RSX<sub>&beta;</sub>*{LIST+D<sub>&beta;</sub>}+(D^(370.))
+RSX<sub>&beta;</sub>*{LIST+C<sub>&beta;</sub>}+(C^(370.))
+RSX<sub>&beta;</sub>*{LIST+B<sub>&beta;</sub>}+(B^(370.))
+RSX<sub>&beta;</sub>*{LIST+A<sub>&beta;</sub>}+(A^(370.))
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF MOVEB|A&times;B&rarr;C&times;D
+T1=A
+T2=C
+SKN <sub>T</sub><sub>1</sub>B
+SUZ <sub>T</sub><sub>2</sub>D
+MKN <sub>T</sub><sub>2</sub>D
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF GORR&equiv;A&times;&alpha;=&beta;&rarr;B&rarr;C
+<sup>1</sup>DPX<sub>&alpha;</sub>T2+1
+RSX<sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub>LIST+A+1
+JPQ T3
+T1&rarr;		hLDE<sub>&alpha;</sub>LIST-1
+<sup>1</sup>SED {0}
+JPQ T2+2
+RSX<sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub>LIST
+hJPQ B
+T3&rarr;		<sup>1</sup><sup>6</sup>RSX<sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub>LIST-1
+JNX<sub>&beta;</sub>#+2
+REX<sub>&beta;</sub>0
+INX<sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub>
+DEX<sub>&beta;</sub>1
+T2&rarr;		JPQ T1
+0 [maybe &alpha;?]
+RSX<sub>&alpha;</sub>#-1
+JPQ C
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF ERROR&equiv;&alpha;&rarr;P
+hJPQ {ERROR1&equiv;&alpha;&rarr;P}
+&#9755;&#9755;EMD
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=17 doc_page=15 type=macros]
+[Page header: "IES 2XMX 013"]
+
+&#9755;&#9755;DEF ERROR1&equiv;&alpha;&rarr;P
+<sup>1</sup>STE #+2
+SKZ ERRORSTOP
+<sup>1</sup>#<sub>&alpha;</sub> [syntax]
+JPQ P
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF MAKA&equiv;A&rarr;I
+REX<sub>&Delta;</sub>A-LIST
+hJPQ BLOCKMAKER
+REX<sub>I</sub><sub>|</sub><sub>&Delta;</sub>
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF LDAB&equiv;P
+LDA P
+LDB P+1
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF STAB&equiv;P
+STA P
+STB P+1
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF LTAKE&equiv;N&times;XR
+<sup>1</sup><sup>2</sup>RSX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST+(N)+1
+<sup>1</sup><sup>1</sup>RSX<sub>T</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST+(N)+1
+<sup>1</sup>DPX<sub>T</sub><sub>|</sub><sub>S</sub>LIST
+<sup>2</sup>EXX<sub>S</sub><sub>|</sub><sub>T</sub>LIST
+<sup>1</sup>DPX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST+(N)+1
+<sup>2</sup>DPX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST+(N)+1
+<sup>1</sup>DPX<sub>0</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST+(N)
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF PUTL&equiv;N&times;XR&rarr;M&times;XR2
+<sup>1</sup><sup>2</sup>AUX<sub>X</sub><sub>R</sub>{(N)+1,,-((N)+1)}
+<sup>1</sup><sup>2</sup>RSX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>LIST+(M)+1
+<sup>2</sup>DPX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST
+<sup>1</sup><sup>1</sup>RSX<sub>T</sub><sub>|</sub><sub>S</sub>LIST
+<sup>1</sup>DPX<sub>T</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST
+        <sup>2</sup>DPX<sub>X</sub><sub>R</sub><sub>|</sub><sub>T</sub>LIST
+        <sup>1</sup>DPX<sub>X</sub><sub>R</sub><sub>|</sub><sub>S</sub>LIST
+<sup>1</sup><sup>1</sup>RSX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>LIST+(M)
+hJPX<sub>S</sub>#+2
+SKX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>0
+<sup>1</sup>DPX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST-1
+<sup>1</sup><sup>1</sup>AUX<sub>X</sub><sub>R</sub>{(N)+1,,-((N)+1)}
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF PUTLQ&equiv;N&times;XR&rarr;M&times;XR2
+<sup>1</sup><sup>2</sup>RSX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST+(N)+1
+
+<hr>
+[meta file_name=102726903-05-01-acc.pdf pdf_page=17 doc_page=15 type=macros]
+[Page header: "IES 2XMX 013"]
+
+
 <hr>
 [meta file_name=102726903-05-01-acc.pdf pdf_page=22 doc_page=20 type=main]
 [Page header: "IES 2XMX 020"]
