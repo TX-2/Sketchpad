@@ -1,0 +1,103 @@
+[meta file_name=102726903-05-02-acc.pdf pdf_page=1 doc_page=151 type=code]
+[Page header: "IES BOO7 001"]
+[Omitting duplicate code present on doc_pages 144-150]
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=2 doc_page=152 type=code]
+[Page header: "IES BOO7 002"]
+[Omitting duplicated code present on doc_pages 144-150]
+[Omitted code ends with " ORIGIN|"]
+
+STARTS@arr@	0
+HEADING1@arr@	
+		@sup_1@STE HEADING1X
+		DPX @sub_alpha@ SAVE@alpha@
+		VDIFF@hamb@@eps@@arr@@delta@=DELTA2@arr@BADOV
+		JPQ HEADING2A
+HEADING2@arr@
+		@sup_1@STE HEADING1X
+		DPX @sub_alpha@SAVE@alpha@
+HEADING2A@arr@
+		VDIFF@hamb@@gamma@@arr@@beta@=DELTA1@arr@BADOV
+		RSX @sub_alpha@ SAVE@alpha@
+HEADING1X@arr@
+		JPQ #
+PARAERR@arr@
+		@sup_1@STE PARAERRX
+		PROD@hamb@DELTA1@times@DELTA2+1/DIST=TS@arr@BADOV
+		[what's the point of 1@times@DELTA2?]
+		PROD@hamb@DELTA1+1@times@DELTA2/DIST@arr@BADOV
+PARAERRX@arr@
+		JPQ #
+PPDERR@arr@	@sup_1@STE PPDERRX
+		PROD@hamb@DELTA1@times@DELTA2/DIST=TS@arr@BADOV
+		PROD@hamb@DELTA1+1@times@DELTA2+1/DIST@arr@BADOV
+		SUMM@arr@TS@arr@BADOV
+PPDERRX@arr@
+		JPQ #
+PRLCOMP@arr@
+		@sup_1@STE PRLCOMPEX
+		SETIX@hamb@@beta@,@gamma@,@delta@,@eps@
+		hJPQ HEADING1
+		PYTH@hamb@DELTA1=DIST@arr@BADOV
+		PYTH@hamb@DELTA2@arr@@arr@BADOV [syntax, empty macro parameter?]
+		SUMM@arr@DIST=DIST@arr@BADOV
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=3 doc_page=153 type=code]
+[Page header: "IES BOO7 003"]
+
+		EITHER@hamb@PPDERR,PARAERR@arr@20
+PRLCOMPEX@arr@
+		JPQ #
+MDISCOMP@arr@
+		@sup_1@STE MDISCOMPX
+		SETIX@hamb@@beta@,@gamma@,@delta@,@eps@
+		hJPQ HEADING1
+		PYTH@hamb@DELTA1=TS@arr@BADOV
+		PYTH@hamb@DELTA2=TT@arr@BADOV
+		EITHER@hamb@MD1,MD2,MD3,MD4,MD5@arr@20
+MDISCOMPX@arr@
+		JPQ #
+MD1@arr@	@sup_1@STE MDX
+		LDA {-(?)}
+		JPQ MDT
+MD2@arr@	@sup_1@STE MDX
+		LDA { 200,}
+		JPQ MDT
+MD3@arr@	@sup_1@STE MDX
+		LDA {1-(?))/3}
+MDT@arr@	MUL TS
+		SUB TT
+		SCA {-1,}
+MDX@arr@	JPQ #
+MD4@arr@	@sup_1@STE MDX1
+		LDA { 200,}
+		JPQ MDT1
+MD5@arr@	@sup_1@STE MDX1
+		LDA {1-(?))/3}
+MDT1@arr@	MUL TT
+		SUB TS
+		SCA {-1,}
+MDX1@arr@	JPQ #
+MSCOMP@arr@	@sup_1@STE MSCOMPX
+		SETIX@hamb@@beta@,@gamma@
+		RSX @sub_S@@sub_pipe@@sub_beta@ LIST+TYPE
+		AUX @sub_beta@@sub_pipe@@sub_S@ LIST+VARLOC
+		RSX @sub_S@@sub_pipe@@sub_gamma@ LIST+TYPE
+		AUX @sub_gamma@@sub_pipe@@sub_S@ LIST+VARLOC
+		PYTH@hamb@LIST@sub_beta@=TS@arr@BADOV
+		[Part of the next line obscured/damaged.]
+		PYTH@hamb@LIST??=TT@arr@BADOV
+		EITHER@hamb@MD1,MD2,MD3,MD4,MD5@arr@14
+MSCOMPX@arr@
+		JPQ #
+TPTLCOMP@arr@
+		@sup_1@STE TPTLCOMPX
+		SETIX@hamb@@delta@,@beta@,@gamma@
+		hJPQ HEADING2
+		PYTH@hamb@DELTA1=TS@arr@BADOV
+		GETVAL@hamb@0,1@times@@delta@@arr@DELTA2
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=4 doc_page=154 type=code]
+[Page header: "IES BOO7 004"]
+
+
