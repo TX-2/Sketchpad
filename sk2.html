@@ -105,5 +105,113 @@ TPTLCOMP&rarr;
 [meta file_name=102726903-05-02-acc.pdf pdf_page=4 doc_page=154 type=code]
 [Page header: "IES BOO7 004"]
 
+		COM DELTA2+1
+		hJPQ PYTHAGORIAN
+		hJOV BADOV
+		SUMM&rarr;TS=DIST&rarr;BADOV
+		hJPQ PARAERR
+TPTLCOMPX&rarr;
+		JPQ #
+ONLINECOMP&rarr;
+		<sup>1</sup>STE ONLNX
+		SETIX&equiv;&beta;,&Delta;,&gamma;
+		REX <sub>&epsilon;</sub><sub>|</sub><sub>&gamma;</sub>
+		hJPQ HEADING1
+		PYTH&equiv;DELTA1=DIST&rarr;BADOV
+		PYTH&equiv;DELTA2&rarr;&rarr;BADOV
+		SUMM&rarr;DIST=DIST&rarr;BADOV
+		REX <sub>&gamma;</sub><sub>|</sub><sub>&Delta;</sub>
+		hJPQ HEADING2
+		PYTH&equiv;DELTA1&rarr;&rarr;BADOV
+		SUMM&rarr;DIST=DIST&rarr;BADOV
+		hJPQ PARAERR
+ONLNX&rarr;		JPQ #
+INCIRCCOMP&rarr;
+		<sup>1</sup>STE ONCIX
+		SETIX&equiv;&beta;,&gamma;,&Delta;
+		DISTANCE&equiv;&beta;&rarr;&gamma;=TS&rarr;BADOV
+		DISTANCE&equiv;&beta;&rarr;&Delta;&rarr;BADOV
+		SUB TS
+		SCA {-1,}
+ONCIX&rarr;		JPQ #
+HOVSCOMP&rarr;
+		<sup>1</sup>STE HOVSX
+		SETIX&equiv;&beta;,&gamma;
+		hJPQ HEADING2
+		EITHER&equiv;HOVSCOMP1,HOVSCOMP2&rarr;14
+HOVSX&rarr;		JPQ #
+HOVSCOMP1&rarr;
+		SUBR&equiv;LDA DELTA1 [instruction as a macro parameter]
+HOVSCOMP2&rarr;
+		SUBR&equiv;LDA DELTA1+1 [guessing, part of the line is damaged]
+IBVERTCOMP&rarr;
+		<sup>1</sup>STE IBCOMPX
+		SETIX&equiv;&beta;
+		GETVAL&equiv;0,1&times;&beta;&rarr;DELTA1
+		EITHER&equiv;HOVSCOMP1,HOVSCOMP2&rarr;12
+IBCOMPX&rarr;
+		JPQ # [guessing, some damage/smudging]
+DISTCOMP&rarr;
+		<sup>1</sup>STE DISTCOMPX
+		SETIX&equiv;&Delta;,&beta;,&gamma;
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=5 doc_page=155 type=code]
+[Page header: "IES BOO7 005"]
+
+		PYTH&equiv;DELTA1&rarr;&rarr;BADOV
+		SUB <sub>&Delta;</sub> LIST+SVAL
+		hJOV BADOV
+DISTCOMPX&rarr;
+		JPQ #
+SIZECOMP&rarr;
+		<sup>1</sup>STE SIZECX
+		SETIX&equiv;&beta;,&gamma;
+		GETVAL&equiv;0,1&times;&beta;
+		hJPQ PYTHAGORIAN
+		hJOV BADOV
+		SUB <sub>&gamma;</sub> LIST+SVAL
+		hJOV BADOV
+SIZECX&rarr;		JPQ #
+IBFSCOMP&rarr;
+		<sup>1</sup>STE IBVSCOMPX
+		SETIX&equiv;&beta;
+		PYTH&equiv;IVAL+LIST<sub>&beta;</sub>&rarr;&rarr;BADOV
+		RSX <sub>&alpha;</sub><sub>|</sub><sub>&beta;</sub> LIST+IWHAT
+		DIFF&rarr;PSIZE+LIST<sub>&alpha;</sub>&rarr;BADOV
+IBVSCOMPX&rarr;
+		JPQ #
+MIDP1&rarr;		<sup>1</sup>STE MIDP1X
+		hJPQ 3SET
+		LDA DELTA2
+		ADD DELTA3
+		SCA {-1,}
+		SUB DELTA1
+		hJOV BADOV
+MIDP1X&rarr;		JPQ #
+MIDP2&rarr;		<sup>1</sup>STE MIDP2X
+		hJPQ 3SET
+		LDA DELTA2+1
+		ADD DELTA3+1
+		SCA {-1,}
+		SUB DELTA1+1
+		hJOV BADOV
+MIDP2X&rarr;		JPQ #
+3SET&rarr;		<sup>1</sup>STE 3SETX	[guessing, line damaged in the listing]
+		SETIX&equiv;&beta;,&gamma;,&Delta;	[guessing, line damaged in the listing]
+		DPX <sub>&alpha;</sub> SAVE&alpha;
+		WHEREIS&equiv;&beta;&rarr;DELTA1
+		WHEREIS&equiv;&gamma;&rarr;DELTA2
+		WHEREIS&equiv;&Delta;&rarr;DELTA3
+		RSX <sub>&alpha;</sub> SAVE&alpha;
+3SETX&rarr;		JPQ #
+6FSC&rarr;		<sup>1</sup>STE 6FSCX
+		SETIX&equiv;&beta;
+		GETVAL&equiv;0,1&times;&beta;
+		hJPQ PYTHAGORIAN
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=6 doc_page=156 type=code]
+[Page header: "IES BOO7 006"]
 
 </code></pre></body></html>

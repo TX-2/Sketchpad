@@ -100,4 +100,110 @@ TPTLCOMP@arr@
 [meta file_name=102726903-05-02-acc.pdf pdf_page=4 doc_page=154 type=code]
 [Page header: "IES BOO7 004"]
 
+		COM DELTA2+1
+		hJPQ PYTHAGORIAN
+		hJOV BADOV
+		SUMM@arr@TS=DIST@arr@BADOV
+		hJPQ PARAERR
+TPTLCOMPX@arr@
+		JPQ #
+ONLINECOMP@arr@
+		@sup_1@STE ONLNX
+		SETIX@hamb@@beta@,@delta@,@gamma@
+		REX @sub_eps@@sub_pipe@@sub_gamma@
+		hJPQ HEADING1
+		PYTH@hamb@DELTA1=DIST@arr@BADOV
+		PYTH@hamb@DELTA2@arr@@arr@BADOV
+		SUMM@arr@DIST=DIST@arr@BADOV
+		REX @sub_gamma@@sub_pipe@@sub_delta@
+		hJPQ HEADING2
+		PYTH@hamb@DELTA1@arr@@arr@BADOV
+		SUMM@arr@DIST=DIST@arr@BADOV
+		hJPQ PARAERR
+ONLNX@arr@	JPQ #
+INCIRCCOMP@arr@
+		@sup_1@STE ONCIX
+		SETIX@hamb@@beta@,@gamma@,@delta@
+		DISTANCE@hamb@@beta@@arr@@gamma@=TS@arr@BADOV
+		DISTANCE@hamb@@beta@@arr@@delta@@arr@BADOV
+		SUB TS
+		SCA {-1,}
+ONCIX@arr@	JPQ #
+HOVSCOMP@arr@
+		@sup_1@STE HOVSX
+		SETIX@hamb@@beta@,@gamma@
+		hJPQ HEADING2
+		EITHER@hamb@HOVSCOMP1,HOVSCOMP2@arr@14
+HOVSX@arr@	JPQ #
+HOVSCOMP1@arr@
+		SUBR@hamb@LDA DELTA1 [instruction as a macro parameter]
+HOVSCOMP2@arr@
+		SUBR@hamb@LDA DELTA1+1 [guessing, part of the line is damaged]
+IBVERTCOMP@arr@
+		@sup_1@STE IBCOMPX
+		SETIX@hamb@@beta@
+		GETVAL@hamb@0,1@times@@beta@@arr@DELTA1
+		EITHER@hamb@HOVSCOMP1,HOVSCOMP2@arr@12
+IBCOMPX@arr@
+		JPQ # [guessing, some damage/smudging]
+DISTCOMP@arr@
+		@sup_1@STE DISTCOMPX
+		SETIX@hamb@@delta@,@beta@,@gamma@
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=5 doc_page=155 type=code]
+[Page header: "IES BOO7 005"]
+
+		PYTH@hamb@DELTA1@arr@@arr@BADOV
+		SUB @sub_delta@ LIST+SVAL
+		hJOV BADOV
+DISTCOMPX@arr@
+		JPQ #
+SIZECOMP@arr@
+		@sup_1@STE SIZECX
+		SETIX@hamb@@beta@,@gamma@
+		GETVAL@hamb@0,1@times@@beta@
+		hJPQ PYTHAGORIAN
+		hJOV BADOV
+		SUB @sub_gamma@ LIST+SVAL
+		hJOV BADOV
+SIZECX@arr@	JPQ #
+IBFSCOMP@arr@
+		@sup_1@STE IBVSCOMPX
+		SETIX@hamb@@beta@
+		PYTH@hamb@IVAL+LIST@sub_beta@@arr@@arr@BADOV
+		RSX @sub_alpha@@sub_pipe@@sub_beta@ LIST+IWHAT
+		DIFF@arr@PSIZE+LIST@sub_alpha@@arr@BADOV
+IBVSCOMPX@arr@
+		JPQ #
+MIDP1@arr@	@sup_1@STE MIDP1X
+		hJPQ 3SET
+		LDA DELTA2
+		ADD DELTA3
+		SCA {-1,}
+		SUB DELTA1
+		hJOV BADOV
+MIDP1X@arr@	JPQ #
+MIDP2@arr@	@sup_1@STE MIDP2X
+		hJPQ 3SET
+		LDA DELTA2+1
+		ADD DELTA3+1
+		SCA {-1,}
+		SUB DELTA1+1
+		hJOV BADOV
+MIDP2X@arr@	JPQ #
+3SET@arr@	@sup_1@STE 3SETX	[guessing, line damaged in the listing]
+		SETIX@hamb@@beta@,@gamma@,@delta@	[guessing, line damaged in the listing]
+		DPX @sub_alpha@ SAVE@alpha@
+		WHEREIS@hamb@@beta@@arr@DELTA1
+		WHEREIS@hamb@@gamma@@arr@DELTA2
+		WHEREIS@hamb@@delta@@arr@DELTA3
+		RSX @sub_alpha@ SAVE@alpha@
+3SETX@arr@	JPQ #
+6FSC@arr@	@sup_1@STE 6FSCX
+		SETIX@hamb@@beta@
+		GETVAL@hamb@0,1@times@@beta@
+		hJPQ PYTHAGORIAN
+		
+[meta file_name=102726903-05-02-acc.pdf pdf_page=6 doc_page=156 type=code]
+[Page header: "IES BOO7 006"]
 
