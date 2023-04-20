@@ -153,9 +153,218 @@ SKX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@0
 @hand@@hand@DEF PUTLQ@hamb@N@times@XR@arr@M@times@XR2
 @sup_1@@sup_2@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=17 doc_page=15 type=macros]
-[Page header: "IES 2XMX 013"]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=18 doc_page=16 type=macros]
+[Page header: "IES 2XMX 014"]
 
+@sup_2@EXX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)+1
+@sup_2@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@sup_1@@sup_1@RSX@sub_T@@sub_pipe@@sub_S@LIST
+@sup_1@EXX @sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@sup_1@DPX@sub_T@@sub_pipe@@sub_S@LIST
+@sup_1@@sup_1@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)
+hJPX@sub_S@#+2
+SKX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@0
+@sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)
+@hand@@hand@EMD
+
+@hand@@hand@DEF MOVEL@hamb@N@times@XR@arr@M@times@XR2
+@sup_1@@sup_2@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1      **TAKE
+@sup_1@@sup_1@RSX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@sup_1@DPX@sub_T@@sub_pipe@@sub_S@LIST
+@sup_2@EXX@sub_S@@sub_pipe@@sub_T@LIST
+@sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@sup_2@EXX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)+1      **PUT
+@sup_2@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@sup_1@@sup_1@RSX@sub_T@@sub_pipe@@sub_S@LIST
+@sup_1@EXX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@sup_1@DPX@sub_T@@sub_pipe@@sub_S@LIST
+@hand@@hand@EMD
+
+@hand@@hand@DEF PUTR@hamb@N@times@XR@arr@M@times@XR2
+@sup_1@@sup_2@AUX@sub_X@@sub_R@{(N)+1,,-((N)+1)}
+@sup_1@@sup_1@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)+1
+@sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST
+@sup_1@@sup_2@RSX@sub_T@@sub_pipe@@sub_S@LIST
+@sup_2@DPX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST
+	@sup_2@DPX@sub_X@@sub_R@@sub_pipe@@sub_S@LIST
+	@sup_1@DPX@sub_X@@sub_R@@sub_pipe@@sub_T@LIST
+@sup_1@@sup_1@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)
+hJPX@sub_S@#+2
+SKX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@0
+@sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST-1
+@sup_1@@sup_1@AUX@sub_X@@sub_R@{(N)+1,,-((N)+1)}
+@hand@@hand@EMD
+
+@hand@@hand@DEF PUTRQ@hamb@N@times@XR@arr@M@times@XR2
+@sup_1@@sup_1@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@sup_1@EXX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)+1
+@sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@sup_1@@sup_2@RSX@sub_T@@sub_pipe@@sub_S@LIST
+@sup_2@EXX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@sup_2@DPX@sub_T@@sub_pipe@@sub_S@LIST
+@sup_1@@sup_1@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)
+hJPX@sub_S@#+2
+SKX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@0
+@sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=19 doc_page=17 type=macros]
+[Page header: "IES 2XMX 015"]
+
+@hand@@hand@EMD
+
+@hand@@hand@DEF MOVER@hamb@N@times@XR@arr@M@times@XR2
+@sup_1@@sup_2@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1      **TAKE
+@sup_1@@sup_1@RSX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@sup_1@DPX@sub_T@@sub_pipe@@sub_S@LIST
+@sup_2@EXX@sub_S@@sub_pipe@@sub_T@LIST
+@sup_2@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@sup_1@EXX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)+1      **PUT
+@sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@sup_1@@sup_2@RSX@sub_T@@sub_pipe@@sub_S@LIST
+@sup_2@EXX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@sup_2@DPX@sub_T@@sub_pipe@@sub_S@LIST
+@hand@@hand@EMD 
+
+@hand@@hand@DEF COMBL@hamb@N@times@XR@arr@M@times@XR2
+@sup_1@@sup_2@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@sup_2@EXX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)+1
+@sup_1@@sup_1@RSX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@sup_2@DPX@sub_S@@sub_pipe@@sub_T@LIST
+@sup_1@EXX@sub_T@@sub_pipe@@sub_S@LIST
+@sup_1@@sup_2@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@sup_1@EXX@sub_T@@sub_pipe@@sub_S@LIST
+@sup_2@DPX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@sup_1@DPX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@hand@@hand@EMD
+
+@hand@@hand@DEF COMBR@hamb@N@times@XR@arr@M@times@XR2
+@sup_1@@sup_1@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@sup_1@EXX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)+1
+@sup_1@@sup_2@RSX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@sup_1@DPX@sub_S@@sub_pipe@@sub_T@LIST
+@sup_2@EXX@sub_T@@sub_pipe@@sub_S@LIST
+@sup_1@@sup_1@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@sup_2@EXX@sub_T@@sub_pipe@@sub_S@LIST
+@sup_2@DPX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@sup_1@DPX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@hand@@hand@EMD
+
+@hand@@hand@DEF LGORR@hamb@N@times@XR=XR2@arr@SUBR@arr@LEXIT
+GORREXIT=LEXIT
+@sup_1@DPX@sub_X@@sub_R@LGORR1
+@sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+LGORR0@arr@     @sup_1@@sup_6@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@LIST-1
+h@sup_minus@@sup_1@JNX@sub_X@@sub_R@#+2
+@sup_1@SKX@sub_X@@sub_R@1
+INX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@0
+LGORR1@arr@     SXD@sub_X@@sub_R@#      ** MODIFIED
+hJPQ GORREXIT+(GORREXIT/GORREXIT@circled_v@1@times@(LGORREND+1))
+@sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@LIST
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=20 doc_page=18 type=macros]
+[Page header: "IES 2XMX 016"]
+
+@sup_1@DPX@sub_X@@sub_R@@sub_2@LGORR2
+hJPQ SUBR
+LGORR2@arr@     SKX@sub_X@@sub_R@@sub_2@#       **MODIFIED
+LGORREND@arr@   JPQ LGORR0
+@hand@@hand@EMD
+
+@hand@@hand@DEF LGORL@hamb@N@times@XR=XR2@arr@SUBR@arr@LEXIT
+GORLEXIT=LEXIT
+@sup_1@DPX@sub_X@@sub_R@LGORL1
+@sup_1@@sup_2@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+LGORL0@arr@     @sup_1@@sup_6@RSX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST-1
+h@sup_minus@@sup_1@JNX@sub_X@@sub_R@#+2
+@sup_1@SKX@sub_X@@sub_R@1
+INX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@0
+LGORL1@arr@     SXD@sub_X@@sub_R@#      ** MODIFIED
+hJPQ GORLEXIT+(GORLEXIT/GORLEXIT@circled_v@1@times@(LGORLEND+1))
+@sup_1@@sup_2@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST
+@sup_1@DPX@sub_X@@sub_R@@sub_2@LGORL2
+hJPQ SUBR
+LGORL2@arr@     SKX@sub_X@@sub_R@@sub_2@#       **MODIFIED
+LGORLEND@arr@   JPQ LGORL0
+@hand@@hand@EMD
+
+@hand@@hand@DEF LGORRI@hamb@N@times@XR=XR2@arr@SUBR@arr@LEXIT
+GORRIEXIT=LEXIT
+@sup_1@DPX@sub_X@@sub_R@LGORRI1
+@sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+LGORRI0@arr@    @sup_1@@sup_6@RSX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST-1
+h@sup_minus@@sup_1@JNX@sub_X@@sub_R@#+2
+@sup_1@SKX@sub_X@@sub_R@1
+INX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@0
+GORRI1@arr@     SXD@sub_X@@sub_R@#      ** MODIFIED
+[GGORIEXIT in listing, typo?]
+hJPQ GGORRIEXIT+(GORRIEXIT/GORRIEXIT@circled_v@1@times@(LGORRIEND+1))
+@sup_1@DPX@sub_X@@sub_R@@sub_2@LGORRI2
+@sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST       **CURRENT NEXT
+hJPQ SUBR
+LGORRI2@arr@     SKX@sub_X@@sub_R@@sub_2@#       **MODIFIED
+@sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST       ** NEW NXT
+LGORRIEND@arr@   JPQ LGORRI0
+@hand@@hand@EMD
+
+@hand@@hand@DEF LGORLI@hamb@N@times@XR=XR2@arr@SUBR@arr@LEXIT
+GORLIEXIT=LEXIT
+@sup_1@DPX@sub_X@@sub_R@LGORLI1
+@sup_1@@sup_2@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+LGORLI0@arr@    @sup_1@@sup_6@RSX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST-1
+h@sup_minus@@sup_1@JNX@sub_X@@sub_R@#+2
+@sup_1@SKX@sub_X@@sub_R@1
+INX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@0
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=21 doc_page=19 type=macros]
+[Page header: "IES 2XMX 017"]
+
+LGORLI1@arr@     SXD@sub_X@@sub_R@#      ** MODIFIED
+hJPQ GORLIEXIT+(GORLIEXIT/GORLIEXIT@circled_v@1@times@(LGORLIEND+1))
+@sup_1@DPX@sub_X@@sub_R@@sub_2@LGORLI2
+ @sup_1@@sup_2@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST       **CURRENT NXT
+hJPQ SUBR
+LGORLI2@arr@     SKX@sub_X@@sub_R@@sub_2@#       **MODIFIED
+@sup_1@@sup_2@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST       ** NEW NXT
+LGORLIEND@arr@   JPQ LGORLI0
+@hand@@hand@EMD
+
+@hand@@hand@DEF SUBR@hamb@A
+                @sup_1@STE SUBR1
+                A
+SUBR1@arr@      JPQ #
+@hand@@hand@EMD
+
+@hand@@hand@DEF LDAE@hamb@P
+		LDA P
+		LDB P+1
+		LDC P+2
+		LDD P+3
+@hand@@hand@EMD
+
+@hand@@hand@DEF STAE@hamb@P
+		STA P
+		STB P+1
+		STC P+2
+		STD P+3
+@hand@@hand@EMD
+
+[Two macros below use symexes with a funky symbol, defined on pdf_page 15.]
+@hand@@hand@DEF PUT|A,@alpha@@arr@B,@beta@
+		REX@sub_?@@sub_1@@sub_pipe@@sub_alpha@A+1
+		@sup_1@@sup_2@RSX@sub_?@@sub_2@@sub_pipe@@sub_beta@B+1+LIST
+		hJPQ {PUTSUB}
+		@sup_1@PX@sub_beta@@sub_pipe@@sub_alpha@LIST+A
+@hand@@hand@EMD
+
+@hand@@hand@DEF PUTSUB
+		@sup_1@STE #+6
+		@sup_1@DPX@sub_?@@sub_2@@sub_pipe@@sub_?@@sub_1@LIST
+		@sup_1@@sup_1@RSX@sub_T@@sub_pipe@@sub_?@@sub_2@LIST
+		@sup_1@DPX@sub_T@@sub_pipe@@sub_?@@sub_1@LIST
+		@sup_2@DPX@sub_?@@sub_1@@sub_pipe@@sub_T@LIST
+		@sup_1@DPX@sub_?@@sub_1@@sub_pipe@@sub_?@@sub_2@LIST
+		JPQ #
+@hand@@hand@EMD
 
 [meta file_name=102726903-05-01-acc.pdf pdf_page=22 doc_page=20 type=main]
 [Page header: "IES 2XMX 020"]
@@ -2914,7 +3123,7 @@ STB A+1
 	@sup_1@DPX@sub_T@@sub_pipe@@sub_S@LIST
 	@sup_1@@sup_1@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)
 	hJPX@sub_S@#+2
-	SKX@sub_S@@sub_pipe@@sub_X@@sub_R@0
+	SKX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@0
 	@sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)
 @hand@@hand@EMD
 
