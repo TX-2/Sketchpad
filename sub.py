@@ -199,5 +199,3 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
     main(args.file_name, args.format)
-
-HTMLGenerator("sk.tx2as").Generate()
