@@ -2627,7 +2627,7 @@ SUBR1@arr@	JPQ #
 		T1=P
 		SMASBL,4,,T-LIST 		[macro invocation?]
 		#-NLIST-SMASBL,,#+SMASBL-NLIST 	[this is just a number?]
-		-2.0
+		-2,0
 		SPLAT
 		N
 		T1
@@ -2636,7 +2636,7 @@ SUBR1@arr@	JPQ #
 @hand@@hand@DEF MASTER@hamb@T@arr@N
 		MASBL,4,,T-LIST
 		#-NLIST-MASBL,,#-NLIST+MASBL
-		-2.
+		-2,
 		SPLAT
 		N
 @hand@@hand@EMD
