@@ -972,7 +972,7 @@ V6&rarr;		MASBL,4,,VARIABLES-LIST
 		(21,34,,44,35)	**NUMB
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=28 doc_page=178 type=main]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=28 doc_page=178 type=main]
 [Page header: "IES ONLW 026"]
 
 		hJMP MAGNUM	**DISPLAY
@@ -985,5 +985,97 @@ Q6&rarr;		DISPLAYK
 		4	**TUPLE
 		NVAL	**VARLOC
  ORIGIN|
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=29 doc_page=179 type=code]
+[Page header: "IES ONLW 001"]
+[doc_pages 179-182 contain the same code as in the main block above (doc_pages 172-178), not transcribing]
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=30 doc_page=180 type=code]
+[Page header: "IES ONLW 002"]
+[doc_pages 179-182 contain the same code as in the main block above (doc_pages 172-178), not transcribing]
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=31 doc_page=181 type=code]
+[Page header: "IES ONLW 003"]
+[doc_pages 179-182 contain the same code as in the main block above (doc_pages 172-178), not transcribing]
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=32 doc_page=182 type=code]
+[Page header: "IES ONLW 004"]
+[doc_pages 179-182 contain the same code as in the main block above (doc_pages 172-178), not transcribing]
+[On this page duplicate code ends at " ORIGIN|", transcription starts there]
+
+STARTS&rarr;		CSQ<sub>7</sub><sub>6</sub>
+		MKZ PLPUBUSY
+		MKZ PLPLBUSY
+		MKZ PLOTNOSCOPE
+		MKZ PICCHANGE
+		JPQ START76
+CHANGEPIC&rarr;
+		<sup>1</sup>STE CPEX
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=33 doc_page=183 type=code]
+[Page header: "IES ONLW 005"]
+
+		REX <sub>&alpha;</sub> DESIGS-LIST
+		LGORR&equiv;SPECB&times;&alpha;=S&rarr;CHANGE1&rarr;CHANGE2
+CHANGE1&rarr;
+		SUBR&equiv;(LTAKE&equiv;VORD&times;&alpha;)
+CHANGE2&rarr;
+		REX <sub>&alpha;</sub> CURPICS-LIST
+		LGORR&equiv;SPECB&times;&alpha;=S&rarr;CPWRAP&rarr;CPWRAPED
+CPWRAP&rarr;		<sup>1</sup>STE CPWRAPX
+		LTAKE&equiv;PWHOS&times;&alpha;
+		COMB&equiv;PPARTM&rarr;PPART&times;&alpha;
+		SKIE&equiv;PINS&times;&alpha;
+		JPQ CPWRAPX
+		SKIE&equiv;PPART&times;&alpha;
+		JPQ CPWRAPA
+		SKIE&equiv;PICBLKS&times;&alpha;
+		JPQ CPWRAPA
+		REX <sub>&beta;</sub> FREES-LIST
+		MOVEL&equiv;TYPE&times;&alpha;&rarr;SPECB&times;&beta;
+		<sup>1</sup>DPX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
+CPWRAPA&rarr;
+		LDA {-(?)}	[many such occasions, maybe lowercase k?]
+		STA CPMINX
+		STA CPMINY
+		COM A
+		STA CPMAXX
+		STA CPMAXY
+		LGORR&equiv;PPART&times;&alpha;=S&rarr;CPWRAPB&rarr;CPWRAPC
+CPWRAPB&rarr;
+		<sup>1</sup>STE CPWRAPBX
+		S&#9635;TYPE,&alpha;
+		hBPQ <sub>S</sub> HOWBIG+LIST
+CPWRAPBX&rarr;
+		JPQ #
+CPWRAPC&rarr;
+		LGORR&equiv;PICBLKS&times;&alpha;=S&rarr;CPWRAPB
+CPWRAPC1&rarr;
+		HDIF|CPMAXY,CPMINY&rarr; B
+		JNA #+2
+		JPQ #+2
+		LDB { 100,,}
+		HDIF|CPMAXX,CPMINX
+		JNA #+2
+		JPQ #+2
+		LDA { 100,,}
+		SUB B
+		JNA #+3
+		ADD B
+		STA B
+		STB LIST+PSIZE<sub>&alpha;</sub>
+		HSUM&equiv;CPMAXY,CPMINY&rarr;MATRY
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=34 doc_page=184 type=code]
+[Page header: "IES ONLW 006"]
+
+
+
 
 </code></pre></body></html>
