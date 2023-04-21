@@ -2362,7 +2362,7 @@ STE B
 @hand@@hand@ HDIF|P,Q@arr@R
 LDA P
 SUB Q
-SCA {-1,-1,,-1,-1}+((Q)^(770.))
+SCA {-1,-1,,-1,-1}+((Q)^(770,))
 STA R
 @hand@@hand@EMD
 
@@ -2428,7 +2428,7 @@ STB G+1
 @hand@@hand@DEF HSUM@hamb@P,Q@arr@R
 LDA P
 ADD Q
-SCA {-1,-1,,-1,-1}+((Q)^(770.))
+SCA {-1,-1,,-1,-1}+((Q)^(770,))
 STA R
 @hand@@hand@EMD
 
