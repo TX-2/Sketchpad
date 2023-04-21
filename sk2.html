@@ -1185,4 +1185,225 @@ CPINUM&rarr;		<sup>1</sup>STE CPINUMX
 [meta file_name=102726903-05-02-acc.pdf pdf_page=36 doc_page=186 type=code]
 [Page header: "IES ONLW 010"]
 
+		SUMM&rarr;NVAL+LIST+1<sub>&alpha;</sub>=CPTU&rarr;BADOV
+		SUMM&rarr;NVAL+LIST+3<sub>&alpha;</sub>= B&rarr;BADOV
+		SUMM&equiv;NVAL+LIST<sub>&alpha;</sub>&rarr; A&rarr;BADOV
+		SUMM&rarr;NVAL+LIST<sub>&alpha;</sub>=CPTV&rarr;BADOV
+		SUMM&rarr;NVAL+LIST+2<sub>&alpha;</sub>&rarr;BADOV
+		hJPQ ROTATER
+		hJPQ CPNS
+		DIFF&equiv;NVAL+LIST+3<sub>&alpha;</sub>&rarr;CPTU= B&rarr;BADOV
+		DIFF&equiv;NVAL+LIST+2<sub>&alpha;</sub>&rarr;CPRV&rarr;BADOV
+		hJPQ ROTATER
+		hJPQ CPNS
+CPINUMX&rarr;
+		JPQ #
+CPITXT&rarr;		<sup>1</sup>STE CPITXTX
+		PROD&equiv;TVAL+LIST<sub>&alpha;</sub>&times;TXTS+LIST<sub>&alpha;</sub>
+		SAB {-1,}
+		STB CPTU
+		PROD&equiv;TVAL+LIST+1<sub>&alpha;</sub>&times;TXTS+LIST<sub>&alpha;</sub>
+		SAB {-1,}
+		DIFF&equiv;TVAL+LIST+3<sub>&alpha;</sub>&rarr; B= B&rarr;BADOV
+		SUMM&equiv;TVAL+LIST+2<sub>&alpha;</sub>&rarr;CPTU&rarr;BADOV
+		hJPQ ROTATER
+		hJPQ CPNS
+		SUMM&equiv;TVAL+1+LIST<sub>&alpha;</sub>&rarr;TVAL+LIST+3<sub>&alpha;</sub>= B&rarr;BADOV
+		DIFF&equiv;TVAL+LIST+2<sub>&alpha;</sub>&rarr;TVAL+LIST<sub>&alpha;</sub>&rarr;BADOV
+		hJPQ ROTATER
+		hJPQ CPNS
+CPITXTX&rarr;
+		JPQ #
+CPNS&rarr;		<sup>1</sup>STE CPNSX
+		STA CPTT
+		SUB CPMAXX
+		SCA {-1,}
+		JNA #+1
+		LDA CPTT
+		STA CPMAXX
+		LDA CPTT
+		SUB CPMINX
+		SCA {-1,}
+		JPA #+3
+		LDA CPTT
+		STA CPMINX
+		STB CPTT
+		LDA B
+		SUB CPMAXY
+		SCA {-1,}
+		JNA #+3
+		LDA CPTT
+		STA CPMAXY
+		LDA CPTT
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=37 doc_page=187 type=code]
+[Page header: "IES ONLW 011"]
+
+		SUB CPMINY
+		SCA {-1,}
+		JPA #+3
+		LDA CPTT
+		STA CPMINY
+CPNSX&rarr;		JPQ	[no operand?]
+CPWRAPED&rarr;
+		RSX <sub>&beta;</sub> PICTURES+SPECB+1
+CPSX&rarr;		SXD <sub>&beta;</sub> PICTURES+SPECB+1-LIST
+		JPQ CPNOTT
+		REX <sub>&alpha;</sub><sub>|</sub><sub>&beta;</sub>
+		DEX <sub>&alpha;</sub> 1
+		hLDE <sub>&alpha;</sub> LIST+PNAME
+		<sup>1</sup>SED CPNAME	**PIC CALLED FOR
+		JPQ CPIT
+		RSX <sub>&beta;</sub><sub>|</sub><sub>&beta;</sub> LIST
+		JPQ CPSX
+CPNOTT&rarr;		MAKA&equiv;PICTURES&rarr;&alpha;
+		LDA CPNAME
+		STA <sub>&alpha;</sub> PNAME+LIST
+		LDA { 100,,}
+		JPQ CPITT
+CPIT&rarr;		LDA <sub>&alpha;</sub> PSIZE+LIST
+CPITT&rarr;		MUL { 220,}
+		ADD A
+		hJOV BADOV
+		STA SCSZ
+		REX <sub>&beta;</sub> CURPICS-LIST
+		PUTL&equiv;PWHOS&times;&alpha;&rarr;SPECB&times;&beta;
+		DPX SCCEN
+		DPX SCCEN+1
+		MKZ PICCHANGE
+CPEX&rarr;		JPQ #
+DEGEN1&rarr;		STE <sup>1</sup>#+1
+		JPQ #
+OPSPL&rarr;		0
+		0
+START76&rarr;
+		hJPQ CHANGEPIC
+		DPX SNDISP
+76PUT&rarr;		hJPQ MAG
+76PUT1&rarr;		MOVE|NDISP&rarr;BASICFILE
+76LOOP&rarr;		hJPQ PSEUDO
+		RSX <sub>&alpha;</sub> MOVINGS+SPECB+1
+		SXD <sub>&alpha;</sub> MOVINGS-LIST+SPECB+1
+		JPQ 76LOOP1
+		hJPQ TEXTCNG
+		LDB &Delta;ROT
+		LDA { 200,}
+		STAB&equiv;MATM
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=38 doc_page=188 type=code]
+[Page header: "IES ONLW 012"]
+
+		hJPQ PYTHAGORIAN
+		hJOV BADOV
+		STA MATS
+		MUL &Delta;SIZE
+		ADD MATS
+		hJOV BADOV
+		STA MATD
+		DPX MATRX
+		DPX MATRY
+76LOOPAA&rarr;
+		hLDE SPECB+MOVINGS+1
+		<sup>1</sup><sup>7</sup>SED E
+		JPQ 76LOOPBB
+76LOOPB&rarr;
+		LDAB&equiv;OPSPL
+		hJPQ ROTATER
+		JPQ 76LOOPBC
+76LOOPBB&rarr;
+		RSX <sub>&alpha;</sub> SPECB+MOVINGS+1
+		<sup>1</sup><sup>6</sup>AUX <sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub> LIST-1
+		DEX <sub>&alpha;</sub> 1
+		RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
+		RSX <sub>&beta;</sub><sub>|</sub><sub>S</sub> LIST+TUPLE
+		SXD <sub>&beta;</sub> 2
+		JPQ #+2
+		JPQ 76LOOPB
+		hBPQ <sub>S</sub> LIST+WHERE
+76LOOPBC&rarr;
+		SUB PSPL
+		STD OPSPL
+		COM A
+		STA MATRX
+		LDA B
+		SUB PSPL+1
+		STD OPSPL+1
+		COM A
+		STA MATRY
+76LOOPC&rarr;
+		REX <sub>&alpha;</sub> MOVINGS-LIST
+		LGORR&equiv;SPECB&times;&alpha;=S&rarr;76LOOPD&rarr;76LOOPA
+76LOOPD&rarr;
+		<sup>1</sup>STE #+3
+		RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
+		hBPQ <sub>S</sub> MOVIT+LIST
+		JPQ #
+76LOOPA&rarr;
+		REX <sub>&alpha;</sub> MOVINGS-LIST
+		LGORR&equiv;SPECB&times;&alpha;=S&rarr;76MOVI&rarr;76LOOP1
+76MOVI&rarr;		<sup>1</sup>STE 76MOVIX
+		RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=39 doc_page=189 type=code]
+[Page header: "IES ONLW 013"]
+
+		SXD <sub>S</sub> INSTANCES-LIST
+		JPQ #+2
+76MOVIX&rarr;
+		JPQ #
+		LDAE&equiv;IVAL+LIST<sub>&alpha;</sub>,1,2,3
+		STAE&equiv;MATM,1,2,3
+		hJPQ PYTHAGORIAN
+		hJOV BADOV
+		STA MATS
+		STA <sub>&alpha;</sub> LIST+ISIZE
+		&gamma;&#9635;IWHAT,&alpha;
+		MOVE|PSIZE+LIST<sub>&gamma;</sub>&rarr;MATD
+		LGORR&equiv;VCON&times;&alpha;=S&rarr;76MOVIT&rarr;76MOVIX
+76MOVIT&rarr;
+		<sup>1</sup>STE 76MOVITX
+		hLDE <sub>&alpha;</sub> LIST+TYPE
+		<sup>1</sup>SED { IPCONS-LIST}
+		JPQ #+2
+76MOVITX&rarr;
+		JPQ #
+		S&#9635;IPCV,&alpha;
+		ROTA&equiv;S
+		S&#9635;IPCP,&alpha;
+		STAB&equiv;VA<sub>S</sub>
+		JPQ 76MOVITX
+76LOOP1&rarr;
+		LDAB&equiv;PSPL
+		STAB&equiv;OPSPL
+		DPX &Delta;SIZE
+		DPX &Delta;ROT
+		LDA BASICFILE
+		hSZZ MOVINGDONE
+		JPQ 76PUT1
+		STA NDISP
+		LDA {-(?)}	[is it possible it's actually lowercase h?]
+		STA MATM	**DIAGONAL MATRIX
+		STA MATD	**MATRIX DENOM
+		STA MATS	**PYTH OF MATM, MATO
+		DPX MATO	**OFF DIAGONAL
+		DPX MATRX	**X TRANSLATION
+		DPX MATRY	**Y TRANSLATION
+		REX <sub>&alpha;</sub> CURPICS-LIST
+		LGORR&equiv;SPECB&times;&alpha;=S&rarr;76LOOP2&rarr;76U
+76LOOP2&rarr;
+		SUBR&equiv;(LGORR&equiv;PPARTM&times;&alpha;=S&rarr;MAG1)
+76U&rarr;		MOVE|NDISP&rarr;SNDISP
+		SKZ PICCHANGE
+		JPQ START76
+		SZZ MOVED
+		JPQ 76PUT
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=40 doc_page=190 type=code]
+[Page header: "IES ONLW 014"]
+
+
 </code></pre></body></html>

@@ -1148,3 +1148,220 @@ CPINUM@arr@	@sup_1@STE CPINUMX
 [meta file_name=102726903-05-02-acc.pdf pdf_page=36 doc_page=186 type=code]
 [Page header: "IES ONLW 010"]
 
+		SUMM@arr@NVAL+LIST+1@sub_alpha@=CPTU@arr@BADOV
+		SUMM@arr@NVAL+LIST+3@sub_alpha@= B@arr@BADOV
+		SUMM@hamb@NVAL+LIST@sub_alpha@@arr@ A@arr@BADOV
+		SUMM@arr@NVAL+LIST@sub_alpha@=CPTV@arr@BADOV
+		SUMM@arr@NVAL+LIST+2@sub_alpha@@arr@BADOV
+		hJPQ ROTATER
+		hJPQ CPNS
+		DIFF@hamb@NVAL+LIST+3@sub_alpha@@arr@CPTU= B@arr@BADOV
+		DIFF@hamb@NVAL+LIST+2@sub_alpha@@arr@CPRV@arr@BADOV
+		hJPQ ROTATER
+		hJPQ CPNS
+CPINUMX@arr@
+		JPQ #
+CPITXT@arr@	@sup_1@STE CPITXTX
+		PROD@hamb@TVAL+LIST@sub_alpha@@times@TXTS+LIST@sub_alpha@
+		SAB {-1,}
+		STB CPTU
+		PROD@hamb@TVAL+LIST+1@sub_alpha@@times@TXTS+LIST@sub_alpha@
+		SAB {-1,}
+		DIFF@hamb@TVAL+LIST+3@sub_alpha@@arr@ B= B@arr@BADOV
+		SUMM@hamb@TVAL+LIST+2@sub_alpha@@arr@CPTU@arr@BADOV
+		hJPQ ROTATER
+		hJPQ CPNS
+		SUMM@hamb@TVAL+1+LIST@sub_alpha@@arr@TVAL+LIST+3@sub_alpha@= B@arr@BADOV
+		DIFF@hamb@TVAL+LIST+2@sub_alpha@@arr@TVAL+LIST@sub_alpha@@arr@BADOV
+		hJPQ ROTATER
+		hJPQ CPNS
+CPITXTX@arr@
+		JPQ #
+CPNS@arr@	@sup_1@STE CPNSX
+		STA CPTT
+		SUB CPMAXX
+		SCA {-1,}
+		JNA #+1
+		LDA CPTT
+		STA CPMAXX
+		LDA CPTT
+		SUB CPMINX
+		SCA {-1,}
+		JPA #+3
+		LDA CPTT
+		STA CPMINX
+		STB CPTT
+		LDA B
+		SUB CPMAXY
+		SCA {-1,}
+		JNA #+3
+		LDA CPTT
+		STA CPMAXY
+		LDA CPTT
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=37 doc_page=187 type=code]
+[Page header: "IES ONLW 011"]
+
+		SUB CPMINY
+		SCA {-1,}
+		JPA #+3
+		LDA CPTT
+		STA CPMINY
+CPNSX@arr@	JPQ	[no operand?]
+CPWRAPED@arr@
+		RSX @sub_beta@ PICTURES+SPECB+1
+CPSX@arr@	SXD @sub_beta@ PICTURES+SPECB+1-LIST
+		JPQ CPNOTT
+		REX @sub_alpha@@sub_pipe@@sub_beta@
+		DEX @sub_alpha@ 1
+		hLDE @sub_alpha@ LIST+PNAME
+		@sup_1@SED CPNAME	**PIC CALLED FOR
+		JPQ CPIT
+		RSX @sub_beta@@sub_pipe@@sub_beta@ LIST
+		JPQ CPSX
+CPNOTT@arr@	MAKA@hamb@PICTURES@arr@@alpha@
+		LDA CPNAME
+		STA @sub_alpha@ PNAME+LIST
+		LDA { 100,,}
+		JPQ CPITT
+CPIT@arr@	LDA @sub_alpha@ PSIZE+LIST
+CPITT@arr@	MUL { 220,}
+		ADD A
+		hJOV BADOV
+		STA SCSZ
+		REX @sub_beta@ CURPICS-LIST
+		PUTL@hamb@PWHOS@times@@alpha@@arr@SPECB@times@@beta@
+		DPX SCCEN
+		DPX SCCEN+1
+		MKZ PICCHANGE
+CPEX@arr@	JPQ #
+DEGEN1@arr@	STE @sup_1@#+1
+		JPQ #
+OPSPL@arr@	0
+		0
+START76@arr@
+		hJPQ CHANGEPIC
+		DPX SNDISP
+76PUT@arr@	hJPQ MAG
+76PUT1@arr@	MOVE|NDISP@arr@BASICFILE
+76LOOP@arr@	hJPQ PSEUDO
+		RSX @sub_alpha@ MOVINGS+SPECB+1
+		SXD @sub_alpha@ MOVINGS-LIST+SPECB+1
+		JPQ 76LOOP1
+		hJPQ TEXTCNG
+		LDB @delta@ROT
+		LDA { 200,}
+		STAB@hamb@MATM
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=38 doc_page=188 type=code]
+[Page header: "IES ONLW 012"]
+
+		hJPQ PYTHAGORIAN
+		hJOV BADOV
+		STA MATS
+		MUL @delta@SIZE
+		ADD MATS
+		hJOV BADOV
+		STA MATD
+		DPX MATRX
+		DPX MATRY
+76LOOPAA@arr@
+		hLDE SPECB+MOVINGS+1
+		@sup_1@@sup_7@SED E
+		JPQ 76LOOPBB
+76LOOPB@arr@
+		LDAB@hamb@OPSPL
+		hJPQ ROTATER
+		JPQ 76LOOPBC
+76LOOPBB@arr@
+		RSX @sub_alpha@ SPECB+MOVINGS+1
+		@sup_1@@sup_6@AUX @sub_alpha@@sub_pipe@@sub_alpha@ LIST-1
+		DEX @sub_alpha@ 1
+		RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+TYPE
+		RSX @sub_beta@@sub_pipe@@sub_S@ LIST+TUPLE
+		SXD @sub_beta@ 2
+		JPQ #+2
+		JPQ 76LOOPB
+		hBPQ @sub_S@ LIST+WHERE
+76LOOPBC@arr@
+		SUB PSPL
+		STD OPSPL
+		COM A
+		STA MATRX
+		LDA B
+		SUB PSPL+1
+		STD OPSPL+1
+		COM A
+		STA MATRY
+76LOOPC@arr@
+		REX @sub_alpha@ MOVINGS-LIST
+		LGORR@hamb@SPECB@times@@alpha@=S@arr@76LOOPD@arr@76LOOPA
+76LOOPD@arr@
+		@sup_1@STE #+3
+		RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+TYPE
+		hBPQ @sub_S@ MOVIT+LIST
+		JPQ #
+76LOOPA@arr@
+		REX @sub_alpha@ MOVINGS-LIST
+		LGORR@hamb@SPECB@times@@alpha@=S@arr@76MOVI@arr@76LOOP1
+76MOVI@arr@	@sup_1@STE 76MOVIX
+		RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+TYPE
+		
+[meta file_name=102726903-05-02-acc.pdf pdf_page=39 doc_page=189 type=code]
+[Page header: "IES ONLW 013"]
+
+		SXD @sub_S@ INSTANCES-LIST
+		JPQ #+2
+76MOVIX@arr@
+		JPQ #
+		LDAE@hamb@IVAL+LIST@sub_alpha@,1,2,3
+		STAE@hamb@MATM,1,2,3
+		hJPQ PYTHAGORIAN
+		hJOV BADOV
+		STA MATS
+		STA @sub_alpha@ LIST+ISIZE
+		@gamma@@rect_dash@IWHAT,@alpha@
+		MOVE|PSIZE+LIST@sub_gamma@@arr@MATD
+		LGORR@hamb@VCON@times@@alpha@=S@arr@76MOVIT@arr@76MOVIX
+76MOVIT@arr@
+		@sup_1@STE 76MOVITX
+		hLDE @sub_alpha@ LIST+TYPE
+		@sup_1@SED { IPCONS-LIST}
+		JPQ #+2
+76MOVITX@arr@
+		JPQ #
+		S@rect_dash@IPCV,@alpha@
+		ROTA@hamb@S
+		S@rect_dash@IPCP,@alpha@
+		STAB@hamb@VA@sub_S@
+		JPQ 76MOVITX
+76LOOP1@arr@
+		LDAB@hamb@PSPL
+		STAB@hamb@OPSPL
+		DPX @delta@SIZE
+		DPX @delta@ROT
+		LDA BASICFILE
+		hSZZ MOVINGDONE
+		JPQ 76PUT1
+		STA NDISP
+		LDA {-(?)}	[is it possible it's actually lowercase h?]
+		STA MATM	**DIAGONAL MATRIX
+		STA MATD	**MATRIX DENOM
+		STA MATS	**PYTH OF MATM, MATO
+		DPX MATO	**OFF DIAGONAL
+		DPX MATRX	**X TRANSLATION
+		DPX MATRY	**Y TRANSLATION
+		REX @sub_alpha@ CURPICS-LIST
+		LGORR@hamb@SPECB@times@@alpha@=S@arr@76LOOP2@arr@76U
+76LOOP2@arr@
+		SUBR@hamb@(LGORR@hamb@PPARTM@times@@alpha@=S@arr@MAG1)
+76U@arr@	MOVE|NDISP@arr@SNDISP
+		SKZ PICCHANGE
+		JPQ START76
+		SZZ MOVED
+		JPQ 76PUT
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=40 doc_page=190 type=code]
+[Page header: "IES ONLW 014"]
+
+
