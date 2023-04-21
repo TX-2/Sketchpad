@@ -2680,7 +2680,7 @@ MATRY@arr@	0
 MATD@arr@	0
  200100|
 BADOV@arr@	h@sup_1@STE #+2
-		hSKZ OVERFLOSTOP
+		hSKZ OVERFLOWSTOP
 		@sup_2@#@sub_7@@sub_6@ [very useful as right column contains numeric code]
 		JPQ 200001
  CCFR+1|
