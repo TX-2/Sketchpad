@@ -214,4 +214,251 @@ MIDP2X&rarr;		JPQ #
 [meta file_name=102726903-05-02-acc.pdf pdf_page=6 doc_page=156 type=code]
 [Page header: "IES BOO7 006"]
 
+		hJOV BADOV
+		STA TS
+		EITHER&equiv;32S,16S,8S,4S,2S,1S&rarr;12
+6FSCX&rarr;		JPQ #
+32S&rarr;		<sup>1</sup>STE 32SX
+		LDA { INCH/32.}
+		JPQ 32ST
+16S&rarr;		<sup>1</sup>STE 32SX
+		LDA { INCH/16.}
+		JPQ 32ST
+8S&rarr;		<sup>1</sup>STE 32SX
+		LDA { INCH/8.}
+		JPQ 32ST
+4S&rarr;		<sup>1</sup>STE 32SX
+		LDA { INCH/4}
+		JPQ 32ST
+2S&rarr;		<sup>1</sup>STE 32SX
+		LDA { INCH/2}
+		JPQ 32ST
+1S&rarr;		<sup>1</sup>STE 32SX
+		LDA { INCH}
+32ST&rarr;		SUB TS
+		hJOV BADOV
+32SX&rarr;		JPQ #
+PNNU1&rarr;		<sup>1</sup>STE PNNU1X
+		SETIX&equiv;&beta;,&gamma;
+		hJPQ HEADING2
+		hJPQ PNNUGET
+PNNUT&rarr;		PROD&equiv;DELTA1&times;{ NUMRAT}=DELTA1
+		EITHER&equiv;PNNUT1,PNNUT2&rarr;14
+PNNU1X&rarr;		JPQ #
+PNNU2&rarr;		<sup>1</sup>STE PNNU1X
+		SETIX&equiv;&beta;,&gamma;
+		hJPQ HEADING2
+		hJPQ PNNUGET
+		LDA DELTA1+1
+		STA DELTA1
+		LDA DELTA2+1
+		STA DELTA2	[guessing, line damaged]
+		JPQ PNNUT
+PNNUT1&rarr;		<sup>1</sup>STE PNNUT1X	[guessing the label, line damaged]
+		DIFF&equiv;DELTA1&rarr;DELTA2&rarr;BADOV
+PNNUT1X&rarr;
+		JPQ #
+PNNUT2&rarr;		<sup>1</sup>STE PNNUT2X
+		SUMM&equiv;DELTA1&rarr;DELTA2&rarr;BADOV
+PNNUT2X&rarr;
+		JPQ #
+PNNUGET&rarr;
+		<sup>1</sup>STE PNNUGETX
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=7 doc_page=157 type=code]
+[Page header: "IES BOO7 007"]
+
+		GETVAL&equiv;0,1&times;&beta;&rarr;DELTA2
+		COM DELTA2+1
+PNNUGETX&rarr;
+		JPQ #
+HOLDL&rarr;		<sup>1</sup>STE HOLDLX
+		SETIX&equiv;&beta;,&gamma;
+		hJPQ HEADING2
+		PYTH&equiv;DELTA1&rarr;&rarr;BADOV
+		SKN FIX
+		STA <sub>&alpha;</sub> LIST+14
+		STA TS
+		SKZ FIX
+		LDA <sub>&alpha;</sub> LIST+14
+		DIFF&rarr;TS&rarr;BADOV
+HOLDLX&rarr;		JPQ #
+FORCE&rarr;		<sup>1</sup>STE FORCEX
+		SETIX&equiv;&Delta;,&beta;,&gamma;
+		hJPQ HEADING2
+		PYTH&equiv;DELTA1&rarr;&rarr;BADOV
+		STA TS
+		SKN FIX
+		STA <sub>&alpha;</sub> LIST+16
+		SKZ FIX
+		LDA <sub>&alpha;</sub> LIST+16
+		SUB TS
+		hJOV BADOV
+		STA TS
+		PROD&times;{-(?)}/{ 343597302.}&rarr;BADOV
+		DIFF&rarr;LIST+SVAL<sub>&Delta;</sub>&rarr;BADOV
+FORCEX&rarr;		JPQ #
+DELTA1&rarr;		0
+		0
+DELTA2&rarr;		0
+		0
+DELTA3&rarr;		0
+		0
+RI&rarr;		hJPQ 377750
+CL&rarr;		hJPQ 200000
+ST&rarr;		hJPQ 200001
+LAST&rarr;		ZZLAST	[guessing the label, line damaged]
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=8 doc_page=158 type=symex]
+[Handwritten: "P21"]
+[Page header: "IES ONLW 001"]
+[Handwritten: "CALC 15 SEPT"]
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=9 doc_page=159 type=symex]
+[Page header: "IES ONLW 002"]
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=10 doc_page=160 type=symex]
+[Page header: "IES ONLW 003"]
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=11 doc_page=161 type=equalities]
+[Page header: "IES ONLW 004"]
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=12 doc_page=162 type=equalities]
+[Page header: "IES ONLW 005"]
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=13 doc_page=163 type=equalities]
+[Page header: "IES ONLW 006"]
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=14 doc_page=164 type=equalities]
+[Page header: "IES ONLW 007"]
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=15 doc_page=165 type=equalities]
+[Page header: "IES ONLW 010"]
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=16 doc_page=166 type=macros]
+[Page header: "IES ONLW 012", out of sequence - "011" is missing]
+[Macros here are exact duplicates of defs seen previously, see doc_page 67]
+
+&#9755;&#9755;DEF MOVE|A&rarr;B
+hLDE A
+STE B
+&#9755;&#9755;EMD
+
+&#9755;&#9755; HDIF|P,Q&rarr;R
+LDA P
+SUB Q
+SCA {-1,-1,,-1,-1}+((Q)^(770,))
+STA R
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF DIFF&equiv;P&rarr;Q=R&rarr;S
+LDA P
+SUB Q
+hJOV S
+STA R
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF FABVAL&equiv;P&rarr;Q
+LDA P
+JPA #+2
+COM A
+STA Q
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF PYTH1&equiv;P&rarr;Q,R&rarr;S=T&rarr;U
+LDA R
+SUB S
+hJOV U+(S)-(S)
+STA B+(R)-(R)
+LDA P
+SUB Q
+hJOV U+(Q)-(Q)
+hJPQ PYTHAGORIAN
+hJOV U
+STA T
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF PYTH&equiv;P&rarr;Q=T&rarr;U
+PYTH1&equiv;P&rarr;Q,P+1&rarr;Q+1=T&rarr;U
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF DIREC1&equiv;P&rarr;Q,R&rarr;S=T&rarr;U
+LDA R
+SUB S
+hJOV U+(S)-(S)
+STA B+(R)-(R)
+LDA P
+SUB Q
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=17 doc_page=167 type=macros]
+[Page header: "IES ONLW 013"]
+
+hJOV U+(Q)-(Q)
+hJPQ CACT
+STA T
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF DIREC&equiv;P&rarr;Q=T&rarr;U
+DIREC1&equiv;P&rarr;Q,P+1&rarr;Q+1=T&rarr;U
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF ROTA&equiv;&alpha;&rarr;G
+LDA <sub>&alpha;</sub> VA
+LDB <sub>&alpha;</sub> VA+1
+hJPQ ROTATER
+STA G
+STB G+1
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF HSUM&equiv;P,Q&rarr;R
+LDA P
+ADD Q
+SCA {-1,-1,,-1,-1}+((Q)^(770,))
+STA R
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF SUMM&equiv;P&rarr;Q=R&rarr;S
+LDA P
+ADD Q
+hJOV S
+STA R
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF PROD&equiv;A&times;B/C=D&rarr;E
+LDA A
+MUL B
+DIV C
+hJOV E
+STA D
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF LDAE&equiv;A,B,C,D
+LDA A
+LDB A+B
+LDC A+C
+LDD A+D
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF STAE&equiv;A,B,C,D
+STA A
+STB A+B
+STC A+C
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=18 doc_page=168 type=macros]
+[Page header: "IES ONLW 014"]
+
+STA A+D
+&#9755;&#9755;EMD
 </code></pre></body></html>

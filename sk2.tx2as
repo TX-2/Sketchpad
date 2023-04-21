@@ -207,3 +207,238 @@ MIDP2X@arr@	JPQ #
 [meta file_name=102726903-05-02-acc.pdf pdf_page=6 doc_page=156 type=code]
 [Page header: "IES BOO7 006"]
 
+		hJOV BADOV
+		STA TS
+		EITHER@hamb@32S,16S,8S,4S,2S,1S@arr@12
+6FSCX@arr@	JPQ #
+32S@arr@	@sup_1@STE 32SX
+		LDA { INCH/32.}
+		JPQ 32ST
+16S@arr@	@sup_1@STE 32SX
+		LDA { INCH/16.}
+		JPQ 32ST
+8S@arr@		@sup_1@STE 32SX
+		LDA { INCH/8.}
+		JPQ 32ST
+4S@arr@		@sup_1@STE 32SX
+		LDA { INCH/4}
+		JPQ 32ST
+2S@arr@		@sup_1@STE 32SX
+		LDA { INCH/2}
+		JPQ 32ST
+1S@arr@		@sup_1@STE 32SX
+		LDA { INCH}
+32ST@arr@	SUB TS
+		hJOV BADOV
+32SX@arr@	JPQ #
+PNNU1@arr@	@sup_1@STE PNNU1X
+		SETIX@hamb@@beta@,@gamma@
+		hJPQ HEADING2
+		hJPQ PNNUGET
+PNNUT@arr@	PROD@hamb@DELTA1@times@{ NUMRAT}=DELTA1
+		EITHER@hamb@PNNUT1,PNNUT2@arr@14
+PNNU1X@arr@	JPQ #
+PNNU2@arr@	@sup_1@STE PNNU1X
+		SETIX@hamb@@beta@,@gamma@
+		hJPQ HEADING2
+		hJPQ PNNUGET
+		LDA DELTA1+1
+		STA DELTA1
+		LDA DELTA2+1
+		STA DELTA2	[guessing, line damaged]
+		JPQ PNNUT
+PNNUT1@arr@	@sup_1@STE PNNUT1X	[guessing the label, line damaged]
+		DIFF@hamb@DELTA1@arr@DELTA2@arr@BADOV
+PNNUT1X@arr@
+		JPQ #
+PNNUT2@arr@	@sup_1@STE PNNUT2X
+		SUMM@hamb@DELTA1@arr@DELTA2@arr@BADOV
+PNNUT2X@arr@
+		JPQ #
+PNNUGET@arr@
+		@sup_1@STE PNNUGETX
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=7 doc_page=157 type=code]
+[Page header: "IES BOO7 007"]
+
+		GETVAL@hamb@0,1@times@@beta@@arr@DELTA2
+		COM DELTA2+1
+PNNUGETX@arr@
+		JPQ #
+HOLDL@arr@	@sup_1@STE HOLDLX
+		SETIX@hamb@@beta@,@gamma@
+		hJPQ HEADING2
+		PYTH@hamb@DELTA1@arr@@arr@BADOV
+		SKN FIX
+		STA @sub_alpha@ LIST+14
+		STA TS
+		SKZ FIX
+		LDA @sub_alpha@ LIST+14
+		DIFF@arr@TS@arr@BADOV
+HOLDLX@arr@	JPQ #
+FORCE@arr@	@sup_1@STE FORCEX
+		SETIX@hamb@@delta@,@beta@,@gamma@
+		hJPQ HEADING2
+		PYTH@hamb@DELTA1@arr@@arr@BADOV
+		STA TS
+		SKN FIX
+		STA @sub_alpha@ LIST+16
+		SKZ FIX
+		LDA @sub_alpha@ LIST+16
+		SUB TS
+		hJOV BADOV
+		STA TS
+		PROD@times@{-(?)}/{ 343597302.}@arr@BADOV
+		DIFF@arr@LIST+SVAL@sub_delta@@arr@BADOV
+FORCEX@arr@	JPQ #
+DELTA1@arr@	0
+		0
+DELTA2@arr@	0
+		0
+DELTA3@arr@	0
+		0
+RI@arr@		hJPQ 377750
+CL@arr@		hJPQ 200000
+ST@arr@		hJPQ 200001
+LAST@arr@	ZZLAST	[guessing the label, line damaged]
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=8 doc_page=158 type=symex]
+[Handwritten: "P21"]
+[Page header: "IES ONLW 001"]
+[Handwritten: "CALC 15 SEPT"]
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=9 doc_page=159 type=symex]
+[Page header: "IES ONLW 002"]
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=10 doc_page=160 type=symex]
+[Page header: "IES ONLW 003"]
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=11 doc_page=161 type=equalities]
+[Page header: "IES ONLW 004"]
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=12 doc_page=162 type=equalities]
+[Page header: "IES ONLW 005"]
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=13 doc_page=163 type=equalities]
+[Page header: "IES ONLW 006"]
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=14 doc_page=164 type=equalities]
+[Page header: "IES ONLW 007"]
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=15 doc_page=165 type=equalities]
+[Page header: "IES ONLW 010"]
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=16 doc_page=166 type=macros]
+[Page header: "IES ONLW 012", out of sequence - "011" is missing]
+[Macros here are exact duplicates of defs seen previously, see doc_page 67]
+
+@hand@@hand@DEF MOVE|A@arr@B
+hLDE A
+STE B
+@hand@@hand@EMD
+
+@hand@@hand@ HDIF|P,Q@arr@R
+LDA P
+SUB Q
+SCA {-1,-1,,-1,-1}+((Q)^(770,))
+STA R
+@hand@@hand@EMD
+
+@hand@@hand@DEF DIFF@hamb@P@arr@Q=R@arr@S
+LDA P
+SUB Q
+hJOV S
+STA R
+@hand@@hand@EMD
+
+@hand@@hand@DEF FABVAL@hamb@P@arr@Q
+LDA P
+JPA #+2
+COM A
+STA Q
+@hand@@hand@EMD
+
+@hand@@hand@DEF PYTH1@hamb@P@arr@Q,R@arr@S=T@arr@U
+LDA R
+SUB S
+hJOV U+(S)-(S)
+STA B+(R)-(R)
+LDA P
+SUB Q
+hJOV U+(Q)-(Q)
+hJPQ PYTHAGORIAN
+hJOV U
+STA T
+@hand@@hand@EMD
+
+@hand@@hand@DEF PYTH@hamb@P@arr@Q=T@arr@U
+PYTH1@hamb@P@arr@Q,P+1@arr@Q+1=T@arr@U
+@hand@@hand@EMD
+
+@hand@@hand@DEF DIREC1@hamb@P@arr@Q,R@arr@S=T@arr@U
+LDA R
+SUB S
+hJOV U+(S)-(S)
+STA B+(R)-(R)
+LDA P
+SUB Q
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=17 doc_page=167 type=macros]
+[Page header: "IES ONLW 013"]
+
+hJOV U+(Q)-(Q)
+hJPQ CACT
+STA T
+@hand@@hand@EMD
+
+@hand@@hand@DEF DIREC@hamb@P@arr@Q=T@arr@U
+DIREC1@hamb@P@arr@Q,P+1@arr@Q+1=T@arr@U
+@hand@@hand@EMD
+
+@hand@@hand@DEF ROTA@hamb@@alpha@@arr@G
+LDA @sub_alpha@ VA
+LDB @sub_alpha@ VA+1
+hJPQ ROTATER
+STA G
+STB G+1
+@hand@@hand@EMD
+
+@hand@@hand@DEF HSUM@hamb@P,Q@arr@R
+LDA P
+ADD Q
+SCA {-1,-1,,-1,-1}+((Q)^(770,))
+STA R
+@hand@@hand@EMD
+
+@hand@@hand@DEF SUMM@hamb@P@arr@Q=R@arr@S
+LDA P
+ADD Q
+hJOV S
+STA R
+@hand@@hand@EMD
+
+@hand@@hand@DEF PROD@hamb@A@times@B/C=D@arr@E
+LDA A
+MUL B
+DIV C
+hJOV E
+STA D
+@hand@@hand@EMD
+
+@hand@@hand@DEF LDAE@hamb@A,B,C,D
+LDA A
+LDB A+B
+LDC A+C
+LDD A+D
+@hand@@hand@EMD
+
+@hand@@hand@DEF STAE@hamb@A,B,C,D
+STA A
+STB A+B
+STC A+C
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=18 doc_page=168 type=macros]
+[Page header: "IES ONLW 014"]
+
+STA A+D
+@hand@@hand@EMD
