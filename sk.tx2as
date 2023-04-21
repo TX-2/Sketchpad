@@ -2354,12 +2354,12 @@ LAST@arr@	ZZLAST
 [meta file_name=102726903-05-01-acc.pdf pdf_page=67 doc_page=65 type=macros]
 [Page header: "IES OPLW 012"]
 
-@hand@@hand@ MOVE|A@arr@B
+@hand@@hand@DEF MOVE|A@arr@B
 hLDE A
 STE B
 @hand@@hand@EMD
 
-@hand@@hand@ HDIF|P,Q@arr@R
+@hand@@hand@DEF HDIF|P,Q@arr@R
 LDA P
 SUB Q
 SCA {-1,-1,,-1,-1}+((Q)^(770,))
