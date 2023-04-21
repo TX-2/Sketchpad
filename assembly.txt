@@ -24,7 +24,8 @@ When invoking the macro, not all parameters need to be specified. If
 a parameter is not specified, then any assembly instructions involving it
 are simply omitted. HandbookNov63's section 6-4.6 (p. 184) mentions a
 trick allowing to reference parameter in such a way that the corresponding
-instruction will not be omitted, when the parameter is left out.
+instruction will not be omitted, when the parameter is left out. This is
+not something exotic, it is actually used in the code.
 
 Macro definition, in both cases, ends with @hand@@hand@EMD (End Macro
 Definition) on a line of its own.
@@ -97,4 +98,15 @@ LDA A
 Then the expanded version will look like this, in conventional notation:
 
 @sup_1@@sup_1@LDA @sub_C@@sub_M@@sub_alpha@ 1
+
+Another edge case, a macro may be invoked like this:
+
+PYTH@hamb@DELTA2@arr@@arr@BADOV
+
+In this case macro expects up to 5 arguments:
+
+@hand@@hand@DEF PYTH1@hamb@P@arr@Q,R@arr@S=T@arr@U
+
+It is not immediately clear how arguments are going to be assigned with this
+syntax.
 
