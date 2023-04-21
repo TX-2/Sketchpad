@@ -1075,7 +1075,114 @@ CPWRAPC1&rarr;
 [meta file_name=102726903-05-02-acc.pdf pdf_page=34 doc_page=184 type=code]
 [Page header: "IES ONLW 006"]
 
+		HSUM&equiv;CPMAXX,CPMINX&rarr;MATRX
+		COM MATRY
+		COM MATRX
+		hLDA {-(?)}
+		STA MATM
+		STA MATS
+		STA MATD
+		DPX MATO
+CPWRAP1&rarr;
+		LGORR&equiv;PPART&times;&alpha;=S&rarr;CPWRAP2&rarr;CPWRAP3
+CPWRAP2&rarr;
+		<sup>1</sup>STE CPWRAP2X
+		S&#9635;TYPE,&alpha;
+		hBPQ <sub>S</sub> LIST+MOVIT
+CPWRAP2X&rarr;
+		JPQ #
+CPWRAP3&rarr;
+		LGORR&equiv;PICBLKS&times;&alpha;=S&rarr;CPWRAP2
+CPWRAPX&rarr;
+		JPQ #
+CPIP&rarr;		<sup>1</sup>STE CPIPX	**FOR A POINT
+		ROTA&equiv;&alpha;
+		hJPQ CPNS	**MINI MAX
+CPIPX&rarr;		JPQ #
+CPIL&rarr;		<sup>1</sup>STE CPILX	**FOR A LINE
+		S&#9635;LEP,&alpha;
+		ROTA&equiv;S
+		hJPQ CPNS
+		S&#9635;LSP,&alpha;
+		ROTA&equiv;S
+		hJPQ CPNS
+CPILX&rarr;		JPQ #
+CPIC&rarr;		<sup>1</sup>STE CPICX	**FOR A CIRCLE
+		S&#9635;CEP,&alpha;
+		ROTA&equiv;S&rarr;AFEND
+		hJPQ CPNS
+		S&#9635;CSP,&alpha;
+		ROTA&equiv;S&rarr;AFST
+		hJPQ CPNS
+		T&#9635;CIRCEN,&alpha;
+		ROTA&equiv;T&rarr;AFCEN
+		PYTH&equiv;VA<sub>T</sub>&rarr;VA<sub>S</sub>=CPTU&rarr;BADOV
+CPIC1&rarr;		STA <sub>&alpha;</sub> LIST+CVAL+1
+		MUL MATS
+		STA CPTU	**RADIUS
+		DIREC&equiv;AFST&rarr;AFCEN=CPTS&rarr;BADOV
+		MOVE|LIST+CVAL<sub>&alpha;</sub>&rarr;CPTV
+		RES <sub>S</sub> 6	[maybe not 6?]
+CPIC2&rarr;		LDA <sub>S</sub> CPICT
+		SUB CPTS	[partially clipped, other interpretations possible]
+		[more lines clipped?]
 
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=35 doc_page=185 type=code]
+[Page header: "IES ONLW 007"]
 
+		SKZ <sub>4</sub><sub>.</sub><sub>9</sub> CPTV
+		COM A
+		JPA #+3
+		JNA #+2
+		DPX A
+		DPX B
+		CAB {-1,}
+		STA B
+		LDA CPTV
+		JPA #+2
+		COM A
+		SUB B
+		JNA CPIC4
+CPIC3&rarr;		LDA CPTU
+		SKZ <sub>1</sub><sub>.</sub><sub>1</sub><sub>|</sub><sub>S</sub>CPICT+1 [syntax]
+		COM A
+		SKZ <sub>1</sub><sub>.</sub><sub>2</sub><sub>|</sub><sub>S</sub>CPICT+1
+		DPX A
+		ADD AFCEN+1
+		STA B
+		LDA CPTU
+		SKZ <sub>1</sub><sub>.</sub><sub>3</sub><sub>|</sub><sub>S</sub> CPICT+1
+		COM A
+		SKZ <sub>1</sub><sub>.</sub><sub>4</sub><sub>|</sub><sub>S</sub> CPICT+1
+		DPX A
+		ADD AFCEN
+		hJPQ CPNS
+CPIC4&rarr;		<sup>-</sup><sup>2</sup>JPX <sub>S</sub> CPIC2
+CPICX&rarr;		JPQ #
+CPICT&rarr;		0
+		2
+		200,
+		10
+		400,
+		6
+		600,
+		11
+CPII&rarr;		<sup>1</sup>STE CPIIX
+		PYTH1&equiv;LIST+IVAL<sub>&alpha;</sub>,LIST+IVAL+1<sub>&alpha;</sub>=LIST+ISIZE<sub>&alpha;</sub>&rarr;BADOV
+		STA CPTS
+		SUMM&rarr;LIST+IVAL+3<sub>&alpha;</sub>= B&rarr;BADOV
+		SUMM&equiv;CPTS&rarr;LIST+IVAL<sub>&alpha;</sub>+2&rarr;BADOV [syntax]
+		hJPQ CPNS
+		DIFF&equiv;LIST+IVAL+3<sub>&alpha;</sub>&rarr;CPTS= B&rarr;BADOV
+		DIFF&equiv;LIST+IVAL+2<sub>&alpha;</sub>&rarr;CPTS&rarr;BADOV
+		hJPQ CPNS
+CPIIX&rarr;		JPQ #
+CPINUM&rarr;		<sup>1</sup>STE CPINUMX
+		SUMM&equiv;NVAL+LIST+1<sub>&alpha;</sub>&rarr; A&rarr;BADOV
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=36 doc_page=186 type=code]
+[Page header: "IES ONLW 010"]
 
 </code></pre></body></html>

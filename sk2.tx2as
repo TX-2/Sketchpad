@@ -1040,6 +1040,111 @@ CPWRAPC1@arr@
 [meta file_name=102726903-05-02-acc.pdf pdf_page=34 doc_page=184 type=code]
 [Page header: "IES ONLW 006"]
 
+		HSUM@hamb@CPMAXX,CPMINX@arr@MATRX
+		COM MATRY
+		COM MATRX
+		hLDA {-(?)}
+		STA MATM
+		STA MATS
+		STA MATD
+		DPX MATO
+CPWRAP1@arr@
+		LGORR@hamb@PPART@times@@alpha@=S@arr@CPWRAP2@arr@CPWRAP3
+CPWRAP2@arr@
+		@sup_1@STE CPWRAP2X
+		S@rect_dash@TYPE,@alpha@
+		hBPQ @sub_S@ LIST+MOVIT
+CPWRAP2X@arr@
+		JPQ #
+CPWRAP3@arr@
+		LGORR@hamb@PICBLKS@times@@alpha@=S@arr@CPWRAP2
+CPWRAPX@arr@
+		JPQ #
+CPIP@arr@	@sup_1@STE CPIPX	**FOR A POINT
+		ROTA@hamb@@alpha@
+		hJPQ CPNS	**MINI MAX
+CPIPX@arr@	JPQ #
+CPIL@arr@	@sup_1@STE CPILX	**FOR A LINE
+		S@rect_dash@LEP,@alpha@
+		ROTA@hamb@S
+		hJPQ CPNS
+		S@rect_dash@LSP,@alpha@
+		ROTA@hamb@S
+		hJPQ CPNS
+CPILX@arr@	JPQ #
+CPIC@arr@	@sup_1@STE CPICX	**FOR A CIRCLE
+		S@rect_dash@CEP,@alpha@
+		ROTA@hamb@S@arr@AFEND
+		hJPQ CPNS
+		S@rect_dash@CSP,@alpha@
+		ROTA@hamb@S@arr@AFST
+		hJPQ CPNS
+		T@rect_dash@CIRCEN,@alpha@
+		ROTA@hamb@T@arr@AFCEN
+		PYTH@hamb@VA@sub_T@@arr@VA@sub_S@=CPTU@arr@BADOV
+CPIC1@arr@	STA @sub_alpha@ LIST+CVAL+1
+		MUL MATS
+		STA CPTU	**RADIUS
+		DIREC@hamb@AFST@arr@AFCEN=CPTS@arr@BADOV
+		MOVE|LIST+CVAL@sub_alpha@@arr@CPTV
+		RES @sub_S@ 6	[maybe not 6?]
+CPIC2@arr@	LDA @sub_S@ CPICT
+		SUB CPTS	[partially clipped, other interpretations possible]
+		[more lines clipped?]
 
-	
+[meta file_name=102726903-05-02-acc.pdf pdf_page=35 doc_page=185 type=code]
+[Page header: "IES ONLW 007"]
+
+		SKZ @sub_4@@sub_dot@@sub_9@ CPTV
+		COM A
+		JPA #+3
+		JNA #+2
+		DPX A
+		DPX B
+		CAB {-1,}
+		STA B
+		LDA CPTV
+		JPA #+2
+		COM A
+		SUB B
+		JNA CPIC4
+CPIC3@arr@	LDA CPTU
+		SKZ @sub_1@@sub_dot@@sub_1@@sub_pipe@@sub_S@CPICT+1 [syntax]
+		COM A
+		SKZ @sub_1@@sub_dot@@sub_2@@sub_pipe@@sub_S@CPICT+1
+		DPX A
+		ADD AFCEN+1
+		STA B
+		LDA CPTU
+		SKZ @sub_1@@sub_dot@@sub_3@@sub_pipe@@sub_S@ CPICT+1
+		COM A
+		SKZ @sub_1@@sub_dot@@sub_4@@sub_pipe@@sub_S@ CPICT+1
+		DPX A
+		ADD AFCEN
+		hJPQ CPNS
+CPIC4@arr@	@sup_minus@@sup_2@JPX @sub_S@ CPIC2
+CPICX@arr@	JPQ #
+CPICT@arr@	0
+		2
+		200,
+		10
+		400,
+		6
+		600,
+		11
+CPII@arr@	@sup_1@STE CPIIX
+		PYTH1@hamb@LIST+IVAL@sub_alpha@,LIST+IVAL+1@sub_alpha@=LIST+ISIZE@sub_alpha@@arr@BADOV
+		STA CPTS
+		SUMM@arr@LIST+IVAL+3@sub_alpha@= B@arr@BADOV
+		SUMM@hamb@CPTS@arr@LIST+IVAL@sub_alpha@+2@arr@BADOV [syntax]
+		hJPQ CPNS
+		DIFF@hamb@LIST+IVAL+3@sub_alpha@@arr@CPTS= B@arr@BADOV
+		DIFF@hamb@LIST+IVAL+2@sub_alpha@@arr@CPTS@arr@BADOV
+		hJPQ CPNS
+CPIIX@arr@	JPQ #
+CPINUM@arr@	@sup_1@STE CPINUMX
+		SUMM@hamb@NVAL+LIST+1@sub_alpha@@arr@ A@arr@BADOV
+		
+[meta file_name=102726903-05-02-acc.pdf pdf_page=36 doc_page=186 type=code]
+[Page header: "IES ONLW 010"]
 
