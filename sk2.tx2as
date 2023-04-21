@@ -330,14 +330,14 @@ LAST@arr@	ZZLAST	[guessing the label, line damaged]
 
 [meta file_name=102726903-05-02-acc.pdf pdf_page=16 doc_page=166 type=macros]
 [Page header: "IES ONLW 012", out of sequence - "011" is missing]
-[Macros here are exact duplicates of defs seen previously, see doc_page 67]
+[This macros block (doc_pages 166-171) appears to be exactly identical to one on doc_pages 67-72]
 
 @hand@@hand@DEF MOVE|A@arr@B
 hLDE A
 STE B
 @hand@@hand@EMD
 
-@hand@@hand@ HDIF|P,Q@arr@R
+@hand@@hand@DEF HDIF|P,Q@arr@R
 LDA P
 SUB Q
 SCA {-1,-1,,-1,-1}+((Q)^(770,))
@@ -442,3 +442,208 @@ STC A+C
 
 STA A+D
 @hand@@hand@EMD
+
+@hand@@hand@DEF HEAD@times@@alpha@@arr@@beta@
+@sup_1@@sup_6@RSX@sub_beta@@sub_pipe@@sub_alpha@LIST
+INX@sub_beta@@sub_pipe@@sub_alpha@
+@hand@@hand@EMD
+
+@hand@@hand@DEF MOVEB|A@times@B@arr@C@times@D
+T1=A
+T2=C
+SKN @sub_T@@sub_1@B
+SUZ @sub_T@@sub_2@D
+MKN @sub_T@@sub_2@D
+@hand@@hand@EMD
+
+@hand@@hand@DEF GORR@hamb@A@times@@alpha@=@beta@@arr@B@arr@C
+@sup_1@DPX@sub_alpha@T2+(C)-(C)
+INX@sub_alpha@A+1
+JPQ T1+(C)-(C)
+T2@arr@ REX@sub_alpha@0+(C)-(C)
+JPQ C
+T1@arr@ RSX@sub_alpha@@sub_pipe@@sub_alpha@LIST
+@sup_1@@sup_6@RSX@sub_beta@@sub_pipe@@sub_alpha@LIST-1
+INX@sub_beta@@sub_pipe@@sub_alpha@0
+DEX@sub_beta@1
+hLDE@sub_alpha@LIST-1
+@sup_1@SED {0}
+JPQ T2+(C)-(C)
+hJPQ B
+JPQ T1+(C)-(C)
+@hand@@hand@EMD
+
+@hand@@hand@DEF LDAB@hamb@A
+LDA A
+LDB A+1
+@hand@@hand@EMD
+
+@hand@@hand@DEF STAB@hamb@P
+STA P
+STB P+1
+@hand@@hand@EMD
+
+@hand@@hand@DEF ERROR@hamb@@alpha@@arr@P
+hJPQ {ERROR1@hamb@@alpha@@arr@P}
+@hand@@hand@EMD
+
+@hand@@hand@DEF ERROR1@hamb@@alpha@@arr@P
+@sup_1@STE #+2
+SKZ ERRORSTOP
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=19 doc_page=169 type=macros]
+[Page header: "IES ONLW 015"]
+
+@sup_1@#@sub_alpha@
+JPQ P
+@hand@@hand@EMD
+
+@hand@@hand@DEF PUTNAME@hamb@@alpha@@arr@LMNAME
+SKZ EXPINS      **WORKING IN INST?
+JPQ #+6
+DPX@sub_alpha@A
+CYA {10.,}
+@sup_2@@sup_0@CYA {0,,-12000}
+ITA {377,,377}
+STA LMNAME
+@hand@@hand@EMD
+
+@hand@@hand@DEF MAKA@hamb@A@arr@I
+REX@sub_delta@A-LIST
+hJPQ BLOCKMAKER
+REX@sub_I@@sub_pipe@@sub_delta@
+@hand@@hand@EMD
+
+@hand@@hand@DEF COMB@hamb@A@arr@B@times@@alpha@
+@sup_1@RSX@sub_S@@sub_pipe@@sub_alpha@A+LIST+1
+SXD@sub_S@@sub_pipe@@sub_alpha@A+1
+JPQ #+14
+REX@sub_S@@sub_pipe@@sub_alpha@B+1
+@sup_2@RSX@sub_T@@sub_pipe@@sub_alpha@A+LIST+1
+@sup_1@DPX@sub_S@@sub_pipe@@sub_T@LIST
+@sup_2@EXX@sub_T@@sub_pipe@@sub_S@LIST
+@sup_1@RSX@sub_S@@sub_pipe@@sub_alpha@LIST+A+1
+@sup_2@DPX@sub_T@@sub_pipe@@sub_S@LIST
+@sup_1@DPX@sub_S@@sub_pipe@@sub_T@LIST
+REX@sub_S@@sub_pipe@@sub_alpha@A+1
+hDPX@sub_S@E
+h@sup_2@DPX@sub_S@E
+STE@sub_S@LIST
+@hand@@hand@EMD
+
+@hand@@hand@DEF LGORR@hamb@N@times@XR=XR2@arr@SUBR@arr@LEXIT
+GORREXIT=LEXIT
+@sup_1@DPX@sub_X@@sub_R@LGORR1
+@sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+LGORR0@arr@     @sup_1@@sup_6@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@LIST-1
+h@sup_minus@@sup_1@JNX@sub_X@@sub_R@#+2
+@sup_1@SKX@sub_X@@sub_R@1
+INX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@0
+LGORR1@arr@     SXD@sub_X@@sub_R@#      ** MODIFIED
+hJPQ GORREXIT+(GORREXIT/GORREXIT@circled_v@1@times@(LGORREND+1))
+@sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@LIST
+@sup_1@DPX@sub_X@@sub_R@@sub_2@LGORR2
+hJPQ SUBR
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=20 doc_page=170 type=macros]
+[Page header: "IES ONLW 016"]
+
+LGORR2@arr@     SKX@sub_X@@sub_R@@sub_2@#       **MODIFIED
+LGORREND@arr@   JPQ LGORR0
+@hand@@hand@EMD
+
+@hand@@hand@DEF PUTL@hamb@N@times@XR@arr@M@times@XR2
+@sup_1@@sup_2@AUX@sub_X@@sub_R@{(N)+1,,-((N)+1)}
+@sup_1@@sup_2@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)+1
+@sup_2@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST
+@sup_1@@sup_1@RSX@sub_T@@sub_pipe@@sub_S@LIST
+@sup_1@DPX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST
+	@sup_2@DPX@sub_X@@sub_R@@sub_pipe@@sub_T@LIST
+	@sup_1@DPX@sub_X@@sub_R@@sub_pipe@@sub_S@LIST
+@sup_1@@sup_1@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)
+hJPX@sub_S@#+2
+SKX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@0
+@sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST-1
+@sup_1@@sup_1@AUX@sub_X@@sub_R@{(N)+1,,-((N)+1)}
+@hand@@hand@EMD
+
+@hand@@hand@DEF PUTR@hamb@N@times@XR@arr@M@times@XR2
+@sup_1@@sup_2@AUX@sub_X@@sub_R@{(N)+1,,-((N)+1)}
+@sup_1@@sup_1@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)+1
+@sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST
+@sup_1@@sup_2@RSX@sub_T@@sub_pipe@@sub_S@LIST
+@sup_2@DPX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST
+	@sup_2@DPX@sub_X@@sub_R@@sub_pipe@@sub_S@LIST
+	@sup_1@DPX@sub_X@@sub_R@@sub_pipe@@sub_T@LIST
+@sup_1@@sup_1@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)
+hJPX@sub_S@#+2
+SKX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@0
+@sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST-1
+@sup_1@@sup_1@AUX@sub_X@@sub_R@{(N)+1,,-((N)+1)}
+@hand@@hand@EMD
+
+@hand@@hand@DEF LTAKE@hamb@N@times@XR
+@sup_1@@sup_2@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@sup_1@@sup_1@RSX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@sup_1@DPX@sub_T@@sub_pipe@@sub_S@LIST
+@sup_2@EXX@sub_S@@sub_pipe@@sub_T@LIST
+@sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@sup_2@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@sup_1@DPX@sub_0@@sub_pipe@@sub_X@@sub_R@LIST+(N)
+@hand@@hand@EMD
+
+@hand@@hand@DEF SUBR@hamb@A
+		@sup_1@STE SUBR1
+		A
+SUBR1@arr@	JPQ #
+@hand@@hand@EMD
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=21 doc_page=171 type=macros]
+[Page header: "IES ONLW 017"]
+
+@hand@@hand@DEF HEADER@hamb@T@arr@N@arr@P
+		T1=P
+		SMASBL,4,,T-LIST
+		#-NLIST-SMASBL,,#+SMASBL-NLIST
+		-2,0
+		SPLAT
+		N
+		T1
+@hand@@hand@EMD
+
+@hand@@hand@DEF MASTER@hamb@T@arr@N
+		MASBL,4,,T-LIST
+		#-NLIST-MASBL,,#-NLIST+MASBL
+		-2,
+		SPLAT
+		N
+@hand@@hand@EMD
+
+@hand@@hand@DEF @alpha@@rect_dash@A,@beta@
+		RSX@sub_alpha@@sub_pipe@@sub_beta@LIST+A
+@hand@@hand@EMD
+
+@hand@@hand@DEF MOVEL@hamb@N@times@XR@arr@M@times@XR2
+@sup_1@@sup_2@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1      **TAKE
+@sup_1@@sup_1@RSX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@sup_1@DPX@sub_T@@sub_pipe@@sub_S@LIST
+@sup_2@EXX@sub_S@@sub_pipe@@sub_T@LIST
+@sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@sup_2@EXX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)+1      **PUT
+@sup_2@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@sup_1@@sup_1@RSX@sub_T@@sub_pipe@@sub_S@LIST
+@sup_1@EXX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@sup_1@DPX@sub_T@@sub_pipe@@sub_S@LIST
+@hand@@hand@EMD
+
+@hand@@hand@DEF SKIE@hamb@N@times@@alpha@
+		RSX@sub_T@@sub_pipe@@sub_alpha@LIST+N+1
+		h@sup_1@@sup_1@LDE@sub_T@LIST
+		SXD@sub_T@*E
+		JPQ #+2
+@hand@@hand@EMD
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=22 doc_page=172 type=main]
+[Page header: "IES ONLW 020"]
+
+

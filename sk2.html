@@ -347,14 +347,14 @@ LAST&rarr;		ZZLAST	[guessing the label, line damaged]
 <hr>
 [meta file_name=102726903-05-02-acc.pdf pdf_page=16 doc_page=166 type=macros]
 [Page header: "IES ONLW 012", out of sequence - "011" is missing]
-[Macros here are exact duplicates of defs seen previously, see doc_page 67]
+[This macros block (doc_pages 166-171) appears to be exactly identical to one on doc_pages 67-72]
 
 &#9755;&#9755;DEF MOVE|A&rarr;B
 hLDE A
 STE B
 &#9755;&#9755;EMD
 
-&#9755;&#9755; HDIF|P,Q&rarr;R
+&#9755;&#9755;DEF HDIF|P,Q&rarr;R
 LDA P
 SUB Q
 SCA {-1,-1,,-1,-1}+((Q)^(770,))
@@ -461,4 +461,213 @@ STC A+C
 
 STA A+D
 &#9755;&#9755;EMD
+
+&#9755;&#9755;DEF HEAD&times;&alpha;&rarr;&beta;
+<sup>1</sup><sup>6</sup>RSX<sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub>LIST
+INX<sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub>
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF MOVEB|A&times;B&rarr;C&times;D
+T1=A
+T2=C
+SKN <sub>T</sub><sub>1</sub>B
+SUZ <sub>T</sub><sub>2</sub>D
+MKN <sub>T</sub><sub>2</sub>D
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF GORR&equiv;A&times;&alpha;=&beta;&rarr;B&rarr;C
+<sup>1</sup>DPX<sub>&alpha;</sub>T2+(C)-(C)
+INX<sub>&alpha;</sub>A+1
+JPQ T1+(C)-(C)
+T2&rarr; REX<sub>&alpha;</sub>0+(C)-(C)
+JPQ C
+T1&rarr; RSX<sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub>LIST
+<sup>1</sup><sup>6</sup>RSX<sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub>LIST-1
+INX<sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub>0
+DEX<sub>&beta;</sub>1
+hLDE<sub>&alpha;</sub>LIST-1
+<sup>1</sup>SED {0}
+JPQ T2+(C)-(C)
+hJPQ B
+JPQ T1+(C)-(C)
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF LDAB&equiv;A
+LDA A
+LDB A+1
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF STAB&equiv;P
+STA P
+STB P+1
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF ERROR&equiv;&alpha;&rarr;P
+hJPQ {ERROR1&equiv;&alpha;&rarr;P}
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF ERROR1&equiv;&alpha;&rarr;P
+<sup>1</sup>STE #+2
+SKZ ERRORSTOP
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=19 doc_page=169 type=macros]
+[Page header: "IES ONLW 015"]
+
+<sup>1</sup>#<sub>&alpha;</sub>
+JPQ P
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF PUTNAME&equiv;&alpha;&rarr;LMNAME
+SKZ EXPINS      **WORKING IN INST?
+JPQ #+6
+DPX<sub>&alpha;</sub>A
+CYA {10.,}
+<sup>2</sup><sup>0</sup>CYA {0,,-12000}
+ITA {377,,377}
+STA LMNAME
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF MAKA&equiv;A&rarr;I
+REX<sub>&Delta;</sub>A-LIST
+hJPQ BLOCKMAKER
+REX<sub>I</sub><sub>|</sub><sub>&Delta;</sub>
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF COMB&equiv;A&rarr;B&times;&alpha;
+<sup>1</sup>RSX<sub>S</sub><sub>|</sub><sub>&alpha;</sub>A+LIST+1
+SXD<sub>S</sub><sub>|</sub><sub>&alpha;</sub>A+1
+JPQ #+14
+REX<sub>S</sub><sub>|</sub><sub>&alpha;</sub>B+1
+<sup>2</sup>RSX<sub>T</sub><sub>|</sub><sub>&alpha;</sub>A+LIST+1
+<sup>1</sup>DPX<sub>S</sub><sub>|</sub><sub>T</sub>LIST
+<sup>2</sup>EXX<sub>T</sub><sub>|</sub><sub>S</sub>LIST
+<sup>1</sup>RSX<sub>S</sub><sub>|</sub><sub>&alpha;</sub>LIST+A+1
+<sup>2</sup>DPX<sub>T</sub><sub>|</sub><sub>S</sub>LIST
+<sup>1</sup>DPX<sub>S</sub><sub>|</sub><sub>T</sub>LIST
+REX<sub>S</sub><sub>|</sub><sub>&alpha;</sub>A+1
+hDPX<sub>S</sub>E
+h<sup>2</sup>DPX<sub>S</sub>E
+STE<sub>S</sub>LIST
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF LGORR&equiv;N&times;XR=XR2&rarr;SUBR&rarr;LEXIT
+GORREXIT=LEXIT
+<sup>1</sup>DPX<sub>X</sub><sub>R</sub>LGORR1
+<sup>1</sup><sup>1</sup>RSX<sub>X</sub><sub>R</sub><sub>2</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST+(N)+1
+LGORR0&rarr;     <sup>1</sup><sup>6</sup>RSX<sub>X</sub><sub>R</sub><sub>2</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST-1
+h<sup>-</sup><sup>1</sup>JNX<sub>X</sub><sub>R</sub>#+2
+<sup>1</sup>SKX<sub>X</sub><sub>R</sub>1
+INX<sub>X</sub><sub>R</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>0
+LGORR1&rarr;     SXD<sub>X</sub><sub>R</sub>#      ** MODIFIED
+hJPQ GORREXIT+(GORREXIT/GORREXIT&#9419;1&times;(LGORREND+1))
+<sup>1</sup><sup>1</sup>RSX<sub>X</sub><sub>R</sub><sub>2</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST
+<sup>1</sup>DPX<sub>X</sub><sub>R</sub><sub>2</sub>LGORR2
+hJPQ SUBR
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=20 doc_page=170 type=macros]
+[Page header: "IES ONLW 016"]
+
+LGORR2&rarr;     SKX<sub>X</sub><sub>R</sub><sub>2</sub>#       **MODIFIED
+LGORREND&rarr;   JPQ LGORR0
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF PUTL&equiv;N&times;XR&rarr;M&times;XR2
+<sup>1</sup><sup>2</sup>AUX<sub>X</sub><sub>R</sub>{(N)+1,,-((N)+1)}
+<sup>1</sup><sup>2</sup>RSX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>LIST+(M)+1
+<sup>2</sup>DPX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST
+<sup>1</sup><sup>1</sup>RSX<sub>T</sub><sub>|</sub><sub>S</sub>LIST
+<sup>1</sup>DPX<sub>T</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST
+	<sup>2</sup>DPX<sub>X</sub><sub>R</sub><sub>|</sub><sub>T</sub>LIST
+	<sup>1</sup>DPX<sub>X</sub><sub>R</sub><sub>|</sub><sub>S</sub>LIST
+<sup>1</sup><sup>1</sup>RSX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>LIST+(M)
+hJPX<sub>S</sub>#+2
+SKX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>0
+<sup>1</sup>DPX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST-1
+<sup>1</sup><sup>1</sup>AUX<sub>X</sub><sub>R</sub>{(N)+1,,-((N)+1)}
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF PUTR&equiv;N&times;XR&rarr;M&times;XR2
+<sup>1</sup><sup>2</sup>AUX<sub>X</sub><sub>R</sub>{(N)+1,,-((N)+1)}
+<sup>1</sup><sup>1</sup>RSX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>LIST+(M)+1
+<sup>1</sup>DPX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST
+<sup>1</sup><sup>2</sup>RSX<sub>T</sub><sub>|</sub><sub>S</sub>LIST
+<sup>2</sup>DPX<sub>T</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST
+	<sup>2</sup>DPX<sub>X</sub><sub>R</sub><sub>|</sub><sub>S</sub>LIST
+	<sup>1</sup>DPX<sub>X</sub><sub>R</sub><sub>|</sub><sub>T</sub>LIST
+<sup>1</sup><sup>1</sup>RSX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>LIST+(M)
+hJPX<sub>S</sub>#+2
+SKX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>0
+<sup>1</sup>DPX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST-1
+<sup>1</sup><sup>1</sup>AUX<sub>X</sub><sub>R</sub>{(N)+1,,-((N)+1)}
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF LTAKE&equiv;N&times;XR
+<sup>1</sup><sup>2</sup>RSX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST+(N)+1
+<sup>1</sup><sup>1</sup>RSX<sub>T</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST+(N)+1
+<sup>1</sup>DPX<sub>T</sub><sub>|</sub><sub>S</sub>LIST
+<sup>2</sup>EXX<sub>S</sub><sub>|</sub><sub>T</sub>LIST
+<sup>1</sup>DPX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST+(N)+1
+<sup>2</sup>DPX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST+(N)+1
+<sup>1</sup>DPX<sub>0</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST+(N)
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF SUBR&equiv;A
+		<sup>1</sup>STE SUBR1
+		A
+SUBR1&rarr;		JPQ #
+&#9755;&#9755;EMD
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=21 doc_page=171 type=macros]
+[Page header: "IES ONLW 017"]
+
+&#9755;&#9755;DEF HEADER&equiv;T&rarr;N&rarr;P
+		T1=P
+		SMASBL,4,,T-LIST
+		#-NLIST-SMASBL,,#+SMASBL-NLIST
+		-2,0
+		SPLAT
+		N
+		T1
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF MASTER&equiv;T&rarr;N
+		MASBL,4,,T-LIST
+		#-NLIST-MASBL,,#-NLIST+MASBL
+		-2,
+		SPLAT
+		N
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF &alpha;&#9635;A,&beta;
+		RSX<sub>&alpha;</sub><sub>|</sub><sub>&beta;</sub>LIST+A
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF MOVEL&equiv;N&times;XR&rarr;M&times;XR2
+<sup>1</sup><sup>2</sup>RSX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST+(N)+1      **TAKE
+<sup>1</sup><sup>1</sup>RSX<sub>T</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST+(N)+1
+<sup>1</sup>DPX<sub>T</sub><sub>|</sub><sub>S</sub>LIST
+<sup>2</sup>EXX<sub>S</sub><sub>|</sub><sub>T</sub>LIST
+<sup>1</sup>DPX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST+(N)+1
+<sup>2</sup>EXX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>LIST+(M)+1      **PUT
+<sup>2</sup>DPX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST+(N)+1
+<sup>1</sup><sup>1</sup>RSX<sub>T</sub><sub>|</sub><sub>S</sub>LIST
+<sup>1</sup>EXX<sub>T</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST+(N)+1
+<sup>1</sup>DPX<sub>T</sub><sub>|</sub><sub>S</sub>LIST
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF SKIE&equiv;N&times;&alpha;
+		RSX<sub>T</sub><sub>|</sub><sub>&alpha;</sub>LIST+N+1
+		h<sup>1</sup><sup>1</sup>LDE<sub>T</sub>LIST
+		SXD<sub>T</sub>*E
+		JPQ #+2
+&#9755;&#9755;EMD
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=22 doc_page=172 type=main]
+[Page header: "IES ONLW 020"]
+
+
 </code></pre></body></html>
