@@ -103,9 +103,9 @@ Another edge case, a macro may be invoked like this:
 
 PYTH@hamb@DELTA2@arr@@arr@BADOV
 
-In this case macro expects up to 5 arguments:
+In this case macro expects up to 4 arguments:
 
-@hand@@hand@DEF PYTH1@hamb@P@arr@Q,R@arr@S=T@arr@U
+@hand@@hand@DEF PYTH@hamb@P@arr@Q=T@arr@U
 
 It is not immediately clear how arguments are going to be assigned with this
 syntax.
