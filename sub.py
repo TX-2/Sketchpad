@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 
+# Formatted with: black -l 80 sub.py
+# https://black.readthedocs.io/en/stable/
+
 import argparse
 import functools
 import re
@@ -91,7 +94,7 @@ class Sub:
     TABS_RE = re.compile("(\t+)")
     TAB_WIDTH = 8
 
-    def SubLine(self, line):
+    def SubLine(self, line, line_num):
         """Returns a line with @..@ tokens substituted."""
         matches = self.TOKEN_RE.findall(line)
         for match in matches:
@@ -99,7 +102,9 @@ class Sub:
                 raise ValueError(f"Unknown substitution token: {match}")
             line = line.replace(match, self.SUB_TABLE[match])
         if "@" in line:
-            raise ValueError(f'Substitution failed for line: "{line}"')
+            raise ValueError(
+                f'Substitution failed for line {line_num}: "{line}"'
+            )
         return line
 
     def FixTabs(self, line, text_line):
@@ -141,11 +146,13 @@ class TextGenerator(Sub):
         self.file_name = file_name
 
     def Generate(self):
+        line_num = 1
         for line in open(self.file_name):
             line = line.rstrip()
-            text_line = self.SubLine(line)
+            text_line = self.SubLine(line, line_num)
             fixed_line = self.FixTabs(line, text_line)
             print(self.SubLine(fixed_line))
+            line_num += 1
 
 
 class HTMLGenerator(Sub):
@@ -161,15 +168,17 @@ class HTMLGenerator(Sub):
         self.text_generator = TextGenerator(file_name)
 
     def Generate(self):
+        line_num = 1
         print("<html><body style='font-size:150%'><pre><code>")
         for line in open(self.file_name):
             line = line.rstrip()
             if "[meta" in line:
                 # Page break.
                 print("<hr>")
-            text_line = self.text_generator.SubLine(line)
+            text_line = self.text_generator.SubLine(line, line_num)
             fixed_line = self.FixTabs(line, text_line)
-            print(self.SubLine(fixed_line))
+            print(self.SubLine(fixed_line, line_num))
+            line_num += 1
         print("</code></pre></body></html>")
 
 
