@@ -1898,7 +1898,7 @@ ROTATER&rarr;		<sup>1</sup>STE ROTATX
 
 <hr>
 [meta file_name=102726903-05-02-acc.pdf pdf_page=49 doc_page=199 type=code]
-[Page header: "IES ONLW 027"]
+[Page header: "IES ONLW 025"]
 
 		ADD ROTS
 		hJOV BADOV
@@ -1952,7 +1952,97 @@ TRANS1&rarr;		LDA <sub>&alpha;</sub> 0
 		DIV MATD
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=49 doc_page=199 type=code]
-[Page header: "IES ONLW 027"]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=50 doc_page=200 type=code]
+[Page header: "IES ONLW 026"]
+
+		hJOV BADOV
+		STA <sub>&alpha;</sub> 0
+		JPQ TRANSFORMX1
+TRANS2&rarr;		LDAB&equiv;0<sub>&alpha;</sub>
+		hJPQ ROTATER
+		STAB&equiv;0<sub>&alpha;</sub>
+		JPQ TRANSFORMX1
+TRANS4&rarr;		LDAB&equiv;2<sub>&alpha;</sub>	**POSITION
+		hJPQ ROTATER
+		STAB&equiv;2<sub>&alpha;</sub>
+		PROD&equiv;MATO&times;1<sub>&alpha;</sub>/MATD=ROTS&rarr;BADOV
+		PROD&equiv;MATM&times;0<sub>&alpha;</sub>/MATD&rarr;BADOV
+		SUB ROTS
+		hJOV BADOV
+		EXA 0<sub>&alpha;</sub>
+		PROD&times;MATO/MATD=ROTS&rarr;BADOV
+		PROD&equiv;MATM&times;1<sub>&alpha;</sub>/MATD&rarr;BADOV
+		ADD ROTS
+		hJOV BADOV
+		STA 1<sub>&alpha;</sub>
+TRANSFORMX1&rarr;
+		RSX <sub>&alpha;</sub> TRANSFORM&alpha;
+TRANSFORMX&rarr;
+		JPQ #
+ANGLEFIX&rarr;
+		<sup>1</sup>STE ANGFX
+AF1&rarr;		DIREC&equiv;AFST&rarr;AFCEN=AFTT&rarr;BADOV
+		DIREC&equiv;AFEND&rarr;AFCEN=AFTV&rarr;BADOV
+		SUB AFTT	**IGNORE OVERFLOW
+		ADD { 0}
+		SCA {-1,}
+		STA AFTT	**RELATIVE ANGLE
+		SUB AFANG	**EXISTING ANGLE
+		hJOV AF1A
+		FABVAL
+		SUB { 200,0,,0,1}
+AF1A&rarr;		MKC <sub>4</sub><sub>.</sub><sub>9</sub> AFTT
+		LDA AFTT
+		SUB AFANG
+		hJOV AFOVER
+		FABVAL
+		SUB { 200,0,,0,1}
+		JNA AF1B
+AFOVER&rarr;		LDA { 377,-0,,-0,-0}
+		LDB AFANG
+		SKZ <sub>4</sub><sub>.</sub><sub>9</sub> B
+		COM A
+		JPQ AF1B+1
+AF1B&rarr;		LDA AFTT
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=51 doc_page=201 type=code]
+[Page header: "IES [4 random symbols] 027"]
+
+		STA AFANG
+ANGFX&rarr;		JPQ #
+AFEND&rarr;		0
+		0
+RI&rarr;		JPQ 377750
+CL&rarr;		JPQ 200000
+ST&rarr;		JPQ 200001
+LAST&rarr;		ZZLAST
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=52 doc_page=202 type=symex]
+[Handwritten: "FIX (18 SEPT 62)"]
+[Page header: "HHL APY5 001"]
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=53 doc_page=203 type=symex]
+[Page header: "HHL APY5 002"]
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=54 doc_page=204 type=equalities]
+[Page header: "HHL APY5 003"]
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=55 doc_page=205 type=equalities]
+[Page header: "HHL APY5 004"]
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=56 doc_page=206 type=equalities]
+[Page header: "HHL APY5 005"]
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=57 doc_page=207 type=equalities]
+[Page header: "HHL APY5 006"]
+
+
 
 </code></pre></body></html>

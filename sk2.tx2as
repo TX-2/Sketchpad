@@ -1848,7 +1848,7 @@ ROTATER@arr@	@sup_1@STE ROTATX
 		PROD@hamb@ROTY@times@MATO/MATD@arr@BADOV
 
 [meta file_name=102726903-05-02-acc.pdf pdf_page=49 doc_page=199 type=code]
-[Page header: "IES ONLW 027"]
+[Page header: "IES ONLW 025"]
 
 		ADD ROTS
 		hJOV BADOV
@@ -1901,6 +1901,89 @@ TRANS1@arr@	LDA @sub_alpha@ 0
 		MUL MATS
 		DIV MATD
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=49 doc_page=199 type=code]
-[Page header: "IES ONLW 027"]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=50 doc_page=200 type=code]
+[Page header: "IES ONLW 026"]
+
+		hJOV BADOV
+		STA @sub_alpha@ 0
+		JPQ TRANSFORMX1
+TRANS2@arr@	LDAB@hamb@0@sub_alpha@
+		hJPQ ROTATER
+		STAB@hamb@0@sub_alpha@
+		JPQ TRANSFORMX1
+TRANS4@arr@	LDAB@hamb@2@sub_alpha@	**POSITION
+		hJPQ ROTATER
+		STAB@hamb@2@sub_alpha@
+		PROD@hamb@MATO@times@1@sub_alpha@/MATD=ROTS@arr@BADOV
+		PROD@hamb@MATM@times@0@sub_alpha@/MATD@arr@BADOV
+		SUB ROTS
+		hJOV BADOV
+		EXA 0@sub_alpha@
+		PROD@times@MATO/MATD=ROTS@arr@BADOV
+		PROD@hamb@MATM@times@1@sub_alpha@/MATD@arr@BADOV
+		ADD ROTS
+		hJOV BADOV
+		STA 1@sub_alpha@
+TRANSFORMX1@arr@
+		RSX @sub_alpha@ TRANSFORM@alpha@
+TRANSFORMX@arr@
+		JPQ #
+ANGLEFIX@arr@
+		@sup_1@STE ANGFX
+AF1@arr@	DIREC@hamb@AFST@arr@AFCEN=AFTT@arr@BADOV
+		DIREC@hamb@AFEND@arr@AFCEN=AFTV@arr@BADOV
+		SUB AFTT	**IGNORE OVERFLOW
+		ADD { 0}
+		SCA {-1,}
+		STA AFTT	**RELATIVE ANGLE
+		SUB AFANG	**EXISTING ANGLE
+		hJOV AF1A
+		FABVAL
+		SUB { 200,0,,0,1}
+AF1A@arr@	MKC @sub_4@@sub_dot@@sub_9@ AFTT
+		LDA AFTT
+		SUB AFANG
+		hJOV AFOVER
+		FABVAL
+		SUB { 200,0,,0,1}
+		JNA AF1B
+AFOVER@arr@	LDA { 377,-0,,-0,-0}
+		LDB AFANG
+		SKZ @sub_4@@sub_dot@@sub_9@ B
+		COM A
+		JPQ AF1B+1
+AF1B@arr@	LDA AFTT
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=51 doc_page=201 type=code]
+[Page header: "IES [4 random symbols] 027"]
+
+		STA AFANG
+ANGFX@arr@	JPQ #
+AFEND@arr@	0
+		0
+RI@arr@		JPQ 377750
+CL@arr@		JPQ 200000
+ST@arr@		JPQ 200001
+LAST@arr@	ZZLAST
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=52 doc_page=202 type=symex]
+[Handwritten: "FIX (18 SEPT 62)"]
+[Page header: "HHL APY5 001"]
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=53 doc_page=203 type=symex]
+[Page header: "HHL APY5 002"]
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=54 doc_page=204 type=equalities]
+[Page header: "HHL APY5 003"]
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=55 doc_page=205 type=equalities]
+[Page header: "HHL APY5 004"]
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=56 doc_page=206 type=equalities]
+[Page header: "HHL APY5 005"]
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=57 doc_page=207 type=equalities]
+[Page header: "HHL APY5 006"]
+
+
 
