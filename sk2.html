@@ -1627,5 +1627,168 @@ MAGCON2X&rarr;
 [meta file_name=102726903-05-02-acc.pdf pdf_page=44 doc_page=194 type=code]
 [Page header: "IES ONLW 020"]
 
+		MUL SCSZ
+		STA LMSTART
+		DPX LMSTART+1
+		hJPQ LETMAG
+MAGCONEXIT&rarr;
+		JPQ #
+MAGCONTAB&rarr;
+		0
+		20,
+		20,
+		0
+		0
+		-(20,)
+		-(20,)
+		0
+MAGCONXP&rarr;
+		0
+MAGCONYP&rarr;
+		0
+MAGTXT&rarr;		<sup>1</sup>STE MAGTXTEX
+		SKZ SUPPTEXTS
+		SKZ EXPINS
+		JPQ #+2
+		JPQ MAGTXTEX
+		PUTNAME&equiv;&alpha;&rarr;LMNAME
+		LDAB&equiv;LIST+TVAL<sub>&alpha;</sub>
+		hJPQ SIZER
+		STAB&equiv;200022 [absolute addresses?]
+		LDAB&equiv;LIST+TVAL+2<sub>&alpha;</sub>
+		hJPQ ROTATER
+		STAB&equiv;200024
+		<sup>1</sup><sup>3</sup>LDA <sub>&alpha;</sub> LIST+TXTS
+		<sup>2</sup><sup>7</sup>STA 200026
+		INX <sub>&alpha;</sub> LIST+TXTS+1
+		<sup>1</sup>DPX <sub>&alpha;</sub> 200026
+		hJPQ 200014
+MAGTXTEX&rarr;
+		JPQ #
+MAGNUM&rarr;		<sup>1</sup>STE MAGNUMEX
+		SKZ SUPPNUMS
+		SKZ EXPINS
+		JPQ #+2
+		JPQ MAGNUMEX
+		PUTNAME&equiv;&alpha;&rarr;LMNAME
+		LDAB&equiv;LIST+NVAL<sub>&alpha;</sub>
+		hJPQ SIZER
+		STAB&equiv;200022
+		LDAB&equiv;LIST+NVAL+2<sub>&alpha;</sub>
+		hJPQ ROTATER
+		STAB&equiv;200024
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=45 doc_page=195 type=code]
+[Page header: "IES ONLW 021"]
+
+		RSX <sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub> LIST+NTOSHO
+		PROD&equiv;LIST+SVAL<sub>&alpha;</sub>&times;MATS/MATD&rarr;BADOV
+		MUL { 9964324126.}
+		DIV { 4,}	[Hand-corrected to 4 (from 2?), hand-written "<-" next to the line]
+		ADD { 0}
+		STA 200026	**IGNORE OVERFLOW BECAUSE YOU CAN'T FIX IT [comments may have apostropes]
+		hJPQ 200016
+MAGNUMEX&rarr;
+		JPQ #
+WHERESCA&rarr;
+		<sup>1</sup>STE WHERESCAX
+		DPX MAGSCATS
+		DPX MAGSCAX
+		DPX MAGSCAY
+		LGORR&equiv;SSHOW&times;&alpha;=S&rarr;MAGSCA2
+		LDA MAGSCAX
+		SAB {-35.,}
+		DIV MAGSCATS
+		STA MAGSCAX
+		LDA MAGSCAY
+		SAB {-35.,}
+		DIV MAGSCATS
+		STA MAGSCAY
+		STA B
+		LDA MAGSCAX
+WHERESCAX&rarr;
+		JPQ #
+MAGSCA&rarr;		<sup>1</sup>STE MAGSCAEX
+		SKN SHOWSCALERS
+		JPQ MAGSCAEX
+		hJPQ WHERESCA
+		PUTNAME&equiv;&alpha;&rarr;LMNAME
+		LGORR&equiv;SSHOW&times;&alpha;=S&rarr;MAGSCA3
+		LDA SCSZ
+		MUL { 20,}
+		RES <sub>S</sub> 3
+		STA MAGSCAXS
+		STA MAGSCAXE
+		SCA {-2,}
+		STA MAGSCAYS
+		STA MAGSCAYE
+		COM MAGSCAXE
+MAGSCA1&rarr;
+		SUMM&equiv;MAGSCAX&rarr;MAGSCAXS=LMSTART&rarr;BADOV
+		SUMM&equiv;MAGSCAX&rarr;MAGSCAXE=LMEND&rarr;BADOV
+		SUMM&equiv;MAGSCAY&rarr;MAGSCAYS=LMSTART+1&rarr;BADOV
+		SUMM&equiv;MAGSCAY&rarr;MAGSCAYE=LMEND+1&rarr;BADOV
+		hJPQ LMAG
+		LDA MAGSCAYE
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=46 doc_page=196 type=code]
+[Page header: "IES ONLW 022"]
+
+		EXA MAGSCAXE
+		COM A
+		STA MAGSCAYE
+		LDA MAGSCAYS
+		EXA MAGSCAXS
+		COM A
+		STA MAGSCAYS
+		<sup>-</sup><sup>1</sup>JPX <sub>S</sub> MAGSCA1
+MAGSCAEX&rarr;
+		JPQ #
+MAGSCA2&rarr;
+		<sup>1</sup>STE MAGSCA2X
+		REX <sub>S</sub> 1
+		ADX <sub>S</sub> MAGSCATS
+		SUMM&equiv;MAGSCAX&rarr;LIST+NVAL+2<sub>&alpha;</sub>=MAGSCAX&rarr;BADOV
+		SUMM&equiv;MAGSCAY&rarr;LIST+NVAL+3<sub>&alpha;</sub>=MAGSCAY&rarr;BADOV
+MAGSCA2X&rarr;
+		JPQ #
+MAGSCA3&rarr;
+		<sup>1</sup>STE MAGSCA3X
+		LDAB&equiv;LIST+NVAL+2<sub>&alpha;</sub>
+		STAB&equiv;LMEND
+		LDA MAGSCAX
+		LDB MAGSCAY
+		STAB&equiv;LMSTART
+		hJPQ LMAG
+MAGSCA3X&rarr;
+		JPQ #
+MAGI&rarr;		<sup>1</sup>STE MAGIX
+		PROD&equiv;LIST+ISIZE<sub>&alpha;</sub>&times;MATS/MATD&rarr;BADOV
+		FABVAL
+		STA MAGTS
+		SCA {-1,}
+		ADD MAGTS
+		STA MAGTS
+		DIV SCSZ
+		hJOV #+3
+		SUB { 400,,}
+MAGI1&rarr;		JNA MAGIX	**DONT EXPAND
+		LDAB&equiv;IP<sub>&alpha;</sub>
+		ROTA
+		SUB SCCEN
+		FABVAL
+		SUB MAGTS
+		SUB SCSZ
+		JPA MAGIX	**DONT EXPAND
+		LDA B
+		SUB SCCEN+1
+		FABVAL
+		SUB MAGTS
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=47 doc_page=197 type=code]
+[Page header: "IES ONLW 023"]
 
 </code></pre></body></html>

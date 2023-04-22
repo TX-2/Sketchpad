@@ -1582,4 +1582,164 @@ MAGCON2X@arr@
 [meta file_name=102726903-05-02-acc.pdf pdf_page=44 doc_page=194 type=code]
 [Page header: "IES ONLW 020"]
 		
+		MUL SCSZ
+		STA LMSTART
+		DPX LMSTART+1
+		hJPQ LETMAG
+MAGCONEXIT@arr@
+		JPQ #
+MAGCONTAB@arr@
+		0
+		20,
+		20,
+		0
+		0
+		-(20,)
+		-(20,)
+		0
+MAGCONXP@arr@
+		0
+MAGCONYP@arr@
+		0
+MAGTXT@arr@	@sup_1@STE MAGTXTEX
+		SKZ SUPPTEXTS
+		SKZ EXPINS
+		JPQ #+2
+		JPQ MAGTXTEX
+		PUTNAME@hamb@@alpha@@arr@LMNAME
+		LDAB@hamb@LIST+TVAL@sub_alpha@
+		hJPQ SIZER
+		STAB@hamb@200022 [absolute addresses?]
+		LDAB@hamb@LIST+TVAL+2@sub_alpha@
+		hJPQ ROTATER
+		STAB@hamb@200024
+		@sup_1@@sup_3@LDA @sub_alpha@ LIST+TXTS
+		@sup_2@@sup_7@STA 200026
+		INX @sub_alpha@ LIST+TXTS+1
+		@sup_1@DPX @sub_alpha@ 200026
+		hJPQ 200014
+MAGTXTEX@arr@
+		JPQ #
+MAGNUM@arr@	@sup_1@STE MAGNUMEX
+		SKZ SUPPNUMS
+		SKZ EXPINS
+		JPQ #+2
+		JPQ MAGNUMEX
+		PUTNAME@hamb@@alpha@@arr@LMNAME
+		LDAB@hamb@LIST+NVAL@sub_alpha@
+		hJPQ SIZER
+		STAB@hamb@200022
+		LDAB@hamb@LIST+NVAL+2@sub_alpha@
+		hJPQ ROTATER
+		STAB@hamb@200024
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=45 doc_page=195 type=code]
+[Page header: "IES ONLW 021"]
+
+		RSX @sub_alpha@@sub_pipe@@sub_alpha@ LIST+NTOSHO
+		PROD@hamb@LIST+SVAL@sub_alpha@@times@MATS/MATD@arr@BADOV
+		MUL { 9964324126.}
+		DIV { 4,}	[Hand-corrected to 4 (from 2?), hand-written "<-" next to the line]
+		ADD { 0}
+		STA 200026	**IGNORE OVERFLOW BECAUSE YOU CAN'T FIX IT [comments may have apostropes]
+		hJPQ 200016
+MAGNUMEX@arr@
+		JPQ #
+WHERESCA@arr@
+		@sup_1@STE WHERESCAX
+		DPX MAGSCATS
+		DPX MAGSCAX
+		DPX MAGSCAY
+		LGORR@hamb@SSHOW@times@@alpha@=S@arr@MAGSCA2
+		LDA MAGSCAX
+		SAB {-35.,}
+		DIV MAGSCATS
+		STA MAGSCAX
+		LDA MAGSCAY
+		SAB {-35.,}
+		DIV MAGSCATS
+		STA MAGSCAY
+		STA B
+		LDA MAGSCAX
+WHERESCAX@arr@
+		JPQ #
+MAGSCA@arr@	@sup_1@STE MAGSCAEX
+		SKN SHOWSCALERS
+		JPQ MAGSCAEX
+		hJPQ WHERESCA
+		PUTNAME@hamb@@alpha@@arr@LMNAME
+		LGORR@hamb@SSHOW@times@@alpha@=S@arr@MAGSCA3
+		LDA SCSZ
+		MUL { 20,}
+		RES @sub_S@ 3
+		STA MAGSCAXS
+		STA MAGSCAXE
+		SCA {-2,}
+		STA MAGSCAYS
+		STA MAGSCAYE
+		COM MAGSCAXE
+MAGSCA1@arr@
+		SUMM@hamb@MAGSCAX@arr@MAGSCAXS=LMSTART@arr@BADOV
+		SUMM@hamb@MAGSCAX@arr@MAGSCAXE=LMEND@arr@BADOV
+		SUMM@hamb@MAGSCAY@arr@MAGSCAYS=LMSTART+1@arr@BADOV
+		SUMM@hamb@MAGSCAY@arr@MAGSCAYE=LMEND+1@arr@BADOV
+		hJPQ LMAG
+		LDA MAGSCAYE
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=46 doc_page=196 type=code]
+[Page header: "IES ONLW 022"]
+
+		EXA MAGSCAXE
+		COM A
+		STA MAGSCAYE
+		LDA MAGSCAYS
+		EXA MAGSCAXS
+		COM A
+		STA MAGSCAYS
+		@sup_minus@@sup_1@JPX @sub_S@ MAGSCA1
+MAGSCAEX@arr@
+		JPQ #
+MAGSCA2@arr@
+		@sup_1@STE MAGSCA2X
+		REX @sub_S@ 1
+		ADX @sub_S@ MAGSCATS
+		SUMM@hamb@MAGSCAX@arr@LIST+NVAL+2@sub_alpha@=MAGSCAX@arr@BADOV
+		SUMM@hamb@MAGSCAY@arr@LIST+NVAL+3@sub_alpha@=MAGSCAY@arr@BADOV
+MAGSCA2X@arr@
+		JPQ #
+MAGSCA3@arr@
+		@sup_1@STE MAGSCA3X
+		LDAB@hamb@LIST+NVAL+2@sub_alpha@
+		STAB@hamb@LMEND
+		LDA MAGSCAX
+		LDB MAGSCAY
+		STAB@hamb@LMSTART
+		hJPQ LMAG
+MAGSCA3X@arr@
+		JPQ #
+MAGI@arr@	@sup_1@STE MAGIX
+		PROD@hamb@LIST+ISIZE@sub_alpha@@times@MATS/MATD@arr@BADOV
+		FABVAL
+		STA MAGTS
+		SCA {-1,}
+		ADD MAGTS
+		STA MAGTS
+		DIV SCSZ
+		hJOV #+3
+		SUB { 400,,}
+MAGI1@arr@	JNA MAGIX	**DONT EXPAND
+		LDAB@hamb@IP@sub_alpha@
+		ROTA
+		SUB SCCEN
+		FABVAL
+		SUB MAGTS
+		SUB SCSZ
+		JPA MAGIX	**DONT EXPAND
+		LDA B
+		SUB SCCEN+1
+		FABVAL
+		SUB MAGTS
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=47 doc_page=197 type=code]
+[Page header: "IES ONLW 023"]
 
