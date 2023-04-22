@@ -1791,4 +1791,168 @@ MAGI1&rarr;		JNA MAGIX	**DONT EXPAND
 [meta file_name=102726903-05-02-acc.pdf pdf_page=47 doc_page=197 type=code]
 [Page header: "IES ONLW 023"]
 
+		SUB SCSZ
+		JPA MAGIX	**DON'T EXPAND
+MAGIGO&rarr;		PUTNAME&equiv;&alpha;&rarr;LMNAME
+		SKN SHOWINSASBOX
+		JPQ MAGIGOA
+		**ENBOX INSTANCE
+		SUMM&equiv;LIST+IVAL<sub>&alpha;</sub>&rarr;LIST+IVAL+1<sub>&alpha;</sub>=EXPAIRTS&rarr;BADOV
+		DIFF&equiv;LIST+IVAL<sub>&alpha;</sub>&rarr;LIST+IVAL+1<sub>&alpha;</sub>=EXPAIRTT&rarr;BADOV
+		SUMM&rarr;IP+1<sub>&alpha;</sub>= B&rarr;BADOV
+		SUMM&equiv;IP<sub>&alpha;</sub>&rarr;EXPAIRTS&rarr;BADOV
+		ROTA&rarr;LMEND
+		REX <sub>&gamma;</sub> 3
+MAGIASBOX&rarr;
+		LDA EXPAIRTS
+		EXA EXPAIRTT
+		COM A
+		STA EXPAIRTS
+		LDAB&equiv;LMEND
+		STAB&equiv;LMSTART
+		SUMM&equiv;IP+1<sub>&alpha;</sub>&rarr;EXPAIRTT = B&rarr;BADOV
+		SUMM&equiv;IP<sub>&alpha;</sub>&rarr;EXPAIRTS&rarr;BADOV
+		ROTA&rarr;LMEND
+		hJPQ LMAG
+		<sup>-</sup><sup>1</sup>JPX <sub>&gamma;</sub> MAGIASBOX
+MAGIGOA&rarr;
+		SKZ SUPPINS
+		JPQ MAGIX
+		RSX <sub>&gamma;</sub><sub>|</sub><sub>&alpha;</sub> LIST+IWHAT
+		SXD <sub>&gamma;</sub> 0
+		JPQ MAGIX	**NO PIC TO SHOW
+		hLDE <sub>&gamma;</sub> LIST+PSAVE
+		<sup>1</sup>SED { 0}
+		JPQ #+2
+		JPQ MAGIX	**RECURSIVE PICTURE
+		DPX <sub>&beta;</sub><sub>|</sub><sub>&gamma;</sub> PSAVE+LIST
+		MOVE|MAGIX&rarr;<sup>2</sup> PSAVE+LIST<sub>&gamma;</sub>
+		REX <sub>&beta;</sub> 5
+		LDA <sub>&beta;</sub> MATS
+		STA <sub>&beta;</sub><sub>|</sub><sub>&gamma;</sub> LIST+PSAVE+1
+		<sup>-</sup><sup>1</sup>JPX <sub>&beta;</sub>#-2
+MAGIGO1&rarr;
+		LDAB&equiv;IP<sub>&alpha;</sub>
+		hJPQ ROTATER
+		STA EXPAIRTS
+		STB EXPAIRTT
+		DPX MATRX
+		DPX MATRY
+		LDAB&equiv;LIST+IVAL<sub>&alpha;</sub>
+		COM B
+		hJPQ ROTATER
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=48 doc_page=198 type=code]
+[Page header: "IES ONLW 024"]
+
+		COM B
+		STA MATM
+		STB MATO
+		PROD&equiv;MATS&times;LIST+ISIZE<sub>&alpha;</sub>/MATD=MATS&rarr;BADOV
+		MOVE|LIST+PSIZE<sub>&gamma;</sub>&rarr;MATD
+MAGIGO2&rarr;
+		MOVE|EXPAIRTS&rarr;MATRX
+		MOVE|EXPAIRTT&rarr;MATRY
+		REX <sub>&beta;</sub> 1
+		ADX <sub>&beta;</sub> EXLEVEL
+		MKN EXPINS
+		REX <sub>&beta;</sub><sub>|</sub><sub>&gamma;</sub>
+		GORR&equiv;PPART&times;&beta;=&alpha;&rarr;MAG1&rarr;MAGILV
+MAGILV&rarr;		REX <sub>&gamma;</sub> 5
+		REX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub>
+		LDA <sub>&gamma;</sub><sub>|</sub><sub>&beta;</sub> LIST+PSAVE+1
+		STA <sub>&gamma;</sub> MATS
+		<sup>-</sup><sup>1</sup>JPX <sub>&gamma;</sub>#-2
+		MOVE|<sup>2</sup> LIST+PSAVE<sub>&beta;</sub>&rarr;<sup>1</sup> MAG1X
+		RSX <sub>&gamma;</sub> EXLEVEL
+		<sup>-</sup><sup>1</sup>JPX <sub>&gamma;</sub>#+2
+		ERROR&equiv;&gamma;&rarr;MAGIX	**OUT TOO FAR
+		DPX <sub>&gamma;</sub> EXLEVEL
+		SXD <sub>&gamma;</sub> 0
+		MKZ EXPINS
+		REX <sub>&gamma;</sub> 0
+		EXX <sub>&gamma;</sub><sub>|</sub><sub>&beta;</sub> LIST+PSAVE
+		REX <sub>&beta;</sub><sub>|</sub><sub>&gamma;</sub>
+MAGIX&rarr;		JPQ #
+SIZER&rarr;		<sup>1</sup>STE SIZEX
+		STA ROTX
+		STB ROTY
+		PROD&equiv;MATO&times;ROTY/MATD=ROTS&rarr;BADOV
+		PROD&equiv;MATM&times;ROTX/MATD&rarr;BADOV
+		SUB ROTS
+		hJOV BADOV
+		EXA ROTX
+		PROD&times;MATO/MATD=RTOS&rarr;BADOV
+		PROD&equiv;MATM&times;ROTY/MATD&rarr;BADOV
+		ADD ROTS
+		hJOV BADOV
+		STA B
+		LDA ROTX
+SIZEX&rarr;		JPQ #
+ROTATER&rarr;		<sup>1</sup>STE ROTATX
+		STA ROTX
+		STB ROTY
+		PROD&times;MATM/MATD=ROTS&rarr;BADOV
+		PROD&equiv;ROTY&times;MATO/MATD&rarr;BADOV
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=49 doc_page=199 type=code]
+[Page header: "IES ONLW 027"]
+
+		ADD ROTS
+		hJOV BADOV
+		ADD MATRX
+		hJOV BADOV
+		EXA ROTX
+		PROD&times;MATO/MATD=ROTS&rarr;BADOV
+		PROD&equiv;MATM&times;ROTY/MATD&rarr;BADOV
+		SUB ROTS
+		hJOV BADOV
+		ADD MATRY
+		hJOV BADOV
+		STA B
+		LDA ROTX
+ROTATX&rarr;		JPQ #
+WHERESUB&rarr;
+		<sup>1</sup>STE WHERESUBX
+		S&#9635;TYPE,&alpha;
+		T&#9635;VARLOC,S
+		hLDE <sub>S</sub> TUPLE+LIST
+		h<sup>1</sup>SED { 2}
+		JPQ #+5
+		<sup>1</sup>SED { 4}
+		JPQ #+2
+		ERROR&equiv;S&rarr;WHERESUBX
+		INX <sub>T</sub> 2
+		INX <sub>T</sub><sub>|</sub><sub>&alpha;</sub>
+		LDAB&equiv;LIST<sub>T</sub>
+WHERESUBX&rarr;
+		JPQ #
+TRANSFORM&rarr;
+		<sup>1</sup>STE TRANSFORMX
+		DPX <sub>&alpha;</sub> TRANSFORM&alpha;
+		S&#9635;TYPE,&alpha;
+		AUX <sub>&alpha;</sub><sub>|</sub><sub>S</sub> LIST+VARLOC
+		INX <sub>&alpha;</sub> LIST
+		RSX <sub>S</sub><sub>|</sub><sub>S</sub> LIST+TUPLE
+		JPQ #+1
+TRANSFORMB&rarr;
+		<sup>1</sup>STE TRANSFORMX
+		DPX <sub>&alpha;</sub> TRANSFORM&alpha;
+		SXD <sub>S</sub> 1
+		JPQ TRANS1
+		SXD <sub>S</sub> 2
+		JPQ TRANS2
+		SXD <sub>S</sub> 4
+		JPQ TRANS4
+		ERROR&equiv;S&rarr;TRANSFORMX1
+TRANS1&rarr;		LDA <sub>&alpha;</sub> 0
+		MUL MATS
+		DIV MATD
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=49 doc_page=199 type=code]
+[Page header: "IES ONLW 027"]
+
 </code></pre></body></html>

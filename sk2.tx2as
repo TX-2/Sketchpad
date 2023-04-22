@@ -1743,3 +1743,164 @@ MAGI1@arr@	JNA MAGIX	**DONT EXPAND
 [meta file_name=102726903-05-02-acc.pdf pdf_page=47 doc_page=197 type=code]
 [Page header: "IES ONLW 023"]
 
+		SUB SCSZ
+		JPA MAGIX	**DON'T EXPAND
+MAGIGO@arr@	PUTNAME@hamb@@alpha@@arr@LMNAME
+		SKN SHOWINSASBOX
+		JPQ MAGIGOA
+		**ENBOX INSTANCE
+		SUMM@hamb@LIST+IVAL@sub_alpha@@arr@LIST+IVAL+1@sub_alpha@=EXPAIRTS@arr@BADOV
+		DIFF@hamb@LIST+IVAL@sub_alpha@@arr@LIST+IVAL+1@sub_alpha@=EXPAIRTT@arr@BADOV
+		SUMM@arr@IP+1@sub_alpha@= B@arr@BADOV
+		SUMM@hamb@IP@sub_alpha@@arr@EXPAIRTS@arr@BADOV
+		ROTA@arr@LMEND
+		REX @sub_gamma@ 3
+MAGIASBOX@arr@
+		LDA EXPAIRTS
+		EXA EXPAIRTT
+		COM A
+		STA EXPAIRTS
+		LDAB@hamb@LMEND
+		STAB@hamb@LMSTART
+		SUMM@hamb@IP+1@sub_alpha@@arr@EXPAIRTT = B@arr@BADOV
+		SUMM@hamb@IP@sub_alpha@@arr@EXPAIRTS@arr@BADOV
+		ROTA@arr@LMEND
+		hJPQ LMAG
+		@sup_minus@@sup_1@JPX @sub_gamma@ MAGIASBOX
+MAGIGOA@arr@
+		SKZ SUPPINS
+		JPQ MAGIX
+		RSX @sub_gamma@@sub_pipe@@sub_alpha@ LIST+IWHAT
+		SXD @sub_gamma@ 0
+		JPQ MAGIX	**NO PIC TO SHOW
+		hLDE @sub_gamma@ LIST+PSAVE
+		@sup_1@SED { 0}
+		JPQ #+2
+		JPQ MAGIX	**RECURSIVE PICTURE
+		DPX @sub_beta@@sub_pipe@@sub_gamma@ PSAVE+LIST
+		MOVE|MAGIX@arr@@sup_2@ PSAVE+LIST@sub_gamma@
+		REX @sub_beta@ 5
+		LDA @sub_beta@ MATS
+		STA @sub_beta@@sub_pipe@@sub_gamma@ LIST+PSAVE+1
+		@sup_minus@@sup_1@JPX @sub_beta@#-2
+MAGIGO1@arr@
+		LDAB@hamb@IP@sub_alpha@
+		hJPQ ROTATER
+		STA EXPAIRTS
+		STB EXPAIRTT
+		DPX MATRX
+		DPX MATRY
+		LDAB@hamb@LIST+IVAL@sub_alpha@
+		COM B
+		hJPQ ROTATER
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=48 doc_page=198 type=code]
+[Page header: "IES ONLW 024"]
+
+		COM B
+		STA MATM
+		STB MATO
+		PROD@hamb@MATS@times@LIST+ISIZE@sub_alpha@/MATD=MATS@arr@BADOV
+		MOVE|LIST+PSIZE@sub_gamma@@arr@MATD
+MAGIGO2@arr@
+		MOVE|EXPAIRTS@arr@MATRX
+		MOVE|EXPAIRTT@arr@MATRY
+		REX @sub_beta@ 1
+		ADX @sub_beta@ EXLEVEL
+		MKN EXPINS
+		REX @sub_beta@@sub_pipe@@sub_gamma@
+		GORR@hamb@PPART@times@@beta@=@alpha@@arr@MAG1@arr@MAGILV
+MAGILV@arr@	REX @sub_gamma@ 5
+		REX @sub_beta@@sub_pipe@@sub_alpha@
+		LDA @sub_gamma@@sub_pipe@@sub_beta@ LIST+PSAVE+1
+		STA @sub_gamma@ MATS
+		@sup_minus@@sup_1@JPX @sub_gamma@#-2
+		MOVE|@sup_2@ LIST+PSAVE@sub_beta@@arr@@sup_1@ MAG1X
+		RSX @sub_gamma@ EXLEVEL
+		@sup_minus@@sup_1@JPX @sub_gamma@#+2
+		ERROR@hamb@@gamma@@arr@MAGIX	**OUT TOO FAR
+		DPX @sub_gamma@ EXLEVEL
+		SXD @sub_gamma@ 0
+		MKZ EXPINS
+		REX @sub_gamma@ 0
+		EXX @sub_gamma@@sub_pipe@@sub_beta@ LIST+PSAVE
+		REX @sub_beta@@sub_pipe@@sub_gamma@
+MAGIX@arr@	JPQ #
+SIZER@arr@	@sup_1@STE SIZEX
+		STA ROTX
+		STB ROTY
+		PROD@hamb@MATO@times@ROTY/MATD=ROTS@arr@BADOV
+		PROD@hamb@MATM@times@ROTX/MATD@arr@BADOV
+		SUB ROTS
+		hJOV BADOV
+		EXA ROTX
+		PROD@times@MATO/MATD=RTOS@arr@BADOV
+		PROD@hamb@MATM@times@ROTY/MATD@arr@BADOV
+		ADD ROTS
+		hJOV BADOV
+		STA B
+		LDA ROTX
+SIZEX@arr@	JPQ #
+ROTATER@arr@	@sup_1@STE ROTATX
+		STA ROTX
+		STB ROTY
+		PROD@times@MATM/MATD=ROTS@arr@BADOV
+		PROD@hamb@ROTY@times@MATO/MATD@arr@BADOV
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=49 doc_page=199 type=code]
+[Page header: "IES ONLW 027"]
+
+		ADD ROTS
+		hJOV BADOV
+		ADD MATRX
+		hJOV BADOV
+		EXA ROTX
+		PROD@times@MATO/MATD=ROTS@arr@BADOV
+		PROD@hamb@MATM@times@ROTY/MATD@arr@BADOV
+		SUB ROTS
+		hJOV BADOV
+		ADD MATRY
+		hJOV BADOV
+		STA B
+		LDA ROTX
+ROTATX@arr@	JPQ #
+WHERESUB@arr@
+		@sup_1@STE WHERESUBX
+		S@rect_dash@TYPE,@alpha@
+		T@rect_dash@VARLOC,S
+		hLDE @sub_S@ TUPLE+LIST
+		h@sup_1@SED { 2}
+		JPQ #+5
+		@sup_1@SED { 4}
+		JPQ #+2
+		ERROR@hamb@S@arr@WHERESUBX
+		INX @sub_T@ 2
+		INX @sub_T@@sub_pipe@@sub_alpha@
+		LDAB@hamb@LIST@sub_T@
+WHERESUBX@arr@
+		JPQ #
+TRANSFORM@arr@
+		@sup_1@STE TRANSFORMX
+		DPX @sub_alpha@ TRANSFORM@alpha@
+		S@rect_dash@TYPE,@alpha@
+		AUX @sub_alpha@@sub_pipe@@sub_S@ LIST+VARLOC
+		INX @sub_alpha@ LIST
+		RSX @sub_S@@sub_pipe@@sub_S@ LIST+TUPLE
+		JPQ #+1
+TRANSFORMB@arr@
+		@sup_1@STE TRANSFORMX
+		DPX @sub_alpha@ TRANSFORM@alpha@
+		SXD @sub_S@ 1
+		JPQ TRANS1
+		SXD @sub_S@ 2
+		JPQ TRANS2
+		SXD @sub_S@ 4
+		JPQ TRANS4
+		ERROR@hamb@S@arr@TRANSFORMX1
+TRANS1@arr@	LDA @sub_alpha@ 0
+		MUL MATS
+		DIV MATD
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=49 doc_page=199 type=code]
+[Page header: "IES ONLW 027"]
+
