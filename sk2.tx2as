@@ -1985,5 +1985,170 @@ LAST@arr@	ZZLAST
 [meta file_name=102726903-05-02-acc.pdf pdf_page=57 doc_page=207 type=equalities]
 [Page header: "HHL APY5 006"]
 
+[meta file_name=102726903-05-02-acc.pdf pdf_page=58 doc_page=208 type=macros]
+[Page header: "HHL APY5 007"]
+[Some duplication in macros, copy-pasted from previous blocks (doc_page 167, etc).]
 
+@hand@@hand@DEF PROD@hamb@A@times@B/C=D@arr@E
+LDA A
+MUL B
+DIV C
+hJOV E
+STA D
+@hand@@hand@EMD
+
+@hand@@hand@DEF SUMM@hamb@A@arr@B=C@arr@D
+LDA A
+ADD B
+hJOV D
+STA C
+@hand@@hand@EMD
+
+@hand@@hand@DEF DIFF@hamb@A@arr@B=C@arr@D
+LDA A
+SUB B
+hJOV D
+STA C
+@hand@@hand@EMD
+
+[Next two have not been seen before, assuming they are  using lowercase x and y]
+@hand@@hand@DEF NORMATM
+@sup_1@STE NORT4	**50 (NM+4)
+REX@sub_y@@sub_1@@sub_pipe@@sub_x@@sub_1@1
+@sup_1@DPX@sub_y@@sub_1@NORT1
+@sup_1@DPX@sub_y@@sub_1@NORT2-3
+@sup_1@SPX@sub_y@@sub_1@NORT2-1
+RSX@sub_y@@sub_1@*NORT3
+DEX@sub_y@@sub_1@1
+DPX NORX
+STA NORX1
+NORT1@arr@	LDA@sub_y@@sub_1@	**FIND |MAX|
+JPA #+2
+COM A
+SUB NORX
+JNA #+3
+ADD NORX
+STA NORX
+@sup_minus@@sup_1@JPX@sub_y@@sub_1@NORT1
+@sup_1@@sup_1@LDA@sub_x@@sub_1@
+?AB {-35.,}
+@sup_1@@sup_5@DIV @sub_x@@sub_1@	**N
+LDE NORX1
+@sup_1@@sup_?@SED@sub_x@@sub_1@
+@sup_1@@sup_?@LDA@sub_x@@sub_1@	**M
+MUL NORX	**NEW MAX
+hMAB {35.,}
+STD NORX
+COM NORX
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=59 doc_page=209 type=macros]
+[Page header: "HHL APY5 010"]
+
+RSX@sub_y@@sub_1@*NORT3
+JPQ NORT2
+NORX@arr@	0
+NORX1@arr@	0
+LDA@sub_y@@sub_1@	**P+1
+SCA NORX
+STA@sub_y@@sub_1@	**P+1
+NORT2@arr@	@sup_minus@@sup_1@JPX@sub_y@@sub_1@#-3
+NORT3@arr@	LDA@sub_x@@sub_1@
+@sub_3@@sub_2@SUB NORX	*OVF?
+@sup_3@@sup_2@STA@sub_x@@sub_1@	*NEW EXP
+NORT4@arr@	JPQ #
+***
+@hand@@hand@EMD
+
+@hand@@hand@DEF NORMAT|P,M
+REX@sub_x@@sub_1@* {P}
+@sup_1@@sup_5@LDA@sub_x@@sub_1@-M+M	[-M+M is the trick to not skip the line when M is not specified?]
+hJPQ {NORMATM}
+@hand@@hand@EMD
+
+@hand@@hand@DEF HSUM@hamb@A@arr@B=C
+LDA A
+ADD B
+SCA {-1,}
+STA C
+@hand@@hand@EMD
+
+@hand@@hand@DEF MOVE|A@arr@B
+hLDE A
+STE B
+@hand@@hand@EMD
+
+@hand@@hand@DEF HDIF|P,Q@arr@R
+LDA P
+SUB Q
+SCA {-1,}
+STA R
+@hand@@hand@EMD
+
+@hand@@hand@DEF LDAE@hamb@P,Q,R,S
+LDA P
+LDB P+Q
+LDC P+R
+LDD P+S
+@hand@@hand@EMD
+
+@hand@@hand@DEF STAE@hamb@P,Q,R,S
+STA P
+STB P+Q
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=60 doc_page=210 type=macros]
+[Page header: "HHL APY5 011"]
+
+STC P+R
+STD P+S
+@hand@@hand@EMD
+
+@hand@@hand@DEF LDAB@hamb@P
+LDA P
+LDB P+1
+@hand@@hand@EMD
+
+@hand@@hand@DEF STAB@hamb@P
+STA P
+STB P+1
+@hand@@hand@EMD
+
+@hand@@hand@DEF ERROR@hamb@@alpha@@arr@P
+hJPQ {ERROR1@hamb@@alpha@@arr@P}
+@hand@@hand@EMD
+
+@hand@@hand@DEF ERROR1@hamb@@alpha@@arr@P
+@sup_1@STE #+2
+SKZ ERRORSTOP
+@sup_1@#@sub_alpha@
+JPQ P
+@hand@@hand@EMD
+
+@hand@@hand@DEF SOLVE|P@arr@Q
+REX@sub_x@@sub_1@* {P}
+REX@sub_x@@sub_2@* {Q}
+h@sup_1@@sup_5@LDE @sub_x@@sub_1@0
+	hSED {2}
+	JPQ #+12
+hSED {3}
+JPQ #+6
+hSED {5}
+JPQ #+2
+0
+hJPQ {SOLVEM|4}
+JPQ #+4
+hJPQ {SOLVEM|2}
+	JPQ #+2
+	hJPQ {SOLVEM1}
+@hand@@hand@EMD
+
+@hand@@hand@DEF ADCON@hamb@C@arr@P
+[Problem: some symbols may be clipped by the left margin]
+DPX@sub_C@A
+@sup_?@DPX@sub_P@A
+hJPQ ADCONER
+@hand@@hand@EMD
+
+@hand@@hand@DEF @beta@@rect_dash@A@times@B@times@C@times@D@times@E@times@F@times@G@times@H@times@I,@alpha@
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=61 doc_page=211 type=macros]
 
