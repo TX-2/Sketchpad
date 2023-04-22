@@ -1405,5 +1405,227 @@ START76&rarr;
 [meta file_name=102726903-05-02-acc.pdf pdf_page=40 doc_page=190 type=code]
 [Page header: "IES ONLW 014"]
 
+76PUNCH&rarr;
+		SKN PUNCHIT
+		SKZ PLOTIT
+		hJPQ PLOTSUB
+		SKN FIX
+		JPQ #+7
+		hJPQ RELAX
+		MKN MOVED
+		hJPQ READIT
+		SKN DRAWASFIX
+		JPQ #-6
+		JPQ 76PUT
+76FAST&rarr;		SKN <sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub> 377721
+		JPQ #+5
+		hJPQ FIXSAP
+		hJPQ MAG
+		MOVE|NDISP&rarr;BASICFILE
+		hJPQ READIT
+		SZZ PSNEED
+		JPQ 76LOOP
+76LIGHTS&rarr;
+		LDD SNDISP
+		<sup>2</sup><sup>2</sup>LDD AFFB
+		LDC SCSZ
+		LDA PLOTBLOCKS
+		LDB PLOTSTORAGE
+		JPQ 76LOOP
+PLOTSUB&rarr;
+		<sup>1</sup>STE PLOTSUBEX
+		hJPQ PLCLEAN
+		SKZ PLOTIT
+		hJPQ PLPLOT
+		SKZ PUNCHIT
+		hJPQ PLPUNCH
+		MKN PLOTNOSCOPE
+		hJPQ MAG
+		MKZ PLOTNOSCOPE
+		hJPQ PLEND
+PLOTSUBA&rarr;
+		LDA PLOTBLOCKS
+		LDB PLOTSTORAGE
+		SKZ PLPUBUSY
+		JPQ PLOTSUBB
+		SKN PLPLBUSY
+PLOTSUBEX&rarr;
+		JPQ #
+		SKZ PUNCHIT
+		hJPQ PLPUNCH
+		JPQ PLOTSUBA
+PLOTSUBB&rarr;
+		SKZ PLPLBUSY
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=41 doc_page=191 type=code]
+[Page header: "IES ONLW 015"]
+[Page has a hand-drawn two-ended arrow, pointing to two locations in the code]
+
+		JPQ PLOTSUBA
+		SKZ PLOTIT
+		hJPQ PLPLOT
+		JPQ PLOTSUBA
+MAG&rarr;		<sup>1</sup>STE MAGEX
+		[One end of the arrow points here (between the original lines)]
+		REX <sub>&alpha;</sub> CURPICS-LIST
+		LGORR&equiv;SPECB&times;&alpha;=S&rarr;MAGPIC
+MAGEX&rarr;		JPQ #
+MAGPIC&rarr;		<sup>1</sup>STE MAGPICX
+		MKZ EXPINS
+		DPX <sub>0</sub><sub>|</sub><sub>&alpha;</sub> LIST+PSAVE
+		DPX NDISP 	[Other end of the arrow points to this line]
+		LDA {-(?)}	[More evidence that it's h?]
+		STA MATH	**DIAGONAL MATRIX
+		STA MATD	**MATRIX DENOM
+		STA MATS	**PYTH OF MATM, MATO
+		DPX MATO	**OFF DIAGONAL
+		DPX MATRX	**X TRANSLATION
+		DPX MATRY	**Y TRANSLATION
+MAGPICA&rarr;		LGORR&equiv;PPART&times;&alpha;=S&rarr;MAG2
+		SKN SHOWBLKS
+MAGPICX&rarr;
+		JPQ #
+		LGORR&equiv;PICBLKS&times;&alpha;=S&rarr;MAG1&rarr;MAGPICX
+MAG1&rarr;		<sup>1</sup>STE MAG1X
+		&gamma;&#9635;TYPE,&alpha;
+		hBPQ <sub>&gamma;</sub> LIST+DISPLAY
+MAG1X&rarr;		JPQ #
+MAGL&rarr;		<sup>1</sup>STE MAGLX
+		SKZ SUPPLINES
+		SKZ EXPINS
+		JPQ #+2
+		JPQ MAGLX
+		PUTNAME&equiv;&alpha;&rarr;LMNAME
+		&gamma;&#9635;LSP,&alpha;
+		ROTA&equiv;&gamma;&rarr;LMSTART
+		&gamma;&#9635;LEP,&alpha;
+		ROTA&equiv;&gamma;&rarr;LMEND
+		hJPQ LMAG
+MAGLX&rarr;		JPQ #
+MAGC&rarr;		<sup>1</sup>STE MAGCX
+		SKZ SUPPLINES
+		SKZ EXPINS
+		JPQ #+2
+		JPQ MAGCX
+		&gamma;&#9635;CIRCEN,&alpha;
+		ROTA&equiv;&gamma;&rarr;CMCEN
+		&gamma;&#9635;CSP,&alpha;
+		ROTA&equiv;&gamma;&rarr;CMSTART
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=42 doc_page=192 type=code]
+[Page header: "IES ONLW 016"]
+
+		SKZ EXPINS
+		JPQ MAGC1
+		&gamma;&#9635;CEP,&alpha;
+		ROTA&equiv;&gamma;&rarr;AFEND
+		hJPQ ANGLEFIX
+MAGC1&rarr;		LDA <sub>&alpha;</sub> CVAL+LIST
+		STA CMANG
+		PUTNAME&equiv;&alpha;&rarr;CMNAME
+		hJPQ CMAG
+MAGCX&rarr;		JPQ #
+MAGP&rarr;		<sup>1</sup>STE MAGPX
+		SKN SHOWPOINTS
+		JPQ MAGPX
+		ROTA&equiv;&alpha;&rarr;LMSTART
+		PUTNAME&equiv;&alpha;&rarr;LMNAME
+		hJPQ PMAG
+MAGPX&rarr;		JPQ #
+MAGTPVAR&rarr;
+		<sup>1</sup>STE MAGTPVX
+		SKN SHOWTPVALS
+		JPQ MAGTPVX
+		PUTNAME&equiv;&alpha;&rarr;LMNAME
+		LDAB&equiv;TPVAL+LIST<sub>&alpha;</sub>
+		hJPQ ROTATER
+		STA MAGTPX
+		STB MAGTPY
+		LDA SCSZ
+		MUL { 10,}
+		STA B
+		SUMM&rarr;MAGTPX=LMSTART&rarr;BADOV
+		SUMM&equiv;MAGTPY&rarr; B=LMSTART+1&rarr;BADOV
+		DIFF&equiv;MAGTPX&rarr; B=LMEND&rarr;BADOV
+		DIFF&equiv;MAGTPY&rarr; B=LMEND+1&rarr;BADOV
+		hJPQ LMAG
+		LDA LMEND
+		EXA LMSTART
+		STA LMEND
+		hJPQ LMAG
+MAGTPVX&rarr;
+		JPQ #
+MAGCON&rarr;		<sup>1</sup>STE MAGCONEXIT
+		SKN SHOWCON
+		JPQ MAGCONEXIT
+		PUTNAME&equiv;&alpha;&rarr;LMNAME
+		T&#9635;CHVAR,&gamma;	**&gamma;=TYPE
+		DPX MAGCONXP
+		DPX MAGCONYP
+		DPX A
+		LDB {h}		**1/2	[syntax, going to assume that its h]
+		DPX <sub>T</sub> D
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=43 doc_page=193 type=code]
+[Page header: "IES ONLW 017"]
+
+		DIV D
+		INX <sub>T</sub><sub>|</sub><sub>T</sub>
+		DPX <sub>T</sub> MAGCONT
+		DPX <sub>&gamma;</sub> MAGCONT
+		INX <sub>&alpha;</sub> CVTS+LIST+2
+		<sup>1</sup>DPX <sub>&alpha;</sub> MAGCON1
+		hJOV BADOV
+		STA MAGCONN	**1/NUMBER OF TIES&times;2
+		JPQ MAGCON1X
+MAGCON1&rarr;
+		LDA <sub>T</sub>#	**SET TO FIRST VARIABLE
+		DPX <sub>T</sub> MAGCONT1
+		RSX <sub>&alpha;</sub> A
+		&gamma;&#9635;TYPE,&alpha;
+		hBPQ <sub>&gamma;</sub> LIST+WHERE	**FIND PLACE OF TIE
+		STB MAGCONYT
+		MUL MAGCONN
+		SUMM&rarr;MAGCONXP=MAGCONXP&rarr;BADOV
+		PROD&equiv;MAGCONN&times;MAGCONYT
+		SUMM&rarr;MAGCONYP=MAGCONYP&rarr;BADOV
+		RSX <sub>T</sub> MAGCONT1
+MAGCON1X&rarr;
+		<sup>-</sup><sup>2</sup>JPX <sub>T</sub> MAGCON1
+		SUMM&equiv;MAGCONXP&rarr; A=MAGCONXP&rarr;BADOV
+		SUMM&equiv;MAGCONYP&rarr; A=MAGCONYP&rarr;BADOV
+		RSX <sub>T</sub> MAGCONT
+		JPQ MAGCON2X
+MAGCON2&rarr;
+		LDA *MAGCON1
+		DPX <sub>T</sub> MAGCONT1
+		RSX <sub>&alpha;</sub> A
+		&gamma;&#9635;TYPE,&alpha;
+		hBPQ <sub>&gamma;</sub> LIST+WHERE
+		STAB&equiv;LMEND
+		RSX <sub>T</sub> MAGCONT1
+		PROD&equiv;SCSZ&times;MAGCONTAB<sub>T</sub>
+		SUMM&rarr;MAGCONXP=LMSTART&rarr;BADOV
+		PROD&equiv;SCSZ&times;MAGCONTAB+1<sub>T</sub>
+		SUMM&rarr;MAGCONYP=LMSTART+1&rarr;BADOV
+		hJPQ LMAG
+MAGCON2X&rarr;
+		<sup>-</sup><sup>2</sup>JPX <sub>T</sub> MAGCON2
+		LDAB&equiv;MAGCONXP
+		STAB&equiv;CMCEN
+		MOVE|{-(h)}&rarr;CMANG
+		hJPQ CMAG
+		RSX <sub>&gamma;</sub> MAGCON&gamma;
+		LDA <sub>&gamma;</sub> LIST+CONLET	**LABEL LETTER
+		STA CMANG
+		LDA { 10,}
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=44 doc_page=194 type=code]
+[Page header: "IES ONLW 020"]
+
 
 </code></pre></body></html>
