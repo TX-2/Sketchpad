@@ -151,7 +151,7 @@ class TextGenerator(Sub):
             line = line.rstrip()
             text_line = self.SubLine(line, line_num)
             fixed_line = self.FixTabs(line, text_line)
-            print(self.SubLine(fixed_line))
+            print(self.SubLine(fixed_line, line_num))
             line_num += 1
 
 
