@@ -259,7 +259,7 @@ h@sup_minus@@sup_1@JNX@sub_X@@sub_R@#+2
 INX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@0
 LGORR1@arr@     SXD@sub_X@@sub_R@#      ** MODIFIED
 hJPQ GORREXIT+(GORREXIT/GORREXIT@circled_v@1@times@(LGORREND+1))
-@sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@LIST
+@sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST
 
 [meta file_name=102726903-05-01-acc.pdf pdf_page=20 doc_page=18 type=macros]
 [Page header: "IES 2XMX 016"]
@@ -2563,7 +2563,7 @@ h@sup_minus@@sup_1@JNX@sub_X@@sub_R@#+2
 INX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@0
 LGORR1@arr@	SXD@sub_X@@sub_R@#	** MODIFIED
 hJPQ GORREXIT+(GORREXIT/GORREXIT@circled_v@1@times@(LGORREND+1))
-@sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@LIST
+@sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST
 @sup_1@DPX@sub_X@@sub_R@@sub_2@LGORR2
 hJPQ SUBR
 
@@ -3221,7 +3221,7 @@ LGORR0@arr@	@sup_1@@sup_6@RSX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST-1
 	INX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@0
 LGORR1@arr@     SXD@sub_X@@sub_R@#      ** MODIFIED
 	hJPQ GORREXIT+(GORREXIT/GORREXIT@circled_v@1@times@(LGORREND+1))
-	@sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@LIST
+	@sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST
 	@sup_1@DPX@sub_X@@sub_R@@sub_2@LGORR2
 	hJPQ SUBR
 
