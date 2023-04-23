@@ -535,13 +535,13 @@ STE@sub_S@LIST
 GORREXIT=LEXIT
 @sup_1@DPX@sub_X@@sub_R@LGORR1
 @sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
-LGORR0@arr@     @sup_1@@sup_6@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@LIST-1
+LGORR0@arr@     @sup_1@@sup_6@RSX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST-1
 h@sup_minus@@sup_1@JNX@sub_X@@sub_R@#+2
 @sup_1@SKX@sub_X@@sub_R@1
 INX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@0
 LGORR1@arr@     SXD@sub_X@@sub_R@#      ** MODIFIED
 hJPQ GORREXIT+(GORREXIT/GORREXIT@circled_v@1@times@(LGORREND+1))
-@sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@LIST
+@sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST
 @sup_1@DPX@sub_X@@sub_R@@sub_2@LGORR2
 hJPQ SUBR
 
@@ -2151,4 +2151,171 @@ hJPQ ADCONER
 @hand@@hand@DEF @beta@@rect_dash@A@times@B@times@C@times@D@times@E@times@F@times@G@times@H@times@I,@alpha@
 
 [meta file_name=102726903-05-02-acc.pdf pdf_page=61 doc_page=211 type=macros]
+[Page header: "HHL APY5 012"]
+
+REX @sub_beta@*{0@sub_alpha@}
+RSX@sub_beta@*{LIST+I@sub_beta@}+(I^(370.))
+RSX@sub_beta@*{LIST+H@sub_beta@}+(H^(370.))
+RSX@sub_beta@*{LIST+G@sub_beta@}+(G^(370.))
+RSX@sub_beta@*{LIST+F@sub_beta@}+(F^(370.))
+RSX@sub_beta@*{LIST+E@sub_beta@}+(E^(370.))
+RSX@sub_beta@*{LIST+D@sub_beta@}+(D^(370.))
+RSX@sub_beta@*{LIST+C@sub_beta@}+(C^(370.))
+RSX@sub_beta@*{LIST+B@sub_beta@}+(B^(370.))
+RSX@sub_beta@*{LIST+A@sub_beta@}+(A^(370.))
+@hand@@hand@EMD
+
+@hand@@hand@DEF LTAKE@hamb@N@times@XR
+		@sup_1@@sup_2@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+		@sup_1@@sup_1@RSX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+		@sup_1@DPX@sub_T@@sub_pipe@@sub_S@LIST
+		@sup_2@EXX@sub_S@@sub_pipe@@sub_T@LIST
+		@sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+		@sup_2@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+		@sup_1@DPX@sub_0@@sub_pipe@@sub_X@@sub_R@LIST+(N)
+@hand@@hand@EMD
+
+@hand@@hand@DEF PUTL@hamb@N@times@XR@arr@M@times@XR2
+		@sup_1@@sup_2@AUX@sub_X@@sub_R@{(N)+1,,-((N)+1)}
+		@sup_1@@sup_2@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)+1
+		@sup_2@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST
+		@sup_1@@sup_1@RSX@sub_T@@sub_pipe@@sub_S@LIST
+		@sup_1@DPX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST
+		@sup_2@DPX@sub_X@@sub_R@@sub_pipe@@sub_T@LIST
+		@sup_1@DPX@sub_X@@sub_R@@sub_pipe@@sub_S@LIST
+		@sup_1@@sup_1@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)
+		hJPX@sub_S@#+2
+		SKX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@0
+		@sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST-1
+		@sup_1@@sup_1@AUX@sub_X@@sub_R@{(N)+1,,-((N)+1)}
+@hand@@hand@EMD
+
+@hand@@hand@DEF MOVEL@hamb@N@times@XR@arr@M@times@XR2
+		@sup_1@@sup_2@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1      **TAKE
+		@sup_1@@sup_1@RSX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+		@sup_1@DPX@sub_T@@sub_pipe@@sub_S@LIST
+		@sup_2@EXX@sub_S@@sub_pipe@@sub_T@LIST
+		@sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+		@sup_2@EXX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)+1      **PUT
+		@sup_2@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+		@sup_1@@sup_1@RSX@sub_T@@sub_pipe@@sub_S@LIST
+		@sup_1@EXX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+		@sup_1@DPX@sub_T@@sub_pipe@@sub_S@LIST
+@hand@@hand@EMD
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=62 doc_page=212 type=macros]
+[Page header: "HHL APY5 013"]
+
+@hand@@hand@DEF PUTR@hamb@N@times@XR@arr@M@times@XR2
+		@sup_1@@sup_2@AUX@sub_X@@sub_R@{(N)+1,,-((N)+1)}
+		@sup_1@@sup_1@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)+1
+		@sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST
+		@sup_1@@sup_2@RSX@sub_T@@sub_pipe@@sub_S@LIST
+		@sup_2@DPX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST
+        	@sup_2@DPX@sub_X@@sub_R@@sub_pipe@@sub_S@LIST
+        	@sup_1@DPX@sub_X@@sub_R@@sub_pipe@@sub_T@LIST
+		@sup_1@@sup_1@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)
+		hJPX@sub_S@#+2
+		SKX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@0
+		@sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST-1
+		@sup_1@@sup_1@AUX@sub_X@@sub_R@{(N)+1,,-((N)+1)}
+@hand@@hand@EMD
+
+@hand@@hand@DEF MOVER@hamb@N@times@XR@arr@M@times@XR2
+		@sup_1@@sup_2@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1      **TAKE
+		@sup_1@@sup_1@RSX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+		@sup_1@DPX@sub_T@@sub_pipe@@sub_S@LIST
+		@sup_2@EXX@sub_S@@sub_pipe@@sub_T@LIST
+		@sup_2@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+		@sup_1@EXX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)+1      **PUT
+		@sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+		@sup_1@@sup_2@RSX@sub_T@@sub_pipe@@sub_S@LIST
+		@sup_2@EXX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+		@sup_2@DPX@sub_T@@sub_pipe@@sub_S@LIST
+@hand@@hand@EMD
+
+@hand@@hand@DEF COMBL@hamb@N@times@XR@arr@M@times@XR2
+		@sup_1@@sup_2@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+		@sup_2@EXX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)+1
+		@sup_1@@sup_1@RSX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+		@sup_2@DPX@sub_S@@sub_pipe@@sub_T@LIST
+		@sup_1@EXX@sub_T@@sub_pipe@@sub_S@LIST
+		@sup_1@@sup_2@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+		@sup_1@EXX@sub_T@@sub_pipe@@sub_S@LIST
+		@sup_2@DPX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+		@sup_1@DPX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+@hand@@hand@EMD
+
+@hand@@hand@DEF COMBR@hamb@N@times@XR@arr@M@times@XR2
+		@sup_1@@sup_1@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+		@sup_1@EXX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST+(M)+1
+		@sup_1@@sup_2@RSX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+		@sup_1@DPX@sub_S@@sub_pipe@@sub_T@LIST
+		@sup_2@EXX@sub_T@@sub_pipe@@sub_S@LIST
+		@sup_1@@sup_1@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+		@sup_2@EXX@sub_T@@sub_pipe@@sub_S@LIST
+		@sup_2@DPX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+		[Problem: the following line is present in earlier def, but not in this one, clipped by the bottom margin? Compare with COMBL above.]
+		@sup_1@DPX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=63 doc_page=213 type=macros]
+[Page header: "HHL APY5 014"]
+
+@hand@@hand@EMD
+
+@hand@@hand@DEF LGORR@hamb@N@times@XR=XR2@arr@SUBR@arr@LEXIT
+GORREXIT=LEXIT
+		@sup_1@DPX@sub_X@@sub_R@LGORR1
+		@sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+LGORR0@arr@	@sup_1@@sup_6@RSX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST-1
+		h@sup_minus@@sup_1@JNX@sub_X@@sub_R@#+2
+		@sup_1@SKX@sub_X@@sub_R@1
+		INX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@0
+LGORR1@arr@	SXD@sub_X@@sub_R@#      ** MODIFIED
+		hJPQ GORREXIT+(GORREXIT/GORREXIT@circled_v@1@times@(LGORREND+1))
+		@sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST
+		@sup_1@DPX@sub_X@@sub_R@@sub_2@LGORR2
+		hJPQ SUBR
+LGORR2@arr@	SKX@sub_X@@sub_R@@sub_2@#       **MODIFIED
+LGORREND@arr@	JPQ LGORR0
+@hand@@hand@EMD
+
+@hand@@hand@DEF LGORL@hamb@N@times@XR=XR2@arr@SUBR@arr@LEXIT
+GORLEXIT=LEXIT
+		@sup_1@DPX@sub_X@@sub_R@LGORL1
+		@sup_1@@sup_2@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+LGORL0@arr@	@sup_1@@sup_6@RSX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST-1
+		h@sup_minus@@sup_1@JNX@sub_X@@sub_R@#+2
+		@sup_1@SKX@sub_X@@sub_R@1
+		INX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@0
+LGORL1@arr@	SXD@sub_X@@sub_R@#      ** MODIFIED
+		hJPQ GORLEXIT+(GORLEXIT/GORLEXIT@circled_v@1@times@(LGORLEND+1))
+		@sup_1@@sup_2@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST
+		@sup_1@DPX@sub_X@@sub_R@@sub_2@LGORL2
+		hJPQ SUBR
+LGORL2@arr@	SKX@sub_X@@sub_R@@sub_2@#       **MODIFIED
+LGORLEND@arr@	JPQ LGORL0
+@hand@@hand@EMD
+
+@hand@@hand@DEF LGORRI@hamb@N@times@XR=XR2@arr@SUBR@arr@LEXIT
+GORRIEXIT=LEXIT
+		@sup_1@DPX@sub_X@@sub_R@LGORRI1
+		@sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+LGORRI0@arr@	@sup_1@@sup_6@RSX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST-1
+		h@sup_minus@@sup_1@JNX@sub_X@@sub_R@#+2
+		@sup_1@SKX@sub_X@@sub_R@1
+		INX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@0
+GORRI1@arr@	SXD@sub_X@@sub_R@#      ** MODIFIED
+		hJPQ GORRIEXIT+(GORRIEXIT/GORRIEXIT@circled_v@1@times@(LGORRIEND+1))
+		@sup_1@DPX@sub_X@@sub_R@@sub_2@LGORRI2
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=64 doc_page=214 type=macros]
+[Page header: "HHL APY5 015"]
+
+		@sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST       **CURRENT NEXT
+		hJPQ SUBR
+LGORRI2@arr@	SKX@sub_X@@sub_R@@sub_2@#       **MODIFIED
+		@sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST       ** NEW NXT
+LGORRIEND@arr@	JPQ LGORRI0
+@hand@@hand@EMD
 
