@@ -2319,3 +2319,106 @@ LGORRI2@arr@	SKX@sub_X@@sub_R@@sub_2@#       **MODIFIED
 LGORRIEND@arr@	JPQ LGORRI0
 @hand@@hand@EMD
 
+@hand@@hand@DEF LGORLI@hamb@N@times@XR=XR2@arr@SUBR@arr@LEXIT
+GORLIEXIT=LEXIT
+		@sup_1@DPX@sub_X@@sub_R@LGORLI1
+		@sup_1@@sup_2@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+LGORLI0@arr@	@sup_1@@sup_6@RSX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST-1
+		h@sup_minus@@sup_1@JNX@sub_X@@sub_R@#+2
+		@sup_1@SKX@sub_X@@sub_R@1
+		INX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@0
+LGORLI1@arr@	SXD@sub_X@@sub_R@#      ** MODIFIED
+		hJPQ GORLIEXIT+(GORLIEXIT/GORLIEXIT@circled_v@1@times@(LGORLIEND+1))
+		@sup_1@DPX@sub_X@@sub_R@@sub_2@LGORLI2
+ 		@sup_1@@sup_2@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST       **CURRENT NXT
+		hJPQ SUBR
+LGORLI2@arr@	SKX@sub_X@@sub_R@@sub_2@#       **MODIFIED
+		@sup_1@@sup_2@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST       ** NEW NXT
+LGORLIEND@arr@	JPQ LGORLI0
+@hand@@hand@EMD
+
+@hand@@hand@DEF GOAC@hamb@C@arr@R@arr@S
+		@sup_1@DPX@sub_C@T1+1
+		RSX@sub_C@@sub_pipe@@sub_C@LIST+TYPE
+		RSX@sub_C@@sub_pipe@@sub_C@LIST+CHVAR
+		INX@sub_C@@sub_pipe@@sub_C@
+		JPQ T2
+		0
+T1@arr@		DPX@sub_C@T1-1
+		INX@sub_C@#
+		RSX@sub_C@@sub_pipe@@sub_C@LIST+CVTS+2
+		hJPQ R
+		RSX@sub_C@T1-1
+T2@arr@		@sup_minus@@sup_2@JPX@sub_C@T1
+		RSX@sub_C@T1+1
+		JPQ S
+@hand@@hand@EMD
+
+@hand@@hand@DEF SUBR@hamb@A
+		@sup_1@STE SUBR1
+		A
+SUBR1@arr@	JPQ #
+@hand@@hand@EMD
+
+@hand@@hand@DEF SOLVEM|K
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=65 doc_page=215 type=macros]
+[Page header: "HHL APY5 016"]
+
+		@sup_1@STE SLVDR
+		NORMAT
+		REX@sub_y@@sub_1@(K+1)@times@K
+		INX@sub_x@@sub_1@1
+		@sup_1@DPX@sub_x@@sub_1@SLVT3
+		@sup_1@DPX@sub_x@@sub_1@SLVT3+1
+		@sup_1@DPX@sub_x@@sub_2@SLVT5-1
+		INX@sub_x@@sub_2@(K+1)@times@(K-1)+1
+		@sup_1@DPX@sub_x@@sub_2@SLVTR
+		@sup_1@DPX@sub_x@@sub_1@SLVTR2
+		@sup_1@STA SLVT5	**N(K+1)
+		@sup_1@SUB SLVT6
+		@sup_1@STA SLVT5+1	**N(K+1)-1
+		@sup_1@STA SLVT2+1
+		RSX@sub_x@@sub_2@A
+SLVT2@arr@	DEX@sub_x@@sub_2@1
+		REX@sub_x@@sub_1@	**N(K+1)-1
+		REX@sub_x@@sub_3@K
+		DPX SLVTX
+SLVT3@arr@	LDA@sub_x@@sub_1@	**SQUARE
+		MUL@sub_x@@sub_2@
+		DEX@sub_x@@sub_1@K
+		DEX@sub_x@@sub_2@K+1
+SLVT4@arr@	ADD SLVTX
+		STA SLVTX
+		@sup_minus@@sup_1@JPX@sub_x@@sub_1@SLVT3
+		STA@sub_y@@sub_1@
+SLVT5@arr@	INX@sub_x@@sub_2@	**N(K+1)
+		INX@sub_x@@sub_1@	**N(K+1)-1
+SLVT6@arr@	DEX@sub_y@@sub_1@1
+		@sup_minus@@sup_1@JPX@sub_x@@sub_3@SLVT3-1
+		JPX@sub_y@@sub_1@SLVT2
+		DPX SLVTS
+		@sup_1@REX@sub_x@@sub_3@K+1
+		REX@sub_x@@sub_1@K-1
+SLVR1@arr@	RSX@sub_x@@sub_2@SLVT5-1
+		INX@sub_x@@sub_2@(K+1)@times@(K-1)+1
+		@sup_1@DPX@sub_x@@sub_2@SLVTP
+		REX@sub_x@@sub_2@K-1
+		REX@sub_y@@sub_1@0
+		LDA@sub_x@@sub_1@*SLVTR
+		JPA SLVR2
+		COM A
+		JPA SLVR2
+		@sup_1@REX@sub_y@@sub_1@1	**SINGULAR
+		@sup_1@ADX@sub_y@@sub_1@SLVTS
+		JPQ SLVR5+?
+SLVR2@arr@	STA SLVTY
+SLVR3@arr@	SXD@sub_x@@sub_1@@sub_pipe@@sub_x@@sub_2@
+		JPQ SLVR5+2
+		
+[meta file_name=102726903-05-02-acc.pdf pdf_page=66 doc_page=216 type=macros]
+[Page header: "HHL APY5 017"]
+
+		
+
+
