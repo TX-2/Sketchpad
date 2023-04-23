@@ -2471,7 +2471,7 @@ SLVR5@arr@	REX@sub_y@@sub_1@@sub_pipe@@sub_x@@sub_1@
 		RSX@sub_x@@sub_3@SLVT?-1
 
 [meta file_name=102726903-05-02-acc.pdf pdf_page=67 doc_page=217 type=macros]
-[Page header: "HHL APY5 018"]
+[Page header: "HHL APY5 020"]
 
 		STA@sub_x@@sub_3@
 		@sup_1@@sup_1@LDA SLVTS
@@ -2525,5 +2525,59 @@ SLVAD1.5@arr@	REX@sub_x@@sub_2@K-1	**COUNT COLUMNS
 		INX@sub_x@@sub_3@(K-1)@times@(K+1)+1
 
 [meta file_name=102726903-05-02-acc.pdf pdf_page=68 doc_page=218 type=macros]
-[Page header: "HHL APY5 019"]
+[Page header: "HHL APY5 021"]
 
+SLVAD2@arr@	LDA@sub_x@@sub_2@@sub_pipe@@sub_x@@sub_3@	**DIAGONAL
+		JPA #+3
+		JNA #+2
+		JPQ SLVAD3	**SKIP DEGEN EQUATIONS
+		LDA@sub_x@@sub_1@@sub_S@@sub_pipe@@sub_beta@@sub_x@@sub_3@	**NEXT NON REDUCED TERM
+		MUL@sub_y@@sub_1@K	**FUTURE DIAG IN CONSTANT
+		DIV@sub_x@@sub_2@@sub_pipe@@sub_x@@sub_3@	**DIAGONAL
+		JOV SLVAD9	[really 9?]
+SLVAD3@arr@	STA@sub_x@@sub_2@@sub_pipe@@sub_y@@sub_1@	**EQUATION ENTRY MAY BE ZERO
+		DEX@sub_x@@sub_3@K+1
+		@sup_minus@@sup_1@JPX@sub_x@@sub_2@SLVAD2
+SLVAD4@arr@	DEX@sub_y@@sub_1@K+1
+		@sup_minus@@sup_1@JPX@sub_x@@sub_1@SLVAD1
+		SEX@sub_x@@sub_1@K-1	**MAKE COMPLETE EQUATIONS
+		RSX@sub_x@@sub_3@SLVT5-1	**COUNT ROWS
+		INX@sub_x@@sub_3@(K-1)@times@(K+1)+1
+SLVAD5@arr@	LDA@sub_x@@sub_1@@sub_pipe@@sub_x@@sub_3@	**DIAGONAL
+		JPA SLVAD7
+		JNA SLVAD7
+		EXA@sub_x@@sub_3@K	**CLEAR CONSTANT, GET DIAGONAL
+COM A	[left-aligned in the listing, likely not significant]
+		STA@sub_x@@sub_1@@sub_pipe@@sub_x@@sub_3@	**PUT IN DIAGONAL
+		REX@sub_y@@sub_1@K-1
+SLVAD6@arr@	LDA@sub_y@@sub_1@@sub_pipe@@sub_x@@sub_3@
+		MUL@sub_y@@sub_1@#	**SET TO MATRIX-K
+		ADD@sub_x@@sub_3@K	**CONSTANT
+		JOV SLVAD9
+		STA@sub_x@@sub_3@K
+		@sup_minus@@sup_1@JPX@sub_y@@sub_1@SLVAD6
+SLVAD7@arr@	DEX@sub_x@@sub_3@K+1
+		@sup_minus@@sup_1@JPX@sub_x@@sub_1@SLVAD5
+		RSX@sub_x@@sub_2@SLVT5-1	**RETURN TO SOLVE
+		INX@sub_x@@sub_2@(K-1)@times@(K+1)+1
+		@sup_1@DPX@sub_x@@sub_2@SLVTR
+		@sup_1@DPX@sub_x@@sub_2@SLVTR2
+		@sup_1@@sup_1@LDA SLVTS
+		@sup_1@@sup_7@STA SLVTS
+		JPQ SLVR1-2
+SLVAD8@arr@	LDB@sub_y@@sub_1@K	**OVERFLOW IN MAKING TERMS 	[8 in the label is not particularly legible, guessing based on order]
+		SCB {-2,}
+		STB@sub_y@@sub_1@K
+		JPQ SLVAD1.5	**MAKE TERMS AGAIN
+SLVAD9@arr@	SCA {-2,}	**OVERFLOW IN FIGURING CONSTANT
+		REX@sub_x@@sub_2@K-1
+		LDB@sub_x@@sub_2@@sub_pipe@@sub_x@@sub_3@	**REDUCE ALL TERMS
+		SCB {-2,}
+		STB@sub_x@@sub_2@@sub_pipe@@sub_x@@sub_3@
+		@sup_minus@@sup_1@JPX@sub_x@@sub_2@#-3
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=69 doc_page=219 type=macros]
+[Page header: "HHL APY5 022"]
+
+		JPQ SLVAD7-8	[really 8?]
+@hand@@hand@EMD

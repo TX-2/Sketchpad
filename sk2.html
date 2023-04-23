@@ -2539,7 +2539,7 @@ SLVR5&rarr;		REX<sub>y</sub><sub>1</sub><sub>|</sub><sub>x</sub><sub>1</sub>
 
 <hr>
 [meta file_name=102726903-05-02-acc.pdf pdf_page=67 doc_page=217 type=macros]
-[Page header: "HHL APY5 018"]
+[Page header: "HHL APY5 020"]
 
 		STA<sub>x</sub><sub>3</sub>
 		<sup>1</sup><sup>1</sup>LDA SLVTS
@@ -2594,6 +2594,61 @@ SLVAD1.5&rarr;	REX<sub>x</sub><sub>2</sub>K-1	**COUNT COLUMNS
 
 <hr>
 [meta file_name=102726903-05-02-acc.pdf pdf_page=68 doc_page=218 type=macros]
-[Page header: "HHL APY5 019"]
+[Page header: "HHL APY5 021"]
 
+SLVAD2&rarr;		LDA<sub>x</sub><sub>2</sub><sub>|</sub><sub>x</sub><sub>3</sub>	**DIAGONAL
+		JPA #+3
+		JNA #+2
+		JPQ SLVAD3	**SKIP DEGEN EQUATIONS
+		LDA<sub>x</sub><sub>1</sub><sub>S</sub><sub>|</sub><sub>&beta;</sub><sub>x</sub><sub>3</sub>	**NEXT NON REDUCED TERM
+		MUL<sub>y</sub><sub>1</sub>K	**FUTURE DIAG IN CONSTANT
+		DIV<sub>x</sub><sub>2</sub><sub>|</sub><sub>x</sub><sub>3</sub>	**DIAGONAL
+		JOV SLVAD9	[really 9?]
+SLVAD3&rarr;		STA<sub>x</sub><sub>2</sub><sub>|</sub><sub>y</sub><sub>1</sub>	**EQUATION ENTRY MAY BE ZERO
+		DEX<sub>x</sub><sub>3</sub>K+1
+		<sup>-</sup><sup>1</sup>JPX<sub>x</sub><sub>2</sub>SLVAD2
+SLVAD4&rarr;		DEX<sub>y</sub><sub>1</sub>K+1
+		<sup>-</sup><sup>1</sup>JPX<sub>x</sub><sub>1</sub>SLVAD1
+		SEX<sub>x</sub><sub>1</sub>K-1	**MAKE COMPLETE EQUATIONS
+		RSX<sub>x</sub><sub>3</sub>SLVT5-1	**COUNT ROWS
+		INX<sub>x</sub><sub>3</sub>(K-1)&times;(K+1)+1
+SLVAD5&rarr;		LDA<sub>x</sub><sub>1</sub><sub>|</sub><sub>x</sub><sub>3</sub>	**DIAGONAL
+		JPA SLVAD7
+		JNA SLVAD7
+		EXA<sub>x</sub><sub>3</sub>K	**CLEAR CONSTANT, GET DIAGONAL
+COM A		[left-aligned in the listing, likely not significant]
+		STA<sub>x</sub><sub>1</sub><sub>|</sub><sub>x</sub><sub>3</sub>	**PUT IN DIAGONAL
+		REX<sub>y</sub><sub>1</sub>K-1
+SLVAD6&rarr;		LDA<sub>y</sub><sub>1</sub><sub>|</sub><sub>x</sub><sub>3</sub>
+		MUL<sub>y</sub><sub>1</sub>#	**SET TO MATRIX-K
+		ADD<sub>x</sub><sub>3</sub>K	**CONSTANT
+		JOV SLVAD9
+		STA<sub>x</sub><sub>3</sub>K
+		<sup>-</sup><sup>1</sup>JPX<sub>y</sub><sub>1</sub>SLVAD6
+SLVAD7&rarr;		DEX<sub>x</sub><sub>3</sub>K+1
+		<sup>-</sup><sup>1</sup>JPX<sub>x</sub><sub>1</sub>SLVAD5
+		RSX<sub>x</sub><sub>2</sub>SLVT5-1	**RETURN TO SOLVE
+		INX<sub>x</sub><sub>2</sub>(K-1)&times;(K+1)+1
+		<sup>1</sup>DPX<sub>x</sub><sub>2</sub>SLVTR
+		<sup>1</sup>DPX<sub>x</sub><sub>2</sub>SLVTR2
+		<sup>1</sup><sup>1</sup>LDA SLVTS
+		<sup>1</sup><sup>7</sup>STA SLVTS
+		JPQ SLVR1-2
+SLVAD8&rarr;		LDB<sub>y</sub><sub>1</sub>K	**OVERFLOW IN MAKING TERMS 	[8 in the label is not particularly legible, guessing based on order]
+		SCB {-2,}
+		STB<sub>y</sub><sub>1</sub>K
+		JPQ SLVAD1.5	**MAKE TERMS AGAIN
+SLVAD9&rarr;		SCA {-2,}	**OVERFLOW IN FIGURING CONSTANT
+		REX<sub>x</sub><sub>2</sub>K-1
+		LDB<sub>x</sub><sub>2</sub><sub>|</sub><sub>x</sub><sub>3</sub>	**REDUCE ALL TERMS
+		SCB {-2,}
+		STB<sub>x</sub><sub>2</sub><sub>|</sub><sub>x</sub><sub>3</sub>
+		<sup>-</sup><sup>1</sup>JPX<sub>x</sub><sub>2</sub>#-3
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=69 doc_page=219 type=macros]
+[Page header: "HHL APY5 022"]
+
+		JPQ SLVAD7-8	[really 8?]
+&#9755;&#9755;EMD
 </code></pre></body></html>
