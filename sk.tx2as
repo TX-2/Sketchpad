@@ -253,7 +253,7 @@ SKX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@0
 GORREXIT=LEXIT
 @sup_1@DPX@sub_X@@sub_R@LGORR1
 @sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
-LGORR0@arr@     @sup_1@@sup_6@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@LIST-1
+LGORR0@arr@     @sup_1@@sup_6@RSX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST-1
 h@sup_minus@@sup_1@JNX@sub_X@@sub_R@#+2
 @sup_1@SKX@sub_X@@sub_R@1
 INX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@0
@@ -2557,7 +2557,7 @@ STE@sub_S@LIST
 GORREXIT=LEXIT
 @sup_1@DPX@sub_X@@sub_R@LGORR1
 @sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
-LGORR0@arr@	@sup_1@@sup_6@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@LIST-1
+LGORR0@arr@	@sup_1@@sup_6@RSX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST-1
 h@sup_minus@@sup_1@JNX@sub_X@@sub_R@#+2
 @sup_1@SKX@sub_X@@sub_R@1
 INX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@0
