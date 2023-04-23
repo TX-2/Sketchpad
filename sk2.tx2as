@@ -24,7 +24,7 @@ HEADING1X@arr@
 PARAERR@arr@
 		@sup_1@STE PARAERRX
 		PROD@hamb@DELTA1@times@DELTA2+1/DIST=TS@arr@BADOV
-		[what's the point of 1@times@DELTA2?]
+		[Note that DELTA1+1@times@DELTA2 is evaluated as (DELTA1+1)@times@DELTA2, see chapter 6-2.7 in the HandbookNov63]
 		PROD@hamb@DELTA1+1@times@DELTA2/DIST@arr@BADOV
 PARAERRX@arr@
 		JPQ #
