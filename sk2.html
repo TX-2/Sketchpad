@@ -2651,4 +2651,213 @@ SLVAD9&rarr;		SCA {-2,}	**OVERFLOW IN FIGURING CONSTANT
 
 		JPQ SLVAD7-8	[really 8?]
 &#9755;&#9755;EMD
+
+&#9755;&#9755;DEF SOLVEM1
+		<sup>1</sup>STE SOLVX
+		NORMAT
+		DPX B
+		DPX A
+		RSX<sub>x</sub><sub>3</sub><sub>|</sub><sub>x</sub><sub>1</sub>
+		INX<sub>x</sub><sub>1</sub>1
+		<sup>1</sup>DPX<sub>x</sub><sub>1</sub>#+2
+		JPQ #+3
+		ADD<sub>x</sub><sub>3</sub>#
+		EXA B
+		<sup>-</sup><sup>1</sup>JPX<sub>x</sub><sub>3</sub>#-1
+		STB C
+		<sup>1</sup><sup>6</sup>LDB A
+		SCB {-9.,}
+		DIV C
+		hJOV BADOV
+		hLDE {1,,1}
+		STE<sub>x</sub><sub>2</sub>0
+		STA<sub>x</sub><sub>2</sub>1
+		DPX A
+SOLVX&rarr;		JPQ #
+&#9755;&#9755;EMD
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=70 doc_page=220 type=main]
+[Page header: "HHL APY5 023"]
+
+ 200060|
+		hJMP STARTS
+ 200063|
+		hJPQ CONSTART
+FIXSAP&rarr;		hJMP LPSTART
+ CCFR-1|
+CCFR1&rarr;		hJMP IPCONCOMP
+		hJMP IPCONCOMP1
+ ORIGIN|
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=71 doc_page=221 type=main]
+[Page header: "HHL APY5 001"; header is getting reused, see doc_page 202]
+
+STARTS&rarr;		<sup>1</sup>STE DONE
+		REX <sub>&alpha;</sub> CURPICS-LIST
+		LGORR&equiv;SPECB&times;&alpha;=S&rarr;STARTS1
+DONE&rarr;		JPQ #
+STARTS1&rarr;
+		<sup>1</sup>STE STARTS1X
+		LGORR&equiv;PPART&times;&alpha;=S&rarr;RELA
+		LGORR&equiv;PICBLKS&times;&alpha;=S&rarr;RELA
+STARTS1X&rarr;
+		JPQ #
+RELA&rarr;		<sup>1</sup>STE RELX
+		RSX <sub>&gamma;</sub><sub>|</sub><sub>&alpha;</sub> LIST+VORD
+		SXD <sub>&gamma;</sub> FIXEDS-LIST
+		JPQ RELX
+		RSX <sub>&gamma;</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
+		RSX <sub>&gamma;</sub><sub>|</sub><sub>&gamma;</sub> LIST+TUPLE
+		SXD <sub>&gamma;</sub> 0
+		JPQ RELX	**NOT A VARIABLE
+		DPX REEQ
+		INX <sub>&gamma;</sub> 1
+		<sup>5</sup>DPX <sub>&gamma;</sub> REEQ
+		DPX <sub>&alpha;</sub> RELAXTHIS	**VARIABLE
+		LGORR&equiv;VCON&times;&alpha;=S&rarr;RELB&rarr;RELC
+RELB&rarr;		<sup>1</sup>STE RELBX
+		<sup>2</sup><sup>2</sup>LDA RELAXTHIS
+		<sup>1</sup>DPX <sub>&alpha;</sub> A
+		hJPQ ADCONER
+RELBX&rarr;		JPQ #
+RELC&rarr;		RSX <sub>&gamma;</sub> REEQ
+		SXD <sub>&gamma;</sub> 0
+		JPQ RELX
+		&gamma;&#9635;TUPLE&times;TYPE,&alpha;
+		&beta;&#9635;VARLOC&times;TYPE,&alpha;
+		INX <sub>&alpha;</sub><sub>|</sub><sub>&beta;</sub>
+		LDA {-REANS}
+		ADX <sub>&gamma;</sub> A
+		COM A
+		<sup>1</sup>STA RELC1
+		<sup>1</sup>DPX <sub>&gamma;</sub> RELC2
+		JPQ #+3
+		LDA <sub>&gamma;</sub><sub>|</sub><sub>&alpha;</sub> LIST
+RELC1&rarr;		STA <sub>&gamma;</sub>#	**SET TO REANS-K
+		<sup>-</sup><sup>1</sup>JPX <sub>&gamma;</sub>#-2
+		SOLVE|REEQ&rarr;REANS
+RELC2&rarr;		REX <sub>&gamma;</sub>#	[some handwriting, unintelligible]
+		JPQ #+7
+		LDA <sub>&gamma;</sub> REANS+1
+		SUB <sub>&gamma;</sub><sub>|</sub><sub>&alpha;</sub> LIST
+		hJOV BADOV
+		MUL OVERRELAXFAC
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=72 doc_page=222 type=main]
+[Page header: "HHL APY5 002"]
+
+		ADD <sub>&gamma;</sub> REANS+1
+		STA <sub>&gamma;</sub><sub>|</sub><sub>&alpha;</sub> LIST
+		<sup>-</sup><sup>1</sup>JPX <sub>&gamma;</sub>#-6
+RELX&rarr;		JPQ #
+		**ADD CONSTRAINT TO VARIABLE
+ADCONER&rarr;
+		<sup>1</sup>STE ADCONEX
+		STA ADCVC	**VARIABLE,,CONSTRAINT
+		RSX <sub>S</sub> A
+		RSX <sub>T</sub><sub>|</sub><sub>S</sub> LIST+TYPE	**T=TYPE CONST
+		RSX <sub>T</sub><sub>|</sub><sub>T</sub> LIST+CHVAR	**# CHANGABLE VARIABLES
+		INX <sub>T</sub><sub>|</sub><sub>T</sub>
+		JPQ #+4
+		h<sup>2</sup>LDE ADCVC
+		<sup>1</sup>SED <sub>T</sub><sub>|</sub><sub>S</sub> LIST+CVTS+2	**IS VAR CHANGABLE
+		JPQ ADCON1
+		<sup>-</sup><sup>2</sup>JPX <sub>T</sub>#-3
+		LDA { 0}
+		JPQ ADCONEX
+ADCON1&rarr;		DPX ADCEFF	**EFFECT
+		RSX <sub>S</sub><sub>|</sub><sub>S</sub> LIST+TYPE	**S=TYPE CONST
+		MOVE|LIST+COMP<sub>S</sub>&rarr;<sup>1</sup> ADCSUB
+		RSX <sub>T</sub><sub>|</sub><sub>S</sub> LIST+NCON
+		JPQ ADCON1X
+ADCON2&rarr;		DPX <sub>T</sub> ADCONT1
+		RSX <sub>&alpha;</sub> ADCVC
+		hJPQ *ADCSUB
+		STA ADCSE	**STANDARD ERROR
+		MUL {-200,-0,,-0}
+		STA ADCSUM	**SUM FOR CONSTANT
+		<sup>2</sup>RSX <sub>S</sub> ADCVC
+		RSX <sub>T</sub><sub>|</sub><sub>S</sub> LIST+TYPE
+		AUX <sub>S</sub><sub>|</sub><sub>T</sub> LIST+VARLOC	**S POINTS TO VECTOR
+		[blank line in listing, signicance unclear]
+		INX <sub>S</sub> LIST
+		<sup>1</sup>DPX <sub>S</sub> ADVC	**ACTUAL VARIABLE LOCATION
+		RSX <sub>T</sub><sub>|</sub><sub>T</sub> LIST+TUPLE
+		[Handwritten: "T IS # OF VA?????CS", "VARIABLES"?]
+		RSX <sub>S</sub> REEQ
+		INX <sub>S</sub> REEQ+1
+		<sup>1</sup>DPX <sub>S</sub> ADCEQ	**LOCATION IN REEQ
+		JPQ ADCON2X
+ADCON3&rarr;		DPX <sub>T</sub> ADCONT2
+		LDA *ADVC
+		ADD {ADCONSTEP&rarr; 100}
+		hJOV BADOV
+		STA *ADVC
+		RSX <sub>&alpha;</sub> ADCVC
+ADCSUB&rarr;		hJPQ #	[Handwritten: "THE <unable to decypher>"]
+		SUB ADCSE	**STANDARD ERROR
+		SCA {-1,}
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=73 doc_page=223 type=main]
+[Page header: "HHL APY5 003"]
+
+		<sup>1</sup><sup>6</sup>LDB A
+		SCB {-9.,}
+		DIV ADCONSTEP
+		hJOV BADOV
+		JPA #+3
+		JNA #+2
+		JPQ #+2
+		MKN <sub>4</sub><sub>.</sub><sub>1</sub> ADCEFF
+		RSX <sub>T</sub> ADCONT2
+ADCEQ&rarr;		STA <sub>T</sub>#	[Handwritten: "** PLACE IN REEQ"]
+		STA B
+ADVC&rarr;		LDA <sub>T</sub>#
+		SUB ADCONSTEP
+		STA *ADVC
+		MUL B
+		ADD ADCSUM
+		hJOV BADOV
+		STA ADCSUM
+ADCON2X&rarr;
+		<sup>-</sup><sup>1</sup>JPX <sub>T</sub> ADCON3
+		SKN <sub>4</sub><sub>.</sub><sub>1</sub> ADCEFF
+		JPQ ADCON1XA
+		REX <sub>T</sub> 1
+		<sup>1</sup>ADX <sub>T</sub> ADCEFF
+		RSX <sub>T</sub> REEQ
+		<sup>1</sup><sup>5</sup>AUX <sub>T</sub> REEQ
+		<sup>1</sup>DPX <sub>T</sub> REEQ
+		STA <sub>T</sub> REEQ	[Handwritten: "** PUT IN CONSTANT"]
+ADCON1XA&rarr;
+		REX <sub>T</sub> 1
+		ADX <sub>T</sub> ADCSUB
+		RSX <sub>T</sub> ADCONT1
+ADCON1X&rarr;
+		<sup>-</sup><sup>1</sup>JPX <sub>T</sub> ADCON2
+ADCONEX&rarr;
+		JPQ #
+		**SKIP IF &alpha; FREE
+FREESUB&rarr;
+		<sup>1</sup>STE FREESUBX
+		<sup>1</sup>DPX FRCC	**CONSTRAINT COUNT
+		<sup>1</sup>DPX FRBC	**BLOCK COUNT
+		<sup>1</sup>DPX <sub>&alpha;</sub> FREESUB&alpha;
+		LGORR&equiv;VCON&times;&alpha;=S&rarr;FREESUB1&rarr;FREESUB2
+FREESUB1&rarr;
+		<sup>1</sup>STE FREESUB1X
+		hLDE <sub>&alpha;</sub> LIST+CVTS	[really <sub>&alpha;</sub>?]
+		h<sup>1</sup>SED { 0}
+		JPQ FREESUB1B
+		<sup>1</sup>SED FREESUB&alpha;
+		JPQ FREESUB1A
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=74 doc_page=224 type=main]
+[Page header: "HHL APY5 004"]
+
 </code></pre></body></html>

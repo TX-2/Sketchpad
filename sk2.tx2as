@@ -2581,3 +2581,207 @@ SLVAD9@arr@	SCA {-2,}	**OVERFLOW IN FIGURING CONSTANT
 
 		JPQ SLVAD7-8	[really 8?]
 @hand@@hand@EMD
+
+@hand@@hand@DEF SOLVEM1
+		@sup_1@STE SOLVX
+		NORMAT
+		DPX B
+		DPX A
+		RSX@sub_x@@sub_3@@sub_pipe@@sub_x@@sub_1@
+		INX@sub_x@@sub_1@1
+		@sup_1@DPX@sub_x@@sub_1@#+2
+		JPQ #+3
+		ADD@sub_x@@sub_3@#
+		EXA B
+		@sup_minus@@sup_1@JPX@sub_x@@sub_3@#-1
+		STB C
+		@sup_1@@sup_6@LDB A
+		SCB {-9.,}
+		DIV C
+		hJOV BADOV
+		hLDE {1,,1}
+		STE@sub_x@@sub_2@0
+		STA@sub_x@@sub_2@1
+		DPX A
+SOLVX@arr@	JPQ #
+@hand@@hand@EMD
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=70 doc_page=220 type=main]
+[Page header: "HHL APY5 023"]
+
+ 200060|
+		hJMP STARTS
+ 200063|
+		hJPQ CONSTART
+FIXSAP@arr@	hJMP LPSTART
+ CCFR-1|
+CCFR1@arr@	hJMP IPCONCOMP
+		hJMP IPCONCOMP1
+ ORIGIN|
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=71 doc_page=221 type=main]
+[Page header: "HHL APY5 001"; header is getting reused, see doc_page 202]
+
+STARTS@arr@	@sup_1@STE DONE
+		REX @sub_alpha@ CURPICS-LIST
+		LGORR@hamb@SPECB@times@@alpha@=S@arr@STARTS1
+DONE@arr@	JPQ #
+STARTS1@arr@
+		@sup_1@STE STARTS1X
+		LGORR@hamb@PPART@times@@alpha@=S@arr@RELA
+		LGORR@hamb@PICBLKS@times@@alpha@=S@arr@RELA
+STARTS1X@arr@
+		JPQ #
+RELA@arr@	@sup_1@STE RELX
+		RSX @sub_gamma@@sub_pipe@@sub_alpha@ LIST+VORD
+		SXD @sub_gamma@ FIXEDS-LIST
+		JPQ RELX
+		RSX @sub_gamma@@sub_pipe@@sub_alpha@ LIST+TYPE
+		RSX @sub_gamma@@sub_pipe@@sub_gamma@ LIST+TUPLE
+		SXD @sub_gamma@ 0
+		JPQ RELX	**NOT A VARIABLE
+		DPX REEQ
+		INX @sub_gamma@ 1
+		@sup_5@DPX @sub_gamma@ REEQ
+		DPX @sub_alpha@ RELAXTHIS	**VARIABLE
+		LGORR@hamb@VCON@times@@alpha@=S@arr@RELB@arr@RELC
+RELB@arr@	@sup_1@STE RELBX
+		@sup_2@@sup_2@LDA RELAXTHIS
+		@sup_1@DPX @sub_alpha@ A
+		hJPQ ADCONER
+RELBX@arr@	JPQ #
+RELC@arr@	RSX @sub_gamma@ REEQ
+		SXD @sub_gamma@ 0
+		JPQ RELX
+		@gamma@@rect_dash@TUPLE@times@TYPE,@alpha@
+		@beta@@rect_dash@VARLOC@times@TYPE,@alpha@
+		INX @sub_alpha@@sub_pipe@@sub_beta@
+		LDA {-REANS}
+		ADX @sub_gamma@ A
+		COM A
+		@sup_1@STA RELC1
+		@sup_1@DPX @sub_gamma@ RELC2
+		JPQ #+3
+		LDA @sub_gamma@@sub_pipe@@sub_alpha@ LIST
+RELC1@arr@	STA @sub_gamma@#	**SET TO REANS-K
+		@sup_minus@@sup_1@JPX @sub_gamma@#-2
+		SOLVE|REEQ@arr@REANS
+RELC2@arr@	REX @sub_gamma@#	[some handwriting, unintelligible]
+		JPQ #+7
+		LDA @sub_gamma@ REANS+1
+		SUB @sub_gamma@@sub_pipe@@sub_alpha@ LIST
+		hJOV BADOV
+		MUL OVERRELAXFAC
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=72 doc_page=222 type=main]
+[Page header: "HHL APY5 002"]
+
+		ADD @sub_gamma@ REANS+1
+		STA @sub_gamma@@sub_pipe@@sub_alpha@ LIST
+		@sup_minus@@sup_1@JPX @sub_gamma@#-6
+RELX@arr@	JPQ #
+		**ADD CONSTRAINT TO VARIABLE
+ADCONER@arr@
+		@sup_1@STE ADCONEX
+		STA ADCVC	**VARIABLE,,CONSTRAINT
+		RSX @sub_S@ A
+		RSX @sub_T@@sub_pipe@@sub_S@ LIST+TYPE	**T=TYPE CONST
+		RSX @sub_T@@sub_pipe@@sub_T@ LIST+CHVAR	**# CHANGABLE VARIABLES
+		INX @sub_T@@sub_pipe@@sub_T@
+		JPQ #+4
+		h@sup_2@LDE ADCVC
+		@sup_1@SED @sub_T@@sub_pipe@@sub_S@ LIST+CVTS+2	**IS VAR CHANGABLE
+		JPQ ADCON1
+		@sup_minus@@sup_2@JPX @sub_T@#-3
+		LDA { 0}
+		JPQ ADCONEX
+ADCON1@arr@	DPX ADCEFF	**EFFECT
+		RSX @sub_S@@sub_pipe@@sub_S@ LIST+TYPE	**S=TYPE CONST
+		MOVE|LIST+COMP@sub_S@@arr@@sup_1@ ADCSUB
+		RSX @sub_T@@sub_pipe@@sub_S@ LIST+NCON
+		JPQ ADCON1X
+ADCON2@arr@	DPX @sub_T@ ADCONT1
+		RSX @sub_alpha@ ADCVC
+		hJPQ *ADCSUB
+		STA ADCSE	**STANDARD ERROR
+		MUL {-200,-0,,-0}
+		STA ADCSUM	**SUM FOR CONSTANT
+		@sup_2@RSX @sub_S@ ADCVC
+		RSX @sub_T@@sub_pipe@@sub_S@ LIST+TYPE
+		AUX @sub_S@@sub_pipe@@sub_T@ LIST+VARLOC	**S POINTS TO VECTOR
+		[blank line in listing, signicance unclear]
+		INX @sub_S@ LIST
+		@sup_1@DPX @sub_S@ ADVC	**ACTUAL VARIABLE LOCATION
+		RSX @sub_T@@sub_pipe@@sub_T@ LIST+TUPLE
+		[Handwritten: "T IS # OF VA?????CS", "VARIABLES"?]
+		RSX @sub_S@ REEQ
+		INX @sub_S@ REEQ+1
+		@sup_1@DPX @sub_S@ ADCEQ	**LOCATION IN REEQ
+		JPQ ADCON2X
+ADCON3@arr@	DPX @sub_T@ ADCONT2
+		LDA *ADVC
+		ADD {ADCONSTEP@arr@ 100}
+		hJOV BADOV
+		STA *ADVC
+		RSX @sub_alpha@ ADCVC
+ADCSUB@arr@	hJPQ #	[Handwritten: "THE <unable to decypher>"]
+		SUB ADCSE	**STANDARD ERROR
+		SCA {-1,}
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=73 doc_page=223 type=main]
+[Page header: "HHL APY5 003"]
+
+		@sup_1@@sup_6@LDB A
+		SCB {-9.,}
+		DIV ADCONSTEP
+		hJOV BADOV
+		JPA #+3
+		JNA #+2
+		JPQ #+2
+		MKN @sub_4@@sub_dot@@sub_1@ ADCEFF
+		RSX @sub_T@ ADCONT2
+ADCEQ@arr@	STA @sub_T@#	[Handwritten: "** PLACE IN REEQ"]
+		STA B
+ADVC@arr@	LDA @sub_T@#
+		SUB ADCONSTEP
+		STA *ADVC
+		MUL B
+		ADD ADCSUM
+		hJOV BADOV
+		STA ADCSUM
+ADCON2X@arr@
+		@sup_minus@@sup_1@JPX @sub_T@ ADCON3
+		SKN @sub_4@@sub_dot@@sub_1@ ADCEFF
+		JPQ ADCON1XA
+		REX @sub_T@ 1
+		@sup_1@ADX @sub_T@ ADCEFF
+		RSX @sub_T@ REEQ
+		@sup_1@@sup_5@AUX @sub_T@ REEQ
+		@sup_1@DPX @sub_T@ REEQ
+		STA @sub_T@ REEQ	[Handwritten: "** PUT IN CONSTANT"]
+ADCON1XA@arr@
+		REX @sub_T@ 1
+		ADX @sub_T@ ADCSUB
+		RSX @sub_T@ ADCONT1
+ADCON1X@arr@
+		@sup_minus@@sup_1@JPX @sub_T@ ADCON2
+ADCONEX@arr@
+		JPQ #
+		**SKIP IF @alpha@ FREE
+FREESUB@arr@
+		@sup_1@STE FREESUBX
+		@sup_1@DPX FRCC	**CONSTRAINT COUNT
+		@sup_1@DPX FRBC	**BLOCK COUNT
+		@sup_1@DPX @sub_alpha@ FREESUB@alpha@
+		LGORR@hamb@VCON@times@@alpha@=S@arr@FREESUB1@arr@FREESUB2
+FREESUB1@arr@
+		@sup_1@STE FREESUB1X
+		hLDE @sub_alpha@ LIST+CVTS	[really @sub_alpha@?]
+		h@sup_1@SED { 0}
+		JPQ FREESUB1B
+		@sup_1@SED FREESUB@alpha@
+		JPQ FREESUB1A
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=74 doc_page=224 type=main]
+[Page header: "HHL APY5 004"]
+
