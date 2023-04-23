@@ -2419,6 +2419,111 @@ SLVR3@arr@	SXD@sub_x@@sub_1@@sub_pipe@@sub_x@@sub_2@
 [meta file_name=102726903-05-02-acc.pdf pdf_page=66 doc_page=216 type=macros]
 [Page header: "HHL APY5 017"]
 
-		
+		LDA@sub_x@@sub_1@*SLVTP
+		JPA #+4
+		COM A
+		JPA #+2
+		JPQ SLVR5
+		SUB SLVTY
+		JNA SLVR4
+		LDA@sub_x@@sub_1@*SLVTR	**PR MAX
+		DIV@sub_x@@sub_1@*SLVTP
+		JOV SLVR6
+		STA SLVTX
+		LDA SLVTP
+		@sup_1@STA SLVTR2+2
+		@sup_1@STA SLVTP2
+		REX@sub_y@@sub_1@K
+SLVTP2@arr@	LDA@sub_y@@sub_1@	**LOOP1
+		MUL SLVTX
+SLVTR2@arr@	SUB@sub_y@@sub_1@
+		SCA {-1,}
+		STA@sub_y@@sub_1@
+		@sup_minus@@sup_1@JPX@sub_y@@sub_1@SLVTP2
+		JPQ SLVR5
+SLVTX@arr@	0
+SLVTY@arr@	0
+SLVTS@arr@	0
+SLVR6@arr@	COM A
+		JPQ SLVTP2-5
+SLVR4@arr@	LDA@sub_x@@sub_1@*SLVTP	**RR MAX
+		DIV@sub_x@@sub_1@*SLVTR
+		COM A
+		STA SLVTX
+		LDA SLVTP
+		@sup_1@STA SLVTP+2
+		REX@sub_y@@sub_1@K
+SLVTR@arr@	LDA@sub_y@@sub_1@	**LOOP 2
+		MUL SLVTX
+SLVTP@arr@	ADD@sub_y@@sub_1@
+		SCA {-1,}
+		STA@sub_y@@sub_1@
+		@sup_minus@@sup_1@JPX@sub_y@@sub_1@SLVTR
+SLVR5@arr@	REX@sub_y@@sub_1@@sub_pipe@@sub_x@@sub_1@
+		DPX *SLVTP
+		REX@sub_y@@sub_1@0
+		@sup_1@ADX@sub_x@@sub_3@SLVTP
+		@sup_minus@@sup_1@JPX@sub_x@@sub_2@SLVR3
+		@sup_1@ADX@sub_x@@sub_3@SLVTR
+		@sup_1@ADX@sub_x@@sub_3@SLVTR2
+		@sup_minus@@sup_1@JPX@sub_x@@sub_1@SLVR1
+		LDA {K+1,,(K+1)@times@K}
+		RSX@sub_x@@sub_3@SLVT?-1
 
+[meta file_name=102726903-05-02-acc.pdf pdf_page=67 doc_page=217 type=macros]
+[Page header: "HHL APY5 018"]
+
+		STA@sub_x@@sub_3@
+		@sup_1@@sup_1@LDA SLVTS
+		JNA SLVAD	**TO ADD CONSTRAINTS
+		DPX SLVTX
+		LDA{1,,K}
+		STA@sub_x@@sub_3@
+		REX@sub_x@@sub_2@@sub_pipe@@sub_x@@sub_3@1
+		INX@sub_x@@sub_2@(K+1)@times@(K-1)
+		REX@sub_x@@sub_1@K-1
+SLVD1@arr@	LDA@sub_x@@sub_2@K
+		SAB SLVTX
+		DIV@sub_x@@sub_1@@sub_pipe@@sub_x@@sub_2@
+		JOV SLVD3
+SLVD2@arr@	STA@sub_x@@sub_1@zbp@sub_x@@sub_3@K+1@times@K+1	**FINAL ANSWER
+		DEX@sub_x@@sub_2@K+1
+		@sup_minus@@sup_1@JPX@sub_x@@sub_1@SLVD1
+		REX@sub_x@@sub_1@K-1
+		LDA@sub_x@@sub_1@@sub_pipe@@sub_x@@sub_3@K+1@times@K+1
+		STA@sub_x@@sub_1@@sub_pipe@@sub_x@@sub_3@1
+		@sup_minus@@sup_1@JPX@sub_x@@sub_1@#-2
+		@sup_1@@sup_2@LDA SLVTS	**OLD DEGENERACY
+SLVDR@arr@	JPQ #
+SLVD6@arr@	@sup_1@REX@sub_y@@sub_1@1
+		@sup_1@ADX@sub_y@@sub_1@SLVTS
+		DPX A
+		STA@sub_x@@sub_1@@sub_pipe@@sub_x@@sub_2@
+		JPQ SLVAD
+SLVD3@arr@	DPX A
+		ADD@sub_x@@sub_2@K
+		SAB {-35.,}
+		DIV@sub_x@@sub_1@@sub_pipe@@sub_x@@sub_2@
+		JOV SLVD6
+		hNOA {35.,}
+		h@sup_3@@sup_2@STD@sub_x@@sub_3@
+		@sup_3@@sup_2@STD SLVTX
+		COM SLVTX
+		JPQ SLVD1-3
+SLVAD@arr@	REX@sub_x@@sub_1@K-1	**COUNT DIAG
+		RSX@sub_y@@sub_1@SLVTS-1	**MATRIX LOCATION
+		DEX@sub_y@@sub_1@K
+		@sup_1@DPX@sub_y@@sub_1@SLVAD6+1	**TO GET POINT VALUE [really 6?]
+		INX@sub_y@@sub_1@(K+1)@times@K	**Y1 AT LAST ROW
+SLVAD1@arr@	LDA@sub_x@@sub_1@@sub_pipe@@sub_y@@sub_1@	**DIAGONAL
+		JPQ SLVAD4
+		JNA SLVAD4
+		LDA {100,}
+		STA@sub_y@@sub_1@K	**PUT FUTURE DIAG IN CONSTANT
+SLVAD1.5@arr@	REX@sub_x@@sub_2@K-1	**COUNT COLUMNS
+		RSX@sub_x@@sub_3@SLVT5-1	**MATRIX LOCATION
+		INX@sub_x@@sub_3@(K-1)@times@(K+1)+1
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=68 doc_page=218 type=macros]
+[Page header: "HHL APY5 019"]
 

@@ -2486,7 +2486,114 @@ SLVR3&rarr;		SXD<sub>x</sub><sub>1</sub><sub>|</sub><sub>x</sub><sub>2</sub>
 [meta file_name=102726903-05-02-acc.pdf pdf_page=66 doc_page=216 type=macros]
 [Page header: "HHL APY5 017"]
 
+		LDA<sub>x</sub><sub>1</sub>*SLVTP
+		JPA #+4
+		COM A
+		JPA #+2
+		JPQ SLVR5
+		SUB SLVTY
+		JNA SLVR4
+		LDA<sub>x</sub><sub>1</sub>*SLVTR	**PR MAX
+		DIV<sub>x</sub><sub>1</sub>*SLVTP
+		JOV SLVR6
+		STA SLVTX
+		LDA SLVTP
+		<sup>1</sup>STA SLVTR2+2
+		<sup>1</sup>STA SLVTP2
+		REX<sub>y</sub><sub>1</sub>K
+SLVTP2&rarr;		LDA<sub>y</sub><sub>1</sub>	**LOOP1
+		MUL SLVTX
+SLVTR2&rarr;		SUB<sub>y</sub><sub>1</sub>
+		SCA {-1,}
+		STA<sub>y</sub><sub>1</sub>
+		<sup>-</sup><sup>1</sup>JPX<sub>y</sub><sub>1</sub>SLVTP2
+		JPQ SLVR5
+SLVTX&rarr;		0
+SLVTY&rarr;		0
+SLVTS&rarr;		0
+SLVR6&rarr;		COM A
+		JPQ SLVTP2-5
+SLVR4&rarr;		LDA<sub>x</sub><sub>1</sub>*SLVTP	**RR MAX
+		DIV<sub>x</sub><sub>1</sub>*SLVTR
+		COM A
+		STA SLVTX
+		LDA SLVTP
+		<sup>1</sup>STA SLVTP+2
+		REX<sub>y</sub><sub>1</sub>K
+SLVTR&rarr;		LDA<sub>y</sub><sub>1</sub>	**LOOP 2
+		MUL SLVTX
+SLVTP&rarr;		ADD<sub>y</sub><sub>1</sub>
+		SCA {-1,}
+		STA<sub>y</sub><sub>1</sub>
+		<sup>-</sup><sup>1</sup>JPX<sub>y</sub><sub>1</sub>SLVTR
+SLVR5&rarr;		REX<sub>y</sub><sub>1</sub><sub>|</sub><sub>x</sub><sub>1</sub>
+		DPX *SLVTP
+		REX<sub>y</sub><sub>1</sub>0
+		<sup>1</sup>ADX<sub>x</sub><sub>3</sub>SLVTP
+		<sup>-</sup><sup>1</sup>JPX<sub>x</sub><sub>2</sub>SLVR3
+		<sup>1</sup>ADX<sub>x</sub><sub>3</sub>SLVTR
+		<sup>1</sup>ADX<sub>x</sub><sub>3</sub>SLVTR2
+		<sup>-</sup><sup>1</sup>JPX<sub>x</sub><sub>1</sub>SLVR1
+		LDA {K+1,,(K+1)&times;K}
+		RSX<sub>x</sub><sub>3</sub>SLVT?-1
 
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=67 doc_page=217 type=macros]
+[Page header: "HHL APY5 018"]
 
+		STA<sub>x</sub><sub>3</sub>
+		<sup>1</sup><sup>1</sup>LDA SLVTS
+		JNA SLVAD	**TO ADD CONSTRAINTS
+		DPX SLVTX
+		LDA{1,,K}
+		STA<sub>x</sub><sub>3</sub>
+		REX<sub>x</sub><sub>2</sub><sub>|</sub><sub>x</sub><sub>3</sub>1
+		INX<sub>x</sub><sub>2</sub>(K+1)&times;(K-1)
+		REX<sub>x</sub><sub>1</sub>K-1
+SLVD1&rarr;		LDA<sub>x</sub><sub>2</sub>K
+		SAB SLVTX
+		DIV<sub>x</sub><sub>1</sub><sub>|</sub><sub>x</sub><sub>2</sub>
+		JOV SLVD3
+SLVD2&rarr;		STA<sub>x</sub><sub>1</sub>zbp<sub>x</sub><sub>3</sub>K+1&times;K+1	**FINAL ANSWER
+		DEX<sub>x</sub><sub>2</sub>K+1
+		<sup>-</sup><sup>1</sup>JPX<sub>x</sub><sub>1</sub>SLVD1
+		REX<sub>x</sub><sub>1</sub>K-1
+		LDA<sub>x</sub><sub>1</sub><sub>|</sub><sub>x</sub><sub>3</sub>K+1&times;K+1
+		STA<sub>x</sub><sub>1</sub><sub>|</sub><sub>x</sub><sub>3</sub>1
+		<sup>-</sup><sup>1</sup>JPX<sub>x</sub><sub>1</sub>#-2
+		<sup>1</sup><sup>2</sup>LDA SLVTS	**OLD DEGENERACY
+SLVDR&rarr;		JPQ #
+SLVD6&rarr;		<sup>1</sup>REX<sub>y</sub><sub>1</sub>1
+		<sup>1</sup>ADX<sub>y</sub><sub>1</sub>SLVTS
+		DPX A
+		STA<sub>x</sub><sub>1</sub><sub>|</sub><sub>x</sub><sub>2</sub>
+		JPQ SLVAD
+SLVD3&rarr;		DPX A
+		ADD<sub>x</sub><sub>2</sub>K
+		SAB {-35.,}
+		DIV<sub>x</sub><sub>1</sub><sub>|</sub><sub>x</sub><sub>2</sub>
+		JOV SLVD6
+		hNOA {35.,}
+		h<sup>3</sup><sup>2</sup>STD<sub>x</sub><sub>3</sub>
+		<sup>3</sup><sup>2</sup>STD SLVTX
+		COM SLVTX
+		JPQ SLVD1-3
+SLVAD&rarr;		REX<sub>x</sub><sub>1</sub>K-1	**COUNT DIAG
+		RSX<sub>y</sub><sub>1</sub>SLVTS-1	**MATRIX LOCATION
+		DEX<sub>y</sub><sub>1</sub>K
+		<sup>1</sup>DPX<sub>y</sub><sub>1</sub>SLVAD6+1	**TO GET POINT VALUE [really 6?]
+		INX<sub>y</sub><sub>1</sub>(K+1)&times;K	**Y1 AT LAST ROW
+SLVAD1&rarr;		LDA<sub>x</sub><sub>1</sub><sub>|</sub><sub>y</sub><sub>1</sub>	**DIAGONAL
+		JPQ SLVAD4
+		JNA SLVAD4
+		LDA {100,}
+		STA<sub>y</sub><sub>1</sub>K	**PUT FUTURE DIAG IN CONSTANT
+SLVAD1.5&rarr;	REX<sub>x</sub><sub>2</sub>K-1	**COUNT COLUMNS
+		RSX<sub>x</sub><sub>3</sub>SLVT5-1	**MATRIX LOCATION
+		INX<sub>x</sub><sub>3</sub>(K-1)&times;(K+1)+1
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=68 doc_page=218 type=macros]
+[Page header: "HHL APY5 019"]
 
 </code></pre></body></html>
