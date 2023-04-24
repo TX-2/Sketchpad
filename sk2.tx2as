@@ -2785,3 +2785,112 @@ FREESUB1@arr@
 [meta file_name=102726903-05-02-acc.pdf pdf_page=74 doc_page=224 type=main]
 [Page header: "HHL APY5 004"]
 
+		JPQ FREESUB1X
+FREESUB1B@arr@
+		RSX @sub_beta@ FREESUB@alpha@
+		PUTL@hamb@CVTS@times@@alpha@@arr@VFLW@times@@beta@
+FREESUB1A@arr@
+		REX @sub_S@ 1
+		@sup_1@ADX @sub_S@ FRBC
+		S@rect_dash@NCON@times@TYPE,@alpha@
+		@sup_1@ADX @sub_S@ FRCC
+FREESUB1X@arr@
+		JPQ #
+FREESUB2@arr@
+		RSX @sub_S@ FRCC
+		SXL @sub_S@ 2
+		JPQ FREESUB3
+FREESUBFREE@arr@
+		SUMM@hamb@{ 1}@arr@@sup_1@ FREESUBX=@sup_1@ FREESUBX
+		JPQ FREESUBX
+FREESUB3@arr@
+		S@rect_dash@TUPLE@times@TYPE,@alpha@
+FRCC@arr@	SXL @sub_S@#	**# CONSTRAINTS
+		JPQ FREESUB4
+		JPQ FREESUB7
+FREESUB4@arr@
+		hLDE FRBC
+		SED { 1}
+		JPQ FREESUBFREE
+		DPX REEQ
+		INX @sub_S@ 1	**TUPLE+1
+		@sup_5@DPX @sub_S@ REEQ
+		LGORR@hamb@VCON@times@@alpha@=S@arr@FREESUB5@arr@FREESUB6
+FREESUB5@arr@
+		@sup_1@STE FREESUB5X
+		hLDE @sub_alpha@ LIST+CVTS
+		h@sup_1@SED { 0}
+		JPQ FREESUB5A
+		@sup_1@SED FREESUB@alpha@
+		JPQ FREESUB5A
+		JPQ FREESUB5X
+FREESUB5A@arr@
+		@sup_2@@sup_2@LDA FREESUB@alpha@	**POINT
+		@sup_1@DPX @sub_alpha@ A	**CONSTRAINT
+		hJPQ ADCONER
+FREESUB5X@arr@
+		JPQ #
+FREESUB6@arr@
+		SOLVE|REEQ@arr@REANS
+		S@rect_dash@TYPE,@alpha@
+		ADD @sub_S@ TUPLE+LIST	**K-DEGEN
+		@sup_1@@sup_1@SUB FRCC
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=75 doc_page=225 type=main]
+[Page header: "HHL APY5 005"]
+
+		JPA FREESUB7
+		JNA FREESUB7
+		JPQ FREESUBFREE
+FREESUB7@arr@
+		RSX @sub_alpha@ FREESUB@alpha@
+		LGORR@hamb@VFLW@times@@alpha@=S@arr@FREESUB8@arr@FREESUBX [not necessarily 8? seems likely based on ordering]
+FREESUB8@arr@	[guessing about 8 again]
+		SUBR@hamb@(LTAKE@hamb@CVTS@times@@alpha@)
+FREESUBX@arr@
+		JPQ #
+		** FOUND FREE, EXPAND FREEDOM
+FREEDOM@arr@
+		@sup_1@STE FREEDOMX
+		REX @sub_beta@ FREEDOMS-LIST
+		MOVEL@hamb@VORD@times@@alpha@@arr@SPECB@times@@beta@ [really @beta@?]
+		@sup_1@DPX @sub_beta@@sub_pipe@@sub_alpha@ LIST+VORD
+		REX @sub_S@@sub_pipe@@sub_alpha@ VORD+1	**GO ON AROUND
+FREE1BAC@arr@
+		hLDE @sub_S@ LIST-1	**FREEDOM RING
+		h@sup_1@SED { 0}	**TO KEY
+		JPQ FREEDOMX
+		@sup_1@@sup_6@RSX @sub_alpha@ E
+		INX @sub_alpha@@sub_pipe@@sub_S@
+		DEX @sub_alpha@ 1
+		@sup_1@DPX @sub_S@ FREE1A
+FREE1@arr@	LGORR@hamb@VFLW@times@@alpha@=S@arr@FREE2	[really 2?]
+FREE1A@arr@	REX @sub_S@#
+		@sup_1@@sup_1@RSX @sub_S@@sub_pipe@@sub_S@ LIST
+		JPQ FREE1BAC
+FREE2@arr@	SUBR@hamb@(GOAC@hamb@@alpha@@arr@FREE3)
+FREE3@arr@	@sup_1@STE FREE3X
+		RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+VORD
+		SXD @sub_S@ WORKS-LIST
+		hJPQ FREESUB
+		JPQ FREE3X
+		REX @sub_beta@ FREEDOMS-LIST
+		MOVEL@hamb@VORD@times@@alpha@@arr@SPECB@times@@beta@
+		@sup_1@DPX @sub_beta@@sub_pipe@@sub_alpha@ LIST+VORD
+FREE3X@arr@	JPQ #
+FREEDOMX@arr@
+		JPQ #
+		**WORKING VARIABLE INCREASE
+WORKER@arr@	@sup_1@STE WORKEX
+		REX @sub_alpha@ MOVINGS-LIST
+		LGORR@hamb@SPECB@times@@alpha@=S@arr@WRK1A
+		REX @sub_alpha@ WORKS-LIST
+		LGORRI@hamb@SPECB@times@@alpha@=S@arr@WRK1@arr@WORKEX
+WKR1A@arr@	@sup_1@STE WRK1AX
+		RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+TYPE
+		RSX @sub_S@@sub_pipe@@sub_S@ LIST+TYPE
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=77 doc_page=226 type=main]
+[Page header: "HHL APY5 006"]
+
+

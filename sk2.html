@@ -2860,4 +2860,115 @@ FREESUB1&rarr;
 [meta file_name=102726903-05-02-acc.pdf pdf_page=74 doc_page=224 type=main]
 [Page header: "HHL APY5 004"]
 
+		JPQ FREESUB1X
+FREESUB1B&rarr;
+		RSX <sub>&beta;</sub> FREESUB&alpha;
+		PUTL&equiv;CVTS&times;&alpha;&rarr;VFLW&times;&beta;
+FREESUB1A&rarr;
+		REX <sub>S</sub> 1
+		<sup>1</sup>ADX <sub>S</sub> FRBC
+		S&#9635;NCON&times;TYPE,&alpha;
+		<sup>1</sup>ADX <sub>S</sub> FRCC
+FREESUB1X&rarr;
+		JPQ #
+FREESUB2&rarr;
+		RSX <sub>S</sub> FRCC
+		SXL <sub>S</sub> 2
+		JPQ FREESUB3
+FREESUBFREE&rarr;
+		SUMM&equiv;{ 1}&rarr;<sup>1</sup> FREESUBX=<sup>1</sup> FREESUBX
+		JPQ FREESUBX
+FREESUB3&rarr;
+		S&#9635;TUPLE&times;TYPE,&alpha;
+FRCC&rarr;		SXL <sub>S</sub>#	**# CONSTRAINTS
+		JPQ FREESUB4
+		JPQ FREESUB7
+FREESUB4&rarr;
+		hLDE FRBC
+		SED { 1}
+		JPQ FREESUBFREE
+		DPX REEQ
+		INX <sub>S</sub> 1	**TUPLE+1
+		<sup>5</sup>DPX <sub>S</sub> REEQ
+		LGORR&equiv;VCON&times;&alpha;=S&rarr;FREESUB5&rarr;FREESUB6
+FREESUB5&rarr;
+		<sup>1</sup>STE FREESUB5X
+		hLDE <sub>&alpha;</sub> LIST+CVTS
+		h<sup>1</sup>SED { 0}
+		JPQ FREESUB5A
+		<sup>1</sup>SED FREESUB&alpha;
+		JPQ FREESUB5A
+		JPQ FREESUB5X
+FREESUB5A&rarr;
+		<sup>2</sup><sup>2</sup>LDA FREESUB&alpha;	**POINT
+		<sup>1</sup>DPX <sub>&alpha;</sub> A	**CONSTRAINT
+		hJPQ ADCONER
+FREESUB5X&rarr;
+		JPQ #
+FREESUB6&rarr;
+		SOLVE|REEQ&rarr;REANS
+		S&#9635;TYPE,&alpha;
+		ADD <sub>S</sub> TUPLE+LIST	**K-DEGEN
+		<sup>1</sup><sup>1</sup>SUB FRCC
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=75 doc_page=225 type=main]
+[Page header: "HHL APY5 005"]
+
+		JPA FREESUB7
+		JNA FREESUB7
+		JPQ FREESUBFREE
+FREESUB7&rarr;
+		RSX <sub>&alpha;</sub> FREESUB&alpha;
+		LGORR&equiv;VFLW&times;&alpha;=S&rarr;FREESUB8&rarr;FREESUBX [not necessarily 8? seems likely based on ordering]
+FREESUB8&rarr;	[guessing about 8 again]
+		SUBR&equiv;(LTAKE&equiv;CVTS&times;&alpha;)
+FREESUBX&rarr;
+		JPQ #
+		** FOUND FREE, EXPAND FREEDOM
+FREEDOM&rarr;
+		<sup>1</sup>STE FREEDOMX
+		REX <sub>&beta;</sub> FREEDOMS-LIST
+		MOVEL&equiv;VORD&times;&alpha;&rarr;SPECB&times;&beta; [really &beta;?]
+		<sup>1</sup>DPX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+VORD
+		REX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> VORD+1	**GO ON AROUND
+FREE1BAC&rarr;
+		hLDE <sub>S</sub> LIST-1	**FREEDOM RING
+		h<sup>1</sup>SED { 0}	**TO KEY
+		JPQ FREEDOMX
+		<sup>1</sup><sup>6</sup>RSX <sub>&alpha;</sub> E
+		INX <sub>&alpha;</sub><sub>|</sub><sub>S</sub>
+		DEX <sub>&alpha;</sub> 1
+		<sup>1</sup>DPX <sub>S</sub> FREE1A
+FREE1&rarr;		LGORR&equiv;VFLW&times;&alpha;=S&rarr;FREE2	[really 2?]
+FREE1A&rarr;		REX <sub>S</sub>#
+		<sup>1</sup><sup>1</sup>RSX <sub>S</sub><sub>|</sub><sub>S</sub> LIST
+		JPQ FREE1BAC
+FREE2&rarr;		SUBR&equiv;(GOAC&equiv;&alpha;&rarr;FREE3)
+FREE3&rarr;		<sup>1</sup>STE FREE3X
+		RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LIST+VORD
+		SXD <sub>S</sub> WORKS-LIST
+		hJPQ FREESUB
+		JPQ FREE3X
+		REX <sub>&beta;</sub> FREEDOMS-LIST
+		MOVEL&equiv;VORD&times;&alpha;&rarr;SPECB&times;&beta;
+		<sup>1</sup>DPX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+VORD
+FREE3X&rarr;		JPQ #
+FREEDOMX&rarr;
+		JPQ #
+		**WORKING VARIABLE INCREASE
+WORKER&rarr;		<sup>1</sup>STE WORKEX
+		REX <sub>&alpha;</sub> MOVINGS-LIST
+		LGORR&equiv;SPECB&times;&alpha;=S&rarr;WRK1A
+		REX <sub>&alpha;</sub> WORKS-LIST
+		LGORRI&equiv;SPECB&times;&alpha;=S&rarr;WRK1&rarr;WORKEX
+WKR1A&rarr;		<sup>1</sup>STE WRK1AX
+		RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
+		RSX <sub>S</sub><sub>|</sub><sub>S</sub> LIST+TYPE
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=77 doc_page=226 type=main]
+[Page header: "HHL APY5 006"]
+
+
 </code></pre></body></html>
