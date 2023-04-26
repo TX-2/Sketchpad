@@ -3022,4 +3022,44 @@ LAST@arr@	ZZLAST
 [Handwritten: "PEN 11 AUG"]
 [Page header: "HHL LYUO 001"]
 
+[meta file_name=102726903-05-02-acc.pdf pdf_page=80 doc_page=230 type=symex]
+[Page header: "HHL LYUO 002"]
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=81 doc_page=231 type=symex]
+[Page header: "HHL LYUO 003"]
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=82 doc_page=232 type=equalities]
+[Page header: "HHL LYUO 004"]
+[Looks like equalities pages contain quite a lot of comments, may be useful]
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=83 doc_page=233 type=equalities]
+[Page header: "HHL LYUO 005"]
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=84 doc_page=234 type=equalities]
+[Page header: "HHL LYUO 006"]
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=85 doc_page=235 type=equalities]
+[Page header: "HHL LYUO 007"]
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=86 doc_page=236 type=equalities]
+[Page header: "HHL LYUO 010"]
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=86 doc_page=236 type=macros]
+[Page header: "HHL LYUO 011"]
+
+@hand@@hand@DEF EXAMINE|@alpha@@arr@B
+@sup_1@hIOS@sub_alpha@0
+STE B
+@hand@@hand@EMD
+
+[Useful comments in this macro]
+@hand@@hand@DEF NORMALIZE|P@arr@C/S@times@F=R@arr@Q
+LDA P	**POINT P AT
+SUB C	**CENTER C TO BE
+SAB {-(F),}	**NORMALIZED TO 2F@times@S [F appears to be superscripted in this comment?]
+hJOV Q	**AND IF OUT, GO TO
+DIV S	**Q, LEAVE RESULT
+hJOV Q-(S)+(S)	**IN R
+STA R
+@hand@@hand@EMD
 
