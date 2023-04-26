@@ -3044,7 +3044,7 @@ LAST@arr@	ZZLAST
 [meta file_name=102726903-05-02-acc.pdf pdf_page=86 doc_page=236 type=equalities]
 [Page header: "HHL LYUO 010"]
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=86 doc_page=236 type=macros]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=87 doc_page=237 type=macros]
 [Page header: "HHL LYUO 011"]
 
 @hand@@hand@DEF EXAMINE|@alpha@@arr@B
@@ -3062,4 +3062,163 @@ DIV S	**Q, LEAVE RESULT
 hJOV Q-(S)+(S)	**IN R
 STA R
 @hand@@hand@EMD
+
+@hand@@hand@DEF MOVE|A@arr@B
+hLDE A
+STE B
+@hand@@hand@EMD
+
+@hand@@hand@DEF HDIF|P,Q@arr@R
+LDA P
+SUB Q
+SCA {-1,-1,,-1,-1}+((Q)^(770,))
+STA R
+@hand@@hand@EMD
+
+@hand@@hand@DEF JZA|P
+JPA #+3
+JNA #+2
+JPQ P
+@hand@@hand@EMD
+
+@hand@@hand@DEF SCNORM|P@arr@Q=R@arr@S
+T1=Q
+NORMALIZE|P@arr@SCCEN+T1/SCSZ=R@arr@S
+@hand@@hand@EMD
+
+@hand@@hand@DEF DIFF@hamb@P@arr@Q=R@arr@S
+LDA P
+SUB Q
+hJOV S
+STA R
+@hand@@hand@EMD
+
+@hand@@hand@DEF FABVAL@hamb@P@arr@Q
+LDA P
+JPA #+2
+COM A
+STA Q
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=88 doc_page=238 type=macros]
+[Page header: "HHL LYUO 012"]
+
+@hand@@hand@EMD
+
+@hand@@hand@DEF PYTH1@hamb@P@arr@Q,R@arr@S=T@arr@U
+LDA R
+SUB S
+hJOV U+(S)-(S)
+STA B+(R)-(R)
+LDA P
+SUB Q
+hJOV U+(Q)-(Q)
+hJPQ PYTHAGORIAN
+hJOV U
+STA T
+@hand@@hand@EMD
+
+@hand@@hand@DEF PYTH@hamb@P@arr@Q=T@arr@U
+PYTH1@hamb@P@arr@Q,P+1@arr@Q+1=T@arr@U
+@hand@@hand@EMD
+
+@hand@@hand@DEF DIREC1@hamb@P@arr@Q,R@arr@S=T@arr@U
+LDA R
+SUB S
+hJOV U+(S)-(S)
+STA B+(R)-(R)
+LDA P
+SUB Q
+hJOV U+(Q)-(Q)
+hJPQ CACT
+STA T
+@hand@@hand@EMD
+
+@hand@@hand@DEF DIREC@hamb@P@arr@Q=T@arr@U
+DIREC1@hamb@P@arr@Q,P+1@arr@Q+1=T@arr@U
+@hand@@hand@EMD
+
+@hand@@hand@DEF HSUM@hamb@P,Q@arr@R
+LDA P
+ADD Q
+[Differently from previous version (doc_page 167, for example), this has + instead of ^ on the following line, typo?]
+SCA {-1,-1,,-1,-1}+((Q)+(770,))
+STA R
+@hand@@hand@EMD
+
+@hand@@hand@DEF NPOL@hamb@P@arr@L=S
+@sup_2@DPX@sub_P@A
+@sup_1@DPX@sub_L@A
+hJPQ NPOLR
+STA S
+STB S+1
+@hand@@hand@EMD
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=89 doc_page=239 type=macros]
+[Page header: "HHL LYUO 013"]
+
+@hand@@hand@DEF SUMM@hamb@P@arr@Q=R@arr@S
+LDA P
+ADD Q
+hJOV S
+STA R
+@hand@@hand@EMD
+
+@hand@@hand@DEF PROD@hamb@A@times@B/C=D@arr@E
+LDA A
+MUL B
+DIV C
+hJOV E
+STA D
+@hand@@hand@EMD
+
+@hand@@hand@DEF LDAE@hamb@A,B,C,D
+LDA A
+LDB A+B
+LDC A+C
+LDD A+D
+@hand@@hand@EMD
+
+@hand@@hand@DEF STAE@hamb@A,B,C,D
+STA A
+STB A+B
+STC A+C
+STA A+D
+@hand@@hand@EMD
+
+@hand@@hand@DEF CLCROSS@hamb@C@arr@L=R@arr@S,T
+DPX@sub_L@A
+@sup_2@DPX@sub_C@A
+hLDE S	**TO GET S in Q
+hJPQ INTOCL
+JPQ T	**ONLY ONE INTERSECTION
+STA R
+STB R+1
+@hand@@hand@EMD
+
+@hand@@hand@DEF TWINNORM@hamb@P@arr@Q=R,S
+LDA P
+SUB Q
+NOA {0}
+STA R
+STD S
+COM S
+LDA P+1
+SUB Q+1
+NOA S
+SKN@sub_4@@sub_dot@@sub_9@D
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=90 doc_page=240 type=macros]
+[Page header: "HHL LYUO 013"]
+
+JPQ #+3
+SCA D
+JPQ #+?
+EXA R
+COM D
+SCA D
+EXA R
+STA S
+@hand@@hand@EMD
+
+
 
