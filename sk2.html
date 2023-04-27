@@ -3565,9 +3565,111 @@ TR3&rarr;		MKZ LPLOST
 [meta file_name=102726903-05-02-acc.pdf pdf_page=96 doc_page=246 type=code]
 [Page header: "HHL LYUO 004"]
 
+TR55&rarr;		REX <sub>5</sub><sub>5</sub> 0	[looks more like <sub>3</sub><sub>5</sub>, but 55 is the device address for light pen, so 35 is unlikely]
+		SKZ <sub>2</sub><sub>.</sub><sub>6</sub> LPSTATE
+		<sup>1</sup>IOS <sub>5</sub><sub>5</sub> 30000
+TR5&rarr;		<sup>1</sup>IOS <sub>6</sub><sub>0</sub> 20000	[5 in TR5 is completely smudged, but it checks out according to symex table]
+		hLDE S1STATE
+		<sup>3</sup>STE #+2
+		SKZ <sub>2</sub><sub>.</sub><sub>6</sub> S1STATE
+		<sup>1</sup>IOS <sub>6</sub><sub>0</sub> 30000
+		DPX <sub>7</sub><sub>6</sub> TR76
+		EXAMINE|76&rarr;76STATE
+		RXF <sub>7</sub><sub>6</sub> TRSAV
+TR6&rarr;		SKZ <sub>2</sub><sub>.</sub><sub>9</sub> S1STATE	**FLAG
+		JPQ *TR60
+		JPD *TR60
+TRREX&rarr;		<sup>1</sup>STE TRREX1
+		REX	[syntax, no operand?]
+		REX
+		REX
+		REX
+TRREX1&rarr;		JPQ #
+TRLP&rarr;		MKN <sub>1</sub><sub>.</sub><sub>1</sub> TRBITS
+		hJPQ TRREX
+		<sup>2</sup><sup>0</sup>INX <sub>6</sub><sub>0</sub> 1
+		hJPQ TRREX
+		<sup>2</sup><sup>0</sup>INX <sub>6</sub><sub>0</sub> 1
+		<sup>1</sup>ADX <sub>T</sub><sub>R</sub><sub>&beta;</sub> TRPOINT+3
+		RFD <sub>6</sub><sub>0</sub> TR2
+TRLP2&rarr;		<sup>2</sup>ADX <sub>T</sub><sub>R</sub><sub>&alpha;</sub> TRPOINT
+		RFD <sub>6</sub><sub>0</sub> TR2B
+TRLP2B&rarr;		<sup>1</sup>ADX <sub>T</sub><sub>R</sub><sub>&alpha;</sub> TRPOINT+1
+		RFD <sub>6</sub><sub>0</sub> TR2C
+TRLP2C&rarr;		<sup>2</sup>ADX <sub>T</sub><sub>R</sub><sub>&beta;</sub> TRPOINT+2
+		RDS <sub>6</sub><sub>0</sub> TR2D
+TRLP2D&rarr;		<sup>1</sup>ADX <sub>T</sub><sub>R</sub><sub>&beta;</sub> TRPOINT+3
+		RXF <sub>6</sub><sub>0</sub> TR2E
+		JPD TRLP2
+TRLOST&rarr;		DPX TRBITS
+		MOVE|{ LPFINDP}&rarr;<sup>1</sup> TR55
+		SNN LPLOST
+		RXF <sub>4</sub><sub>7</sub> 47LOSTPEN
+		<sup>1</sup>IOS <sub>5</sub><sub>5</sub> 20000
+		JPQ TR55
+TRSAV&rarr;		STA TRSA
+		STB TRSB
+		STC TRSC
+		STD TRSD
+		DPX A
+		<sup>3</sup><sup>0</sup>SCA {-1,-1,,-1,-1}
 
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=97 doc_page=247 type=code]
+[Page header: "HHL LYUO 005"]
 
+		STA TRSO
+TRAPPED&rarr;
+		SKZ LPLOST
+		JPQ PERIODIC
+		MKN PSNEED
+		LDB TRPOINT
+		<sup>1</sup>LDB TRPOINT+1
+		LDA TRPOINT+2
+		<sup>1</sup>LDA TRPOINT+3
+		<sup>2</sup><sup>0</sup>ADD B
+		<sup>2</sup><sup>0</sup>SCA {-1,0,,-1,0}
+		EXA TRPOINT
+		<sup>2</sup><sup>0</sup>SUB B
+		LDA TROUT
+		<sup>1</sup>JOV #+2
+		<sup>1</sup>LDA TRPOINT
+		<sup>2</sup><sup>1</sup>JOV #+2
+		<sup>2</sup><sup>1</sup>LDA TRPOINT
+		STA TROUT
+		STA PREDIC
+		EXA TROUT+1
+		EXA TROUT+2
+		EXA TROUT+3
+		STA TROUT+4
+PERIODIC&rarr;
+		REX
+		RXF <sub>4</sub><sub>7</sub> 47LITEIT
+		hJPQ SHAFTTEST
+		LDA PICNUM
+		EXA LPICNUM
+		<sup>1</sup>SUB LPICNUM
+		<sup>1</sup>JPA #+3
+		<sup>1</sup>JNA #+2
+		JPQ #+4
+		MKN PICCHANGE
+		LDA LPICNUM
+		STA CPNAME
+TRRES&rarr;		LDA TRSO
+		<sup>3</sup><sup>0</sup>ADD TRSO
+		LDA TRSA
+		LDB TRSB
+		LDC TRSC
+		LDD TRSD
+		hMKZ TRBUSY
+		JPQ *TR76
+TROUT&rarr;		0
+		0
+		0
+		0
 
-
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=98 doc_page=248 type=code]
+[Page header: "HHL LYUO 006"]
 
 </code></pre></body></html>

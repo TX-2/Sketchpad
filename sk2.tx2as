@@ -3468,8 +3468,108 @@ TR3@arr@	MKZ LPLOST
 [meta file_name=102726903-05-02-acc.pdf pdf_page=96 doc_page=246 type=code]
 [Page header: "HHL LYUO 004"]
 
+TR55@arr@	REX @sub_5@@sub_5@ 0	[looks more like @sub_3@@sub_5@, but 55 is the device address for light pen, so 35 is unlikely]
+		SKZ @sub_2@@sub_dot@@sub_6@ LPSTATE
+		@sup_1@IOS @sub_5@@sub_5@ 30000
+TR5@arr@	@sup_1@IOS @sub_6@@sub_0@ 20000	[5 in TR5 is completely smudged, but it checks out according to symex table]
+		hLDE S1STATE
+		@sup_3@STE #+2
+		SKZ @sub_2@@sub_dot@@sub_6@ S1STATE
+		@sup_1@IOS @sub_6@@sub_0@ 30000
+		DPX @sub_7@@sub_6@ TR76
+		EXAMINE|76@arr@76STATE
+		RXF @sub_7@@sub_6@ TRSAV
+TR6@arr@	SKZ @sub_2@@sub_dot@@sub_9@ S1STATE	**FLAG
+		JPQ *TR60
+		JPD *TR60
+TRREX@arr@	@sup_1@STE TRREX1
+		REX	[syntax, no operand?]
+		REX
+		REX
+		REX
+TRREX1@arr@	JPQ #
+TRLP@arr@	MKN @sub_1@@sub_dot@@sub_1@ TRBITS
+		hJPQ TRREX
+		@sup_2@@sup_0@INX @sub_6@@sub_0@ 1
+		hJPQ TRREX
+		@sup_2@@sup_0@INX @sub_6@@sub_0@ 1
+		@sup_1@ADX @sub_T@@sub_R@@sub_beta@ TRPOINT+3
+		RFD @sub_6@@sub_0@ TR2
+TRLP2@arr@	@sup_2@ADX @sub_T@@sub_R@@sub_alpha@ TRPOINT
+		RFD @sub_6@@sub_0@ TR2B
+TRLP2B@arr@	@sup_1@ADX @sub_T@@sub_R@@sub_alpha@ TRPOINT+1
+		RFD @sub_6@@sub_0@ TR2C
+TRLP2C@arr@	@sup_2@ADX @sub_T@@sub_R@@sub_beta@ TRPOINT+2
+		RDS @sub_6@@sub_0@ TR2D
+TRLP2D@arr@	@sup_1@ADX @sub_T@@sub_R@@sub_beta@ TRPOINT+3
+		RXF @sub_6@@sub_0@ TR2E
+		JPD TRLP2
+TRLOST@arr@	DPX TRBITS
+		MOVE|{ LPFINDP}@arr@@sup_1@ TR55
+		SNN LPLOST
+		RXF @sub_4@@sub_7@ 47LOSTPEN
+		@sup_1@IOS @sub_5@@sub_5@ 20000
+		JPQ TR55
+TRSAV@arr@	STA TRSA
+		STB TRSB
+		STC TRSC
+		STD TRSD
+		DPX A
+		@sup_3@@sup_0@SCA {-1,-1,,-1,-1}
+		
+[meta file_name=102726903-05-02-acc.pdf pdf_page=97 doc_page=247 type=code]
+[Page header: "HHL LYUO 005"]
 
+		STA TRSO
+TRAPPED@arr@
+		SKZ LPLOST
+		JPQ PERIODIC
+		MKN PSNEED
+		LDB TRPOINT
+		@sup_1@LDB TRPOINT+1
+		LDA TRPOINT+2
+		@sup_1@LDA TRPOINT+3
+		@sup_2@@sup_0@ADD B
+		@sup_2@@sup_0@SCA {-1,0,,-1,0}
+		EXA TRPOINT
+		@sup_2@@sup_0@SUB B
+		LDA TROUT
+		@sup_1@JOV #+2
+		@sup_1@LDA TRPOINT
+		@sup_2@@sup_1@JOV #+2
+		@sup_2@@sup_1@LDA TRPOINT
+		STA TROUT
+		STA PREDIC
+		EXA TROUT+1
+		EXA TROUT+2
+		EXA TROUT+3
+		STA TROUT+4
+PERIODIC@arr@
+		REX
+		RXF @sub_4@@sub_7@ 47LITEIT
+		hJPQ SHAFTTEST
+		LDA PICNUM
+		EXA LPICNUM
+		@sup_1@SUB LPICNUM
+		@sup_1@JPA #+3
+		@sup_1@JNA #+2
+		JPQ #+4
+		MKN PICCHANGE
+		LDA LPICNUM
+		STA CPNAME
+TRRES@arr@	LDA TRSO
+		@sup_3@@sup_0@ADD TRSO
+		LDA TRSA
+		LDB TRSB
+		LDC TRSC
+		LDD TRSD
+		hMKZ TRBUSY
+		JPQ *TR76
+TROUT@arr@	0
+		0
+		0
+		0
 
-
-
+[meta file_name=102726903-05-02-acc.pdf pdf_page=98 doc_page=248 type=code]
+[Page header: "HHL LYUO 006"]
 
