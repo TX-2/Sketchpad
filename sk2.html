@@ -3357,4 +3357,217 @@ hJPQ {ERROR1&equiv;&alpha;&rarr;P}
 [meta file_name=102726903-05-02-acc.pdf pdf_page=91 doc_page=241 type=macros]
 [Page header: "HHL LYUO 015"]
 
+&#9755;&#9755;DEF ERROR1&equiv;&alpha;&rarr;P
+<sup>1</sup>STE #+2
+SKZ ERRORSTOP
+<sup>1</sup>#<sub>&alpha;</sub>
+JPQ P
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF LDAB&equiv;P
+LDA P
+LDB P+1
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF STAB&equiv;P
+STA P
+STB P+1
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF &beta;&#9635;A,&alpha;
+	RSX<sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub>LIST+A
+&#9755;&#9755;EMD
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=92 doc_page=242 type=main]
+[Page header: "HHL LYUO 016"]
+
+ 200005|
+		JPQ SQ60SEE
+ 200040|
+		JPQ STARTS
+		hJMP PSEUDO
+PSPL&rarr;		0
+		0
+		0	**THINGS SEEN
+ 200054|
+CPNAME&rarr;		0
+&Delta;SIZE&rarr;		0
+&Delta;ROT&rarr;		0
+ 200134|
+		hJMP TRACK
+ ORIGIN|
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=93 doc_page=243 type=code]
+[Page header: "HHL LYUO 001"]
+
+STARTS&rarr;		CSQ<sub>5</sub><sub>4</sub>
+		DPX LPSEEN
+		DPX PENSEEN
+		MKZ TRBUSY
+		MKN LPLOST
+		MOVE|SHAFT&rarr;LSHAFT
+		MOVE|PICNUM&rarr;hLPICNUM	[syntax]
+		STE CPNAME
+		RXF <sub>5</sub><sub>5</sub> LPFIND
+		JPQ INTSTART
+SQ60SEE&rarr;
+		RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LPSEEN
+		JPQ #+3
+		hLDQ <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LPSEE
+		STE <sub>S</sub><sub>|</sub><sub>&alpha;</sub> PENSEE
+		<sup>-</sup><sup>1</sup>JPX <sub>S</sub><sub>|</sub><sub>&alpha;</sub>#-2
+		MOVE|LPSEEN&rarr;PENSEEN
+		DPX LPSEEN
+		DPX LPTT	**SO IT'LL SEE SAME LINE AGAIN
+		JPQ 200004
+LPFIND&rarr;		CSQ<sub>5</sub><sub>5</sub>
+		<sup>2</sup><sup>1</sup>IOS <sub>5</sub><sub>5</sub> 30000
+LPFINDP&rarr;
+		SNZ LPLOST
+		JPQ LPSEES
+		hLDE *{<sub>6</sub><sub>0</sub> 777777}	[syntax]
+		STE PREDIC
+		DPX LPSEEN
+		**IF LIGHT PEN NOT LOST
+LPSEES&rarr;		REX <sub>L</sub><sub>P</sub><sub>&alpha;</sub>*{<sub>6</sub><sub>0</sub> 777777}	[LP&alpha; is listed in equalities table]
+		hITE { 377,,377}
+		hSED LPTT	**SAME POINT AS LAST TIME
+		JPD LPSEES
+		STE LPTT
+		DEX <sub>L</sub><sub>P</sub><sub>&alpha;</sub> DISPLAY FILE	**INVISIBLE POINT?	[syntax, symex with a space?]
+		SXL <sub>L</sub><sub>P</sub><sub>&alpha;</sub>*BASICFILE
+		JPD LPSEES
+		RSX <sub>L</sub><sub>P</sub><sub>&alpha;</sub> LPSEEN
+		JPQ LPSEES2
+LPSEES1&rarr;
+		hLDE LPTT
+		SED <sub>L</sub><sub>P</sub><sub>&alpha;</sub> LPSEE
+		JPD LPSEES
+LPSEES2&rarr;
+		<sup>-</sup><sup>1</sup>JPX <sub>L</sub><sub>P</sub><sub>&alpha;</sub> LPSEES1
+		RSX <sub>L</sub><sub>P</sub><sub>&alpha;</sub> LPSEEN
+		INX <sub>L</sub><sub>P</sub><sub>&alpha;</sub> 1
+		SXL <sub>L</sub><sub>P</sub><sub>&alpha;</sub> LPSEESIZE
+		JPD LPSEES
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=94 doc_page=244 type=code]
+[Page header: "HHL LYUO 002"]
+
+		MOVE|LPTT&rarr;LPSEE-1<sub>L</sub><sub>P</sub><sub>&alpha;</sub>
+		DPX <sub>L</sub><sub>P</sub><sub>&alpha;</sub> LPSEEN
+		RSX <sub>L</sub><sub>P</sub><sub>&alpha;</sub> PENSEEN
+		JPQ LPSEES4
+LPSEES3&rarr;
+		hLDE LPTT
+		SED <sub>L</sub><sub>P</sub><sub>&alpha;</sub> PENSEE
+		JPD LPSEES
+LPSEES4&rarr;
+		<sup>-</sup><sup>1</sup>JPX <sub>L</sub><sub>P</sub><sub>&alpha;</sub> LPSEES3
+		RSX <sub>L</sub><sub>P</sub><sub>&alpha;</sub> PENSEEN
+		INX <sub>L</sub><sub>P</sub><sub>&alpha;</sub> 1
+		SXL <sub>L</sub><sub>P</sub><sub>&alpha;</sub> PENSEESIZE
+		JPD LPSEES
+		MOVE|LPTT&rarr;PENSEE-1<sub>L</sub><sub>P</sub><sub>&alpha;</sub>
+		DPX <sub>L</sub><sub>P</sub><sub>&alpha;</sub> PENSEEN
+		JPD LPSEES
+LPSEE&rarr;		0
+		0
+		0
+		0
+		0
+PENSEE&rarr;		0
+		0
+		0
+		0
+		0
+TRACK&rarr;		MKN TRBUSY
+		EXAMINE|60&rarr;S1STATE
+		SKN <sub>2</sub><sub>.</sub><sub>6</sub> S1STATE	**CONNECT
+		JPQ TRACK1
+		SKX <sub>2</sub><sub>.</sub><sub>?</sub> S1STATE	[maybe 8?]
+		JPQ TRACK
+TRACK1&rarr;		DPX <sub>6</sub><sub>0</sub> TR60
+		CSQ<sub>6</sub><sub>0</sub>
+		<sup>1</sup>IOS <sub>6</sub><sub>0</sub> 30010
+		EXAMINE|55&rarr;LPSTATE
+		<sup>1</sup>DPX <sub>5</sub><sub>5</sub> TR55
+		hLDE PREDIC
+		<sup>1</sup>IOS <sub>5</sub><sub>5</sub> 30000
+		SKZ LPLOST
+		JPQ TRLOST
+TRACK2&rarr;		REX <sub>5</sub><sub>5</sub> TRLP
+		hLDE TRCENT
+		hSTE TRPOINT
+		STE TRPOINT+1
+		MKZ <sub>1</sub><sub>.</sub><sub>1</sub> TRBITS
+		hLDE TRCENT
+		hSTE TRPOINT+2
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=95 doc_page=245 type=code]
+[Page header: "HHL LYUO 003"]
+
+		STE TRPOINT+3
+		RSX <sub>T</sub><sub>R</sub><sub>&alpha;</sub>{TRAD&rarr; TRRADIUS}
+		<sup>1</sup>REX <sub>T</sub><sub>R</sub><sub>&beta;</sub><sub>|</sub><sub>T</sub><sub>R</sub><sub>&alpha;</sub>
+TR1A&rarr;		<sup>2</sup>ADX <sub>T</sub><sub>R</sub><sub>&alpha;</sub> TRPOINT
+		TSD TRPOINT
+		<sup>2</sup>ADX <sub>T</sub><sub>R</sub><sub>&beta;</sub> TRCENT
+		<sup>2</sup>ADX <sub>T</sub><sub>R</sub><sub>&alpha;</sub> TRPOINT
+TR1B&rarr;		<sup>1</sup>ADS <sub>T</sub><sub>R</sub><sub>&alpha;</sub> TRPOINT+1
+		TSD TRPOINT+1
+		<sup>1</sup>ADX <sub>T</sub><sub>R</sub><sub>&beta;</sub> TRCENT
+		<sup>1</sup>ADX <sub>T</sub><sub>R</sub><sub>&alpha;</sub> TRPOINT+1
+TR1C&rarr;		<sup>1</sup>ADX <sub>T</sub><sub>R</sub><sub>&beta;</sub> TRPOINT+2
+		TSD TRPOINT+2
+		<sup>2</sup>ADX <sub>T</sub><sub>R</sub><sub>&alpha;</sub> TRCENT
+		<sup>2</sup>ADX <sub>T</sub><sub>R</sub><sub>&beta;</sub> TRPOINT+2
+TR1D&rarr;		<sup>1</sup>ADX <sub>T</sub><sub>R</sub><sub>&beta;</sub> TRPOINT+3
+		TSD TRPOINT+3
+		<sup>1</sup>ADX <sub>T</sub><sub>R</sub><sub>&alpha;</sub> TRCENT
+TRNSA&rarr;		SKN <sub>1</sub><sub>.</sub><sub>1</sub> TRBITS
+		JPQ TRLOST
+		JPQ TRACK2
+TRPOINT&rarr;
+		0
+		0
+		0
+		0
+TR2&rarr;		hLDE TRAD
+		STE TRINC
+TR2AA&rarr;		CYR TRINC
+		RSX <sub>T</sub><sub>R</sub><sub>&alpha;</sub> TRINC
+		<sup>1</sup>REX <sub>T</sub><sub>R</sub><sub>&beta;</sub>*TRINC
+TR2A&rarr;		TSD TRPOINT
+		<sup>2</sup>ADX <sub>T</sub><sub>R</sub><sub>&beta;</sub> TRPOINT
+		REX <sub>5</sub><sub>5</sub> TRLP2B
+TR2B&rarr;		TSD TRPOINT+1
+		<sup>1</sup>ADX <sub>T</sub><sub>R</sub><sub>&beta;</sub> TRPOINT+1
+		REX <sub>5</sub><sub>5</sub> TRLP2C
+TR2C&rarr;		TSD TRPOINT+2
+		<sup>2</sup>ADX <sub>T</sub><sub>R</sub><sub>&alpha;</sub> TRPOINT+2
+		REX <sub>5</sub><sub>5</sub> TRLP2D
+TR2D&rarr;		TSD TRPOINT+3
+		<sup>1</sup>ADX <sub>T</sub><sub>R</sub><sub>&alpha;</sub> TRPOINT+3
+		REX <sub>5</sub><sub>5</sub> TRLP2
+TR2E&rarr;		SXL <sub>T</sub><sub>R</sub><sub>&alpha;</sub> 300
+		JPQ TR2AA
+TR3&rarr;		MKZ LPLOST
+		<sup>1</sup>IOS <sub>5</sub><sub>5</sub> 20000
+		<sup>1</sup>IOS <sub>6</sub><sub>0</sub> 30030
+		TSD SCPSPL
+		TSD SCPSPL
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=96 doc_page=246 type=code]
+[Page header: "HHL LYUO 004"]
+
+
+
+
+
+
 </code></pre></body></html>

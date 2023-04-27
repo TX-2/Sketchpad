@@ -3265,3 +3265,211 @@ hJPQ {ERROR1@hamb@@alpha@@arr@P}
 [meta file_name=102726903-05-02-acc.pdf pdf_page=91 doc_page=241 type=macros]
 [Page header: "HHL LYUO 015"]
 
+@hand@@hand@DEF ERROR1@hamb@@alpha@@arr@P
+@sup_1@STE #+2
+SKZ ERRORSTOP
+@sup_1@#@sub_alpha@
+JPQ P
+@hand@@hand@EMD
+
+@hand@@hand@DEF LDAB@hamb@P
+LDA P
+LDB P+1
+@hand@@hand@EMD
+
+@hand@@hand@DEF STAB@hamb@P
+STA P
+STB P+1
+@hand@@hand@EMD
+
+@hand@@hand@DEF @beta@@rect_dash@A,@alpha@
+	RSX@sub_beta@@sub_pipe@@sub_alpha@LIST+A
+@hand@@hand@EMD
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=92 doc_page=242 type=main]
+[Page header: "HHL LYUO 016"]
+
+ 200005|
+		JPQ SQ60SEE
+ 200040|
+		JPQ STARTS
+		hJMP PSEUDO
+PSPL@arr@	0
+		0
+		0	**THINGS SEEN
+ 200054|
+CPNAME@arr@	0
+@delta@SIZE@arr@	0
+@delta@ROT@arr@	0
+ 200134|
+		hJMP TRACK
+ ORIGIN|
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=93 doc_page=243 type=code]
+[Page header: "HHL LYUO 001"]
+
+STARTS@arr@	CSQ@sub_5@@sub_4@
+		DPX LPSEEN
+		DPX PENSEEN
+		MKZ TRBUSY
+		MKN LPLOST
+		MOVE|SHAFT@arr@LSHAFT
+		MOVE|PICNUM@arr@hLPICNUM	[syntax]
+		STE CPNAME
+		RXF @sub_5@@sub_5@ LPFIND
+		JPQ INTSTART
+SQ60SEE@arr@
+		RSX @sub_S@@sub_pipe@@sub_alpha@ LPSEEN
+		JPQ #+3
+		hLDQ @sub_S@@sub_pipe@@sub_alpha@ LPSEE
+		STE @sub_S@@sub_pipe@@sub_alpha@ PENSEE
+		@sup_minus@@sup_1@JPX @sub_S@@sub_pipe@@sub_alpha@#-2
+		MOVE|LPSEEN@arr@PENSEEN
+		DPX LPSEEN
+		DPX LPTT	**SO IT'LL SEE SAME LINE AGAIN
+		JPQ 200004
+LPFIND@arr@	CSQ@sub_5@@sub_5@
+		@sup_2@@sup_1@IOS @sub_5@@sub_5@ 30000
+LPFINDP@arr@
+		SNZ LPLOST
+		JPQ LPSEES
+		hLDE *{@sub_6@@sub_0@ 777777}	[syntax]
+		STE PREDIC
+		DPX LPSEEN
+		**IF LIGHT PEN NOT LOST
+LPSEES@arr@	REX @sub_L@@sub_P@@sub_alpha@*{@sub_6@@sub_0@ 777777}	[LP@alpha@ is listed in equalities table]
+		hITE { 377,,377}
+		hSED LPTT	**SAME POINT AS LAST TIME
+		JPD LPSEES
+		STE LPTT
+		DEX @sub_L@@sub_P@@sub_alpha@ DISPLAY FILE	**INVISIBLE POINT?	[syntax, symex with a space?]
+		SXL @sub_L@@sub_P@@sub_alpha@*BASICFILE
+		JPD LPSEES
+		RSX @sub_L@@sub_P@@sub_alpha@ LPSEEN
+		JPQ LPSEES2
+LPSEES1@arr@
+		hLDE LPTT
+		SED @sub_L@@sub_P@@sub_alpha@ LPSEE
+		JPD LPSEES
+LPSEES2@arr@
+		@sup_minus@@sup_1@JPX @sub_L@@sub_P@@sub_alpha@ LPSEES1
+		RSX @sub_L@@sub_P@@sub_alpha@ LPSEEN
+		INX @sub_L@@sub_P@@sub_alpha@ 1
+		SXL @sub_L@@sub_P@@sub_alpha@ LPSEESIZE
+		JPD LPSEES
+ 
+[meta file_name=102726903-05-02-acc.pdf pdf_page=94 doc_page=244 type=code]
+[Page header: "HHL LYUO 002"]
+
+		MOVE|LPTT@arr@LPSEE-1@sub_L@@sub_P@@sub_alpha@
+		DPX @sub_L@@sub_P@@sub_alpha@ LPSEEN
+		RSX @sub_L@@sub_P@@sub_alpha@ PENSEEN
+		JPQ LPSEES4
+LPSEES3@arr@
+		hLDE LPTT
+		SED @sub_L@@sub_P@@sub_alpha@ PENSEE
+		JPD LPSEES
+LPSEES4@arr@
+		@sup_minus@@sup_1@JPX @sub_L@@sub_P@@sub_alpha@ LPSEES3
+		RSX @sub_L@@sub_P@@sub_alpha@ PENSEEN
+		INX @sub_L@@sub_P@@sub_alpha@ 1
+		SXL @sub_L@@sub_P@@sub_alpha@ PENSEESIZE
+		JPD LPSEES
+		MOVE|LPTT@arr@PENSEE-1@sub_L@@sub_P@@sub_alpha@
+		DPX @sub_L@@sub_P@@sub_alpha@ PENSEEN
+		JPD LPSEES
+LPSEE@arr@	0
+		0
+		0
+		0
+		0
+PENSEE@arr@	0
+		0
+		0
+		0
+		0
+TRACK@arr@	MKN TRBUSY
+		EXAMINE|60@arr@S1STATE
+		SKN @sub_2@@sub_dot@@sub_6@ S1STATE	**CONNECT
+		JPQ TRACK1
+		SKX @sub_2@@sub_dot@@sub_?@ S1STATE	[maybe 8?]
+		JPQ TRACK
+TRACK1@arr@	DPX @sub_6@@sub_0@ TR60
+		CSQ@sub_6@@sub_0@
+		@sup_1@IOS @sub_6@@sub_0@ 30010
+		EXAMINE|55@arr@LPSTATE
+		@sup_1@DPX @sub_5@@sub_5@ TR55
+		hLDE PREDIC
+		@sup_1@IOS @sub_5@@sub_5@ 30000
+		SKZ LPLOST
+		JPQ TRLOST
+TRACK2@arr@	REX @sub_5@@sub_5@ TRLP
+		hLDE TRCENT
+		hSTE TRPOINT
+		STE TRPOINT+1
+		MKZ @sub_1@@sub_dot@@sub_1@ TRBITS
+		hLDE TRCENT
+		hSTE TRPOINT+2
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=95 doc_page=245 type=code]
+[Page header: "HHL LYUO 003"]
+
+		STE TRPOINT+3
+		RSX @sub_T@@sub_R@@sub_alpha@{TRAD@arr@ TRRADIUS}
+		@sup_1@REX @sub_T@@sub_R@@sub_beta@@sub_pipe@@sub_T@@sub_R@@sub_alpha@
+TR1A@arr@	@sup_2@ADX @sub_T@@sub_R@@sub_alpha@ TRPOINT
+		TSD TRPOINT
+		@sup_2@ADX @sub_T@@sub_R@@sub_beta@ TRCENT
+		@sup_2@ADX @sub_T@@sub_R@@sub_alpha@ TRPOINT
+TR1B@arr@	@sup_1@ADS @sub_T@@sub_R@@sub_alpha@ TRPOINT+1
+		TSD TRPOINT+1
+		@sup_1@ADX @sub_T@@sub_R@@sub_beta@ TRCENT
+		@sup_1@ADX @sub_T@@sub_R@@sub_alpha@ TRPOINT+1
+TR1C@arr@	@sup_1@ADX @sub_T@@sub_R@@sub_beta@ TRPOINT+2
+		TSD TRPOINT+2
+		@sup_2@ADX @sub_T@@sub_R@@sub_alpha@ TRCENT
+		@sup_2@ADX @sub_T@@sub_R@@sub_beta@ TRPOINT+2
+TR1D@arr@	@sup_1@ADX @sub_T@@sub_R@@sub_beta@ TRPOINT+3
+		TSD TRPOINT+3
+		@sup_1@ADX @sub_T@@sub_R@@sub_alpha@ TRCENT
+TRNSA@arr@	SKN @sub_1@@sub_dot@@sub_1@ TRBITS
+		JPQ TRLOST
+		JPQ TRACK2
+TRPOINT@arr@
+		0
+		0
+		0
+		0
+TR2@arr@	hLDE TRAD
+		STE TRINC
+TR2AA@arr@	CYR TRINC
+		RSX @sub_T@@sub_R@@sub_alpha@ TRINC
+		@sup_1@REX @sub_T@@sub_R@@sub_beta@*TRINC
+TR2A@arr@	TSD TRPOINT
+		@sup_2@ADX @sub_T@@sub_R@@sub_beta@ TRPOINT
+		REX @sub_5@@sub_5@ TRLP2B
+TR2B@arr@	TSD TRPOINT+1
+		@sup_1@ADX @sub_T@@sub_R@@sub_beta@ TRPOINT+1
+		REX @sub_5@@sub_5@ TRLP2C
+TR2C@arr@	TSD TRPOINT+2
+		@sup_2@ADX @sub_T@@sub_R@@sub_alpha@ TRPOINT+2
+		REX @sub_5@@sub_5@ TRLP2D
+TR2D@arr@	TSD TRPOINT+3
+		@sup_1@ADX @sub_T@@sub_R@@sub_alpha@ TRPOINT+3
+		REX @sub_5@@sub_5@ TRLP2
+TR2E@arr@	SXL @sub_T@@sub_R@@sub_alpha@ 300
+		JPQ TR2AA
+TR3@arr@	MKZ LPLOST
+		@sup_1@IOS @sub_5@@sub_5@ 20000
+		@sup_1@IOS @sub_6@@sub_0@ 30030
+		TSD SCPSPL
+		TSD SCPSPL
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=96 doc_page=246 type=code]
+[Page header: "HHL LYUO 004"]
+
+
+
+
+
+
