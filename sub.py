@@ -46,6 +46,8 @@ SUBS = {
     "@sub_W@": ("ᵥ", "<sub>W</sub>"),
     # Neither capital nor lowercase subscript c, using what's left.
     "@sub_C@": ("ᵩ", "<sub>C</sub>"),
+    # Same for subscript Q.
+    "@sub_Q@": ("ₒ", "<sub>Q</sub>"),
     # These are transcription problems, where char is unclear.
     # Replacing them with ? to be able to verify that all @..@
     # tokens have been converted.

@@ -479,6 +479,7 @@ MKN <sub>T</sub><sub>2</sub>D
 <sup>1</sup>DPX<sub>&alpha;</sub>T2+(C)-(C)
 INX<sub>&alpha;</sub>A+1
 JPQ T1+(C)-(C)
+[Later def of this macro (doc_page 240) has B instead of 0 on the following line, typo?]
 T2&rarr; REX<sub>&alpha;</sub>0+(C)-(C)
 JPQ C
 T1&rarr; RSX<sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub>LIST
@@ -3299,7 +3300,7 @@ SKN<sub>4</sub><sub>.</sub><sub>9</sub>D
 
 <hr>
 [meta file_name=102726903-05-02-acc.pdf pdf_page=90 doc_page=240 type=macros]
-[Page header: "HHL LYUO 013"]
+[Page header: "HHL LYUO 014"]
 
 JPQ #+3
 SCA D
@@ -3311,6 +3312,49 @@ EXA R
 STA S
 &#9755;&#9755;EMD
 
+&#9755;&#9755;DEF CCCROSS&equiv;P&rarr;Q=R&rarr;S,T
+DPX<sub>P</sub>A
+<sup>2</sup>DPX<sub>Q</sub>A
+hLDE S		**TO GET Q=S
+hJPQ INTOC
+JPQ T		**ONLY ONE INTERSEC
+STA R
+STB R+1
+&#9755;&#9755;EMD
 
+&#9755;&#9755;DEF LLCROSSP&equiv;P&rarr;Q=R&rarr;S
+DPX<sub>P</sub>A
+<sup>2</sup>DPX<sub>Q</sub>A		[guessing this <sup>2</sup> based on previous def]
+hJPQ INTOL
+hJOV S
+STA R
+STB R+1
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF GORR&equiv;A&times;&alpha;=&beta;&rarr;B&rarr;C
+<sup>1</sup>DPX<sub>&alpha;</sub>T2+(C)-(C)
+INX<sub>&alpha;</sub>A+1
+JPQ T1+(C)-(C)
+[Previous def of this macro (doc_page 168) has 0 instead of B on the following line, typo?]
+T2&rarr; REX<sub>&alpha;</sub>B+(C)-(C)
+JPQ C
+T1&rarr; RSX<sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub>LIST
+<sup>1</sup><sup>6</sup>RSX<sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub>LIST-1
+INX<sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub>0
+DEX<sub>&beta;</sub>1
+hLDE<sub>&alpha;</sub>LIST-1
+<sup>1</sup>SED {0}
+JPQ T2+(C)-(C)
+hJPQ B
+JPQ T1+(C)-(C)
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF ERROR&equiv;&alpha;&rarr;P
+hJPQ {ERROR1&equiv;&alpha;&rarr;P}
+&#9755;&#9755;EMD
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=91 doc_page=241 type=macros]
+[Page header: "HHL LYUO 015"]
 
 </code></pre></body></html>

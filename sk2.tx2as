@@ -460,6 +460,7 @@ MKN @sub_T@@sub_2@D
 @sup_1@DPX@sub_alpha@T2+(C)-(C)
 INX@sub_alpha@A+1
 JPQ T1+(C)-(C)
+[Later def of this macro (doc_page 240) has B instead of 0 on the following line, typo?]
 T2@arr@ REX@sub_alpha@0+(C)-(C)
 JPQ C
 T1@arr@ RSX@sub_alpha@@sub_pipe@@sub_alpha@LIST
@@ -3208,7 +3209,7 @@ NOA S
 SKN@sub_4@@sub_dot@@sub_9@D
 
 [meta file_name=102726903-05-02-acc.pdf pdf_page=90 doc_page=240 type=macros]
-[Page header: "HHL LYUO 013"]
+[Page header: "HHL LYUO 014"]
 
 JPQ #+3
 SCA D
@@ -3220,5 +3221,47 @@ EXA R
 STA S
 @hand@@hand@EMD
 
+@hand@@hand@DEF CCCROSS@hamb@P@arr@Q=R@arr@S,T
+DPX@sub_P@A
+@sup_2@DPX@sub_Q@A
+hLDE S	**TO GET Q=S
+hJPQ INTOC
+JPQ T	**ONLY ONE INTERSEC
+STA R
+STB R+1
+@hand@@hand@EMD
 
+@hand@@hand@DEF LLCROSSP@hamb@P@arr@Q=R@arr@S
+DPX@sub_P@A
+@sup_2@DPX@sub_Q@A	[guessing this @sup_2@ based on previous def]
+hJPQ INTOL
+hJOV S
+STA R
+STB R+1
+@hand@@hand@EMD
+
+@hand@@hand@DEF GORR@hamb@A@times@@alpha@=@beta@@arr@B@arr@C
+@sup_1@DPX@sub_alpha@T2+(C)-(C)
+INX@sub_alpha@A+1
+JPQ T1+(C)-(C)
+[Previous def of this macro (doc_page 168) has 0 instead of B on the following line, typo?]
+T2@arr@ REX@sub_alpha@B+(C)-(C)
+JPQ C
+T1@arr@ RSX@sub_alpha@@sub_pipe@@sub_alpha@LIST
+@sup_1@@sup_6@RSX@sub_beta@@sub_pipe@@sub_alpha@LIST-1
+INX@sub_beta@@sub_pipe@@sub_alpha@0
+DEX@sub_beta@1
+hLDE@sub_alpha@LIST-1
+@sup_1@SED {0}
+JPQ T2+(C)-(C)
+hJPQ B
+JPQ T1+(C)-(C)
+@hand@@hand@EMD
+
+@hand@@hand@DEF ERROR@hamb@@alpha@@arr@P
+hJPQ {ERROR1@hamb@@alpha@@arr@P}
+@hand@@hand@EMD
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=91 doc_page=241 type=macros]
+[Page header: "HHL LYUO 015"]
 
