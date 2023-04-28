@@ -3681,5 +3681,165 @@ NPOL2@arr@	@sup_2@RSX @sub_N@@sub_P@@sub_alpha@ NPOLS
 [meta file_name=102726903-05-02-acc.pdf pdf_page=100 doc_page=250 type=code]
 [Page header: "HHL LYUO 010"]
 
+		STA NPYP
+NPOL3@arr@	LDA @sub_N@@sub_P@@sub_beta@ VA	**XO	[probably meant X0 here]
+		MUL NPDY2
+		SAB {-1,}
+		DIV NPDENOM
+		ADD NPXP
+		hJOV BADOV	**CAN'T HAPPEN
+		STA NPXP
+		LDA @sub_N@@sub_P@@sub_beta@ VA+1	**Y0
+		MUL NPDX2
+		SAB {-1,}
+		DIV NPDENOM
+		ADD NPYP
+		hJOV BADOV
+		STA NPYP
+NPOL4@arr@	LDA @sub_N@@sub_P@@sub_alpha@ VA+1
+		SUB @sub_N@@sub_P@@sub_beta@ VA+1
+		SCA {-1,}
+		MUL NPDX
+		MUL NPDY
+		DIV NPDENOM
+		ADD NPXP
+		hJOV NPOLN	**NO POINT
+		STA NPXP
+NPOL5@arr@	LDA @sub_N@@sub_P@@sub_alpha@ VA
+		SUB @sub_N@@sub_P@@sub_beta@ VA
+		SCA {-1,}
+		MUL NPDX
+		MUL NPDY
+		DIV NPDENOM
+		ADD NPYP
+		hJOV NPOLN
+		STA NPYP
+NPOL6@arr@	LDA NPXP
+		LDB NPYP
+NPOLX@arr@	JPQ #
+NPOLDL@arr@	LDA VA@sub_N@@sub_P@@sub_alpha@
+		LDB VA+1@sub_N@@sub_P@@sub_alpha@
+		JPQ NPOLX
+PSEUDO@arr@	@sup_1@STE PSEXIT
+		SKN LPLOST
+		JPQ #+3
+		DPX ATBITS
+		JPQ PSEXIT
+		LDA TROUT+4
+		STA PSTS
+		@sup_1@@sup_2@LDA PSTS
+		MUL SCSZ
+		SAB { 10.,}
+		ADD SCCEN
 
+[meta file_name=102726903-05-02-acc.pdf pdf_page=101 doc_page=251 type=code]
+[Page header: "HHL LYUO 011"]
+
+		STA PENLOC
+		@sup_1@@sup_1@LDA PSTS
+		MUL SCSZ
+		SAB { 10.,}
+		ADD SCCEN+1
+		STA PENLOC+1
+		RSX @sub_P@@sub_S@@sub_alpha@ PENSEEN
+		SXG @sub_P@@sub_S@@sub_alpha@ 0
+		JPQ PSATPEN
+		LDA {PSPENLSIZE@arr@ PENLSIZE,,0}
+		MUL SCSZ
+		STA PSSEESIZE
+PS1@arr@	REX @sub_P@@sub_S@@sub_delta@ 0
+		DPX PSNNPS
+		RSX @sub_P@@sub_S@@sub_alpha@ PENSEEN
+		JPQ PS1X
+PS1A@arr@	LDA @sub_P@@sub_S@@sub_alpha@ PENSEE
+		@sup_2@@sup_0@CYA { 0,0,,10.,0}
+		CYA {-10.,}
+		ITA { 177777}
+		RSX @sub_P@@sub_S@@sub_gamma@ A	**PS@gamma@=SEEN BLOCK
+		PS@beta@@rect_dash@TYPE,PS@gamma@
+		@sup_2@DPX @sub_P@@sub_S@@sub_beta@ A
+		STA @sub_P@@sub_S@@sub_delta@ PSNPS+3
+		SXD @sub_P@@sub_S@@sub_beta@ CIRCLES-LIST
+		JPQ PS1C
+		SXD @sub_P@@sub_S@@sub_beta@ LINES-LIST
+		JPQ PS1L
+		SXD @sub_P@@sub_S@@sub_beta@ TPVALS-LIST
+		JPQ PS1TP
+		SXD @sub_P@@sub_S@@sub_beta@ FREES-LIST
+		JPQ PS1X
+		SXD @sub_P@@sub_S@@sub_beta@ POINTS-LIST
+		JPQ PS1P
+PS1I@arr@	MOVE|PENLOC@arr@PSNPS@sub_P@@sub_S@@sub_delta@
+		MOVE|PENLOC+1@arr@PSNPS+1@sub_P@@sub_S@@sub_delta@
+		MOVE|PSSEESIZE@arr@PSNPS+2@sub_P@@sub_S@@sub_delta@
+		INX @sub_P@@sub_S@@sub_delta@ 4
+		JPQ PS1X
+PS1TP@arr@	LDAB@hamb@TPVAL+LIST@sub_P@@sub_S@@sub_gamma@
+		JPQ #+3
+PS1P@arr@	LDAB@hamb@VA@sub_P@@sub_S@@sub_gamma@
+		STAB@hamb@PSNPS@sub_P@@sub_S@@sub_gamma@
+		DIFF@arr@PENLOC@arr@PS1X
+		EXA B
+		DIFF@arr@PENLOC+1@arr@PS1X
+		hJPQ PYTHAGORIAN
+		JOV PS1X
+		SUB PSSEESIZE
+		JPQ PS1X
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=102 doc_page=252 type=code]
+[Page header: "HHL LYUO 012"]
+
+		INX @sub_P@@sub_S@@sub_gamma@ 4
+		JPQ PS1X
+PENLOC@arr@	0
+		0
+PS1L@arr@	RSX @sub_P@@sub_S@@sub_beta@{ PENLOC-VA}
+		NPOL@hamb@PS@beta@@arr@PS@gamma@=PSNPS@sub_P@@sub_S@@sub_gamma@
+		PYTH@hamb@PSNPS@sub_P@@sub_S@@sub_gamma@@arr@VA@sub_P@@sub_S@@sub_beta@=PSNPS+2@sub_P@@sub_S@@sub_gamma@@arr@PS1X
+		SUB PSSEESIZE	**SIZE OF PEN IN 36 BITS
+		JPA PS1X
+		INX @sub_P@@sub_S@@sub_gamma@ 4
+		JPQ PS1X
+PS1C@arr@	RSX @sub_P@@sub_S@@sub_beta@@sub_pipe@@sub_P@@sub_S@@sub_gamma@ CSP+LIST
+		RSX @sub_P@@sub_S@@sub_gamma@@sub_pipe@@sub_P@@sub_S@@sub_gamma@ CIRCEN+LIST
+		PYTH@hamb@VA@sub_P@@sub_S@@sub_beta@@arr@VA@sub_P@@sub_S@@sub_gamma@=PSRAD@arr@PS1X
+		DIFF@hamb@PENLOC+1@arr@VA@sub_P@@sub_S@@sub_gamma@+1=PSTT@arr@PS1X
+		STA B
+		DIFF@hamb@PENLOC@arr@VA@sub_P@@sub_S@@sub_gamma@=PSTS@arr@PS1X
+		PYTH1@arr@@arr@@arr@PS1X [peculiar syntax]
+		STA PSTU
+		SUB PSRAD
+		STA @sub_P@@sub_S@@sub_gamma@ PSNPS+4	**FOR CENTER
+		FABVAL
+		STA @sub_P@@sub_S@@sub_gamma@ PSNPS+2
+		SUB PSSEESIZE
+		JPA PS1X
+		PROD@hamb@PSTS@times@PSRAD/PSTU@arr@PS1X
+		SUMM@arr@VA@sub_P@@sub_S@@sub_gamma@=PSNPS@sub_P@@sub_S@@sub_gamma@@arr@PS1X
+		PROD@hamb@PSTT@times@PSRAD/PSTU@arr@PS1X
+		SUMM@arr@VA+1@sub_P@@sub_S@@sub_gamma@=PSNPS+1@sub_P@@sub_S@@sub_gamma@@arr@PS1X
+		INX @sub_P@@sub_S@@sub_gamma@ 4
+PS1X@arr@	@sup_minus@@sup_1@JPX @sub_P@@sub_S@@sub_alpha@ PS1A
+		DPX @sub_P@@sub_S@@sub_delta@ PSNNPS	**# OF NEAR POINTS
+PS2@arr@	RSX @sub_P@@sub_S@@sub_alpha@ PSNNPS
+		SXG @sub_P@@sub_S@@sub_alpha@ 0
+		JPQ PSATPEN
+		LDA {PSPENDSIZE@arr@ PENDSIZE,,0}
+		MUL SCSZ
+		STA PSSEESIZE
+		LDA { 377,-0,,-0,-0}
+		STA PSTS
+		DPX PSTT
+		JPQ PS2X
+PS2S@arr@	@sup_1@PS2SE
+		S@rect_dash@TYPE,@sub_P@@sub_S@@sub_gamma@
+		REX @sub_alpha@@sub_pipe@@sub_P@@sub_S@@sub_gamma@
+		hBPQ @sub_S@ LIST+WHERE
+		STAB@hamb@PS2SLOC
+		DIFF@arr@SCCEN@arr@PS2SE
+		FABVAL
+		SUB SCSZ
+		 
+[meta file_name=102726903-05-02-acc.pdf pdf_page=103 doc_page=253 type=code]
+[Page header: "HHL LYUO 013"]
 

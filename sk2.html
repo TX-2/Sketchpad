@@ -3782,6 +3782,169 @@ NPOL2&rarr;		<sup>2</sup>RSX <sub>N</sub><sub>P</sub><sub>&alpha;</sub> NPOLS
 [meta file_name=102726903-05-02-acc.pdf pdf_page=100 doc_page=250 type=code]
 [Page header: "HHL LYUO 010"]
 
+		STA NPYP
+NPOL3&rarr;		LDA <sub>N</sub><sub>P</sub><sub>&beta;</sub> VA	**XO	[probably meant X0 here]
+		MUL NPDY2
+		SAB {-1,}
+		DIV NPDENOM
+		ADD NPXP
+		hJOV BADOV	**CAN'T HAPPEN
+		STA NPXP
+		LDA <sub>N</sub><sub>P</sub><sub>&beta;</sub> VA+1	**Y0
+		MUL NPDX2
+		SAB {-1,}
+		DIV NPDENOM
+		ADD NPYP
+		hJOV BADOV
+		STA NPYP
+NPOL4&rarr;		LDA <sub>N</sub><sub>P</sub><sub>&alpha;</sub> VA+1
+		SUB <sub>N</sub><sub>P</sub><sub>&beta;</sub> VA+1
+		SCA {-1,}
+		MUL NPDX
+		MUL NPDY
+		DIV NPDENOM
+		ADD NPXP
+		hJOV NPOLN	**NO POINT
+		STA NPXP
+NPOL5&rarr;		LDA <sub>N</sub><sub>P</sub><sub>&alpha;</sub> VA
+		SUB <sub>N</sub><sub>P</sub><sub>&beta;</sub> VA
+		SCA {-1,}
+		MUL NPDX
+		MUL NPDY
+		DIV NPDENOM
+		ADD NPYP
+		hJOV NPOLN
+		STA NPYP
+NPOL6&rarr;		LDA NPXP
+		LDB NPYP
+NPOLX&rarr;		JPQ #
+NPOLDL&rarr;		LDA VA<sub>N</sub><sub>P</sub><sub>&alpha;</sub>
+		LDB VA+1<sub>N</sub><sub>P</sub><sub>&alpha;</sub>
+		JPQ NPOLX
+PSEUDO&rarr;		<sup>1</sup>STE PSEXIT
+		SKN LPLOST
+		JPQ #+3
+		DPX ATBITS
+		JPQ PSEXIT
+		LDA TROUT+4
+		STA PSTS
+		<sup>1</sup><sup>2</sup>LDA PSTS
+		MUL SCSZ
+		SAB { 10.,}
+		ADD SCCEN
 
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=101 doc_page=251 type=code]
+[Page header: "HHL LYUO 011"]
+
+		STA PENLOC
+		<sup>1</sup><sup>1</sup>LDA PSTS
+		MUL SCSZ
+		SAB { 10.,}
+		ADD SCCEN+1
+		STA PENLOC+1
+		RSX <sub>P</sub><sub>S</sub><sub>&alpha;</sub> PENSEEN
+		SXG <sub>P</sub><sub>S</sub><sub>&alpha;</sub> 0
+		JPQ PSATPEN
+		LDA {PSPENLSIZE&rarr; PENLSIZE,,0}
+		MUL SCSZ
+		STA PSSEESIZE
+PS1&rarr;		REX <sub>P</sub><sub>S</sub><sub>&Delta;</sub> 0
+		DPX PSNNPS
+		RSX <sub>P</sub><sub>S</sub><sub>&alpha;</sub> PENSEEN
+		JPQ PS1X
+PS1A&rarr;		LDA <sub>P</sub><sub>S</sub><sub>&alpha;</sub> PENSEE
+		<sup>2</sup><sup>0</sup>CYA { 0,0,,10.,0}
+		CYA {-10.,}
+		ITA { 177777}
+		RSX <sub>P</sub><sub>S</sub><sub>&gamma;</sub> A	**PS&gamma;=SEEN BLOCK
+		PS&beta;&#9635;TYPE,PS&gamma;
+		<sup>2</sup>DPX <sub>P</sub><sub>S</sub><sub>&beta;</sub> A
+		STA <sub>P</sub><sub>S</sub><sub>&Delta;</sub> PSNPS+3
+		SXD <sub>P</sub><sub>S</sub><sub>&beta;</sub> CIRCLES-LIST
+		JPQ PS1C
+		SXD <sub>P</sub><sub>S</sub><sub>&beta;</sub> LINES-LIST
+		JPQ PS1L
+		SXD <sub>P</sub><sub>S</sub><sub>&beta;</sub> TPVALS-LIST
+		JPQ PS1TP
+		SXD <sub>P</sub><sub>S</sub><sub>&beta;</sub> FREES-LIST
+		JPQ PS1X
+		SXD <sub>P</sub><sub>S</sub><sub>&beta;</sub> POINTS-LIST
+		JPQ PS1P
+PS1I&rarr;		MOVE|PENLOC&rarr;PSNPS<sub>P</sub><sub>S</sub><sub>&Delta;</sub>
+		MOVE|PENLOC+1&rarr;PSNPS+1<sub>P</sub><sub>S</sub><sub>&Delta;</sub>
+		MOVE|PSSEESIZE&rarr;PSNPS+2<sub>P</sub><sub>S</sub><sub>&Delta;</sub>
+		INX <sub>P</sub><sub>S</sub><sub>&Delta;</sub> 4
+		JPQ PS1X
+PS1TP&rarr;		LDAB&equiv;TPVAL+LIST<sub>P</sub><sub>S</sub><sub>&gamma;</sub>
+		JPQ #+3
+PS1P&rarr;		LDAB&equiv;VA<sub>P</sub><sub>S</sub><sub>&gamma;</sub>
+		STAB&equiv;PSNPS<sub>P</sub><sub>S</sub><sub>&gamma;</sub>
+		DIFF&rarr;PENLOC&rarr;PS1X
+		EXA B
+		DIFF&rarr;PENLOC+1&rarr;PS1X
+		hJPQ PYTHAGORIAN
+		JOV PS1X
+		SUB PSSEESIZE
+		JPQ PS1X
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=102 doc_page=252 type=code]
+[Page header: "HHL LYUO 012"]
+
+		INX <sub>P</sub><sub>S</sub><sub>&gamma;</sub> 4
+		JPQ PS1X
+PENLOC&rarr;		0
+		0
+PS1L&rarr;		RSX <sub>P</sub><sub>S</sub><sub>&beta;</sub>{ PENLOC-VA}
+		NPOL&equiv;PS&beta;&rarr;PS&gamma;=PSNPS<sub>P</sub><sub>S</sub><sub>&gamma;</sub>
+		PYTH&equiv;PSNPS<sub>P</sub><sub>S</sub><sub>&gamma;</sub>&rarr;VA<sub>P</sub><sub>S</sub><sub>&beta;</sub>=PSNPS+2<sub>P</sub><sub>S</sub><sub>&gamma;</sub>&rarr;PS1X
+		SUB PSSEESIZE	**SIZE OF PEN IN 36 BITS
+		JPA PS1X
+		INX <sub>P</sub><sub>S</sub><sub>&gamma;</sub> 4
+		JPQ PS1X
+PS1C&rarr;		RSX <sub>P</sub><sub>S</sub><sub>&beta;</sub><sub>|</sub><sub>P</sub><sub>S</sub><sub>&gamma;</sub> CSP+LIST
+		RSX <sub>P</sub><sub>S</sub><sub>&gamma;</sub><sub>|</sub><sub>P</sub><sub>S</sub><sub>&gamma;</sub> CIRCEN+LIST
+		PYTH&equiv;VA<sub>P</sub><sub>S</sub><sub>&beta;</sub>&rarr;VA<sub>P</sub><sub>S</sub><sub>&gamma;</sub>=PSRAD&rarr;PS1X
+		DIFF&equiv;PENLOC+1&rarr;VA<sub>P</sub><sub>S</sub><sub>&gamma;</sub>+1=PSTT&rarr;PS1X
+		STA B
+		DIFF&equiv;PENLOC&rarr;VA<sub>P</sub><sub>S</sub><sub>&gamma;</sub>=PSTS&rarr;PS1X
+		PYTH1&rarr;&rarr;&rarr;PS1X [peculiar syntax]
+		STA PSTU
+		SUB PSRAD
+		STA <sub>P</sub><sub>S</sub><sub>&gamma;</sub> PSNPS+4	**FOR CENTER
+		FABVAL
+		STA <sub>P</sub><sub>S</sub><sub>&gamma;</sub> PSNPS+2
+		SUB PSSEESIZE
+		JPA PS1X
+		PROD&equiv;PSTS&times;PSRAD/PSTU&rarr;PS1X
+		SUMM&rarr;VA<sub>P</sub><sub>S</sub><sub>&gamma;</sub>=PSNPS<sub>P</sub><sub>S</sub><sub>&gamma;</sub>&rarr;PS1X
+		PROD&equiv;PSTT&times;PSRAD/PSTU&rarr;PS1X
+		SUMM&rarr;VA+1<sub>P</sub><sub>S</sub><sub>&gamma;</sub>=PSNPS+1<sub>P</sub><sub>S</sub><sub>&gamma;</sub>&rarr;PS1X
+		INX <sub>P</sub><sub>S</sub><sub>&gamma;</sub> 4
+PS1X&rarr;		<sup>-</sup><sup>1</sup>JPX <sub>P</sub><sub>S</sub><sub>&alpha;</sub> PS1A
+		DPX <sub>P</sub><sub>S</sub><sub>&Delta;</sub> PSNNPS	**# OF NEAR POINTS
+PS2&rarr;		RSX <sub>P</sub><sub>S</sub><sub>&alpha;</sub> PSNNPS
+		SXG <sub>P</sub><sub>S</sub><sub>&alpha;</sub> 0
+		JPQ PSATPEN
+		LDA {PSPENDSIZE&rarr; PENDSIZE,,0}
+		MUL SCSZ
+		STA PSSEESIZE
+		LDA { 377,-0,,-0,-0}
+		STA PSTS
+		DPX PSTT
+		JPQ PS2X
+PS2S&rarr;		<sup>1</sup>PS2SE
+		S&#9635;TYPE,<sub>P</sub><sub>S</sub><sub>&gamma;</sub>
+		REX <sub>&alpha;</sub><sub>|</sub><sub>P</sub><sub>S</sub><sub>&gamma;</sub>
+		hBPQ <sub>S</sub> LIST+WHERE
+		STAB&equiv;PS2SLOC
+		DIFF&rarr;SCCEN&rarr;PS2SE
+		FABVAL
+		SUB SCSZ
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=103 doc_page=253 type=code]
+[Page header: "HHL LYUO 013"]
 
 </code></pre></body></html>
