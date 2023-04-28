@@ -3672,4 +3672,116 @@ TROUT&rarr;		0
 [meta file_name=102726903-05-02-acc.pdf pdf_page=98 doc_page=248 type=code]
 [Page header: "HHL LYUO 006"]
 
+		0
+SHAFTTEST&rarr;
+		<sup>1</sup>STE SHAFTTESTX
+		LDA SHAFT
+		EXA LSHAFT	**LAST POSITION
+		<sup>3</sup><sup>0</sup>SUB LSHAFT
+		STA DSHAFT	**SHAFT CHANGE
+		<sup>3</sup><sup>0</sup>JPA SHAF1
+		<sup>3</sup><sup>0</sup>JNA SHAF1
+		JPQ SHAFTTESTX
+SHAF1&rarr;		<sup>3</sup><sup>0</sup>DIV { 40,40,,40,40}
+		h<sup>3</sup><sup>0</sup>JOV SHAFTTESTX	**BIT ERROR
+SHAFTSIZE&rarr;
+		<sup>1</sup><sup>6</sup>LDA DSHAFT
+		JPA #+3
+		JNA #+2
+		JPQ #+2
+		MKN MOVED
+		MUL SCSZ
+		SAB {-9.,}
+		LDA SCSZ
+		SUB B
+		STA B
+		SUB { 2,}
+		JNA #+2
+		LDB { 2,}
+		ADD { 1777,,0}
+		JPA #+2
+		LDB { 1,,0}
+		STB SCSZ
+		DIFF&equiv;<sup>1</sup><sup>6</sup> &Delta;SIZE&rarr;<sup>1</sup><sup>4</sup> DSHAFT=<sup>2</sup><sup>7</sup> &Delta;SIZE&rarr;<sup>3</sup> BADOV
+		SKN SHAFTUSE
+		JPQ SHAFTPOS
+SHAFTINS&rarr;
+		DIFF&equiv;<sup>1</sup><sup>6</sup> &Delta;ROT&rarr;<sup>1</sup><sup>3</sup> DSHAFT=<sup>2</sup><sup>7</sup> &Delta;ROT&rarr;BADOV
+		JPQ SHAFTTESTX
+SHAFTPOS&rarr;
+		DPX &Delta;ROT
+		<sup>1</sup><sup>5</sup>LDA DSHAFT
+		MUL SCSZ
+		SAB {-9.,}
+		LDA SCCEN
+		ADD B
+		STA SCCEN
+		<sup>3</sup><sup>3</sup>LDA DSHAFT
+		<sup>2</sup><sup>0</sup>JPA #+3
+		<sup>2</sup><sup>0</sup>JNA #+2
+		JPQ #+2
+		MKN MOVED
+		<sup>1</sup><sup>3</sup>LDA DSHAFT
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=99 doc_page=249 type=code]
+[Page header: "HHL LYUO 007"]
+
+		MUL SCSZ
+		SAB {-9.,}
+		LDA SCCEN+1
+		ADD B
+		STA SCCEN+1
+SHAFTTESTX&rarr;
+		JPQ #
+NPOLR&rarr;		<sup>1</sup>STE NPOLX
+		STA NPOLS	**POINT,,LINE
+		RSX <sub>N</sub><sub>P</sub><sub>&beta;</sub> A
+		RSX <sub>N</sub><sub>P</sub><sub>&alpha;</sub><sub>|</sub><sub>N</sub><sub>P</sub><sub>&beta;</sub> LEP+LIST
+		RSX <sub>N</sub><sub>P</sub><sub>&beta;</sub><sub>|</sub><sub>N</sub><sub>P</sub><sub>&beta;</sub> LSP+LIST
+		SXD <sub>N</sub><sub>P</sub><sub>&alpha;</sub><sub>S</sub><sub>|</sub><sub>N</sub><sub>P</sub><sub>&beta;</sub>
+		JPQ NPOLDL	**DEGENERATE LINE
+		LDA VA<sub>N</sub><sub>P</sub><sub>&alpha;</sub>
+		SUB VA<sub>N</sub><sub>P</sub><sub>&beta;</sub>
+		NOA { 0}
+		STA NPDX
+		STD NPTS
+		COM NPTS
+		LDA VA+1<sub>N</sub><sub>P</sub><sub>&alpha;</sub>
+		SUB VA+1<sub>N</sub><sub>P</sub><sub>&beta;</sub>
+		NOA NPTS
+		SKN <sub>4</sub><sub>.</sub><sub>9</sub> D
+		JPQ #+3
+		SCA D
+		JPQ #+5
+		EXA NPDX
+		COM D
+		SCA D
+		EXA NPDX
+		STA NPDY
+NPOL1&rarr;		MUL A
+		STA NPDY2
+		LDA NPDX
+		MUL NPDX
+		STA NPDX2
+		ADD NPDY2
+		SCA {-1.,}
+		STA NPDENOM
+NPOL2&rarr;		<sup>2</sup>RSX <sub>N</sub><sub>P</sub><sub>&alpha;</sub> NPOLS
+		LDA <sub>N</sub><sub>P</sub><sub>&alpha;</sub> VA	**X1
+		MUL NPDX2
+		SAB {-1,}
+		DIV NPDENOM
+		STA NPXP	**X POSITION
+		LDA <sub>N</sub><sub>P</sub><sub>&alpha;</sub> VA+1	**Y1
+		MUL NPDY2
+		SAB {-1,}
+		DIV NPDENOM
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=100 doc_page=250 type=code]
+[Page header: "HHL LYUO 010"]
+
+
+
 </code></pre></body></html>

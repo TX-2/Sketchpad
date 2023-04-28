@@ -40,6 +40,7 @@ SUBS = {
     "@sub_K@": ("ₖ", "<sub>K</sub>"),
     "@sub_L@": ("ₗ", "<sub>L</sub>"),
     "@sub_P@": ("ₚ", "<sub>P</sub>"),
+    "@sub_N@": ("ₙ", "<sub>N</sub>"),
     # No lowercase subscript y, using u instead.
     "@sub_y@": ("ᵤ", "<sub>y</sub>"),
     # No capital or lowercase subscript w, using v.

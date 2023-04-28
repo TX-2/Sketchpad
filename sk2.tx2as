@@ -3573,3 +3573,113 @@ TROUT@arr@	0
 [meta file_name=102726903-05-02-acc.pdf pdf_page=98 doc_page=248 type=code]
 [Page header: "HHL LYUO 006"]
 
+		0
+SHAFTTEST@arr@
+		@sup_1@STE SHAFTTESTX
+		LDA SHAFT
+		EXA LSHAFT	**LAST POSITION
+		@sup_3@@sup_0@SUB LSHAFT
+		STA DSHAFT	**SHAFT CHANGE
+		@sup_3@@sup_0@JPA SHAF1
+		@sup_3@@sup_0@JNA SHAF1
+		JPQ SHAFTTESTX
+SHAF1@arr@	@sup_3@@sup_0@DIV { 40,40,,40,40}
+		h@sup_3@@sup_0@JOV SHAFTTESTX	**BIT ERROR
+SHAFTSIZE@arr@
+		@sup_1@@sup_6@LDA DSHAFT
+		JPA #+3
+		JNA #+2
+		JPQ #+2
+		MKN MOVED
+		MUL SCSZ
+		SAB {-9.,}
+		LDA SCSZ
+		SUB B
+		STA B
+		SUB { 2,}
+		JNA #+2
+		LDB { 2,}
+		ADD { 1777,,0}
+		JPA #+2
+		LDB { 1,,0}
+		STB SCSZ
+		DIFF@hamb@@sup_1@@sup_6@ @delta@SIZE@arr@@sup_1@@sup_4@ DSHAFT=@sup_2@@sup_7@ @delta@SIZE@arr@@sup_3@ BADOV
+		SKN SHAFTUSE
+		JPQ SHAFTPOS
+SHAFTINS@arr@
+		DIFF@hamb@@sup_1@@sup_6@ @delta@ROT@arr@@sup_1@@sup_3@ DSHAFT=@sup_2@@sup_7@ @delta@ROT@arr@BADOV
+		JPQ SHAFTTESTX
+SHAFTPOS@arr@
+		DPX @delta@ROT
+		@sup_1@@sup_5@LDA DSHAFT
+		MUL SCSZ
+		SAB {-9.,}
+		LDA SCCEN
+		ADD B
+		STA SCCEN
+		@sup_3@@sup_3@LDA DSHAFT
+		@sup_2@@sup_0@JPA #+3
+		@sup_2@@sup_0@JNA #+2
+		JPQ #+2
+		MKN MOVED
+		@sup_1@@sup_3@LDA DSHAFT
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=99 doc_page=249 type=code]
+[Page header: "HHL LYUO 007"]
+
+		MUL SCSZ
+		SAB {-9.,}
+		LDA SCCEN+1
+		ADD B
+		STA SCCEN+1
+SHAFTTESTX@arr@
+		JPQ #
+NPOLR@arr@	@sup_1@STE NPOLX
+		STA NPOLS	**POINT,,LINE
+		RSX @sub_N@@sub_P@@sub_beta@ A
+		RSX @sub_N@@sub_P@@sub_alpha@@sub_pipe@@sub_N@@sub_P@@sub_beta@ LEP+LIST
+		RSX @sub_N@@sub_P@@sub_beta@@sub_pipe@@sub_N@@sub_P@@sub_beta@ LSP+LIST
+		SXD @sub_N@@sub_P@@sub_alpha@@sub_S@@sub_pipe@@sub_N@@sub_P@@sub_beta@
+		JPQ NPOLDL	**DEGENERATE LINE
+		LDA VA@sub_N@@sub_P@@sub_alpha@
+		SUB VA@sub_N@@sub_P@@sub_beta@
+		NOA { 0}
+		STA NPDX
+		STD NPTS
+		COM NPTS
+		LDA VA+1@sub_N@@sub_P@@sub_alpha@
+		SUB VA+1@sub_N@@sub_P@@sub_beta@
+		NOA NPTS
+		SKN @sub_4@@sub_dot@@sub_9@ D
+		JPQ #+3
+		SCA D
+		JPQ #+5
+		EXA NPDX
+		COM D
+		SCA D
+		EXA NPDX
+		STA NPDY
+NPOL1@arr@	MUL A
+		STA NPDY2
+		LDA NPDX
+		MUL NPDX
+		STA NPDX2
+		ADD NPDY2
+		SCA {-1.,}
+		STA NPDENOM
+NPOL2@arr@	@sup_2@RSX @sub_N@@sub_P@@sub_alpha@ NPOLS
+		LDA @sub_N@@sub_P@@sub_alpha@ VA	**X1
+		MUL NPDX2
+		SAB {-1,}
+		DIV NPDENOM
+		STA NPXP	**X POSITION
+		LDA @sub_N@@sub_P@@sub_alpha@ VA+1	**Y1
+		MUL NPDY2
+		SAB {-1,}
+		DIV NPDENOM
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=100 doc_page=250 type=code]
+[Page header: "HHL LYUO 010"]
+
+
+
