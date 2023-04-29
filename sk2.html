@@ -3947,4 +3947,169 @@ PS2S&rarr;		<sup>1</sup>PS2SE
 [meta file_name=102726903-05-02-acc.pdf pdf_page=103 doc_page=253 type=code]
 [Page header: "HHL LYUO 013"]
 
+		JNA #+2
+		JPQ PS2SE
+		DIFF&equiv;PS2SLOC+1&rarr;SCCEN+1&rarr;PS2SE
+		FABVAL
+		SUB SCSZ
+		JNA #+2
+		JPQ PS2SE
+		PYTH&equiv;PS2SLOC&rarr;PENLOC=PSTU&rarr;PS2SE
+		SUB PSTS
+		JPA PS2SE
+		ADD PSTS
+		STA PSTS
+		SUB PSSEESIZE
+		JPA PS2SE	**DOT TOO FAR AWAY
+		MKN <sub>4</sub><sub>.</sub><sub>9</sub> PSTT
+		<sup>1</sup>DPX <sub>P</sub><sub>S</sub><sub>&gamma;</sub> PSTT
+PS2SE&rarr;		JPQ #
+PS2SLOC&rarr;
+		0
+		0
+PS2A&rarr;		RSX <sub>P</sub><sub>S</sub><sub>&beta;</sub><sub>|</sub><sub>P</sub><sub>S</sub><sub>&alpha;</sub> PSNPS+3	**GET NAME
+		<sup>2</sup>RSX <sub>P</sub><sub>S</sub><sub>&gamma;</sub><sub>|</sub><sub>P</sub><sub>S</sub><sub>&alpha;</sub> PSNPS+3	**GET TYPE
+		SXD <sub>P</sub><sub>S</sub><sub>&gamma;</sub> CIRCLES-LIST
+		JPQ PS2C
+		SXD <sub>P</sub><sub>S</sub><sub>&gamma;</sub> LINES-LIST
+		JPQ PS2L
+		SXD <sub>P</sub><sub>S</sub><sub>&gamma;</sub> INSTANCES-LIST
+		JPQ PS2I
+		SXD <sub>P</sub><sub>S</sub><sub>&gamma;</sub> TPVALS-LIST
+		JPQ PS2P
+		SXD <sub>P</sub><sub>S</sub><sub>&gamma;</sub> POINTS-LIST
+		JPQ Ps2P
+		hLDE <sub>P</sub><sub>S</sub><sub>&gamma;</sub> LIST+TYPE
+		<sup>1</sup>SED { CONSTRAINTS-LIST}
+		JPQ PS2CON
+		JPQ PS2X
+PS2P&rarr;		REX <sub>P</sub><sub>S</sub><sub>&gamma;</sub><sub>|</sub><sub>P</sub><sub>S</sub><sub>&beta;</sub>
+		hJPQ PS2S
+		JPQ PS2X
+PS2CON&rarr;		INX <sub>P</sub><sub>S</sub><sub>&beta;</sub> LIST+CVTS+2
+		<sup>1</sup>DPX <sub>P</sub><sub>S</sub><sub>&beta;</sub> PS2CON1
+		PS&beta;&#9635;CHVAR,PS&gamma;
+		INX <sub>P</sub><sub>S</sub><sub>&beta;</sub><sub>|</sub><sub>P</sub><sub>S</sub><sub>&beta;</sub>
+		JPQ PS2CON1X
+PS2CON1&rarr;
+		LDA <sub>P</sub><sub>S</sub><sub>&beta;</sub>#
+		RSX <sub>P</sub><sub>S</sub><sub>&gamma;</sub> A
+		hJPQ PS2S
+PS2CON1X&rarr;
+		<sup>-</sup><sup>2</sup>JPX <sub>P</sub><sub>S</sub><sub>&beta;</sub> PS2CON1
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=104 doc_page=254 type=code]
+[Page header: "HHL LYUO 014"]
+
+		JPQ PS2X
+PS2I&rarr;		GORR&equiv;VCON&times;PS&beta;=PS&gamma;&rarr;PS2I1&rarr;PS2X
+PS2I1&rarr;		<sup>1</sup>STE PS2I1X
+		hLDE <sub>P</sub><sub>S</sub><sub>&gamma;</sub> LIST
+		<sup>1</sup>SED { IPCONS-LIST}
+		JPQ #+2
+PS2I1X&rarr;		JPQ #
+		PS&gamma;&#9635;IPCP,PS&gamma;
+		hJPQ PS2S
+		JPQ PS2I1X
+PS2L&rarr;		PS&gamma;&#9635;LSP,PS&beta;
+		hJPQ PS2S
+		PS&gamma;&#9635;LEP,PS&beta;
+		hJPQ PS2S
+		JPQ PS2X
+PS2C&rarr;		PS&gamma;&#9635;CSP,PS&beta;
+		hJPQ PS2S
+		PS&gamma;&#9635;CEP,PS&beta;
+		hJPQ PS2S
+PS2X&rarr;		<sup>-</sup><sup>4</sup>JPX <sub>P</sub><sub>S</sub><sub>&alpha;</sub> PS2A
+		SKN <sub>4</sub><sub>.</sub><sub>9</sub> PSTT
+		JPQ PS3
+PSAP&rarr;		RSX <sub>&alpha;</sub> PSTT
+		S&#9635;TYPE,&alpha;
+		DPX <sub>&alpha;</sub> ATBITS+1
+		<sup>2</sup>DPX <sub>S</sub> ATBITS+1
+		hBPQ <sub>S</sub> LIST+WHERE
+		STAB&equiv;PSPL
+		LDA { 1}
+		SXD <sub>S</sub> POINTS-LIST
+		LDA { 2,,1}
+		SXD <sub>S</sub> INSTANCES-LIST
+		LDA { 200,,1}
+		STA ATBITS
+		JPQ PSCONVERT
+PSATPEN&rarr;
+		RSX <sub>P</sub><sub>S</sub><sub>&alpha;</sub> PENSEEN
+		SXD <sub>P</sub><sub>S</sub><sub>&alpha;</sub> 1
+		JPQ PSATCEN
+PSATPEN1&rarr;
+		LDA PENLOC
+		LDB PENLOC+1
+		DPX ATBITS
+		hSTA PSPL
+		STB PSPL+1
+		JPQ PSCONVERT
+PSATCEN&rarr;
+		RSX <sub>P</sub><sub>S</sub><sub>&beta;</sub> PSNNPS
+		SXL <sub>P</sub><sub>S</sub><sub>&beta;</sub> 1
+		JPQ PSATPEN1
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=105 doc_page=255 type=code]
+[Page header: "HHL LYUO 015"]
+
+		<sup>2</sup>RSX <sub>P</sub><sub>S</sub><sub>&gamma;</sub> PSNPS+3
+		SXD <sub>P</sub><sub>S</sub><sub>&gamma;</sub> CIRCLES-LIST
+		JPQ #+2
+		JPQ PSATPEN1
+		LDA PSNPS+4
+		JPA PSATPEN1
+		ADD PSSEESIZE
+		JPA PSATPEN1
+		ADD PSSEESIZE
+		JNA PSATPEN1
+		RSX <sub>P</sub><sub>S</sub><sub>&alpha;</sub> PSNPS+3
+		RSX <sub>P</sub><sub>S</sub><sub>&alpha;</sub><sub>|</sub><sub>P</sub><sub>S</sub><sub>&alpha;</sub> LIST+CIRCEN
+		NORMALIZE|VA<sub>P</sub><sub>S</sub><sub>&alpha;</sub>&rarr;SCCEN/SCSZ&rarr;PSATPEN1	[smudged ending, guessing last symex a bit]
+		NORMALIZE|VA+1<sub>P</sub><sub>S</sub><sub>&alpha;</sub>&rarr;SCCEN+1/SCSZ&rarr;PSATPEN1	[ditto]
+		DPX <sub>P</sub><sub>S</sub><sub>&alpha;</sub> PSTT
+		JPQ PSAP
+PSAL&rarr;		LDA PSNPS
+		LDB PSNPS+1
+		LDC PSNPS+3
+		LDD { 1}
+		<sup>2</sup>RSX <sub>P</sub><sub>S</sub><sub>&alpha;</sub> PSNPS+3
+		SXD <sub>P</sub><sub>S</sub><sub>&alpha;</sub> CIRCLES-LIST
+		MKN ((ATCIRCLE)^(377777,,))+ D
+		SXD <sub>P</sub><sub>S</sub><sub>&alpha;</sub> LINES-LIST
+		MKN ((ATLINE)^(377777,,))+ D
+		SXD <sub>P</sub><sub>S</sub><sub>&alpha;</sub> INSTANCES-LIST
+		MKN ((ATINS)^(377777,,))+ D
+		hSTC ATBITS+1
+		STD ATBITS
+		hSTA PSPL
+		STB PSPL+1
+PSCONVERT&rarr;
+		SCNORM|PSPL=<sup>2</sup><sup>1</sup> SCPSPL&rarr;{ 0} [syntax, passing RC block as a parameter]
+		SCNORM|PSPL+1&rarr;1=<sup>2</sup><sup>2</sup> SCPSPL&rarr;{ 0}
+PSEXIT&rarr;		JPQ #
+PS3&rarr;		RSX <sub>P</sub><sub>S</sub><sub>&alpha;</sub> PSNNPS	**REMOVE FROM PSNPS
+		JPQ PS3X	**IF NEAR POINT OUTSIDE
+PS3A&rarr;		RSX <sub>P</sub><sub>S</sub><sub>&beta;</sub><sub>|</sub><sub>P</sub><sub>S</sub><sub>&alpha;</sub> PSNPS+3	**END POINT
+		<sup>2</sup>RSX <sub>P</sub><sub>S</sub><sub>&gamma;</sub><sub>|</sub><sub>P</sub><sub>S</sub><sub>&alpha;</sub> PSNPS+3
+		SXD <sub>P</sub><sub>S</sub><sub>&gamma;</sub> CIRCLES-LIST
+		JPQ PS3C
+		SXD <sub>P</sub><sub>S</sub><sub>&gamma;</sub> LINES-LIST
+		JPQ PS3L
+PS3I&rarr;		RSX <sub>P</sub><sub>S</sub><sub>&beta;</sub> PSNNPS
+		SXD <sub>P</sub><sub>S</sub><sub>&beta;</sub> 4
+		JPQ PS4
+		JPQ PS3R
+PS3L&rarr;		PS&gamma;&#9635;LSP,PS&beta;
+		PS&Delta;&#9635;LEP,PS&beta;
+		HDIF|VA<sub>P</sub><sub>S</sub><sub>&gamma;</sub>,PSNPS<sub>P</sub><sub>S</sub><sub>&alpha;</sub>&rarr;PSTS
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=106 doc_page=256 type=code]
+[Page header: "HHL LYUO 016"]
+
 </code></pre></body></html>

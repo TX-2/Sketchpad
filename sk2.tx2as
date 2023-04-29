@@ -3843,3 +3843,165 @@ PS2S@arr@	@sup_1@PS2SE
 [meta file_name=102726903-05-02-acc.pdf pdf_page=103 doc_page=253 type=code]
 [Page header: "HHL LYUO 013"]
 
+		JNA #+2
+		JPQ PS2SE
+		DIFF@hamb@PS2SLOC+1@arr@SCCEN+1@arr@PS2SE
+		FABVAL
+		SUB SCSZ
+		JNA #+2
+		JPQ PS2SE
+		PYTH@hamb@PS2SLOC@arr@PENLOC=PSTU@arr@PS2SE
+		SUB PSTS
+		JPA PS2SE
+		ADD PSTS
+		STA PSTS
+		SUB PSSEESIZE
+		JPA PS2SE	**DOT TOO FAR AWAY
+		MKN @sub_4@@sub_dot@@sub_9@ PSTT
+		@sup_1@DPX @sub_P@@sub_S@@sub_gamma@ PSTT
+PS2SE@arr@	JPQ #
+PS2SLOC@arr@
+		0
+		0
+PS2A@arr@	RSX @sub_P@@sub_S@@sub_beta@@sub_pipe@@sub_P@@sub_S@@sub_alpha@ PSNPS+3	**GET NAME
+		@sup_2@RSX @sub_P@@sub_S@@sub_gamma@@sub_pipe@@sub_P@@sub_S@@sub_alpha@ PSNPS+3	**GET TYPE
+		SXD @sub_P@@sub_S@@sub_gamma@ CIRCLES-LIST
+		JPQ PS2C
+		SXD @sub_P@@sub_S@@sub_gamma@ LINES-LIST
+		JPQ PS2L
+		SXD @sub_P@@sub_S@@sub_gamma@ INSTANCES-LIST
+		JPQ PS2I
+		SXD @sub_P@@sub_S@@sub_gamma@ TPVALS-LIST
+		JPQ PS2P
+		SXD @sub_P@@sub_S@@sub_gamma@ POINTS-LIST
+		JPQ Ps2P
+		hLDE @sub_P@@sub_S@@sub_gamma@ LIST+TYPE
+		@sup_1@SED { CONSTRAINTS-LIST}
+		JPQ PS2CON
+		JPQ PS2X
+PS2P@arr@	REX @sub_P@@sub_S@@sub_gamma@@sub_pipe@@sub_P@@sub_S@@sub_beta@
+		hJPQ PS2S
+		JPQ PS2X
+PS2CON@arr@	INX @sub_P@@sub_S@@sub_beta@ LIST+CVTS+2
+		@sup_1@DPX @sub_P@@sub_S@@sub_beta@ PS2CON1
+		PS@beta@@rect_dash@CHVAR,PS@gamma@
+		INX @sub_P@@sub_S@@sub_beta@@sub_pipe@@sub_P@@sub_S@@sub_beta@
+		JPQ PS2CON1X
+PS2CON1@arr@
+		LDA @sub_P@@sub_S@@sub_beta@#
+		RSX @sub_P@@sub_S@@sub_gamma@ A
+		hJPQ PS2S
+PS2CON1X@arr@
+		@sup_minus@@sup_2@JPX @sub_P@@sub_S@@sub_beta@ PS2CON1
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=104 doc_page=254 type=code]
+[Page header: "HHL LYUO 014"]
+
+		JPQ PS2X
+PS2I@arr@	GORR@hamb@VCON@times@PS@beta@=PS@gamma@@arr@PS2I1@arr@PS2X
+PS2I1@arr@	@sup_1@STE PS2I1X
+		hLDE @sub_P@@sub_S@@sub_gamma@ LIST
+		@sup_1@SED { IPCONS-LIST}
+		JPQ #+2
+PS2I1X@arr@	JPQ #
+		PS@gamma@@rect_dash@IPCP,PS@gamma@
+		hJPQ PS2S
+		JPQ PS2I1X
+PS2L@arr@	PS@gamma@@rect_dash@LSP,PS@beta@
+		hJPQ PS2S
+		PS@gamma@@rect_dash@LEP,PS@beta@
+		hJPQ PS2S
+		JPQ PS2X
+PS2C@arr@	PS@gamma@@rect_dash@CSP,PS@beta@
+		hJPQ PS2S
+		PS@gamma@@rect_dash@CEP,PS@beta@
+		hJPQ PS2S
+PS2X@arr@	@sup_minus@@sup_4@JPX @sub_P@@sub_S@@sub_alpha@ PS2A
+		SKN @sub_4@@sub_dot@@sub_9@ PSTT
+		JPQ PS3
+PSAP@arr@	RSX @sub_alpha@ PSTT
+		S@rect_dash@TYPE,@alpha@
+		DPX @sub_alpha@ ATBITS+1
+		@sup_2@DPX @sub_S@ ATBITS+1
+		hBPQ @sub_S@ LIST+WHERE
+		STAB@hamb@PSPL
+		LDA { 1}
+		SXD @sub_S@ POINTS-LIST
+		LDA { 2,,1}
+		SXD @sub_S@ INSTANCES-LIST
+		LDA { 200,,1}
+		STA ATBITS
+		JPQ PSCONVERT
+PSATPEN@arr@
+		RSX @sub_P@@sub_S@@sub_alpha@ PENSEEN
+		SXD @sub_P@@sub_S@@sub_alpha@ 1
+		JPQ PSATCEN
+PSATPEN1@arr@
+		LDA PENLOC
+		LDB PENLOC+1
+		DPX ATBITS
+		hSTA PSPL
+		STB PSPL+1
+		JPQ PSCONVERT
+PSATCEN@arr@
+		RSX @sub_P@@sub_S@@sub_beta@ PSNNPS
+		SXL @sub_P@@sub_S@@sub_beta@ 1
+		JPQ PSATPEN1
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=105 doc_page=255 type=code]
+[Page header: "HHL LYUO 015"]
+
+		@sup_2@RSX @sub_P@@sub_S@@sub_gamma@ PSNPS+3
+		SXD @sub_P@@sub_S@@sub_gamma@ CIRCLES-LIST
+		JPQ #+2
+		JPQ PSATPEN1
+		LDA PSNPS+4
+		JPA PSATPEN1
+		ADD PSSEESIZE
+		JPA PSATPEN1
+		ADD PSSEESIZE
+		JNA PSATPEN1
+		RSX @sub_P@@sub_S@@sub_alpha@ PSNPS+3
+		RSX @sub_P@@sub_S@@sub_alpha@@sub_pipe@@sub_P@@sub_S@@sub_alpha@ LIST+CIRCEN
+		NORMALIZE|VA@sub_P@@sub_S@@sub_alpha@@arr@SCCEN/SCSZ@arr@PSATPEN1	[smudged ending, guessing last symex a bit]
+		NORMALIZE|VA+1@sub_P@@sub_S@@sub_alpha@@arr@SCCEN+1/SCSZ@arr@PSATPEN1	[ditto]
+		DPX @sub_P@@sub_S@@sub_alpha@ PSTT
+		JPQ PSAP
+PSAL@arr@	LDA PSNPS
+		LDB PSNPS+1
+		LDC PSNPS+3
+		LDD { 1}
+		@sup_2@RSX @sub_P@@sub_S@@sub_alpha@ PSNPS+3
+		SXD @sub_P@@sub_S@@sub_alpha@ CIRCLES-LIST
+		MKN ((ATCIRCLE)^(377777,,))+ D
+		SXD @sub_P@@sub_S@@sub_alpha@ LINES-LIST
+		MKN ((ATLINE)^(377777,,))+ D
+		SXD @sub_P@@sub_S@@sub_alpha@ INSTANCES-LIST
+		MKN ((ATINS)^(377777,,))+ D
+		hSTC ATBITS+1
+		STD ATBITS
+		hSTA PSPL
+		STB PSPL+1
+PSCONVERT@arr@
+		SCNORM|PSPL=@sup_2@@sup_1@ SCPSPL@arr@{ 0} [syntax, passing RC block as a parameter]
+		SCNORM|PSPL+1@arr@1=@sup_2@@sup_2@ SCPSPL@arr@{ 0}
+PSEXIT@arr@	JPQ #
+PS3@arr@	RSX @sub_P@@sub_S@@sub_alpha@ PSNNPS	**REMOVE FROM PSNPS
+		JPQ PS3X	**IF NEAR POINT OUTSIDE
+PS3A@arr@	RSX @sub_P@@sub_S@@sub_beta@@sub_pipe@@sub_P@@sub_S@@sub_alpha@ PSNPS+3	**END POINT
+		@sup_2@RSX @sub_P@@sub_S@@sub_gamma@@sub_pipe@@sub_P@@sub_S@@sub_alpha@ PSNPS+3
+		SXD @sub_P@@sub_S@@sub_gamma@ CIRCLES-LIST
+		JPQ PS3C
+		SXD @sub_P@@sub_S@@sub_gamma@ LINES-LIST
+		JPQ PS3L
+PS3I@arr@	RSX @sub_P@@sub_S@@sub_beta@ PSNNPS
+		SXD @sub_P@@sub_S@@sub_beta@ 4
+		JPQ PS4
+		JPQ PS3R
+PS3L@arr@	PS@gamma@@rect_dash@LSP,PS@beta@
+		PS@delta@@rect_dash@LEP,PS@beta@
+		HDIF|VA@sub_P@@sub_S@@sub_gamma@,PSNPS@sub_P@@sub_S@@sub_alpha@@arr@PSTS
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=106 doc_page=256 type=code]
+[Page header: "HHL LYUO 016"]
+		
