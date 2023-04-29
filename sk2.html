@@ -4222,4 +4222,116 @@ PS5NE&rarr;		STA PSX1
 [meta file_name=102726903-05-02-acc.pdf pdf_page=108 doc_page=258 type=code]
 [Page header: "HHL LYUO 020"]
 
+		STB PSPL+1
+PS5PUT&rarr;		LDA PSNPS+3
+		LDB PSNPS+4+3
+		LDC PSTSEE
+		hSTA ATBITS+1
+		hSTB ATBITS+2
+		STC ATBITS
+		JPQ PSCONVERT
+PSX1&rarr;		0
+PSY1&rarr;		0
+PSX2&rarr;		0
+PSY2&rarr;		0
+PS5LC&rarr;		MOVE|{ 40,,2}&rarr;PSTSEE
+		CLCROSS&equiv;PS&beta;&rarr;PS&alpha;=PSX1&rarr;PS6,PS61
+		STC PSX2
+		STD PSY2
+		JPQ PS5CH
+PS5LL&rarr;		RSX <sub>P</sub><sub>S</sub><sub>&alpha;</sub> PSNPS+3
+		RSX <sub>P</sub><sub>S</sub><sub>&beta;</sub> PSNPS+3+4
+		LLCROSS&equiv;PS&alpha;&rarr;PS&beta;&rarr;PS6
+		MOVE|{ 20,,2}&rarr;PSTSEE
+		JPQ PS5NE
+PS6&rarr;		LDA PSNPS+2
+		SUB PSNPS+2+4
+		JNA PSAL
+		LDAE&equiv;PSNPS+4,1,2,3
+		STAE&equiv;PSNPS,1,2,3
+		JPQ PSAL
+PS61&rarr;		JPQ PS5NE
+		**INTERSECTION OF 2 CIRCLES
+INTOC&rarr;		h<sup>1</sup>STE INTOCX
+		<sup>2</sup><sup>2</sup>STE INTOCN	**NO INTERSECTION
+		STA INTCLS	**POINTERS TO CIRCLES
+		RSX <sub>I</sub><sub>N</sub><sub>&alpha;</sub> A
+		IN&beta;&#9635;CSP,IN&alpha;
+		IN&alpha;&#9635;CIRCEN,IN&alpha;
+		PYTH&equiv;VA<sub>I</sub><sub>N</sub><sub>&alpha;</sub>&rarr;VA<sub>I</sub><sub>N</sub><sub>&beta;</sub>=INR1&rarr;INTOCN
+INTOC1&rarr;		<sup>2</sup>RSX <sub>I</sub><sub>N</sub><sub>&alpha;</sub> INTCLS
+		IN&beta;&#9635;CIRCEN,IN&alpha;
+		IN&alpha;&#9635;CSP,IN&alpha;
+		PYTH&equiv;VA<sub>I</sub><sub>N</sub><sub>&alpha;</sub>&rarr;VA<sub>I</sub><sub>N</sub><sub>&beta;</sub>=INR2&rarr;INTOCN
+		RSX <sub>I</sub><sub>N</sub><sub>&alpha;</sub> INTCLS
+		IN&alpha;&#9635;CIRCEN,IN&alpha;
+		DIFF&equiv;VA+1<sub>I</sub><sub>N</sub><sub>&beta;</sub>&rarr;VA+1<sub>I</sub><sub>N</sub><sub>&alpha;</sub>=INDY&rarr;INTOCN
+		STA B
+		DIFF&equiv;VA<sub>I</sub><sub>N</sub><sub>&beta;</sub>&rarr;VA<sub>I</sub><sub>N</sub><sub>&alpha;</sub>=INDX&rarr;INTOCN
+		PYTH1&rarr;&rarr;&rarr;INTOCN	[syntax]
+		STA INDD
+INTOC2&rarr;		LDA INR1
+		ADD INR2
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=109 doc_page=259 type=code]
+[Page header: "HHL LYUO 021"]
+
+		hJOV #+5	**CIRCES CLOSE ENOUGH [sic]
+		STA B
+		SUB INDD
+		JNA INTOCN	**CIRCLES TOO FAR APPART [sic]
+		LDA B
+		SCA {-1,}
+		STA INTS	**R1+R2/2
+		LDA INR2
+		SUB INR1
+		STA B
+		JNA #+2
+		COM A
+		ADD INDD
+		JNA INTOCN	**ONE INSIDE OTHER
+INTOC3&rarr;		LDA B
+		MUL INTS
+		SAB { 1,}
+		DIV INDD	**A=F OF P26
+		STA INFF
+INTOC4&rarr;		HDIF|INDD,INFF&rarr;INCLO	**CENTER LINE OFFSET
+		[blank line]
+		FABVAL&rarr;INTS
+		SUB INR1
+		hJPA { 0}	**SHOULD NEVER JUMP
+		EXA INTS
+		ADD INR1
+		SCA {-1,}
+		MUL INTS
+		SAB { 1,}
+		[symbol is defined in equalities table: SQRT=hJPQ 200006]
+		[Main block (doc_page 242) is not placing anything at 200006 address?]
+		SQRT
+		STA INRAO
+INTOC5&rarr;		PROD&equiv;INDX&times;INRAO/INDD=INYP&rarr;INTOCN
+		PROD&equiv;INDY&times;INRAO/INDD=INXP&rarr;INTOCN
+		PROD&equiv;INDX&times;INCLO/INDD=INXP1&rarr;INTOCN
+		PROD&equiv;INDY&times;INCLO/INDD=INYP1&rarr;INTOCN
+		<sup>1</sup>DPX INTOC8
+INTOC6&rarr;		SUMM&equiv;INXP1&rarr;INXP=INDX&rarr;{ 0}
+		DIFF&equiv;INYP1&rarr;INYP=INDY&rarr;{ 0}
+		SUMM&rarr;VA+1<sub>I</sub><sub>N</sub><sub>&alpha;</sub>=INDY1&rarr;INTOC7
+		SUMM&equiv;INDX&rarr;VA<sub>I</sub><sub>N</sub><sub>&alpha;</sub>=INDX1&rarr;INTOC7
+		MKN <sub>1</sub><sub>.</sub><sub>1</sub> INTOC8
+INTOC7&rarr;		DIFF&equiv;INXP1&rarr;INXP=INXP&rarr;{ 0}
+		SUMM&equiv;INYP1&rarr;INYP=INYP&rarr;{ 0}
+		SUMM&rarr;VA+1<sub>I</sub><sub>N</sub><sub>&alpha;</sub>=INYP&rarr;INTOC8
+		SUMM&equiv;INXP&rarr;VA<sub>I</sub><sub>N</sub><sub>&alpha;</sub>=INXP&rarr;INTOC8 [syntax, &equiv; vs &rarr; in macro invocation]
+		MKN <sub>1</sub><sub>.</sub><sub>2</sub> INTOC8
+INTOC8&rarr;		REX <sub>I</sub><sub>N</sub><sub>&beta;</sub> 0
+		BPQ <sub>I</sub><sub>N</sub><sub>&beta;</sub>#+1
+		JPQ INTOCN
+		JPQ INTOC9	**SWAP
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=110 doc_page=260 type=code]
+[Page header: "HHL LYUO 022"]
+
 </code></pre></body></html>

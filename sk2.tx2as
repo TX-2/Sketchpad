@@ -4112,4 +4112,114 @@ PS5NE@arr@	STA PSX1
 
 [meta file_name=102726903-05-02-acc.pdf pdf_page=108 doc_page=258 type=code]
 [Page header: "HHL LYUO 020"]
-			
+		
+		STB PSPL+1
+PS5PUT@arr@	LDA PSNPS+3
+		LDB PSNPS+4+3
+		LDC PSTSEE
+		hSTA ATBITS+1
+		hSTB ATBITS+2
+		STC ATBITS
+		JPQ PSCONVERT
+PSX1@arr@	0
+PSY1@arr@	0
+PSX2@arr@	0
+PSY2@arr@	0
+PS5LC@arr@	MOVE|{ 40,,2}@arr@PSTSEE
+		CLCROSS@hamb@PS@beta@@arr@PS@alpha@=PSX1@arr@PS6,PS61
+		STC PSX2
+		STD PSY2
+		JPQ PS5CH
+PS5LL@arr@	RSX @sub_P@@sub_S@@sub_alpha@ PSNPS+3
+		RSX @sub_P@@sub_S@@sub_beta@ PSNPS+3+4
+		LLCROSS@hamb@PS@alpha@@arr@PS@beta@@arr@PS6
+		MOVE|{ 20,,2}@arr@PSTSEE
+		JPQ PS5NE
+PS6@arr@	LDA PSNPS+2
+		SUB PSNPS+2+4
+		JNA PSAL
+		LDAE@hamb@PSNPS+4,1,2,3
+		STAE@hamb@PSNPS,1,2,3
+		JPQ PSAL
+PS61@arr@	JPQ PS5NE
+		**INTERSECTION OF 2 CIRCLES
+INTOC@arr@	h@sup_1@STE INTOCX
+		@sup_2@@sup_2@STE INTOCN	**NO INTERSECTION
+		STA INTCLS	**POINTERS TO CIRCLES
+		RSX @sub_I@@sub_N@@sub_alpha@ A
+		IN@beta@@rect_dash@CSP,IN@alpha@
+		IN@alpha@@rect_dash@CIRCEN,IN@alpha@
+		PYTH@hamb@VA@sub_I@@sub_N@@sub_alpha@@arr@VA@sub_I@@sub_N@@sub_beta@=INR1@arr@INTOCN
+INTOC1@arr@	@sup_2@RSX @sub_I@@sub_N@@sub_alpha@ INTCLS
+		IN@beta@@rect_dash@CIRCEN,IN@alpha@
+		IN@alpha@@rect_dash@CSP,IN@alpha@
+		PYTH@hamb@VA@sub_I@@sub_N@@sub_alpha@@arr@VA@sub_I@@sub_N@@sub_beta@=INR2@arr@INTOCN
+		RSX @sub_I@@sub_N@@sub_alpha@ INTCLS
+		IN@alpha@@rect_dash@CIRCEN,IN@alpha@
+		DIFF@hamb@VA+1@sub_I@@sub_N@@sub_beta@@arr@VA+1@sub_I@@sub_N@@sub_alpha@=INDY@arr@INTOCN
+		STA B
+		DIFF@hamb@VA@sub_I@@sub_N@@sub_beta@@arr@VA@sub_I@@sub_N@@sub_alpha@=INDX@arr@INTOCN
+		PYTH1@arr@@arr@@arr@INTOCN	[syntax]
+		STA INDD
+INTOC2@arr@	LDA INR1
+		ADD INR2
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=109 doc_page=259 type=code]
+[Page header: "HHL LYUO 021"]
+
+		hJOV #+5	**CIRCES CLOSE ENOUGH [sic]
+		STA B
+		SUB INDD
+		JNA INTOCN	**CIRCLES TOO FAR APPART [sic]
+		LDA B
+		SCA {-1,}
+		STA INTS	**R1+R2/2
+		LDA INR2
+		SUB INR1
+		STA B
+		JNA #+2
+		COM A
+		ADD INDD
+		JNA INTOCN	**ONE INSIDE OTHER
+INTOC3@arr@	LDA B
+		MUL INTS
+		SAB { 1,}
+		DIV INDD	**A=F OF P26
+		STA INFF
+INTOC4@arr@	HDIF|INDD,INFF@arr@INCLO	**CENTER LINE OFFSET
+		[blank line]
+		FABVAL@arr@INTS
+		SUB INR1
+		hJPA { 0}	**SHOULD NEVER JUMP
+		EXA INTS
+		ADD INR1
+		SCA {-1,}
+		MUL INTS
+		SAB { 1,}
+		[symbol is defined in equalities table: SQRT=hJPQ 200006]
+		[Main block (doc_page 242) is not placing anything at 200006 address?]
+		SQRT
+		STA INRAO
+INTOC5@arr@	PROD@hamb@INDX@times@INRAO/INDD=INYP@arr@INTOCN
+		PROD@hamb@INDY@times@INRAO/INDD=INXP@arr@INTOCN
+		PROD@hamb@INDX@times@INCLO/INDD=INXP1@arr@INTOCN
+		PROD@hamb@INDY@times@INCLO/INDD=INYP1@arr@INTOCN
+		@sup_1@DPX INTOC8
+INTOC6@arr@	SUMM@hamb@INXP1@arr@INXP=INDX@arr@{ 0}
+		DIFF@hamb@INYP1@arr@INYP=INDY@arr@{ 0}
+		SUMM@arr@VA+1@sub_I@@sub_N@@sub_alpha@=INDY1@arr@INTOC7
+		SUMM@hamb@INDX@arr@VA@sub_I@@sub_N@@sub_alpha@=INDX1@arr@INTOC7
+		MKN @sub_1@@sub_dot@@sub_1@ INTOC8
+INTOC7@arr@	DIFF@hamb@INXP1@arr@INXP=INXP@arr@{ 0}
+		SUMM@hamb@INYP1@arr@INYP=INYP@arr@{ 0}
+		SUMM@arr@VA+1@sub_I@@sub_N@@sub_alpha@=INYP@arr@INTOC8
+		SUMM@hamb@INXP@arr@VA@sub_I@@sub_N@@sub_alpha@=INXP@arr@INTOC8 [syntax, @hamb@ vs @arr@ in macro invocation]
+		MKN @sub_1@@sub_dot@@sub_2@ INTOC8
+INTOC8@arr@	REX @sub_I@@sub_N@@sub_beta@ 0
+		BPQ @sub_I@@sub_N@@sub_beta@#+1
+		JPQ INTOCN
+		JPQ INTOC9	**SWAP
+	
+[meta file_name=102726903-05-02-acc.pdf pdf_page=110 doc_page=260 type=code]
+[Page header: "HHL LYUO 022"]
+		
