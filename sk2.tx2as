@@ -4004,4 +4004,112 @@ PS3L@arr@	PS@gamma@@rect_dash@LSP,PS@beta@
 
 [meta file_name=102726903-05-02-acc.pdf pdf_page=106 doc_page=256 type=code]
 [Page header: "HHL LYUO 016"]
-		
+
+		HDIF|VA@sub_P@@sub_S@@sub_delta@,PSNPS@sub_P@@sub_S@@sub_alpha@
+		MUL PSTS
+		NAB { 0}
+		JPA PS3R
+		HDIF|VA+1@sub_P@@sub_S@@sub_gamma@,PSNPS+1@sub_P@@sub_S@@sub_alpha@@arr@PSTS
+		HDIF|VA+1@sub_P@@sub_S@@sub_delta@,PSNPS@sub_P@@sub_S@@sub_alpha@+1
+		MUL PSTS
+		NAB { 0}
+		JPA PS3R
+		JPQ PS3X
+PS3R@arr@	RSX @sub_P@@sub_S@@sub_beta@ PSNNPS
+		DEX @sub_P@@sub_S@@sub_beta@ 3
+		SXG @sub_P@@sub_S@@sub_beta@ 0
+		JPQ PSATPEN
+		DPX @sub_P@@sub_S@@sub_beta@ PSNNPS
+		SXD @sub_P@@sub_S@@sub_beta@@sub_pipe@@sub_P@@sub_S@@sub_alpha@ 0
+		JPQ PS3X
+		LDAE@hamb@PSNPS@sub_P@@sub_S@@sub_beta@,1,2,3
+		STAE@hamb@PSNPS@sub_P@@sub_S@@sub_alpha@,1,2,3
+		JPQ PS3X
+PS3C@arr@	PS@gamma@@rect_dash@CSP,PS@beta@
+		PS@gamma@@rect_dash@CIRCEN,PS@beta@
+		DIREC@hamb@VA@sub_P@@sub_S@@sub_gamma@@arr@VA@sub_P@@sub_S@@sub_delta@=PSTS@arr@PS3R
+		DIREC@hamb@PSNPS@sub_P@@sub_S@@sub_alpha@@arr@VA@sub_P@@sub_S@@sub_delta@=PSTT@arr@PS3R
+		SUB PSTS
+		LDB LIST+CVAL@sub_P@@sub_S@@sub_beta@
+		SKZ @sub_4@@sub_dot@@sub_9@ B
+		COM A
+		JPA #+3
+		JNA #+2
+		DPX A
+		DPX B
+		CAB {-1,}
+		STA PSTS
+		LDA @sub_P@@sub_S@@sub_beta@ LIST+CVAL
+		JPA #+2
+		COM A
+		SUB PSTS
+		JNA PS3R
+PS3X@arr@	@sup_minus@@sup_4@JPX @sub_P@@sub_S@@sub_alpha@ PS3A
+PS4@arr@	RSX @sub_P@@sub_S@@sub_alpha@ PSNNPS
+		SXG @sub_P@@sub_S@@sub_alpha@ 0
+		JPQ PSATPEN
+		SXD @sub_P@@sub_S@@sub_alpha@ 4
+		JPQ PSAL
+		SXD @sub_P@@sub_S@@sub_alpha@ 10
+		JPQ PS5		**AT INTERSECTION
+		JPQ PSATPEN	**TOO MUCH CLUTTER
+PS5@arr@	@sup_2@RSX @sub_P@@sub_S@@sub_alpha@ PSNPS+3
+		@sup_2@RSX @sub_P@@sub_S@@sub_beta@ PSNPS+3+4
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=107 doc_page=257 type=code]
+[Page header: "HHL LYUO 017"]
+
+		SXD @sub_P@@sub_S@@sub_alpha@ CIRCLES-LIST
+		JPQ PS5C
+		SXD @sub_P@@sub_S@@sub_alpha@ LINES-LIST
+		JPQ PS5L
+		ERROR@hamb@PS@alpha@@arr@PSATPEN1
+PS5L@arr@	SXD @sub_P@@sub_S@@sub_beta@ LINES-LIST
+		JPQ PS5LL
+		SXD @sub_P@@sub_S@@sub_beta@ CIRCLES-LIST
+		JPQ #+2
+		ERROR@hamb@PS@beta@@arr@PSATPEN1
+		RSX @sub_P@@sub_S@@sub_alpha@ PSNPS+3
+		RSX @sub_P@@sub_S@@sub_beta@ PSNPS+3+4
+		JPQ PS5LC
+PS5C@arr@	SXD @sub_P@@sub_S@@sub_beta@ CIRCLES-LIST
+		JPQ PS5CC
+		SXD @sub_P@@sub_S@@sub_beta@ LINES-LIST
+		JPQ #+2
+		ERROR@hamb@PS@beta@@arr@PSATPEN1
+		RSX @sub_P@@sub_S@@sub_alpha@ PSNPS+3+4
+		RSX @sub_P@@sub_S@@sub_beta@ PSNPS+3
+		JPQ PS5LC
+PS5CC@arr@	RSX @sub_P@@sub_S@@sub_alpha@ PSNPS+3
+		RSX @sub_P@@sub_S@@sub_beta@ PSNPS+3+4
+		MOVE|{ 100,,2}@arr@PSTSEE
+		CCCROSS@hamb@PS@alpha@@arr@PS@beta@=PSX1@arr@PS6,PS61
+		STC PSX2
+		STD PSY2
+PS5CH@arr@	PYTH@hamb@PENLOC@arr@PSX1=PSTS@arr@PS5CC3
+		STA PSTS
+PS5CC2A@arr@
+		PYTH@hamb@PENLOC@arr@PSX2=PSTT@arr@PS5CC4
+		SUB PSTS
+		JNA PS5CC3
+PS5CC4@arr@	LDA PSX1	[5 in PS5CC4 is not quite legible, guessing]
+		LDB PSY1
+		JPQ #+3
+PS5CC3@arr@	LDA PSX2	[3 in PS5CC3 is not quite legible, guessing]
+		LDB PSY2
+PS5NE@arr@	STA PSX1
+		STB PSY1
+		PROD@hamb@{PSPENISIZE@arr@ PENISIZE,,0}@times@SCSZ=PSSEESIZE [syntax]
+		[blank line in the listing, not clear if intentional]
+		PYTH@hamb@PENLOC@arr@PSX1=PSTS@arr@PS6
+		SUB PSSEESIZE
+		JPA PSAL
+		SCNORM|PSX1=PSTS@arr@PS6
+		SCNORM|PSY1@arr@1=PSTS@arr@PS6	[syntax on these two lines, handling of missing arguments]
+		LDA PSX1
+		LDB PSY1
+		hSTA PSPL
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=108 doc_page=258 type=code]
+[Page header: "HHL LYUO 020"]
+			
