@@ -3057,7 +3057,7 @@ STE B
 @hand@@hand@DEF NORMALIZE|P@arr@C/S@times@F=R@arr@Q
 LDA P	**POINT P AT
 SUB C	**CENTER C TO BE
-SAB {-(F),}	**NORMALIZED TO 2F@times@S [F appears to be superscripted in this comment?]
+SAB {-(F),}	**NORMALIZED TO 2@sup_F@@times@S [F appears to be superscripted?]
 hJOV Q	**AND IF OUT, GO TO
 DIV S	**Q, LEAVE RESULT
 hJOV Q-(S)+(S)	**IN R
@@ -4222,4 +4222,500 @@ INTOC8@arr@	REX @sub_I@@sub_N@@sub_beta@ 0
 	
 [meta file_name=102726903-05-02-acc.pdf pdf_page=110 doc_page=260 type=code]
 [Page header: "HHL LYUO 022"]
+
+		JPQ INTOC10
+		JPQ INTOC11	**BOTH
+INTOC9@arr@	LDA INDX1
+		LDB INDY1
+		JPQ #+3
+INTOC10@arr@
+		LDA INXP
+		LDB INYP
+INTOCX@arr@	JPQ #
+INTOC11@arr@
+		LDA INTOCX
+		@sup_1@ADD { 1}
+		@sup_1@STA INTOCX
+		LDC INDX1
+		LDD INDY1
+		JPQ INTOC10
+INTOCN@arr@	JPQ #
+		**LINE AND CIRCLE INTERSECTION
+INTOCL@arr@	h@sup_1@STE INTOCX
+		@sup_2@@sup_2@STE INTOCN
+		STA INTOCLS	**CIRCLE,,LINE
+		@sup_2@RSX @sub_I@@sub_N@@sub_alpha@ A
+		@sup_2@@sup_2@LDA @sub_I@@sub_N@@sub_alpha@ CIRCEN+LIST
+		hJPQ NPOLR	**NEAREST POINT ON LINE
+		STA INXP
+		STB INYP
+		@sup_2@RSX @sub_I@@sub_N@@sub_alpha@ INTOCLS
+		IN@beta@@rect_dash@CIRCEN,IN@alpha@
+		IN@alpha@@rect_dash@CSP,IN@alpha@
+		SUB VA@sub_I@@sub_N@@sub_beta@
+		hJOV INTOCN
+		EXA B
+		SUB VA+1@sub_I@@sub_N@@sub_beta@
+		hJOV INTOCN
+INTOCL1@arr@
+		PYTH1
+		hJOV INTOCN
+		STA INDD
+		PYTH@hamb@VA@sub_I@@sub_N@@sub_alpha@@arr@VA@sub_I@@sub_N@@sub_beta@=INR1@arr@INTOCN
+		SUB INDD
+		JNA INTOCN
+		STA B
+		LDA INR1
+		ADD INDD
+		SCA {-1,}
+		MUL B
+		SAB { 1,}
+		SQRT
+		STA INRAO
+INTOCL2@arr@
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=111 doc_page=261 type=code]
+[Page header: "HHL LYUO 023"]
+
+		IN@beta@@rect_dash@LSP,IN@alpha@
+		IN@alpha@@rect_dash@LEP,IN@alpha@
+		DIFF@hamb@VA@sub_I@@sub_N@@sub_beta@@arr@VA@sub_I@@sub_N@@sub_alpha@=INDX@arr@INTOCN
+		DIFF@hamb@VA+1@sub_I@@sub_N@@sub_beta@@arr@VA+1@sub_I@@sub_N@@sub_alpha@=INDY@arr@INTOCN
+		LDB INDX
+		PYTH1@arr@@arr@@arr@INTOCN
+		STA INDD
+INTOCL3@arr@
+		PROD@hamb@INRAO@times@INDX/INDD=INXP1@arr@INTOCN
+		PROD@hamb@INRAO@times@INDY/INDD=INYP1@arr@INTOCN
+		@sup_1@DPX INTOC8
+		SUMM@arr@INYP=INDY1@arr@INTOCL4
+		SUMM@hamb@INXP@arr@INXP1=INDX1@arr@INTOCL4
+		MKN @sub_1@@sub_dot@@sub_1@ INTOC8
+INTOCL4@arr@
+		DIFF@hamb@INYP@arr@INYP1=INYP@arr@INTOC8
+		DIFF@hamb@INXP@arr@INXP1=INXP@arr@INTOC8
+		MKN @sub_1@@sub_dot@@sub_2@ INTOC8
+		JPQ INTOC8
+		**INTERSECTION OF 2 LINES
+INTOL@arr@	h@sup_1@STE INTOLX
+		STA INTLINES	**LINES IN QUESTION
+		RSX @sub_I@@sub_N@@sub_alpha@ A
+		IN@beta@@rect_dash@LSP,IN@alpha@
+		IN@alpha@@rect_dash@LEP,IN@alpha@
+		TWINNORM@hamb@VA@sub_I@@sub_N@@sub_alpha@@arr@VA@sub_I@@sub_N@@sub_beta@=INDX1,INDY1
+		@sup_2@RSX @sub_I@@sub_N@@sub_alpha@ INTLINES
+		IN@beta@@rect_dash@LSP,IN@alpha@
+		IN@alpha@@rect_dash@LEP,IN@alpha@
+		TWINNORM@hamb@VA@sub_I@@sub_N@@sub_alpha@@arr@VA@sub_I@@sub_N@@sub_beta@=INDX2,INDY2
+		RSX @sub_I@@sub_N@@sub_alpha@ INTLINES
+		IN@alpha@@rect_dash@LSP,IN@alpha@
+INTOL1@arr@	PROD@hamb@INDX2@times@INDY1=INX2Y1
+		PROD@hamb@INDX1@times@INDY2=INX1Y2
+		HDIF,INX2Y1@arr@INDENOM
+		PROD@hamb@INX2Y1@times@VA@sub_I@@sub_N@@sub_alpha@=INXP
+		PROD@hamb@INX1Y2@times@VA@sub_I@@sub_N@@sub_beta@
+		HDIF,INXP@arr@INXP
+		HDIF|VA+1@sub_I@@sub_N@@sub_alpha@,VA+1@sub_I@@sub_N@@sub_beta@
+INTOL@arr@	MUL INDX1
+		MUL INDX2
+		ADD INXP
+		hJOV INTOLX	**NO POINT
+		@sup_1@@sup_4@ LDB A
+		SCB {-9.,}
+		DIV INDENOM
+		hJOV INTOLX
+		STA INXP
+INTOL3@arr@	PROD@hamb@INX2Y1@times@VA+1@sub_I@@sub_N@@sub_beta@=INYP
+		PROD@hamb@INX1Y2@times@VA+1@sub_I@@sub_N@@sub_alpha@
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=112 doc_page=262 type=code]
+[Page header: "HHL LYUO 024"]
+
+		HDIF,INYP@arr@INYP
+		HDIF|VA@sub_I@@sub_N@@sub_beta@,VA@sub_I@@sub_N@@sub_alpha@
+INTOL4@arr@	MUL INDY1
+		MUL INDY2
+		ADD INYP
+		hJOV INTOLX
+		@sup_1@@sup_6@LDB A
+		SCB {-9.,}
+		DIV INDENOM
+		hJOV INTOLX
+		STA INYP
+		STA B
+		LDA INXP
+INTOLX@arr@	JPQ #
+RI@arr@		JPQ 377750
+CL@arr@		JPQ 200000
+ST@arr@		JPQ 200001
+LAST@arr@	ZZLAST
+	
+[meta file_name=102726903-05-02-acc.pdf pdf_page=113 doc_page=263 type=symex]
+[Handwritten: "SERVICE 15 SEPT 62"]
+[Page header: "LMH Y3HT 001"]
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=114 doc_page=264 type=symex]
+[Page header: "LMH Y3HT 002"]
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=115 doc_page=265 type=symex]
+[Page header: "LMH Y3HT 003"]
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=116 doc_page=266 type=equalities]
+[Page header: "LMH Y3HT 004"]
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=117 doc_page=267 type=equalities]
+[Page header: "LMH Y3HT 005"]
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=118 doc_page=268 type=macros]
+[Page header: "LMH Y3HT 006"]
+
+@hand@@hand@DEF EXAMINE|@alpha@@arr@B
+@sup_1@hIOS@sub_alpha@0
+STE B
+@hand@@hand@EMD
+
+[Same definition as on doc_page 237, one comment differs]
+@hand@@hand@DEF NORMALIZE|P@arr@C/S@times@F=R@arr@Q
+LDA P   **POINT P AT
+SUB C   **CENTER C TO BE
+SAB {-(F),}     **NORMALIZED TO 2@sup_F@@times@S
+hJOV Q  **AND IF OUT, GO TO
+DIV S   **Q, AND LEAVE RESULT
+hJOV Q-(S)+(S)  **IN R
+STA R
+@hand@@hand@EMD
+
+@hand@@hand@DEF MOVE|A@arr@B
+hLDE A
+STE B
+@hand@@hand@EMD
+
+@hand@@hand@DEF ABVAL|P@arr@Q
+LDA P
+@sup_1@JPA #+2
+@sup_1@COM A
+@sup_2@@sup_1@JPA #+2
+@sup_2@@sup_1@COM A
+STA Q
+@hand@@hand@EMD
+
+[some superscripts in this def are pretty smudged, may be wrong]
+@hand@@hand@DEF DUALNORM|P@arr@Q,R@arr@S=T
+LDA P
+SUB Q
+NOA {0}
+STA B
+@sup_2@@sup_2@STD B
+LDA R
+SUB S
+NOA {0}
+@sup_2@@sup_2@EXA B
+@sup_3@@sup_2@SUB D
+@sup_3@@sup_2@ JPA #+3
+@sup_2@@sup_1@SCB A
+JPQ #+3
+COM A
+@sup_?@SCB A
+LDA B
+STA T
+@hand@@hand@EMD
+
+@hand@@hand@DEF HDIF|P,Q@arr@R
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=119 doc_page=269 type=macros]
+[Page header: "LMH Y3HT 007"]
+
+LDA P
+SUB Q
+SCA {-1,-1,,-1,-1}+((Q)^(770,))
+STA R
+@hand@@hand@EMD
+
+@hand@@hand@DEF JZA|P
+JPA #+3
+JNA #+2
+JPQ P
+@hand@@hand@EMD
+
+@hand@@hand@DEF NEARCR|P@arr@Q,R@arr@S=T
+LDB {377777,,377777}
+LDA P
+SUB Q
+NOA {0}
+JPA #+2
+@sup_2@@sup_1@COM B
+LDA R
+SUB S
+NOA {0}
+JPA #+2
+@sup_1@COM B
+STB T
+@hand@@hand@EMD
+
+@hand@@hand@DEF ORVAL|P@arr@Q
+LDA P
+@sup_1@JPA #+2
+@sup_1@COM A
+@sup_2@@sup_1@JPA #+2
+@sup_2@@sup_1@COM A
+STA B
+@sup_1@@sup_7@SUB A
+@sup_2@@sup_1@JPA #+2
+@sup_1@@sup_7@LDB B
+LDA B
+STA Q
+@hand@@hand@EMD
+
+@hand@@hand@DEF SCNORM|P@arr@Q=R@arr@S
+T1=Q
+NORMALIZE|P@arr@SCCEN+T1/SCSZ=R@arr@S
+@hand@@hand@EMD
+
+@hand@@hand@DEF DIFF@hamb@P@arr@Q=R@arr@S
+LDA P
+SUB Q
+hJOV S
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=120 doc_page=270 type=macros]
+[Page header: "LMH Y3HT 010"]
+
+STA R
+@hand@@hand@EMD
+
+@hand@@hand@DEF FABVAL@hamb@P@arr@Q
+LDA P
+JPA #+2
+COM A
+STA Q
+@hand@@hand@EMD
+
+@hand@@hand@DEF @beta@@rect_dash@A@times@B@times@C@times@D@times@E@times@F@times@G@times@H@times@I,@alpha@
+REX @sub_beta@*{0@sub_alpha@}
+RSX@sub_beta@*{LIST+I@sub_beta@}+(I^(370.))
+RSX@sub_beta@*{LIST+H@sub_beta@}+(H^(370.))
+RSX@sub_beta@*{LIST+G@sub_beta@}+(G^(370.))
+RSX@sub_beta@*{LIST+F@sub_beta@}+(F^(370.))
+RSX@sub_beta@*{LIST+E@sub_beta@}+(E^(370.))
+RSX@sub_beta@*{LIST+D@sub_beta@}+(D^(370.))
+RSX@sub_beta@*{LIST+C@sub_beta@}+(C^(370.))
+RSX@sub_beta@*{LIST+B@sub_beta@}+(B^(370.))
+RSX@sub_beta@*{LIST+A@sub_beta@}+(A^(370.))
+@hand@@hand@EMD
+
+@hand@@hand@DEF PYTH@hamb@P@arr@Q=T@arr@U
+PYTH1@hamb@P@arr@Q,P+1@arr@Q+1=T@arr@U
+@hand@@hand@EMD
+
+@hand@@hand@DEF DIREC1@hamb@P@arr@Q,R@arr@S=T@arr@U
+LDA R
+SUB S
+hJOV U+(S)-(S)
+STA B+(R)-(R)
+LDA P
+SUB Q
+hJOV U+(Q)-(Q)
+hJPQ CACT
+STA T
+@hand@@hand@EMD
+
+@hand@@hand@DEF DIREC@hamb@P@arr@Q=T@arr@U
+DIREC1@hamb@P@arr@Q,P+1@arr@Q+1=T@arr@U
+@hand@@hand@EMD
+
+@hand@@hand@DEF HSUM@hamb@P,Q@arr@R
+LDA P
+ADD Q
+SCA {-1,-1,,-1,-1}+((Q)^(770,))
+STA R
+@hand@@hand@EMD
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=121 doc_page=271 type=macros]
+[Page header: "LMH Y3HT 011"]
+
+@hand@@hand@DEF SUMM@hamb@P@arr@Q=R@arr@S
+LDA P
+ADD Q
+hJOV S
+STA R
+@hand@@hand@EMD
+
+@hand@@hand@DEF PROD@hamb@A@times@B/C=D@arr@E
+LDA A
+MUL B
+DIV C
+hJOV E
+STA D
+@hand@@hand@EMD
+
+@hand@@hand@DEF LDAE@hamb@A,B,C,D
+LDA A
+LDB A+B
+LDC A+C
+LDD A+D
+@hand@@hand@EMD
+
+@hand@@hand@DEF STAE@hamb@A,B,C,D
+STA A
+STB A+B
+STC A+C
+STA A+D
+@hand@@hand@EMD
+
+@hand@@hand@DEF STAB@hamb@P
+STA P
+STB P+1
+@hand@@hand@EMD
+
+@hand@@hand@DEF PYTH1@hamb@P@arr@Q,R@arr@S=T@arr@U
+LDA R
+SUB S
+hJOV U+(S)-(S)
+STA B+(R)-(R)
+LDA P
+SUB Q
+hJOV U+(Q)-(Q)
+hJPQ PYTHAGORIAN
+hJOV U
+STA T
+@hand@@hand@EMD
+
+@hand@@hand@DEF FULL@hamb@@alpha@@arr@P
+hJPQ {FULL1@hamb@@alpha@@arr@P}
+@hand@@hand@EMD
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=122 doc_page=272 type=macros]
+[Page header: "LMH Y3HT 012"]
+
+@hand@@hand@DEF FULL1@hamb@@alpha@@arr@P
+@sup_1@STE #+2
+SKZ STOPIFFULL
+@sup_3@#@sub_alpha@
+JPQ P
+@hand@@hand@EMD
+
+@hand@@hand@DEF LDAB@hamb@A
+LDA A
+LDB A+1
+@hand@@hand@EMD
+
+@hand@@hand@DEF ERROR@hamb@@alpha@@arr@P
+hJPQ {ERROR1@hamb@@alpha@@arr@P}
+@hand@@hand@EMD
+
+@hand@@hand@DEF ERROR1@hamb@@alpha@@arr@P
+@sup_1@STE #+2
+SKZ ERRORSTOP
+@sup_1@#@sub_alpha@
+JPQ P
+@hand@@hand@EMD
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=123 doc_page=273 type=main]
+[Page header: "LMH Y3HT 013"]
+
+		**IES PLOTTER SERVICE PROGRAM
+		**LMH ON|OFF LINE PLOTTER
+		**PLOT 518-4
+ CMMASK|
+		-0,400,,-0,400
+CMOFFSET@arr@
+		0
+CMPTO@arr@	0
+CMPT1@arr@	0
+CMNAME1@arr@
+		0
+CMFAC@arr@	0
+ 200000|
+CL@arr@		JPQ CLEAN	**NEW PICTURE
+ST@arr@		JPQ SETUP	**SAME PICTURE
+ 200004|
+I4@arr@		JPQ SQ60A	**START SCOPE HERE
+ 200006|
+		hJMP SQUARE ROOT BY HPP
+		hJMP PYTHAGORIAN
+		hJMP CACT	**TO ARC TANGENT
+ 200017|
+		hJMP PMAG	**POINTS
+I20@arr@	hJMP LMAG	**TO MAGNIFY LINES
+		hJMP CMAG	**TO MAGNIFY CIRCLES
+LMSTART@arr@
+		0
+		0
+LMEND@arr@	0	**END OF LINE
+		0	**OR CIRCLE CENTER
+CMANG@arr@	0	**ANDLE TO DRAW CIRCLE THRU [sic]
+CMRAD@arr@	0	**RADIUS OF CIRCLE
+LMNAME@arr@	0
+NDISP@arr@	0	**WHERE TO PUT NEW POINTS IN DISPLAY
+SNDISP@arr@	0	**#OF POINTS IN DISPLAY
+ 200034|
+		1,	**SCSZ
+SCCEN@arr@	0
+		0
+ 200130|
+PLCLEANJMP@arr@
+		hJMP PLCLEAN	**CLEAN PLOTTER PROGRAM
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=124 doc_page=274 type=main]
+[Page header: "LMH Y3HT 014"]
+
+PLPLOTJMP@arr@
+		hJMP PLPLOT**PLOT DATA
+PLPUNCHJMP@arr@
+		hJMP PLPUNCH	**PUNCH DATA
+PLENDJMP@arr@
+		hJMP PLEND	**END OF DATA
+		**PLENDJMP+1 = hJMP TRACK
+ PLENDJMP+2|
+PLINTSTART@arr@
+		hJMP PLINTSTART2
+PLOTBLOCKS@arr@
+		0	**TOTAL,,AMT TO GO
+PLOTSTORAGE@arr@
+		0	**,,TOTAL
+ 200140|
+CLEAN@arr@	hJPQ UNITS
+		JPQ FRESH START
+SETUP@arr@	hJPQ UNITS
+		JPQ STARTS
+UNITS@arr@	@sup_1@STE UNITSX
+		MKZ PLOTIT
+		MOVE|{-0,400,,-0,400}@arr@CMMASK
+		hLDE {-0,400,,-0,400}
+		STE CMMASK
+UNITS OFF@arr@
+		CSQ@sub_4@@sub_0@
+		REX @sub_alpha@ 56	[maybe 36?]
+		MOVE|{@sup_1@IOS @sub_7@@sub_7@ 20000}@arr@UNITS OFF1
+		hLDE {@sup_1@IOS @sub_7@@sub_7@ 20000}
+		STE UNITS OFF1
+		MOVE|{@sup_1@IOS @sub_7@@sub_7@ 40000}@arr@UNITS OFF2
+UNITS OFF1@arr@
+		0
+UNITS OFF2@arr@
+		0
+		@sup_2@RSX @sub_beta@ UNITS OFF1
+		DEX @sub_beta@ 1
+		@sup_2@DPX @sub_beta@ UNITS OFF1
+		@sup_2@DPX @sub_beta@ UNITS OFF2
+		@sup_minus@@sup_1@JPX @sub_alpha@ UNITS OFF1
+CONFIGS@arr@
+		[Octal code for that illustrates that RC block becomes just a reference to a memory location]
+		SPG { 760,342,,340,0}
+		@sup_4@SPG { 410,763,,762,761}
+		@sup_1@@sup_0@SPG { 160,142,,140,411}
+		@sup_1@@sup_4@SPG { 202,165,,162,161}
+		@sup_2@@sup_0@SPG { 732,232,,230,200}
+		@sup_2@@sup_4@SPG { 605,731,,730,733}
 		
+[meta file_name=102726903-05-02-acc.pdf pdf_page=125 doc_page=275 type=main]
+[Page header: "LMH Y3HT 015"]
+
+		@sup_3@@sup_0@SPG { 320,670,,750,600}
+		@sup_3@@sup_4@SPG { 604,331,,330,335}
+		REX @sub_6@@sub_1@ SCRAMBLE
+		RXF @sub_6@@sub_0@ SQ60A
+UNITSX@arr@	JPQ #
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=126 doc_page=276 type=main]
+[Page header: "LMH Y3HT 001"]
+

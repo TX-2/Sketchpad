@@ -3145,7 +3145,7 @@ STE B
 &#9755;&#9755;DEF NORMALIZE|P&rarr;C/S&times;F=R&rarr;Q
 LDA P		**POINT P AT
 SUB C		**CENTER C TO BE
-SAB {-(F),}	**NORMALIZED TO 2F&times;S [F appears to be superscripted in this comment?]
+SAB {-(F),}	**NORMALIZED TO 2<sup>F</sup>&times;S [F appears to be superscripted?]
 hJOV Q		**AND IF OUT, GO TO
 DIV S		**Q, LEAVE RESULT
 hJOV Q-(S)+(S)	**IN R
@@ -4333,5 +4333,517 @@ INTOC8&rarr;		REX <sub>I</sub><sub>N</sub><sub>&beta;</sub> 0
 <hr>
 [meta file_name=102726903-05-02-acc.pdf pdf_page=110 doc_page=260 type=code]
 [Page header: "HHL LYUO 022"]
+
+		JPQ INTOC10
+		JPQ INTOC11	**BOTH
+INTOC9&rarr;		LDA INDX1
+		LDB INDY1
+		JPQ #+3
+INTOC10&rarr;
+		LDA INXP
+		LDB INYP
+INTOCX&rarr;		JPQ #
+INTOC11&rarr;
+		LDA INTOCX
+		<sup>1</sup>ADD { 1}
+		<sup>1</sup>STA INTOCX
+		LDC INDX1
+		LDD INDY1
+		JPQ INTOC10
+INTOCN&rarr;		JPQ #
+		**LINE AND CIRCLE INTERSECTION
+INTOCL&rarr;		h<sup>1</sup>STE INTOCX
+		<sup>2</sup><sup>2</sup>STE INTOCN
+		STA INTOCLS	**CIRCLE,,LINE
+		<sup>2</sup>RSX <sub>I</sub><sub>N</sub><sub>&alpha;</sub> A
+		<sup>2</sup><sup>2</sup>LDA <sub>I</sub><sub>N</sub><sub>&alpha;</sub> CIRCEN+LIST
+		hJPQ NPOLR	**NEAREST POINT ON LINE
+		STA INXP
+		STB INYP
+		<sup>2</sup>RSX <sub>I</sub><sub>N</sub><sub>&alpha;</sub> INTOCLS
+		IN&beta;&#9635;CIRCEN,IN&alpha;
+		IN&alpha;&#9635;CSP,IN&alpha;
+		SUB VA<sub>I</sub><sub>N</sub><sub>&beta;</sub>
+		hJOV INTOCN
+		EXA B
+		SUB VA+1<sub>I</sub><sub>N</sub><sub>&beta;</sub>
+		hJOV INTOCN
+INTOCL1&rarr;
+		PYTH1
+		hJOV INTOCN
+		STA INDD
+		PYTH&equiv;VA<sub>I</sub><sub>N</sub><sub>&alpha;</sub>&rarr;VA<sub>I</sub><sub>N</sub><sub>&beta;</sub>=INR1&rarr;INTOCN
+		SUB INDD
+		JNA INTOCN
+		STA B
+		LDA INR1
+		ADD INDD
+		SCA {-1,}
+		MUL B
+		SAB { 1,}
+		SQRT
+		STA INRAO
+INTOCL2&rarr;
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=111 doc_page=261 type=code]
+[Page header: "HHL LYUO 023"]
+
+		IN&beta;&#9635;LSP,IN&alpha;
+		IN&alpha;&#9635;LEP,IN&alpha;
+		DIFF&equiv;VA<sub>I</sub><sub>N</sub><sub>&beta;</sub>&rarr;VA<sub>I</sub><sub>N</sub><sub>&alpha;</sub>=INDX&rarr;INTOCN
+		DIFF&equiv;VA+1<sub>I</sub><sub>N</sub><sub>&beta;</sub>&rarr;VA+1<sub>I</sub><sub>N</sub><sub>&alpha;</sub>=INDY&rarr;INTOCN
+		LDB INDX
+		PYTH1&rarr;&rarr;&rarr;INTOCN
+		STA INDD
+INTOCL3&rarr;
+		PROD&equiv;INRAO&times;INDX/INDD=INXP1&rarr;INTOCN
+		PROD&equiv;INRAO&times;INDY/INDD=INYP1&rarr;INTOCN
+		<sup>1</sup>DPX INTOC8
+		SUMM&rarr;INYP=INDY1&rarr;INTOCL4
+		SUMM&equiv;INXP&rarr;INXP1=INDX1&rarr;INTOCL4
+		MKN <sub>1</sub><sub>.</sub><sub>1</sub> INTOC8
+INTOCL4&rarr;
+		DIFF&equiv;INYP&rarr;INYP1=INYP&rarr;INTOC8
+		DIFF&equiv;INXP&rarr;INXP1=INXP&rarr;INTOC8
+		MKN <sub>1</sub><sub>.</sub><sub>2</sub> INTOC8
+		JPQ INTOC8
+		**INTERSECTION OF 2 LINES
+INTOL&rarr;		h<sup>1</sup>STE INTOLX
+		STA INTLINES	**LINES IN QUESTION
+		RSX <sub>I</sub><sub>N</sub><sub>&alpha;</sub> A
+		IN&beta;&#9635;LSP,IN&alpha;
+		IN&alpha;&#9635;LEP,IN&alpha;
+		TWINNORM&equiv;VA<sub>I</sub><sub>N</sub><sub>&alpha;</sub>&rarr;VA<sub>I</sub><sub>N</sub><sub>&beta;</sub>=INDX1,INDY1
+		<sup>2</sup>RSX <sub>I</sub><sub>N</sub><sub>&alpha;</sub> INTLINES
+		IN&beta;&#9635;LSP,IN&alpha;
+		IN&alpha;&#9635;LEP,IN&alpha;
+		TWINNORM&equiv;VA<sub>I</sub><sub>N</sub><sub>&alpha;</sub>&rarr;VA<sub>I</sub><sub>N</sub><sub>&beta;</sub>=INDX2,INDY2
+		RSX <sub>I</sub><sub>N</sub><sub>&alpha;</sub> INTLINES
+		IN&alpha;&#9635;LSP,IN&alpha;
+INTOL1&rarr;		PROD&equiv;INDX2&times;INDY1=INX2Y1
+		PROD&equiv;INDX1&times;INDY2=INX1Y2
+		HDIF,INX2Y1&rarr;INDENOM
+		PROD&equiv;INX2Y1&times;VA<sub>I</sub><sub>N</sub><sub>&alpha;</sub>=INXP
+		PROD&equiv;INX1Y2&times;VA<sub>I</sub><sub>N</sub><sub>&beta;</sub>
+		HDIF,INXP&rarr;INXP
+		HDIF|VA+1<sub>I</sub><sub>N</sub><sub>&alpha;</sub>,VA+1<sub>I</sub><sub>N</sub><sub>&beta;</sub>
+INTOL&rarr;		MUL INDX1
+		MUL INDX2
+		ADD INXP
+		hJOV INTOLX	**NO POINT
+		<sup>1</sup><sup>4</sup> LDB A
+		SCB {-9.,}
+		DIV INDENOM
+		hJOV INTOLX
+		STA INXP
+INTOL3&rarr;		PROD&equiv;INX2Y1&times;VA+1<sub>I</sub><sub>N</sub><sub>&beta;</sub>=INYP
+		PROD&equiv;INX1Y2&times;VA+1<sub>I</sub><sub>N</sub><sub>&alpha;</sub>
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=112 doc_page=262 type=code]
+[Page header: "HHL LYUO 024"]
+
+		HDIF,INYP&rarr;INYP
+		HDIF|VA<sub>I</sub><sub>N</sub><sub>&beta;</sub>,VA<sub>I</sub><sub>N</sub><sub>&alpha;</sub>
+INTOL4&rarr;		MUL INDY1
+		MUL INDY2
+		ADD INYP
+		hJOV INTOLX
+		<sup>1</sup><sup>6</sup>LDB A
+		SCB {-9.,}
+		DIV INDENOM
+		hJOV INTOLX
+		STA INYP
+		STA B
+		LDA INXP
+INTOLX&rarr;		JPQ #
+RI&rarr;		JPQ 377750
+CL&rarr;		JPQ 200000
+ST&rarr;		JPQ 200001
+LAST&rarr;		ZZLAST
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=113 doc_page=263 type=symex]
+[Handwritten: "SERVICE 15 SEPT 62"]
+[Page header: "LMH Y3HT 001"]
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=114 doc_page=264 type=symex]
+[Page header: "LMH Y3HT 002"]
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=115 doc_page=265 type=symex]
+[Page header: "LMH Y3HT 003"]
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=116 doc_page=266 type=equalities]
+[Page header: "LMH Y3HT 004"]
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=117 doc_page=267 type=equalities]
+[Page header: "LMH Y3HT 005"]
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=118 doc_page=268 type=macros]
+[Page header: "LMH Y3HT 006"]
+
+&#9755;&#9755;DEF EXAMINE|&alpha;&rarr;B
+<sup>1</sup>hIOS<sub>&alpha;</sub>0
+STE B
+&#9755;&#9755;EMD
+
+[Same definition as on doc_page 237, one comment differs]
+&#9755;&#9755;DEF NORMALIZE|P&rarr;C/S&times;F=R&rarr;Q
+LDA P   **POINT P AT
+SUB C   **CENTER C TO BE
+SAB {-(F),}     **NORMALIZED TO 2<sup>F</sup>&times;S
+hJOV Q  **AND IF OUT, GO TO
+DIV S   **Q, AND LEAVE RESULT
+hJOV Q-(S)+(S)  **IN R
+STA R
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF MOVE|A&rarr;B
+hLDE A
+STE B
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF ABVAL|P&rarr;Q
+LDA P
+<sup>1</sup>JPA #+2
+<sup>1</sup>COM A
+<sup>2</sup><sup>1</sup>JPA #+2
+<sup>2</sup><sup>1</sup>COM A
+STA Q
+&#9755;&#9755;EMD
+
+[some superscripts in this def are pretty smudged, may be wrong]
+&#9755;&#9755;DEF DUALNORM|P&rarr;Q,R&rarr;S=T
+LDA P
+SUB Q
+NOA {0}
+STA B
+<sup>2</sup><sup>2</sup>STD B
+LDA R
+SUB S
+NOA {0}
+<sup>2</sup><sup>2</sup>EXA B
+<sup>3</sup><sup>2</sup>SUB D
+<sup>3</sup><sup>2</sup> JPA #+3
+<sup>2</sup><sup>1</sup>SCB A
+JPQ #+3
+COM A
+<sup>?</sup>SCB A
+LDA B
+STA T
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF HDIF|P,Q&rarr;R
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=119 doc_page=269 type=macros]
+[Page header: "LMH Y3HT 007"]
+
+LDA P
+SUB Q
+SCA {-1,-1,,-1,-1}+((Q)^(770,))
+STA R
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF JZA|P
+JPA #+3
+JNA #+2
+JPQ P
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF NEARCR|P&rarr;Q,R&rarr;S=T
+LDB {377777,,377777}
+LDA P
+SUB Q
+NOA {0}
+JPA #+2
+<sup>2</sup><sup>1</sup>COM B
+LDA R
+SUB S
+NOA {0}
+JPA #+2
+<sup>1</sup>COM B
+STB T
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF ORVAL|P&rarr;Q
+LDA P
+<sup>1</sup>JPA #+2
+<sup>1</sup>COM A
+<sup>2</sup><sup>1</sup>JPA #+2
+<sup>2</sup><sup>1</sup>COM A
+STA B
+<sup>1</sup><sup>7</sup>SUB A
+<sup>2</sup><sup>1</sup>JPA #+2
+<sup>1</sup><sup>7</sup>LDB B
+LDA B
+STA Q
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF SCNORM|P&rarr;Q=R&rarr;S
+T1=Q
+NORMALIZE|P&rarr;SCCEN+T1/SCSZ=R&rarr;S
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF DIFF&equiv;P&rarr;Q=R&rarr;S
+LDA P
+SUB Q
+hJOV S
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=120 doc_page=270 type=macros]
+[Page header: "LMH Y3HT 010"]
+
+STA R
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF FABVAL&equiv;P&rarr;Q
+LDA P
+JPA #+2
+COM A
+STA Q
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF &beta;&#9635;A&times;B&times;C&times;D&times;E&times;F&times;G&times;H&times;I,&alpha;
+REX <sub>&beta;</sub>*{0<sub>&alpha;</sub>}
+RSX<sub>&beta;</sub>*{LIST+I<sub>&beta;</sub>}+(I^(370.))
+RSX<sub>&beta;</sub>*{LIST+H<sub>&beta;</sub>}+(H^(370.))
+RSX<sub>&beta;</sub>*{LIST+G<sub>&beta;</sub>}+(G^(370.))
+RSX<sub>&beta;</sub>*{LIST+F<sub>&beta;</sub>}+(F^(370.))
+RSX<sub>&beta;</sub>*{LIST+E<sub>&beta;</sub>}+(E^(370.))
+RSX<sub>&beta;</sub>*{LIST+D<sub>&beta;</sub>}+(D^(370.))
+RSX<sub>&beta;</sub>*{LIST+C<sub>&beta;</sub>}+(C^(370.))
+RSX<sub>&beta;</sub>*{LIST+B<sub>&beta;</sub>}+(B^(370.))
+RSX<sub>&beta;</sub>*{LIST+A<sub>&beta;</sub>}+(A^(370.))
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF PYTH&equiv;P&rarr;Q=T&rarr;U
+PYTH1&equiv;P&rarr;Q,P+1&rarr;Q+1=T&rarr;U
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF DIREC1&equiv;P&rarr;Q,R&rarr;S=T&rarr;U
+LDA R
+SUB S
+hJOV U+(S)-(S)
+STA B+(R)-(R)
+LDA P
+SUB Q
+hJOV U+(Q)-(Q)
+hJPQ CACT
+STA T
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF DIREC&equiv;P&rarr;Q=T&rarr;U
+DIREC1&equiv;P&rarr;Q,P+1&rarr;Q+1=T&rarr;U
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF HSUM&equiv;P,Q&rarr;R
+LDA P
+ADD Q
+SCA {-1,-1,,-1,-1}+((Q)^(770,))
+STA R
+&#9755;&#9755;EMD
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=121 doc_page=271 type=macros]
+[Page header: "LMH Y3HT 011"]
+
+&#9755;&#9755;DEF SUMM&equiv;P&rarr;Q=R&rarr;S
+LDA P
+ADD Q
+hJOV S
+STA R
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF PROD&equiv;A&times;B/C=D&rarr;E
+LDA A
+MUL B
+DIV C
+hJOV E
+STA D
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF LDAE&equiv;A,B,C,D
+LDA A
+LDB A+B
+LDC A+C
+LDD A+D
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF STAE&equiv;A,B,C,D
+STA A
+STB A+B
+STC A+C
+STA A+D
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF STAB&equiv;P
+STA P
+STB P+1
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF PYTH1&equiv;P&rarr;Q,R&rarr;S=T&rarr;U
+LDA R
+SUB S
+hJOV U+(S)-(S)
+STA B+(R)-(R)
+LDA P
+SUB Q
+hJOV U+(Q)-(Q)
+hJPQ PYTHAGORIAN
+hJOV U
+STA T
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF FULL&equiv;&alpha;&rarr;P
+hJPQ {FULL1&equiv;&alpha;&rarr;P}
+&#9755;&#9755;EMD
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=122 doc_page=272 type=macros]
+[Page header: "LMH Y3HT 012"]
+
+&#9755;&#9755;DEF FULL1&equiv;&alpha;&rarr;P
+<sup>1</sup>STE #+2
+SKZ STOPIFFULL
+<sup>3</sup>#<sub>&alpha;</sub>
+JPQ P
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF LDAB&equiv;A
+LDA A
+LDB A+1
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF ERROR&equiv;&alpha;&rarr;P
+hJPQ {ERROR1&equiv;&alpha;&rarr;P}
+&#9755;&#9755;EMD
+
+&#9755;&#9755;DEF ERROR1&equiv;&alpha;&rarr;P
+<sup>1</sup>STE #+2
+SKZ ERRORSTOP
+<sup>1</sup>#<sub>&alpha;</sub>
+JPQ P
+&#9755;&#9755;EMD
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=123 doc_page=273 type=main]
+[Page header: "LMH Y3HT 013"]
+
+		**IES PLOTTER SERVICE PROGRAM
+		**LMH ON|OFF LINE PLOTTER
+		**PLOT 518-4
+ CMMASK|
+		-0,400,,-0,400
+CMOFFSET&rarr;
+		0
+CMPTO&rarr;		0
+CMPT1&rarr;		0
+CMNAME1&rarr;
+		0
+CMFAC&rarr;		0
+ 200000|
+CL&rarr;		JPQ CLEAN	**NEW PICTURE
+ST&rarr;		JPQ SETUP	**SAME PICTURE
+ 200004|
+I4&rarr;		JPQ SQ60A	**START SCOPE HERE
+ 200006|
+		hJMP SQUARE ROOT BY HPP
+		hJMP PYTHAGORIAN
+		hJMP CACT	**TO ARC TANGENT
+ 200017|
+		hJMP PMAG	**POINTS
+I20&rarr;		hJMP LMAG	**TO MAGNIFY LINES
+		hJMP CMAG	**TO MAGNIFY CIRCLES
+LMSTART&rarr;
+		0
+		0
+LMEND&rarr;		0	**END OF LINE
+		0	**OR CIRCLE CENTER
+CMANG&rarr;		0	**ANDLE TO DRAW CIRCLE THRU [sic]
+CMRAD&rarr;		0	**RADIUS OF CIRCLE
+LMNAME&rarr;		0
+NDISP&rarr;		0	**WHERE TO PUT NEW POINTS IN DISPLAY
+SNDISP&rarr;		0	**#OF POINTS IN DISPLAY
+ 200034|
+		1,	**SCSZ
+SCCEN&rarr;		0
+		0
+ 200130|
+PLCLEANJMP&rarr;
+		hJMP PLCLEAN	**CLEAN PLOTTER PROGRAM
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=124 doc_page=274 type=main]
+[Page header: "LMH Y3HT 014"]
+
+PLPLOTJMP&rarr;
+		hJMP PLPLOT**PLOT DATA
+PLPUNCHJMP&rarr;
+		hJMP PLPUNCH	**PUNCH DATA
+PLENDJMP&rarr;
+		hJMP PLEND	**END OF DATA
+		**PLENDJMP+1 = hJMP TRACK
+ PLENDJMP+2|
+PLINTSTART&rarr;
+		hJMP PLINTSTART2
+PLOTBLOCKS&rarr;
+		0	**TOTAL,,AMT TO GO
+PLOTSTORAGE&rarr;
+		0	**,,TOTAL
+ 200140|
+CLEAN&rarr;		hJPQ UNITS
+		JPQ FRESH START
+SETUP&rarr;		hJPQ UNITS
+		JPQ STARTS
+UNITS&rarr;		<sup>1</sup>STE UNITSX
+		MKZ PLOTIT
+		MOVE|{-0,400,,-0,400}&rarr;CMMASK
+		hLDE {-0,400,,-0,400}
+		STE CMMASK
+UNITS OFF&rarr;
+		CSQ<sub>4</sub><sub>0</sub>
+		REX <sub>&alpha;</sub> 56	[maybe 36?]
+		MOVE|{<sup>1</sup>IOS <sub>7</sub><sub>7</sub> 20000}&rarr;UNITS OFF1
+		hLDE {<sup>1</sup>IOS <sub>7</sub><sub>7</sub> 20000}
+		STE UNITS OFF1
+		MOVE|{<sup>1</sup>IOS <sub>7</sub><sub>7</sub> 40000}&rarr;UNITS OFF2
+UNITS OFF1&rarr;
+		0
+UNITS OFF2&rarr;
+		0
+		<sup>2</sup>RSX <sub>&beta;</sub> UNITS OFF1
+		DEX <sub>&beta;</sub> 1
+		<sup>2</sup>DPX <sub>&beta;</sub> UNITS OFF1
+		<sup>2</sup>DPX <sub>&beta;</sub> UNITS OFF2
+		<sup>-</sup><sup>1</sup>JPX <sub>&alpha;</sub> UNITS OFF1
+CONFIGS&rarr;
+		[Octal code for that illustrates that RC block becomes just a reference to a memory location]
+		SPG { 760,342,,340,0}
+		<sup>4</sup>SPG { 410,763,,762,761}
+		<sup>1</sup><sup>0</sup>SPG { 160,142,,140,411}
+		<sup>1</sup><sup>4</sup>SPG { 202,165,,162,161}
+		<sup>2</sup><sup>0</sup>SPG { 732,232,,230,200}
+		<sup>2</sup><sup>4</sup>SPG { 605,731,,730,733}
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=125 doc_page=275 type=main]
+[Page header: "LMH Y3HT 015"]
+
+		<sup>3</sup><sup>0</sup>SPG { 320,670,,750,600}
+		<sup>3</sup><sup>4</sup>SPG { 604,331,,330,335}
+		REX <sub>6</sub><sub>1</sub> SCRAMBLE
+		RXF <sub>6</sub><sub>0</sub> SQ60A
+UNITSX&rarr;		JPQ #
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=126 doc_page=276 type=main]
+[Page header: "LMH Y3HT 001"]
 
 </code></pre></body></html>

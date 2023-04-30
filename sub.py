@@ -79,6 +79,10 @@ SUBS = {
     "@sup_7@": ("⁷", "<sup>7</sup>"),
     "@sup_8@": ("⁸", "<sup>8</sup>"),
     "@sup_9@": ("⁹", "<sup>9</sup>"),
+    # Superscript capital F exists in Unicode, but the glyph is not
+    # correctly handled by most fonts. Does not matter much, as it
+    # is only used in comments.
+    "@sup_F@": ("ꟳ", "<sup>F</sup>"),
     # Special symbols.
     "@hamb@": ("☰", "&equiv;"),
     "@times@": ("×", "&times;"),
