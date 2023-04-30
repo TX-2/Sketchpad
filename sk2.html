@@ -5178,4 +5178,495 @@ CMGNL1E&rarr;
 [meta file_name=102726903-05-02-acc.pdf pdf_page=132 doc_page=282 type=main]
 [Page header: "LMH Y3HT 007"]
 
+		<sup>1</sup>COM A
+		<sup>1</sup>LDB A
+		SKZ <sub>1</sub><sub>.</sub><sub>2</sub> CMTU
+		JPQ #+3
+		<sup>1</sup><sup>7</sup>LDA A
+		<sup>1</sup><sup>7</sup>LDB B
+		STB <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMEDGES
+		STA <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMEDGES+1
+		LDA CMTT
+		<sup>1</sup>STA <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMDIRS+1
+		LDB CMTV
+		<sup>1</sup>STB <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMDIRS
+		SKZ <sub>1</sub><sub>.</sub><sub>4</sub> CMTU
+		INX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 1
+		SKZ <sub>1</sub><sub>.</sub><sub>3</sub> CMTU
+		INX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 1
+CMGNL1EX&rarr;
+		JPQ #
+CMGNL1D&rarr;
+		LDA CMTS
+		JNA #+2
+		JPQ CMGNL1E
+		COM A
+		STA CMTS
+		JPQ CMGNL1A
+		CMGNL2&rarr;SXG <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 0	**CM&alpha;=EDGE PTS
+		JPQ CMALLON
+		LDA CMSTART	**IS START ON
+		SUB SCCEN
+		JOV CMGNL3
+		STA CMTS
+		FABVAL
+		SUB CMSCSZ
+		JPA CMGNL3
+		LDA CMSTART+1
+		SUB SCCEN+1
+		JOV CMGNL3
+		STA CMTT
+		FABVAL
+		SUB CMSCSZ
+		CMGNL2A&rarr;
+		JPA CMGNL3
+		LDA CMTS
+		<sup>1</sup><sup>6</sup>LDB A
+		SCB {-9.,}
+		DIV SCSZ
+		STA <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMEDGES
+		<sup>1</sup><sup>2</sup>LDA A
+		MUL SCSZ
+		SAB { 18.,}	[guessing about 8, maybe 0?]
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=133 doc_page=283 type=main]
+[Page header: "LMH Y3HT 010"]
+
+		STA CMTS
+		LDA CMTT
+		<sup>1</sup><sup>6</sup>LDB A
+		SCB {-9.,}
+		DIV SCSZ
+		<sup>2</sup><sup>2</sup>STA <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMEDGES
+		<sup>1</sup><sup>2</sup>LDA A
+		MUL SCSZ
+		SAB { 18.,}
+		STA CMTT
+		INX <sub>C</sub><sub>M</sub><sub>&beta;</sub> 1
+		DIREC1&equiv;CMTS&rarr;CMXRCEN,CMTT&rarr;CMYRCEN=CMANGLES<sub>C</sub><sub>M</sub><sub>&alpha;</sub>&rarr;BADOV
+		DPX <sub>0</sub><sub>|</sub><sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMDIRS
+		INX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 1
+		JPQ CMGNL1A
+CMGNL3&rarr;		DIREC&equiv;CMSTART&rarr;CMCEN=CMSTA&rarr;BADOV
+CMGNL3A&rarr;
+		STA CMSTA
+		DPX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMNUMI
+CMGNL4&rarr;		RSX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMNUMI
+		JPQ CMGNL4X
+CMGNL4A&rarr;
+		REX <sub>C</sub><sub>M</sub><sub>&beta;</sub><sub>|</sub><sub>C</sub><sub>M</sub><sub>&alpha;</sub>
+		JPX CMGNL4AX
+CMGNL4B&rarr;
+		LDA <sub>C</sub><sub>M</sub><sub>&beta;</sub> CMEDGES
+		<sup>2</sup><sup>0</sup>SUB <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMEDGES
+		<sup>2</sup><sup>0</sup>JPA CMGNL4AX
+		<sup>2</sup><sup>0</sup>JNA CMGNL4AX
+		MKN <sub>2</sub><sub>.</sub><sub>1</sub><sub>|</sub><sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMDIRS [syntax, bit field combined with superscript pipe]
+		hLDE <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMDIRS
+		<sup>3</sup>SED <sub>C</sub><sub>M</sub><sub>&beta;</sub> CMDIRS
+		JPQ CMGNL4AX
+		MKN <sub>2</sub><sub>.</sub><sub>1</sub><sub>|</sub><sub>C</sub><sub>M</sub><sub>&beta;</sub> CMDIRS
+CMGNL4AX&rarr;
+		<sup>-</sup><sup>1</sup>JPX <sub>C</sub><sub>M</sub><sub>&beta;</sub> CMGNL4B
+CMGNL4X&rarr;
+		<sup>-</sup><sup>1</sup>JPX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMGNL4A
+CMGNL4C&rarr;
+		REX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 0
+		REX <sub>C</sub><sub>M</sub><sub>&beta;</sub> 0
+CMGNL4D&rarr;
+		SXL <sub>C</sub><sub>M</sub><sub>&alpha;</sub>*CMNUMI
+		JPQ CMNGL4E
+		LDA CMEDGES<sub>C</sub><sub>M</sub><sub>&alpha;</sub>
+		LDB <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMDIRS
+		STA <sub>C</sub><sub>M</sub><sub>&beta;</sub> CMEDGES
+		STB <sub>C</sub><sub>M</sub><sub>&beta;</sub> CMDIRS
+		INX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 1
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=134 doc_page=284 type=main]
+[Page header: "LMH Y3HT 011"]
+
+		SKN <sub>2</sub><sub>.</sub><sub>1</sub> B
+		INX <sub>C</sub><sub>M</sub><sub>&beta;</sub> 1	**ONLY IF NOT REJECT
+		JPQ CMGNL4D
+CMGNL4E&rarr;
+		DPX <sub>C</sub><sub>M</sub><sub>&beta;</sub> CMNUMI
+		<sup>-</sup><sup>1</sup>JPX <sub>C</sub><sub>M</sub><sub>&beta;</sub>#+2
+		JPQ CMEXIT
+CMGNL5&rarr;		<sup>1</sup><sup>2</sup>LDA<sub>C</sub><sub>M</sub><sub>&beta;</sub>CMEDGES	**COMPUTE ANGLES
+		MUL SCSZ
+		SAB { 18.,}
+		STA CMTS
+		<sup>1</sup><sup>1</sup>LDA <sub>C</sub><sub>M</sub><sub>&beta;</sub> CMEDGES
+		MUL SCSZ
+		SAB { 18.,}
+		STA CMTT
+		DIREC1&equiv;CMTS&rarr;CMXRCEN,CMTT&rarr;CMYRCEN&rarr;BADOV
+		SUB CMSTA
+		LDB CMANG
+		SKZ <sub>4</sub><sub>.</sub><sub>9</sub> B
+		COM A
+		JPA #+3
+		JNA #+2
+		DPX A
+		DPX B
+		CAB {-1,}
+		STA <sub>C</sub><sub>M</sub><sub>&beta;</sub> CMANGLES
+		<sup>-</sup><sup>1</sup>JPX <sub>C</sub><sub>M</sub><sub>&beta;</sub> CMGNL5
+CMGNL6&rarr;		REX <sub>C</sub><sub>M</sub><sub>&beta;</sub> 0
+CMGNL6A&rarr;
+		hJPQ CMGNL6S
+		SKN <sub>4</sub><sub>.</sub><sub>9</sub> CMTT
+		JPQ CMDRAW
+		hJPQ CMGNL6R	**REMOVE ENTRY
+		SKZ <sub>1</sub><sub>.</sub><sub>1</sub> C
+		JPQ CMGNL6A	**IT WAS AN EXIT
+		STA CMTU	**START ANGLE
+		STB <sub>C</sub><sub>M</sub><sub>&beta;</sub> CMDRAWS
+		INX <sub>C</sub><sub>M</sub><sub>&beta;</sub> 1
+		hJPQ CMGNL6S
+		SKZ <sub>4</sub><sub>.</sub><sub>9</sub> CMTT
+		JPQ #+3
+		LDA CMSTOPA
+		JPQ #+4
+		RSX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMTT
+		SKZ <sub>1</sub><sub>.</sub><sub>1</sub><sub>|</sub><sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMDIRS
+		hJPQ CMGNL6R
+		SUB CMTU
+		hJNA BADOV	**ANGLES NOT IN ORDER
+		JPA #+2
+		DPX A
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=135 doc_page=285 type=main]
+[Page header: "LMH Y3HT 012"]
+
+		STA <sub>C</sub><sub>M</sub><sub>&beta;</sub> CMDRAWA-1
+		JPQ CMGNL6A
+CMGNL6R&rarr;
+		<sup>1</sup>STE CMGNL6RX
+		RSX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMTT
+		EXX <sub>C</sub><sub>M</sub><sub>&beta;</sub> CMNUMI
+		DEX <sub>C</sub><sub>M</sub><sub>&beta;</sub> 1
+		LDA <sub>C</sub><sub>M</sub><sub>&beta;</sub> CMEDGES
+		EXA <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMEDGES
+		STA B
+		LDA <sub>C</sub><sub>M</sub><sub>&beta;</sub> CMDIRS
+		EXA <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMDIRS
+		STA C
+		LDA <sub>C</sub><sub>M</sub><sub>&beta;</sub> CMANGLES
+		EXA <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMANGLES
+		EXX <sub>C</sub><sub>M</sub><sub>&beta;</sub> CMNUMI
+CMGNL6RX&rarr;
+		JPQ #
+CMGNL6S&rarr;
+		<sup>1</sup>STE CMGNL6SE
+		LDA CMSTOPA
+		STA CMTS
+		DPX CMTT
+		RSX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMNUMI
+		JPQ CMGNL6X
+CMGNL6SA&rarr;
+		LDA <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMANGLES
+		SUB CMTS
+		JPA CMGNL6X
+		JNA CMGNL6SB
+		hJPQ BADOV	**ANGLES ARE SAME
+CMGNL6SB&rarr;
+		ADD CMTS	**BETTER
+		STA CMTS
+		<sup>1</sup>DPX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMTT
+		MKN <sub>4</sub><sub>.</sub><sub>9</sub> CMTT
+CMGNL6X&rarr;
+		<sup>-</sup><sup>1</sup>JPX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMGNL6SA
+CMGNL6SE&rarr;
+		JPQ #
+CMALLON&rarr;
+		SCNORM|CMSTART=CMDRAWS&rarr;CMEXIT
+		SCNORM|CMSTART+1&rarr;1=<sup>2</sup><sup>2</sup> CMDRAWS&rarr;CMEXIT
+		LDA CMANG
+		JPA #+5
+		JNA #+3
+		DPX A
+		JPQ #+2
+		COM A
+		STA CMDRAWA
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=136 doc_page=286 type=main]
+[Page header: "LMH Y3HT 013"]
+
+		REX <sub>C</sub><sub>M</sub><sub>&beta;</sub> 1
+CMDRAW&rarr;		NORMALIZE|CMRAS/SCSZ&times;BSFAC=CMRAD&rarr;CMDAL
+		NORMALIZE|CMCEN&rarr;SCCEN/SCSZ&times;BSFAC=CMMID&rarr;BADOV
+		NORMALIZE|CMCEN+1&rarr;SCCEN+1/SCSZ&times;BSFAC=<sup>2</sup><sup>2</sup> CMMID&rarr;BADOV
+		SXG <sub>C</sub><sub>M</sub><sub>&beta;</sub> 0
+		JPQ CMEXIT	**DONE
+		DPX <sub>C</sub><sub>M</sub><sub>&beta;</sub> CMNUMS
+		LDA {-4,,4}
+		LDB {-0,,0}
+		MOVE|CMRAD&rarr;<sup>2</sup><sup>2</sup> CMRAD
+		<sup>2</sup><sup>0</sup>DIV CMRAD
+CMDRAW1&rarr;
+		LDB CMANG
+		SKZ <sub>4</sub><sub>.</sub><sub>9</sub> B
+		COM A
+		STA CMFAC
+		<sup>2</sup><sup>0</sup>MUL CMMID
+		<sup>2</sup><sup>0</sup>SAB { BSFAC,0,,BSFAC,0}
+		<sup>1</sup><sup>7</sup>STA CMOFFSET
+		DPX CMNUMDONE
+CMDRAW2&rarr;
+		RSX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMNUMDONE	**HERE ON SEVERAL
+		SXL <sub>C</sub><sub>M</sub><sub>&alpha;</sub>*CMNUMS	**TIMES
+CMEXIT&rarr;		JPQ #	**DONE
+		LDA <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMDRAWA
+		INX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 1
+		DPX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMNUMDONE
+CMDRAW3&rarr;
+		MUL { PI}
+		<sup>1</sup><sup>1</sup>MUL CMRAD	**STEPS=REVS&times;PI/4&times;8&times;RAD
+		<sup>1</sup>SAB { BSFAC-5&times;1000}
+		<sup>2</sup>DPX A
+		STA CMSTEPS
+CMDRAW4&rarr;
+		LDA <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMDRAWS-1
+		STA CMPTO
+		<sup>1</sup><sup>7</sup>MUL CMFAC	**Y,,X
+		<sup>1</sup><sup>7</sup>ADD CMOFFSET
+		<sup>2</sup><sup>0</sup>SCA {-1,0,,-1,0}
+		<sup>1</sup><sup>7</sup>ADD CMPTO
+		STA CMPT1
+PLIESCIRCLE&rarr;
+		SKN PLOTIT
+		JPQ CMSETUP
+		NORMALIZE|CMCEN&rarr;SCCEN/SCSZ=PLIESTS
+		NORMALIZE|CMCEN+1&rarr;SCCEN+1/SCSZ=<sup>2</sup><sup>2</sup> PLIESTS
+		LDB PLIESTS
+		LDA <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMDRAWS-1
+		LDC <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMDRAWA-1
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=137 doc_page=287 type=main]
+[Page header: "LMH Y3HT 014"]
+
+		LDD CMANG
+		SKZ <sub>4</sub><sub>.</sub><sub>9</sub> D
+		COM C
+		hJPQ PLOTCIRCLE
+		JPQ CMDRAW2
+CMSETUP&rarr;
+		RSX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMSTEPS
+		AUX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> NDISP
+		SXL <sub>C</sub><sub>M</sub><sub>&alpha;</sub> DISPLAYFILESIZE
+		FULL&equiv;CM&alpha;&rarr;CMEXIT
+		INX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> DISPLAY FILE
+		<sup>1</sup>DPX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMLOOP1
+		RSX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMSTEPS
+		<sup>1</sup>REX <sub>C</sub><sub>M</sub><sub>&alpha;</sub><sub>|</sub><sub>C</sub><sub>M</sub><sub>&alpha;</sub>
+CMLOOP&rarr;		LDA CMPT1	**Y,X
+		<sup>2</sup><sup>0</sup>MUL CMFAC
+CMLOOPS&rarr;
+		<sup>2</sup><sup>0</sup>ADD CMOFFSET	**&Delta;Y,,&Delta;X
+		<sup>2</sup><sup>0</sup>ADD CMPTO	**X,Y
+		<sup>1</sup><sup>7</sup>EXA CMPT1
+		EXA CMPTO
+		ITA CMMASK
+		ADD CMNAME1
+CMLOOP1&rarr;
+		STA <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 0
+		LDA CMPT1	**Y,X
+		<sup>2</sup><sup>0</sup>MUL CMFAC
+		<sup>+</sup><sup>1</sup>JNX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMLOOPS [syntax, first <sup>+</sup>]
+		RSX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> NDISP
+		AUX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMSTEPS
+		INX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 1
+		DPX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> NDISP
+		JPQ CMDRAW2
+CMDAD&rarr;		NORMALIZE|CMSTART&rarr;SCCEN/SCSZ=CMTS&rarr;CMEXIT
+		NORMALIZE|CMSTART+1&rarr;SCCEN+1/SCSZ=<sup>2</sup><sup>2</sup> CMTS&rarr;CMEXIT
+		RSX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> NDISP
+		INX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 1
+		SXL <sub>C</sub><sub>M</sub><sub>&alpha;</sub> DISPLAYFILESIZE
+		FULL&equiv;CM&alpha;&rarr;CMEXIT
+		LDC CMNAME
+		LDB {-0,400,,-0,,400}
+		INS C
+		STC <sub>C</sub><sub>M</sub><sub>&alpha;</sub> DISPLAY FILE-1
+		DPX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> NDISP
+		JPQ CMEXIT
+CMDRAWS&rarr;
+		0
+		0
+		0
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=138 doc_page=288 type=main]
+[Page header: "LMH Y3HT 015"]
+
+		0
+		0
+CMDRAWA&rarr;
+		0
+		0
+		0
+		0
+		0
+CMDIRS&rarr;		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+CMEDGES&rarr;
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+CMANGLES&rarr;
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+LMAG&rarr;		<sup>1</sup>STE LMAGEXIT
+		LDA 200034
+		STA SCSZ
+		HDIF|LMEND,LMSTART&rarr;LMDX
+		HDIF|LMEND+1,LMSTART+1&rarr;LMDY
+		MUL LMDX
+		NAB { 0}
+		JPA LMAG3
+		JNA LMAG2
+LMAG1&rarr;		LDA LMDX
+		JPA LMAG1E
+		JNA LMAG1E
+		LDA LMDY
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=139 doc_page=289 type=main]
+[Page header: "LMH Y3HT 016"]
+
+		JPA LMAG1A
+		JNA LMAG1A
+		SCNORM|LMSTART=LMSST&rarr;LMAGEXIT
+		SCNORM|LMSTART+1&rarr;1=<sup>2</sup><sup>2</sup> LMSST&rarr;LMAGEXIT
+		SKN PLOTIT
+		JPQ #+5
+		LDA LMSST
+		LDB LMSST
+		hJPQ PLOTLINE
+		JPQ LMAGEXIT
+		RSX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> NDISP
+		INX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 1
+		SXL <sub>C</sub><sub>M</sub><sub>&alpha;</sub> DISPLAYFILESIZE
+		FULL&equiv;CM&alpha;&rarr;LMAGEXIT
+		LDA LMSST
+		LDB {-0,400,,-0,400}
+		LDC LMNAME
+		INC C
+		STC <sub>C</sub><sub>M</sub><sub>&alpha;</sub> DISPLAY FILE-1
+		DPX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> NDISP
+		JPQ LMAGEXIT
+LMAG1A&rarr;		SCNORM|LMSTART=LMSST&rarr;LMAGEXIT
+		STA LMSEND
+		SCNORM|LMSTART+1&rarr;1=<sup>2</sup><sup>2</sup> LMSST&rarr;LMAG1B
+		SCNORM|LMEND1&rarr;1=<sup>2</sup><sup>2</sup> LMSEND&rarr;LMAG1C
+		JPQ LMDRAW
+LMAG1B&rarr;		SCNORM|LMEND+1&rarr;1=<sup>2</sup><sup>2</sup> LMSEND&rarr;LMAG1N	**ST OFF
+		LDA LMDY	**END ON START OFF
+		LDB { 377777}
+		JNA #+2
+		COM B
+		<sup>1</sup>STB LMSST
+		JPQ LMDRAW
+LMAG1C&rarr;		LDA LMDY	**ST ON END OFF
+		LDB { 377777}
+		JPQ #+2
+		COM B
+		<sup>1</sup>STB LMSEND
+		JPQ LMDRAW
+LMAG1N&rarr;		HDIF|SCCEN+1,LMSTART+1&rarr;LMTS	**BOTH OFF
+		HDIF|SCCEN+1,LMEND+1
+		MUL LMTS
+		JPA LMAGEXIT
+		LDB { 377777}
+		LDA LMDY
+		JPA #+2
+		COM B
+		<sup>1</sup>STB LMSEND
+		COM B
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=140 doc_page=290 type=main]
+[Page header: "LMH Y3HT 017"]
+
+		<sup>1</sup>STB LMSST
+		JPQ LMDRAW
+LMAG1E&rarr;		SCNORM|LMSTART+1&rarr;1=<sup>2</sup><sup>2</sup> LMSST&rarr;LMAGEXIT
+		<sup>2</sup><sup>2</sup>STA LMSEND
+		SCNORM|LMSTART=<sup>2</sup><sup>1</sup> LMSST&rarr;LMAG1F
+		SCNORM|LMEND=<sup>2</sup><sup>1</sup> LMSEND&rarr;LMAG1G
+		JPQ LMDRAW
+LMAG1F&rarr;		SCNORM|LMEND=<sup>2</sup><sup>1</sup> LMSEND&rarr;LMAG1P
+		LDA LMDX	**ST OFF END ON
+		LDB { 377777}
+		JNA #+2
+		<sup>1</sup>COM B
+		<sup>2</sup>STB LMSST
+		JPQ LMDRAW
+LMAG1G&rarr;		LDA LMDX	**ST ON END OFF
+		LDB { 377777}
+		JPA #+2
+		COM B
+		<sup>2</sup>STB LMSEND
+		JPQ LMDRAW
+LMAG1P&rarr;		HDIF|SCCEN,LMSTART&rarr;LMTS
+		HDIF|SCCEN,LMEND
+		MUL LMTS
+		JPA LMAGEXIT
+		LDB { 377777}
+		LDA LMDX
+		JPA #+2
+		COM B
+		<sup>2</sup>STB LMSEND
+		COM B
+		<sup>2</sup>STB LMSST
+		JPQ LMDRAW
+LMAG2&rarr;		HDIF|LMDY,LMDX&rarr;LMDENOM
+		MOVE|{ 400000}&rarr;LMTT
+		JPQ LMAG4
+LMAG3&rarr;		LDA LMDY
+		ADD LMDX
+		SCA {-1,}
+		STA LMDENOM
+		MOVE|{-400000}&rarr;LMTT
+LMAG4&rarr;		HDIF|LMSTART+1,SCCEN+1	**X&Delta;Y-Y&Delta;X
+		MUL LMDX	**/&Delta;Y+&Delta;X
+		DIV LMDENOM
+		STA LMTS	**Y&Delta;X
+		HDIF|LMSTART,SCCEN
+		MUL LMDY
+		DIV LMDENOM
+		NORMALIZE&rarr;LMTS/SCSZ=LMSKEY&rarr;LMAGEXIT
+		MUL LMTT
+		<sup>1</sup>STA LMSKEY
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=141 doc_page=291 type=main]
+[Page header: "LMH Y3HT 020"]
+
 </code></pre></body></html>

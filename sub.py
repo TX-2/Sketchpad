@@ -79,6 +79,7 @@ SUBS = {
     "@sup_7@": ("⁷", "<sup>7</sup>"),
     "@sup_8@": ("⁸", "<sup>8</sup>"),
     "@sup_9@": ("⁹", "<sup>9</sup>"),
+    "@sup_+@": ("⁺", "<sup>+</sup>"),
     # Superscript capital F exists in Unicode, but the glyph is not
     # correctly handled by most fonts. Does not matter much, as it
     # is only used in comments.
@@ -103,7 +104,7 @@ class Sub:
     # Substitution table, subclasses should override.
     SUB_TABLE = {}
 
-    TOKEN_RE = re.compile("(@[a-zA-Z0-9_?]+@)")
+    TOKEN_RE = re.compile("(@[a-zA-Z0-9_?+]+@)")
     TABS_RE = re.compile("(\t+)")
     TAB_WIDTH = 8
 
@@ -112,7 +113,9 @@ class Sub:
         matches = self.TOKEN_RE.findall(line)
         for match in matches:
             if match not in self.SUB_TABLE:
-                raise ValueError(f"Unknown substitution token: {match}")
+                raise ValueError(
+                    f"Unknown substitution token on line {line_num}: {match}"
+                )
             line = line.replace(match, self.SUB_TABLE[match])
         if "@" in line:
             raise ValueError(

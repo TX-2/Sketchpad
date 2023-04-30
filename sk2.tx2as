@@ -5045,3 +5045,485 @@ CMGNL1E@arr@
 [meta file_name=102726903-05-02-acc.pdf pdf_page=132 doc_page=282 type=main]
 [Page header: "LMH Y3HT 007"]
 
+		@sup_1@COM A
+		@sup_1@LDB A
+		SKZ @sub_1@@sub_dot@@sub_2@ CMTU
+		JPQ #+3
+		@sup_1@@sup_7@LDA A
+		@sup_1@@sup_7@LDB B
+		STB @sub_C@@sub_M@@sub_alpha@ CMEDGES
+		STA @sub_C@@sub_M@@sub_alpha@ CMEDGES+1
+		LDA CMTT
+		@sup_1@STA @sub_C@@sub_M@@sub_alpha@ CMDIRS+1
+		LDB CMTV
+		@sup_1@STB @sub_C@@sub_M@@sub_alpha@ CMDIRS
+		SKZ @sub_1@@sub_dot@@sub_4@ CMTU
+		INX @sub_C@@sub_M@@sub_alpha@ 1
+		SKZ @sub_1@@sub_dot@@sub_3@ CMTU
+		INX @sub_C@@sub_M@@sub_alpha@ 1
+CMGNL1EX@arr@
+		JPQ #
+CMGNL1D@arr@
+		LDA CMTS
+		JNA #+2
+		JPQ CMGNL1E
+		COM A
+		STA CMTS
+		JPQ CMGNL1A
+		CMGNL2@arr@SXG @sub_C@@sub_M@@sub_alpha@ 0	**CM@alpha@=EDGE PTS
+		JPQ CMALLON
+		LDA CMSTART	**IS START ON
+		SUB SCCEN
+		JOV CMGNL3
+		STA CMTS
+		FABVAL
+		SUB CMSCSZ
+		JPA CMGNL3
+		LDA CMSTART+1
+		SUB SCCEN+1
+		JOV CMGNL3
+		STA CMTT
+		FABVAL
+		SUB CMSCSZ
+		CMGNL2A@arr@
+		JPA CMGNL3
+		LDA CMTS
+		@sup_1@@sup_6@LDB A
+		SCB {-9.,}
+		DIV SCSZ
+		STA @sub_C@@sub_M@@sub_alpha@ CMEDGES
+		@sup_1@@sup_2@LDA A
+		MUL SCSZ
+		SAB { 18.,}	[guessing about 8, maybe 0?]
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=133 doc_page=283 type=main]
+[Page header: "LMH Y3HT 010"]
+
+		STA CMTS
+		LDA CMTT
+		@sup_1@@sup_6@LDB A
+		SCB {-9.,}
+		DIV SCSZ
+		@sup_2@@sup_2@STA @sub_C@@sub_M@@sub_alpha@ CMEDGES
+		@sup_1@@sup_2@LDA A
+		MUL SCSZ
+		SAB { 18.,}
+		STA CMTT
+		INX @sub_C@@sub_M@@sub_beta@ 1
+		DIREC1@hamb@CMTS@arr@CMXRCEN,CMTT@arr@CMYRCEN=CMANGLES@sub_C@@sub_M@@sub_alpha@@arr@BADOV
+		DPX @sub_0@@sub_pipe@@sub_C@@sub_M@@sub_alpha@ CMDIRS
+		INX @sub_C@@sub_M@@sub_alpha@ 1
+		JPQ CMGNL1A
+CMGNL3@arr@	DIREC@hamb@CMSTART@arr@CMCEN=CMSTA@arr@BADOV
+CMGNL3A@arr@
+		STA CMSTA
+		DPX @sub_C@@sub_M@@sub_alpha@ CMNUMI
+CMGNL4@arr@	RSX @sub_C@@sub_M@@sub_alpha@ CMNUMI
+		JPQ CMGNL4X
+CMGNL4A@arr@
+		REX @sub_C@@sub_M@@sub_beta@@sub_pipe@@sub_C@@sub_M@@sub_alpha@
+		JPX CMGNL4AX
+CMGNL4B@arr@
+		LDA @sub_C@@sub_M@@sub_beta@ CMEDGES
+		@sup_2@@sup_0@SUB @sub_C@@sub_M@@sub_alpha@ CMEDGES
+		@sup_2@@sup_0@JPA CMGNL4AX
+		@sup_2@@sup_0@JNA CMGNL4AX
+		MKN @sub_2@@sub_dot@@sub_1@@sub_pipe@@sub_C@@sub_M@@sub_alpha@ CMDIRS [syntax, bit field combined with superscript pipe]
+		hLDE @sub_C@@sub_M@@sub_alpha@ CMDIRS
+		@sup_3@SED @sub_C@@sub_M@@sub_beta@ CMDIRS
+		JPQ CMGNL4AX
+		MKN @sub_2@@sub_dot@@sub_1@@sub_pipe@@sub_C@@sub_M@@sub_beta@ CMDIRS
+CMGNL4AX@arr@
+		@sup_minus@@sup_1@JPX @sub_C@@sub_M@@sub_beta@ CMGNL4B
+CMGNL4X@arr@
+		@sup_minus@@sup_1@JPX @sub_C@@sub_M@@sub_alpha@ CMGNL4A
+CMGNL4C@arr@
+		REX @sub_C@@sub_M@@sub_alpha@ 0
+		REX @sub_C@@sub_M@@sub_beta@ 0
+CMGNL4D@arr@
+		SXL @sub_C@@sub_M@@sub_alpha@*CMNUMI
+		JPQ CMNGL4E
+		LDA CMEDGES@sub_C@@sub_M@@sub_alpha@
+		LDB @sub_C@@sub_M@@sub_alpha@ CMDIRS
+		STA @sub_C@@sub_M@@sub_beta@ CMEDGES
+		STB @sub_C@@sub_M@@sub_beta@ CMDIRS
+		INX @sub_C@@sub_M@@sub_alpha@ 1
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=134 doc_page=284 type=main]
+[Page header: "LMH Y3HT 011"]
+
+		SKN @sub_2@@sub_dot@@sub_1@ B
+		INX @sub_C@@sub_M@@sub_beta@ 1	**ONLY IF NOT REJECT
+		JPQ CMGNL4D
+CMGNL4E@arr@
+		DPX @sub_C@@sub_M@@sub_beta@ CMNUMI
+		@sup_minus@@sup_1@JPX @sub_C@@sub_M@@sub_beta@#+2
+		JPQ CMEXIT
+CMGNL5@arr@	@sup_1@@sup_2@LDA@sub_C@@sub_M@@sub_beta@CMEDGES	**COMPUTE ANGLES
+		MUL SCSZ
+		SAB { 18.,}
+		STA CMTS
+		@sup_1@@sup_1@LDA @sub_C@@sub_M@@sub_beta@ CMEDGES
+		MUL SCSZ
+		SAB { 18.,}
+		STA CMTT
+		DIREC1@hamb@CMTS@arr@CMXRCEN,CMTT@arr@CMYRCEN@arr@BADOV
+		SUB CMSTA
+		LDB CMANG
+		SKZ @sub_4@@sub_dot@@sub_9@ B
+		COM A
+		JPA #+3
+		JNA #+2
+		DPX A
+		DPX B
+		CAB {-1,}
+		STA @sub_C@@sub_M@@sub_beta@ CMANGLES
+		@sup_minus@@sup_1@JPX @sub_C@@sub_M@@sub_beta@ CMGNL5
+CMGNL6@arr@	REX @sub_C@@sub_M@@sub_beta@ 0
+CMGNL6A@arr@
+		hJPQ CMGNL6S
+		SKN @sub_4@@sub_dot@@sub_9@ CMTT
+		JPQ CMDRAW
+		hJPQ CMGNL6R	**REMOVE ENTRY
+		SKZ @sub_1@@sub_dot@@sub_1@ C
+		JPQ CMGNL6A	**IT WAS AN EXIT
+		STA CMTU	**START ANGLE
+		STB @sub_C@@sub_M@@sub_beta@ CMDRAWS
+		INX @sub_C@@sub_M@@sub_beta@ 1
+		hJPQ CMGNL6S
+		SKZ @sub_4@@sub_dot@@sub_9@ CMTT
+		JPQ #+3
+		LDA CMSTOPA
+		JPQ #+4
+		RSX @sub_C@@sub_M@@sub_alpha@ CMTT
+		SKZ @sub_1@@sub_dot@@sub_1@@sub_pipe@@sub_C@@sub_M@@sub_alpha@ CMDIRS
+		hJPQ CMGNL6R
+		SUB CMTU
+		hJNA BADOV	**ANGLES NOT IN ORDER
+		JPA #+2
+		DPX A
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=135 doc_page=285 type=main]
+[Page header: "LMH Y3HT 012"]
+
+		STA @sub_C@@sub_M@@sub_beta@ CMDRAWA-1
+		JPQ CMGNL6A
+CMGNL6R@arr@
+		@sup_1@STE CMGNL6RX
+		RSX @sub_C@@sub_M@@sub_alpha@ CMTT
+		EXX @sub_C@@sub_M@@sub_beta@ CMNUMI
+		DEX @sub_C@@sub_M@@sub_beta@ 1
+		LDA @sub_C@@sub_M@@sub_beta@ CMEDGES
+		EXA @sub_C@@sub_M@@sub_alpha@ CMEDGES
+		STA B
+		LDA @sub_C@@sub_M@@sub_beta@ CMDIRS
+		EXA @sub_C@@sub_M@@sub_alpha@ CMDIRS
+		STA C
+		LDA @sub_C@@sub_M@@sub_beta@ CMANGLES
+		EXA @sub_C@@sub_M@@sub_alpha@ CMANGLES
+		EXX @sub_C@@sub_M@@sub_beta@ CMNUMI
+CMGNL6RX@arr@
+		JPQ #
+CMGNL6S@arr@
+		@sup_1@STE CMGNL6SE
+		LDA CMSTOPA
+		STA CMTS
+		DPX CMTT
+		RSX @sub_C@@sub_M@@sub_alpha@ CMNUMI
+		JPQ CMGNL6X
+CMGNL6SA@arr@
+		LDA @sub_C@@sub_M@@sub_alpha@ CMANGLES
+		SUB CMTS
+		JPA CMGNL6X
+		JNA CMGNL6SB
+		hJPQ BADOV	**ANGLES ARE SAME
+CMGNL6SB@arr@
+		ADD CMTS	**BETTER
+		STA CMTS
+		@sup_1@DPX @sub_C@@sub_M@@sub_alpha@ CMTT
+		MKN @sub_4@@sub_dot@@sub_9@ CMTT
+CMGNL6X@arr@
+		@sup_minus@@sup_1@JPX @sub_C@@sub_M@@sub_alpha@ CMGNL6SA
+CMGNL6SE@arr@
+		JPQ #
+CMALLON@arr@
+		SCNORM|CMSTART=CMDRAWS@arr@CMEXIT
+		SCNORM|CMSTART+1@arr@1=@sup_2@@sup_2@ CMDRAWS@arr@CMEXIT
+		LDA CMANG
+		JPA #+5
+		JNA #+3
+		DPX A
+		JPQ #+2
+		COM A
+		STA CMDRAWA
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=136 doc_page=286 type=main]
+[Page header: "LMH Y3HT 013"]
+
+		REX @sub_C@@sub_M@@sub_beta@ 1
+CMDRAW@arr@	NORMALIZE|CMRAS/SCSZ@times@BSFAC=CMRAD@arr@CMDAL
+		NORMALIZE|CMCEN@arr@SCCEN/SCSZ@times@BSFAC=CMMID@arr@BADOV
+		NORMALIZE|CMCEN+1@arr@SCCEN+1/SCSZ@times@BSFAC=@sup_2@@sup_2@ CMMID@arr@BADOV
+		SXG @sub_C@@sub_M@@sub_beta@ 0
+		JPQ CMEXIT	**DONE
+		DPX @sub_C@@sub_M@@sub_beta@ CMNUMS
+		LDA {-4,,4}
+		LDB {-0,,0}
+		MOVE|CMRAD@arr@@sup_2@@sup_2@ CMRAD
+		@sup_2@@sup_0@DIV CMRAD
+CMDRAW1@arr@
+		LDB CMANG
+		SKZ @sub_4@@sub_dot@@sub_9@ B
+		COM A
+		STA CMFAC
+		@sup_2@@sup_0@MUL CMMID
+		@sup_2@@sup_0@SAB { BSFAC,0,,BSFAC,0}
+		@sup_1@@sup_7@STA CMOFFSET
+		DPX CMNUMDONE
+CMDRAW2@arr@
+		RSX @sub_C@@sub_M@@sub_alpha@ CMNUMDONE	**HERE ON SEVERAL
+		SXL @sub_C@@sub_M@@sub_alpha@*CMNUMS	**TIMES
+CMEXIT@arr@	JPQ #	**DONE
+		LDA @sub_C@@sub_M@@sub_alpha@ CMDRAWA
+		INX @sub_C@@sub_M@@sub_alpha@ 1
+		DPX @sub_C@@sub_M@@sub_alpha@ CMNUMDONE
+CMDRAW3@arr@
+		MUL { PI}
+		@sup_1@@sup_1@MUL CMRAD	**STEPS=REVS@times@PI/4@times@8@times@RAD
+		@sup_1@SAB { BSFAC-5@times@1000}
+		@sup_2@DPX A
+		STA CMSTEPS
+CMDRAW4@arr@
+		LDA @sub_C@@sub_M@@sub_alpha@ CMDRAWS-1
+		STA CMPTO
+		@sup_1@@sup_7@MUL CMFAC	**Y,,X
+		@sup_1@@sup_7@ADD CMOFFSET
+		@sup_2@@sup_0@SCA {-1,0,,-1,0}
+		@sup_1@@sup_7@ADD CMPTO
+		STA CMPT1
+PLIESCIRCLE@arr@
+		SKN PLOTIT
+		JPQ CMSETUP
+		NORMALIZE|CMCEN@arr@SCCEN/SCSZ=PLIESTS
+		NORMALIZE|CMCEN+1@arr@SCCEN+1/SCSZ=@sup_2@@sup_2@ PLIESTS
+		LDB PLIESTS
+		LDA @sub_C@@sub_M@@sub_alpha@ CMDRAWS-1
+		LDC @sub_C@@sub_M@@sub_alpha@ CMDRAWA-1
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=137 doc_page=287 type=main]
+[Page header: "LMH Y3HT 014"]
+
+		LDD CMANG
+		SKZ @sub_4@@sub_dot@@sub_9@ D
+		COM C
+		hJPQ PLOTCIRCLE
+		JPQ CMDRAW2
+CMSETUP@arr@
+		RSX @sub_C@@sub_M@@sub_alpha@ CMSTEPS
+		AUX @sub_C@@sub_M@@sub_alpha@ NDISP
+		SXL @sub_C@@sub_M@@sub_alpha@ DISPLAYFILESIZE
+		FULL@hamb@CM@alpha@@arr@CMEXIT
+		INX @sub_C@@sub_M@@sub_alpha@ DISPLAY FILE
+		@sup_1@DPX @sub_C@@sub_M@@sub_alpha@ CMLOOP1
+		RSX @sub_C@@sub_M@@sub_alpha@ CMSTEPS
+		@sup_1@REX @sub_C@@sub_M@@sub_alpha@@sub_pipe@@sub_C@@sub_M@@sub_alpha@
+CMLOOP@arr@	LDA CMPT1	**Y,X
+		@sup_2@@sup_0@MUL CMFAC
+CMLOOPS@arr@
+		@sup_2@@sup_0@ADD CMOFFSET	**@delta@Y,,@delta@X
+		@sup_2@@sup_0@ADD CMPTO	**X,Y
+		@sup_1@@sup_7@EXA CMPT1
+		EXA CMPTO
+		ITA CMMASK
+		ADD CMNAME1
+CMLOOP1@arr@
+		STA @sub_C@@sub_M@@sub_alpha@ 0
+		LDA CMPT1	**Y,X
+		@sup_2@@sup_0@MUL CMFAC
+		@sup_+@@sup_1@JNX @sub_C@@sub_M@@sub_alpha@ CMLOOPS [syntax, first @sup_+@]
+		RSX @sub_C@@sub_M@@sub_alpha@ NDISP
+		AUX @sub_C@@sub_M@@sub_alpha@ CMSTEPS
+		INX @sub_C@@sub_M@@sub_alpha@ 1
+		DPX @sub_C@@sub_M@@sub_alpha@ NDISP
+		JPQ CMDRAW2
+CMDAD@arr@	NORMALIZE|CMSTART@arr@SCCEN/SCSZ=CMTS@arr@CMEXIT
+		NORMALIZE|CMSTART+1@arr@SCCEN+1/SCSZ=@sup_2@@sup_2@ CMTS@arr@CMEXIT
+		RSX @sub_C@@sub_M@@sub_alpha@ NDISP
+		INX @sub_C@@sub_M@@sub_alpha@ 1
+		SXL @sub_C@@sub_M@@sub_alpha@ DISPLAYFILESIZE
+		FULL@hamb@CM@alpha@@arr@CMEXIT
+		LDC CMNAME
+		LDB {-0,400,,-0,,400}
+		INS C
+		STC @sub_C@@sub_M@@sub_alpha@ DISPLAY FILE-1
+		DPX @sub_C@@sub_M@@sub_alpha@ NDISP
+		JPQ CMEXIT
+CMDRAWS@arr@
+		0
+		0
+		0
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=138 doc_page=288 type=main]
+[Page header: "LMH Y3HT 015"]
+
+		0
+		0
+CMDRAWA@arr@
+		0
+		0
+		0
+		0
+		0
+CMDIRS@arr@	0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+CMEDGES@arr@
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+CMANGLES@arr@
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+		0
+LMAG@arr@	@sup_1@STE LMAGEXIT
+		LDA 200034
+		STA SCSZ
+		HDIF|LMEND,LMSTART@arr@LMDX
+		HDIF|LMEND+1,LMSTART+1@arr@LMDY
+		MUL LMDX
+		NAB { 0}
+		JPA LMAG3
+		JNA LMAG2
+LMAG1@arr@	LDA LMDX
+		JPA LMAG1E
+		JNA LMAG1E
+		LDA LMDY
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=139 doc_page=289 type=main]
+[Page header: "LMH Y3HT 016"]
+
+		JPA LMAG1A
+		JNA LMAG1A
+		SCNORM|LMSTART=LMSST@arr@LMAGEXIT
+		SCNORM|LMSTART+1@arr@1=@sup_2@@sup_2@ LMSST@arr@LMAGEXIT
+		SKN PLOTIT
+		JPQ #+5
+		LDA LMSST
+		LDB LMSST
+		hJPQ PLOTLINE
+		JPQ LMAGEXIT
+		RSX @sub_C@@sub_M@@sub_alpha@ NDISP
+		INX @sub_C@@sub_M@@sub_alpha@ 1
+		SXL @sub_C@@sub_M@@sub_alpha@ DISPLAYFILESIZE
+		FULL@hamb@CM@alpha@@arr@LMAGEXIT
+		LDA LMSST
+		LDB {-0,400,,-0,400}
+		LDC LMNAME
+		INC C
+		STC @sub_C@@sub_M@@sub_alpha@ DISPLAY FILE-1
+		DPX @sub_C@@sub_M@@sub_alpha@ NDISP
+		JPQ LMAGEXIT
+LMAG1A@arr@	SCNORM|LMSTART=LMSST@arr@LMAGEXIT
+		STA LMSEND
+		SCNORM|LMSTART+1@arr@1=@sup_2@@sup_2@ LMSST@arr@LMAG1B
+		SCNORM|LMEND1@arr@1=@sup_2@@sup_2@ LMSEND@arr@LMAG1C
+		JPQ LMDRAW
+LMAG1B@arr@	SCNORM|LMEND+1@arr@1=@sup_2@@sup_2@ LMSEND@arr@LMAG1N	**ST OFF
+		LDA LMDY	**END ON START OFF
+		LDB { 377777}
+		JNA #+2
+		COM B
+		@sup_1@STB LMSST
+		JPQ LMDRAW
+LMAG1C@arr@	LDA LMDY	**ST ON END OFF
+		LDB { 377777}
+		JPQ #+2
+		COM B
+		@sup_1@STB LMSEND
+		JPQ LMDRAW
+LMAG1N@arr@	HDIF|SCCEN+1,LMSTART+1@arr@LMTS	**BOTH OFF
+		HDIF|SCCEN+1,LMEND+1
+		MUL LMTS
+		JPA LMAGEXIT
+		LDB { 377777}
+		LDA LMDY
+		JPA #+2
+		COM B
+		@sup_1@STB LMSEND
+		COM B
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=140 doc_page=290 type=main]
+[Page header: "LMH Y3HT 017"]
+
+		@sup_1@STB LMSST
+		JPQ LMDRAW
+LMAG1E@arr@	SCNORM|LMSTART+1@arr@1=@sup_2@@sup_2@ LMSST@arr@LMAGEXIT
+		@sup_2@@sup_2@STA LMSEND
+		SCNORM|LMSTART=@sup_2@@sup_1@ LMSST@arr@LMAG1F
+		SCNORM|LMEND=@sup_2@@sup_1@ LMSEND@arr@LMAG1G
+		JPQ LMDRAW
+LMAG1F@arr@	SCNORM|LMEND=@sup_2@@sup_1@ LMSEND@arr@LMAG1P
+		LDA LMDX	**ST OFF END ON
+		LDB { 377777}
+		JNA #+2
+		@sup_1@COM B
+		@sup_2@STB LMSST
+		JPQ LMDRAW
+LMAG1G@arr@	LDA LMDX	**ST ON END OFF
+		LDB { 377777}
+		JPA #+2
+		COM B
+		@sup_2@STB LMSEND
+		JPQ LMDRAW
+LMAG1P@arr@	HDIF|SCCEN,LMSTART@arr@LMTS
+		HDIF|SCCEN,LMEND
+		MUL LMTS
+		JPA LMAGEXIT
+		LDB { 377777}
+		LDA LMDX
+		JPA #+2
+		COM B
+		@sup_2@STB LMSEND
+		COM B
+		@sup_2@STB LMSST
+		JPQ LMDRAW
+LMAG2@arr@	HDIF|LMDY,LMDX@arr@LMDENOM
+		MOVE|{ 400000}@arr@LMTT
+		JPQ LMAG4
+LMAG3@arr@	LDA LMDY
+		ADD LMDX
+		SCA {-1,}
+		STA LMDENOM
+		MOVE|{-400000}@arr@LMTT
+LMAG4@arr@	HDIF|LMSTART+1,SCCEN+1	**X@delta@Y-Y@delta@X
+		MUL LMDX	**/@delta@Y+@delta@X
+		DIV LMDENOM
+		STA LMTS	**Y@delta@X
+		HDIF|LMSTART,SCCEN
+		MUL LMDY
+		DIV LMDENOM
+		NORMALIZE@arr@LMTS/SCSZ=LMSKEY@arr@LMAGEXIT
+		MUL LMTT
+		@sup_1@STA LMSKEY
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=141 doc_page=291 type=main]
+[Page header: "LMH Y3HT 020"]
+
