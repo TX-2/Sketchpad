@@ -4719,3 +4719,167 @@ UNITSX@arr@	JPQ #
 [meta file_name=102726903-05-02-acc.pdf pdf_page=126 doc_page=276 type=main]
 [Page header: "LMH Y3HT 001"]
 
+SQ60A@arr@	CSQ@sub_6@@sub_0@
+		@sup_1@IOS @sub_6@@sub_0@ 30010
+		RSX @sub_S@@sub_1@@sub_alpha@ SNDISP
+		SXG @sub_S@@sub_1@@sub_alpha@ 0
+		JPQ S1NULL
+		SXL @sub_S@@sub_1@@sub_alpha@ 50
+		JPQ #+2
+		JPQ SQ60FEW
+		SKN INTERLACE
+		JPQ SQ60D	**DIRECT
+SQ60I@arr@	@sup_minus@@sup_1@JPX @sub_S@@sub_1@@sub_alpha@ SQ60IA
+		JPQ SQ60SEE
+SQ60IA@arr@	@sup_minus@@sup_1@JPX @sub_S@@sub_1@@sub_beta@#+2
+		REX @sub_S@@sub_1@@sub_beta@ LACE-1
+		SXL @sub_S@@sub_1@@sub_beta@ LACE
+		REX @sub_S@@sub_1@@sub_beta@ LACE-1
+		SKZ RINTERLACE
+		JPQ SQ60IR
+		DEX @sub_S@@sub_1@@sub_alpha@@sub_pipe@@sub_S@@sub_1@@sub_beta@
+		JNX @sub_S@@sub_1@@sub_alpha@ SQ60IS-2
+SQ60IB@arr@	SXL @sub_S@@sub_1@@sub_alpha@ 7@times@LACE
+		JPQ SQ60IS
+SQ60IC@arr@	TSD @sub_S@@sub_1@@sub_alpha@ DISPLAY FILE
+		DEX @sub_S@@sub_1@@sub_alpha@ LACE-1
+		@sup_minus@@sup_1@JPX @sub_S@@sub_1@@sub_alpha@ SQ60IC
+		JPX @sub_S@@sub_1@@sub_beta@ SQ60A
+		JPQ SQ60SEE
+SQ60IS@arr@
+		TSD @sub_S@@sub_1@@sub_alpha@ DISPLAY FILE-(0@times@LACE)
+		TSD @sub_S@@sub_1@@sub_alpha@ DISPLAY FILE-(1@times@LACE)
+		TSD @sub_S@@sub_1@@sub_alpha@ DISPLAY FILE-(2@times@LACE)
+		TSD @sub_S@@sub_1@@sub_alpha@ DISPLAY FILE-(3@times@LACE)
+		TSD @sub_S@@sub_1@@sub_alpha@ DISPLAY FILE-(4@times@LACE)
+		TSD @sub_S@@sub_1@@sub_alpha@ DISPLAY FILE-(5@times@LACE)
+		TSD @sub_S@@sub_1@@sub_alpha@ DISPLAY FILE-(6@times@LACE)
+		TSD @sub_S@@sub_1@@sub_alpha@ DISPLAY FILE-(7@times@LACE)
+		DEX @sub_S@@sub_1@@sub_alpha@ 10@times@LACE
+		SXL @sub_S@@sub_1@@sub_alpha@ 7@times@LACE
+		JPQ SQ60IS
+		JNX @sub_S@@sub_1@@sub_alpha@ SQ60IS-2
+		JPQ SQ60IC
+SQ60IR@arr@	DEX @sub_S@@sub_1@@sub_alpha@ 0	**RANDOM DECREASE
+		RXF @sub_6@@sub_1@ SQ60IRR
+		JPQ SQ60IB
+SQ60IRR@arr@
+		@sup_1@IOS @sub_6@@sub_1@ 30000
+		@sup_3@TSD SCRAMX
+		hLDE SCRAMX
+		hITE { LACE-1⋁(LACE-1/2)⋁(LACE-1/4)⋁(LACE-1/10)⋁(LACE-1/20)}
+		RSX @sub_S@@sub_C@@sub_alpha@ E
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=127 doc_page=277 type=main]
+[Page header: "LMH Y3HT 002"]
+
+		SXL @sub_S@@sub_C@@sub_alpha@ LACE
+		JPQ SQ60IRR+1
+		SXD @sub_S@@sub_C@@sub_alpha@ 0
+		REX @sub_S@@sub_C@@sub_alpha@
+		@sup_1@DPX @sub_S@@sub_C@@sub_alpha@ SQ60IR
+		JPD SCRAMBLE
+SQ60D@arr@	@sup_1@DPX @sub_S@@sub_1@@sub_alpha@ SQ60D3
+		DEX @sub_S@@sub_1@@sub_alpha@ 7
+		@sup_1@DPX @sub_S@@sub_1@@sub_alpha@ SQ60D2
+		REX @sub_S@@sub_1@@sub_alpha@ 0
+SQ60D1@arr@
+		TSD @sub_S@@sub_1@@sub_alpha@ DISPLAY FILE
+		TSD @sub_S@@sub_1@@sub_alpha@ DISPLAY FILE+1
+		TSD @sub_S@@sub_1@@sub_alpha@ DISPLAY FILE+2
+		TSD @sub_S@@sub_1@@sub_alpha@ DISPLAY FILE+3
+		TSD @sub_S@@sub_1@@sub_alpha@ DISPLAY FILE+4
+		TSD @sub_S@@sub_1@@sub_alpha@ DISPLAY FILE+5
+		TSD @sub_S@@sub_1@@sub_alpha@ DISPLAY FILE+6
+		TSD @sub_S@@sub_1@@sub_alpha@ DISPLAY FILE+7
+		INX @sub_S@@sub_1@@sub_alpha@ 10
+SQ60D2@arr@	SXL @sub_S@@sub_1@@sub_alpha@#	**N-7
+		JPQ SQ60D3
+		JPQ SQ60D1
+		TSD @sub_S@@sub_1@@sub_alpha@ DISPLAY FILE
+		INX @sub_S@@sub_1@@sub_alpha@ 1
+SQ60D3@arr@	SXL @sub_S@@sub_1@@sub_alpha@#	**N
+		JPQ SQ60SEE
+		JPQ #-4
+SQ60FEW@arr@
+		JPQ SQ60FEWX
+		TSD @sub_S@@sub_1@@sub_alpha@ DISPLAY FILE
+		TSD @sub_S@@sub_1@@sub_alpha@ DISPLAY FILE
+		TSD @sub_S@@sub_1@@sub_alpha@ DISPLAY FILE
+		TSD @sub_S@@sub_1@@sub_alpha@ DISPLAY FILE
+		TSD @sub_S@@sub_1@@sub_alpha@ DISPLAY FILE
+		TSD @sub_S@@sub_1@@sub_alpha@ DISPLAY FILE
+		TSD @sub_S@@sub_1@@sub_alpha@ DISPLAY FILE
+		TSD @sub_S@@sub_1@@sub_alpha@ DISPLAY FILE
+SQ60FEWX@arr@
+		@sup_minus@@sup_1@JPX @sub_S@@sub_1@@sub_alpha@ SQ60FEW+1
+		JPQ SQ60SEE
+S1NULL@arr@	REX @sub_S@@sub_1@@sub_alpha@ 22
+S1NULL1@arr@
+		MOVE|S1INK@sub_S@@sub_1@@sub_alpha@@arr@S1DISPLAY
+		MOVE|S1INK+1@sub_S@@sub_1@@sub_alpha@@arr@S1INC
+		MOVE|S1INK+2@sub_S@@sub_1@@sub_alpha@@arr@S1STEPS
+		RSX @sub_S@@sub_1@@sub_beta@ S1STEPS
+		RSX @sub_S@@sub_1@@sub_gamma@ S1INC
+		RSX @sub_S@@sub_1@@sub_x@ S1INC@sup_2@	[syntax, superscript at the end]
+		TSD S1DISPLAY
+		@sup_1@ADX @sub_S@@sub_1@@sub_gamma@ S1DISPLAY
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=128 doc_page=278 type=main]
+[Page header: "LMH Y3HT 003"]
+
+		@sup_2@ADX @sub_S@@sub_1@@sub_x@ S1DISPLAY
+		@sup_minus@@sup_1@JPX @sub_S@@sub_1@@sub_beta@#-3
+		@sup_minus@@sup_3@JPX @sub_S@@sub_1@@sub_alpha@ S1NULL1
+		JPQ SQ60A
+SCRAMBLE@arr@
+		CSQ@sub_6@@sub_1@
+		@sup_1@IOS @sub_6@@sub_1@ 30000
+		RSX @sub_S@@sub_C@@sub_alpha@ SNDISP
+		RSX @sub_S@@sub_C@@sub_beta@ SNDISP
+		JPQ SCRAMX
+SCRAM@arr@	@sup_minus@@sup_1@JPX @sub_S@@sub_1@@sub_beta@ SCRAMER
+		AUX @sub_S@@sub_C@@sub_beta@ SNDISP
+		JPX @sub_S@@sub_C@@sub_beta@ SCRAMER
+		JPD SCRAMBLE
+SCRAMER@arr@
+		SKN TWINKLE
+		JPD SCRAMBLE
+		hLDE @sub_S@@sub_C@@sub_beta@ DISPLAY FILE
+		STE SCRAMN
+		hLDE @sub_S@@sub_C@@sub_alpha@ DISPLAY FILE
+		hSTE @sub_S@@sub_C@@sub_beta@ DISPLAY FILE
+		hLDE SCRAMN
+		STE @sub_S@@sub_C@@sub_alpha@ DISPLAY FILE
+SCRAMX@arr@	DEX @sub_S@@sub_C@@sub_beta@ 0
+		@sup_3@TSD #-1
+		@sup_minus@@sup_1@JPX @sub_S@@sub_C@@sub_alpha@ SCRAM
+		JPD SCRAMBLE
+CMSCSZ@arr@	770,,
+[This label is refenced in all programs, but only defined here]
+SCSZ@arr@	1,
+PMAG@arr@	@sup_1@STE PMAGEXIT
+		MOVE|200034@arr@SCSZ
+		SCNORM|PMAGPOINT+1@arr@1=PMAGY@arr@PMAGEXIT
+		NORMALIZE|PMAGPOINT@arr@SCCEN/SCSZ@arr@PMAGEXIT
+		@sup_2@LDA PMAGY
+		ITA CMMASK
+		ADD PMAGNAME
+		RSX @sub_C@@sub_M@@sub_alpha@ NDISP
+		INX @sub_C@@sub_M@@sub_alpha@ 10
+		SXL @sub_C@@sub_M@@sub_alpha@ DISPLAYFILESIZE
+		ERROR@hamb@CM@alpha@@arr@PMAGEXIT
+		DPX @sub_C@@sub_M@@sub_alpha@ NDISP
+		REX @sub_C@@sub_M@@sub_beta@ 7
+		DEX @sub_C@@sub_M@@sub_alpha@ 1
+		STA @sub_C@@sub_M@@sub_alpha@ DISPLAY FILE
+		@sup_minus@@sup_1@JPX @sub_C@@sub_M@@sub_beta@#-2
+PMAGEXIT@arr@
+		JPQ #
+CMAG@arr@	@sup_1@STE CMEXIT
+		MOVE|CMNAME@arr@CMNAME1
+		LDA 200034
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=129 doc_page=279 type=main]
+[Page header: "LMH Y3HT 004"]
+
