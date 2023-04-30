@@ -4937,4 +4937,111 @@ CMAG3@arr@	LDA { CMMINRAD}	**IS RAD TINY?
 [meta file_name=102726903-05-02-acc.pdf pdf_page=130 doc_page=280 type=main]
 [Page header: "LMH Y3HT 005"]
 
+		STA CMTS
+		LDA { CMMINSTEP}
+		MUL SCSZ
+		SUB CMTS
+		JPA CMDAD
+CMGNL@arr@	REX @sub_C@@sub_M@@sub_alpha@ 0	**FIND EDGE POINTS
+		LDA CMXRCEN
+		SUB CMSCSZ	**DIST TO RT EDGE
+		JOV #+3
+		REX @sub_C@@sub_M@@sub_beta@ 0
+		hJPQ CMGNL1
+		LDA CMYRCEN
+		SUB CMSCSZ	**DIST TO TOP
+		JOV #+3
+		REX @sub_C@@sub_M@@sub_beta@ 2
+		hJPQ CMGNL1
+		LDA CMXRCEN
+		ADD CMDCSZ	**DIST TO LEFT EDGE
+		JOV #+3
+		REX @sub_S@@sub_1@@sub_beta@ 1
+		hJPQ CMGNL1
+		LDA CMYRCEN
+		ADD CMSCSZ	**DIST TO BOT
+		JOV #+3
+		REX @sub_C@@sub_M@@sub_beta@ 3
+		hJPQ CMGNL1
+		JPQ CMGNL2
+CMGNL1@arr@	@sup_1@STE CMGNL1EX
+		STA CMTW	**CEN IN OR OUT?
+		FABVAL@arr@ B
+		SUB CMRAD	**(X-R)@times@(X+R)
+		JPA CMGNL1EX
+		JNA #+3
+		DPX CMTS
+		JPQ CMGNL1A
+		EXA B
+		ADD CMRAD
+		SCA {-1,}
+		MUL B
+		SAB { 1,}
+		SQRT
+		STA CMTS	**OFFSET
+		DPX @sub_S@@sub_1@@sub_beta@ CMTU
+CMGNL1A@arr@
+		LDB CMYRCEN
+		SKZ @sub_1@@sub_dot@@sub_2@ CMTU
+		LDB CMXRCEN
+		ADD B
+CMGNL1B@arr@
+		JOV CMGNL1D
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=131 doc_page=281 type=main]
+[Page header: "LMH Y3HT 006"]
+
+		STA CMTT	**VARIABLE PART
+		FABVAL
+		SUB CMSCSZ
+		JPA CMGNL1D
+		LDA CMTT
+		@sup_1@@sup_6@LDB A
+		SCB {-9.,}
+		DIV SCSZ
+		hJOV BADOV	**SCSZ CHANGED
+		STA CMTT
+CMGNL1BA@arr@
+		LDA CMTS	**FIND IF ENT OR EXIT
+		@sup_1@DPX CMTT
+		LDB CMANG
+		SKZ @sub_4@@sub_dot@@sub_9@ B
+		COM A
+		SKZ @sub_1@@sub_dot@@sub_2@ CMTU
+		COM A
+		SKZ @sub_1@@sub_dot@@sub_1@ CMTU
+		COM A
+		JPA CMGNL1BB
+		MKN @sub_1@@sub_dot@@sub_1@ CMTT	**ITS AN EXIT
+		JNA CMGNL1BB
+		MKN @sub_1@@sub_dot@@sub_3@ CMTU
+		MOVE|CMTT@arr@CMTV
+		JPQ CMGNL1CA
+CMGNL1BB@arr@
+		SZN @sub_1@@sub_dot@@sub_3@ CMTU	**FIRST OR SECOND PASS?
+		JPQ CMGNL1C
+		LDA CMTT
+		STA CMTV	**FIRST NUM
+		JPQ CMGNL1D
+CMGNL1C@arr@
+		MKN @sub_1@@sub_dot@@sub_4@ CMTU	**GOT 2
+		LDA CMTV
+		@sup_2@@sup_1@SUB CMTT
+		@sup_2@@sup_1@JPA CMGNL1E
+		@sup_2@@sup_1@JNA CMGNL1E
+		MKZ @sub_1@@sub_dot@@sub_4@ CMTU	**TWO ARE SAME, DELETE ONE
+		MKN @sub_1@@sub_dot@@sub_1@ CMTV	**MARK AS EXIT
+CMGNL1CA@arr@
+		LDA CMTW	**CENTER-SCOPE EDGE
+		SKZ @sub_1@@sub_dot@@sub_1@ CMTU
+		COM A
+		JNA CMGNL1EX	**CENTER WAS INSIDE
+CMGNL1E@arr@
+		LDA CMTT
+		LDB CMTV
+		@sup_1@LDA { CMSSCSZ}
+		SKZ @sub_1@@sub_dot@@sub_1@ CMTU
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=132 doc_page=282 type=main]
+[Page header: "LMH Y3HT 007"]
 
