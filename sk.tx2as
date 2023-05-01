@@ -41,7 +41,7 @@ DISPLAYK= 2
 DISPLAY = 5	**MASTER DISPLAY SUBROUTINE
 DESIGS= 13*SMASBL+LIST+1
 
-ERRORSTOP=SKM @sub_4@sbo@sub_1@@sub_0@ 377730
+ERRORSTOP=SKM @sub_4@@sub_dot@@sub_1@@sub_0@ 377730
 
 FREES= 5@times@SMASBL+LIST+1
 FREEDOMS= 6@times@SMASBL+LIST+1
@@ -264,7 +264,7 @@ DISPLAYK= 2
 DISPLAY = 5     **MASTER DISPLAY SUBROUTINE
 DESIGS= 13*SMASBL+LIST+1
 
-ERRORSTOP=SKM @sub_4@sbo@sub_1@@sub_0@ 377730
+ERRORSTOP=SKM @sub_4@@sub_dot@@sub_1@@sub_0@ 377730
 
 FREES= 5@times@SMASBL+LIST+1
 FREEDOMS= 6@times@SMASBL+LIST+1
@@ -2775,11 +2775,11 @@ DEGEN=hJMP DEGEN1
 DESIGS= 13*SMASBL+LIST+1
 
 [Previous defs of ERRORSTOP have 377730 as last arg]
-ERRORSTOP=SKM @sub_4@sbo@sub_1@@sub_0@ 377731
-EXPINS=SKM @sub_4@sbo@sub_1@@sub_0@ EXPAIRTS	**EXPANDING INSTANCE
+ERRORSTOP=SKM @sub_4@@sub_dot@@sub_1@@sub_0@ 377731
+EXPINS=SKM @sub_4@@sub_dot@@sub_1@@sub_0@ EXPAIRTS	**EXPANDING INSTANCE
 
 FREES= 5@times@SMASBL+LIST+1
-FIX=SKM @sub_4@sbo@sub_1@@sub_0@ 377720
+FIX=SKM @sub_4@@sub_dot@@sub_1@@sub_0@ 377720
 FIXSAP= 200064
 
 [meta file_name=102726903-05-01-acc.pdf pdf_page=63 doc_page=61 type=equalities]
@@ -5895,7 +5895,7 @@ TX2MSW@arr@	SKN @sub_M@@sub_E@@sub_T@@sub_A@#
 		@sup_1@COM 45WA
 		@sup_1@TSD 45WA	**SUMCHK
 		@sup_1@IOS @sub_5@@sub_4@ 30000
-		h45WCS [syntax, 45WCS is listed without a value in the equalities table]
+		h45WCS
 		SKZ @sub_1@@sub_dot@@sub_9@ E	**NOT EOT?
 		hJPQ 45ERR
 		45DELAY@hamb@3516.
@@ -6307,8 +6307,76 @@ LAST@arr@	ZZLAST
 [meta file_name=102726903-05-01-acc.pdf pdf_page=138 doc_page=136 type=equalities]
 [Page header: "IES BOO7 003"]
 
+BADOV= 200100
+
+CONSTK= 3
+CONSTRAINTS= 4@times@SMASBL+LIST+1
+CVTS= 6         **VARIABLE TO MOVE TO SATISFY THIS
+CCFR= LIST-2
+
+DEGEN=hJMP DEGEN1
+DISPLAY= 5      **MASTER DISPLAY SUBROUTINE
+
+[*EITH3=]
+[*EITH1=]
+[*EITH=]
+[*EITH2=]
+
+FIX=SKM @sub_4@@sub_dot@@sub_1@@sub_0@ 377722
+
+IPCONS= 11@times@MASBL+PICTURES	**INSTANCE-POINT CONSTRAINT
+IVAL= 20        **R COS @alpha@, R SIN @alpha@, X, Y
+IWHAT= 14       **WHAT PIC THIS IS INSTANCE OF
+
+INCH=(2,)/(29.)
+
+LIST= 24000     **LIST STRUCTURE START
+
+MASBL= 24       **MASTER BLOCK LENGTH
+
+NLIST= 22000    **MODEL EMPTY LIST STRUCTURE
+NUMRAT=(-(h)/6)	[syntax]
+
+ONCIRCLES= 13@times@MASBL+PICTURES
+ONLINES= 12@times@MASBL+PICTURES
+ORIGIN= 20400
+
+PICTURES= 22@times@SMASBL+LIST+1
+PVAL= 20        **COORDINATES OF POINT
+PSIZE= 16       **SIZE OF THIS PICTURE
+PYTHAGORIAN= 200007
+
+SMASBL= 6       **SMALL MASTER BLOCK LENGTH FOR DESIGNATERS
+S= 7
+SVAL= 16        **VALUE OF SCALER
+SPECB= 2        **SPECIFIC BLOCKS
+[*SUBR1=]
+
+TPVALS= 5@times@MASBL+PICTURES  **TYPICAL VARIABLES
+
 [meta file_name=102726903-05-01-acc.pdf pdf_page=139 doc_page=137 type=equalities]
 [Page header: "IES BOO7 004"]
+
+TYPE= 0         **TIES TO SPECB IN MASTER BLOCK
+T= 10
+
+VA= LIST+PVAL
+VARLOC= 15      **LOCATION OF VARIABLES IN BLOCK
+VARIABLES= 1@times@SMASBL+LIST+1
+
+WHERE= 12       **LOCATION OF THING IN PICTURE
+
+@gamma@= 3
+
+@alpha@= 1
+
+@delta@= 4
+
+@eps@= 5
+
+@beta@= 2
+
+@lambda@= 6
 
 [meta file_name=102726903-05-01-acc.pdf pdf_page=140 doc_page=138 type=macros]
 [Page header: "IES BOO7 005"]
