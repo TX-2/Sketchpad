@@ -5900,6 +5900,7 @@ SQUARE ROOT BY HPP&rarr;
 		111**APPROX(X1)
 		222**EXPONENT
 		**END OF SQUARE ROOT SUBROUTINE 4AUG60 HPP
+		[Arctangent calculation routine]
 CACT&rarr;		<sup>1</sup>STE ACTEX
 		STA ACTX
 		STB ACTY
@@ -5943,5 +5944,281 @@ ACTP3&rarr;		LDA ACTY
 <hr>
 [meta file_name=102726903-05-02-acc.pdf pdf_page=146 doc_page=296 type=code]
 [Page header: "LMH Y3HT 025"]
+
+		LDC { 200,}
+		STC ACTANG
+		COM A
+		EXA ACTX
+		STA ACTY
+ACTN3&rarr;		LDA ACTY
+		<sup>1</sup><sup>6</sup> LDB A
+		SCB {-9.,}
+		DIV ACTX
+		hJOV BADOV
+ACTEQ&rarr;		STA ACTTT
+		MUL { 10877812326.}	**.3165860057113492.
+		[blank line]
+		STA ACTSUM
+		LDA ACTTT
+		MUL ACTTT
+		MUL ACTTT
+		STA ACTTS
+		MUL {-3154853453.}	**-0.0918183194549342.
+		ADD ACTSUM
+		STA ACTSUM
+		LDA ACTTS
+		MUL ACTTT
+		MUL ACTTT
+		MUL { 966975697.}	**.0252323137487638.
+		ADD ACTSUM
+		ADD ACTANG
+ACTEX&rarr;		JPQ 0
+PYTHAGORIAN&rarr;
+		<sup>1</sup>STE PYTHAGORIANEX
+		STB PYTS
+		MUL A
+		NAB { 0}
+		STD PYTT	**1ST NORM
+		EXA PYTS	**1ST NUM
+		MUL A
+		NAB { 0}
+		STD PYTU	**2ND NORM
+		STA B		**2ND NUM
+		LDA PYTU
+		<sup>3</sup><sup>2</sup>SUB PYTT
+		<sup>3</sup><sup>2</sup>JPA PYTHAGORIAN3	**2ND NUM LARGER
+		SCB A
+		LDA PYTS
+PYTHAGORIAN1&rarr;
+		ADD B
+		JOV PYTHAGORIAN4
+		DPX B
+PYTHAGORIAN2&rarr;
+		SKZ <sub>4</sub><sub>.</sub><sub>9</sub> A
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=147 doc_page=297 type=code]
+[Page header: "LMH Y3HT 026"]
+
+		COM B
+		SAB PYTT
+		SQRT
+PYTHAGORIANEX&rarr;
+		JPQ #
+PYTHAGORIAN3&rarr;
+		EXA PYTS
+		COM PYTS
+		SCA PYTS
+		LDC PYTU
+		STC PYTT
+		JPQ PYTHAGORIAN1
+PYTHAGORIAN4&rarr;
+		EXA PYTT
+		<sup>3</sup><sup>2</sup>JNA #+7
+		EXA PYTT	**RADIUS TO BIG [sic]
+		LDB { 0}
+		SAB {-2,}
+		SQRT
+		ADD A
+		JPQ PYTHAGORIANEX
+		EXA PYTT
+		LDB {-0}
+		JPQ PYTHAGORIAN2
+S1INK&rarr;		60,0,,60,0
+		125,,-400
+		140
+		40,0,,40,0
+		400,,400
+		100
+		40,0,,100,0
+		0,,-400
+		200
+		0
+		400
+		200
+		-40,-0,,100,0
+		200,,-400
+		200
+		-40,-0,,0,0
+		400
+		200
+		-100,-0,,100,0
+		-400
+		200
+		**PLOTTER PROGRAM FOR SCOPE DRAWING
+		**LINE =START(A),END(B)
+		**CIRCLE=START(A),CENTER(B),ANGLE(C)
+		**USES PBI FOR CIRCLE MODE
+		** PLOTSVC 904-17
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=148 doc_page=298 type=code]
+[Page header: "LMH Y3HT 027"]
+
+PLCLEAN&rarr;
+		<sup>1</sup>STE PLCLX
+		SKX <sub>P</sub><sub>L</sub><sub>S</sub> PLTABLE-1
+		DPX <sub>P</sub><sub>L</sub><sub>S</sub> PLPLSSAVE
+		DPX PLSW
+		DPX PLOTBLOCKS
+		DPX PLOTSTORAGE
+		DPX PLOTBLOCKS2
+		MKZ PLPUBUSY
+		MKZ PLPLBUSY
+PLCLX&rarr;		JPQ #
+PLPUNCH&rarr;
+		<sup>1</sup>STE PLPUX
+		RXF <sub>6</sub><sub>3</sub> PLPURTNE
+PLPUX&rarr;		JPQ #
+PLPLOT&rarr;		<sup>1</sup>STE PLPLX
+		RXF <sub>7</sub><sub>4</sub> PLPLRTNE
+PLPLX&rarr;		JPQ #
+PLEND&rarr;		<sup>1</sup>STE PLLX
+		SZN PLESW
+		JPQ PLLX*
+		LDA {(56.-31.),0,,30000}	[maybe 21, not 31?]
+		STA <sub>P</sub><sub>L</sub><sub>S</sub> 1	**IOS
+		LDA { 377770,,}	**FINAL TSD
+		STA <sub>P</sub><sub>L</sub><sub>S</sub> 0
+		MKZ PLCSW
+		MKN PL1PSW
+		JPQ PLEENTRY
+		**PLOTTER PUNCH ROUTINE
+		**SEQUENCE 63
+PLPURTNE&rarr;
+		MKN PLUSW
+		MKN PLPBUSY
+		MKZ PLLSW
+		<sup>1</sup>IOS <sub>6</sub><sub>3</sub> 30000	**NORMAL NO 7TH HOLE
+PLPUL&rarr;		<sup>1</sup>SKX <sub>P</sub><sub>L</sub><sub>X</sub> 5
+		<sup>3</sup>TSD PLEADER	**0
+		h<sup>1</sup>JNX <sub>P</sub><sub>L</sub><sub>X</sub>#-1
+		SZN PLLSW
+		JPQ PLPUL2
+		<sup>4</sup>TSD PLEADER	**END MARK
+		<sup>5</sup>TSD PLEADER	**TALLY
+		<sup>1</sup>SKX <sub>P</sub><sub>L</sub><sub>X</sub> 25.**BLKS OF LEADER
+		DPX <sub>P</sub><sub>L</sub><sub>X</sub> PLUWA
+		<sup>1</sup>IOS <sub>6</sub><sub>3</sub> 30004	**NORMAL 7TH HOLE
+		JPQ PLPUL
+PLPUL2&rarr;		<sup>3</sup>TSD PLEADER	**0
+		<sup>6</sup>TSD PLEADER	**TALLY
+		h<sup>1</sup>ADX <sub>P</sub><sub>L</sub><sub>X</sub> PLUWA	**PLU CONTAINS 1
+		<sup>1</sup>SED {-0}
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=149 doc_page=299 type=code]
+[Page header: "LMH Y3HT 030"]
+
+		JPQ #+2
+		JPQ PLPUL
+		SKX <sub>P</sub><sub>L</sub><sub>X</sub> PLTABLE-1
+PLPUL3&rarr;		MKN PLPUBUSY
+PLPUL4&rarr;		SXD <sub>P</sub><sub>L</sub><sub>X</sub> PLPLSSAVE*
+		JPQ PLUSTOP
+		hLDE <sub>P</sub><sub>L</sub><sub>X</sub> 1	**IOS
+		STE PLUWA
+		hLDE <sub>P</sub><sub>L</sub><sub>X</sub> 0	**TSD
+		STE PLUWA2
+		<sup>1</sup>DPX <sub>P</sub><sub>L</sub><sub>X</sub> PLXSAVE	**SAVE CNTR
+PLPUL5&rarr;		<sup>1</sup>IOS <sub>6</sub><sub>3</sub> 30004	**NORMAL, 7TH HOLE
+		<sup>3</sup>TSD PLUWA	**IOS BITS
+		hLDE PLUWA2	**TSD
+		STE PLUWA3
+		SKX <sub>P</sub><sub>L</sub><sub>X</sub> 5
+		<sup>1</sup>IOS <sub>6</sub><sub>3</sub> 30006	**SPLAYED, 7TH HOLE
+		TSD PLUWA3	**TSD + FILTER
+		h<sup>-</sup><sup>1</sup>JPX <sub>P</sub><sub>L</sub><sub>X</sub>#-1
+		<sup>1</sup>IOS<sub>6</sub><sub>3</sub> 30000	**NORMAL, NO 7TH HOLE
+		<sup>6</sup>TSD PLUWA	**TALLY
+		<sup>1</sup><sup>1</sup>AUX <sub>P</sub><sub>L</sub><sub>X</sub> PLOTBLOCKS2	**PLU CONTAINS-1
+		<sup>1</sup>DPX <sub>P</sub><sub>L</sub><sub>X</sub> PLOTBLOCKS2
+		<sup>1</sup><sup>2</sup>AUX <sub>P</sub><sub>L</sub><sub>X</sub> PLOTBLOCKS
+		<sup>1</sup>DPX <sub>P</sub><sub>L</sub><sub>X</sub> PLOTBLOCKS
+		<sup>1</sup><sup>5</sup>RSX <sub>P</sub><sub>L</sub><sub>X</sub> PLUWA	**BLK CNTR
+		h<sup>-</sup><sup>1</sup>JPX <sub>P</sub><sub>L</sub><sub>X</sub> PLPUL6
+		<sup>1</sup><sup>1</sup>RSX <sub>P</sub><sub>L</sub><sub>X</sub> PLXSAVE	**RESTORE CNTR
+		DEX <sub>P</sub><sub>L</sub><sub>X</sub> 2
+		JPQ PLPUL4
+PLPUL6&rarr;		<sup>5</sup>DPX <sub>P</sub><sub>L</sub><sub>X</sub> PLUWA	**SAVE BLK CNTR
+		JPQ PLPUL5
+PLUSTOP&rarr;
+		SKZ PLESW
+		JPQ PLUEND
+		MKZ PLPUBUSY
+		JPD PLPUL3
+PLUEND&rarr;		<sup>1</sup>SKX <sub>P</sub><sub>L</sub><sub>X</sub> 319.	**TAPE FEEDS
+		<sup>1</sup>IOS <sub>6</sub><sub>3</sub> 30000	**NORMAL NO 7TH HOLE
+		<sup>3</sup>TSD PLEADER	**0
+		h<sup>1</sup>JNX PLU#-1
+		hMKZ PLPUBUSY
+		hMKZ PLUSW
+		<sup>2</sup><sup>1</sup>IOS <sub>6</sub><sub>3</sub> 20000
+		JPD #
+PLOTBLOCKS2&rarr;
+		0
+		**PLOTTER PLOT ROUTINE
+		**SEQUENCE 74
+PLPLRTNE&rarr;
+		[Problem: last line on the page clipped, illegible]
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=150 doc_page=300 type=code]
+[Page header: "LMH Y3HT 031"]
+
+		MKN PLPSW
+PLPL1&rarr;		MKN PLPLBUSY
+PLPL2&rarr;		SXD <sub>P</sub><sub>L</sub><sub>P</sub> PLPLSSAVE*
+		JPQ PLPSTOP
+		<sup>2</sup>DPX <sub>P</sub><sub>L</sub><sub>P</sub> PLXSAVE
+		hLDE <sub>P</sub><sub>L</sub><sub>P</sub> 0	**TSD
+		STE PLPWA
+		<sup>1</sup><sup>1</sup>RSX <sub>P</sub><sub>L</sub><sub>P</sub><sub>|</sub><sub>P</sub><sub>L</sub><sub>P</sub> 1	**IOS
+		<sup>1</sup>DPX <sub>P</sub><sub>L</sub><sub>P</sub> PLPIOS
+		MKZ <sub>1</sub><sub>.</sub><sub>1</sub> PLPL3
+		SKZ <sub>1</sub><sub>.</sub><sub>1</sub> PLPIOS
+		MKN <sub>1</sub><sub>.</sub><sub>1</sub> PLPL3
+PLPL3&rarr;		<sup>2</sup><sup>1</sup>IOS <sub>7</sub><sub>4</sub> 30000	**WAIT FOR PEN CHG
+PLPIOS&rarr;		<sup>1</sup>IOS <sub>7</sub><sub>4</sub> 0	**MODIFIED
+		SKZ <sub>1</sub><sub>.</sub><sub>3</sub>#-1	**PBI?
+		JPQ PLPPBI
+		TSD PLPWA
+		SXL <sub>P</sub><sub>L</sub><sub>P</sub> 31000
+		JPQ PLREDFIL
+PLPL4&rarr;		<sup>1</sup><sup>2</sup>RSX <sub>P</sub><sub>L</sub><sub>P</sub> PLXSAVE
+		DEX <sub>P</sub><sub>L</sub><sub>P</sub> 2
+		JPQ PLPL2
+PLREDFIL&rarr;
+		DEX <sub>P</sub><sub>L</sub><sub>P</sub> 1100
+		<sup>1</sup>DPX <sub>P</sub><sub>L</sub><sub>P</sub> PLPIOS
+		JPQ PLPIOS
+PLPSTOP&rarr;
+		SKZ PLESW
+		JPQ PLPEND
+		MKZ PLPLBUSY
+		JPD PLPL1
+PLPEND&rarr;		hMKZ PLPLBUSY
+		hMKZ PLPSW
+		<sup>2</sup><sup>1</sup>IOS <sub>7</sub><sub>4</sub> 20000	**DISC
+		JPD #
+PLPPBI&rarr;		hTSD PLPWA
+		RFD <sub>5</sub><sub>4</sub>#+1
+		**INTERVAL TIMER SEQUENCE, PBI MODE
+		<sup>1</sup>DPX <sub>P</sub><sub>L</sub><sub>P</sub> PLPIT2
+		<sup>1</sup><sup>2</sup>RSX <sub>P</sub><sub>L</sub><sub>P</sub> PLXSAVE	**TABLE CNTR
+		<sup>1</sup><sup>5</sup>RSX <sub>P</sub><sub>L</sub><sub>P</sub><sub>|</sub><sub>P</sub><sub>L</sub><sub>P</sub> 1	**NO OF BLKS
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30000	**STOP CNTR
+		h<sup>1</sup>TSD PLITK**1/20TH READER SPD
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30300
+		JPQ PLPIT3
+PLPIT&rarr;		SKN TRBUSY
+		RXF <sub>5</sub><sub>7</sub> TRACK
+		<span style='text-decoration:overline;'>h</span><sup>1</sup>JNX <sub>P</sub><sub>L</sub><sub>P</sub> PLPIT
+		<sup>1</sup><sup>3</sup>RSX <sub>P</sub><sub>L</sub><sub>P</sub> PLITWA	**BLKS LEFT
+		h<sup>-</sup><sup>1</sup>JPX <sub>P</sub><sub>L</sub><sub>P</sub> PLPIT3
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=151 doc_page=301 type=code]
+[Page header: "LMH Y3HT 032"]
 
 </code></pre></body></html>

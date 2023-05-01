@@ -5754,6 +5754,7 @@ SQUARE ROOT BY HPP@arr@
 		111**APPROX(X1)
 		222**EXPONENT
 		**END OF SQUARE ROOT SUBROUTINE 4AUG60 HPP
+		[Arctangent calculation routine]
 CACT@arr@	@sup_1@STE ACTEX
 		STA ACTX
 		STB ACTY
@@ -5797,3 +5798,274 @@ ACTP3@arr@	LDA ACTY
 [meta file_name=102726903-05-02-acc.pdf pdf_page=146 doc_page=296 type=code]
 [Page header: "LMH Y3HT 025"]
 
+		LDC { 200,}
+		STC ACTANG
+		COM A
+		EXA ACTX
+		STA ACTY
+ACTN3@arr@	LDA ACTY
+		@sup_1@@sup_6@ LDB A
+		SCB {-9.,}
+		DIV ACTX
+		hJOV BADOV
+ACTEQ@arr@	STA ACTTT
+		MUL { 10877812326.}	**.3165860057113492.
+		[blank line]
+		STA ACTSUM
+		LDA ACTTT
+		MUL ACTTT
+		MUL ACTTT
+		STA ACTTS
+		MUL {-3154853453.}	**-0.0918183194549342.
+		ADD ACTSUM
+		STA ACTSUM
+		LDA ACTTS
+		MUL ACTTT
+		MUL ACTTT
+		MUL { 966975697.}	**.0252323137487638.
+		ADD ACTSUM
+		ADD ACTANG
+ACTEX@arr@	JPQ 0
+PYTHAGORIAN@arr@
+		@sup_1@STE PYTHAGORIANEX
+		STB PYTS
+		MUL A
+		NAB { 0}
+		STD PYTT	**1ST NORM
+		EXA PYTS	**1ST NUM
+		MUL A
+		NAB { 0}
+		STD PYTU	**2ND NORM
+		STA B		**2ND NUM
+		LDA PYTU
+		@sup_3@@sup_2@SUB PYTT
+		@sup_3@@sup_2@JPA PYTHAGORIAN3	**2ND NUM LARGER
+		SCB A
+		LDA PYTS
+PYTHAGORIAN1@arr@
+		ADD B
+		JOV PYTHAGORIAN4
+		DPX B
+PYTHAGORIAN2@arr@
+		SKZ @sub_4@@sub_dot@@sub_9@ A
+		
+[meta file_name=102726903-05-02-acc.pdf pdf_page=147 doc_page=297 type=code]
+[Page header: "LMH Y3HT 026"]
+
+		COM B
+		SAB PYTT
+		SQRT
+PYTHAGORIANEX@arr@
+		JPQ #
+PYTHAGORIAN3@arr@
+		EXA PYTS
+		COM PYTS
+		SCA PYTS
+		LDC PYTU
+		STC PYTT
+		JPQ PYTHAGORIAN1
+PYTHAGORIAN4@arr@
+		EXA PYTT
+		@sup_3@@sup_2@JNA #+7
+		EXA PYTT	**RADIUS TO BIG [sic]
+		LDB { 0}
+		SAB {-2,}
+		SQRT
+		ADD A
+		JPQ PYTHAGORIANEX
+		EXA PYTT
+		LDB {-0}
+		JPQ PYTHAGORIAN2
+S1INK@arr@	60,0,,60,0
+		125,,-400
+		140
+		40,0,,40,0
+		400,,400
+		100
+		40,0,,100,0
+		0,,-400
+		200
+		0
+		400
+		200
+		-40,-0,,100,0
+		200,,-400
+		200
+		-40,-0,,0,0
+		400
+		200
+		-100,-0,,100,0
+		-400
+		200
+		**PLOTTER PROGRAM FOR SCOPE DRAWING
+		**LINE =START(A),END(B)
+		**CIRCLE=START(A),CENTER(B),ANGLE(C)
+		**USES PBI FOR CIRCLE MODE
+		** PLOTSVC 904-17
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=148 doc_page=298 type=code]
+[Page header: "LMH Y3HT 027"]
+
+PLCLEAN@arr@
+		@sup_1@STE PLCLX
+		SKX @sub_P@@sub_L@@sub_S@ PLTABLE-1
+		DPX @sub_P@@sub_L@@sub_S@ PLPLSSAVE
+		DPX PLSW
+		DPX PLOTBLOCKS
+		DPX PLOTSTORAGE
+		DPX PLOTBLOCKS2
+		MKZ PLPUBUSY
+		MKZ PLPLBUSY
+PLCLX@arr@	JPQ #
+PLPUNCH@arr@
+		@sup_1@STE PLPUX
+		RXF @sub_6@@sub_3@ PLPURTNE
+PLPUX@arr@	JPQ #
+PLPLOT@arr@	@sup_1@STE PLPLX
+		RXF @sub_7@@sub_4@ PLPLRTNE
+PLPLX@arr@	JPQ #
+PLEND@arr@	@sup_1@STE PLLX
+		SZN PLESW
+		JPQ PLLX*
+		LDA {(56.-31.),0,,30000}	[maybe 21, not 31?]
+		STA @sub_P@@sub_L@@sub_S@ 1	**IOS
+		LDA { 377770,,}	**FINAL TSD
+		STA @sub_P@@sub_L@@sub_S@ 0
+		MKZ PLCSW
+		MKN PL1PSW
+		JPQ PLEENTRY
+		**PLOTTER PUNCH ROUTINE
+		**SEQUENCE 63
+PLPURTNE@arr@
+		MKN PLUSW
+		MKN PLPBUSY
+		MKZ PLLSW
+		@sup_1@IOS @sub_6@@sub_3@ 30000	**NORMAL NO 7TH HOLE
+PLPUL@arr@	@sup_1@SKX @sub_P@@sub_L@@sub_U@ 5
+		@sup_3@TSD PLEADER	**0
+		h@sup_1@JNX @sub_P@@sub_L@@sub_U@#-1
+		SZN PLLSW
+		JPQ PLPUL2
+		@sup_4@TSD PLEADER	**END MARK
+		@sup_5@TSD PLEADER	**TALLY
+		@sup_1@SKX @sub_P@@sub_L@@sub_U@ 25.**BLKS OF LEADER
+		DPX @sub_P@@sub_L@@sub_U@ PLUWA
+		@sup_1@IOS @sub_6@@sub_3@ 30004	**NORMAL 7TH HOLE
+		JPQ PLPUL
+PLPUL2@arr@	@sup_3@TSD PLEADER	**0
+		@sup_6@TSD PLEADER	**TALLY
+		h@sup_1@ADX @sub_P@@sub_L@@sub_U@ PLUWA	**PLU CONTAINS 1
+		@sup_1@SED {-0}
+		
+[meta file_name=102726903-05-02-acc.pdf pdf_page=149 doc_page=299 type=code]
+[Page header: "LMH Y3HT 030"]
+	
+		JPQ #+2
+		JPQ PLPUL
+		SKX @sub_P@@sub_L@@sub_U@ PLTABLE-1
+PLPUL3@arr@	MKN PLPUBUSY
+PLPUL4@arr@	SXD @sub_P@@sub_L@@sub_U@ PLPLSSAVE*
+		JPQ PLUSTOP
+		hLDE @sub_P@@sub_L@@sub_U@ 1	**IOS
+		STE PLUWA
+		hLDE @sub_P@@sub_L@@sub_U@ 0	**TSD
+		STE PLUWA2
+		@sup_1@DPX @sub_P@@sub_L@@sub_U@ PLXSAVE	**SAVE CNTR
+PLPUL5@arr@	@sup_1@IOS @sub_6@@sub_3@ 30004	**NORMAL, 7TH HOLE
+		@sup_3@TSD PLUWA	**IOS BITS
+		hLDE PLUWA2	**TSD
+		STE PLUWA3
+		SKX @sub_P@@sub_L@@sub_U@ 5
+		@sup_1@IOS @sub_6@@sub_3@ 30006	**SPLAYED, 7TH HOLE
+		TSD PLUWA3	**TSD + FILTER
+		h@sup_minus@@sup_1@JPX @sub_P@@sub_L@@sub_U@#-1
+		@sup_1@IOS@sub_6@@sub_3@ 30000	**NORMAL, NO 7TH HOLE
+		@sup_6@TSD PLUWA	**TALLY
+		@sup_1@@sup_1@AUX @sub_P@@sub_L@@sub_U@ PLOTBLOCKS2	**PLU CONTAINS-1
+		@sup_1@DPX @sub_P@@sub_L@@sub_U@ PLOTBLOCKS2
+		@sup_1@@sup_2@AUX @sub_P@@sub_L@@sub_U@ PLOTBLOCKS
+		@sup_1@DPX @sub_P@@sub_L@@sub_U@ PLOTBLOCKS
+		@sup_1@@sup_5@RSX @sub_P@@sub_L@@sub_U@ PLUWA	**BLK CNTR
+		h@sup_minus@@sup_1@JPX @sub_P@@sub_L@@sub_U@ PLPUL6
+		@sup_1@@sup_1@RSX @sub_P@@sub_L@@sub_U@ PLXSAVE	**RESTORE CNTR
+		DEX @sub_P@@sub_L@@sub_U@ 2
+		JPQ PLPUL4
+PLPUL6@arr@	@sup_5@DPX @sub_P@@sub_L@@sub_U@ PLUWA	**SAVE BLK CNTR
+		JPQ PLPUL5
+PLUSTOP@arr@
+		SKZ PLESW
+		JPQ PLUEND
+		MKZ PLPUBUSY
+		JPD PLPUL3
+PLUEND@arr@	@sup_1@SKX @sub_P@@sub_L@@sub_U@ 319.	**TAPE FEEDS
+		@sup_1@IOS @sub_6@@sub_3@ 30000	**NORMAL NO 7TH HOLE
+		@sup_3@TSD PLEADER	**0
+		h@sup_1@JNX PLU#-1
+		hMKZ PLPUBUSY
+		hMKZ PLUSW
+		@sup_2@@sup_1@IOS @sub_6@@sub_3@ 20000
+		JPD #
+PLOTBLOCKS2@arr@
+		0
+		**PLOTTER PLOT ROUTINE
+		**SEQUENCE 74
+PLPLRTNE@arr@
+		[Problem: last line on the page clipped, illegible]
+
+[meta file_name=102726903-05-02-acc.pdf pdf_page=150 doc_page=300 type=code]
+[Page header: "LMH Y3HT 031"]
+
+		MKN PLPSW
+PLPL1@arr@	MKN PLPLBUSY
+PLPL2@arr@	SXD @sub_P@@sub_L@@sub_P@ PLPLSSAVE*
+		JPQ PLPSTOP
+		@sup_2@DPX @sub_P@@sub_L@@sub_P@ PLXSAVE
+		hLDE @sub_P@@sub_L@@sub_P@ 0	**TSD
+		STE PLPWA
+		@sup_1@@sup_1@RSX @sub_P@@sub_L@@sub_P@@sub_pipe@@sub_P@@sub_L@@sub_P@ 1	**IOS
+		@sup_1@DPX @sub_P@@sub_L@@sub_P@ PLPIOS
+		MKZ @sub_1@@sub_dot@@sub_1@ PLPL3
+		SKZ @sub_1@@sub_dot@@sub_1@ PLPIOS
+		MKN @sub_1@@sub_dot@@sub_1@ PLPL3
+PLPL3@arr@	@sup_2@@sup_1@IOS @sub_7@@sub_4@ 30000	**WAIT FOR PEN CHG
+PLPIOS@arr@	@sup_1@IOS @sub_7@@sub_4@ 0	**MODIFIED
+		SKZ @sub_1@@sub_dot@@sub_3@#-1	**PBI?
+		JPQ PLPPBI
+		TSD PLPWA
+		SXL @sub_P@@sub_L@@sub_P@ 31000
+		JPQ PLREDFIL
+PLPL4@arr@	@sup_1@@sup_2@RSX @sub_P@@sub_L@@sub_P@ PLXSAVE
+		DEX @sub_P@@sub_L@@sub_P@ 2
+		JPQ PLPL2
+PLREDFIL@arr@
+		DEX @sub_P@@sub_L@@sub_P@ 1100
+		@sup_1@DPX @sub_P@@sub_L@@sub_P@ PLPIOS
+		JPQ PLPIOS
+PLPSTOP@arr@
+		SKZ PLESW
+		JPQ PLPEND
+		MKZ PLPLBUSY
+		JPD PLPL1
+PLPEND@arr@	hMKZ PLPLBUSY
+		hMKZ PLPSW
+		@sup_2@@sup_1@IOS @sub_7@@sub_4@ 20000	**DISC
+		JPD #
+PLPPBI@arr@	hTSD PLPWA
+		RFD @sub_5@@sub_4@#+1
+		**INTERVAL TIMER SEQUENCE, PBI MODE
+		@sup_1@DPX @sub_P@@sub_L@@sub_P@ PLPIT2
+		@sup_1@@sup_2@RSX @sub_P@@sub_L@@sub_P@ PLXSAVE	**TABLE CNTR
+		@sup_1@@sup_5@RSX @sub_P@@sub_L@@sub_P@@sub_pipe@@sub_P@@sub_L@@sub_P@ 1	**NO OF BLKS
+		@sup_1@IOS @sub_5@@sub_4@ 30000	**STOP CNTR
+		h@sup_1@TSD PLITK**1/20TH READER SPD
+		@sup_1@IOS @sub_5@@sub_4@ 30300
+		JPQ PLPIT3
+PLPIT@arr@	SKN TRBUSY
+		RXF @sub_5@@sub_7@ TRACK
+		@h_overbar@@sup_1@JNX @sub_P@@sub_L@@sub_P@ PLPIT
+		@sup_1@@sup_3@RSX @sub_P@@sub_L@@sub_P@ PLITWA	**BLKS LEFT
+		h@sup_minus@@sup_1@JPX @sub_P@@sub_L@@sub_P@ PLPIT3
+		
+[meta file_name=102726903-05-02-acc.pdf pdf_page=151 doc_page=301 type=code]
+[Page header: "LMH Y3HT 032"]
+		

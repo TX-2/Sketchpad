@@ -33,6 +33,7 @@ SUBS = {
     "@sub_A@": ("ₐ", "<sub>A</sub>"),
     "@sub_I@": ("ᵢ", "<sub>I</sub>"),
     "@sub_X@": ("ₓ", "<sub>X</sub>"),
+    "@sub_U@": ("ᵤ", "<sub>X</sub>"),
     # Using the same Unicode symbol for lowercase subscript x.
     # TODO: fix, as this will confuse the parser.
     "@sub_x@": ("ₓ", "<sub>x</sub>"),
@@ -42,7 +43,7 @@ SUBS = {
     "@sub_P@": ("ₚ", "<sub>P</sub>"),
     "@sub_N@": ("ₙ", "<sub>N</sub>"),
     # No lowercase subscript y, using u instead.
-    "@sub_y@": ("ᵤ", "<sub>y</sub>"),
+    "@sub_y@": ("ⱼ", "<sub>y</sub>"),
     # No capital or lowercase subscript w, using v.
     "@sub_W@": ("ᵥ", "<sub>W</sub>"),
     # Neither capital nor lowercase subscript c, using what's left.
@@ -95,6 +96,7 @@ SUBS = {
     "@rect_dash@": ("▣ ", "&#9635;"),
     "@circled_v@": ("Ⓥ", "&#9419;"),
     "@sup@": ("⊃", "&sup;"),
+    "@h_overbar@": ("ħ", "<span style='text-decoration:overline;'>h</span>"),
 }
 
 
