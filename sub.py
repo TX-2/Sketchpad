@@ -96,7 +96,6 @@ SUBS = {
     "@rect_dash@": ("▣ ", "&#9635;"),
     "@circled_v@": ("Ⓥ", "&#9419;"),
     "@sup@": ("⊃", "&sup;"),
-    "@h_overbar@": ("ħ", "<span style='text-decoration:overline;'>h</span>"),
 }
 
 
