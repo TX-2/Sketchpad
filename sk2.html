@@ -6221,4 +6221,263 @@ PLPIT&rarr;		SKN TRBUSY
 [meta file_name=102726903-05-02-acc.pdf pdf_page=151 doc_page=301 type=code]
 [Page header: "LMH Y3HT 032"]
 
+		<sup>1</sup><sup>2</sup>RSX <sub>P</sub><sub>L</sub><sub>P</sub> PLXSAVE
+		DEX <sub>P</sub><sub>L</sub><sub>P</sub> 2
+		SKX <sub>7</sub><sub>4</sub> PLPL2
+		SKZ <sub>1</sub><sub>.</sub><sub>1</sub><sub>|</sub><sub>P</sub><sub>L</sub><sub>P</sub> 1	**PEN UP NXT?
+		JPQ PLPLRF2
+		MKZ <sub>1</sub><sub>.</sub><sub>1</sub> PLPIT2	**PEN UP
+		MKC <sub>1</sub><sub>.</sub><sub>4</sub> PLPIT2	**CHG DIR
+		MKZ <sub>1</sub><sub>.</sub><sub>3</sub> PLPIT2	**NO PBI
+PLPIT2&rarr;		<sup>1</sup>IOS <sub>7</sub><sub>4</sub> 0	**MOD
+		**INTERVAL TIMER SEQUENCE FOR MAIN PROGRAM
+PLINTSTART2&rarr;
+		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30000	**STOP COUNTER
+		h<sup>2</sup>TSD PLITK**10.MS
+		<sup>2</sup><sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30300	**CNT + DISMISS
+		SKN TRBUSY
+		RXF <sub>5</sub><sub>7</sub> TRACK
+		JPD #-2
+PLPIT3&rarr;		h<sup>3</sup>DPX <sub>P</sub><sub>L</sub><sub>P</sub> PLITWA	**SAVE BLK CNTR
+		<sup>1</sup><sup>4</sup>RSX <sub>P</sub><sub>L</sub><sub>P</sub> E	**-19.
+		JPD PLPIT
+PLITWA&rarr;		,,-19.,
+		**PLOTTER COMPUTATION ROUTINE
+		**LINE MODE
+PLOTLINE&rarr;
+		<sup>1</sup>STE PLLX
+		MKZ PLCSW
+		<sup>1</sup>LDC { PLFCK,,PLFLK}
+PLCENTRY&rarr;
+		SKZ PLESW	**TABLE FULL?
+		JPQ PLTF2
+		<sup>1</sup>STC PLSUBK
+		<sup>3</sup>DPX PLIOSBITS
+		MKZ PL1PSW	**FIRST POINT
+PL1&rarr;		<sup>2</sup><sup>0</sup>LDC PLPP	**CURRENT LOCATION
+		<sup>2</sup><sup>0</sup>STA PLPP	**NXT LOCATION
+		<sup>5</sup>DPX PLTLYK
+		<sup>2</sup><sup>0</sup>ITA { 777,770,,777,770}
+		<sup>2</sup><sup>0</sup>STA PLWA
+		SNN PL1TSW
+		JPQ PLNF	**USE FILTER 0
+		<sup>2</sup><sup>0</sup>LDA PLPP
+		<sup>2</sup><sup>0</sup>SUB C	**=&Delta;X,,&Delta;Y
+		h<sup>1</sup>JOV PLOV1
+PL1A&rarr;		h<sup>2</sup><sup>1</sup>JOV PLOV2
+		SKZ <sub>2</sub><sub>.</sub><sub>9</sub> A
+		<sup>1</sup>COM A
+		SKZ <sub>4</sub><sub>.</sub><sub>9</sub> A
+		<sup>2</sup><sup>1</sup>COM A	**=ABS VAL &Delta;X,,&Delta;Y
+		SKZ <sub>1</sub><sub>.</sub><sub>6</sub> PLIOSBITS	**LINE MODE?
+		JPQ PL2A
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=152 doc_page=302 type=code]
+[Page header: "LMH Y3HT 033"]
+
+		<sup>2</sup><sup>0</sup>STA PLWA2
+		<sup>2</sup><sup>0</sup>SUB { PLPK,,PLPK}
+		SKZ PL1PSW	**1ST POINT OF PAIR
+		JPQ PL2
+		<sup>2</sup><sup>0</sup>JPA PLNF
+		JPQ PLNXT	**DO NOT PLOT
+PL2&rarr;		<sup>1</sup>JPA #+2	**USE FILTER 0
+		JPQ PLNF
+		<sup>2</sup><sup>1</sup>JPA #+2
+		JPQ PLNF
+		<sup>2</sup><sup>0</sup>LDA PLWA2
+PL2A&rarr;		<sup>2</sup><sup>0</sup>SCA {-3,-3,}	**USE 15 BITS ONLY
+		<sup>2</sup>DPX <sub>P</sub><sub>L</sub><sub>S</sub> PLIOSBITS	**SAVE COUNTER
+		SKX <sub>P</sub><sub>L</sub><sub>S</sub> 0
+PLSUBK&rarr;		<sup>2</sup><sup>0</sup>SUB <sub>P</sub><sub>L</sub><sub>S</sub> PLFLK	**OR PLFCK
+		<sup>2</sup><sup>0</sup>JPA PLSUB
+PLCONT&rarr;		SKN <sub>1</sub><sub>.</sub><sub>6</sub> PLIOSBITS	**CIRCLE MODE?
+		JPQ PLCONT2
+		SXL <sub>P</sub><sub>L</sub><sub>S</sub> PLLOWFILTER
+		JPQ PLCALCBLKS
+		SKX <sub>P</sub><sub>L</sub><sub>S</sub> PLLOWFILTER
+		JPQ PLCALCBLKS
+PLCONT2&rarr;
+		<sup>1</sup>ADX <sub>P</sub><sub>L</sub><sub>S</sub> PLWA	**PUT FILTER IN TSD
+		<sup>2</sup>ADX <sub>P</sub><sub>L</sub><sub>S</sub> PLWA
+		<sup>3</sup>DPX <sub>P</sub><sub>L</sub><sub>S</sub> A	**PUT FILTER IN A
+		<sup>4</sup>DPX <sub>P</sub><sub>L</sub><sub>S</sub> A
+		<sup>3</sup>CYA { 7,6}	**PUT FILTER IN 1.9-17
+		<sup>1</sup>ADD PLIOSBITS
+		<sup>1</sup><sup>2</sup>RSX <sub>P</sub><sub>L</sub><sub>S</sub> PLIOSBITS
+PLNFENTRY&rarr;
+		<sup>1</sup>STA <sub>P</sub><sub>L</sub><sub>S</sub> 1	**IOS
+		ITA { 77}
+		LDD PLTLYK
+		TLY A		**TALLY OF IOS
+		TLY PLWA	**TALLY OF TSD
+		STA <sub>P</sub><sub>L</sub><sub>S</sub> 0	**TSD
+		<sup>3</sup><sup>2</sup>COM D
+		<sup>2</sup><sup>1</sup>STD <sub>P</sub><sub>L</sub><sub>S</sub> 1	**TALLY +NO OF BLKS
+PLEENTRY&rarr;
+		<sup>2</sup>DPX <sub>P</sub><sub>L</sub><sub>S</sub> PLIOSBITS
+		<sup>1</sup><sup>5</sup>RSX <sub>P</sub><sub>L</sub><sub>S</sub><sub>|</sub><sub>P</sub><sub>L</sub><sub>S</sub> 1	**NO OF BLOCKS
+		INX <sub>P</sub><sub>L</sub><sub>S</sub> 1
+		<sup>2</sup>ADX <sub>P</sub><sub>L</sub><sub>S</sub> PLOTBLOCKS	**TOTAL BLOCK COUNTER
+		SKX <sub>P</sub><sub>L</sub><sub>S</sub> 2
+		<sup>1</sup>ADX <sub>P</sub><sub>L</sub><sub>S</sub> PLOTSTORAGE	**LENGTH OF STORAGE AREA
+		<sup>1</sup><sup>2</sup>RSX <sub>P</sub><sub>L</sub><sub>S</sub> PLIOSBITS
+		DEX <sub>P</sub><sub>L</sub><sub>S</sub> 2
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=153 doc_page=303 type=code]
+[Page header: "LMH Y3HT 034"]
+
+		<sup>1</sup>DPX <sub>P</sub><sub>L</sub><sub>S</sub> PLPLSSAVE
+		SXD <sub>P</sub><sub>L</sub><sub>S</sub> 67777
+		FULL&equiv;PLS&rarr;PLTABLEFULL
+		SKZ PLUSW	**PUNCH?
+		<sup>1</sup>IOS <sub>6</sub><sub>3</sub> 50000	**RAISE FLAG
+		SKZ PLPSW	**PLOT?
+		JPQ PLPLRF
+PLNXT&rarr;		SKZ PLCSW	**CIRCLE?
+		JPQ PLC1
+		SZN PL1PSW
+PLLX&rarr;		JPQ #
+PLCE2&rarr;		MKN <sub>1</sub><sub>.</sub><sub>1</sub> PLIOSBITS	**PEN DOWN
+		LDA B
+		JPQ PL1
+PLNF&rarr;		<sup>1</sup>LDA PLIOSBITS
+		JPQ PLNFENTRY
+PLSUB&rarr;		INX <sub>P</sub><sub>L</sub><sub>S</sub> 1
+		SXL <sub>P</sub><sub>L</sub><sub>S</sub> 6
+		JPQ PLCONT
+		JPQ PLSUBK
+PLOV1&rarr;		<sup>2</sup>LDA { PLFC}
+		JPQ PL1A
+PLOV2&rarr;		<sup>2</sup><sup>1</sup>LDA { PLFC}
+		JPQ PL1A+1
+		**CIRCLE MODE
+PLOTCIRCLE&rarr;
+		<sup>1</sup>STE PLCX
+		MKN PLCSW
+		STC PLCWA	**SAVE ANGLE
+		<sup>2</sup>LDC { PLFCK,,PLFLK}
+		JPQ PLCENTRY
+PLC1&rarr;		SZN PL1PSW
+		JPQ PLC2
+		MKN <sub>1</sub><sub>.</sub><sub>6</sub> PLIOSBITS	**CIRCLE MODE
+		MKN <sub>1</sub><sub>.</sub><sub>3</sub> PLIOSBITS	**PBI
+		SKZ <sub>4</sub><sub>.</sub><sub>9</sub> PLCWA	**IS ANGLE POS?
+		JPQ PLCANGNEG
+		MKN <sub>1</sub><sub>.</sub><sub>4</sub> PLIOSBITS	**CCW
+		JPQ PLCE2
+PLCANGNEG&rarr;
+		COM PLCWA
+		JPQ PLCE2
+PLCALCBLKS&rarr;
+		MKZ <sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub>#	**NO BLKS DONE
+		LDA PLCWA	**ARC
+PLCB2&rarr;		<sup>3</sup>DPX <sub>P</sub><sub>L</sub><sub>S</sub> PLCWA2	**FILTER NO
+		MUL <sub>P</sub><sub>L</sub><sub>S</sub> PBITABLE-PLLOWFILTER	**BLKS/CIRCLE
+		[blank line]
+		DIV { PLFC}	**FULL CIRCLE, SAVE B
+		JPA #+2		**<1 BLK
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=154 doc_page=304 type=code]
+[Page header: "LMH Y3HT 035"]
+
+		JPQ PLCB4
+		<sup>1</sup><sup>6</sup>ADD {-1,}	**SUB 1
+		<sup>5</sup>STA PLTLYK**NO OF BLKS
+		MKN <sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub> PLCALCBLKS	**BLK DONE
+		JPQ PLCONT2
+PLC2&rarr;		LDA B
+		JPA #+2	**ANY REMINDER?	[remainder?]
+		JPQ PLCB6B
+		2DPX <sub>P</sub><sub>L</sub><sub>S</sub> PLIOSBITS	**SAVE CNTR
+		<sup>1</sup><sup>3</sup>RSX <sub>P</sub><sub>L</sub><sub>S</sub> PLCWA2	**FILTER
+		SXL <sub>P</sub><sub>L</sub><sub>S</sub> 6
+		JPQ PLCB6A
+		LDA PLWA	**TSD
+		ITA { 777,770,,777,770}
+		STA PLWA
+		<sup>1</sup><sup>5</sup>LDA PLTLYK	**NO OF BLKS
+		<sup>1</sup><sup>6</sup>SUB {-1,}	**ADD 1	[possibly not <sup>6</sup> in supersript?]
+		MUL <sub>P</sub><sub>L</sub><sub>S</sub> PBITABLE2-PLLOWFILTER	**CIRCLES/BLK
+		[blank line]
+		SAB {-1,}
+		LDA PLCWA	**ARC REMAINING
+		SUB B		**AMOUNT DRAWN
+		STA PLCWA	**NEW ARC
+PLCB4&rarr;		INX <sub>P</sub><sub>L</sub><sub>S</sub> 1
+		JPQ PLCB2
+PLCB5&rarr;		SXL <sub>P</sub><sub>L</sub><sub>S</sub> 6
+		JPQ PLCB6
+		LDA PLCWA
+		JPQ PLCB4
+PLCB6&rarr;		SNN <sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub> PLCALCBLKS	**ANY BLKS DONE?
+		JPQ PLCB7
+PLCB6A&rarr;		<sup>1</sup><sup>2</sup>RSX <sub>P</sub><sub>L</sub><sub>S</sub> PLIOSBITS	**RESET COUNTER
+PLCB6B&rarr;		MKZ PL1TSW
+PLCX&rarr;		JPQ #	**EXIT
+PLCB7&rarr;		DPX B
+		<sup>5</sup>DPX PLTLYK
+		JPQ PLCONT2
+PLTABLEFULL&rarr;
+		MKN PLESW	**SET TO END
+PLTF2&rarr;		SKZ PLCSW	**CIRCLE
+		JPQ PLCX*
+		JPQ PLLX*
+PLSW&rarr;		0
+PLUWA&rarr;		0
+PLUWA2&rarr;		0
+PLUWA3&rarr;		0
+PLXSAVE&rarr;
+		0
+PLPWA&rarr;		0
+PLWA&rarr;		0
+
+<hr>
+[meta file_name=102726903-05-02-acc.pdf pdf_page=155 doc_page=305 type=code]
+[Page header: "LMH Y3HT 036"]
+
+PLWA2&rarr;		0
+PLCWA2&rarr;		0
+PLTLYK&rarr;		-49.,
+PLPLSSAVE&rarr;
+		0
+PLIOSBITS&rarr;
+		,,30000	**X<sub>P</sub><sub>L</sub><sub>S</sub>,,30000
+PLFLK&rarr;		PLLK1,,PLLK1
+		PLLK2,,PLLK2
+		PLLK3,,PLLK3
+		PLLK4,,PLLK4
+		PLLK5,,PLLK5
+		PLLK6,,PLLK6
+PLFCK&rarr;		PLCK1,,PLCK1
+		PLCK2,,PLCK2
+		PLCK3,,PLCK3
+		PLCK4,,PLCK4
+		PLCK5,,PLCK5
+		PLCK6,,PLCK6
+		**NO OF PBI BLOCK PER CIRCLE
+PBITABLE&rarr;
+		PBIK4
+		PBIK5
+		PBIK6
+PBITABLE2&rarr;
+		PLFC/PBIK4
+		PLFC/PBIK5
+PLPP&rarr;		0	**PRESENT LOCATION
+PLCWA&rarr;		0
+PLCAK&rarr;		PLCAK1
+		PLCAK2
+		PLCAK3
+		PLCAK4
+PLPLRF&rarr;		SKN PLPLBUSY
+		<sup>1</sup>IOS <sub>7</sub><sub>4</sub> 50000
+		JPQ PLNXT
+PLPLRF2&rarr;
+		<sup>1</sup>IOS <sub>7</sub><sub>4</sub> 50000
+		JPQ PLINTSTART2
+PLLAST&rarr;		PLLAST-PLCLEAN+1
+LAST&rarr;		ZZLAST
 </code></pre></body></html>
