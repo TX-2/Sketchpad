@@ -2200,14 +2200,148 @@ LAST@arr@	ZZLAST
 [meta file_name=102726903-05-02-acc.pdf pdf_page=54 doc_page=204 type=equalities]
 [Page header: "HHL APY5 003"]
 
+BADOV= 200100
+BWHOS= 4        **TO WHICH PICTURE BLOCK BELONGS
+
+CVTS= 6         **VARIABLE TO MOVE TO SATISFY THIS
+COMP= 16        **CONSTRAINT COMPUTATION ROUTINE
+CHVAR= 20       **# CHANGABLE VARIABLES
+CURPICS= 15@times@SMASBL+LIST+1
+CONSTRAINTS= 4@times@SMASBL+LIST+1
+CCFR= LIST-2
+
+DESIGS= 13*SMASBL+LIST+1
+
+ERRORSTOP=SKM @sub_4@@sub_dot@@sub_1@@sub_0@ 377730
+
+FREES= 5@times@SMASBL+LIST+1
+FREEDOMS= 6@times@SMASBL+LIST+1
+FIXEDS= 12@times@SMASBL+LIST+1
+
+[*GORREXIT= CLEAN1X]
+[*GORRIEXIT= WORKEX]
+[*GORLEXIT= 0]
+
+IWHAT= 14       **WHAT PIC THIS IS INSTANCE OF
+INSTANCES= 6@times@MASBL+PICTURES
+IPCP= 10        **POINT IN INSTANCE-POINT CONSTRAINT
+IPCI= 12        **INSTANCE IN INSTANCE-POINT CONSTRAINT
+IPCV= 14        **VIRGIN POINT IN INSTANCE-POINT CONSTRAINT
+IPCONS= 11@times@MASBL+PICTURES
+IVAL= 20        **R COS @alpha@, R SIN @alpha@, X, Y
+IP= LIST+IVAL+2
+IPCOTP= 16      **INSTANCE-POINT CONSTRAINTS WITH THIS VIRGIN
+ISIZE= 16       ** R
+
+LIST= 24000     **LIST STRUCTURE START
+[Remaining lines on this page  are clipped from the left, does not matter as they are all macro labels]
+[*LGORR1=]
+[*LGORR0=]
+[*LGORREND=]
+[*LGORR2=]
+[*LGORRI1=]
+[*LGORRI0=]
+[*LGORRIEND=]
+[*LGORRI2=]
+
 [meta file_name=102726903-05-02-acc.pdf pdf_page=55 doc_page=205 type=equalities]
 [Page header: "HHL APY5 004"]
+
+[*LGORL1=]
+[*LGORL0=]
+[*LGORLEND=]
+[*LGORL2=]
+
+MASBL= 24       **MASTER BLOCK LENGTH
+MASTERS= LIST+1
+MOVIT= 10       **HOW TO MOVE COORDINATES
+MOVINGS= 14@times@SMASBL+LIST+1
+
+NCON= 17        **# CONSTRAINTS SHOWN
+NAME= 4		**NAME OF HEADER BLOCKS
+NEWCONS= 16*SMASBL+LIST+1
+[*NORT4=]
+[*NORT1=]
+[*NORT2=]
+[*NORT3=]
+[*NORX=]
+[*NORX1=]
+
+ORIGIN= 12000
+
+PICTURES= 22@times@SMASBL+LIST+1
+PVAL= 20        **COORDINATES OF POINT
+POINTS= 4@times@MASBL+PICTURES
+PPART= 4        **PICTURE PARTS
+PSIZE= 16       **SIZE OF THIS PICTURE
+PICBLKS= 2      **NON PICTURE STUFF IN PICTURE
+
+REEQ= 140
+REANS= 100
+
+SMASBL= 6       **SMALL MASTER BLOCK LENGTH FOR DESIGNATERS
+S= 7
+SPECB= 2        **SPECIFIC BLOCKS
 
 [meta file_name=102726903-05-02-acc.pdf pdf_page=56 doc_page=206 type=equalities]
 [Page header: "HHL APY5 005"]
 
+[*SLVR5=]
+[*SLVTY=]
+[*SLVR3=]
+[*SLVR4=]
+[*SLVR6=]
+[*SLVTP2=]
+[*SLVAD=]
+[*SLVD1=]
+[*SLVD3=]
+[*SLVD2=]
+[*SLVD6=]
+[*SLVAD6=]
+[*SLVAD1=]
+[*SLVAD4=]
+[*SLVAD1.5=]
+[*SLVAD2=]
+[*SLVAD3=]
+[*SLVAD8=]
+[*SLVAD5=]
+[*SLVAD7=]
+[*SLVAD9=]
+[*SOLVX=]
+[*SUBR1=]
+
+TYPE= 0         **TIES TO SPECB IN MASTER BLOCK
+T= 10
+TUPLE= 14       **# VARIABLES
+TOPOS= 3@times@SMASBL+LIST+1
+[*T1=]
+[*T2=]
+
+VA= LIST+PVAL
+VORD= 6         **ORDERING OF VARIABLES
+VFLW= 10        **CONSTRAINTS WHICH THIS VARIABLE IS TO SATISFY
+VCON= 12        **CONSTRAINTS ON THIS VARIABLE
+VARLOC= 15      **LOCATION OF VARIABLES IN BLOCK
+VARIABLES= 1@times@SMASBL+LIST+1
+
+WORKS= 7@times@SMASBL+LIST+1
+
+@gamma@= 3
+
+x1= 11
+x2= 12
+x3= 13
+
 [meta file_name=102726903-05-02-acc.pdf pdf_page=57 doc_page=207 type=equalities]
 [Page header: "HHL APY5 006"]
+
+y1= 14
+
+@alpha@= 1
+
+@delta@= 4
+
+@beta@= 2
 
 [meta file_name=102726903-05-02-acc.pdf pdf_page=58 doc_page=208 type=macros]
 [Page header: "HHL APY5 007"]
