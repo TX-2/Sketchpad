@@ -1,8 +1,8 @@
-[meta file_name=102726903-05-01-acc.pdf pdf_page=1 doc_page=0 type=cover]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=1 doc_page=0 type=cover proof=1]
 [Handwritten: "SKETCHPAD LISTINGS"]
 [Handwritten: "IVAN G. SUTHERLAND"]
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=2 doc_page=1 type=equalities]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=2 doc_page=1 type=equalities proof=1]
 [Handwritten: "EQUALITIES"]
 [Page header: "FRE SRV7 005"]
 [Judging by page headers, this equalities table is not attached to any program, so may not be useful]
@@ -54,7 +54,7 @@ GETIT= 7	**MASTER FORMATION SUBROUTINE
 
 HOVP2= 12	**SECOND HO1IZ OR VERT POINT	[sic, HORIZ]
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=3 doc_page=2 type=equalities]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=3 doc_page=2 type=equalities proof=1]
 [Page header: "FRE SRV7 006"]
 
 HOVP1= 10	**FIRST HORIZ OR VERT POINT
@@ -98,7 +98,7 @@ MOVINGDONE=SKM @sub_4@@sub_dot@@sub_1@@sub_0@ 200061
 MASTERS= LIST+1
 MERGERS= 10@times@SMASBL+LIST+1
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=4 doc_page=3 type=equalities]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=4 doc_page=3 type=equalities proof=1]
 [Page header: "FRE SRV7 007"]
 
 META= 12
@@ -123,7 +123,7 @@ NAME= 4		**NAME OF HEADER BLOCKS
 NEWCONTOG= 377725
 
 ONCIRCLES= 13@times@MASBL+PICTURES
-[Every main block terminates with ORIGIN| address label]
+[Every main block terminates with ORIGIN| address label, value varies between programs]
 ORIGIN= 4000
 ONLINES= 12@times@MASBL+PICTURES
 ORDISW=SKM @sub_1@@sub_dot@@sub_1@ ORDSWITCHES
@@ -131,7 +131,7 @@ ORDWORST=SKM @sub_4@@sub_dot@@sub_1@@sub_0@ ORDSTARTW
 ORDC2= ORDCALCEXIT
 
 PICTURES= 22@times@SMASBL+LIST+1
-PLS= 14	**LINES ND CIRCLES ON THIS POINT
+PLS= 14	**LINES ND CIRCLES ON THIS POINT	[sic, "AND"?]
 PVAL= 20	**COORDINATES OF POINT
 POINTS= 4@times@MASBL+PICTURES
 PSPL= 200042
@@ -145,7 +145,7 @@ PBOLE= 10	**END POINT OF LINE
 PBOLS= 12	**START OF POINT ON LINE
 PBOCC= 10	**CENTER OF POINT ON CIRCLE
  
-[meta file_name=102726903-05-01-acc.pdf pdf_page=5 doc_page=4 type=equalities]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=5 doc_page=4 type=equalities proof=1]
 [Page header: "FRE SRV7 010"]
 
 PBOCS= 12	**START OF POINT ON CIRCLE
@@ -172,7 +172,7 @@ SIZE= 11	**SIZE OF BLOCK
 SCALERS= 3@times@MASBL+PICTURES
 SPECB= 2	**SPECIFIC BLOCKS
 SSHOW= 14	**NUMBERS SHOWING THIS SCALER
-SVAL= 16	**VALUE OF THE SCALER
+SVAL= 16	**VALUE OF SCALER
 SHAFTUSE=SKM @sub_4@@sub_dot@@sub_1@@sub_0@ 200055
 [*SUBR1=]
 
