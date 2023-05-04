@@ -602,7 +602,7 @@ SKX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@0
 @sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)
 [Problem: possible clipping. PUTR above has similar structure and one extra line.]
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=19 doc_page=17 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=19 doc_page=17 type=macros proof=1]
 [Page header: "IES 2XMX 015"]
 
 @hand@@hand@EMD
@@ -656,7 +656,7 @@ LGORR1@arr@     SXD@sub_X@@sub_R@#      ** MODIFIED
 hJPQ GORREXIT+(GORREXIT/GORREXIT@circled_v@1@times@(LGORREND+1))
 @sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=20 doc_page=18 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=20 doc_page=18 type=macros proof=1]
 [Page header: "IES 2XMX 016"]
 
 @sup_1@DPX@sub_X@@sub_R@@sub_2@LGORR2
@@ -690,9 +690,9 @@ LGORRI0@arr@    @sup_1@@sup_6@RSX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@LI
 h@sup_minus@@sup_1@JNX@sub_X@@sub_R@#+2
 @sup_1@SKX@sub_X@@sub_R@1
 INX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@0
-GORRI1@arr@     SXD@sub_X@@sub_R@#      ** MODIFIED
-[GGORIEXIT in listing, typo?]
-hJPQ GGORRIEXIT+(GORRIEXIT/GORRIEXIT@circled_v@1@times@(LGORRIEND+1))
+LGORRI1@arr@     SXD@sub_X@@sub_R@#      ** MODIFIED
+[Listing has a typo (GGORIEXIT) on the next line, using correct value]
+hJPQ GORRIEXIT+(GORRIEXIT/GORRIEXIT@circled_v@1@times@(LGORRIEND+1))
 @sup_1@DPX@sub_X@@sub_R@@sub_2@LGORRI2
 @sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST       **CURRENT NEXT
 hJPQ SUBR
@@ -710,13 +710,13 @@ h@sup_minus@@sup_1@JNX@sub_X@@sub_R@#+2
 @sup_1@SKX@sub_X@@sub_R@1
 INX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@0
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=21 doc_page=19 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=21 doc_page=19 type=macros proof=1]
 [Page header: "IES 2XMX 017"]
 
 LGORLI1@arr@     SXD@sub_X@@sub_R@#      ** MODIFIED
 hJPQ GORLIEXIT+(GORLIEXIT/GORLIEXIT@circled_v@1@times@(LGORLIEND+1))
 @sup_1@DPX@sub_X@@sub_R@@sub_2@LGORLI2
- @sup_1@@sup_2@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST       **CURRENT NXT
+@sup_1@@sup_2@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST       **CURRENT NXT
 hJPQ SUBR
 LGORLI2@arr@     SKX@sub_X@@sub_R@@sub_2@#       **MODIFIED
 @sup_1@@sup_2@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST       ** NEW NXT
@@ -743,21 +743,20 @@ SUBR1@arr@      JPQ #
 		STD P+3
 @hand@@hand@EMD
 
-[Two macros below use symexes with a funky symbol, defined on pdf_page 15.]
 @hand@@hand@DEF PUT|A,@alpha@@arr@B,@beta@
-		REX@sub_?@@sub_1@@sub_pipe@@sub_alpha@A+1
-		@sup_1@@sup_2@RSX@sub_?@@sub_2@@sub_pipe@@sub_beta@B+1+LIST
+		REX@sub_x@@sub_1@@sub_pipe@@sub_alpha@A+1
+		@sup_1@@sup_2@RSX@sub_x@@sub_2@@sub_pipe@@sub_beta@B+1+LIST
 		hJPQ {PUTSUB}
-		@sup_1@PX@sub_beta@@sub_pipe@@sub_alpha@LIST+A
+		@sup_1@DPX@sub_beta@@sub_pipe@@sub_alpha@LIST+A
 @hand@@hand@EMD
 
 @hand@@hand@DEF PUTSUB
 		@sup_1@STE #+6
-		@sup_1@DPX@sub_?@@sub_2@@sub_pipe@@sub_?@@sub_1@LIST
-		@sup_1@@sup_1@RSX@sub_T@@sub_pipe@@sub_?@@sub_2@LIST
-		@sup_1@DPX@sub_T@@sub_pipe@@sub_?@@sub_1@LIST
-		@sup_2@DPX@sub_?@@sub_1@@sub_pipe@@sub_T@LIST
-		@sup_1@DPX@sub_?@@sub_1@@sub_pipe@@sub_?@@sub_2@LIST
+		@sup_2@DPX@sub_x@@sub_2@@sub_pipe@@sub_x@@sub_1@LIST
+		@sup_1@@sup_1@RSX@sub_T@@sub_pipe@@sub_x@@sub_2@LIST
+		@sup_1@DPX@sub_T@@sub_pipe@@sub_x@@sub_1@LIST
+		@sup_2@DPX@sub_x@@sub_1@@sub_pipe@@sub_T@LIST
+		@sup_1@DPX@sub_x@@sub_1@@sub_pipe@@sub_x@@sub_2@LIST
 		JPQ #
 @hand@@hand@EMD
 

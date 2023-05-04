@@ -622,7 +622,7 @@ SKX<sub>S</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>0
 [Problem: possible clipping. PUTR above has similar structure and one extra line.]
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=19 doc_page=17 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=19 doc_page=17 type=macros proof=1]
 [Page header: "IES 2XMX 015"]
 
 &#9755;&#9755;EMD
@@ -677,7 +677,7 @@ hJPQ GORREXIT+(GORREXIT/GORREXIT&#9419;1&times;(LGORREND+1))
 <sup>1</sup><sup>1</sup>RSX<sub>X</sub><sub>R</sub><sub>2</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>LIST
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=20 doc_page=18 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=20 doc_page=18 type=macros proof=1]
 [Page header: "IES 2XMX 016"]
 
 <sup>1</sup>DPX<sub>X</sub><sub>R</sub><sub>2</sub>LGORR2
@@ -711,9 +711,9 @@ LGORRI0&rarr;    <sup>1</sup><sup>6</sup>RSX<sub>X</sub><sub>R</sub><sub>|</sub>
 h<sup>-</sup><sup>1</sup>JNX<sub>X</sub><sub>R</sub>#+2
 <sup>1</sup>SKX<sub>X</sub><sub>R</sub>1
 INX<sub>X</sub><sub>R</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>0
-GORRI1&rarr;     SXD<sub>X</sub><sub>R</sub>#      ** MODIFIED
-[GGORIEXIT in listing, typo?]
-hJPQ GGORRIEXIT+(GORRIEXIT/GORRIEXIT&#9419;1&times;(LGORRIEND+1))
+LGORRI1&rarr;     SXD<sub>X</sub><sub>R</sub>#      ** MODIFIED
+[Listing has a typo (GGORIEXIT) on the next line, using correct value]
+hJPQ GORRIEXIT+(GORRIEXIT/GORRIEXIT&#9419;1&times;(LGORRIEND+1))
 <sup>1</sup>DPX<sub>X</sub><sub>R</sub><sub>2</sub>LGORRI2
 <sup>1</sup><sup>1</sup>RSX<sub>X</sub><sub>R</sub><sub>2</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>LIST       **CURRENT NEXT
 hJPQ SUBR
@@ -732,13 +732,13 @@ h<sup>-</sup><sup>1</sup>JNX<sub>X</sub><sub>R</sub>#+2
 INX<sub>X</sub><sub>R</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>0
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=21 doc_page=19 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=21 doc_page=19 type=macros proof=1]
 [Page header: "IES 2XMX 017"]
 
 LGORLI1&rarr;     SXD<sub>X</sub><sub>R</sub>#      ** MODIFIED
 hJPQ GORLIEXIT+(GORLIEXIT/GORLIEXIT&#9419;1&times;(LGORLIEND+1))
 <sup>1</sup>DPX<sub>X</sub><sub>R</sub><sub>2</sub>LGORLI2
- <sup>1</sup><sup>2</sup>RSX<sub>X</sub><sub>R</sub><sub>2</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>LIST       **CURRENT NXT
+<sup>1</sup><sup>2</sup>RSX<sub>X</sub><sub>R</sub><sub>2</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>LIST       **CURRENT NXT
 hJPQ SUBR
 LGORLI2&rarr;     SKX<sub>X</sub><sub>R</sub><sub>2</sub>#       **MODIFIED
 <sup>1</sup><sup>2</sup>RSX<sub>X</sub><sub>R</sub><sub>2</sub><sub>|</sub><sub>X</sub><sub>R</sub><sub>2</sub>LIST       ** NEW NXT
@@ -765,21 +765,20 @@ SUBR1&rarr;      JPQ #
 		STD P+3
 &#9755;&#9755;EMD
 
-[Two macros below use symexes with a funky symbol, defined on pdf_page 15.]
 &#9755;&#9755;DEF PUT|A,&alpha;&rarr;B,&beta;
-		REX<sub>?</sub><sub>1</sub><sub>|</sub><sub>&alpha;</sub>A+1
-		<sup>1</sup><sup>2</sup>RSX<sub>?</sub><sub>2</sub><sub>|</sub><sub>&beta;</sub>B+1+LIST
+		REX<sub>x</sub><sub>1</sub><sub>|</sub><sub>&alpha;</sub>A+1
+		<sup>1</sup><sup>2</sup>RSX<sub>x</sub><sub>2</sub><sub>|</sub><sub>&beta;</sub>B+1+LIST
 		hJPQ {PUTSUB}
-		<sup>1</sup>PX<sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub>LIST+A
+		<sup>1</sup>DPX<sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub>LIST+A
 &#9755;&#9755;EMD
 
 &#9755;&#9755;DEF PUTSUB
 		<sup>1</sup>STE #+6
-		<sup>1</sup>DPX<sub>?</sub><sub>2</sub><sub>|</sub><sub>?</sub><sub>1</sub>LIST
-		<sup>1</sup><sup>1</sup>RSX<sub>T</sub><sub>|</sub><sub>?</sub><sub>2</sub>LIST
-		<sup>1</sup>DPX<sub>T</sub><sub>|</sub><sub>?</sub><sub>1</sub>LIST
-		<sup>2</sup>DPX<sub>?</sub><sub>1</sub><sub>|</sub><sub>T</sub>LIST
-		<sup>1</sup>DPX<sub>?</sub><sub>1</sub><sub>|</sub><sub>?</sub><sub>2</sub>LIST
+		<sup>2</sup>DPX<sub>x</sub><sub>2</sub><sub>|</sub><sub>x</sub><sub>1</sub>LIST
+		<sup>1</sup><sup>1</sup>RSX<sub>T</sub><sub>|</sub><sub>x</sub><sub>2</sub>LIST
+		<sup>1</sup>DPX<sub>T</sub><sub>|</sub><sub>x</sub><sub>1</sub>LIST
+		<sup>2</sup>DPX<sub>x</sub><sub>1</sub><sub>|</sub><sub>T</sub>LIST
+		<sup>1</sup>DPX<sub>x</sub><sub>1</sub><sub>|</sub><sub>x</sub><sub>2</sub>LIST
 		JPQ #
 &#9755;&#9755;EMD
 
