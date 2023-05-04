@@ -760,7 +760,7 @@ SUBR1@arr@      JPQ #
 		JPQ #
 @hand@@hand@EMD
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=22 doc_page=20 type=main]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=22 doc_page=20 type=main proof=1]
 [Page header: "IES 2XMX 020"]
 
  200002|
@@ -775,7 +775,7 @@ I52@arr@	hJMP BLOCKMAKER
 		hJMP READIT
  ORIGIN|
 FRESH START@arr@
-		CSQ@sub_4@@sub_0@ [opcode not mentioned in the handbook?]
+		CSQ@sub_4@@sub_0@ [CSQ is a symex defined in the equalities table]
 		MOVE|NAFFB@arr@AFFB
 		hLDE NAFFB
 		STE AFFB
@@ -784,7 +784,7 @@ FRESH START@arr@
 		STA @sub_alpha@ LIST
 		@sup_minus@@sup_1@JPX @sub_alpha@ #-2
  
-[meta file_name=102726903-05-01-acc.pdf pdf_page=23 doc_page=21 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=23 doc_page=21 type=code proof=1]
 [Page header: "IES 2XMX 001"]
 [Handwritten: "BUILD"]
 [Handwritten: "RDTX2=200126"]
@@ -817,7 +817,7 @@ STARTS@arr@	RXF @sub_4@@sub_7@ 47START
 		SXD @sub_alpha@ CIRCLES-LIST
 		MKN @sub_1@@sub_dot@@sub_6@ PAGE1
 		SXD @sub_alpha@ SCALERS-LIST
-		MKN @sub_1@@sub_dot@@sub_9@ PAGE1 [guessing that it's @sub_9@, not legible]
+		MKN @sub_1@@sub_dot@@sub_9@ PAGE1 [best guess: @sub_9@]
 47FIXL1@arr@
 		SXD @sub_alpha@ POINTS-LIST
 		MKN @sub_1@@sub_dot@@sub_5@ PAGE1
@@ -840,12 +840,12 @@ STARTS@arr@	RXF @sub_4@@sub_7@ 47START
 		RSX @sub_alpha@ ATBITS+1
 		RSX @sub_alpha@@sub_pipe@@sub_alpha@ LIST+VORD
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=24 doc_page=22 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=24 doc_page=22 type=code proof=1]
 [Page header: "IES 2XMX 002"]
 
 		SXD @sub_alpha@ FIXEDS-LIST
 		MKN @sub_1@@sub_dot@@sub_7@ PAGE1
-		@sup_2@ RSX@sub_alpha@ PAGE1
+		@sup_2@RSX@sub_alpha@ PAGE1
 47LITEIT@arr@
 		MOVEB@times@DESIGNATED@arr@22@times@PAGE1
 		hLDE PAGE1
@@ -886,7 +886,7 @@ READIT@arr@	@sup_1@STE READITEX
 		STA 76BUT
 		INX @sub_?@ 1
 		DPX @sub_?@ 76TABLE
-PAGE1D@arr@	SKZ @sub_1@@sub_dot@@sub_6@ 76BUT [Handwritten "<- JUNK 2.1", "JUNK" is crossed out]
+PAGE1D@arr@	SKZ @sub_1@@sub_dot@@sub_6@ 76BUT [Handwritten: "<- JUNK 2.1", "JUNK" is crossed out]
 		hJPQ STOPMOVEP
 		SKZ @sub_1@@sub_dot@@sub_?@ 76BUT
 		hJPQ STARTDRAW
@@ -895,7 +895,7 @@ PAGE1D@arr@	SKZ @sub_1@@sub_dot@@sub_6@ 76BUT [Handwritten "<- JUNK 2.1", "JUNK"
 		SKZ @sub_1@@sub_dot@@sub_3@ 76BUT
 		hJPQ ERASE
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=25 doc_page=23 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=25 doc_page=23 type=code proof=1]
 [Page header: "IES 2XMX 003"]
 [Handwritten: "FOR MOVIE"]
 [Handwritten: "COPY 1.9"]
@@ -918,7 +918,7 @@ PAGE1D@arr@	SKZ @sub_1@@sub_dot@@sub_6@ 76BUT [Handwritten "<- JUNK 2.1", "JUNK"
 		hJPQ MGPSTART
 		SKZ @sub_2@@sub_dot@@sub_?@ 76BUT [Handwritten: "<- 1.1"]
 		hJPQ MAKECONS
-PAGE1E@arr@	SKZ @sub_2@@sub_dot@@sub_?@ 76BUT [Handwritten: "<- 1.2"]
+PAGE1E@arr@	SKZ @sub_2@@sub_dot@@sub_9@ 76BUT [Handwritten: "<- 1.2"]
 		hJPQ TRUEUP
 		SKZ @sub_2@@sub_dot@@sub_6@ 76BUT [Handwritten: "<- 1.4"]
 		hJPQ MAKPATA
@@ -926,7 +926,7 @@ PAGE1E@arr@	SKZ @sub_2@@sub_dot@@sub_?@ 76BUT [Handwritten: "<- 1.2"]
 		hJPQ SUBPIC
 		SKZ @sub_2@@sub_dot@@sub_3@ 76BUT
 		hJPQ DUMMY
-		SKZ @sub_1@@sub_dot@@sub_?@ 76BUT
+		SKZ @sub_1@@sub_dot@@sub_9@ 76BUT
 		hJPQ CPY1
 		SKZ @sub_2@@sub_dot@@sub_5@ 76BUT
 		hJPQ CPY2
@@ -944,7 +944,7 @@ PAGE1E@arr@	SKZ @sub_2@@sub_dot@@sub_?@ 76BUT [Handwritten: "<- 1.2"]
 		hJPQ UNMAC
 		SKZ @sub_1@@sub_dot@@sub_1@ 76BUT [Handwritten: "<- 2.8"]
 		hJPQ MOVEPIC
-		SKZ @sub_4@@sub_dot@@sub_?@ 76BUT
+		SKZ @sub_4@@sub_dot@@sub_6@ 76BUT
 		hJPQ ORDSTARTB	** BEST
 		SKZ @sub_4@@sub_dot@@sub_5@ 76BUT
 		hJPQ ORDSTARTW  ** WORST
@@ -956,7 +956,7 @@ PAGE1F@arr@	SKN @sub_4@@sub_dot@@sub_1@@sub_0@ SWITCH	** IF ONE, DO DEADLY DELET
 		hJPQ POINTSOUT
 		SKZ @sub_1@@sub_dot@@sub_5@ 76BUT
 		hJPQ PICOUT
-		SKN @sub_4@@sub_dot@@sub_1@ 76BUT
+		SKN @sub_4@@sub_dot@@sub_3@ 76BUT [best guess: @sub_3@]
 		
 [meta file_name=102726903-05-01-acc.pdf pdf_page=26 doc_page=24 type=code]
 [Page header: "IES 2XMX 004"]
