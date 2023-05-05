@@ -1261,7 +1261,7 @@ MAKECONS&rarr;
 		RSX <sub>&Delta;</sub><sub>|</sub><sub>&Delta;</sub> LIST+TYPE  **&Delta; AT HOVS
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=31 doc_page=29 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=31 doc_page=29 type=code proof=1]
 [Page header: "IES 2XMX 011"]
 
 		RSX <sub>&alpha;</sub><sub>|</sub><sub>&Delta;</sub> LIST+TYPE
@@ -1285,10 +1285,10 @@ MKCN1X&rarr;		JPQ #
 		STA B
 		DPX A
 		DEX <sub>&beta;</sub> CVTS+2
-		INX <sub>?</sub> CVTS+2 [sub_alpha?]
+		INX <sub>&alpha;</sub> CVTS+2 [best guess: <sub>&alpha;</sub>]
 		JPQ MKCN2X
 MKCN2&rarr;		MAKA&equiv;TPVALS&rarr;&gamma;
-		PUTL&equiv;?&times;&alpha;&rarr;VCON&times;&gamma;
+		PUTL&equiv;0&times;&alpha;&rarr;VCON&times;&gamma;
 		STA MKCN2A
 		STB MKCN2B
 		ADD PSPL
@@ -1299,7 +1299,7 @@ MKCN2&rarr;		MAKA&equiv;TPVALS&rarr;&gamma;
 		COM MKCN2A
 		LDB MKCN2A
 		LDA MKCN2B
-		INX <sub>?</sub> 2
+		INX <sub>&alpha;</sub> 2
 MKCN2X&rarr;		<sup>-</sup><sup>2</sup>JPX <sub>&beta;</sub> MKCN2
 MKCN3&rarr;		REX <sub>&alpha;</sub> #
 		hJPQ MOVE&alpha;
@@ -1317,7 +1317,7 @@ MOVEPICEX&rarr;
 		JPQ #
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=32 doc_page=30 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=32 doc_page=30 type=code proof=1]
 [Page header: "IES 2XMX 012"]
 
 MTDIS&rarr;		<sup>1</sup>STE MOVETHISX
@@ -1347,7 +1347,7 @@ SUBPIC1&rarr;
 SUBPIC2&rarr;
 		LDAB&equiv;IVAL+LIST<sub>S</sub>
 		STAB&equiv;NIRR
-		&alpha;&#9635;IWHAT,S [call to macro named with a composite character]
+		&alpha;&#9635;IWHAT,S [call to a macro named with a composite character]
 		JPQ SUBPICS
 SUBPIC3&rarr;		MOVE|NITOG&rarr;NINAME
 		MOVE|SCSZ&rarr;NIRR
@@ -1358,20 +1358,20 @@ SUBPIC3&rarr;		MOVE|NITOG&rarr;NINAME
 		LGORR&equiv;SPECB&times;&alpha;=S&rarr;SUBPICR&rarr;SUBPICEX
 SUBPICR&rarr;
 		<sup>1</sup>STE #+4
-		hLDE &alpha; LIST+PNAME
+		hLDE <sub>&alpha;</sub> LIST+PNAME
 		<sup>1</sup>SED NINAME
 		JPQ SUBPICS
 		JPQ #
 SUBPICS&rarr;
-		<sup>1</sup>DPX <sub>&alpha;</sub> #+2 	** MAKE I(THIS) [maybe not sub_alpha?]
+		<sup>1</sup>DPX <sub>&alpha;</sub> #+2 	** MAKE I(THIS) [best guess: <sub>&alpha;</sub>]
 		hJPQ STOPMOVEP
-		REX <sub>&gamma;</sub> #
+		REX <sub>&gamma;</sub>#
 		MAKA&equiv;INSTANCES&rarr;&alpha;
 		MKN SHAFTUSE
 		LDAB&equiv;NIRR
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=33 doc_page=31 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=33 doc_page=31 type=code proof=1]
 [Page header: "IES 2XMX 013"]
 
 		STAB&equiv;IVAL+LIST<sub>&alpha;</sub>
@@ -1386,16 +1386,13 @@ SUBPIT&rarr;		<sup>1</sup>STE SUBPITX
 SUBPITX&rarr;
 		JPQ #
 		MAKA&equiv;IPCONS&rarr;&beta;
-		[On the following lines involving PUT the separator is most likely]
-		[a comma, since it separates dummy arguments in a macro invocation,]
-		[while a dot does not.]
 		PUT|IPCV,&beta;&rarr;IPCOTP,&gamma;
 		PUT|IPCI,&beta;&rarr;VCON,&alpha;
 		MAKA&equiv;POINTS&rarr;&gamma;
 		PUT|IPCP,&beta;&rarr;VCON,&gamma;
 		JPQ SUBPITX
 SUBPIT1&rarr;
-		hJPQ MOVE&alpha; [maybe not alpha? MOVE&alpha; was seen before.]
+		hJPQ MOVE&alpha;
 SUBPICEX&rarr;
 		JPQ #
 NINAME&rarr;		0
@@ -1418,18 +1415,18 @@ DESIGIT&rarr;
 		REX <sub>&beta;</sub> DESIGS-LIST
 		JPQ FIXIT+2
 UNFIX&rarr;		<sup>1</sup>STE UNFIXEX
-		RES <sub>&alpha;</sub> FIXEDS-LIST
+		REX <sub>&alpha;</sub> FIXEDS-LIST
 		LGORR&equiv;SPECB&times;&alpha;=S&rarr;UNFIX1
 		REX <sub>&alpha;</sub> DESIGS-LIST
 		LGORR&equiv;SPECB&times;&alpha;=S&rarr;UNFIX1
 UNFIXEX&rarr;
 		JPQ #
-UNFIX1&rarr;		SUBR&equiv;(LTAKE&equiv;VORD&times;&alpha;) [maybe not alpha?]
+UNFIX1&rarr;		SUBR&equiv;(LTAKE&equiv;VORD&times;&alpha;)
 MAKPATA&rarr;
 		<sup>1</sup>STE MAKPATAX
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=34 doc_page=32 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=34 doc_page=32 type=code proof=1]
 [Page header: "IES 2XMX 014"]
 		SKZ LPLOST
 		JPQ MAKPATAX
@@ -1445,20 +1442,20 @@ MAKPATAX&rarr;
 TRUEUP&rarr;		<sup>1</sup>STE TRUEUPX
 		SKN ATLINE
 		JPQ TRUEUP1
-		MAKA&equiv;HOVS&rarr;9 [maybe alpha, not 9? or q?]
+		MAKA&equiv;HOVS&rarr;&alpha;	[&alpha; looks a bit smudged, but second argument to MAKA is always a Greek letter]
 		RSX <sub>&beta;</sub> ATBITS+1
 		RSX <sub>&gamma;</sub><sub>|</sub><sub>&beta;</sub> LSP+LIST
-		PUT|HOVP1,9&rarr;VCON,&gamma; [9 or alpha or q?]
+		PUT|HOVP1,&alpha;&rarr;VCON,&gamma; [same, second arg to PUT is usually a Greek letter]
 		RSX <sub>&gamma;</sub><sub>|</sub><sub>&beta;</sub> LEP+LIST
-		PUT|HOVP2,9&rarr;VCON,&gamma; [9 or alpha or q?]
-		[Handwritten: "<- MKM MOVED", intended correction?]
+		PUT|HOVP2,&alpha;&rarr;VCON,&gamma; [ditto]
+		[Handwritten: "<- MKM MOVED", looks like an intended correction]
 		JPQ TRUEUPX
 TRUEUP1&rarr;
 		SKN ATINS
 		JPQ TRUEUPX
 		MAKA&equiv;IBVERTS&rarr;&alpha;
 		RSX <sub>&beta;</sub> ATBITS+1
-		PUT|IBVW,0&rarr;VCON,&beta;
+		PUT|IBVW,&alpha;&rarr;VCON,&beta;	[best guess: &alpha;]
 TRUEUPX&rarr;
 		JPQ #
 STARTDRAW&rarr;
@@ -1469,7 +1466,7 @@ STARTDRAW&rarr;
 		hJPQ MACAP
 		MAKA&equiv;POINTS&rarr;&gamma;
 		LDAB&equiv;PSPL
-		STAB&equiv;&gamma;A<sub>&gamma;</sub> [is &gamma;A a symex here?]
+		STAB&equiv;VA<sub>&gamma;</sub>
 		SNZ DESIGNATED
 		JPQ STARTL
 STARTC&rarr;		MAKA&equiv;CIRCLES&rarr;&beta;
@@ -1484,7 +1481,7 @@ STARTCA&rarr;
 		PUT|CEP,&beta;&rarr;PLS,&gamma;
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=35 doc_page=33 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=35 doc_page=33 type=code proof=1]
 [Page header: "IES 2XMX 015"]
 
 		PUT|CSP,&beta;&rarr;PLS,&alpha;
@@ -1494,7 +1491,7 @@ STARTCA&rarr;
 STARTL&rarr;		MAKA&equiv;LINES&rarr;&beta;
 		PUT|LSP,&beta;&rarr;PLS,&alpha;
 		PUT|LEP,&beta;&rarr;PLS,&gamma;
-STARTT&rarr;		REX <sub>&alpha;</sub><sub>|</sub><sub>&gamma;</sub> [missing operand?]
+STARTT&rarr;		REX <sub>&alpha;</sub><sub>|</sub><sub>&gamma;</sub>	[syntax, missing operand?]
 		hJPQ MOVE&alpha;
 STARTDRAWEX&rarr;
 		JPQ #
@@ -1509,7 +1506,7 @@ DESIGNATE&rarr;
 		hJPQ MACAP
 		EXX <sub>&alpha;</sub> CCENT
 		SNN DESIGNATED
-		JPQ #+1
+		JPQ #+1	[looks like 1, but suspicious - isn't JPQ #+1 redundant? possibly 3?]
 		SKN <sub>1</sub><sub>.</sub><sub>1</sub> DESTS	**OLD POINT AT LINE
 		hJPQ DELETE
 		MOVEB&times;ATPOINT&rarr;21&times;DESTS

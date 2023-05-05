@@ -1229,7 +1229,7 @@ MAKECONS@arr@
 		RSX @sub_delta@ ATBITS+1
 		RSX @sub_delta@@sub_pipe@@sub_delta@ LIST+TYPE  **@delta@ AT HOVS
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=31 doc_page=29 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=31 doc_page=29 type=code proof=1]
 [Page header: "IES 2XMX 011"]
 
 		RSX @sub_alpha@@sub_pipe@@sub_delta@ LIST+TYPE
@@ -1253,10 +1253,10 @@ MKCN1X@arr@	JPQ #
 		STA B
 		DPX A
 		DEX @sub_beta@ CVTS+2
-		INX @sub_?@ CVTS+2 [sub_alpha?]
+		INX @sub_alpha@ CVTS+2 [best guess: @sub_alpha@]
 		JPQ MKCN2X
 MKCN2@arr@	MAKA@hamb@TPVALS@arr@@gamma@
-		PUTL@hamb@@?@@times@@alpha@@arr@VCON@times@@gamma@
+		PUTL@hamb@0@times@@alpha@@arr@VCON@times@@gamma@
 		STA MKCN2A
 		STB MKCN2B
 		ADD PSPL
@@ -1267,7 +1267,7 @@ MKCN2@arr@	MAKA@hamb@TPVALS@arr@@gamma@
 		COM MKCN2A
 		LDB MKCN2A
 		LDA MKCN2B
-		INX @sub_?@ 2
+		INX @sub_alpha@ 2
 MKCN2X@arr@	@sup_minus@@sup_2@JPX @sub_beta@ MKCN2
 MKCN3@arr@	REX @sub_alpha@ #
 		hJPQ MOVE@alpha@
@@ -1284,7 +1284,7 @@ MOVEPIC@arr@
 MOVEPICEX@arr@
 		JPQ #
 		
-[meta file_name=102726903-05-01-acc.pdf pdf_page=32 doc_page=30 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=32 doc_page=30 type=code proof=1]
 [Page header: "IES 2XMX 012"]
 
 MTDIS@arr@	@sup_1@STE MOVETHISX
@@ -1314,7 +1314,7 @@ SUBPIC1@arr@
 SUBPIC2@arr@
 		LDAB@hamb@IVAL+LIST@sub_S@
 		STAB@hamb@NIRR
-		@alpha@@rect_dash@IWHAT,S [call to macro named with a composite character]
+		@alpha@@rect_dash@IWHAT,S [call to a macro named with a composite character]
 		JPQ SUBPICS
 SUBPIC3@arr@	MOVE|NITOG@arr@NINAME
 		MOVE|SCSZ@arr@NIRR
@@ -1325,19 +1325,19 @@ SUBPIC3@arr@	MOVE|NITOG@arr@NINAME
 		LGORR@hamb@SPECB@times@@alpha@=S@arr@SUBPICR@arr@SUBPICEX
 SUBPICR@arr@
 		@sup_1@STE #+4
-		hLDE @alpha@ LIST+PNAME
+		hLDE @sub_alpha@ LIST+PNAME
 		@sup_1@SED NINAME
 		JPQ SUBPICS
 		JPQ #
 SUBPICS@arr@
-		@sup_1@DPX @sub_alpha@ #+2 	** MAKE I(THIS) [maybe not sub_alpha?]
+		@sup_1@DPX @sub_alpha@ #+2 	** MAKE I(THIS) [best guess: @sub_alpha@]
 		hJPQ STOPMOVEP
-		REX @sub_gamma@ #
+		REX @sub_gamma@#
 		MAKA@hamb@INSTANCES@arr@@alpha@
 		MKN SHAFTUSE
 		LDAB@hamb@NIRR
 		
-[meta file_name=102726903-05-01-acc.pdf pdf_page=33 doc_page=31 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=33 doc_page=31 type=code proof=1]
 [Page header: "IES 2XMX 013"]
 
 		STAB@hamb@IVAL+LIST@sub_alpha@
@@ -1352,16 +1352,13 @@ SUBPIT@arr@	@sup_1@STE SUBPITX
 SUBPITX@arr@
 		JPQ #
 		MAKA@hamb@IPCONS@arr@@beta@
-		[On the following lines involving PUT the separator is most likely]
-		[a comma, since it separates dummy arguments in a macro invocation,]
-		[while a dot does not.]
 		PUT|IPCV,@beta@@arr@IPCOTP,@gamma@
 		PUT|IPCI,@beta@@arr@VCON,@alpha@
 		MAKA@hamb@POINTS@arr@@gamma@
 		PUT|IPCP,@beta@@arr@VCON,@gamma@
 		JPQ SUBPITX
 SUBPIT1@arr@
-		hJPQ MOVE@alpha@ [maybe not alpha? MOVE@alpha@ was seen before.]
+		hJPQ MOVE@alpha@
 SUBPICEX@arr@
 		JPQ #
 NINAME@arr@	0
@@ -1384,17 +1381,17 @@ DESIGIT@arr@
 		REX @sub_beta@ DESIGS-LIST
 		JPQ FIXIT+2
 UNFIX@arr@	@sup_1@STE UNFIXEX
-		RES @sub_alpha@ FIXEDS-LIST
+		REX @sub_alpha@ FIXEDS-LIST
 		LGORR@hamb@SPECB@times@@alpha@=S@arr@UNFIX1
 		REX @sub_alpha@ DESIGS-LIST
 		LGORR@hamb@SPECB@times@@alpha@=S@arr@UNFIX1
 UNFIXEX@arr@
 		JPQ #
-UNFIX1@arr@	SUBR@hamb@(LTAKE@hamb@VORD@times@@alpha@) [maybe not alpha?]
+UNFIX1@arr@	SUBR@hamb@(LTAKE@hamb@VORD@times@@alpha@)
 MAKPATA@arr@
 		@sup_1@STE MAKPATAX
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=34 doc_page=32 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=34 doc_page=32 type=code proof=1]
 [Page header: "IES 2XMX 014"]
 		SKZ LPLOST
 		JPQ MAKPATAX
@@ -1410,20 +1407,20 @@ MAKPATAX@arr@
 TRUEUP@arr@	@sup_1@STE TRUEUPX
 		SKN ATLINE
 		JPQ TRUEUP1
-		MAKA@hamb@HOVS@arr@9 [maybe alpha, not 9? or q?]
+		MAKA@hamb@HOVS@arr@@alpha@	[@alpha@ looks a bit smudged, but second argument to MAKA is always a Greek letter]
 		RSX @sub_beta@ ATBITS+1
 		RSX @sub_gamma@@sub_pipe@@sub_beta@ LSP+LIST 
-		PUT|HOVP1,9@arr@VCON,@gamma@ [9 or alpha or q?]
+		PUT|HOVP1,@alpha@@arr@VCON,@gamma@ [same, second arg to PUT is usually a Greek letter]
 		RSX @sub_gamma@@sub_pipe@@sub_beta@ LEP+LIST
-		PUT|HOVP2,9@arr@VCON,@gamma@ [9 or alpha or q?]
-		[Handwritten: "<- MKM MOVED", intended correction?]
+		PUT|HOVP2,@alpha@@arr@VCON,@gamma@ [ditto]
+		[Handwritten: "<- MKM MOVED", looks like an intended correction]
 		JPQ TRUEUPX
 TRUEUP1@arr@
 		SKN ATINS
 		JPQ TRUEUPX
 		MAKA@hamb@IBVERTS@arr@@alpha@
 		RSX @sub_beta@ ATBITS+1
-		PUT|IBVW,0@arr@VCON,@beta@
+		PUT|IBVW,@alpha@@arr@VCON,@beta@	[best guess: @alpha@]
 TRUEUPX@arr@
 		JPQ #
 STARTDRAW@arr@
@@ -1434,7 +1431,7 @@ STARTDRAW@arr@
 		hJPQ MACAP
 		MAKA@hamb@POINTS@arr@@gamma@
 		LDAB@hamb@PSPL
-		STAB@hamb@@gamma@A@sub_gamma@ [is @gamma@A a symex here?]
+		STAB@hamb@VA@sub_gamma@
 		SNZ DESIGNATED
 		JPQ STARTL
 STARTC@arr@	MAKA@hamb@CIRCLES@arr@@beta@
@@ -1448,7 +1445,7 @@ STARTCA@arr@
 		REX @sub_beta@ #
 		PUT|CEP,@beta@@arr@PLS,@gamma@
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=35 doc_page=33 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=35 doc_page=33 type=code proof=1]
 [Page header: "IES 2XMX 015"]
 
 		PUT|CSP,@beta@@arr@PLS,@alpha@
@@ -1458,7 +1455,7 @@ STARTCA@arr@
 STARTL@arr@	MAKA@hamb@LINES@arr@@beta@
 		PUT|LSP,@beta@@arr@PLS,@alpha@
 		PUT|LEP,@beta@@arr@PLS,@gamma@
-STARTT@arr@	REX @sub_alpha@@sub_pipe@@sub_gamma@ [missing operand?]
+STARTT@arr@	REX @sub_alpha@@sub_pipe@@sub_gamma@	[syntax, missing operand?]
 		hJPQ MOVE@alpha@
 STARTDRAWEX@arr@
 		JPQ #
@@ -1473,7 +1470,7 @@ DESIGNATE@arr@
 		hJPQ MACAP
 		EXX @sub_alpha@ CCENT
 		SNN DESIGNATED
-		JPQ #+1
+		JPQ #+1	[looks like 1, but suspicious - isn't JPQ #+1 redundant? possibly 3?]
 		SKN @sub_1@@sub_dot@@sub_1@ DESTS	**OLD POINT AT LINE
 		hJPQ DELETE
 		MOVEB@times@ATPOINT@arr@21@times@DESTS
