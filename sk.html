@@ -985,7 +985,7 @@ PAGE1F&rarr;		SKN <sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub> SWITCH	** IF 
 		SKN <sub>4</sub><sub>.</sub><sub>3</sub> 76BUT [best guess: <sub>3</sub>]
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=26 doc_page=24 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=26 doc_page=24 type=code proof=1]
 [Page header: "IES 2XMX 004"]
 
 		JPQ #+7
@@ -1005,7 +1005,7 @@ PAGE1G&rarr;		SKN <sub>4</sub><sub>.</sub><sub>3</sub> 76BUT
 		hJPQ RIBM
 		hJPQ GARBAGE
 		MKN MOVED
-		SKN <sub>3</sub><sub>.</sub><sub>?</sub> 76BUT
+		SKN <sub>3</sub><sub>.</sub><sub>9</sub> 76BUT	[best guess: <sub>9</sub>]
 		JPQ #+3
 		hJPQ RDTX2
 		MKN MOVED
@@ -1015,7 +1015,7 @@ ALLREAD&rarr;
 		hDPX 47TABLE
 READITEX&rarr;
 		JPQ #
-CPY1&rarr;		<sup>1</sup> STE CPY1X
+CPY1&rarr;		<sup>1</sup>STE CPY1X
 		LDA 377723
 		JPQ CPY1T
 CPY2&rarr;		<sup>1</sup>STE CPY1X
@@ -1040,7 +1040,7 @@ ORDSTARTW&rarr;
 		hJPQ ORDSTART
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=27 doc_page=25 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=27 doc_page=25 type=code proof=1]
 [Page header: "IES 2XMX 005"]
 
 		JPQ #
@@ -1052,7 +1052,7 @@ CONSTOUTX&rarr;
 		JPQ #
 CONSTOUT1&rarr;
 		SUBR&equiv;(LGORR&equiv;PICBLKS&times;&alpha;=S&rarr;CONSOUTSUB)
-CONSOUTSUB&rarr;
+CONSOUTSUB&rarr;	[it is CONSOUTSUB/CONSOUTSUBX in the listing (without T)]
 		<sup>1</sup>STE CONSOUTSUBX
 		RSX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
 		RSX <sub>&beta;</sub><sub>|</sub><sub>&beta;</sub> LIST+TYPE
@@ -1071,7 +1071,7 @@ PICOUT1&rarr;
 		<sup>1</sup>DPX <sub>&alpha;</sub> PICOUT&alpha;
 PICOUT2&rarr;
 		RSX <sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub> LIST+PICBLKS+1
-		<sup>1</sup><sup>?</sup>AUX <sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub> LIST-1
+		<sup>1</sup><sup>6</sup>AUX <sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub> LIST-1 [best guess: <sup>6</sup>]
 		DEX <sub>&alpha;</sub> 1
 PICOUT&alpha;&rarr;
 		SXD <sub>&alpha;</sub> #
@@ -1091,12 +1091,12 @@ PICOUTX&rarr;
 		hJPQ DELETE
 		RSX <sub>&alpha;</sub> PICOUT&alpha;1
 		JPQ PICOUT3+1
-		** REMOVE USELESS POINTS
+		**REMOVE USELESS POINTS
 POINTSOUT&rarr;
 		<sup>1</sup>STE POINTSOUTGRX
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=28 doc_page=26 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=28 doc_page=26 type=code proof=1]
 [Page header: "IES 2XMX 006"]
 
 		REX <sub>&alpha;</sub> CURPICS-LIST
@@ -1142,7 +1142,7 @@ PTSOUT2&rarr;
 		hJPQ DELETE
 		MKN MOVED
 		JPQ PTSOUT1X
-		** MAKE POINT &alpha; BE ON CIRCLE &beta;
+		**MAKE POINT &alpha; BE ON CIRCLE &beta;
 MPBOC&rarr;		<sup>1</sup>STE MPBOCX
 		MAKA&equiv;ONCIRCLES&rarr;&gamma;
 		PUT|PBOCP,&gamma;&rarr;VCON,&alpha;
@@ -1151,12 +1151,12 @@ MPBOC&rarr;		<sup>1</sup>STE MPBOCX
 		RSX <sub>S</sub><sub>|</sub><sub>&beta;</sub> CSP+LIST
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=29 doc_page=27 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=29 doc_page=27 type=code proof=1]
 [Page header: "IES 2XMX 007"]
 
 		PUT|PBOCS,&gamma;&rarr;VCON,S
 MPBOCX&rarr;		JPQ #
-		** MAKE POINT &alpha; BE ON LINE &beta;
+		**MAKE POINT &alpha; BE ON LINE &beta;
 MPBOL&rarr;		<sup>1</sup>STE MPBOLX
 		MAKA&equiv;ONLINES&rarr;&gamma;
 		PUT|PBOLP,&gamma;&rarr;VCON,&alpha;
@@ -1192,7 +1192,7 @@ MACAPT&rarr;		RSX <sub>&gamma;</sub> ATBITS
 		JPQ MACAPTX+1
 MACAPA&rarr;		<sup>1</sup>DPX <sub>&gamma;</sub> MACAPTX
 		SXD <sub>&gamma;</sub> 0
-		DPX MACAPTX [something between DPX and MACAPTX, interpreting as junk, maybe <sup>1</sup>?]
+		DPX <sup>1</sup> MACAPTX	[not clear why superscript is after instruction here, but they can go anywhere]
 		RSX <sub>&beta;</sub><sub>|</sub><sub>&gamma;</sub> ATBITS+1
 		RSX <sub>&gamma;</sub><sub>|</sub><sub>&beta;</sub> LIST+TYPE
 		SXD <sub>&gamma;</sub> LINES-LIST
@@ -1206,8 +1206,8 @@ MACAPTX&rarr;
 		<sup>-</sup><sup>1</sup>JPX <sub>&gamma;</sub> MACAPA
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=30 doc_page=28 type=code]
-[Page header: "IES 2XMX 010" (octal numbering, previous page had 007)]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=30 doc_page=28 type=code proof=1]
+[Page header: "IES 2XMX 010" (octal numbering, previous page had "007")]
 
 		JPQ MACAPX
 MACAP1&rarr;		RSX <sub>&alpha;</sub> ATBITS+1
@@ -1217,14 +1217,14 @@ MAKETEXT&rarr;
 		SKZ LPLOST
 		JPQ MAKETEXTX
 		hJPQ STOPMOVEP
-		MAKA&equiv;TEXTS&rarr;?
+		MAKA&equiv;TEXTS&rarr;&alpha;
 		LDAB&equiv;PSPL
 		STAB&equiv;LIST+TVAL+2<sub>&alpha;</sub>
 		LDA SCSZ
 		MUL { 10,} [zero not very legible, but see next block]
 		DPX B
 		STAB&equiv;LIST+TVAL<sub>&alpha;</sub>
-		DPX <sub>?</sub><sub>|</sub><sub>&alpha;</sub> LIST+TXTS
+		DPX <sub>0</sub><sub>|</sub><sub>&alpha;</sub> LIST+TXTS	[best guess: <sub>0</sub>, there are other examples like this]
 		MOVE|{ 47,47,,47,47}&rarr;LIST+TXTS+1<sub>&alpha;</sub>
 		hJPQ MTDIS
 		MKN SHAFTUSE

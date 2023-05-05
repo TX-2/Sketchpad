@@ -958,7 +958,7 @@ PAGE1F@arr@	SKN @sub_4@@sub_dot@@sub_1@@sub_0@ SWITCH	** IF ONE, DO DEADLY DELET
 		hJPQ PICOUT
 		SKN @sub_4@@sub_dot@@sub_3@ 76BUT [best guess: @sub_3@]
 		
-[meta file_name=102726903-05-01-acc.pdf pdf_page=26 doc_page=24 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=26 doc_page=24 type=code proof=1]
 [Page header: "IES 2XMX 004"]
 
 		JPQ #+7
@@ -978,7 +978,7 @@ PAGE1G@arr@	SKN @sub_4@@sub_dot@@sub_3@ 76BUT
 		hJPQ RIBM
 		hJPQ GARBAGE
 		MKN MOVED
-		SKN @sub_3@@sub_dot@@sub_?@ 76BUT
+		SKN @sub_3@@sub_dot@@sub_9@ 76BUT	[best guess: @sub_9@]
 		JPQ #+3
 		hJPQ RDTX2
 		MKN MOVED
@@ -988,7 +988,7 @@ ALLREAD@arr@
 		hDPX 47TABLE
 READITEX@arr@
 		JPQ #
-CPY1@arr@	@sup_1@ STE CPY1X
+CPY1@arr@	@sup_1@STE CPY1X
 		LDA 377723
 		JPQ CPY1T
 CPY2@arr@	@sup_1@STE CPY1X
@@ -1012,7 +1012,7 @@ ORDSTARTW@arr@
 		MKN ORDWORST
 		hJPQ ORDSTART
 		
-[meta file_name=102726903-05-01-acc.pdf pdf_page=27 doc_page=25 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=27 doc_page=25 type=code proof=1]
 [Page header: "IES 2XMX 005"]
 
 		JPQ #
@@ -1024,7 +1024,7 @@ CONSTOUTX@arr@
 		JPQ #
 CONSTOUT1@arr@
 		SUBR@hamb@(LGORR@hamb@PICBLKS@times@@alpha@=S@arr@CONSOUTSUB)
-CONSOUTSUB@arr@
+CONSOUTSUB@arr@	[it is CONSOUTSUB/CONSOUTSUBX in the listing (without T)]
 		@sup_1@STE CONSOUTSUBX
 		RSX @sub_beta@@sub_pipe@@sub_alpha@ LIST+TYPE
 		RSX @sub_beta@@sub_pipe@@sub_beta@ LIST+TYPE
@@ -1043,7 +1043,7 @@ PICOUT1@arr@
 		@sup_1@DPX @sub_alpha@ PICOUT@alpha@
 PICOUT2@arr@
 		RSX @sub_alpha@@sub_pipe@@sub_alpha@ LIST+PICBLKS+1
-		@sup_1@@sup_?@AUX @sub_alpha@@sub_pipe@@sub_alpha@ LIST-1
+		@sup_1@@sup_6@AUX @sub_alpha@@sub_pipe@@sub_alpha@ LIST-1 [best guess: @sup_6@]
 		DEX @sub_alpha@ 1
 PICOUT@alpha@@arr@
 		SXD @sub_alpha@ #
@@ -1063,11 +1063,11 @@ PICOUTX@arr@
 		hJPQ DELETE
 		RSX @sub_alpha@ PICOUT@alpha@1
 		JPQ PICOUT3+1
-		** REMOVE USELESS POINTS
+		**REMOVE USELESS POINTS
 POINTSOUT@arr@
 		@sup_1@STE POINTSOUTGRX
 		
-[meta file_name=102726903-05-01-acc.pdf pdf_page=28 doc_page=26 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=28 doc_page=26 type=code proof=1]
 [Page header: "IES 2XMX 006"]
 
 		REX @sub_alpha@ CURPICS-LIST
@@ -1113,7 +1113,7 @@ PTSOUT2@arr@
 		hJPQ DELETE
 		MKN MOVED
 		JPQ PTSOUT1X
-		** MAKE POINT @alpha@ BE ON CIRCLE @beta@
+		**MAKE POINT @alpha@ BE ON CIRCLE @beta@
 MPBOC@arr@	@sup_1@STE MPBOCX
 		MAKA@hamb@ONCIRCLES@arr@@gamma@
 		PUT|PBOCP,@gamma@@arr@VCON,@alpha@
@@ -1121,12 +1121,12 @@ MPBOC@arr@	@sup_1@STE MPBOCX
 		PUT|PBOCC,@gamma@@arr@VCON,S
 		RSX @sub_S@@sub_pipe@@sub_beta@ CSP+LIST
 		
-[meta file_name=102726903-05-01-acc.pdf pdf_page=29 doc_page=27 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=29 doc_page=27 type=code proof=1]
 [Page header: "IES 2XMX 007"]
 
 		PUT|PBOCS,@gamma@@arr@VCON,S
 MPBOCX@arr@	JPQ #
-		** MAKE POINT @alpha@ BE ON LINE @beta@
+		**MAKE POINT @alpha@ BE ON LINE @beta@
 MPBOL@arr@	@sup_1@STE MPBOLX
 		MAKA@hamb@ONLINES@arr@@gamma@
 		PUT|PBOLP,@gamma@@arr@VCON,@alpha@
@@ -1162,7 +1162,7 @@ MACAPT@arr@	RSX @sub_gamma@ ATBITS
 		JPQ MACAPTX+1
 MACAPA@arr@	@sup_1@DPX @sub_gamma@ MACAPTX
 		SXD @sub_gamma@ 0
-		DPX MACAPTX [something between DPX and MACAPTX, interpreting as junk, maybe @sup_1@?]
+		DPX @sup_1@ MACAPTX	[not clear why superscript is after instruction here, but they can go anywhere]
 		RSX @sub_beta@@sub_pipe@@sub_gamma@ ATBITS+1
 		RSX @sub_gamma@@sub_pipe@@sub_beta@ LIST+TYPE
 		SXD @sub_gamma@ LINES-LIST
@@ -1175,8 +1175,8 @@ MACAPTX@arr@
 		REX @sub_gamma@ 0
 		@sup_minus@@sup_1@JPX @sub_gamma@ MACAPA
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=30 doc_page=28 type=code]
-[Page header: "IES 2XMX 010" (octal numbering, previous page had 007)]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=30 doc_page=28 type=code proof=1]
+[Page header: "IES 2XMX 010" (octal numbering, previous page had "007")]
 
 		JPQ MACAPX
 MACAP1@arr@	RSX @sub_alpha@ ATBITS+1
@@ -1186,14 +1186,14 @@ MAKETEXT@arr@
 		SKZ LPLOST
 		JPQ MAKETEXTX
 		hJPQ STOPMOVEP
-		MAKA@hamb@TEXTS@arr@@?@
+		MAKA@hamb@TEXTS@arr@@alpha@
 		LDAB@hamb@PSPL
 		STAB@hamb@LIST+TVAL+2@sub_alpha@
 		LDA SCSZ
 		MUL { 10,} [zero not very legible, but see next block]
 		DPX B
 		STAB@hamb@LIST+TVAL@sub_alpha@
-		DPX @sub_?@@sub_pipe@@sub_alpha@ LIST+TXTS
+		DPX @sub_0@@sub_pipe@@sub_alpha@ LIST+TXTS	[best guess: @sub_0@, there are other examples like this]
 		MOVE|{ 47,47,,47,47}@arr@LIST+TXTS+1@sub_alpha@
 		hJPQ MTDIS
 		MKN SHAFTUSE
