@@ -1499,7 +1499,7 @@ MOVE@alpha@@arr@	@sup_1@STE MOVE@alpha@X
 		SXD @sub_T@ VARIABLES-LIST
 		JPQ MOVE@alpha@V
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=36 doc_page=34 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=36 doc_page=34 type=code proof=1]
 [Page header: "IES 2XMX 016"]
 
 		JPQ MOVE@alpha@X
@@ -1523,6 +1523,7 @@ MOVE@alpha@CT1@arr@
 		RSX @sub_alpha@@sub_pipe@@sub_T@ LIST+VORD+2
 		RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+TYPE
 		RSX @sub_T@@sub_pipe@@sub_S@ LIST+TYPE
+		SXD @sub_T@ VARIABLES-LIST
 		JPQ #+2
 		ERROR@hamb@@alpha@@arr@MOVE@alpha@X
 		hJPQ MOVE@alpha@VSS
@@ -1548,11 +1549,11 @@ MOVE@alpha@I1@arr@
 		SXD @sub_S@ IPCONS-LIST
 		JPQ #+2
 		JPQ MOVE@alpha@VSX
-		RSX @sub_alpha@@sub_pipe@@sub_alpha@ LIST+IPCP [IRCP maybe?]
+		RSX @sub_alpha@@sub_pipe@@sub_alpha@ LIST+IPCP
 		RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+TYPE
 		JPQ MOVE@alpha@VS+1
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=37 doc_page=35 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=37 doc_page=35 type=code proof=1]
 [Page header: "IES 2XMX 017"]
 
 MOVE@alpha@VS@arr@
@@ -1581,7 +1582,7 @@ MOVE@alpha@VSX@arr@
 MOVE@alpha@IPM@arr@
 		@sup_1@STE MOVE@alpha@IPMX
 		RSX @sub_beta@@sub_pipe@@sub_alpha@ LIST+BWHOS
-		MOVEL@hamb@BWHOS@times@@alpha@@arr@PPARTM@times@beta
+		MOVEL@hamb@BWHOS@times@@alpha@@arr@PPARTM@times@@beta@
 MOVE@alpha@IPMX@arr@
 		JPQ #
 MOVE@alpha@MVG@arr@
@@ -1607,7 +1608,7 @@ MERGEIFP@arr@
 MERGEIFP1@arr@
 		RSX @sub_S@@sub_pipe@@sub_S@ LIST+TYPE
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=38 doc_page=36 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=38 doc_page=36 type=code proof=1]
 [Page header: "IES 2XMX 020"]
 
 		SXD @sub_S@ VARIABLES-LIST
@@ -1618,7 +1619,7 @@ STOPMOVEP@arr@
 		@sup_1@STE STOPMOVEX
 		MKN MOVINGDONE
 		MKZ SHAFTUSE
-		RES @sub_alpha@ CURPICS-LIST
+		REX @sub_alpha@ CURPICS-LIST
 		LGORR@hamb@SPECB@times@@alpha@=S@arr@STOPMOVEP1
 		RSX @sub_alpha@ MOVINGS+SPECB+1
 		SXD @sub_alpha@ MOVINGS-LIST+SPECB+1
@@ -1629,7 +1630,7 @@ STOPMOVEP@arr@
 		hJPQ STOPTAKE
 		RSX @sub_beta@ ATBITS+1
 		RSX @sub_S@ ATBITS
-		RSX @sub_S@ 1
+		SXD @sub_S@ 1
 STOPMOVEPB@arr@
 		hJPQ MERGEIFP
 		DPX @sub_alpha@ ATBITS+1
@@ -1661,7 +1662,7 @@ STOPMOVEP2@arr@
 		RSX @sub_S@@sub_pipe@@sub_S@ LIST+KIND
 		RSX @sub_beta@@sub_pipe@@sub_alpha@ LIST+BWHOS
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=39 doc_page=37 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=39 doc_page=37 type=code proof=1]
 [Page header: "IES 2XMX 021"]
 
 		SXD @sub_S@ JUNKK
@@ -1715,7 +1716,7 @@ STOPM3A@arr@
 		RSX @sub_gamma@@sub_pipe@@sub_beta@ LIST+TYPE
 		SXD @sub_gamma@ LINES-LIST
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=40 doc_page=38 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=40 doc_page=38 type=code proof=1]
 [Page header: "IES 2XMX 022"]
 
 		JPQ STOPM3AL
@@ -1741,10 +1742,10 @@ STOPM3AI@arr@
 		JPQ STOPM3X
 STOPM4@arr@	hJPQ CONAP
 		JPQ STOPM1X
-		** MERGE @alpha@ AND @beta@
+		**MERGE @alpha@ AND @beta@
 MERGER@arr@	@sup_1@STE MERGEX
 		MKN MRGRFTT **FIRST TIME THRU
-		SXD @sub_alpha@@sub_pipe@@sub_beta@ [same again, valid without operand?]
+		SXD @sub_alpha@@sub_pipe@@sub_beta@
 		JPQ MERGEX
 MERGERBAC@arr@
 		RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+TYPE

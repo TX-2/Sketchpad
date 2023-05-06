@@ -1536,7 +1536,7 @@ MOVE&alpha;&rarr;		<sup>1</sup>STE MOVE&alpha;X
 		JPQ MOVE&alpha;V
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=36 doc_page=34 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=36 doc_page=34 type=code proof=1]
 [Page header: "IES 2XMX 016"]
 
 		JPQ MOVE&alpha;X
@@ -1560,6 +1560,7 @@ MOVE&alpha;CT1&rarr;
 		RSX <sub>&alpha;</sub><sub>|</sub><sub>T</sub> LIST+VORD+2
 		RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
 		RSX <sub>T</sub><sub>|</sub><sub>S</sub> LIST+TYPE
+		SXD <sub>T</sub> VARIABLES-LIST
 		JPQ #+2
 		ERROR&equiv;&alpha;&rarr;MOVE&alpha;X
 		hJPQ MOVE&alpha;VSS
@@ -1585,12 +1586,12 @@ MOVE&alpha;I1&rarr;
 		SXD <sub>S</sub> IPCONS-LIST
 		JPQ #+2
 		JPQ MOVE&alpha;VSX
-		RSX <sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub> LIST+IPCP [IRCP maybe?]
+		RSX <sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub> LIST+IPCP
 		RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
 		JPQ MOVE&alpha;VS+1
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=37 doc_page=35 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=37 doc_page=35 type=code proof=1]
 [Page header: "IES 2XMX 017"]
 
 MOVE&alpha;VS&rarr;
@@ -1619,7 +1620,7 @@ MOVE&alpha;VSX&rarr;
 MOVE&alpha;IPM&rarr;
 		<sup>1</sup>STE MOVE&alpha;IPMX
 		RSX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+BWHOS
-		MOVEL&equiv;BWHOS&times;&alpha;&rarr;PPARTM&times;beta
+		MOVEL&equiv;BWHOS&times;&alpha;&rarr;PPARTM&times;&beta;
 MOVE&alpha;IPMX&rarr;
 		JPQ #
 MOVE&alpha;MVG&rarr;
@@ -1646,7 +1647,7 @@ MERGEIFP1&rarr;
 		RSX <sub>S</sub><sub>|</sub><sub>S</sub> LIST+TYPE
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=38 doc_page=36 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=38 doc_page=36 type=code proof=1]
 [Page header: "IES 2XMX 020"]
 
 		SXD <sub>S</sub> VARIABLES-LIST
@@ -1657,7 +1658,7 @@ STOPMOVEP&rarr;
 		<sup>1</sup>STE STOPMOVEX
 		MKN MOVINGDONE
 		MKZ SHAFTUSE
-		RES <sub>&alpha;</sub> CURPICS-LIST
+		REX <sub>&alpha;</sub> CURPICS-LIST
 		LGORR&equiv;SPECB&times;&alpha;=S&rarr;STOPMOVEP1
 		RSX <sub>&alpha;</sub> MOVINGS+SPECB+1
 		SXD <sub>&alpha;</sub> MOVINGS-LIST+SPECB+1
@@ -1668,7 +1669,7 @@ STOPMOVEP&rarr;
 		hJPQ STOPTAKE
 		RSX <sub>&beta;</sub> ATBITS+1
 		RSX <sub>S</sub> ATBITS
-		RSX <sub>S</sub> 1
+		SXD <sub>S</sub> 1
 STOPMOVEPB&rarr;
 		hJPQ MERGEIFP
 		DPX <sub>&alpha;</sub> ATBITS+1
@@ -1701,7 +1702,7 @@ STOPMOVEP2&rarr;
 		RSX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+BWHOS
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=39 doc_page=37 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=39 doc_page=37 type=code proof=1]
 [Page header: "IES 2XMX 021"]
 
 		SXD <sub>S</sub> JUNKK
@@ -1756,7 +1757,7 @@ STOPM3A&rarr;
 		SXD <sub>&gamma;</sub> LINES-LIST
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=40 doc_page=38 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=40 doc_page=38 type=code proof=1]
 [Page header: "IES 2XMX 022"]
 
 		JPQ STOPM3AL
@@ -1782,10 +1783,10 @@ STOPM3AI&rarr;
 		JPQ STOPM3X
 STOPM4&rarr;		hJPQ CONAP
 		JPQ STOPM1X
-		** MERGE &alpha; AND &beta;
+		**MERGE &alpha; AND &beta;
 MERGER&rarr;		<sup>1</sup>STE MERGEX
 		MKN MRGRFTT **FIRST TIME THRU
-		SXD <sub>&alpha;</sub><sub>|</sub><sub>&beta;</sub> [same again, valid without operand?]
+		SXD <sub>&alpha;</sub><sub>|</sub><sub>&beta;</sub>
 		JPQ MERGEX
 MERGERBAC&rarr;
 		RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
