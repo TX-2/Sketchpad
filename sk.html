@@ -1813,7 +1813,7 @@ MERGERC&rarr;
 		DPX <sub>&alpha;</sub> MERGTS
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=41 doc_page=39 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=41 doc_page=39 type=code proof=1]
 [Page header: "IES 2XMX 023"]
 
 		EXX <sub>&beta;</sub> MERGTS
@@ -1824,7 +1824,7 @@ MERGERD&rarr;
 		JPQ #+2
 		ERROR&equiv;&alpha;&rarr;MERGEX
 		SZZ MRGRFTT
-		<sup>1</sup>DPX <sub>&alpha;</sub> MRGR9 [really 9?]
+		<sup>1</sup>DPX <sub>&alpha;</sub> MRGR9
 		RSX <sub>S</sub><sub>|</sub><sub>&beta;</sub> LIST+TYPE
 		SXD <sub>S</sub> POINTS-LIST
 		JPQ #+2
@@ -1832,7 +1832,7 @@ MERGERD&rarr;
 MERGERA&rarr;
 		DPX <sub>&alpha;</sub> MRGRL
 		DPX <sub>&beta;</sub> MRGRU
-		MOVE|LIST<sub>&alpha;</sub>&rarr;MRGTP [notable: LIST<sub>&alpha;</sub> as macro parameter]
+		MOVE|LIST<sub>&alpha;</sub>&rarr;MRGTP [syntax: LIST<sub>&alpha;</sub> as macro parameter]
 		<sup>1</sup><sup>5</sup>RSX <sub>&gamma;</sub><sub>|</sub><sub>&beta;</sub> LIST+TYPE
 		DEX <sub>&gamma;</sub> 2
 		JPQ MRGRX
@@ -1868,17 +1868,17 @@ MRGR3&rarr;		h<sup>1</sup><sup>7</sup>LDE <sub>&alpha;</sub> LIST+1
 MRGR3A&rarr;		MOVE|LIST<sub>&beta;</sub>&rarr;LIST<sub>&alpha;</sub>
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=42 doc_page=40 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=42 doc_page=40 type=code proof=1]
 [Page header: "IES 2XMX 024"]
 
-		MOVE|LIST+1<sub>&beta;</sub>&rarr;?LIST+1<sub>&alpha;</sub> [possibly junk/noise?]
+		MOVE|LIST+1<sub>&beta;</sub>&rarr;hLIST+1<sub>&alpha;</sub> [best guess: second argument include h, which propagates to the instruction in MOVE macro definition]
 		RSX <sub>S</sub> E
 		REX <sub>T</sub><sub>|</sub><sub>&alpha;</sub> 1
 		<sup>2</sup>DPX <sub>T</sub><sub>|</sub><sub>S</sub> LIST
 		<sup>2</sup>RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LIST+1
 		<sup>1</sup>DPX <sub>T</sub><sub>|</sub><sub>S</sub> LIST
 		REX <sub>T</sub><sub>|</sub><sub>&beta;</sub> 1
-		<sup>1</sup>DPX <sub>?</sub><sub>|</sub><sub>&beta;</sub> LIST [missing operand, can't be valid?]
+		<sup>1</sup>DPX <sub>|</sub><sub>&beta;</sub> LIST [syntax: missing pre-pipe operand in subscript modifier]
 		h<sup>1</sup>DPX <sub>T</sub> E
 		h<sup>2</sup>DPX <sub>T</sub> E
 		STE <sub>&beta;</sub> LIST+1
@@ -1891,9 +1891,9 @@ MRGR4&rarr;		hLDE <sub>&alpha;</sub> LIST
 MRGR5&rarr;		DPX <sub>&beta;</sub> MRGRTS
 		RSX <sub>&beta;</sub><sub>|</sub><sub>&beta;</sub> LIST+1
 MRGR5A&rarr;		hLDE <sub>&beta;</sub> LIST-1
-		<sup>1</sup> SED { 0}
+		<sup>1</sup>SED { 0}
 		JPQ MRGR5B
-		MOVE|MRGRL&rarr;<sup>1</sup> LIST-1<sub>&beta;</sub> [unkown syntax, what does it mean?]
+		MOVE|MRGRL&rarr;<sup>1</sup> LIST-1<sub>&beta;</sub>
 		RSX <sub>&beta;</sub><sub>|</sub><sub>&beta;</sub> LIST
 		JPQ MRGR5A
 MRGR5B&rarr;		RSX <sub>&beta;</sub> MRGRTS
@@ -1912,7 +1912,7 @@ MRGR5B&rarr;		RSX <sub>&beta;</sub> MRGRTS
 MRGRX&rarr;		<sup>-</sup><sup>2</sup>JPX <sub>&gamma;</sub> MRGRXA
 MRGR7&rarr;		RSX <sub>&alpha;</sub> MRGRU
 		hJPQ DELETE
-MRGR8&rarr;		REX <sub>&alpha;</sub> MERGERS-LIST
+MRGR8&rarr;		REX <sub>&alpha;</sub> MERGERS-LIST	[best guess: 8 in the label]
 		LGORR&equiv;SPECB&times;&alpha;=S&rarr;MRGR10&rarr;MRGR9
 MRGR10&rarr;		RSX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+VORD+1
 		DEX <sub>&beta;</sub> 1
@@ -1923,7 +1923,7 @@ MRGR10&rarr;		RSX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+VORD+1
 MRGR6&rarr;		RSX <sub>&Delta;</sub><sub>|</sub><sub>&alpha;</sub> LIST ** &Delta; IS POINTED AT THING
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=43 doc_page=41 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=43 doc_page=41 type=code proof=1]
 [Page header: "IES 2XMX 025"]
 
 		RSX <sub>S</sub><sub>|</sub><sub>&Delta;</sub> LIST+TYPE
@@ -1940,7 +1940,7 @@ MRGR6&rarr;		RSX <sub>&Delta;</sub><sub>|</sub><sub>&alpha;</sub> LIST ** &Delta
 		RSX <sub>S</sub><sub>|</sub><sub>S</sub> LIST+TYPE
 		SXD <sub>S</sub> MASTERS-LIST
 		ERROR&equiv;&Delta;&rarr;MERGEX
-		LTAKE&equiv;&alpha;&times;&beta; [really alpha?]
+		LTAKE&equiv;0&times;&beta;	[best guess: 0]
 		REX <sub>&epsilon;</sub> MERGERS-LIST
 		MOVEL&equiv;VORD&times;&Delta;&rarr;SPECB&times;&epsilon;
 		<sup>1</sup>DPX <sub>&epsilon;</sub><sub>|</sub><sub>&Delta;</sub> VORD+LIST

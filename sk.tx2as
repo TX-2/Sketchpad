@@ -1771,7 +1771,7 @@ MERGERB@arr@
 MERGERC@arr@
 		DPX @sub_alpha@ MERGTS
  
-[meta file_name=102726903-05-01-acc.pdf pdf_page=41 doc_page=39 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=41 doc_page=39 type=code proof=1]
 [Page header: "IES 2XMX 023"]
 
 		EXX @sub_beta@ MERGTS
@@ -1782,7 +1782,7 @@ MERGERD@arr@
 		JPQ #+2
 		ERROR@hamb@@alpha@@arr@MERGEX
 		SZZ MRGRFTT
-		@sup_1@DPX @sub_alpha@ MRGR9 [really 9?]
+		@sup_1@DPX @sub_alpha@ MRGR9
 		RSX @sub_S@@sub_pipe@@sub_beta@ LIST+TYPE
 		SXD @sub_S@ POINTS-LIST
 		JPQ #+2
@@ -1790,7 +1790,7 @@ MERGERD@arr@
 MERGERA@arr@
 		DPX @sub_alpha@ MRGRL
 		DPX @sub_beta@ MRGRU
-		MOVE|LIST@sub_alpha@@arr@MRGTP [notable: LIST@sub_alpha@ as macro parameter]
+		MOVE|LIST@sub_alpha@@arr@MRGTP [syntax: LIST@sub_alpha@ as macro parameter]
 		@sup_1@@sup_5@RSX @sub_gamma@@sub_pipe@@sub_beta@ LIST+TYPE
 		DEX @sub_gamma@ 2
 		JPQ MRGRX
@@ -1825,17 +1825,17 @@ MRGR3@arr@	h@sup_1@@sup_7@LDE @sub_alpha@ LIST+1
 		ERROR@hamb@@alpha@@arr@MERGEX	** NOT EMPTY KEY
 MRGR3A@arr@	MOVE|LIST@sub_beta@@arr@LIST@sub_alpha@
 		 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=42 doc_page=40 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=42 doc_page=40 type=code proof=1]
 [Page header: "IES 2XMX 024"]
 
-		MOVE|LIST+1@sub_beta@@arr@@?@LIST+1@sub_alpha@ [possibly junk/noise?]
+		MOVE|LIST+1@sub_beta@@arr@hLIST+1@sub_alpha@ [best guess: second argument include h, which propagates to the instruction in MOVE macro definition]
 		RSX @sub_S@ E
 		REX @sub_T@@sub_pipe@@sub_alpha@ 1
 		@sup_2@DPX @sub_T@@sub_pipe@@sub_S@ LIST
 		@sup_2@RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+1
 		@sup_1@DPX @sub_T@@sub_pipe@@sub_S@ LIST
 		REX @sub_T@@sub_pipe@@sub_beta@ 1
-		@sup_1@DPX @sub_?@@sub_pipe@@sub_beta@ LIST [missing operand, can't be valid?]
+		@sup_1@DPX @sub_pipe@@sub_beta@ LIST [syntax: missing pre-pipe operand in subscript modifier]
 		h@sup_1@DPX @sub_T@ E
 		h@sup_2@DPX @sub_T@ E
 		STE @sub_beta@ LIST+1
@@ -1848,9 +1848,9 @@ MRGR4@arr@	hLDE @sub_alpha@ LIST
 MRGR5@arr@	DPX @sub_beta@ MRGRTS
 		RSX @sub_beta@@sub_pipe@@sub_beta@ LIST+1
 MRGR5A@arr@	hLDE @sub_beta@ LIST-1
-		@sup_1@ SED { 0}
+		@sup_1@SED { 0}
 		JPQ MRGR5B
-		MOVE|MRGRL@arr@@sup_1@ LIST-1@sub_beta@ [unkown syntax, what does it mean?]
+		MOVE|MRGRL@arr@@sup_1@ LIST-1@sub_beta@
 		RSX @sub_beta@@sub_pipe@@sub_beta@ LIST
 		JPQ MRGR5A
 MRGR5B@arr@	RSX @sub_beta@ MRGRTS
@@ -1869,7 +1869,7 @@ MRGR5B@arr@	RSX @sub_beta@ MRGRTS
 MRGRX@arr@	@sup_minus@@sup_2@JPX @sub_gamma@ MRGRXA
 MRGR7@arr@	RSX @sub_alpha@ MRGRU
 		hJPQ DELETE
-MRGR8@arr@	REX @sub_alpha@ MERGERS-LIST
+MRGR8@arr@	REX @sub_alpha@ MERGERS-LIST	[best guess: 8 in the label]
 		LGORR@hamb@SPECB@times@@alpha@=S@arr@MRGR10@arr@MRGR9
 MRGR10@arr@	RSX @sub_beta@@sub_pipe@@sub_alpha@ LIST+VORD+1
 		DEX @sub_beta@ 1
@@ -1879,7 +1879,7 @@ MRGR10@arr@	RSX @sub_beta@@sub_pipe@@sub_alpha@ LIST+VORD+1
 		JPQ MERGERBAC
 MRGR6@arr@	RSX @sub_delta@@sub_pipe@@sub_alpha@ LIST ** @delta@ IS POINTED AT THING
 	
-[meta file_name=102726903-05-01-acc.pdf pdf_page=43 doc_page=41 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=43 doc_page=41 type=code proof=1]
 [Page header: "IES 2XMX 025"]
 
 		RSX @sub_S@@sub_pipe@@sub_delta@ LIST+TYPE
@@ -1896,7 +1896,7 @@ MRGR6@arr@	RSX @sub_delta@@sub_pipe@@sub_alpha@ LIST ** @delta@ IS POINTED AT TH
 		RSX @sub_S@@sub_pipe@@sub_S@ LIST+TYPE
 		SXD @sub_S@ MASTERS-LIST
 		ERROR@hamb@@delta@@arr@MERGEX
-		LTAKE@hamb@@alpha@@times@@beta@ [really alpha?]
+		LTAKE@hamb@0@times@@beta@	[best guess: 0]
 		REX @sub_eps@ MERGERS-LIST
 		MOVEL@hamb@VORD@times@@delta@@arr@SPECB@times@@eps@
 		@sup_1@DPX @sub_eps@@sub_pipe@@sub_delta@ VORD+LIST
