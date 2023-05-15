@@ -1933,13 +1933,13 @@ DUM1@arr@	@sup_1@STE #+4
 DUM2@arr@	MOVEL@hamb@IWHAT@times@@alpha@@arr@PINS@times@@gamma@
 		@sup_1@DPX @sub_gamma@@sub_pipe@@sub_alpha@ LIST+IWHAT
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=44 doc_page=42 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=44 doc_page=42 type=code proof=1]
 [Page header: "IES 2XMX 026"]
 
 DUM3@arr@	@sup_1@RSX @sub_gamma@@sub_pipe@@sub_gamma@ LIST+PATAP+1
 		LGORR@hamb@VCON@times@@alpha@=S@arr@DUM4@arr@DUM6
 DUM4@arr@	@sup_1@STE DUM4X
-		hLDE @sub_alpha@ LIST 	** @alpha@ IS IPCON? [how are we supposed to know? :)]
+		hLDE @sub_alpha@ LIST 	** @alpha@ IS IPCON?
 		@sup_1@SED { IPCONS-LIST}
 		JPQ #+2
 DUM4X@arr@	JPQ #
@@ -1953,16 +1953,16 @@ DUM4X@arr@	JPQ #
 		@sup_1@DPX @sub_beta@@sub_pipe@@sub_alpha@ IPCV+LIST
 		@sup_1@RSX @sub_gamma@@sub_pipe@@sub_gamma@ LIST
 		JPQ DUM4X
-DUM5@arr@	DPX @sub_gamma@ #+2
+DUM5@arr@	DPX @sub_gamma@#+2
 		hJPQ DELETE
-		REX @sub_gamma@ #
+		REX @sub_gamma@#
 		JPQ DUM4X
-DUM4@arr@	hLDE @sub_gamma@ LIST-1
+DUM6@arr@	hLDE @sub_gamma@ LIST-1
 		h@sup_1@SED { 0}
 		JPQ DUM7
 		@sup_1@@sup_6@RSX @sub_alpha@ E	** NEED MORE POINTS
 		INX @sub_alpha@@sub_pipe@@sub_gamma@
-		DEX @sub_alpha@ 1		** IS NEW VIRG PT
+		DEX @sub_alpha@ 1		** @alpha@ IS NEW VIRG PT
 		MAKA@hamb@IPCONS@arr@@beta@
 		PUT|IPCV,@beta@@arr@IPCOTP,@alpha@
 		RSX @sub_alpha@ ATBITS+1
@@ -1977,7 +1977,7 @@ DUM7@arr@	RSX @sub_alpha@ ATBITS+1
 		RSX @sub_gamma@@sub_pipe@@sub_alpha@ LIST+IWHAT
 		LDA @sub_gamma@ LIST+PSIZE
 		STA MATD
-		LGORR@hamb@VCON@times@@alpha@=S@arr@DUM8 [really 8?]
+		LGORR@hamb@VCON@times@@alpha@=S@arr@DUM8 [best guess: DUM8]
 DUMMEX@arr@	JPQ #
 DUM8@arr@	@sup_1@STE DUM8X
 		RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+TYPE
@@ -1987,10 +1987,10 @@ DUM8X@arr@	JPQ #
 		RSX @sub_T@@sub_pipe@@sub_alpha@ LIST+IPCV
 		LDAB@hamb@VA@sub_T@
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=45 doc_page=43 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=45 doc_page=43 type=code proof=1]
 [Page header: "IES 2XMX 027"]
 
-		RSX @sub_eps@@sub_pipe@@sub_alpha@ LIST+IPCP [epsilon out of context?]
+		RSX @sub_alpha@@sub_pipe@@sub_alpha@ LIST+IPCP [best guess: @sub_alpha@ before pipe in subscript]
 		STAB@hamb@VA@sub_alpha@
 		RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+TYPE
 		hBPQ @sub_S@ LIST+MOVIT
@@ -2042,10 +2042,10 @@ COPYINT@arr@
 COPYIST@arr@
 		@sup_1@STE COPYX
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=46 doc_page=44 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=46 doc_page=44 type=code proof=1]
 [Page header: "IES 2XMX 030"]
 
-		MOVE|{ COPYMOVE}@arr@@sup_1@ COPYMOVE-1 [what is this @sup_1@ syntax?]
+		MOVE|{ COPYMOVE}@arr@@sup_1@ COPYMOVE-1 [syntax: passing RC block as macro argument]
 		SKZ LPLOST
 		JPQ COPYX
 		hJPQ STOPMOVEP
@@ -2053,7 +2053,7 @@ COPYIST@arr@
 		LGORR@hamb@SPECB@times@@alpha@=S@arr@COPY1@arr@COPYX
 COPY1@arr@	@sup_1@STE COPY1X
 		hLDE @sub_alpha@ LIST+PNAME
-		@sup_1@SED COPYNUM	** @?@PIC TO COPY [possibly #?]
+		@sup_1@SED COPYNUM	** #PIC TO COPY
 		JPQ COPYIT
 COPY1X@arr@	JPQ #
 COPYIT@arr@	LDA SCSZ
@@ -2064,6 +2064,7 @@ COPYIT@arr@	LDA SCSZ
 		LDAB@hamb@PSPL
 		STAB@hamb@MATRX
 		LDA @sub_alpha@ LIST+PSIZE
+		STA MATD
 COPYITA@arr@
 		DPX @sub_alpha@ COPYPIC		** PIC TO COPY
 		LGORR@hamb@PPART@times@@alpha@=S@arr@COPYDUP
@@ -2080,7 +2081,7 @@ COPYDUP@arr@
 		hLDE @sub_alpha@@sub_pipe@@sub_T@ LIST
 		STE @sub_gamma@@sub_pipe@@sub_T@ LIST
 		INX @sub_T@ 1
-		@sup_minus@@sup_1@JPX @sub_S@ #-1
+		@sup_minus@@sup_1@JPX @sub_S@ #-3
 		REX @sub_alpha@@sub_pipe@@sub_gamma@
 		S@rect_dash@TYPE,@alpha@
 		hBPQ @sub_S@ LIST+MOVIT
