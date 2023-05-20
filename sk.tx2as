@@ -2096,7 +2096,7 @@ COPYFIX@arr@
 		RSX @sub_beta@@sub_pipe@@sub_alpha@ LIST+1
 		DEX @sub_beta@ 1	** @beta@=NEW THING
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=47 doc_page=45 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=47 doc_page=45 type=code proof=1]
 [Page header: "IES 2XMX 031"]
 
 		RSX @sub_gamma@@sub_pipe@@sub_beta@ LIST+BWHOS
@@ -2123,18 +2123,18 @@ COPYFIXA@arr@
 		SXD @sub_S@ PICTURES-LIST
 		JPQ COPYFIXB		** PUT @beta@ in @gamma@
 		RSX @sub_S@@sub_pipe@@sub_gamma@ LIST+BWHOS
-		SXD @sub_S@* COPYPIC [what is this syntax?]
+		SXD @sub_S@* COPYPIC
 		JPQ #+2
 		JPQ COPYFIXB
 		RSX @sub_gamma@@sub_pipe@@sub_gamma@ LIST+TYPE+1
-		DEX @sub_gamma@ 1	** @gamma@=SHADDOW [SHADDOW in the listing]
-		COPYFIXB@arr@
+		DEX @sub_gamma@ 1	** @gamma@=SHADDOW [sic, double D in the listing]
+COPYFIXB@arr@
 		RSX @sub_T@ COPYFIXI
 		hLDE @sub_T@@sub_pipe@@sub_alpha@ LIST+1
 		RSX @sub_T@ E
 		hLDE @sub_T@ LIST-1
 		@sup_1@SED { 0}
-		JPQ #+3 [possibly #+1?]
+		JPQ #+3
 		RSX @sub_T@@sub_pipe@@sub_T@ LIST
 		JPQ #-4
 COPYFIXC@arr@
@@ -2150,7 +2150,7 @@ COPYFIXI@arr@
 		JPQ COPYFIXEX-2
 COPIED@arr@	JPQ #	** EXIT FOR UNMAC
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=48 doc_page=46 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=48 doc_page=46 type=code proof=1]
 [Page header: "IES 2XMX 032"]
 
 COPYMOVE@arr@
@@ -2163,7 +2163,7 @@ COPYMOVE@arr@
 		INX @sub_alpha@@sub_pipe@@sub_S@
 		RSX @sub_alpha@@sub_pipe@@sub_alpha@ LIST
 		@sup_1@DPX @sub_S@ COPYMOVE1
-		DEX @sub_alpha@ 1	** THING TO MOVE
+		DEX @sub_alpha@ 1	**@alpha@ THING TO MOVE
 		hJPQ MOVE@alpha@
 COPYMOVE1@arr@
 		REX @sub_alpha@ #
@@ -2204,7 +2204,7 @@ COPYMOVE2A@arr@
 		@sup_1@STE COPYMOVE2AX
 		LTAKE@hamb@VORDE@times@@beta@
 		
-[meta file_name=102726903-05-01-acc.pdf pdf_page=49 doc_page=47 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=49 doc_page=47 type=code proof=1]
 [Page header: "IES 2XMX 033"]
 
 		RSX @sub_alpha@ COPYMOVE2
@@ -2214,6 +2214,7 @@ COPYMOVE2A@arr@
 		@sup_1@SED { 0}
 		JPQ COPYX
 		@sup_1@@sup_6@AUX @sub_alpha@@sub_pipe@@sub_alpha@ LIST-1
+		RSX @sub_alpha@@sub_pipe@@sub_alpha@ LIST
 		DEX @sub_alpha@ 1
 		hJPQ MERGEIFP
 COPYMOVE2AX@arr@
@@ -2228,7 +2229,7 @@ ERASE@arr@	@sup_1@STE ERASEX
 		RSX @sub_alpha@ MOVINGS+SPECB+1
 		SXD @sub_alpha@ MOVINGS-LIST+SPECB+1
 		JPQ ERASE1
-ERASE1@arr@	@sup_1@@sup_6@AUX @sub_alpha@@sub_pipe@@sub_alpha@ LIST-1
+ERASEA@arr@	@sup_1@@sup_6@AUX @sub_alpha@@sub_pipe@@sub_alpha@ LIST-1
 		DEX @sub_alpha@ 1
 		hJPQ DELETE
 		RSX @sub_alpha@ MOVINGS+SPECB+1
@@ -2257,7 +2258,7 @@ DEL1@arr@	RSX @sub_alpha@ DEADS+SPECB+1
 		JPQ DELETEX ** DONE
 		DEX @sub_alpha@ 1
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=50 doc_page=48 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=50 doc_page=48 type=code proof=1]
 [Page header: "IES 2XMX 034"]
 
 		@sup_1@@sup_5@RSX @sub_beta@@sub_pipe@@sub_alpha@ LIST
@@ -2270,8 +2271,8 @@ DEL2@arr@	INX @sub_alpha@ 2	** NEXT TIE
 DEL3@arr@	hLDE { 0}
 		@sup_1@SED @sub_alpha@ LIST 	** SKIP IF NON KEY
 		JPQ DEL5
-		LTAKE@hamb@0@times@@alpha@ [pretty clearly zero here as first parameter]
-DEL2X@arr@	@sup_minus@@sup_2@JPX @sub_beta@ DEL2 [possibly DEL3?]
+		LTAKE@hamb@0@times@@alpha@
+DEL2X@arr@	@sup_minus@@sup_2@JPX @sub_beta@ DEL2
 DEL4@arr@	RSX @sub_alpha@ DEADS+SPECB+1
 		DEX @sub_alpha@ 1	** FREE STORAGE LIST
 		REX @sub_beta@ FREES-LIST
@@ -2309,7 +2310,7 @@ GARB4A@arr@	SXL @sub_beta@* AFFB
 		RSX @sub_T@@sub_pipe@@sub_beta@ LIST
 		SXD @sub_T@ FREES-LIST
 		JPQ GARB3
-		MOVE|@sup_1@@sup_6@ LIST@sub_beta@@arr@@sup_1@ GARBS [unknown syntax]
+		MOVE|@sup_1@@sup_6@ LIST@sub_beta@@arr@@sup_1@ GARBS [syntax: macro arguments with multiple modifiers]
 
 [meta file_name=102726903-05-01-acc.pdf pdf_page=51 doc_page=49 type=code]
 [Page header: "IES 2XMX 035"]

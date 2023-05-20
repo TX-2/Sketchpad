@@ -2144,7 +2144,7 @@ COPYFIX&rarr;
 		DEX <sub>&beta;</sub> 1	** &beta;=NEW THING
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=47 doc_page=45 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=47 doc_page=45 type=code proof=1]
 [Page header: "IES 2XMX 031"]
 
 		RSX <sub>&gamma;</sub><sub>|</sub><sub>&beta;</sub> LIST+BWHOS
@@ -2171,18 +2171,18 @@ COPYFIXA&rarr;
 		SXD <sub>S</sub> PICTURES-LIST
 		JPQ COPYFIXB		** PUT &beta; in &gamma;
 		RSX <sub>S</sub><sub>|</sub><sub>&gamma;</sub> LIST+BWHOS
-		SXD <sub>S</sub>* COPYPIC [what is this syntax?]
+		SXD <sub>S</sub>* COPYPIC
 		JPQ #+2
 		JPQ COPYFIXB
 		RSX <sub>&gamma;</sub><sub>|</sub><sub>&gamma;</sub> LIST+TYPE+1
-		DEX <sub>&gamma;</sub> 1	** &gamma;=SHADDOW [SHADDOW in the listing]
-		COPYFIXB&rarr;
+		DEX <sub>&gamma;</sub> 1	** &gamma;=SHADDOW [sic, double D in the listing]
+COPYFIXB&rarr;
 		RSX <sub>T</sub> COPYFIXI
 		hLDE <sub>T</sub><sub>|</sub><sub>&alpha;</sub> LIST+1
 		RSX <sub>T</sub> E
 		hLDE <sub>T</sub> LIST-1
 		<sup>1</sup>SED { 0}
-		JPQ #+3 [possibly #+1?]
+		JPQ #+3
 		RSX <sub>T</sub><sub>|</sub><sub>T</sub> LIST
 		JPQ #-4
 COPYFIXC&rarr;
@@ -2199,7 +2199,7 @@ COPYFIXI&rarr;
 COPIED&rarr;		JPQ #	** EXIT FOR UNMAC
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=48 doc_page=46 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=48 doc_page=46 type=code proof=1]
 [Page header: "IES 2XMX 032"]
 
 COPYMOVE&rarr;
@@ -2212,7 +2212,7 @@ COPYMOVE&rarr;
 		INX <sub>&alpha;</sub><sub>|</sub><sub>S</sub>
 		RSX <sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub> LIST
 		<sup>1</sup>DPX <sub>S</sub> COPYMOVE1
-		DEX <sub>&alpha;</sub> 1	** THING TO MOVE
+		DEX <sub>&alpha;</sub> 1	**&alpha; THING TO MOVE
 		hJPQ MOVE&alpha;
 COPYMOVE1&rarr;
 		REX <sub>&alpha;</sub> #
@@ -2254,7 +2254,7 @@ COPYMOVE2A&rarr;
 		LTAKE&equiv;VORDE&times;&beta;
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=49 doc_page=47 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=49 doc_page=47 type=code proof=1]
 [Page header: "IES 2XMX 033"]
 
 		RSX <sub>&alpha;</sub> COPYMOVE2
@@ -2264,6 +2264,7 @@ COPYMOVE2A&rarr;
 		<sup>1</sup>SED { 0}
 		JPQ COPYX
 		<sup>1</sup><sup>6</sup>AUX <sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub> LIST-1
+		RSX <sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub> LIST
 		DEX <sub>&alpha;</sub> 1
 		hJPQ MERGEIFP
 COPYMOVE2AX&rarr;
@@ -2278,7 +2279,7 @@ ERASE&rarr;		<sup>1</sup>STE ERASEX
 		RSX <sub>&alpha;</sub> MOVINGS+SPECB+1
 		SXD <sub>&alpha;</sub> MOVINGS-LIST+SPECB+1
 		JPQ ERASE1
-ERASE1&rarr;		<sup>1</sup><sup>6</sup>AUX <sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub> LIST-1
+ERASEA&rarr;		<sup>1</sup><sup>6</sup>AUX <sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub> LIST-1
 		DEX <sub>&alpha;</sub> 1
 		hJPQ DELETE
 		RSX <sub>&alpha;</sub> MOVINGS+SPECB+1
@@ -2308,7 +2309,7 @@ DEL1&rarr;		RSX <sub>&alpha;</sub> DEADS+SPECB+1
 		DEX <sub>&alpha;</sub> 1
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=50 doc_page=48 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=50 doc_page=48 type=code proof=1]
 [Page header: "IES 2XMX 034"]
 
 		<sup>1</sup><sup>5</sup>RSX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST
@@ -2321,8 +2322,8 @@ DEL2&rarr;		INX <sub>&alpha;</sub> 2	** NEXT TIE
 DEL3&rarr;		hLDE { 0}
 		<sup>1</sup>SED <sub>&alpha;</sub> LIST 	** SKIP IF NON KEY
 		JPQ DEL5
-		LTAKE&equiv;0&times;&alpha; [pretty clearly zero here as first parameter]
-DEL2X&rarr;		<sup>-</sup><sup>2</sup>JPX <sub>&beta;</sub> DEL2 [possibly DEL3?]
+		LTAKE&equiv;0&times;&alpha;
+DEL2X&rarr;		<sup>-</sup><sup>2</sup>JPX <sub>&beta;</sub> DEL2
 DEL4&rarr;		RSX <sub>&alpha;</sub> DEADS+SPECB+1
 		DEX <sub>&alpha;</sub> 1	** FREE STORAGE LIST
 		REX <sub>&beta;</sub> FREES-LIST
@@ -2360,7 +2361,7 @@ GARB4A&rarr;		SXL <sub>&beta;</sub>* AFFB
 		RSX <sub>T</sub><sub>|</sub><sub>&beta;</sub> LIST
 		SXD <sub>T</sub> FREES-LIST
 		JPQ GARB3
-		MOVE|<sup>1</sup><sup>6</sup> LIST<sub>&beta;</sub>&rarr;<sup>1</sup> GARBS [unknown syntax]
+		MOVE|<sup>1</sup><sup>6</sup> LIST<sub>&beta;</sub>&rarr;<sup>1</sup> GARBS [syntax: macro arguments with multiple modifiers]
 
 <hr>
 [meta file_name=102726903-05-01-acc.pdf pdf_page=51 doc_page=49 type=code]
