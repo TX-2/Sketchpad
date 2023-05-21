@@ -2312,7 +2312,7 @@ GARB4A@arr@	SXL @sub_beta@* AFFB
 		JPQ GARB3
 		MOVE|@sup_1@@sup_6@ LIST@sub_beta@@arr@@sup_1@ GARBS [syntax: macro arguments with multiple modifiers]
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=51 doc_page=49 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=51 doc_page=49 type=code proof=1]
 [Page header: "IES 2XMX 035"]
 
 		DPX @sub_alpha@ GARBA
@@ -2342,12 +2342,13 @@ GARB7@arr@	RSX @sub_alpha@ GARBA
 		hLDE @sub_T@@sub_pipe@@sub_beta@ LIST
 		STE @sub_T@@sub_pipe@@sub_alpha@ LIST
 		INX @sub_T@ 1
-		@sup_minus@@sup_1@AUX @sub_alpha@@sub_pipe@@sub_alpha@ LIST
+		@sup_minus@@sup_1@JPX @sub_S@#-3	[best guess: 3]
+		@sup_1@@sup_6@AUX @sub_alpha@@sub_pipe@@sub_alpha@ LIST
 GARBS@arr@	INX @sub_beta@ 0
 		JPQ GARB4A
 GARB6@arr@	hLDE @sub_S@ LIST-1
 		@sup_1@SED { 0}
-		JPQ GARB@?@
+		JPQ GARB?	[problem: illegible character]
 		hLDE GARBA
 		@sup_1@STE @sub_S@ LIST-1
 		RSX @sub_S@@sub_pipe@@sub_S@ LIST
@@ -2365,13 +2366,14 @@ BLOCKMAKER@arr@
 		PUT|TYPE,S@arr@SPECB,@delta@
 		REX @sub_T@@sub_pipe@@sub_delta@
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=52 doc_page=50 type=code]
-[Page header: "IES 2XMX 0??"]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=52 doc_page=50 type=code proof=1]
+[Page header: "IES 2XMX 0??", digits clipped, likely "036"]
 
 		RSX @sub_delta@ CURPICS+SPECB+1
 		@sup_1@@sup_6@AUX @sub_delta@@sub_pipe@@sub_delta@ LIST-1
 		DEX @sub_delta@ 1
 		hLDE @sub_T@ LIST+KIND
+		[Some handwriting on the left margin, illegible]
 		hSED { PICTUREK}
 		JPQ BLOCKMAKEREX-1
 		hSED { DISPLAYK}
@@ -2379,7 +2381,8 @@ BLOCKMAKER@arr@
 		SED { JUNKK}
 		JPQ BLOCKM1
 		ERROR@hamb@@delta@@arr@BLOCKMAKEREX
-BLOCKM1@arr@	PUT|BWHOS,S@arr@PICBLKS,@delta@
+BLOCKM1@arr@
+		PUT|BWHOS,S@arr@PICBLKS,@delta@
 		JPQ BLOCKMAKEREX-1
 BLOCKM2@arr@
 		PUT|BWHOS,S@arr@PPART,@delta@
@@ -2392,7 +2395,7 @@ GETBLOCKER@arr@
 		ADX @sub_S@ AFFB
 		@sup_6@DPX @sub_S@@sub_pipe@@sub_T@ LIST
 		@sup_5@DPX @sub_S@@sub_pipe@@sub_T@ LIST
-		INT @sub_S@@sub_pipe@@sub_T@
+		INX @sub_S@@sub_pipe@@sub_T@
 		DEX @sub_S@ 1
 GETBLOCK1@arr@
 		DPX @sub_S@@sub_pipe@@sub_S@ LIST
@@ -2400,16 +2403,16 @@ GETBLOCK1@arr@
 		DEX @sub_S@ 1
 		SXD @sub_S@@sub_pipe@@sub_T@
 		JPQ GETBLOCKEX
-		DPX 0@sub_pipe@@sub_S@ LIST
+		DPX @sub_0@@sub_pipe@@sub_S@ LIST
 		hDPX @sub_S@ E
 		hCOM E
 		hADX @sub_T@ E
-		@sup_?@ STE @sub_S@ LIST
+		@sup_6@STE @sub_S@ LIST
 		@sup_minus@@sup_1@JPX @sub_S@ GETBLOCK1
 GETBLOCKEX@arr@
 		JPQ #
 		** PLOTTER ORDERING PROGRAM
-		** ORD T31-14 [numbers may not be correct, but it's a comment]
+		** ORD T31-14 [may not be correct, but it's a comment]
 ORDSTART@arr@
 		@sup_1@STE ORDGREXIT
 		MKN MOVED
@@ -2418,14 +2421,14 @@ ORDSTART@arr@
 ORDGREXIT@arr@
 		JPQ #
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=53 doc_page=51 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=53 doc_page=51 type=code proof=1]
 [Page header: "IES 2XMX 037"]
 
 ORDCURPIC@arr@
 		@sup_1@STE ORDEXIT
 		SKX @sub_delta@ 0
 		DPX ORDSWITCHES
-		LDA {-(@?@)} [looks like k, or, maybe, # ?]
+		LDA {-(h)} [syntax: is it actually h?]
 		STA ORDPX
 		DPX ORDPY
 		** GROUP INSTANCES
@@ -2436,23 +2439,21 @@ ORDGRPI@arr@
 		@sup_1@@sup_1@RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+TYPE
 		@sup_1@@sup_1@RSX @sub_S@@sub_pipe@@sub_S@ LIST+TYPE
 		SXD @sub_S@ VARIABLES-LIST
-		MKX @sub_M@@sub_E@@sub_T@@sub_A@|@sub_alpha@ LIST
+		JPQ #+5
+		MKZ @sub_M@@sub_E@@sub_T@@sub_A@|@sub_alpha@ LIST
 ORDGRPIEXIT@arr@
 		JPQ #	** MODIFIED
 		MOVER@hamb@BWHOS@times@@alpha@@arr@PPART@times@@gamma@
 ORDGRPI1@arr@
-		[Not sure what asterisks are on the following two lines]
-                [Given that ORDGRPIEXIT is just a label few lines above,]
-		[deferred addressing does not make much sense?]
-		h@sup_1@JPX @sub_delta@ ORDGRPIEXIT*
+		h@sup_1@JPX @sub_delta@ ORDGRPIEXIT*	[syntax: deferred addressing on a regular label (next line too)?]
 		JPQ ORDGRPIEXIT*
 		** ORDER INSTANCES
 ORDI@arr@	h@sup_minus@@sup_1@JPX @sub_delta@ #+2
 		JPQ ORDGRPP
-ORDI2@arr@	SKX @sub_eps@@sub_pipe@@sub_delta@ 0 [can also be alpha instead of 0?]
+ORDI2@arr@	SKX @sub_eps@@sub_pipe@@sub_delta@ 0
 		@sup_1@DPX ORDNXTPNT
 		REX @sub_alpha@@sub_pipe@@sub_gamma@
-		LDA {-(@?@)}
+		LDA {-(h)}
 		SKZ ORDWORST
 		DPX A
 		STA ORDMIND
@@ -2464,9 +2465,10 @@ ORDCALC@arr@
 		@sup_1@@sup_1@RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+TYPE
 		hBPQ @sub_S@ LIST+WHERE
 		STB ORDWA3	** A=X, B=Y
-ORDC?@arr@	SUB ORDPX
+ORDC0@arr@	SUB ORDPX
+		[Some symbol on the left margin, assuming junk]
 		SCA {-1.}
-		SKZ @sub_4@@sub_dot@@sub_9@ A [guessing about subscripts, incorrect?]
+		SKZ @sub_4@@sub_dot@@sub_9@ A [best guess: @sub_9@]
 		COM A
 		STA ORDWA1
 		LDA ORDWA3
@@ -2474,7 +2476,7 @@ ORDC?@arr@	SUB ORDPX
 		LDS @sub_alpha@ LIST+PVAL+1
 		SUB ORDPY
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=54 doc_page=52 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=54 doc_page=52 type=code proof=1]
 [Page header: "IES 2XMX 040"]
 
 		SCA {-1.}
@@ -2482,7 +2484,7 @@ ORDC?@arr@	SUB ORDPX
 		COM A
 		STA ORDWA2
 		SUB ORDWA1
-		JPA ORDC1	** @delta@@gamma@ BIGGER
+		JPA ORDC1	** @delta@Y BIGGER
 		LDA ORDWA1
 		STA ORDWA2
 		JPQ #+2
@@ -2527,7 +2529,7 @@ ORDGRPP1@arr@
 		JPQ ORDGRPIEXIT*
 		MOVER@hamb@BWHOS@times@@alpha@@arr@PICBLKS@times@@gamma@
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=55 doc_page=53 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=55 doc_page=53 type=code proof=1]
 [Page header: "IES 2XMX 041"]
 
 		h@sup_1@JPX @sub_delta@ ORDGRPIEXIT*
@@ -2543,7 +2545,7 @@ ORDP1@arr@	@sup_1@STE ORDPEXIT
 		JPQ ORDCIRCLES
 		SXD @sub_beta@@sub_pipe@@sub_alpha@ LSP+1
 		JPQ ORDP1A
-		@sup_1@@sup_1@ @sub_beta@@sub_pipe@@sub_alpha@ LIST+LSP
+		@sup_1@@sup_1@RSX @sub_beta@@sub_pipe@@sub_alpha@ LIST+LSP
 		@sup_1@EXX @sub_beta@@sub_pipe@@sub_alpha@ LIST+LEP
 		@sup_1@DPX @sub_beta@@sub_pipe@@sub_alpha@ LIST+LSP
 		JPQ #+2
@@ -2558,7 +2560,7 @@ ORDP2@arr@	MKN @sub_M@@sub_E@@sub_T@@sub_A@@sub_pipe@@sub_alpha@ LIST
 		STA ORDPX
 		LDA @sub_alpha@ LIST+PVAL+1
 ORDP4@arr@	STA ORDPY
-		SKX ORDWORST
+		SKZ ORDWORST
 		JPQ ORDI2
 		JPQ ORDP
 ORDCIRCLES@arr@

@@ -2364,7 +2364,7 @@ GARB4A&rarr;		SXL <sub>&beta;</sub>* AFFB
 		MOVE|<sup>1</sup><sup>6</sup> LIST<sub>&beta;</sub>&rarr;<sup>1</sup> GARBS [syntax: macro arguments with multiple modifiers]
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=51 doc_page=49 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=51 doc_page=49 type=code proof=1]
 [Page header: "IES 2XMX 035"]
 
 		DPX <sub>&alpha;</sub> GARBA
@@ -2394,12 +2394,13 @@ GARB7&rarr;		RSX <sub>&alpha;</sub> GARBA
 		hLDE <sub>T</sub><sub>|</sub><sub>&beta;</sub> LIST
 		STE <sub>T</sub><sub>|</sub><sub>&alpha;</sub> LIST
 		INX <sub>T</sub> 1
-		<sup>-</sup><sup>1</sup>AUX <sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub> LIST
+		<sup>-</sup><sup>1</sup>JPX <sub>S</sub>#-3	[best guess: 3]
+		<sup>1</sup><sup>6</sup>AUX <sub>&alpha;</sub><sub>|</sub><sub>&alpha;</sub> LIST
 GARBS&rarr;		INX <sub>&beta;</sub> 0
 		JPQ GARB4A
 GARB6&rarr;		hLDE <sub>S</sub> LIST-1
 		<sup>1</sup>SED { 0}
-		JPQ GARB?
+		JPQ GARB?	[problem: illegible character]
 		hLDE GARBA
 		<sup>1</sup>STE <sub>S</sub> LIST-1
 		RSX <sub>S</sub><sub>|</sub><sub>S</sub> LIST
@@ -2418,13 +2419,14 @@ BLOCKMAKER&rarr;
 		REX <sub>T</sub><sub>|</sub><sub>&Delta;</sub>
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=52 doc_page=50 type=code]
-[Page header: "IES 2XMX 0??"]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=52 doc_page=50 type=code proof=1]
+[Page header: "IES 2XMX 0??", digits clipped, likely "036"]
 
 		RSX <sub>&Delta;</sub> CURPICS+SPECB+1
 		<sup>1</sup><sup>6</sup>AUX <sub>&Delta;</sub><sub>|</sub><sub>&Delta;</sub> LIST-1
 		DEX <sub>&Delta;</sub> 1
 		hLDE <sub>T</sub> LIST+KIND
+		[Some handwriting on the left margin, illegible]
 		hSED { PICTUREK}
 		JPQ BLOCKMAKEREX-1
 		hSED { DISPLAYK}
@@ -2432,7 +2434,8 @@ BLOCKMAKER&rarr;
 		SED { JUNKK}
 		JPQ BLOCKM1
 		ERROR&equiv;&Delta;&rarr;BLOCKMAKEREX
-BLOCKM1&rarr;		PUT|BWHOS,S&rarr;PICBLKS,&Delta;
+BLOCKM1&rarr;
+		PUT|BWHOS,S&rarr;PICBLKS,&Delta;
 		JPQ BLOCKMAKEREX-1
 BLOCKM2&rarr;
 		PUT|BWHOS,S&rarr;PPART,&Delta;
@@ -2445,7 +2448,7 @@ GETBLOCKER&rarr;
 		ADX <sub>S</sub> AFFB
 		<sup>6</sup>DPX <sub>S</sub><sub>|</sub><sub>T</sub> LIST
 		<sup>5</sup>DPX <sub>S</sub><sub>|</sub><sub>T</sub> LIST
-		INT <sub>S</sub><sub>|</sub><sub>T</sub>
+		INX <sub>S</sub><sub>|</sub><sub>T</sub>
 		DEX <sub>S</sub> 1
 GETBLOCK1&rarr;
 		DPX <sub>S</sub><sub>|</sub><sub>S</sub> LIST
@@ -2453,16 +2456,16 @@ GETBLOCK1&rarr;
 		DEX <sub>S</sub> 1
 		SXD <sub>S</sub><sub>|</sub><sub>T</sub>
 		JPQ GETBLOCKEX
-		DPX 0<sub>|</sub><sub>S</sub> LIST
+		DPX <sub>0</sub><sub>|</sub><sub>S</sub> LIST
 		hDPX <sub>S</sub> E
 		hCOM E
 		hADX <sub>T</sub> E
-		<sup>?</sup> STE <sub>S</sub> LIST
+		<sup>6</sup>STE <sub>S</sub> LIST
 		<sup>-</sup><sup>1</sup>JPX <sub>S</sub> GETBLOCK1
 GETBLOCKEX&rarr;
 		JPQ #
 		** PLOTTER ORDERING PROGRAM
-		** ORD T31-14 [numbers may not be correct, but it's a comment]
+		** ORD T31-14 [may not be correct, but it's a comment]
 ORDSTART&rarr;
 		<sup>1</sup>STE ORDGREXIT
 		MKN MOVED
@@ -2472,14 +2475,14 @@ ORDGREXIT&rarr;
 		JPQ #
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=53 doc_page=51 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=53 doc_page=51 type=code proof=1]
 [Page header: "IES 2XMX 037"]
 
 ORDCURPIC&rarr;
 		<sup>1</sup>STE ORDEXIT
 		SKX <sub>&Delta;</sub> 0
 		DPX ORDSWITCHES
-		LDA {-(?)} [looks like k, or, maybe, # ?]
+		LDA {-(h)} [syntax: is it actually h?]
 		STA ORDPX
 		DPX ORDPY
 		** GROUP INSTANCES
@@ -2490,23 +2493,21 @@ ORDGRPI&rarr;
 		<sup>1</sup><sup>1</sup>RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
 		<sup>1</sup><sup>1</sup>RSX <sub>S</sub><sub>|</sub><sub>S</sub> LIST+TYPE
 		SXD <sub>S</sub> VARIABLES-LIST
-		MKX <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub>|<sub>&alpha;</sub> LIST
+		JPQ #+5
+		MKZ <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub>|<sub>&alpha;</sub> LIST
 ORDGRPIEXIT&rarr;
 		JPQ #	** MODIFIED
 		MOVER&equiv;BWHOS&times;&alpha;&rarr;PPART&times;&gamma;
 ORDGRPI1&rarr;
-		[Not sure what asterisks are on the following two lines]
-                [Given that ORDGRPIEXIT is just a label few lines above,]
-		[deferred addressing does not make much sense?]
-		h<sup>1</sup>JPX <sub>&Delta;</sub> ORDGRPIEXIT*
+		h<sup>1</sup>JPX <sub>&Delta;</sub> ORDGRPIEXIT*	[syntax: deferred addressing on a regular label (next line too)?]
 		JPQ ORDGRPIEXIT*
 		** ORDER INSTANCES
 ORDI&rarr;		h<sup>-</sup><sup>1</sup>JPX <sub>&Delta;</sub> #+2
 		JPQ ORDGRPP
-ORDI2&rarr;		SKX <sub>&epsilon;</sub><sub>|</sub><sub>&Delta;</sub> 0 [can also be alpha instead of 0?]
+ORDI2&rarr;		SKX <sub>&epsilon;</sub><sub>|</sub><sub>&Delta;</sub> 0
 		<sup>1</sup>DPX ORDNXTPNT
 		REX <sub>&alpha;</sub><sub>|</sub><sub>&gamma;</sub>
-		LDA {-(?)}
+		LDA {-(h)}
 		SKZ ORDWORST
 		DPX A
 		STA ORDMIND
@@ -2518,9 +2519,10 @@ ORDCALC&rarr;
 		<sup>1</sup><sup>1</sup>RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
 		hBPQ <sub>S</sub> LIST+WHERE
 		STB ORDWA3	** A=X, B=Y
-ORDC?&rarr;		SUB ORDPX
+ORDC0&rarr;		SUB ORDPX
+		[Some symbol on the left margin, assuming junk]
 		SCA {-1.}
-		SKZ <sub>4</sub><sub>.</sub><sub>9</sub> A [guessing about subscripts, incorrect?]
+		SKZ <sub>4</sub><sub>.</sub><sub>9</sub> A [best guess: <sub>9</sub>]
 		COM A
 		STA ORDWA1
 		LDA ORDWA3
@@ -2529,7 +2531,7 @@ ORDC?&rarr;		SUB ORDPX
 		SUB ORDPY
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=54 doc_page=52 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=54 doc_page=52 type=code proof=1]
 [Page header: "IES 2XMX 040"]
 
 		SCA {-1.}
@@ -2537,7 +2539,7 @@ ORDC?&rarr;		SUB ORDPX
 		COM A
 		STA ORDWA2
 		SUB ORDWA1
-		JPA ORDC1	** &Delta;&gamma; BIGGER
+		JPA ORDC1	** &Delta;Y BIGGER
 		LDA ORDWA1
 		STA ORDWA2
 		JPQ #+2
@@ -2583,7 +2585,7 @@ ORDGRPP1&rarr;
 		MOVER&equiv;BWHOS&times;&alpha;&rarr;PICBLKS&times;&gamma;
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=55 doc_page=53 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=55 doc_page=53 type=code proof=1]
 [Page header: "IES 2XMX 041"]
 
 		h<sup>1</sup>JPX <sub>&Delta;</sub> ORDGRPIEXIT*
@@ -2599,7 +2601,7 @@ ORDP1&rarr;		<sup>1</sup>STE ORDPEXIT
 		JPQ ORDCIRCLES
 		SXD <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LSP+1
 		JPQ ORDP1A
-		<sup>1</sup><sup>1</sup> <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+LSP
+		<sup>1</sup><sup>1</sup>RSX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+LSP
 		<sup>1</sup>EXX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+LEP
 		<sup>1</sup>DPX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+LSP
 		JPQ #+2
@@ -2614,7 +2616,7 @@ ORDP2&rarr;		MKN <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub><sub>|</sub><su
 		STA ORDPX
 		LDA <sub>&alpha;</sub> LIST+PVAL+1
 ORDP4&rarr;		STA ORDPY
-		SKX ORDWORST
+		SKZ ORDWORST
 		JPQ ORDI2
 		JPQ ORDP
 ORDCIRCLES&rarr;
