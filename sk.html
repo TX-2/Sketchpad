@@ -2640,14 +2640,14 @@ ORDCIRC2&rarr;
 		hJPQ ORDMOVEL
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=56 doc_page=54 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=56 doc_page=54 type=code proof=1]
 [Page header: "IES 2XMX 042"]
 
 		<sup>1</sup><sup>1</sup>RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LIST+LEP
 		hLDE <sub>&alpha;</sub> LIST+CVAL
-		hSED {(?)}
+		hSED {(h)}
 		<sup>1</sup><sup>1</sup>RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LIST+LSP
-		SED {-(&Delta;)}
+		SED {-(h)}	[Putting h here, by analogy with similar instruction, but it may also be &Delta;.]
 		<sup>1</sup><sup>1</sup>RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LIST+LSP
 ORDCIRC3&rarr;
 		LDA <sub>S</sub> LIST+PVAL
@@ -2656,7 +2656,7 @@ ORDCIRC3&rarr;
 		SKX <sub>&alpha;</sub><sub>|</sub><sub>S</sub> 0
 		JPQ ORDP4
 ORDMP&rarr;		<sup>1</sup><sup>1</sup>RSX <sub>&alpha;</sub><sub>|</sub><sub>&beta;</sub> LIST-1
-		MKZ <sup>3</sup><sub>.</sub><sub>?</sub> ORDMPSW	** MAKE JPQ
+		MKZ <sub>3</sub><sub>.</sub><sub>8</sub> ORDMPSW	** MAKE JPQ	[Best guess: <sub>8</sub>.]
 		MOVEL&equiv;BWHOS&times;&alpha;&rarr;PICBLKS&times;&gamma;
 ORDMPSW&rarr;
 		JPQ ORDI	** CHGD TO <sup>1</sup><sup>4</sup>JNX ORDI
@@ -2664,7 +2664,7 @@ ORDMPSW&rarr;
 		JPQ ORDCALCEXIT
 ORDP3&rarr;		LGORR&equiv;PICBLKS&times;&alpha;=&beta;&rarr;ORDP5&rarr;ORDERROR
 ORDP5&rarr;		<sup>1</sup>STE ORDCALCEXIT
-		MKN <sup>3</sup><sub>.</sub><sub>?</sub> ORDMPSW	** MAKE <sup>1</sup><sup>4</sup>JNX
+		MKN <sub>3</sub><sub>.</sub><sub>8</sub> ORDMPSW	** MAKE <sup>1</sup><sup>4</sup>JNX
 		<sup>1</sup><sup>1</sup>RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LIST+PLS+1
 		<sup>1</sup><sup>6</sup>AUX <sub>S</sub><sub>|</sub><sub>S</sub> LIST-1
 		SKZ <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub><sub>|</sub><sub>S</sub> LIST-1
@@ -2678,7 +2678,7 @@ ORDWORST1&rarr;
 		JPQ ORDC1A
 ORDERROR&rarr;
 		<sup>1</sup>STE #+1
-		#<sub>&alpha;</sub>	[is this valid too??]
+		#<sub>&alpha;</sub>	**MODIFIED
 		JPQ ORDSTART+2
 ORDSWITCHES&rarr;
 		0
@@ -2692,10 +2692,10 @@ ORDMIND&rarr;
 ORDNXTPNT&rarr;
 		0
 ORDLAST&rarr;
-		ORDLAST-ORDSTART+1 	[constant at address]
+		ORDLAST-ORDSTART+1
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=57 doc_page=55 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=57 doc_page=55 type=code proof=1]
 [Page header: "IES 2XMX 043"]
 
 		** MERGE POINTS PROGRAM
@@ -2720,7 +2720,7 @@ MGPMOVP1&rarr;
 MGPMOVP1X&rarr;
 		hJPQ #		** MODIFIED
 		MOVER&equiv;BWHOS&times;&beta;&rarr;PICBLKS&times;&alpha;
-		h<sup>1</sup>JPX <sub>&lambda;</sub> MGPMOVPIX*
+		h<sup>1</sup>JPX <sub>&lambda;</sub> MGPMOVP1X*
 		JPQ MGPMOVP1X*
 MGPMGP&rarr;		SXL <sub>&lambda;</sub> 2
 		JPQ #+2
@@ -2735,7 +2735,7 @@ MGP1&rarr;
 		LGORR&equiv;PICBLKS&times;&beta;=S&rarr;MGP2&rarr;MGPERROR
 MGP2&rarr;		<sup>1</sup>STE MGP2X
 MGPSW&rarr;		SZN <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> #
-		JPQ MGP1
+		JPQ MGP3
 		<sup>1</sup>DPX <sub>&beta;</sub> MGPC
 		LDA <sub>&beta;</sub> LIST+PVAL
 		STA MGPVAL
@@ -2751,7 +2751,7 @@ MGP3&rarr;		<sup>1</sup>SKX <sub>&alpha;</sub> 1
 		SUB <sub>&alpha;</sub> MGPVAL+1
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=58 doc_page=56 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=58 doc_page=56 type=code proof=1]
 [Page header: "IES 2XMX 044"]
 
 		JPA #+2
@@ -2783,15 +2783,15 @@ ST&rarr;		JPQ 200001
 LAST&rarr;		ZZLAST
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=59 doc_page=57 type=symex]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=59 doc_page=57 type=symex proof=1]
 [Page header: "IES OPLW 001"]
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=60 doc_page=58 type=symex]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=60 doc_page=58 type=symex proof=1]
 [Page header: "IES OPLW 002"]
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=61 doc_page=59 type=symex]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=61 doc_page=59 type=symex proof=1]
 [Page header: "IES OPLW 003"]
 
 <hr>

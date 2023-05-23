@@ -2583,14 +2583,14 @@ ORDCIRC2@arr@
 		MKN @sub_M@@sub_E@@sub_T@@sub_A@@sub_pipe@@sub_alpha@ LIST
 		hJPQ ORDMOVEL
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=56 doc_page=54 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=56 doc_page=54 type=code proof=1]
 [Page header: "IES 2XMX 042"]
 
 		@sup_1@@sup_1@RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+LEP
 		hLDE @sub_alpha@ LIST+CVAL
-		hSED {(@?@)}
+		hSED {(h)}
 		@sup_1@@sup_1@RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+LSP
-		SED {-(@delta@)}
+		SED {-(h)}	[Putting h here, by analogy with similar instruction, but it may also be @delta@.]
 		@sup_1@@sup_1@RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+LSP
 ORDCIRC3@arr@
 		LDA @sub_S@ LIST+PVAL
@@ -2599,7 +2599,7 @@ ORDCIRC3@arr@
 		SKX @sub_alpha@@sub_pipe@@sub_S@ 0
 		JPQ ORDP4
 ORDMP@arr@	@sup_1@@sup_1@RSX @sub_alpha@@sub_pipe@@sub_beta@ LIST-1
-		MKZ @sup_3@@sub_dot@@sub_?@ ORDMPSW	** MAKE JPQ
+		MKZ @sub_3@@sub_dot@@sub_8@ ORDMPSW	** MAKE JPQ	[Best guess: @sub_8@.]
 		MOVEL@hamb@BWHOS@times@@alpha@@arr@PICBLKS@times@@gamma@
 ORDMPSW@arr@
 		JPQ ORDI	** CHGD TO @sup_1@@sup_4@JNX ORDI
@@ -2607,7 +2607,7 @@ ORDMPSW@arr@
 		JPQ ORDCALCEXIT
 ORDP3@arr@	LGORR@hamb@PICBLKS@times@@alpha@=@beta@@arr@ORDP5@arr@ORDERROR
 ORDP5@arr@	@sup_1@STE ORDCALCEXIT
-		MKN @sup_3@@sub_dot@@sub_?@ ORDMPSW	** MAKE @sup_1@@sup_4@JNX
+		MKN @sub_3@@sub_dot@@sub_8@ ORDMPSW	** MAKE @sup_1@@sup_4@JNX
 		@sup_1@@sup_1@RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+PLS+1
 		@sup_1@@sup_6@AUX @sub_S@@sub_pipe@@sub_S@ LIST-1
 		SKZ @sub_M@@sub_E@@sub_T@@sub_A@@sub_pipe@@sub_S@ LIST-1
@@ -2621,7 +2621,7 @@ ORDWORST1@arr@
 		JPQ ORDC1A
 ORDERROR@arr@
 		@sup_1@STE #+1
-		#@sub_alpha@	[is this valid too??]
+		#@sub_alpha@	**MODIFIED
 		JPQ ORDSTART+2
 ORDSWITCHES@arr@
 		0
@@ -2635,9 +2635,9 @@ ORDMIND@arr@
 ORDNXTPNT@arr@
 		0
 ORDLAST@arr@
-		ORDLAST-ORDSTART+1 	[constant at address]
+		ORDLAST-ORDSTART+1
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=57 doc_page=55 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=57 doc_page=55 type=code proof=1]
 [Page header: "IES 2XMX 043"]
 
 		** MERGE POINTS PROGRAM
@@ -2662,7 +2662,7 @@ MGPMOVP1@arr@
 MGPMOVP1X@arr@
 		hJPQ #		** MODIFIED
 		MOVER@hamb@BWHOS@times@@beta@@arr@PICBLKS@times@@alpha@
-		h@sup_1@JPX @sub_lambda@ MGPMOVPIX*
+		h@sup_1@JPX @sub_lambda@ MGPMOVP1X*
 		JPQ MGPMOVP1X*
 MGPMGP@arr@	SXL @sub_lambda@ 2
 		JPQ #+2
@@ -2677,7 +2677,7 @@ MGP1@arr@
 		LGORR@hamb@PICBLKS@times@@beta@=S@arr@MGP2@arr@MGPERROR
 MGP2@arr@	@sup_1@STE MGP2X
 MGPSW@arr@	SZN @sub_M@@sub_E@@sub_T@@sub_A@ #
-		JPQ MGP1
+		JPQ MGP3
 		@sup_1@DPX @sub_beta@ MGPC
 		LDA @sub_beta@ LIST+PVAL
 		STA MGPVAL
@@ -2692,7 +2692,7 @@ MGP3@arr@	@sup_1@SKX @sub_alpha@ 1
 		LDA @sub_alpha@ MGPK*
 		SUB @sub_alpha@ MGPVAL+1
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=58 doc_page=56 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=58 doc_page=56 type=code proof=1]
 [Page header: "IES 2XMX 044"]
 
 		JPA #+2
@@ -2723,13 +2723,13 @@ CL@arr@		JPQ 200000
 ST@arr@		JPQ 200001
 LAST@arr@	ZZLAST
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=59 doc_page=57 type=symex]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=59 doc_page=57 type=symex proof=1]
 [Page header: "IES OPLW 001"]
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=60 doc_page=58 type=symex]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=60 doc_page=58 type=symex proof=1]
 [Page header: "IES OPLW 002"]
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=61 doc_page=59 type=symex]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=61 doc_page=59 type=symex proof=1]
 [Page header: "IES OPLW 003"]
 
 [meta file_name=102726903-05-01-acc.pdf pdf_page=62 doc_page=60 type=equalities]
