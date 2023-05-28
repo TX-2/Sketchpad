@@ -2927,7 +2927,7 @@ SUPPLINES=SKM @sub_4@@sub_dot@@sub_4@ 377725	**DON'T SHOW LINES AND CIRCLES
 SUPPINS=SKM @sub_4@@sub_dot@@sub_5@ 377725	**DON'T EXPAND INSTANCES
 SIZE= 11	**SIZE OF BLOCK
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=66 doc_page=64 type=equalities]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=66 doc_page=64 type=equalities proof=1]
 [Page header: "IES OPLW 010"]
 
 SPLATT=#-NLIST-SMASBL,,#+SMASBL-NLIST
@@ -2974,7 +2974,7 @@ WHERE= 12       **LOCATION OF THING IN PICTURE
 
 @beta@= 2
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=67 doc_page=65 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=67 doc_page=65 type=macros proof=1]
 [Page header: "IES OPLW 012"]
 
 @hand@@hand@DEF MOVE|A@arr@B
@@ -3006,7 +3006,7 @@ STA Q
 @hand@@hand@DEF PYTH1@hamb@P@arr@Q,R@arr@S=T@arr@U
 LDA R
 SUB S
-hJOV U+(S)-(S)
+hJOV U+(S)-(S)	[syntax: this is a trick to preserve the instruction when S is not specified, described in the handbook]
 STA B+(R)-(R)
 LDA P
 SUB Q
@@ -3028,7 +3028,7 @@ STA B+(R)-(R)
 LDA P
 SUB Q
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=68 doc_page=66 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=68 doc_page=66 type=macros proof=1]
 [Page header: "IES OPLW 013"]
 
 hJOV U+(Q)-(Q)
@@ -3082,10 +3082,10 @@ STA A
 STB A+B
 STC A+C
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=69 doc_page=67 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=69 doc_page=67 type=macros proof=1]
 [Page header: "IES OPLW 014"]
 
-STA A+D
+STD A+D
 @hand@@hand@EMD
 
 @hand@@hand@DEF HEAD@times@@alpha@@arr@@beta@
@@ -3136,10 +3136,10 @@ hJPQ {ERROR1@hamb@@alpha@@arr@P}
 @sup_1@STE #+2
 SKZ ERRORSTOP
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=70 doc_page=68 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=70 doc_page=68 type=macros proof=1]
 [Page header: "IES OPLW 015"]
 
-@sup_1@#@sub_alpha@ [another interesting case]
+@sup_1@#@sub_alpha@
 JPQ P
 @hand@@hand@EMD
 
@@ -3147,7 +3147,7 @@ JPQ P
 SKZ EXPINS	**WORKING IN INST?
 JPQ #+6
 DPX@sub_alpha@A
-CYA {10.,} [dot is kind of high in the listing, other interpretations?]
+CYA {10.,}
 @sup_2@@sup_0@CYA {0,,-12000}
 ITA {377,,377}
 STA LMNAME
@@ -3190,7 +3190,7 @@ hJPQ GORREXIT+(GORREXIT/GORREXIT@circled_v@1@times@(LGORREND+1))
 @sup_1@DPX@sub_X@@sub_R@@sub_2@LGORR2
 hJPQ SUBR
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=71 doc_page=69 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=71 doc_page=69 type=macros proof=1]
 [Page header: "IES OPLW 016"]
 
 LGORR2@arr@	SKX@sub_X@@sub_R@@sub_2@#	**MODIFIED
