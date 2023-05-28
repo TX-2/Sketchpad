@@ -3243,17 +3243,18 @@ SKX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_2@0
 SUBR1@arr@	JPQ #
 @hand@@hand@EMD
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=72 doc_page=70 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=72 doc_page=70 type=macros proof=1]
 [Page header: "IES OPLW 017"]
 
+[syntax: a macro defining some constants, instead of code]
 @hand@@hand@DEF HEADER@hamb@T@arr@N@arr@P
 		T1=P
-		SMASBL,4,,T-LIST 		[macro invocation?]
-		#-NLIST-SMASBL,,#+SMASBL-NLIST 	[this is just a number?]
+		SMASBL,4,,T-LIST 		
+		#-NLIST-SMASBL,,#+SMASBL-NLIST
 		-2,0
 		SPLAT
 		N
-		T1
+		T1	[unclear how introducing an intermediate variable T1 is semantically different from just using P here]
 @hand@@hand@EMD
 
 @hand@@hand@DEF MASTER@hamb@T@arr@N
@@ -3289,7 +3290,7 @@ SUBR1@arr@	JPQ #
 		JPQ #+2
 @hand@@hand@EMD
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=73 doc_page=71 type=main]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=73 doc_page=71 type=main proof=1]
 [Page header: "IES OPLW 020"]
 
  200067|
@@ -3307,20 +3308,20 @@ BADOV@arr@	h@sup_1@STE #+2
 		@sup_2@#@sub_7@@sub_6@ [very useful as right column contains numeric code]
 		JPQ 200001
  CCFR+1|
-		hJMP MAGCON [placed at 200777?]
+		hJMP MAGCON [placed at 200777]
  NLIST|
 		HOVS-LIST+MASBL [placed at 022000]
 MM0@arr@	SMASBL,4,,0 **MASTERS
 		SPLAT
-		-2,0 [resulting octal is |775000 000000|, so -2 goes into top quarter]
+		-2,	[resulting octal is |775000 000000|, so -2 goes into top quarter]
 		MM4-NLIST+1,,MM1-NLIST+1
 		45,30,,35,44	**UNIV
 		0
 MM1@arr@	UNIVBH	**VARIABLES
-		MM0-NLIST+SPECB+1,,SPLATT
+		MM0-NLIST+SPECB+1,,SPLATT	[syntax: SPLATT is defined as a full word, how can it be valid here?]
 		-2,
 		V6-NLIST+1,,V1-NLIST+1
-		42,41,,,20,45	**VARS
+		42,41,,20,45	**VARS
 		0
 MM2@arr@	UNIVBH	**HOLDERS
 		SPLATT
@@ -3341,96 +3342,97 @@ MM4@arr@	UNIVBH	**CONSTRAINTS
 		42,35,,36,20
 		0
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=74 doc_page=71 type=main]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=74 doc_page=71 type=main proof=1]
 [Page header: "IES OPLW 021"]
 
 H1@arr@		SMASBL,4,,MM2-NLIST	**FREES
 		MM2+SPECB+1-NLIST,,SPLATT
 		-2,
-		SPLAT [evaluates to different values, is it a macro?]
+		SPLAT [evaluates to different values, as it's definition contains #]
 		24,24,,41,25
 		0
 H2@arr@		HEADER@hamb@HOLDERS@arr@(34,23,,41,25)	**FREEDOM
-		SMASBL,4,,HOLDERS-LIST
-		#-NLIST-SMASBL,,#+SMASBL-NLIST
-		-2,0
-		SPLAT
-		(34,23,,41,25)
-		T1
+		[Following statements are just expansion of the HEADER macro]
+		[SMASBL,4,,HOLDERS-LIST]
+		[#-NLIST-SMASBL,,#+SMASBL-NLIST]
+		[-2,0]
+		[SPLAT]
+		[(34,23,,41,25)]
+		[T1]
 H3@arr@		HEADER@arr@HOLDERS@arr@(42,32,,41,46)	**WORKS
-		SMASBL,4,,HOLDERS-LIST
-		#-NLIST-SMASBL,,#+SMASBL-NLIST
-		-2,0
-		SPLAT
-		(42,32,,41,46)
-		T1
+		[SMASBL,4,,HOLDERS-LIST]
+		[#-NLIST-SMASBL,,#+SMASBL-NLIST]
+		[-2,0]
+		[SPLAT]
+		[(42,32,,41,46)]
+		[T1]
 H4@arr@		HEADER@hamb@HOLDERS@arr@(41,26,,41,34)	**MRGR
-		SMASBL,4,,HOLDERS-LIST
-		#-NLIST-SMASBL,,#+SMASBL-NLIST
-		-2,0
-		SPLAT
-		(41,26,,41,34)
-		T1
+		[SMASBL,4,,HOLDERS-LIST]
+		[#-NLIST-SMASBL,,#+SMASBL-NLIST]
+		[-2,0]
+		[SPLAT]
+		[(41,26,,41,34)]
+		[T1]
 H5@arr@		HEADER@hamb@HOLDERS@arr@(42,23,,24,23)	**DEADS
-		SMASBL,4,,HOLDERS-LIST
-		#-NLIST-SMASBL,,#+SMASBL-NLIST
-		-2,0
-		SPLAT
-		(42,23,,24,23)
-		T1
+		[SMASBL,4,,HOLDERS-LIST]
+		[#-NLIST-SMASBL,,#+SMASBL-NLIST]
+		[-2,0]
+		[SPLAT]
+		[(42,23,,24,23)]
+		[T1]
 H6@arr@		HEADER@hamb@HOLDERS@arr@(42,47,,30,25)	**FIXED
-		SMASBL,4,,HOLDERS-LIST
-		#-NLIST-SMASBL,,#+SMASBL-NLIST
-		-2,0
-		SPLAT
-		(42,47,,30,25)
-		T1
+		[SMASBL,4,,HOLDERS-LIST]
+		[#-NLIST-SMASBL,,#+SMASBL-NLIST]
+		[-2,0]
+		[SPLAT]
+		[(42,47,,30,25)]
+		[T1]
 H7@arr@		HEADER@hamb@HOLDERS@arr@(42,26,,24,23)
-		SMASBL,4,,HOLDERS-LIST
-		#-NLIST-SMASBL,,#+SMASBL-NLIST
+		[SMASBL,4,,HOLDERS-LIST]
+		[#-NLIST-SMASBL,,#+SMASBL-NLIST]
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=75 doc_page=73 type=main]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=75 doc_page=73 type=main proof=1]
 [Page header: "IES OPLW 022"]
 
-		-2,0
-		SPLAT
-		(42,26,,24,23)
-		T1
+		[-2,0]
+		[SPLAT]
+		[(42,26,,24,23)]
+		[T1]
 H8@arr@		HEADER@hamb@HOLDERS@arr@(42,35,,45,34)	**MOVINGS
-		SMASBL,4,,HOLDERS-LIST
-		#-NLIST-SMASBL,,#+SMASBL-NLIST
-		-2.0
-		SPLAT
-		(42,35,,45,34)
-		T1
+		[SMASBL,4,,HOLDERS-LIST]
+		[#-NLIST-SMASBL,,#+SMASBL-NLIST]
+		[-2,0]
+		[SPLAT]
+		[(42,35,,45,34)]
+		[T1]
 H9@arr@		HEADER@hamb@HOLDERS@arr@(22,37,,44,22)	**CURPICS
-		SMASBL,4,,HOLDERS-LIST
-		#-NLIST-SMASBL,,#+SMASBL-NLIST
-		-2,0
-		SPLAT
-		(22,37,,44,22)
-		T1
+		[SMASBL,4,,HOLDERS-LIST]
+		[#-NLIST-SMASBL,,#+SMASBL-NLIST]
+		[-2,0]
+		[SPLAT]
+		[(22,37,,44,22)]
+		[T1]
 H9.1@arr@	HEADER@hamb@HOLDERS@arr@(35,22,,47,35)
-		SMASBL,4,,HOLDERS-LIST
-		#-NLIST-SMASBL..#+SMASBL-NLIST
-[h-n: "?"]	-2,0	[handwritten: "NCXN"]
-		SPLAT
-		(35,22,,47,35)
-		T1
+		[SMASBL,4,,HOLDERS-LIST]
+		[#-NLIST-SMASBL..#+SMASBL-NLIST]
+[h-n: "?"]	[-2,0]	[handwritten: "NCXN"]
+		[SPLAT]
+		[(35,22,,47,35)]
+		[T1]
 H9.2@arr@	HEADER@hamb@HOLDERS@arr@(1,41,,37,42)
-		SMASBL,4,,HOLDERS-LIST
-		#-NLIST-SMASBL,,#+SMASBL-NLIST
-		-2,0
-		SPLAT
-		(1,41,,37,42)
-		T1
+		[SMASBL,4,,HOLDERS-LIST]
+		[#-NLIST-SMASBL,,#+SMASBL-NLIST]
+		[-2,0]
+		[SPLAT]
+		[(1,41,,37,42)]
+		[T1]
 H9.3@arr@	HEADERS@hamb@HOLDERS@arr@(2,41,,37,42)
-		SMASBL,4,,HOLDERS-LIST
-		#-NLIST-SMASBL,,#+SMASBL-NLIST
-		-2,0
-		SPLAT
-		(2,41,,37,42)
-		T1
+		[SMASBL,4,,HOLDERS-LIST]
+		[#-NLIST-SMASBL,,#+SMASBL-NLIST]
+		[-2,0]
+		[SPLAT]
+		[(2,41,,37,42)]
+		[T1]
 H10@arr@	SMASBL,4,MM2-NLIST
 		#-NLIST-SMASBL,,MM2-NLIST+SPECB+1
 		-2,
