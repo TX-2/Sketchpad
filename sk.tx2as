@@ -3440,7 +3440,7 @@ H10@arr@	SMASBL,4,MM2-NLIST
 		[the last line on the page got clipped, restored because this page is duplicated as doc_page 174 (in part 2)]
 		3,41,,37,42
 		
-[meta file_name=102726903-05-01-acc.pdf pdf_page=76 doc_page=74 type=main]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=76 doc_page=74 type=main proof=1]
 [Page header: "IES OPLW 023"]
 
 		0
@@ -3462,11 +3462,11 @@ Q1@arr@		PICTUREK	**KIND
  LINES+NLIST-LIST|
 		**LINE MASTER
 L2@arr@		MASTER@hamb@TOPOS@arr@(24,35,,,30,33)
-		MASBL,4,,TOPOS-LIST
-		#-NLIST-MASBL,,#-NLIST+MASBL
-		-2,
-		SPLAT
-		(24,35,,30,33)
+		[MASBL,4,,TOPOS-LIST]
+		[#-NLIST-MASBL,,#-NLIST+MASBL]
+		[-2,]
+		[SPLAT]
+		[(24,35,,30,33)]
 		hJMP MAGL	**DISPLAY
 		hJMP CPIL	**HOWBIG
 		0	**GETIT
@@ -3491,7 +3491,7 @@ L3@arr@		MASBL,4,,TOPOS-LIST
 		0
 Q3@arr@		DISPLAYK
 		
-[meta file_name=102726903-05-01-acc.pdf pdf_page=77 doc_page=75 type=main]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=77 doc_page=75 type=main proof=1]
 [Page header: "IES OPLW 024"]
 
 		0	**TUPLE
@@ -3515,10 +3515,11 @@ Q7@arr@		JUNKK
  POINTS+NLIST-LIST|
 		**POINT MASTER
 V2@arr@		MASTER@hamb@VARIABLES@arr@(42,43,,35,37)
-		MASBL,4,,VARIABLES-LIST
-		#-NLIST-MASBL,,#-NLIST+MASBL
-		-2,
-		(43,43,,35,37)
+		[MASBL,4,,VARIABLES-LIST]
+		[#-NLIST-MASBL,,#-NLIST+MASBL]
+		[-2,]
+		[SPLAT]
+		[(42,43,,35,37)]
 		hJMP MAGP	**DISPLAY
 		hJMP CPIP	**HOWBIG
 		0	**GETIT
@@ -3531,16 +3532,16 @@ Q4@arr@		JUNKK
  TPVALS-LIST+NLIST|
 		**TYPICAL VARIABLE  @times@
 V3@arr@		MASTER@hamb@VARIABLES@arr@(41,45,,37,43)
-		MASBL,4,,VARIABLES-LIST
-		#-NLIST-MASBL,,#-NLIST+MASBL
-		-2,
-		SPLAT
-		(41,45,,37,43)
+		[MASBL,4,,VARIABLES-LIST]
+		[#-NLIST-MASBL,,#-NLIST+MASBL]
+		[-2,]
+		[SPLAT]
+		[(41,45,,37,43)]
 		hJMP MAGTPVAR	**DISPLAY
 		DEGEN		**HOWBIG
 		0	**GETIT
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=78 doc_page=76 type=main]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=78 doc_page=76 type=main proof=1]
 [Page header: "IES OPLW 025"]
 
 		hJMP TRANSFORM 	**MOVIT
@@ -3552,11 +3553,11 @@ Q14@arr@	JUNKK
  INSTANCES+NLIST-LIST|
 		**INSTANCE MASTER
 V4@arr@		MASTER@hamb@VARIABLES@arr@(43,42,,35,30)
-		MASBL,4,,VARIABLES-LIST
-		#-NLIST-MASBL,,#-NLIST+MASBL
-		-2,
-		SPLAT
-		(43,42,,35,30)
+		[MASBL,4,,VARIABLES-LIST]
+		[#-NLIST-MASBL,,#-NLIST+MASBL]
+		[-2,]
+		[SPLAT]
+		[(43,42,,35,30)]
 		hJMP MAGI	**DISPLAY
 		hJMP CPII	**HOWBIG
 		0	**GETIT
@@ -3569,18 +3570,18 @@ Q5@arr@		DISPLAYK
  TEXTS+NLIST-LIST|
 		**TEXT MASTER
 V5@arr@		MASTER@hamb@VARIABLES@arr@(43,47,,24,43)
-		MASBL,4,,VARIABLES-LIST
-		#-NLIST-MASBL,,#-NLIST+MASBL
-		-2,
-		SPLAT
-		(43,47,,24,43)
+		[MASBL,4,,VARIABLES-LIST]
+		[#-NLIST-MASBL,,#-NLIST+MASBL]
+		[-2,]
+		[SPLAT]
+		[(43,47,,24,43)]
 		hJMP MAGTXT	**DISPLAY
 		hJMP CPITXT	**HOWBIG
 		0	**GETIT
 		hJMP TRANSFORM	**MOVIT
 		32,14,,0	**SIZE
 		hJMP WHERESUB	**WHERE
-Q?@arr@		DISPLAYK
+Q8@arr@		DISPLAYK
 		4	**TUPLE
 		TVAL	**VARLOC
  NUMBERS+NLIST-LIST|
@@ -3591,7 +3592,7 @@ V6@arr@		MASBL,4,,VARIABLES-LIST
 		SPLAT
 		(21,34,,44,35)	**NUMB
 		
-[meta file_name=102726903-05-01-acc.pdf pdf_page=79 doc_page=77 type=main]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=79 doc_page=77 type=main proof=1]
 [Page header: "IES OPLW 026"]
 
 		hJMP MAGNUM	**DISPLAY
@@ -3605,15 +3606,18 @@ Q6@arr@		DISPLAYK
 		NVAL	**VARLOC
  ORIGIN|
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=80 doc_page=78 type=symex]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=80 doc_page=78 type=symex proof=1]
 [Page header: "LMH GX7A 001"]
 [Handwritten: "FULL TEXT", some other random scribbles]
 [Stamped: "SEP 21 1962"]
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=81 doc_page=79 type=symex]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=81 doc_page=79 type=symex proof=1]
 [Page header: "LMH GX7A 002"]
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=83 doc_page=81 type=symex]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=82 doc_page=80 type=symex proof=1]
+[Page header: "LMH GX7A 003"]
+
+[meta file_name=102726903-05-01-acc.pdf pdf_page=83 doc_page=81 type=symex proof=1]
 [Page header: "LMH GX7A 004"]
 
 [meta file_name=102726903-05-01-acc.pdf pdf_page=84 doc_page=82 type=equalities]
