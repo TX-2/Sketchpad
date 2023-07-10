@@ -3620,7 +3620,7 @@ Q6@arr@		DISPLAYK
 [meta file_name=102726903-05-01-acc.pdf pdf_page=83 doc_page=81 type=symex proof=1]
 [Page header: "LMH GX7A 004"]
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=84 doc_page=82 type=equalities]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=84 doc_page=82 type=equalities proof=1]
 [Page header: "LMH GX7A 005"]
 
 45X= 43
@@ -3636,7 +3636,7 @@ Q6@arr@		DISPLAYK
 45LPSW=SKM @sub_1@@sub_dot@@sub_1@ 45SWITCHES
 45RWSW=SKM @sub_1@@sub_dot@@sub_2@ 45SWITCHES
 45START= 11000
-45LIST= 45B*	[syntax, delayed reference on rhs of assignment]
+45LIST= 45B*	[syntax,  delayed reference on rhs of assignment]
 45REVSW=SKM @sub_1@@sub_dot@@sub_3@ 45SWITCHES
 45NUM= 377726
 45ZSW=SKM @sub_1@@sub_dot@@sub_4@ 45SWITCHES
@@ -3671,7 +3671,7 @@ CIRCLES= 2@times@MASBL+PICTURES
 CSP= 10         **CIRCLE START POINT
 CEP= 12         **CIRCLE END POINT
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=85 doc_page=83 type=equalities]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=85 doc_page=83 type=equalities proof=1]
 [Page header: "LMH GX7A 006"]
 
 CIRCEN= 14      **CIRCLE CENTER
@@ -3679,10 +3679,10 @@ CVAL= 16        **CIRCLE ANGLE AND RADIUS
 CVTS= 6         **VARIABLE TO MOVE TO SATISFY THIS
 CURPICS= 15@times@SMASBL+LIST+1
 CONSTRAINTS= 4@times@SMASBL+LIST+1
-CONLET= 12      **CONSTRAINT LETTER DESIGNATOR
+CONLET= 12      **CONSTRAINT LETTER CODE
 [*CMP1=]
 
-DISPLAY = 5     **MASTER DISPLAY SUBROUTINE
+DISPLAY= 5     **MASTER DISPLAY SUBROUTINE
 DEADS= 11@times@SMASBL+LIST+1
 DESIGS= 13@times@SMASBL+LIST+1
 
@@ -3721,7 +3721,7 @@ IBVERTS= 14@times@MASBL+PICTURES
 IPCOTP= 16      **INSTANCE-POINT CONSTRAINTS WITH THIS VIRGIN
 
 [meta file_name=102726903-05-01-acc.pdf pdf_page=86 doc_page=84 type=equalities]
-[Page header: "LMH GX7A 007"]
+[Page header: "LMH GX7A 007" proof=1]
 
 IWHAT= 14       **WHAT PIC THIS IS INSTANCE OF
 ISIZE= 16       ** R
@@ -3767,7 +3767,7 @@ NCON= 17        **# CONSTRAINTS SHOWN
 NLIST= 23000	**MODEL EMPTY LIST STRUCTURE
 
 [meta file_name=102726903-05-01-acc.pdf pdf_page=87 doc_page=85 type=equalities]
-[Page header: "LMH GX7A 010"]
+[Page header: "LMH GX7A 010" proof=1]
 
 NUMBERS= 10@times@MASBL+PICTURES
 NTOSHO= 14      ** SCALER TO BE SHOWN
@@ -3816,7 +3816,7 @@ S= 7
 SCCEN= 200035
 
 [meta file_name=102726903-05-01-acc.pdf pdf_page=88 doc_page=86 type=equalities]
-[Page header: "LMH GX7A 011"]
+[Page header: "LMH GX7A 011" proof=1]
 
 SCSZ= 200034
 SPECB= 2        **SPECIFIC BLOCKS
@@ -3838,8 +3838,8 @@ SVAL= 16        **VALUE OF THE SCALER
 [*SCDATA=]
 [*SCADD=]
 
-TL=-SIZE/2,,SIZE
-TR= SIZE/2,,SIZE
+TL=-SIZE/2,,SIZE	[coordinates of top-left corner of a letter box]
+TR= SIZE/2,,SIZE	[coordinates of top-right corner of a letter box]
 TA= 16
 T= 10
 TXTS= 20        **POINTER TO TEXT SHOWN
@@ -3867,7 +3867,7 @@ TX2TOG= 377727
 [*TAFWA1=]
 
 [meta file_name=102726903-05-01-acc.pdf pdf_page=89 doc_page=87 type=equalities]
-[Page header: "LMH GX7A 012"]
+[Page header: "LMH GX7A 012" proof=1]
 
 [*TAFNOTREADY=]
 [*TAFIOASTART@beta@=]
@@ -3917,7 +3917,7 @@ WHERE= 12       **LOCATION OF THING IN PICTURE
 [*WRELOOP=]
 [*WRLBM=]
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=90 doc_page=88 type=equalities]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=90 doc_page=88 type=equalities proof=1]
 [Page header: "LMH GX7A 013"]
 
 [*WRSC=]
