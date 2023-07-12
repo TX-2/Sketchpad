@@ -4211,7 +4211,7 @@ LGORLI0@arr@	@sup_1@@sup_6@RSX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST-
 	INX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@0
 LGORLI1@arr@     SXD@sub_X@@sub_R@#      ** MODIFIED
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=96 doc_page=94 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=96 doc_page=94 type=macros proof=1]
 [Page header: "LMH GX7A 021"]
 
 	hJPQ GORLIEXIT+(GORLIEXIT/GORLIEXIT@circled_v@1@times@(LGORLIEND+1))
@@ -4231,6 +4231,9 @@ LGORLIEND@arr@   JPQ LGORLI0
 	@sup_1@@sup_1@RSX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST
 NEWH1@arr@	SXD@sub_T@@sub_pipe@@sub_X@@sub_R@0
 	JPQ NEWH2
+	@sup_1@DPX@sub_S@@sub_pipe@@sub_T@LIST-1
+	@sup_1@@sup_1@RSX@sub_T@@sub_pipe@@sub_T@LIST
+	JPQ NEWH1
 NEWH2@arr@	@sup_1@@sup_1@AUX@sub_X@@sub_R@{(N)+1,,-((N)+1)}
 @hand@@hand@EMD
 
@@ -4260,7 +4263,7 @@ NEWH2@arr@	@sup_1@@sup_1@AUX@sub_X@@sub_R@{(N)+1,,-((N)+1)}
 	@sup_1@DPX@sub_S@@sub_pipe@@sub_X@@sub_R@@sub_R@LIST+(NN)
 @hand@@hand@EMD
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=97 doc_page=95 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=97 doc_page=95 type=macros proof=1]
 [Page header: "LMH GX7A 022"]
 
 @hand@@hand@DEF TYPEN@sup@SC,NUM@times@WD
@@ -4294,7 +4297,7 @@ MTLOOP@beta@@arr@	h@sup_1@DPX@sub_6@@sub_6@TYPEXIT@beta@
 		@sup_2@@sup_5@INS TYPECNTR@beta@
 		LDB C
 TYPELOOP@beta@@arr@	@sup_3@DPX A
-LSW@beta@@arr@	SKZ@sub_4@@sub_dot@@sub_1@@sub_0@
+LSW@beta@@arr@	SKZ@sub_4@@sub_dot@@sub_1@@sub_0@#
 		CAB {3,77,,77}
 		CAB #-1*
 		@sup_3@TSD A
@@ -4305,7 +4308,7 @@ TYPEXIT@beta@@arr@	JPQ XXX@beta@
 @hand@@hand@DEF TPK@beta@
 		0	**PREDICTED BM,,ACTUAL BM
 		0	**X@sub_3@@sub_5@,,X@sub_3@@sub_4@
-		BPQ@sup_3@@sup_6@0	**MODIFIED EXIT
+		BPQ@sub_3@@sub_6@0	**MODIFIED EXIT
 		0	**END WR ADDR,,START WR ADDR
 		0	**WA
 		0	**ERR BLK,,
@@ -4315,7 +4318,7 @@ TYPEXIT@beta@@arr@	JPQ XXX@beta@
 		10	**K FOR FWD OR REV
 		0	**LAST SC SUMCHK,,LAST WR SUMCHK
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=98 doc_page=96 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=98 doc_page=96 type=macros proof=1]
 [Page header: "LMH GX7A 023"]
 
 @hand@@hand@EMD
@@ -4325,7 +4328,7 @@ TYPEXIT@beta@@arr@	JPQ XXX@beta@
 		hLDE {TPK@beta@}+10.		**CUMULATIVE SUM CHK
 		@sup_2@SED E
 		JQP CMP1	**CORRECT
-		TYPEL,6@sub_3@@sub_6@@times@{603536,,704641} [6@sub_3@@sub_6@??]
+		TYPEL,6@sub_3@@sub_6@@times@{603536,,704641} [syntax, 6@sub_3@@sub_6@? TYPEL is a macro.]
 		SKX@sub_3@@sub_6@0 [another symbol on the line, junk?]
 		RFD@sub_4@@sub_6@{TPK@beta@}+2*
 CMP1@arr@	SKX@sub_3@@sub_6@1
@@ -4355,7 +4358,7 @@ EIALOOP@beta@@arr@	@sup_2@@sup_5@LDC@sub_3@@sub_4@LIOAMSG@beta@
 		JPQ EIAFND@beta@
 		SKX@sub_3@@sub_6@4	**FOR ERRLOOP
 		h@sup_1@JNX@sub_3@@sub_4@EIALOOP@beta@
-EIAFNDR@beta@@arr@	SKN@sub_4@@sub_dot@@sub_1@EIALOOP@beta@*	**SKIP IF WR TYPE
+EIAFND@beta@@arr@	SKN@sub_4@@sub_dot@@sub_1@EIALOOP@beta@*	**SKIP IF WR TYPE
 		JPQ EIALD@beta@
 		SKN@sub_1@@sub_dot@@sub_9@{TPK@beta@}+7	**SKIP IF WRITING
 		h@sup_1@JNX@sub_3@@sub_4@EIALOOP@beta@		**IGNORE CONDITION
@@ -4364,9 +4367,9 @@ EIALD@beta@@arr@	@sup_2@@sup_2@LDC@sub_3@@sub_4@LIOAMSG@beta@	**TYPE OF ERROR
 		JPD #	**NOT USED
 FIOAMSG@beta@@arr@	0,744,,343042	**MIS 2.4
 		0,706,,334336	**LTO 4.6
-		1,771,,433625	**TOF 3.9 [maybe TQF?]
+		1,771,,433625	**TOF 3.9
 		1,705,,322450	**KEY 4.5
-		1,770,,343723	**MP? 3.8 [not sure about 8]
+		1,770,,343723	**MPD 3.8
 		0,710,,252443	**FET 4.8
 		0,711,,412443	**RET 4.9
 		0,707,,353436	**NMO 4.7

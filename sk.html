@@ -4308,7 +4308,7 @@ LGORLI0&rarr;		<sup>1</sup><sup>6</sup>RSX<sub>X</sub><sub>R</sub><sub>|</sub><s
 LGORLI1&rarr;     SXD<sub>X</sub><sub>R</sub>#      ** MODIFIED
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=96 doc_page=94 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=96 doc_page=94 type=macros proof=1]
 [Page header: "LMH GX7A 021"]
 
 	hJPQ GORLIEXIT+(GORLIEXIT/GORLIEXIT&#9419;1&times;(LGORLIEND+1))
@@ -4328,6 +4328,9 @@ LGORLIEND&rarr;   JPQ LGORLI0
 	<sup>1</sup><sup>1</sup>RSX<sub>T</sub><sub>|</sub><sub>X</sub><sub>R</sub>LIST
 NEWH1&rarr;		SXD<sub>T</sub><sub>|</sub><sub>X</sub><sub>R</sub>0
 	JPQ NEWH2
+	<sup>1</sup>DPX<sub>S</sub><sub>|</sub><sub>T</sub>LIST-1
+	<sup>1</sup><sup>1</sup>RSX<sub>T</sub><sub>|</sub><sub>T</sub>LIST
+	JPQ NEWH1
 NEWH2&rarr;		<sup>1</sup><sup>1</sup>AUX<sub>X</sub><sub>R</sub>{(N)+1,,-((N)+1)}
 &#9755;&#9755;EMD
 
@@ -4358,7 +4361,7 @@ NEWH2&rarr;		<sup>1</sup><sup>1</sup>AUX<sub>X</sub><sub>R</sub>{(N)+1,,-((N)+1)
 &#9755;&#9755;EMD
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=97 doc_page=95 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=97 doc_page=95 type=macros proof=1]
 [Page header: "LMH GX7A 022"]
 
 &#9755;&#9755;DEF TYPEN&sup;SC,NUM&times;WD
@@ -4392,7 +4395,7 @@ MTLOOP&beta;&rarr;		h<sup>1</sup>DPX<sub>6</sub><sub>6</sub>TYPEXIT&beta;
 		<sup>2</sup><sup>5</sup>INS TYPECNTR&beta;
 		LDB C
 TYPELOOP&beta;&rarr;	<sup>3</sup>DPX A
-LSW&beta;&rarr;		SKZ<sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub>
+LSW&beta;&rarr;		SKZ<sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub>#
 		CAB {3,77,,77}
 		CAB #-1*
 		<sup>3</sup>TSD A
@@ -4403,7 +4406,7 @@ TYPEXIT&beta;&rarr;	JPQ XXX&beta;
 &#9755;&#9755;DEF TPK&beta;
 		0	**PREDICTED BM,,ACTUAL BM
 		0	**X<sub>3</sub><sub>5</sub>,,X<sub>3</sub><sub>4</sub>
-		BPQ<sup>3</sup><sup>6</sup>0	**MODIFIED EXIT
+		BPQ<sub>3</sub><sub>6</sub>0	**MODIFIED EXIT
 		0	**END WR ADDR,,START WR ADDR
 		0	**WA
 		0	**ERR BLK,,
@@ -4414,7 +4417,7 @@ TYPEXIT&beta;&rarr;	JPQ XXX&beta;
 		0	**LAST SC SUMCHK,,LAST WR SUMCHK
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=98 doc_page=96 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=98 doc_page=96 type=macros proof=1]
 [Page header: "LMH GX7A 023"]
 
 &#9755;&#9755;EMD
@@ -4424,7 +4427,7 @@ TYPEXIT&beta;&rarr;	JPQ XXX&beta;
 		hLDE {TPK&beta;}+10.		**CUMULATIVE SUM CHK
 		<sup>2</sup>SED E
 		JQP CMP1	**CORRECT
-		TYPEL,6<sub>3</sub><sub>6</sub>&times;{603536,,704641} [6<sub>3</sub><sub>6</sub>??]
+		TYPEL,6<sub>3</sub><sub>6</sub>&times;{603536,,704641} [syntax, 6<sub>3</sub><sub>6</sub>? TYPEL is a macro.]
 		SKX<sub>3</sub><sub>6</sub>0 [another symbol on the line, junk?]
 		RFD<sub>4</sub><sub>6</sub>{TPK&beta;}+2*
 CMP1&rarr;		SKX<sub>3</sub><sub>6</sub>1
@@ -4454,7 +4457,7 @@ EIALOOP&beta;&rarr;	<sup>2</sup><sup>5</sup>LDC<sub>3</sub><sub>4</sub>LIOAMSG&b
 		JPQ EIAFND&beta;
 		SKX<sub>3</sub><sub>6</sub>4	**FOR ERRLOOP
 		h<sup>1</sup>JNX<sub>3</sub><sub>4</sub>EIALOOP&beta;
-EIAFNDR&beta;&rarr;	SKN<sub>4</sub><sub>.</sub><sub>1</sub>EIALOOP&beta;*	**SKIP IF WR TYPE
+EIAFND&beta;&rarr;		SKN<sub>4</sub><sub>.</sub><sub>1</sub>EIALOOP&beta;*	**SKIP IF WR TYPE
 		JPQ EIALD&beta;
 		SKN<sub>1</sub><sub>.</sub><sub>9</sub>{TPK&beta;}+7	**SKIP IF WRITING
 		h<sup>1</sup>JNX<sub>3</sub><sub>4</sub>EIALOOP&beta;		**IGNORE CONDITION
@@ -4463,9 +4466,9 @@ EIALD&beta;&rarr;		<sup>2</sup><sup>2</sup>LDC<sub>3</sub><sub>4</sub>LIOAMSG&be
 		JPD #	**NOT USED
 FIOAMSG&beta;&rarr;	0,744,,343042	**MIS 2.4
 		0,706,,334336	**LTO 4.6
-		1,771,,433625	**TOF 3.9 [maybe TQF?]
+		1,771,,433625	**TOF 3.9
 		1,705,,322450	**KEY 4.5
-		1,770,,343723	**MP? 3.8 [not sure about 8]
+		1,770,,343723	**MPD 3.8
 		0,710,,252443	**FET 4.8
 		0,711,,412443	**RET 4.9
 		0,707,,353436	**NMO 4.7
