@@ -4693,7 +4693,7 @@ TAF3F&rarr;		<sup>1</sup>IOS<sub>4</sub><sub>6</sub>XXX	**RD MKS
 XCHKSW&rarr;		<sup>1</sup>SXD<sub>3</sub><sub>4</sub>0	**MOD TO <sup>1</sup>SXD<sub>3</sub><sub>4</sub>1 FOR REV
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=103 doc_page=101 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=103 doc_page=101 type=macros proof=1]
 [Page header: "LMH GX7A 030"]
 
 		JPQ XCHK
@@ -4724,7 +4724,7 @@ TAFERR&rarr;		hJPQ{TURNOFF&Delta;}	**PGM ADDR
 		SKX<sub>3</sub><sub>6</sub>0
 TAFERREXIT&rarr;	<sup>2</sup><sup>2</sup>LDA {TPK&beta;}+1	**ORIGINAL NO
 		JPQ {ERRLOOP&beta;}*	**NTF OR EIA ENTRY
-TAFREVDIR&rarr;	h<sup>1</sup>SKX<sub>4</sub><sub>6</sub><sub>|</sub><sub>4</sub><sub>6</sub>0	** COMPL. X<sub>4</sub><sub>6</sub>
+TAFREVDIR&rarr;	h<sup>1</sup>SKX<sub>4</sub><sub>6</sub><sub>|</sub><sub>4</sub><sub>6</sub>0	**COMPL. X<sub>4</sub><sub>6</sub>
 		hMKN<sub>1</sub><sub>.</sub><sub>1</sub>XCHKSW	**SET TO LEAVE REV
 		LDE TAFDKR	**REV K
 		hJMP TAFSCHK
@@ -4748,7 +4748,7 @@ TAFSPDK&rarr;		TAF2R,,TAF1R
 TAFSTK&rarr;		TAFST<sub>3</sub><sub>4</sub>
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=104 doc_page=102 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=104 doc_page=102 type=macros proof=1]
 [Page header: "LMH GX7A 031"]
 
 TAFDKF&rarr;		TAPEK1+10,,10
@@ -4782,8 +4782,8 @@ TAF1R&rarr;		RL,,RM
 TAF2R&rarr;		RL+SPD2,,RM+SPD2
 		RL+SPD2,,RM+SPD2
 		RL+SPD2,,RM+SPD2
-		RL+SPD3,,RM+SPD4
-		RL+SPD3,,RM+SPD4
+		RL+SPD3,,RM+SPD3
+		RL+SPD4,,RM+SPD4
 &#9755;&#9755;EMD
 
 &#9755;&#9755;DEF SCF&Delta;&sup;X&rarr;Y|SELECT,ERROR
@@ -4802,7 +4802,7 @@ ERR=ERROR
 &#9755;&#9755;DEF SCR&Delta;&sup;X&rarr;Y|SELECT,ERROR
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=105 doc_page=103 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=105 doc_page=103 type=macros proof=1]
 [Page header: "LMH GX7A 032"]
 
 ERR=ERROR
@@ -4825,18 +4825,18 @@ XXX=0
 		<sup>2</sup><sup>2</sup>ADD {-10,,10}	**10&rarr;D<sub>3</sub>
 		<sup>2</sup><sup>2</sup>STA {TPK&beta;}+1	**SAVE LOW NUMBER
 		<sup>2</sup>DPX<sub>3</sub><sub>5</sub>{TPK&beta;}+1	**SAVE X<sub>3</sub><sub>5</sub>
-SRCENTRY&rarr;	SKX<sub>4</sub><sub>1</sub>{IOAB}+3	**SET IOA SEQ
+SRCENTRY&rarr;	SKX<sub>4</sub><sub>1</sub>{IOA&beta;}+3	**SET IOA SEQ
 		DEX<sub>3</sub><sub>5</sub><sub>|</sub><sub>3</sub><sub>4</sub>10	**NO BLKS &rarr; X<sub>3</sub><sub>5</sub>
 		SKX<sub>3</sub><sub>6</sub>1	**SET X<sub>3</sub><sub>6</sub>
 		<sup>1</sup>DPX<sub>3</sub><sub>7</sub>{TPK&beta;}+8.	**SAVE X<sub>3</sub><sub>7</sub>
 		<sup>1</sup>LDB {30130}	**RMF3
 		SKN<sub>1</sub><sub>.</sub><sub>4</sub>{TPK&beta;}+9.	**CHK FOR SCF OR SCR
-		MKN<sub>1</sub><sub>.</sub><sub>3</sub>B	**CG TO RMR3
+		MKN<sub>1</sub><sub>.</sub><sub>3</sub>B	**CHG TO RMR3
 		<sup>1</sup>STB SCRM	**IOS RM
 		<sup>1</sup>STB SCRL	**IOS RL
 		MKZ<sub>1</sub><sub>.</sub><sub>7</sub>SCRL	**CHG TO RL
 SCRM&rarr;		<sup>1</sup>IOS<sub>4</sub><sub>6</sub>XXX	**RM
-		h<sup>6</sup>TSB B	**COARSE MK
+		h<sup>6</sup>TSD B	**COARSE MK
 SCRL&rarr;		h<sup>1</sup>IOS<sub>4</sub><sub>6</sub>XXX	**RL
 		hJPQ BMCHK	**CHK FOR BLK MK
 SCRET&rarr;		h<sup>3</sup>TSD A	**SUMCHK L.O.
@@ -4857,14 +4857,14 @@ SCADD&rarr;		h<sup>4</sup>TSD B	**DUMMY
 		h<sup>3</sup>TSD B	**FINE MK
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=106 doc_page=104 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=106 doc_page=104 type=macros proof=1]
 [Page header: "LMH GX7A 033"]
 
 		h<sup>1</sup>JPA {TURNOFF&Delta;}	**SUMCHK ERR
 		h<sup>1</sup>JPA {ERRLOOP&beta;}*	**SUMCHK ERR
 		h<sup>6</sup>TSD B	**COARSE MK
-BMCHK&rarr;		<sup>2</sup><sup>1</sup> {TPK&beta;}	**EXPECTED BM
-		<sup>5</sup>TSD B	**FINE MK
+BMCHK&rarr;		<sup>2</sup><sup>1</sup>STA {TPK&beta;}	**EXPECTED BM
+		h<sup>5</sup>TSD B	**FINE MK
 		<sup>2</sup><sup>2</sup>STB {TPK&beta;}	**BM READ
 		h<sup>4</sup>TSD B	**DUMMY
 		h<sup>2</sup><sup>1</sup>SED A	**CHK AGAINST EXPECTED
@@ -4902,7 +4902,7 @@ WRENTRY&rarr;		<sup>1</sup>STE {TPK&beta;}+2	**RETURN
 		<sup>2</sup><sup>2</sup>ADD {-10,,10}	**START BLOCK
 		<sup>2</sup><sup>2</sup>STA {TPK&beta;}+1	**X<sub>3</sub><sub>4</sub>
 		<sup>2</sup><sup>2</sup>STA {TPK&beta;}+3	**LOW END
-		DEX <sub>3</sub><sub>7</sub><sub>|</sub><sub>3</sub><sub>7</sub>	**-(NO OF WDS)&rarr;X<sub>3</sub><sub>5</sub>
+		DEX <sub>3</sub><sub>5</sub><sub>|</sub><sub>3</sub><sub>7</sub>0	**-(NO OF WDS)&rarr;X<sub>3</sub><sub>5</sub>
 		<sup>1</sup>DPX<sub>3</sub><sub>7</sub>WRLD	**STARTING CORE ADDR
 		MKZ<sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub>WRESW
 		SKX<sub>4</sub><sub>1</sub>{IOA&beta;}+3
@@ -4912,7 +4912,7 @@ WRELOOP&rarr;		<sup>2</sup><sup>1</sup>STA {TPK&beta;}	**PREDICTED BM
 		<sup>1</sup>IOS<sub>4</sub><sub>6</sub>30000	**RLF0
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=107 doc_page=105 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=107 doc_page=105 type=macros proof=1]
 [Page header: "LMH GX7A 034"]
 
 		h<sup>3</sup>TSD {TPK&beta;} **FINE MK
@@ -4921,7 +4921,7 @@ WRELOOP&rarr;		<sup>2</sup><sup>1</sup>STA {TPK&beta;}	**PREDICTED BM
 WRLBM&rarr;		hJPQ {TURNOFF&Delta;}
 		SKX<sub>3</sub><sub>6</sub>2
 		hJPQ {ERRLOOP&beta;}*	**ERR LOOP
-WRESW&rarr;		SZN<sub>4</sub>abo<sub>1</sub><sub>0</sub>#
+WRESW&rarr;		SZN<sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub>#
 		JPQ WRSC
 WRMAINLOOP&rarr;	<sup>1</sup>IOS<sub>4</sub><sub>6</sub>30400	**WLF0
 		<sup>1</sup>LDA {0,,-0}	**FOR SUM CHK
@@ -4953,7 +4953,7 @@ WRLD&rarr;		LDB<sub>3</sub><sub>5</sub>XXX	**WD FROM CORE
 		hJPQ WRSPL	**ERROR
 		h<sup>3</sup>TSD E	**FINE MARK
 		h<sup>1</sup>JNX<sub>3</sub><sub>5</sub>WRMAINLOOP	**NO WORDS LEFT?
-		<sup>2</sup><sup>1</sup>{TPK&beta;}+3	**LAST BM WRITTEN
+		<sup>2</sup><sup>1</sup>STA {TPK&beta;}+3	**LAST BM WRITTEN
 		<sup>2</sup><sup>2</sup>ADD {-10,,10}
 		JPQ WRELOOP
 WRSC&rarr;		hJPQ {TURNOFF&Delta;}
@@ -4967,7 +4967,7 @@ WRSPL&rarr;		hJPQ {TURNOFF&Delta;}
 WRCONT&rarr;		h<sup>1</sup>JNX<sub>3</sub><sub>5</sub>WRLD	**ANY DATA LEFT?
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=108 doc_page=106 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=108 doc_page=106 type=macros proof=1]
 [Page header: "LMH GX7A 035"]
 
 		<sup>1</sup><sup>2</sup>LDB {0,,-0}	**0

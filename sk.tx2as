@@ -4589,7 +4589,7 @@ TAF3F@arr@	@sup_1@IOS@sub_4@@sub_6@XXX	**RD MKS
 		JPQ TAFCON	**CONTINUE
 XCHKSW@arr@	@sup_1@SXD@sub_3@@sub_4@0	**MOD TO @sup_1@SXD@sub_3@@sub_4@1 FOR REV
 		
-[meta file_name=102726903-05-01-acc.pdf pdf_page=103 doc_page=101 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=103 doc_page=101 type=macros proof=1]
 [Page header: "LMH GX7A 030"]
 
 		JPQ XCHK
@@ -4620,7 +4620,7 @@ TAFERR@arr@	hJPQ{TURNOFF@delta@}	**PGM ADDR
 		SKX@sub_3@@sub_6@0
 TAFERREXIT@arr@	@sup_2@@sup_2@LDA {TPK@beta@}+1	**ORIGINAL NO
 		JPQ {ERRLOOP@beta@}*	**NTF OR EIA ENTRY
-TAFREVDIR@arr@	h@sup_1@SKX@sub_4@@sub_6@@sub_pipe@@sub_4@@sub_6@0	** COMPL. X@sub_4@@sub_6@
+TAFREVDIR@arr@	h@sup_1@SKX@sub_4@@sub_6@@sub_pipe@@sub_4@@sub_6@0	**COMPL. X@sub_4@@sub_6@
 		hMKN@sub_1@@sub_dot@@sub_1@XCHKSW	**SET TO LEAVE REV
 		LDE TAFDKR	**REV K
 		hJMP TAFSCHK
@@ -4643,7 +4643,7 @@ TAFBL@arr@	0
 TAFSPDK@arr@	TAF2R,,TAF1R
 TAFSTK@arr@	TAFST@sub_3@@sub_4@
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=104 doc_page=102 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=104 doc_page=102 type=macros proof=1]
 [Page header: "LMH GX7A 031"]
 
 TAFDKF@arr@	TAPEK1+10,,10
@@ -4677,8 +4677,8 @@ TAF1R@arr@	RL,,RM
 TAF2R@arr@	RL+SPD2,,RM+SPD2
 		RL+SPD2,,RM+SPD2
 		RL+SPD2,,RM+SPD2
-		RL+SPD3,,RM+SPD4
-		RL+SPD3,,RM+SPD4
+		RL+SPD3,,RM+SPD3
+		RL+SPD4,,RM+SPD4
 @hand@@hand@EMD
 
 @hand@@hand@DEF SCF@delta@@sup@X@arr@Y|SELECT,ERROR
@@ -4696,7 +4696,7 @@ ERR=ERROR
 
 @hand@@hand@DEF SCR@delta@@sup@X@arr@Y|SELECT,ERROR
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=105 doc_page=103 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=105 doc_page=103 type=macros proof=1]
 [Page header: "LMH GX7A 032"]
 
 ERR=ERROR
@@ -4719,18 +4719,18 @@ XXX=0
 		@sup_2@@sup_2@ADD {-10,,10}	**10@arr@D@sub_3@
 		@sup_2@@sup_2@STA {TPK@beta@}+1	**SAVE LOW NUMBER
 		@sup_2@DPX@sub_3@@sub_5@{TPK@beta@}+1	**SAVE X@sub_3@@sub_5@
-SRCENTRY@arr@	SKX@sub_4@@sub_1@{IOAB}+3	**SET IOA SEQ
+SRCENTRY@arr@	SKX@sub_4@@sub_1@{IOA@beta@}+3	**SET IOA SEQ
 		DEX@sub_3@@sub_5@@sub_pipe@@sub_3@@sub_4@10	**NO BLKS @arr@ X@sub_3@@sub_5@
 		SKX@sub_3@@sub_6@1	**SET X@sub_3@@sub_6@
 		@sup_1@DPX@sub_3@@sub_7@{TPK@beta@}+8.	**SAVE X@sub_3@@sub_7@
 		@sup_1@LDB {30130}	**RMF3
 		SKN@sub_1@@sub_dot@@sub_4@{TPK@beta@}+9.	**CHK FOR SCF OR SCR
-		MKN@sub_1@@sub_dot@@sub_3@B	**CG TO RMR3
+		MKN@sub_1@@sub_dot@@sub_3@B	**CHG TO RMR3
 		@sup_1@STB SCRM	**IOS RM
 		@sup_1@STB SCRL	**IOS RL
 		MKZ@sub_1@@sub_dot@@sub_7@SCRL	**CHG TO RL
 SCRM@arr@	@sup_1@IOS@sub_4@@sub_6@XXX	**RM
-		h@sup_6@TSB B	**COARSE MK
+		h@sup_6@TSD B	**COARSE MK
 SCRL@arr@	h@sup_1@IOS@sub_4@@sub_6@XXX	**RL
 		hJPQ BMCHK	**CHK FOR BLK MK
 SCRET@arr@	h@sup_3@TSD A	**SUMCHK L.O.
@@ -4750,14 +4750,14 @@ SCADD@arr@	h@sup_4@TSD B	**DUMMY
 		h@sup_1@JNA {ERRLOOP@beta@}*	**SUMCHK ERR
 		h@sup_3@TSD B	**FINE MK
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=106 doc_page=104 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=106 doc_page=104 type=macros proof=1]
 [Page header: "LMH GX7A 033"]
 
 		h@sup_1@JPA {TURNOFF@delta@}	**SUMCHK ERR
 		h@sup_1@JPA {ERRLOOP@beta@}*	**SUMCHK ERR
 		h@sup_6@TSD B	**COARSE MK
-BMCHK@arr@	@sup_2@@sup_1@ {TPK@beta@}	**EXPECTED BM
-		@sup_5@TSD B	**FINE MK
+BMCHK@arr@	@sup_2@@sup_1@STA {TPK@beta@}	**EXPECTED BM
+		h@sup_5@TSD B	**FINE MK
 		@sup_2@@sup_2@STB {TPK@beta@}	**BM READ
 		h@sup_4@TSD B	**DUMMY
 		h@sup_2@@sup_1@SED A	**CHK AGAINST EXPECTED
@@ -4795,7 +4795,7 @@ WRENTRY@arr@	@sup_1@STE {TPK@beta@}+2	**RETURN
 		@sup_2@@sup_2@ADD {-10,,10}	**START BLOCK
 		@sup_2@@sup_2@STA {TPK@beta@}+1	**X@sub_3@@sub_4@
 		@sup_2@@sup_2@STA {TPK@beta@}+3	**LOW END
-		DEX @sub_3@@sub_7@@sub_pipe@@sub_3@@sub_7@	**-(NO OF WDS)@arr@X@sub_3@@sub_5@
+		DEX @sub_3@@sub_5@@sub_pipe@@sub_3@@sub_7@0	**-(NO OF WDS)@arr@X@sub_3@@sub_5@
 		@sup_1@DPX@sub_3@@sub_7@WRLD	**STARTING CORE ADDR
 		MKZ@sub_4@@sub_dot@@sub_1@@sub_0@WRESW
 		SKX@sub_4@@sub_1@{IOA@beta@}+3
@@ -4804,7 +4804,7 @@ WRELOOP@arr@	@sup_2@@sup_1@STA {TPK@beta@}	**PREDICTED BM
 		h@sup_4@TSD {TPK@beta@}	**COARSE MK
 		@sup_1@IOS@sub_4@@sub_6@30000	**RLF0
 		
-[meta file_name=102726903-05-01-acc.pdf pdf_page=107 doc_page=105 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=107 doc_page=105 type=macros proof=1]
 [Page header: "LMH GX7A 034"]
 
 		h@sup_3@TSD {TPK@beta@} **FINE MK
@@ -4813,7 +4813,7 @@ WRELOOP@arr@	@sup_2@@sup_1@STA {TPK@beta@}	**PREDICTED BM
 WRLBM@arr@	hJPQ {TURNOFF@delta@}
 		SKX@sub_3@@sub_6@2
 		hJPQ {ERRLOOP@beta@}*	**ERR LOOP
-WRESW@arr@	SZN@sub_4@abo@sub_1@@sub_0@#
+WRESW@arr@	SZN@sub_4@@sub_dot@@sub_1@@sub_0@#
 		JPQ WRSC
 WRMAINLOOP@arr@	@sup_1@IOS@sub_4@@sub_6@30400	**WLF0
 		@sup_1@LDA {0,,-0}	**FOR SUM CHK
@@ -4845,7 +4845,7 @@ WRLD@arr@	LDB@sub_3@@sub_5@XXX	**WD FROM CORE
 		hJPQ WRSPL	**ERROR
 		h@sup_3@TSD E	**FINE MARK
 		h@sup_1@JNX@sub_3@@sub_5@WRMAINLOOP	**NO WORDS LEFT?
-		@sup_2@@sup_1@{TPK@beta@}+3	**LAST BM WRITTEN
+		@sup_2@@sup_1@STA {TPK@beta@}+3	**LAST BM WRITTEN
 		@sup_2@@sup_2@ADD {-10,,10}
 		JPQ WRELOOP
 WRSC@arr@	hJPQ {TURNOFF@delta@}
@@ -4858,7 +4858,7 @@ WRSPL@arr@	hJPQ {TURNOFF@delta@}
 		hJPQ {ERRLOOP@beta@}+4*
 WRCONT@arr@	h@sup_1@JNX@sub_3@@sub_5@WRLD	**ANY DATA LEFT?
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=108 doc_page=106 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=108 doc_page=106 type=macros proof=1]
 [Page header: "LMH GX7A 035"]
 
 		@sup_1@@sup_2@LDB {0,,-0}	**0
