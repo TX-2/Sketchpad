@@ -4374,7 +4374,7 @@ FIOAMSG@beta@@arr@	0,744,,343042	**MIS 2.4
 		0,711,,412443	**RET 4.9
 		0,707,,353436	**NMO 4.7
 		
-[meta file_name=102726903-05-01-acc.pdf pdf_page=99 doc_page=97 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=99 doc_page=97 type=macros proof=1]
 [Page header: "LMH GX7A 024"]
 
 LIOAMSG@beta@@arr@	0,745,,243020	**EIA 2.5
@@ -4397,21 +4397,21 @@ NTFENTRY@beta@@arr@	SKX@sub_3@@sub_6@5
 SCENTRY@beta@@arr@	@sup_2@@sup_2@SUB {TPK@beta@}+9.	**10 OR 0
 SCEBME@beta@@arr@	@sup_2@@sup_1@LDC {422224,,213424}	**SCE
 ALLERRS@beta@@arr@	@sup_5@DPX@sub_3@@sub_6@{TPK@beta@}+8.	**SAVE ERR TYPE
-		@sup_2@@sup_1@ {TPK@beta@}+5	**BLK NO
+		@sup_2@@sup_1@STA {TPK@beta@}+5	**BLK NO
 		[Device 41 is "Alarm, in-out", table 7-1.]
 		@sup_1@IOS@sub_4@@sub_1@20000	**DISC IOA SEQ
 NTFNDMSG@beta@@arr@	@sup_1@LDC {354325,,703443}	**MT
-		TYPEL@sup@{60},6@sub_3@@sub_4@ [@sub_3@@sub_4@ propagates to instruction in the macro?]
+		TYPEL@sup@{60},6@sub_3@@sub_4@ [syntax, @sub_3@@sub_4@ likely propagates to instruction in the macro]
 		@sup_1@SKX@sub_3@@sub_5@(LXSET@beta@-XSETK@beta@)	**WD CNTR
 WRSP@beta@@arr@	h@sup_3@TSD {70}	**SPACE
 		h@sup_3@TSD {70}	**SPACE
 		h@sup_3@TSD {70}	**SPACE
 		h@sup_1@JNX@sub_3@@sub_5@ELOOPMSG1@beta@
-TYPEL@sup@{70},3@sub_3@@sub_5@@times@@sup_2@@sup_1@TX2IK
+TYPEL@sup@{70},3@sub_3@@sub_5@@times@@sup_2@@sup_1@TX2IK [@times@ is the arg separator for the macro]
 		TYPEN@sup@{70},5@sub_3@@sub_5@@times@@sup_2@@sup_1@{TPK@beta@}+5
 		@sup_3@TSD {60}
 		RFD@sub_4@@sub_6@NORMEXIT@beta@-1
-ELOOPMSG1@beta@@arr@	@sup_1@@sup_3@RSX@sub_3@@sub_7@XSETX@beta@*	**NO OF QUARTERS=1
+ELOOPMSG1@beta@@arr@	@sup_1@@sup_3@RSX@sub_3@@sub_7@XSETX@beta@*	**NO OF QUARTERS-1
 		LDB@sub_3@@sub_5@{TPK@beta@}+8.	**WORD
 ELOOPMSG2@beta@@arr@	STB {TPK@beta@}+4	**WA
 		TYPEN@sup@{70},3@sub_3@@sub_4@@times@B
@@ -4419,7 +4419,7 @@ ELOOPMSG2@beta@@arr@	STB {TPK@beta@}+4	**WA
 		CYB XSET@beta@		**SET NEXT QUARTER
 		h@sup_1@JNX@sub_3@@sub_7@ELOOPMSG2@beta@	**TYPE NXT QUARTER
 		JPQ WRSP@beta@
-		SKX@sup_3@@sup_6@0	**SET X@sub_3@@sub_6@
+		SKX@sub_3@@sub_6@0	**SET X@sub_3@@sub_6@
 NORMEXIT@beta@@arr@	@sup_1@RSX@sub_3@@sub_4@{TPK@beta@}+1	**RESET X@sub_3@@sub_4@
 		@sup_2@RSX@sub_3@@sub_5@{TPK@beta@}+1	**RESET X@sub_3@@sub_5@
 		@sup_1@RSX@sub_3@@sub_7@{TPK@beta@}+8.	**RESET X@sub_3@@sub_7@
@@ -4429,19 +4429,20 @@ BMENTRY@beta@@arr@	@sup_2@@sup_2@LDC SCEBME@beta@*		**BME
 XSETK@beta@@arr@	LXSET@beta@@sub_3@@sub_5@ [syntax]
 XSET@beta@@arr@	9.,-1
 		
-[meta file_name=102726903-05-01-acc.pdf pdf_page=100 doc_page=98 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=100 doc_page=98 type=macros proof=1]
 [Page header: "LMH GX7A 025"]
 
 		-1
 		-3
 LXSET@beta@@arr@	0
+@hand@@hand@EMD
 
 @hand@@hand@DEF TURNOFF@delta@
 		h@sup_2@STE {TPK@beta@}+6	**PGM ADDR
 		h@sup_1@IOS@sub_4@@sub_6@20000	**DISCONNECT
 		hSTE {TPK@beta@}+7		**SAVE REPORT
 		h@sup_1@IOS@sub_4@@sub_1@40000	**LOWER FLAG
-		h@sup_1@@sup_2@LDE {TPK@beta@} +6	**RETURN ADDR
+		h@sup_1@@sup_2@LDE {TPK@beta@}+6	**RETURN ADDR
 		hJPQ E*		**RETURN TO PGM
 @hand@@hand@EMD
 
@@ -4482,7 +4483,7 @@ TAFSCHK@arr@	h@sup_1@STE TAFST
 		hLDE TAFSPDK
 		hSXD@sub_4@@sub_6@2	**CHK FOR SPD2 EXIT
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=101 doc_page=99 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=101 doc_page=99 type=macros proof=1]
 [Page header: "LMH GX7A 026"]
 
 		h@sup_2@LDE E
@@ -4499,7 +4500,7 @@ TAFSCHK@arr@	h@sup_1@STE TAFST
 EOTCHK@arr@	h@sup_1@IOS@sub_4@@sub_6@0	**GET REPORT
 		hSKN@sub_4@@sub_dot@@sub_3@E	**SELECTION COMPLETE?
 		JPQ EOTCHK	**WAIT
-		SKU@sup_3@@sub_dot@@sub_7@	**OPERABLE SPEED?
+		SKU@sub_3@@sub_dot@@sub_7@E	**OPERABLE SPEED?
 		JPQ EOTCHK	**WAIT
 		h@sup_1@IOS@sub_4@@sub_6@36200	**CLR ALARMS,CHG RS,MOVE TAPE
 		STE TAFWA1	**SAVE REPORT
@@ -4520,7 +4521,7 @@ EOTCHK@arr@	h@sup_1@IOS@sub_4@@sub_6@0	**GET REPORT
 		h@sup_1@@sup_2@LDE {TPK@beta@}	**CURRENT POSITION
 		hSKZ@sub_4@@sub_dot@@sub_9@E
 		hDPX E
-		SXK@sub_3@@sub_4@E*
+		SXL@sub_3@@sub_4@E*
 		JPQ TAFGOFWD
 		@sup_1@SKX@sub_3@@sub_4@1	**GO REV
 		JPQ TAFIOS	**SET IOS INSTRUCTIONS
@@ -4535,7 +4536,7 @@ TAF0R@arr@	@sup_1@SKX@sub_3@@sub_4@5	**REV SPD4
 TAF4F@arr@	@sup_3@DPX {TPK@beta@}	**CLR FINE MK
 		hLDE TAFIOS*
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=102 doc_page=100 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=102 doc_page=100 type=macros proof=1]
 [Page header: "LMH GX7A 027"]
 
 		@sup_1@STE#+1
@@ -4563,7 +4564,7 @@ TAF0F@arr@	SKX@sub_3@@sub_4@4 **FWD SPD 4
 		JPQ TAF4F
 		**SLOW LOOPS
 TAFCON@arr@	@sup_2@AUX@sub_3@@sub_5@TAFBL	**-(ORIG BLK)
-		@sup_1@AUX@sub_3@@sub_5@TAFSTK*	**LIMIT AT THIS SPEED
+		@sup_1@AUX@sub_3@@sub_5@TAFSTK*	**LIMIT AT THIS SPD
 		hJPX@sub_3@@sub_5@TAFREV
 		@sup_2@AUX@sub_3@@sub_5@TAFSTK*
 		hJNX@sub_3@@sub_5@TAFFOR
@@ -4572,6 +4573,7 @@ TAFIOSRET@arr@	h@sup_1@@sup_2@RSX@sub_3@@sub_7@{TPK@beta@}	**PREDICTED BM
 		DEX@sub_3@@sub_5@10	**PRECEDING BLK
 		SXL@sub_3@@sub_4@0	**REV?
 		INX@sub_3@@sub_5@20	**NXT BLK
+		@sup_2@DPX@sub_3@@sub_5@{TPK@beta@} ** NXT PREDICTED BLK
 TAF1F@arr@	h@sup_4@TSD {TPK@beta@}	**BLK MK
 TAF2F@arr@	h@sup_1@IOS@sub_4@@sub_6@XXX	**RD LINES
 		h@sup_3@TSD {TPK@beta@} **FINE MK
