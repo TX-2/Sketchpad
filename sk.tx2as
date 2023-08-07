@@ -5780,7 +5780,7 @@ COMMA@arr@	1,
 		@sup_1@IOS @sub_5@@sub_4@ 30000
 		@sup_1@IOS @sub_5@@sub_4@ 30300
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=126 doc_page=124 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=126 doc_page=124 type=code proof=1]
 [Page header: "LMH GX7A 021"]
 
 		SKZ 45RWSW
@@ -5833,7 +5833,7 @@ COMMA@arr@	1,
 		MKZ @sub_4@@sub_dot@@sub_1@@sub_0@ 45M4
 45M3A@arr@	@sup_1@SKX @sub_4@@sub_5@@sub_X@ 2
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=127 doc_page=125 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=127 doc_page=125 type=code proof=1]
 [Page header: "LMH GX7A 022"]
 
 45M4@arr@	@sup_1@@sup_4@RSX @sub_4@@sub_5@@sub_X@@sub_2@ 45M6*
@@ -5856,7 +5856,7 @@ TX2MSW2@arr@
 		SZZ @sub_M@@sub_E@@sub_T@@sub_A@#
 		JPD 45LWRET*
 		@sup_6@TSD 45MK2* **SPACE
-45MORMSG@arr@
+45NORMSG@arr@
 		SZZ @sub_M@@sub_E@@sub_T@@sub_A@#
 		JPQ 45ERRMSG
 		@sup_1@@sup_1@RSX @sub_4@@sub_5@@sub_X@@sub_2@ 45MWA3	**LENGTH
@@ -5884,10 +5884,10 @@ TX2MSW2@arr@
 		DPX 45CURRENT
 TX2MSW@arr@	SKN @sub_M@@sub_E@@sub_T@@sub_A@#
 45LWRET@arr@
-		JPD ? [syntax, actual question mark]
+		JPD ? [? is aliased to #, see pdf_page 90]
 		MKN @sub_M@@sub_E@@sub_T@@sub_A@ TX2MSW2
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=128 doc_page=126 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=128 doc_page=126 type=code proof=1]
 [Page header: "LMH GX7A 023"]
 
 		@sup_1@@sup_1@RSX @sub_4@@sub_5@@sub_X@@sub_2@ TX2WA3
@@ -5941,7 +5941,7 @@ TX2MSW@arr@	SKN @sub_M@@sub_E@@sub_T@@sub_A@#
 		45DELAY@hamb@11160.
 		SKN 45REVSW
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=129 doc_page=127 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=129 doc_page=127 type=code proof=1]
 [Page header: "LMH GX7A 024"]
 
 		JPQ 45RW?
@@ -5990,12 +5990,12 @@ TX2MSW@arr@	SKN @sub_M@@sub_E@@sub_T@@sub_A@#
 		0
 45WA@arr@	0
 		**SEQUENCE 54
-45IT1@arr@	@sup_1@TS { 400.,,200.}
+45IT1@arr@	@sup_1@TSD { 400.,,200.}
 		@sup_1@IOS @sub_5@@sub_4@ 30000
 		RFD @sub_4@@sub_5@ 45SF2
 		JPD #
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=130 doc_page=128 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=130 doc_page=128 type=code proof=1]
 [Page header: "LMH GX7A 025"]
 
 45IT2@arr@	@sup_1@TSD { 400.,,200.}
@@ -6022,7 +6022,7 @@ TX2MSW@arr@	SKN @sub_M@@sub_E@@sub_T@@sub_A@#
 		h45SRM
 		45DELAY@hamb@20000.
 		@sup_1@DPX 45CURRENT
-		45RWD [in the listing statements like this one are offset by one space, is it significant?]
+		45RWD
 		45DELAY@hamb@31600.
 		@sup_1@IOS @sub_4@@sub_5@ 20000
 		MKN @sub_M@@sub_E@@sub_T@@sub_A@ 45NORMSG
@@ -6043,8 +6043,8 @@ TX2MSW@arr@	SKN @sub_M@@sub_E@@sub_T@@sub_A@#
 		INX @sub_alpha@ 1
 		@sup_1@DPX @sub_alpha@ LIST2
 		INX @sub_alpha@ MASTERS-LIST
-LIST2@arr@	SKX @sub_gamma@ ?	** REL RD ADDR	[syntax]
-		@sup_1@@sup_1@RSX @sub_?@ 45TSD	**END OF RD AREA [maybe @sub_beta@?]
+LIST2@arr@	SKX @sub_gamma@ ?	** REL RD ADDR	[? is alias for #, see pdf_page 90]
+		@sup_1@@sup_1@RSX @sub_beta@ 45TSD	**END OF RD AREA [subscript illegible, best guess: @sub_beta@]
 		DEX @sub_beta@ LIST
 45MCA1@arr@	SKX @sub_S@@sub_pipe@@sub_alpha@ 0
 		@sup_1@@sup_5@AUX @sub_S@@sub_pipe@@sub_alpha@ LIST

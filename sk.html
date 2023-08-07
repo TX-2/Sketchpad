@@ -5907,7 +5907,7 @@ COMMA&rarr;		1,
 		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30300
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=126 doc_page=124 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=126 doc_page=124 type=code proof=1]
 [Page header: "LMH GX7A 021"]
 
 		SKZ 45RWSW
@@ -5961,7 +5961,7 @@ COMMA&rarr;		1,
 45M3A&rarr;		<sup>1</sup>SKX <sub>4</sub><sub>5</sub><sub>X</sub> 2
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=127 doc_page=125 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=127 doc_page=125 type=code proof=1]
 [Page header: "LMH GX7A 022"]
 
 45M4&rarr;		<sup>1</sup><sup>4</sup>RSX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45M6*
@@ -5984,7 +5984,7 @@ TX2MSW2&rarr;
 		SZZ <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub>#
 		JPD 45LWRET*
 		<sup>6</sup>TSD 45MK2* **SPACE
-45MORMSG&rarr;
+45NORMSG&rarr;
 		SZZ <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub>#
 		JPQ 45ERRMSG
 		<sup>1</sup><sup>1</sup>RSX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> 45MWA3	**LENGTH
@@ -6012,11 +6012,11 @@ TX2MSW2&rarr;
 		DPX 45CURRENT
 TX2MSW&rarr;		SKN <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub>#
 45LWRET&rarr;
-		JPD ? [syntax, actual question mark]
+		JPD ? [? is aliased to #, see pdf_page 90]
 		MKN <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> TX2MSW2
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=128 doc_page=126 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=128 doc_page=126 type=code proof=1]
 [Page header: "LMH GX7A 023"]
 
 		<sup>1</sup><sup>1</sup>RSX <sub>4</sub><sub>5</sub><sub>X</sub><sub>2</sub> TX2WA3
@@ -6071,7 +6071,7 @@ TX2MSW&rarr;		SKN <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub>#
 		SKN 45REVSW
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=129 doc_page=127 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=129 doc_page=127 type=code proof=1]
 [Page header: "LMH GX7A 024"]
 
 		JPQ 45RW?
@@ -6120,13 +6120,13 @@ TX2MSW&rarr;		SKN <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub>#
 		0
 45WA&rarr;		0
 		**SEQUENCE 54
-45IT1&rarr;		<sup>1</sup>TS { 400.,,200.}
+45IT1&rarr;		<sup>1</sup>TSD { 400.,,200.}
 		<sup>1</sup>IOS <sub>5</sub><sub>4</sub> 30000
 		RFD <sub>4</sub><sub>5</sub> 45SF2
 		JPD #
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=130 doc_page=128 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=130 doc_page=128 type=code proof=1]
 [Page header: "LMH GX7A 025"]
 
 45IT2&rarr;		<sup>1</sup>TSD { 400.,,200.}
@@ -6153,7 +6153,7 @@ TX2MSW&rarr;		SKN <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub>#
 		h45SRM
 		45DELAY&equiv;20000.
 		<sup>1</sup>DPX 45CURRENT
-		45RWD [in the listing statements like this one are offset by one space, is it significant?]
+		45RWD
 		45DELAY&equiv;31600.
 		<sup>1</sup>IOS <sub>4</sub><sub>5</sub> 20000
 		MKN <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub> 45NORMSG
@@ -6174,8 +6174,8 @@ TX2MSW&rarr;		SKN <sub>M</sub><sub>E</sub><sub>T</sub><sub>A</sub>#
 		INX <sub>&alpha;</sub> 1
 		<sup>1</sup>DPX <sub>&alpha;</sub> LIST2
 		INX <sub>&alpha;</sub> MASTERS-LIST
-LIST2&rarr;		SKX <sub>&gamma;</sub> ?	** REL RD ADDR	[syntax]
-		<sup>1</sup><sup>1</sup>RSX <sub>?</sub> 45TSD	**END OF RD AREA [maybe <sub>&beta;</sub>?]
+LIST2&rarr;		SKX <sub>&gamma;</sub> ?	** REL RD ADDR	[? is alias for #, see pdf_page 90]
+		<sup>1</sup><sup>1</sup>RSX <sub>&beta;</sub> 45TSD	**END OF RD AREA [subscript illegible, best guess: <sub>&beta;</sub>]
 		DEX <sub>&beta;</sub> LIST
 45MCA1&rarr;		SKX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> 0
 		<sup>1</sup><sup>5</sup>AUX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LIST
