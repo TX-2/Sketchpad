@@ -5293,7 +5293,7 @@ FOUR@arr@	3,
 		-2@times@SIZE/3,,-SIZE/3
 		SIZE/2,,-SIZE/3
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=117 doc_page=115 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=117 doc_page=115 type=code proof=1]
 [Page header: "LMH GX7A 010"]
 
 		0
@@ -5347,7 +5347,7 @@ ZERO@arr@	4,1,,-200,-0
 		0
 		SIZE/2,,SIZE/2
 		
-[meta file_name=102726903-05-01-acc.pdf pdf_page=118 doc_page=116 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=118 doc_page=116 type=code proof=1]
 [Page header: "LMH GX7A 011"]
 
 		SIZE/2,,-SIZE/2
@@ -5401,7 +5401,7 @@ DD@arr@		2,1,,-200,-0
 		TL
 EE@arr@		4,
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=119 doc_page=117 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=119 doc_page=117 type=code proof=1]
 [Page header: "LMH GX7A 012"]
 		TR
 		TL
@@ -5454,7 +5454,7 @@ II@arr@		3,
 		SIZE
 		-SIZE
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=120 doc_page=118 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=120 doc_page=118 type=code proof=1]
 [Page header: "LMH GX7A 013"]
 
 		0
@@ -5485,18 +5485,18 @@ LL@arr@		2,
 		BL
 		BR
 		[Trying to decipher this]
-MM@arr@		4,	[4 lines]
+MM@arr@		4,	[4 lines, if the char has curves, other quarters have non-zero values too, see GG, OO for examples]
 		BL	[Line start: Bottom-Left]
 		TL	[Line end: Top-Left]
-		0	[terminating zero?]
+		0	[Used if there are curves, otherwise zero?]
 		TL	[Line start: Top-Left]
 		0	[Line end: zero likely represent the center of the drawing area]
-		0	[terminator?]
+		0	[Used if there are curves, otherwise zero?]
 		0	[Line start: center]
 		TR	[Line end: top-right]
-		0	[terminator?]
+		0	[Used if there are curves, otherwise zero?]
 		TR	[Line start: Top-Right]
-		BR	[Line end: Bottom-Right, no terminator needed for the last entry?]
+		BR	[Line end: Bottom-Right, no curve thing for the last entry?]
 NN@arr@		3,
 		BL
 		TL
@@ -5510,7 +5510,7 @@ NN@arr@		3,
 OO@arr@		4,1,,-200,-0
 		-SIZE/2,,SIZE/2
 		
-[meta file_name=102726903-05-01-acc.pdf pdf_page=121 doc_page=119 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=121 doc_page=119 type=code proof=1]
 [Page header: "LMH GX7A 014"]
 
 		SIZE/2
@@ -5522,6 +5522,7 @@ OO@arr@		4,1,,-200,-0
 		0,,-SIZE/2
 		0
 		-SIZE/2,,-SIZE/2
+		-SIZE/2,,SIZE/2
 PP@arr@		4,
 		BL
 		TL
@@ -5563,14 +5564,14 @@ RR@arr@		5,
 		-SIZE/2,,0
 		0
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=122 doc_page=120 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=122 doc_page=120 type=code proof=1]
 [Page header: "LMH GX7A 0??" (partially cut by margin)]
 
 		0
 		BR
 SS@arr@		2,1,,240,0
 		(1574.)@times@SIZE/(5000.),,(4414.)@times@SIZE/(5000.)
-		3*SIZE/5
+		3@times@SIZE/5
 		1,,-240000
 		SIZE/5
 		0,,-2@times@SIZE/5
@@ -5595,8 +5596,6 @@ VV@arr@		2,
 		0
 		0,,-SIZE
 		TR
-		[WW entry looks strange, 4 lines declared, more specified?]
-		[Some additional structure?]
 WW@arr@		4,
 		TL
 		-SIZE/4,,-SIZE
@@ -5619,7 +5618,7 @@ YY@arr@		3,
 		TL
 		0
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=123 doc_page=121 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=123 doc_page=121 type=code proof=1]
 [Page header: "LMH GX7A 016"]
 		
 		0
@@ -5673,7 +5672,7 @@ COMMA@arr@	1,
 		JPQ 45SRGARB
 45SWN@arr@	@sup_1@STE 45EXIT
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=124 doc_page=122 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=124 doc_page=122 type=code proof=1]
 [Page header: "LMH GX7A 017"]
 
 		MKN 45NSW
@@ -5701,14 +5700,16 @@ COMMA@arr@	1,
 		SXD 45CURRENT*
 		hJPQ 45DORWD
 45GO2@arr@	SKZ 45NSW
-		JPQ 45RW?	[syntax, question mark cannot be part of symex]
+		JPQ 45RW?	[syntax, even though documentation says question mark cannot be part of a symex, this label is defined on the next page.]
 		SKZ 45GARBSW
 		JPQ 45READ
 		SXD @sub_4@@sub_5@@sub_X@ 0
 		hJPQ 45DORWD
 		DEX @sub_4@@sub_5@@sub_X@ 45CURRENT*
-		h@sup_minus@@sup_1@JPX@sub_4@@sub_5@@sub_X@ 45SCHBWD
-		JPQ 45RW?
+		h@sup_minus@@sup_1@JPX@sub_4@@sub_5@@sub_X@ 45SCHFWD
+		INX @sub_4@@sub_5@@sub_X@ 1
+		h@sup_1@JNX@sub_4@@sub_5@@sub_X@ 45SCHBWD
+		JPQ 45RW?	[see comment above.]
 45SCHFWD@arr@
 		SKX @sub_4@@sub_5@@sub_X@@sub_2@ 1
 45SF1@arr@	45GF
@@ -5725,21 +5726,21 @@ COMMA@arr@	1,
 45SF2@arr@	45SRM
 		45DELAY@hamb@1300.
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=125 doc_page=123 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=125 doc_page=123 type=code proof=1]
 [Page header: "LMH GX7A 020"]
 
 		@sup_1@ADX @sub_4@@sub_5@@sub_X@@sub_2@ 45CURRENT
 		SKZ 45GARB
 		JPQ 45READ
 		h@sup_minus@@sup_1@JPX @sub_4@@sub_5@@sub_X@ 45SF1
-45RW?@arr@	SKZ 45RWSW [so it's just symex with question mark, after all?]
+45RW?@arr@	SKZ 45RWSW [syntax, symexes are not supposed to have question marks in them, but here we go.]
 		JPQ 45WR
 45READ@arr@	45GF
 		SKX @sub_5@@sub_4@ 3160.
 		SNN 45LPSW
 		SKX @sub_5@@sub_4@ 16000.
 		hJPQ {SQ45DELAY}
-		RXF @sub_5@@sub_4@ 45SIT3
+		RXF @sub_5@@sub_4@ 45IT3
 		45GFR
 		h@sup_1@TSD 45WA
 		@sup_2@SED 45LIST
@@ -5770,7 +5771,7 @@ COMMA@arr@	1,
 		@sup_2@AUX @sub_4@@sub_5@@sub_X@@sub_2@ 45TSD*
 		@sup_1@IOS @sub_5@@sub_4@ 30300
 		h@sup_1@TSD 45TSD*
-		@sup_1@IOS @sub_5@@sub_4@ 30300
+		@sup_1@IOS @sub_5@@sub_4@ 30000
 		@sup_1@AUX @sub_4@@sub_5@@sub_X@@sub_2@ 45TSD*
 		@sup_1@IOS @sub_5@@sub_4@ 30300
 		h@sup_1@JNX @sub_4@@sub_5@@sub_X@ 45TSD
