@@ -4996,7 +4996,7 @@ ERRS=ERROR
 &#9755;&#9755;EMD
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=109 doc_page=107 type=main]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=109 doc_page=107 type=main proof=1]
 [Page header: "LMH GX7A 036"]
 
  200014|
@@ -5019,7 +5019,7 @@ WRTX2&rarr;		hJMP TX2WR
  ORIGIN|
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=110 doc_page=108 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=110 doc_page=108 type=code proof=1]
 [Page header: "LMH GX7A 001"]
 [This page header was seen before, see pdf_page 80. Significance is not clear.]
 [First few lines of code are crossed out by hand.]
@@ -5049,6 +5049,7 @@ TYPESTART&rarr;
 		JPD #-1
 		hTSD <sub>T</sub><sub>A</sub> KEYTAB
 		<sup>-</sup><sup>1</sup>JPX <sub>T</sub><sub>A</sub>#-3
+		JPQ #-5
 KEYTAB&rarr;		0
 		0
 		0
@@ -5077,7 +5078,7 @@ TEXTCNGEX&rarr;
 		JPQ #
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=111 doc_page=109 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=111 doc_page=109 type=code, proof=1]
 [Page header: "LMH GX7A 002"]
 
 TEXTCNG1&rarr;
@@ -5101,7 +5102,7 @@ TXCG2&rarr;		DPX <sub>&gamma;</sub> A
 		ADD {<sup>1</sup><sup>3</sup>STB <sub>&beta;</sub> LIST+TXTS+1}
 		DPX <sub>S</sub> B
 		STA #+1
-		#**<sup>1</sup><sup>?</sup>STB<sub>&beta;</sub>LIST+TXTS+1+N [strange line, actual question mark in the listing]
+		#**<sup>1</sup><sup>?</sup>STB<sub>&beta;</sub>LIST+TXTS+1+N [syntax: strange line, actual question mark in the superscript in the listing, only # is not part of a comment.]
 		INX <sub>&gamma;</sub> 1
 TXCG3&rarr;		DPX <sub>&gamma;</sub><sub>|</sub><sub>&beta;</sub> TXTS+LIST
 		<sup>-</sup><sup>1</sup>JPX <sub>&alpha;</sub>#+2
@@ -5132,7 +5133,7 @@ TEXTMAG1&rarr;
 		<sup>2</sup>DPX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> TEXTINDEX
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=112 doc_page=110 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=112 doc_page=110 type=code proof=1]
 [Page header: "LMH GX7A 003"]
 
 TEXTMAG1A&rarr;
@@ -5152,7 +5153,8 @@ TEXTMAG1X&rarr;
 		<sup>1</sup><sup>6</sup>LDA TEXT
 		INX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 1
 		SXL <sub>C</sub><sub>M</sub><sub>&alpha;</sub>* A
-TEXTMAGEX&rarr;	JPQ #
+TEXTMAGEX&rarr;
+		JPQ #
 		JPQ TEXTMAG1
 TEXTMAG1T&rarr;
 		<sup>1</sup><sup>6</sup>LDA *TEXT
@@ -5186,7 +5188,7 @@ NUMMAG1&rarr;
 NUMMON&rarr;		REX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 4
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=113 doc_page=111 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=113 doc_page=111 type=code proof=1]
 [Page header: "LMH GX7A 004"]
 
 		SUMM&equiv;RCOS&rarr; A&rarr;BADOV
@@ -5194,6 +5196,7 @@ NUMMON&rarr;		REX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 4
 		STA B
 		SCB {-1,}
 		STB NRCOS
+		[syntax: following three calls to the same macro all use different separator format, may be relevant for understanding the missing arg semantics]
 		SUMM&rarr;XPOS=XPOS&rarr;BADOV
 		SUMM&equiv;RSIN&rarr; A&rarr;BADOV
 		SUMM&rarr;RSIN&rarr;BADOV
@@ -5241,7 +5244,7 @@ LETMAGINT&rarr;
 		FABVAL
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=114 doc_page=112 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=114 doc_page=112 type=code proof=1]
 [Page header: "LMH GX7A 005"]
 
 		SUB B
@@ -5253,7 +5256,7 @@ LETMAGINT&rarr;
 		JPA LETMON
 		STA B
 LETMAG1&rarr;
-		FABVAL&equiv;RSIN&rarr;C
+		FABVAL&equiv;RSIN&rarr; C
 		FABVAL&equiv;RCOS
 		SUMM&rarr; C&rarr;BADOV
 		SUMM&rarr; B&rarr;BADOV
@@ -5291,12 +5294,12 @@ LETMAG2X&rarr;
 		<sup>-</sup><sup>1</sup>JPX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> LETMAG2
 LETMAGEX&rarr;
 		JPQ #
-LETMAGE3&rarr;
+LETMAG3&rarr;
 		<sup>1</sup>STE LETMAG3X
 		PROD&equiv;<sup>1</sup><sup>2</sup> 1<sub>C</sub><sub>M</sub><sub>&alpha;</sub>&times;RSIN/{ SIZE}=LETS&rarr;BADOV [syntax, first macro argument is <sup>1</sup><sup>2</sup>1<sub>C</sub><sub>M</sub><sub>&alpha;</sub>?]
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=115 doc_page=113 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=115 doc_page=113 type=code proof=1]
 [Page header: "LMH GX7A 006"]
 
 		PROD&equiv;<sup>1</sup><sup>1</sup> 1<sub>C</sub><sub>M</sub><sub>&alpha;</sub>&times;RCOS/{ SIZE}&rarr;BADOV
@@ -5352,7 +5355,7 @@ LETDIS1&rarr;
 		WW
 
 <hr>
-[meta file_name=102726903-05-01-acc.pdf pdf_page=116 doc_page=114 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=116 doc_page=114 type=code proof=1]
 [Page header: "LMH GX7A 007"]
 
 		XX
@@ -5381,7 +5384,7 @@ ONE&rarr;		3,	**#PARTS, LINE-CIRC,,ANGLE
 		0,,-SIZE
 		0
 		-SIZE/4,,-SIZE
-		SIZE/4,,,-SIZE
+		SIZE/4,,-SIZE
 TWO&rarr;		3001,,525425
 		-SIZE/2,,4071&times;SIZE/10000
 		(424.)&times;SIZE/(1000.)

@@ -4886,7 +4886,7 @@ ERRS=ERROR
 		hJPQ ERRS
 @hand@@hand@EMD
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=109 doc_page=107 type=main]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=109 doc_page=107 type=main proof=1]
 [Page header: "LMH GX7A 036"]
 
  200014|
@@ -4908,7 +4908,7 @@ RDTX2@arr@	hJMP TX2RD
 WRTX2@arr@	hJMP TX2WR
  ORIGIN|
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=110 doc_page=108 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=110 doc_page=108 type=code proof=1]
 [Page header: "LMH GX7A 001"]
 [This page header was seen before, see pdf_page 80. Significance is not clear.]
 [First few lines of code are crossed out by hand.]
@@ -4938,6 +4938,7 @@ TYPESTART@arr@
 		JPD #-1
 		hTSD @sub_T@@sub_A@ KEYTAB
 		@sup_minus@@sup_1@JPX @sub_T@@sub_A@#-3
+		JPQ #-5
 KEYTAB@arr@	0
 		0
 		0
@@ -4965,7 +4966,7 @@ TEXTCNG@arr@
 TEXTCNGEX@arr@
 		JPQ #
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=111 doc_page=109 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=111 doc_page=109 type=code, proof=1]
 [Page header: "LMH GX7A 002"]
 
 TEXTCNG1@arr@
@@ -4989,7 +4990,7 @@ TXCG2@arr@	DPX @sub_gamma@ A
 		ADD {@sup_1@@sup_3@STB @sub_beta@ LIST+TXTS+1}
 		DPX @sub_S@ B
 		STA #+1
-		#**@sup_1@@sup_?@STB@sub_beta@LIST+TXTS+1+N [strange line, actual question mark in the listing]
+		#**@sup_1@@sup_?@STB@sub_beta@LIST+TXTS+1+N [syntax: strange line, actual question mark in the superscript in the listing, only # is not part of a comment.]
 		INX @sub_gamma@ 1
 TXCG3@arr@	DPX @sub_gamma@@sub_pipe@@sub_beta@ TXTS+LIST
 		@sup_minus@@sup_1@JPX @sub_alpha@#+2
@@ -5019,7 +5020,7 @@ TEXTMAG1@arr@
 		DPX @sub_C@@sub_M@@sub_beta@ TEXTINDEX
 		@sup_2@DPX @sub_C@@sub_M@@sub_alpha@ TEXTINDEX
 		
-[meta file_name=102726903-05-01-acc.pdf pdf_page=112 doc_page=110 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=112 doc_page=110 type=code proof=1]
 [Page header: "LMH GX7A 003"]
 
 TEXTMAG1A@arr@
@@ -5039,7 +5040,8 @@ TEXTMAG1X@arr@
 		@sup_1@@sup_6@LDA TEXT
 		INX @sub_C@@sub_M@@sub_alpha@ 1
 		SXL @sub_C@@sub_M@@sub_alpha@* A
-TEXTMAGEX@arr@	JPQ #
+TEXTMAGEX@arr@	
+		JPQ #
 		JPQ TEXTMAG1
 TEXTMAG1T@arr@
 		@sup_1@@sup_6@LDA *TEXT
@@ -5072,7 +5074,7 @@ NUMMAG1@arr@
 		JNA NUMMAGEX
 NUMMON@arr@	REX @sub_C@@sub_M@@sub_alpha@ 4
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=113 doc_page=111 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=113 doc_page=111 type=code proof=1]
 [Page header: "LMH GX7A 004"]
 
 		SUMM@hamb@RCOS@arr@ A@arr@BADOV
@@ -5080,6 +5082,7 @@ NUMMON@arr@	REX @sub_C@@sub_M@@sub_alpha@ 4
 		STA B
 		SCB {-1,}
 		STB NRCOS
+		[syntax: following three calls to the same macro all use different separator format, may be relevant for understanding the missing arg semantics]
 		SUMM@arr@XPOS=XPOS@arr@BADOV
 		SUMM@hamb@RSIN@arr@ A@arr@BADOV
 		SUMM@arr@RSIN@arr@BADOV
@@ -5126,7 +5129,7 @@ LETMAGINT@arr@
 		DIFF@hamb@YPOS@arr@SCCEN+1@arr@BADOV
 		FABVAL
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=114 doc_page=112 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=114 doc_page=112 type=code proof=1]
 [Page header: "LMH GX7A 005"]
 
 		SUB B
@@ -5138,7 +5141,7 @@ LETMAGINT@arr@
 		JPA LETMON
 		STA B
 LETMAG1@arr@
-		FABVAL@hamb@RSIN@arr@C
+		FABVAL@hamb@RSIN@arr@ C
 		FABVAL@hamb@RCOS
 		SUMM@arr@ C@arr@BADOV
 		SUMM@arr@ B@arr@BADOV
@@ -5176,11 +5179,11 @@ LETMAG2X@arr@
 		@sup_minus@@sup_1@JPX @sub_C@@sub_M@@sub_alpha@ LETMAG2
 LETMAGEX@arr@
 		JPQ #
-LETMAGE3@arr@
+LETMAG3@arr@
 		@sup_1@STE LETMAG3X
 		PROD@hamb@@sup_1@@sup_2@ 1@sub_C@@sub_M@@sub_alpha@@times@RSIN/{ SIZE}=LETS@arr@BADOV [syntax, first macro argument is @sup_1@@sup_2@1@sub_C@@sub_M@@sub_alpha@?]
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=115 doc_page=113 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=115 doc_page=113 type=code proof=1]
 [Page header: "LMH GX7A 006"]
 
 		PROD@hamb@@sup_1@@sup_1@ 1@sub_C@@sub_M@@sub_alpha@@times@RCOS/{ SIZE}@arr@BADOV
@@ -5235,7 +5238,7 @@ LETDIS1@arr@
 		VV
 		WW
 			
-[meta file_name=102726903-05-01-acc.pdf pdf_page=116 doc_page=114 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=116 doc_page=114 type=code proof=1]
 [Page header: "LMH GX7A 007"]
 
 		XX
@@ -5264,7 +5267,7 @@ ONE@arr@	3,	**#PARTS, LINE-CIRC,,ANGLE
 		0,,-SIZE
 		0
 		-SIZE/4,,-SIZE
-		SIZE/4,,,-SIZE
+		SIZE/4,,-SIZE
 TWO@arr@	3001,,525425
 		-SIZE/2,,4071@times@SIZE/10000
 		(424.)@times@SIZE/(1000.)
