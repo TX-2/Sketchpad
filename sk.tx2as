@@ -6049,7 +6049,7 @@ LIST2@arr@	SKX @sub_gamma@ ?	** REL RD ADDR	[? is alias for #, see pdf_page 90]
 45MCA1@arr@	SKX @sub_S@@sub_pipe@@sub_alpha@ 0
 		@sup_1@@sup_5@AUX @sub_S@@sub_pipe@@sub_alpha@ LIST
 		
-[meta file_name=102726903-05-01-acc.pdf pdf_page=131 doc_page=129 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=131 doc_page=129 type=code proof=1]
 [Page header: "LMH GX7A 026"]
 
 		JPQ 45MCA3
@@ -6068,7 +6068,7 @@ LIST2@arr@	SKX @sub_gamma@ ?	** REL RD ADDR	[? is alias for #, see pdf_page 90]
 45MERGE2@arr@
 		@sup_1@@sup_1@RSX @sub_alpha@ LIST2
 		INX @sub_alpha@ MASTERS-LIST
-		LGORR@hamb@SPECB@times@@sub_alpha@=S@arr@45MG3
+		LGORR@hamb@SPECB@times@@alpha@=S@arr@45MG3
 		hJPQ 45PUT
 		@sup_1@@sup_1@RSX @sub_beta@ LIST2
 		@sup_1@@sup_1@AUX @sub_beta@@sub_pipe@@sub_beta@ LIST
@@ -6092,7 +6092,7 @@ LIST2@arr@	SKX @sub_gamma@ ?	** REL RD ADDR	[? is alias for #, see pdf_page 90]
 		LGORR@hamb@SPECB@times@@alpha@=S@arr@45MG5
 		hJPQ 45FREE
 		JPQ 45MG3X*
-45MG5@arr@	@sup_1@STE 45MG5X*
+45MG5@arr@	@sup_1@STE 45MG5X
 45MG5A@arr@	SKX @sub_beta@ ?
 		LGORR@hamb@SPECB@times@@beta@=S@arr@45MG6
 		hJPQ 45SWITCHRINGS
@@ -6103,7 +6103,7 @@ LIST2@arr@	SKX @sub_gamma@ ?	** REL RD ADDR	[? is alias for #, see pdf_page 90]
 		JPQ #+2
 45MG6X@arr@	JPQ ?
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=132 doc_page=130 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=132 doc_page=130 type=code proof=1]
 [Page header: "LMH GX7A 027"]
 
 		@sup_1@@sup_1@RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+(SPECB)+1
@@ -6152,11 +6152,12 @@ TX2MSG@arr@	hJPQ TX2RESET
 		RXF @sub_7@@sub_6@ 45EXIT*
 		SKN 45RSW
 		RXF @sub_7@@sub_6@ 45MERGE
-		RFD @sub_4@@sub_5@@sub_L@@sub_W@30000
+		RFD @sub_4@@sub_5@@sub_L@@sub_W@#+1
+		@sup_1@IOS @sub_4@@sub_5@@sub_L@@sub_W@30000
 		@sup_6@TSD 45MK1***CR
 TX2K2@arr@	@sup_6@TSD { 43,47,,55,2}	**TX-2
 		
-[meta file_name=102726903-05-01-acc.pdf pdf_page=133 doc_page=131 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=133 doc_page=131 type=code proof=1]
 [Page header: "LMH GX7A 030"]
 
 		@sup_5@TSD TX2K2*
@@ -6210,7 +6211,7 @@ TX2RD@arr@	@sup_1@STE 45EXIT
 		@sup_1@DPX @sub_3@@sub_5@ TX2ST
 		DEX @sub_3@@sub_4@ 10
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=134 doc_page=132 type=code]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=134 doc_page=132 type=code proof=1]
 [Page header: "LMH GX7A 031"]
 
 		@sup_1@DPX 45WA	**SUM CHK
@@ -6261,11 +6262,11 @@ TX21STRD@arr@
 		h@sup_6@TSD B	**DATA OR SC1
 		h@sup_1@JNK @sub_3@@sub_4@ TX2RDCONT
 TX2RD2@arr@	h@sup_3@TSD B	**SC2 [guessing the superscript, maybe not 3?]
-		@sup_1@IOS @sub_4@@sub_5@ 30120
+		@sup_1@IOS @sub_4@@sub_6@ 30120
 		@sup_2@ADD B
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=135 doc_page=133 type=code]
-[Page header: "LMH GX7A 031"]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=135 doc_page=133 type=code proof=1]
+[Page header: "LMH GX7A 032"]
 
 		h@sup_1@JNA {TURNOFF@delta@}
 		h@sup_1@JNA {ERRLOOP@beta@}*
@@ -6316,14 +6317,14 @@ CL@arr@		JPQ 200000
 ST@arr@		JPQ 200001
 LAST@arr@	ZZLAST
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=136 doc_page=134 type=symex]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=136 doc_page=134 type=symex proof=1]
 [Page header: "IES BOO7 001"]
 [Handwritten: "CONS 15 SEPT"]
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=137 doc_page=135 type=symex]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=137 doc_page=135 type=symex proof=1]
 [Page header: "IES BOO7 002"]
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=138 doc_page=136 type=equalities]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=138 doc_page=136 type=equalities proof=1]
 [Page header: "IES BOO7 003"]
 
 BADOV= 200100
@@ -6365,7 +6366,7 @@ PVAL= 20        **COORDINATES OF POINT
 PSIZE= 16       **SIZE OF THIS PICTURE
 PYTHAGORIAN= 200007
 
-SMASBL= 6       **SMALL MASTER BLOCK LENGTH FOR DESIGNATERS
+SMASBL= 6       **SMALL MASTER BLOCK LENGTH
 S= 7
 SVAL= 16        **VALUE OF SCALER
 SPECB= 2        **SPECIFIC BLOCKS
@@ -6373,7 +6374,7 @@ SPECB= 2        **SPECIFIC BLOCKS
 
 TPVALS= 5@times@MASBL+PICTURES  **TYPICAL VARIABLES
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=139 doc_page=137 type=equalities]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=139 doc_page=137 type=equalities proof=1]
 [Page header: "IES BOO7 004"]
 
 TYPE= 0         **TIES TO SPECB IN MASTER BLOCK
@@ -6397,14 +6398,14 @@ WHERE= 12       **LOCATION OF THING IN PICTURE
 
 @lambda@= 6
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=140 doc_page=138 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=140 doc_page=138 type=macros proof=1]
 [Page header: "IES BOO7 005"]
 [No idea why some instructions are flush with left margin, preserving]
 
 @hand@@hand@DEF EITHER@hamb@P,Q,R,T,U,V@arr@CODE
 RSX@sub_S@@sub_pipe@@sub_alpha@LIST+CODE
 		JPX@sub_S@EITH3
-EITH1@arr@	LDA {-(?)} [seen this construction before, maybe @beta@?]
+EITH1@arr@	LDA {-(h)}
 		STA EITH
 		@sup_1@DPX@sub_alpha@EITH-5
 		REX@sub_S@EITH3-EITH2-2
@@ -6452,7 +6453,7 @@ LDB P+1
 @hand@@hand@DEF STAB@hamb@P
 STA P
 
-[meta file_name=102726903-05-01-acc.pdf pdf_page=141 doc_page=139 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=141 doc_page=139 type=macros proof=1]
 [Page header: "IES BOO7 006"]
 
 STB P+1
@@ -6473,7 +6474,7 @@ hJOV E
 STA D
 @hand@@hand@EMD
 
-@hand@@hand@DEF SET|X@hamb@S,@beta@,@gamma@,@delta@,@eps@,@lambda@
+@hand@@hand@DEF SETIX@hamb@S,@beta@,@gamma@,@delta@,@eps@,@lambda@
 		RSX@sub_S@@sub_pipe@@sub_alpha@LIST+CVTS+2
 		RSX@sub_beta@@sub_pipe@@sub_alpha@LIST+CVTS+4
 		RSX@sub_gamma@@sub_pipe@@sub_alpha@LIST+CVTS+6
@@ -6505,7 +6506,7 @@ hJMP CCFR-COMP
 		0
 @hand@@hand@EMD
 	
-[meta file_name=102726903-05-01-acc.pdf pdf_page=142 doc_page=140 type=macros]
+[meta file_name=102726903-05-01-acc.pdf pdf_page=142 doc_page=140 type=macros proof=1]
 [Page header: "IES BOO7 007"]
 
 @hand@@hand@DEF WHEREIS@hamb@@beta@@arr@P
@@ -6536,13 +6537,13 @@ hJMP CCFR-COMP
 		STA V+P
 		LDB@sub_S@@sub_pipe@@sub_alpha@LIST+Q
 		STB V+Q
-		LDC@sub_alpha@@sub_pipe@@sub_alpha@LIST+R
+		LDC@sub_S@@sub_pipe@@sub_alpha@LIST+R
 		STC V+R
 		LDD@sub_S@@sub_pipe@@sub_alpha@LIST+U
 		STD V+U
 @hand@@hand@EMD
 
-@hand@@hand@DEF CDIFF@hamb@@beta@@arr@@gamma@=R@arr@BADOV
+@hand@@hand@DEF VDIFF@hamb@@beta@@arr@@gamma@=R@arr@BADOV
 		WHEREIS@hamb@@gamma@@arr@R
 		WHEREIS@hamb@@beta@
 		SUB R
