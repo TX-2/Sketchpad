@@ -204,7 +204,7 @@ MIDP2X@arr@	JPQ #
 		GETVAL@hamb@0,1@times@@beta@
 		hJPQ PYTHAGORIAN
 		
-[meta file_name=102726903-05-02-acc.pdf pdf_page=6 doc_page=156 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=6 doc_page=156 type=code proof=1]
 [Page header: "IES BOO7 006"]
 
 		hJOV BADOV
@@ -245,9 +245,9 @@ PNNU2@arr@	@sup_1@STE PNNU1X
 		LDA DELTA1+1
 		STA DELTA1
 		LDA DELTA2+1
-		STA DELTA2	[guessing, line damaged]
+		STA DELTA2	[best guess, line damaged]
 		JPQ PNNUT
-PNNUT1@arr@	@sup_1@STE PNNUT1X	[guessing the label, line damaged]
+PNNUT1@arr@	@sup_1@STE PNNUT1X	[best guess for the label, line damaged]
 		DIFF@hamb@DELTA1@arr@DELTA2@arr@BADOV
 PNNUT1X@arr@
 		JPQ #
@@ -258,7 +258,7 @@ PNNUT2X@arr@
 PNNUGET@arr@
 		@sup_1@STE PNNUGETX
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=7 doc_page=157 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=7 doc_page=157 type=code proof=1]
 [Page header: "IES BOO7 007"]
 
 		GETVAL@hamb@0,1@times@@beta@@arr@DELTA2
@@ -288,7 +288,7 @@ FORCE@arr@	@sup_1@STE FORCEX
 		SUB TS
 		hJOV BADOV
 		STA TS
-		PROD@times@{-(?)}/{ 343597302.}@arr@BADOV
+		PROD@times@{-(h)}/{ 343597302.}@arr@BADOV
 		DIFF@arr@LIST+SVAL@sub_delta@@arr@BADOV
 FORCEX@arr@	JPQ #
 DELTA1@arr@	0
@@ -300,20 +300,20 @@ DELTA3@arr@	0
 RI@arr@		hJPQ 377750
 CL@arr@		hJPQ 200000
 ST@arr@		hJPQ 200001
-LAST@arr@	ZZLAST	[guessing the label, line damaged]
+LAST@arr@	ZZLAST	[best guess for the label, line damaged]
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=8 doc_page=158 type=symex]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=8 doc_page=158 type=symex proof=1]
 [Handwritten: "P21"]
 [Page header: "IES ONLW 001"]
 [Handwritten: "CALC 15 SEPT"]
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=9 doc_page=159 type=symex]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=9 doc_page=159 type=symex proof=1]
 [Page header: "IES ONLW 002"]
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=10 doc_page=160 type=symex]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=10 doc_page=160 type=symex proof=1]
 [Page header: "IES ONLW 003"]
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=11 doc_page=161 type=equalities]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=11 doc_page=161 type=equalities proof=1]
 [Page header: "IES ONLW 004"]
 
 ARCTAN=hJPQ CACT
@@ -363,7 +363,7 @@ FREES= 5@times@SMASBL+LIST+1
 FIX=SKM @sub_4@@sub_dot@@sub_1@@sub_0@ 377720
 FIXSAP= 200064
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=12 doc_page=162 type=equalities]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=12 doc_page=162 type=equalities proof=1]
 [Page header: "IES ONLW 005"]
 
 FREEDOMS= 6@times@SMASBL+LIST+1
@@ -376,7 +376,7 @@ GETIT= 7        **MASTER FORMATION SUBROUTINE
 HOWBIG= 6       **MASTER SCSZ COMPUTATION
 HOVS= 15@times@MASBL+PICTURES
 HOVP1= 10       **FIRST HORIZ OR VERT POINT
-HOVP2= 12       **SECOND HO1IZ OR VERT POINT    [sic, HORIZ]
+HOVP2= 12       **SECOND HO1IZ OR VERT POINT    [sic]
 HOVCODE= 14     **HORIZ=1, VERTICAL=2, EITHER=0
 HOLDERS= 2@times@SMASBL+LIST+1
 
@@ -406,7 +406,7 @@ LMSTART= 200022
 LMEND= 200024
 LMNAME= 200030
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=13 doc_page=163 type=equalities]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=13 doc_page=163 type=equalities proof=1]
 [Page header: "IES ONLW 006"]
 
 LMAG= 200020
