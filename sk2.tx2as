@@ -1,8 +1,8 @@
-[meta file_name=102726903-05-02-acc.pdf pdf_page=1 doc_page=151 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=1 doc_page=151 type=code proof=1]
 [Page header: "IES BOO7 001"]
 [Omitting duplicate code present on doc_pages 144-150]
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=2 doc_page=152 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=2 doc_page=152 type=code proof=1 proof=1]
 [Page header: "IES BOO7 002"]
 [Omitting duplicated code present on doc_pages 144-150]
 [Omitted code ends with " ORIGIN|"]
@@ -15,7 +15,7 @@ HEADING1@arr@
 		JPQ HEADING2A
 HEADING2@arr@
 		@sup_1@STE HEADING1X
-		DPX @sub_alpha@SAVE@alpha@
+		DPX @sub_alpha@ SAVE@alpha@
 HEADING2A@arr@
 		VDIFF@hamb@@gamma@@arr@@beta@=DELTA1@arr@BADOV
 		RSX @sub_alpha@ SAVE@alpha@
@@ -26,6 +26,7 @@ PARAERR@arr@
 		PROD@hamb@DELTA1@times@DELTA2+1/DIST=TS@arr@BADOV
 		[Note that DELTA1+1@times@DELTA2 is evaluated as (DELTA1+1)@times@DELTA2, see chapter 6-2.7 in the HandbookNov63]
 		PROD@hamb@DELTA1+1@times@DELTA2/DIST@arr@BADOV
+		DIFF@arr@TS@arr@BADOV
 PARAERRX@arr@
 		JPQ #
 PPDERR@arr@	@sup_1@STE PPDERRX
@@ -42,7 +43,7 @@ PRLCOMP@arr@
 		PYTH@hamb@DELTA2@arr@@arr@BADOV [syntax, empty macro parameter?]
 		SUMM@arr@DIST=DIST@arr@BADOV
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=3 doc_page=153 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=3 doc_page=153 type=code proof=1]
 [Page header: "IES BOO7 003"]
 
 		EITHER@hamb@PPDERR,PARAERR@arr@20
@@ -58,13 +59,13 @@ MDISCOMP@arr@
 MDISCOMPX@arr@
 		JPQ #
 MD1@arr@	@sup_1@STE MDX
-		LDA {-(?)}
+		LDA {-(h)}
 		JPQ MDT
 MD2@arr@	@sup_1@STE MDX
 		LDA { 200,}
 		JPQ MDT
 MD3@arr@	@sup_1@STE MDX
-		LDA {1-(?))/3}
+		LDA {(-(h))/3}
 MDT@arr@	MUL TS
 		SUB TT
 		SCA {-1,}
@@ -73,7 +74,7 @@ MD4@arr@	@sup_1@STE MDX1
 		LDA { 200,}
 		JPQ MDT1
 MD5@arr@	@sup_1@STE MDX1
-		LDA {1-(?))/3}
+		LDA {(-(h))/3}
 MDT1@arr@	MUL TT
 		SUB TS
 		SCA {-1,}
@@ -85,8 +86,7 @@ MSCOMP@arr@	@sup_1@STE MSCOMPX
 		RSX @sub_S@@sub_pipe@@sub_gamma@ LIST+TYPE
 		AUX @sub_gamma@@sub_pipe@@sub_S@ LIST+VARLOC
 		PYTH@hamb@LIST@sub_beta@=TS@arr@BADOV
-		[Part of the next line obscured/damaged.]
-		PYTH@hamb@LIST??=TT@arr@BADOV
+		PYTH@hamb@LIST??=TT@arr@BADOV [part of the line obscured/damaged]
 		EITHER@hamb@MD1,MD2,MD3,MD4,MD5@arr@14
 MSCOMPX@arr@
 		JPQ #
@@ -97,7 +97,7 @@ TPTLCOMP@arr@
 		PYTH@hamb@DELTA1=TS@arr@BADOV
 		GETVAL@hamb@0,1@times@@delta@@arr@DELTA2
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=4 doc_page=154 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=4 doc_page=154 type=code proof=1]
 [Page header: "IES BOO7 004"]
 
 		COM DELTA2+1
@@ -121,7 +121,7 @@ ONLINECOMP@arr@
 		SUMM@arr@DIST=DIST@arr@BADOV
 		hJPQ PARAERR
 ONLNX@arr@	JPQ #
-INCIRCCOMP@arr@
+ONCIRCCOMP@arr@
 		@sup_1@STE ONCIX
 		SETIX@hamb@@beta@,@gamma@,@delta@
 		DISTANCE@hamb@@beta@@arr@@gamma@=TS@arr@BADOV
@@ -138,19 +138,19 @@ HOVSX@arr@	JPQ #
 HOVSCOMP1@arr@
 		SUBR@hamb@LDA DELTA1 [instruction as a macro parameter]
 HOVSCOMP2@arr@
-		SUBR@hamb@LDA DELTA1+1 [guessing, part of the line is damaged]
+		SUBR@hamb@LDA DELTA1+1 [best guess, part of the line is damaged]
 IBVERTCOMP@arr@
 		@sup_1@STE IBCOMPX
 		SETIX@hamb@@beta@
 		GETVAL@hamb@0,1@times@@beta@@arr@DELTA1
 		EITHER@hamb@HOVSCOMP1,HOVSCOMP2@arr@12
 IBCOMPX@arr@
-		JPQ # [guessing, some damage/smudging]
+		JPQ # [best guess, some damage/smudging]
 DISTCOMP@arr@
 		@sup_1@STE DISTCOMPX
 		SETIX@hamb@@delta@,@beta@,@gamma@
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=5 doc_page=155 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=5 doc_page=155 type=code proof=1]
 [Page header: "IES BOO7 005"]
 
 		PYTH@hamb@DELTA1@arr@@arr@BADOV
@@ -191,8 +191,8 @@ MIDP2@arr@	@sup_1@STE MIDP2X
 		SUB DELTA1+1
 		hJOV BADOV
 MIDP2X@arr@	JPQ #
-3SET@arr@	@sup_1@STE 3SETX	[guessing, line damaged in the listing]
-		SETIX@hamb@@beta@,@gamma@,@delta@	[guessing, line damaged in the listing]
+3SET@arr@	@sup_1@STE 3SETX	[best guess, line damaged in the listing]
+		SETIX@hamb@@beta@,@gamma@,@delta@	[best guess, line damaged in the listing]
 		DPX @sub_alpha@ SAVE@alpha@
 		WHEREIS@hamb@@beta@@arr@DELTA1
 		WHEREIS@hamb@@gamma@@arr@DELTA2
