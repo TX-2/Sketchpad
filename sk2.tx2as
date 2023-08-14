@@ -458,7 +458,7 @@ PLPUNCH= 200132
 PLEND= 200133
 PUNCHIT=SKM @sub_4@@sub_dot@@sub_7@ 377621
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=14 doc_page=164 type=equalities]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=14 doc_page=164 type=equalities proof=1]
 [Page header: "IES ONLW 007"]
 
 PLPUBUSY=SKM @sub_4@@sub_dot@@sub_1@@sub_0@ 200132
@@ -491,7 +491,7 @@ S= 7
 SPECB= 2        **SPECIFIC BLOCKS
 SCALERS= 3@times@MASBL+PICTURES
 SPLAT=#-NLIST,,#-NLIST
-SVAL= 16        **VALUE OF THE SCALER
+SVAL= 16        **VALUE OF SCALER
 SSHOW= 14       **NUMBERS SHOWING THIS SCALER
 [377725 is defined as SHOWTOG below]
 SHOWBLKS=SKM @sub_4@@sub_dot@@sub_9@ 377725     **SHOW NON DRAW JUNK
@@ -502,7 +502,7 @@ SUPPLINES=SKM @sub_4@@sub_dot@@sub_4@ 377725    **DON'T SHOW LINES AND CIRCLES
 SUPPINS=SKM @sub_4@@sub_dot@@sub_5@ 377725      **DON'T EXPAND INSTANCES
 SIZE= 11        **SIZE OF BLOCK
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=15 doc_page=165 type=equalities]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=15 doc_page=165 type=equalities proof=1]
 [Page header: "IES ONLW 010"]
 
 SPLATT=#-NLIST-SMASBL,,#+SMASBL-NLIST
@@ -549,9 +549,9 @@ WHERE= 12       **LOCATION OF THING IN PICTURE
 
 @beta@= 2
 
-[Problem: page with header "IES ONLW 011" is missing]
+[Possible problem: page with header "IES ONLW 011" is missing]
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=16 doc_page=166 type=macros]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=16 doc_page=166 type=macros proof=1]
 [Page header: "IES ONLW 012"]
 [This macros block (doc_pages 166-171) appears to be exactly identical to one on doc_pages 67-72]
 
@@ -606,7 +606,7 @@ STA B+(R)-(R)
 LDA P
 SUB Q
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=17 doc_page=167 type=macros]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=17 doc_page=167 type=macros proof=1]
 [Page header: "IES ONLW 013"]
 
 hJOV U+(Q)-(Q)
@@ -660,10 +660,10 @@ STA A
 STB A+B
 STC A+C
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=18 doc_page=168 type=macros]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=18 doc_page=168 type=macros proof=1]
 [Page header: "IES ONLW 014"]
 
-STA A+D
+STD A+D
 @hand@@hand@EMD
 
 @hand@@hand@DEF HEAD@times@@alpha@@arr@@beta@
@@ -715,7 +715,7 @@ hJPQ {ERROR1@hamb@@alpha@@arr@P}
 @sup_1@STE #+2
 SKZ ERRORSTOP
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=19 doc_page=169 type=macros]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=19 doc_page=169 type=macros proof=1]
 [Page header: "IES ONLW 015"]
 
 @sup_1@#@sub_alpha@
@@ -769,7 +769,7 @@ hJPQ GORREXIT+(GORREXIT/GORREXIT@circled_v@1@times@(LGORREND+1))
 @sup_1@DPX@sub_X@@sub_R@@sub_2@LGORR2
 hJPQ SUBR
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=20 doc_page=170 type=macros]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=20 doc_page=170 type=macros proof=1]
 [Page header: "IES ONLW 016"]
 
 LGORR2@arr@     SKX@sub_X@@sub_R@@sub_2@#       **MODIFIED
