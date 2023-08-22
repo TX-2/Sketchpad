@@ -1182,19 +1182,19 @@ Q6@arr@		DISPLAYK
 		NVAL	**VARLOC
  ORIGIN|
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=29 doc_page=179 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=29 doc_page=179 type=code proof=1]
 [Page header: "IES ONLW 001"]
 [doc_pages 179-182 contain the same code as in the main block above (doc_pages 172-178), not transcribing]
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=30 doc_page=180 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=30 doc_page=180 type=code proof=1]
 [Page header: "IES ONLW 002"]
 [doc_pages 179-182 contain the same code as in the main block above (doc_pages 172-178), not transcribing]
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=31 doc_page=181 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=31 doc_page=181 type=code proof=1]
 [Page header: "IES ONLW 003"]
 [doc_pages 179-182 contain the same code as in the main block above (doc_pages 172-178), not transcribing]
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=32 doc_page=182 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=32 doc_page=182 type=code proof=1]
 [Page header: "IES ONLW 004"]
 [doc_pages 179-182 contain the same code as in the main block above (doc_pages 172-178), not transcribing]
 [On this page duplicate code ends at " ORIGIN|", transcription starts there]
@@ -1208,7 +1208,7 @@ STARTS@arr@	CSQ@sub_7@@sub_6@
 CHANGEPIC@arr@
 		@sup_1@STE CPEX
 		
-[meta file_name=102726903-05-02-acc.pdf pdf_page=33 doc_page=183 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=33 doc_page=183 type=code proof=1]
 [Page header: "IES ONLW 005"]
 
 		REX @sub_alpha@ DESIGS-LIST
@@ -1231,7 +1231,7 @@ CPWRAP@arr@	@sup_1@STE CPWRAPX
 		MOVEL@hamb@TYPE@times@@alpha@@arr@SPECB@times@@beta@
 		@sup_1@DPX @sub_beta@@sub_pipe@@sub_alpha@ LIST+TYPE
 CPWRAPA@arr@
-		LDA {-(?)}	[many such occasions, maybe lowercase k?]
+		LDA {-(h)}
 		STA CPMINX
 		STA CPMINY
 		COM A
@@ -1262,13 +1262,13 @@ CPWRAPC1@arr@
 		STB LIST+PSIZE@sub_alpha@
 		HSUM@hamb@CPMAXY,CPMINY@arr@MATRY
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=34 doc_page=184 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=34 doc_page=184 type=code proof=1]
 [Page header: "IES ONLW 006"]
 
 		HSUM@hamb@CPMAXX,CPMINX@arr@MATRX
 		COM MATRY
 		COM MATRX
-		hLDA {-(?)}
+		hLDA {-(h)}
 		STA MATM
 		STA MATS
 		STA MATD
@@ -1312,12 +1312,12 @@ CPIC1@arr@	STA @sub_alpha@ LIST+CVAL+1
 		STA CPTU	**RADIUS
 		DIREC@hamb@AFST@arr@AFCEN=CPTS@arr@BADOV
 		MOVE|LIST+CVAL@sub_alpha@@arr@CPTV
-		RES @sub_S@ 6	[maybe not 6?]
+		RES @sub_S@ 6	[best guess: 6]
 CPIC2@arr@	LDA @sub_S@ CPICT
-		SUB CPTS	[partially clipped, other interpretations possible]
-		[more lines clipped?]
+		SUB CPTS	[problem: partially clipped, other interpretations possible]
+		[possibly more lines clipped?]
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=35 doc_page=185 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=35 doc_page=185 type=code proof=1]
 [Page header: "IES ONLW 007"]
 
 		SKZ @sub_4@@sub_dot@@sub_9@ CPTV
@@ -1361,7 +1361,7 @@ CPII@arr@	@sup_1@STE CPIIX
 		PYTH1@hamb@LIST+IVAL@sub_alpha@,LIST+IVAL+1@sub_alpha@=LIST+ISIZE@sub_alpha@@arr@BADOV
 		STA CPTS
 		SUMM@arr@LIST+IVAL+3@sub_alpha@= B@arr@BADOV
-		SUMM@hamb@CPTS@arr@LIST+IVAL@sub_alpha@+2@arr@BADOV [syntax]
+		SUMM@hamb@CPTS@arr@LIST+IVAL@sub_alpha@+2@arr@BADOV
 		hJPQ CPNS
 		DIFF@hamb@LIST+IVAL+3@sub_alpha@@arr@CPTS= B@arr@BADOV
 		DIFF@hamb@LIST+IVAL+2@sub_alpha@@arr@CPTS@arr@BADOV

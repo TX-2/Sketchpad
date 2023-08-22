@@ -1212,22 +1212,22 @@ Q6&rarr;		DISPLAYK
  ORIGIN|
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=29 doc_page=179 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=29 doc_page=179 type=code proof=1]
 [Page header: "IES ONLW 001"]
 [doc_pages 179-182 contain the same code as in the main block above (doc_pages 172-178), not transcribing]
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=30 doc_page=180 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=30 doc_page=180 type=code proof=1]
 [Page header: "IES ONLW 002"]
 [doc_pages 179-182 contain the same code as in the main block above (doc_pages 172-178), not transcribing]
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=31 doc_page=181 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=31 doc_page=181 type=code proof=1]
 [Page header: "IES ONLW 003"]
 [doc_pages 179-182 contain the same code as in the main block above (doc_pages 172-178), not transcribing]
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=32 doc_page=182 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=32 doc_page=182 type=code proof=1]
 [Page header: "IES ONLW 004"]
 [doc_pages 179-182 contain the same code as in the main block above (doc_pages 172-178), not transcribing]
 [On this page duplicate code ends at " ORIGIN|", transcription starts there]
@@ -1242,7 +1242,7 @@ CHANGEPIC&rarr;
 		<sup>1</sup>STE CPEX
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=33 doc_page=183 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=33 doc_page=183 type=code proof=1]
 [Page header: "IES ONLW 005"]
 
 		REX <sub>&alpha;</sub> DESIGS-LIST
@@ -1265,7 +1265,7 @@ CPWRAP&rarr;		<sup>1</sup>STE CPWRAPX
 		MOVEL&equiv;TYPE&times;&alpha;&rarr;SPECB&times;&beta;
 		<sup>1</sup>DPX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
 CPWRAPA&rarr;
-		LDA {-(?)}	[many such occasions, maybe lowercase k?]
+		LDA {-(h)}
 		STA CPMINX
 		STA CPMINY
 		COM A
@@ -1297,13 +1297,13 @@ CPWRAPC1&rarr;
 		HSUM&equiv;CPMAXY,CPMINY&rarr;MATRY
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=34 doc_page=184 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=34 doc_page=184 type=code proof=1]
 [Page header: "IES ONLW 006"]
 
 		HSUM&equiv;CPMAXX,CPMINX&rarr;MATRX
 		COM MATRY
 		COM MATRX
-		hLDA {-(?)}
+		hLDA {-(h)}
 		STA MATM
 		STA MATS
 		STA MATD
@@ -1347,13 +1347,13 @@ CPIC1&rarr;		STA <sub>&alpha;</sub> LIST+CVAL+1
 		STA CPTU	**RADIUS
 		DIREC&equiv;AFST&rarr;AFCEN=CPTS&rarr;BADOV
 		MOVE|LIST+CVAL<sub>&alpha;</sub>&rarr;CPTV
-		RES <sub>S</sub> 6	[maybe not 6?]
+		RES <sub>S</sub> 6	[best guess: 6]
 CPIC2&rarr;		LDA <sub>S</sub> CPICT
-		SUB CPTS	[partially clipped, other interpretations possible]
-		[more lines clipped?]
+		SUB CPTS	[problem: partially clipped, other interpretations possible]
+		[possibly more lines clipped?]
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=35 doc_page=185 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=35 doc_page=185 type=code proof=1]
 [Page header: "IES ONLW 007"]
 
 		SKZ <sub>4</sub><sub>.</sub><sub>9</sub> CPTV
@@ -1397,7 +1397,7 @@ CPII&rarr;		<sup>1</sup>STE CPIIX
 		PYTH1&equiv;LIST+IVAL<sub>&alpha;</sub>,LIST+IVAL+1<sub>&alpha;</sub>=LIST+ISIZE<sub>&alpha;</sub>&rarr;BADOV
 		STA CPTS
 		SUMM&rarr;LIST+IVAL+3<sub>&alpha;</sub>= B&rarr;BADOV
-		SUMM&equiv;CPTS&rarr;LIST+IVAL<sub>&alpha;</sub>+2&rarr;BADOV [syntax]
+		SUMM&equiv;CPTS&rarr;LIST+IVAL<sub>&alpha;</sub>+2&rarr;BADOV
 		hJPQ CPNS
 		DIFF&equiv;LIST+IVAL+3<sub>&alpha;</sub>&rarr;CPTS= B&rarr;BADOV
 		DIFF&equiv;LIST+IVAL+2<sub>&alpha;</sub>&rarr;CPTS&rarr;BADOV
