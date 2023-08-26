@@ -1641,7 +1641,7 @@ PLOTSUBEX@arr@
 PLOTSUBB@arr@
 		SKZ PLPLBUSY
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=41 doc_page=191 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=41 doc_page=191 type=code proof=1]
 [Page header: "IES ONLW 015"]
 [Page has a hand-drawn two-ended arrow, pointing to two locations in the code]
 
@@ -1658,14 +1658,15 @@ MAGPIC@arr@	@sup_1@STE MAGPICX
 		MKZ EXPINS
 		DPX @sub_0@@sub_pipe@@sub_alpha@ LIST+PSAVE
 		DPX NDISP 	[Other end of the arrow points to this line]
-		LDA {-(?)}	[More evidence that it's h?]
+		LDA {-(h)}
 		STA MATH	**DIAGONAL MATRIX
 		STA MATD	**MATRIX DENOM
 		STA MATS	**PYTH OF MATM, MATO
 		DPX MATO	**OFF DIAGONAL
 		DPX MATRX	**X TRANSLATION
 		DPX MATRY	**Y TRANSLATION
-MAGPICA@arr@	LGORR@hamb@PPART@times@@alpha@=S@arr@MAG2
+MAGPICA@arr@
+		LGORR@hamb@PPART@times@@alpha@=S@arr@MAG1
 		SKN SHOWBLKS
 MAGPICX@arr@
 		JPQ #
@@ -1696,7 +1697,7 @@ MAGC@arr@	@sup_1@STE MAGCX
 		@gamma@@rect_dash@CSP,@alpha@
 		ROTA@hamb@@gamma@@arr@CMSTART
 			
-[meta file_name=102726903-05-02-acc.pdf pdf_page=42 doc_page=192 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=42 doc_page=192 type=code proof=1]
 [Page header: "IES ONLW 016"]
 
 		SKZ EXPINS
@@ -1747,16 +1748,16 @@ MAGCON@arr@	@sup_1@STE MAGCONEXIT
 		DPX MAGCONXP
 		DPX MAGCONYP
 		DPX A
-		LDB {h}		**1/2	[syntax, going to assume that its h]
+		LDB {h}		**1/2
 		DPX @sub_T@ D
 		
-[meta file_name=102726903-05-02-acc.pdf pdf_page=43 doc_page=193 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=43 doc_page=193 type=code proof=1]
 [Page header: "IES ONLW 017"]
 
 		DIV D
 		INX @sub_T@@sub_pipe@@sub_T@
 		DPX @sub_T@ MAGCONT
-		DPX @sub_gamma@ MAGCONT
+		DPX @sub_gamma@ MAGCON@gamma@
 		INX @sub_alpha@ CVTS+LIST+2
 		@sup_1@DPX @sub_alpha@ MAGCON1
 		hJOV BADOV
@@ -1804,7 +1805,7 @@ MAGCON2X@arr@
 		STA CMANG
 		LDA { 10,}
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=44 doc_page=194 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=44 doc_page=194 type=code proof=1]
 [Page header: "IES ONLW 020"]
 		
 		MUL SCSZ
@@ -1858,13 +1859,13 @@ MAGNUM@arr@	@sup_1@STE MAGNUMEX
 		hJPQ ROTATER
 		STAB@hamb@200024
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=45 doc_page=195 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=45 doc_page=195 type=code proof=1]
 [Page header: "IES ONLW 021"]
 
 		RSX @sub_alpha@@sub_pipe@@sub_alpha@ LIST+NTOSHO
 		PROD@hamb@LIST+SVAL@sub_alpha@@times@MATS/MATD@arr@BADOV
 		MUL { 9964324126.}
-		DIV { 4,}	[Hand-corrected to 4 (from 2?), hand-written "<-" next to the line]
+		DIV { 4,}	[Hand-corrected to 4, hand-written "<-" next to the line]
 		ADD { 0}
 		STA 200026	**IGNORE OVERFLOW BECAUSE YOU CAN'T FIX IT [comments may have apostropes]
 		hJPQ 200016
@@ -1911,7 +1912,7 @@ MAGSCA1@arr@
 		hJPQ LMAG
 		LDA MAGSCAYE
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=46 doc_page=196 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=46 doc_page=196 type=code proof=1]
 [Page header: "IES ONLW 022"]
 
 		EXA MAGSCAXE
@@ -1965,7 +1966,7 @@ MAGI1@arr@	JNA MAGIX	**DONT EXPAND
 		FABVAL
 		SUB MAGTS
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=47 doc_page=197 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=47 doc_page=197 type=code proof=1]
 [Page header: "IES ONLW 023"]
 
 		SUB SCSZ
@@ -2019,7 +2020,7 @@ MAGIGO1@arr@
 		COM B
 		hJPQ ROTATER
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=48 doc_page=198 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=48 doc_page=198 type=code proof=1]
 [Page header: "IES ONLW 024"]
 
 		COM B
@@ -2059,7 +2060,7 @@ SIZER@arr@	@sup_1@STE SIZEX
 		SUB ROTS
 		hJOV BADOV
 		EXA ROTX
-		PROD@times@MATO/MATD=RTOS@arr@BADOV
+		PROD@times@MATO/MATD=ROTS@arr@BADOV
 		PROD@hamb@MATM@times@ROTY/MATD@arr@BADOV
 		ADD ROTS
 		hJOV BADOV
@@ -2072,7 +2073,7 @@ ROTATER@arr@	@sup_1@STE ROTATX
 		PROD@times@MATM/MATD=ROTS@arr@BADOV
 		PROD@hamb@ROTY@times@MATO/MATD@arr@BADOV
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=49 doc_page=199 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=49 doc_page=199 type=code proof=1]
 [Page header: "IES ONLW 025"]
 
 		ADD ROTS
@@ -2111,7 +2112,7 @@ TRANSFORM@arr@
 		AUX @sub_alpha@@sub_pipe@@sub_S@ LIST+VARLOC
 		INX @sub_alpha@ LIST
 		RSX @sub_S@@sub_pipe@@sub_S@ LIST+TUPLE
-		JPQ #+1
+		JPQ #+3
 TRANSFORMB@arr@
 		@sup_1@STE TRANSFORMX
 		DPX @sub_alpha@ TRANSFORM@alpha@
@@ -2126,7 +2127,7 @@ TRANS1@arr@	LDA @sub_alpha@ 0
 		MUL MATS
 		DIV MATD
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=50 doc_page=200 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=50 doc_page=200 type=code proof=1]
 [Page header: "IES ONLW 026"]
 
 		hJOV BADOV
@@ -2165,6 +2166,7 @@ AF1@arr@	DIREC@hamb@AFST@arr@AFCEN=AFTT@arr@BADOV
 		hJOV AF1A
 		FABVAL
 		SUB { 200,0,,0,1}
+		JNA AF1B
 AF1A@arr@	MKC @sub_4@@sub_dot@@sub_9@ AFTT
 		LDA AFTT
 		SUB AFANG
