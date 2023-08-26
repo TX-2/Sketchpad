@@ -1370,7 +1370,7 @@ CPIIX@arr@	JPQ #
 CPINUM@arr@	@sup_1@STE CPINUMX
 		SUMM@hamb@NVAL+LIST+1@sub_alpha@@arr@ A@arr@BADOV
 		
-[meta file_name=102726903-05-02-acc.pdf pdf_page=36 doc_page=186 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=36 doc_page=186 type=code proof=1]
 [Page header: "IES ONLW 010"]
 
 		SUMM@arr@NVAL+LIST+1@sub_alpha@=CPTU@arr@BADOV
@@ -1381,7 +1381,7 @@ CPINUM@arr@	@sup_1@STE CPINUMX
 		hJPQ ROTATER
 		hJPQ CPNS
 		DIFF@hamb@NVAL+LIST+3@sub_alpha@@arr@CPTU= B@arr@BADOV
-		DIFF@hamb@NVAL+LIST+2@sub_alpha@@arr@CPRV@arr@BADOV
+		DIFF@hamb@NVAL+LIST+2@sub_alpha@@arr@CPTV@arr@BADOV
 		hJPQ ROTATER
 		hJPQ CPNS
 CPINUMX@arr@
@@ -1406,7 +1406,7 @@ CPNS@arr@	@sup_1@STE CPNSX
 		STA CPTT
 		SUB CPMAXX
 		SCA {-1,}
-		JNA #+1
+		JNA #+3
 		LDA CPTT
 		STA CPMAXX
 		LDA CPTT
@@ -1424,7 +1424,7 @@ CPNS@arr@	@sup_1@STE CPNSX
 		STA CPMAXY
 		LDA CPTT
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=37 doc_page=187 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=37 doc_page=187 type=code proof=1]
 [Page header: "IES ONLW 011"]
 
 		SUB CPMINY
@@ -1432,7 +1432,7 @@ CPNS@arr@	@sup_1@STE CPNSX
 		JPA #+3
 		LDA CPTT
 		STA CPMINY
-CPNSX@arr@	JPQ	[no operand?]
+CPNSX@arr@	JPQ	[syntax, no operand?]
 CPWRAPED@arr@
 		RSX @sub_beta@ PICTURES+SPECB+1
 CPSX@arr@	SXD @sub_beta@ PICTURES+SPECB+1-LIST
@@ -1478,7 +1478,7 @@ START76@arr@
 		LDA { 200,}
 		STAB@hamb@MATM
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=38 doc_page=188 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=38 doc_page=188 type=code proof=1]
 [Page header: "IES ONLW 012"]
 
 		hJPQ PYTHAGORIAN
@@ -1532,7 +1532,7 @@ START76@arr@
 76MOVI@arr@	@sup_1@STE 76MOVIX
 		RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+TYPE
 		
-[meta file_name=102726903-05-02-acc.pdf pdf_page=39 doc_page=189 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=39 doc_page=189 type=code proof=1]
 [Page header: "IES ONLW 013"]
 
 		SXD @sub_S@ INSTANCES-LIST
@@ -1569,7 +1569,7 @@ START76@arr@
 		hSZZ MOVINGDONE
 		JPQ 76PUT1
 		STA NDISP
-		LDA {-(?)}	[is it possible it's actually lowercase h?]
+		LDA {-(h)}
 		STA MATM	**DIAGONAL MATRIX
 		STA MATD	**MATRIX DENOM
 		STA MATS	**PYTH OF MATM, MATO
@@ -1586,7 +1586,7 @@ START76@arr@
 		SZZ MOVED
 		JPQ 76PUT
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=40 doc_page=190 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=40 doc_page=190 type=code proof=1]
 [Page header: "IES ONLW 014"]
 
 76PUNCH@arr@
