@@ -2181,7 +2181,7 @@ AFOVER@arr@	LDA { 377,-0,,-0,-0}
 		JPQ AF1B+1
 AF1B@arr@	LDA AFTT
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=51 doc_page=201 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=51 doc_page=201 type=code proof=1]
 [Page header: "IES [4 random symbols] 027"]
 
 		STA AFANG
@@ -2193,14 +2193,14 @@ CL@arr@		JPQ 200000
 ST@arr@		JPQ 200001
 LAST@arr@	ZZLAST
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=52 doc_page=202 type=symex]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=52 doc_page=202 type=symex proof=1]
 [Handwritten: "FIX (18 SEPT 62)"]
 [Page header: "HHL APY5 001"]
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=53 doc_page=203 type=symex]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=53 doc_page=203 type=symex proof=1]
 [Page header: "HHL APY5 002"]
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=54 doc_page=204 type=equalities]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=54 doc_page=204 type=equalities proof=1]
 [Page header: "HHL APY5 003"]
 
 BADOV= 200100
@@ -2232,7 +2232,7 @@ IPCI= 12        **INSTANCE IN INSTANCE-POINT CONSTRAINT
 IPCV= 14        **VIRGIN POINT IN INSTANCE-POINT CONSTRAINT
 IPCONS= 11@times@MASBL+PICTURES
 IVAL= 20        **R COS @alpha@, R SIN @alpha@, X, Y
-IP= LIST+IVAL+2
+IP= LIST+IVAL+2	**INSTANCE POSITION
 IPCOTP= 16      **INSTANCE-POINT CONSTRAINTS WITH THIS VIRGIN
 ISIZE= 16       ** R
 
@@ -2247,7 +2247,7 @@ LIST= 24000     **LIST STRUCTURE START
 [*LGORRIEND=]
 [*LGORRI2=]
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=55 doc_page=205 type=equalities]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=55 doc_page=205 type=equalities proof=1]
 [Page header: "HHL APY5 004"]
 
 [*LGORL1=]
@@ -2285,8 +2285,21 @@ REANS= 100
 SMASBL= 6       **SMALL MASTER BLOCK LENGTH FOR DESIGNATERS
 S= 7
 SPECB= 2        **SPECIFIC BLOCKS
+[*SLVDR=]
+[*SLVT3=]
+[*SLVT5=]
+[*SLVTR=]
+[*SLVTR2=]
+[*SLVT6=]
+[*SLVT2=]
+[*SLVTX=]
+[*SLVT4=]
+[*SLVTS=]
+[*SLVR1=]
+[*SLVTP=]
+[*SLVR2=]
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=56 doc_page=206 type=equalities]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=56 doc_page=206 type=equalities proof=1]
 [Page header: "HHL APY5 005"]
 
 [*SLVR5=]
@@ -2335,7 +2348,7 @@ x1= 11
 x2= 12
 x3= 13
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=57 doc_page=207 type=equalities]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=57 doc_page=207 type=equalities proof=1]
 [Page header: "HHL APY5 006"]
 
 y1= 14
@@ -2346,7 +2359,7 @@ y1= 14
 
 @beta@= 2
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=58 doc_page=208 type=macros]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=58 doc_page=208 type=macros proof=1]
 [Page header: "HHL APY5 007"]
 [Some duplication in macros, copy-pasted from previous blocks (doc_page 167, etc).]
 
@@ -2392,17 +2405,17 @@ ADD NORX
 STA NORX
 @sup_minus@@sup_1@JPX@sub_y@@sub_1@NORT1
 @sup_1@@sup_1@LDA@sub_x@@sub_1@
-?AB {-35.,}
+SAB {-35.,}
 @sup_1@@sup_5@DIV @sub_x@@sub_1@	**N
 LDE NORX1
-@sup_1@@sup_?@SED@sub_x@@sub_1@
-@sup_1@@sup_?@LDA@sub_x@@sub_1@	**M
+@sup_1@@sup_8@SED@sub_x@@sub_1@		[best guess: @sup_8@]
+@sup_1@@sup_8@LDA@sub_x@@sub_1@	**M	[best guess: @sup_8@]
 MUL NORX	**NEW MAX
 hMAB {35.,}
 STD NORX
 COM NORX
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=59 doc_page=209 type=macros]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=59 doc_page=209 type=macros proof=1]
 [Page header: "HHL APY5 010"]
 
 RSX@sub_y@@sub_1@*NORT3
@@ -2414,8 +2427,8 @@ SCA NORX
 STA@sub_y@@sub_1@	**P+1
 NORT2@arr@	@sup_minus@@sup_1@JPX@sub_y@@sub_1@#-3
 NORT3@arr@	LDA@sub_x@@sub_1@
-@sub_3@@sub_2@SUB NORX	*OVF?
-@sup_3@@sup_2@STA@sub_x@@sub_1@	*NEW EXP
+@sup_3@@sup_2@SUB NORX	**OVF?
+@sup_3@@sup_2@STA@sub_x@@sub_1@	**NEW EXP
 NORT4@arr@	JPQ #
 ***
 @hand@@hand@EMD
@@ -2456,7 +2469,7 @@ LDD P+S
 STA P
 STB P+Q
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=60 doc_page=210 type=macros]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=60 doc_page=210 type=macros proof=1]
 [Page header: "HHL APY5 011"]
 
 STC P+R

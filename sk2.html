@@ -2233,7 +2233,7 @@ AFOVER&rarr;		LDA { 377,-0,,-0,-0}
 AF1B&rarr;		LDA AFTT
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=51 doc_page=201 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=51 doc_page=201 type=code proof=1]
 [Page header: "IES [4 random symbols] 027"]
 
 		STA AFANG
@@ -2246,16 +2246,16 @@ ST&rarr;		JPQ 200001
 LAST&rarr;		ZZLAST
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=52 doc_page=202 type=symex]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=52 doc_page=202 type=symex proof=1]
 [Handwritten: "FIX (18 SEPT 62)"]
 [Page header: "HHL APY5 001"]
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=53 doc_page=203 type=symex]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=53 doc_page=203 type=symex proof=1]
 [Page header: "HHL APY5 002"]
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=54 doc_page=204 type=equalities]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=54 doc_page=204 type=equalities proof=1]
 [Page header: "HHL APY5 003"]
 
 BADOV= 200100
@@ -2287,7 +2287,7 @@ IPCI= 12        **INSTANCE IN INSTANCE-POINT CONSTRAINT
 IPCV= 14        **VIRGIN POINT IN INSTANCE-POINT CONSTRAINT
 IPCONS= 11&times;MASBL+PICTURES
 IVAL= 20        **R COS &alpha;, R SIN &alpha;, X, Y
-IP= LIST+IVAL+2
+IP= LIST+IVAL+2	**INSTANCE POSITION
 IPCOTP= 16      **INSTANCE-POINT CONSTRAINTS WITH THIS VIRGIN
 ISIZE= 16       ** R
 
@@ -2303,7 +2303,7 @@ LIST= 24000     **LIST STRUCTURE START
 [*LGORRI2=]
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=55 doc_page=205 type=equalities]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=55 doc_page=205 type=equalities proof=1]
 [Page header: "HHL APY5 004"]
 
 [*LGORL1=]
@@ -2341,9 +2341,22 @@ REANS= 100
 SMASBL= 6       **SMALL MASTER BLOCK LENGTH FOR DESIGNATERS
 S= 7
 SPECB= 2        **SPECIFIC BLOCKS
+[*SLVDR=]
+[*SLVT3=]
+[*SLVT5=]
+[*SLVTR=]
+[*SLVTR2=]
+[*SLVT6=]
+[*SLVT2=]
+[*SLVTX=]
+[*SLVT4=]
+[*SLVTS=]
+[*SLVR1=]
+[*SLVTP=]
+[*SLVR2=]
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=56 doc_page=206 type=equalities]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=56 doc_page=206 type=equalities proof=1]
 [Page header: "HHL APY5 005"]
 
 [*SLVR5=]
@@ -2393,7 +2406,7 @@ x2= 12
 x3= 13
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=57 doc_page=207 type=equalities]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=57 doc_page=207 type=equalities proof=1]
 [Page header: "HHL APY5 006"]
 
 y1= 14
@@ -2405,7 +2418,7 @@ y1= 14
 &beta;= 2
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=58 doc_page=208 type=macros]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=58 doc_page=208 type=macros proof=1]
 [Page header: "HHL APY5 007"]
 [Some duplication in macros, copy-pasted from previous blocks (doc_page 167, etc).]
 
@@ -2451,18 +2464,18 @@ ADD NORX
 STA NORX
 <sup>-</sup><sup>1</sup>JPX<sub>y</sub><sub>1</sub>NORT1
 <sup>1</sup><sup>1</sup>LDA<sub>x</sub><sub>1</sub>
-?AB {-35.,}
+SAB {-35.,}
 <sup>1</sup><sup>5</sup>DIV <sub>x</sub><sub>1</sub>		**N
 LDE NORX1
-<sup>1</sup><sup>?</sup>SED<sub>x</sub><sub>1</sub>
-<sup>1</sup><sup>?</sup>LDA<sub>x</sub><sub>1</sub>		**M
+<sup>1</sup><sup>8</sup>SED<sub>x</sub><sub>1</sub>		[best guess: <sup>8</sup>]
+<sup>1</sup><sup>8</sup>LDA<sub>x</sub><sub>1</sub>		**M	[best guess: <sup>8</sup>]
 MUL NORX		**NEW MAX
 hMAB {35.,}
 STD NORX
 COM NORX
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=59 doc_page=209 type=macros]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=59 doc_page=209 type=macros proof=1]
 [Page header: "HHL APY5 010"]
 
 RSX<sub>y</sub><sub>1</sub>*NORT3
@@ -2474,8 +2487,8 @@ SCA NORX
 STA<sub>y</sub><sub>1</sub>		**P+1
 NORT2&rarr;		<sup>-</sup><sup>1</sup>JPX<sub>y</sub><sub>1</sub>#-3
 NORT3&rarr;		LDA<sub>x</sub><sub>1</sub>
-<sub>3</sub><sub>2</sub>SUB NORX	*OVF?
-<sup>3</sup><sup>2</sup>STA<sub>x</sub><sub>1</sub>		*NEW EXP
+<sup>3</sup><sup>2</sup>SUB NORX	**OVF?
+<sup>3</sup><sup>2</sup>STA<sub>x</sub><sub>1</sub>		**NEW EXP
 NORT4&rarr;		JPQ #
 ***
 &#9755;&#9755;EMD
@@ -2517,7 +2530,7 @@ STA P
 STB P+Q
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=60 doc_page=210 type=macros]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=60 doc_page=210 type=macros proof=1]
 [Page header: "HHL APY5 011"]
 
 STC P+R
