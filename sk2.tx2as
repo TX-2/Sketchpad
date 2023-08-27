@@ -2524,19 +2524,19 @@ hJPQ ADCONER
 
 @hand@@hand@DEF @beta@@rect_dash@A@times@B@times@C@times@D@times@E@times@F@times@G@times@H@times@I,@alpha@
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=61 doc_page=211 type=macros]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=61 doc_page=211 type=macros proof=1]
 [Page header: "HHL APY5 012"]
 
 REX @sub_beta@*{0@sub_alpha@}
-RSX@sub_beta@*{LIST+I@sub_beta@}+(I^(370.))
-RSX@sub_beta@*{LIST+H@sub_beta@}+(H^(370.))
-RSX@sub_beta@*{LIST+G@sub_beta@}+(G^(370.))
-RSX@sub_beta@*{LIST+F@sub_beta@}+(F^(370.))
-RSX@sub_beta@*{LIST+E@sub_beta@}+(E^(370.))
-RSX@sub_beta@*{LIST+D@sub_beta@}+(D^(370.))
-RSX@sub_beta@*{LIST+C@sub_beta@}+(C^(370.))
-RSX@sub_beta@*{LIST+B@sub_beta@}+(B^(370.))
-RSX@sub_beta@*{LIST+A@sub_beta@}+(A^(370.))
+RSX@sub_beta@*{LIST+I@sub_beta@}+(I^(370,))
+RSX@sub_beta@*{LIST+H@sub_beta@}+(H^(370,))
+RSX@sub_beta@*{LIST+G@sub_beta@}+(G^(370,))
+RSX@sub_beta@*{LIST+F@sub_beta@}+(F^(370,))
+RSX@sub_beta@*{LIST+E@sub_beta@}+(E^(370,))
+RSX@sub_beta@*{LIST+D@sub_beta@}+(D^(370,))
+RSX@sub_beta@*{LIST+C@sub_beta@}+(C^(370,))
+RSX@sub_beta@*{LIST+B@sub_beta@}+(B^(370,))
+RSX@sub_beta@*{LIST+A@sub_beta@}+(A^(370,))
 @hand@@hand@EMD
 
 @hand@@hand@DEF LTAKE@hamb@N@times@XR
@@ -2577,7 +2577,7 @@ RSX@sub_beta@*{LIST+A@sub_beta@}+(A^(370.))
 		@sup_1@DPX@sub_T@@sub_pipe@@sub_S@LIST
 @hand@@hand@EMD
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=62 doc_page=212 type=macros]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=62 doc_page=212 type=macros proof=1]
 [Page header: "HHL APY5 013"]
 
 @hand@@hand@DEF PUTR@hamb@N@times@XR@arr@M@times@XR2
@@ -2629,10 +2629,10 @@ RSX@sub_beta@*{LIST+A@sub_beta@}+(A^(370.))
 		@sup_1@@sup_1@RSX@sub_S@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
 		@sup_2@EXX@sub_T@@sub_pipe@@sub_S@LIST
 		@sup_2@DPX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
-		[Problem: the following line is present in earlier def, but not in this one, clipped by the bottom margin? Compare with COMBL above.]
-		@sup_1@DPX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1
+		[Possible problem: the following line is present in earlier def, but not in this one, clipped by the bottom margin? Compare with COMBL above.]
+		[@sup_1@DPX@sub_T@@sub_pipe@@sub_X@@sub_R@LIST+(N)+1]
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=63 doc_page=213 type=macros]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=63 doc_page=213 type=macros proof=1]
 [Page header: "HHL APY5 014"]
 
 @hand@@hand@EMD
@@ -2679,11 +2679,11 @@ LGORRI0@arr@	@sup_1@@sup_6@RSX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST-
 		h@sup_minus@@sup_1@JNX@sub_X@@sub_R@#+2
 		@sup_1@SKX@sub_X@@sub_R@1
 		INX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@0
-GORRI1@arr@	SXD@sub_X@@sub_R@#      ** MODIFIED
+LGORRI1@arr@	SXD@sub_X@@sub_R@#      ** MODIFIED
 		hJPQ GORRIEXIT+(GORRIEXIT/GORRIEXIT@circled_v@1@times@(LGORRIEND+1))
 		@sup_1@DPX@sub_X@@sub_R@@sub_2@LGORRI2
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=64 doc_page=214 type=macros]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=64 doc_page=214 type=macros proof=1]
 [Page header: "HHL APY5 015"]
 
 		@sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST       **CURRENT NEXT
@@ -2736,7 +2736,7 @@ SUBR1@arr@	JPQ #
 
 @hand@@hand@DEF SOLVEM|K
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=65 doc_page=215 type=macros]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=65 doc_page=215 type=macros proof=1]
 [Page header: "HHL APY5 016"]
 
 		@sup_1@STE SLVDR
@@ -2748,7 +2748,7 @@ SUBR1@arr@	JPQ #
 		@sup_1@DPX@sub_x@@sub_2@SLVT5-1
 		INX@sub_x@@sub_2@(K+1)@times@(K-1)+1
 		@sup_1@DPX@sub_x@@sub_2@SLVTR
-		@sup_1@DPX@sub_x@@sub_1@SLVTR2
+		@sup_1@DPX@sub_x@@sub_2@SLVTR2
 		@sup_1@STA SLVT5	**N(K+1)
 		@sup_1@SUB SLVT6
 		@sup_1@STA SLVT5+1	**N(K+1)-1
@@ -2785,12 +2785,12 @@ SLVR1@arr@	RSX@sub_x@@sub_2@SLVT5-1
 		JPA SLVR2
 		@sup_1@REX@sub_y@@sub_1@1	**SINGULAR
 		@sup_1@ADX@sub_y@@sub_1@SLVTS
-		JPQ SLVR5+?
+		JPQ SLVR5+5
 SLVR2@arr@	STA SLVTY
 SLVR3@arr@	SXD@sub_x@@sub_1@@sub_pipe@@sub_x@@sub_2@
 		JPQ SLVR5+2
 		
-[meta file_name=102726903-05-02-acc.pdf pdf_page=66 doc_page=216 type=macros]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=66 doc_page=216 type=macros proof=1]
 [Page header: "HHL APY5 017"]
 
 		LDA@sub_x@@sub_1@*SLVTP
@@ -2842,9 +2842,9 @@ SLVR5@arr@	REX@sub_y@@sub_1@@sub_pipe@@sub_x@@sub_1@
 		@sup_1@ADX@sub_x@@sub_3@SLVTR2
 		@sup_minus@@sup_1@JPX@sub_x@@sub_1@SLVR1
 		LDA {K+1,,(K+1)@times@K}
-		RSX@sub_x@@sub_3@SLVT?-1
+		RSX@sub_x@@sub_3@SLVT5-1 [best guess: SLVT5, may also be SLVT6 (pretty smudged)]
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=67 doc_page=217 type=macros]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=67 doc_page=217 type=macros proof=1]
 [Page header: "HHL APY5 020"]
 
 		STA@sub_x@@sub_3@
@@ -2860,7 +2860,7 @@ SLVD1@arr@	LDA@sub_x@@sub_2@K
 		SAB SLVTX
 		DIV@sub_x@@sub_1@@sub_pipe@@sub_x@@sub_2@
 		JOV SLVD3
-SLVD2@arr@	STA@sub_x@@sub_1@zbp@sub_x@@sub_3@K+1@times@K+1	**FINAL ANSWER
+SLVD2@arr@	STA@sub_x@@sub_1@@sub_pipe@@sub_x@@sub_3@K+1@times@K+1	**FINAL ANSWER
 		DEX@sub_x@@sub_2@K+1
 		@sup_minus@@sup_1@JPX@sub_x@@sub_1@SLVD1
 		REX@sub_x@@sub_1@K-1
@@ -2890,7 +2890,7 @@ SLVAD@arr@	REX@sub_x@@sub_1@K-1	**COUNT DIAG
 		@sup_1@DPX@sub_y@@sub_1@SLVAD6+1	**TO GET POINT VALUE [really 6?]
 		INX@sub_y@@sub_1@(K+1)@times@K	**Y1 AT LAST ROW
 SLVAD1@arr@	LDA@sub_x@@sub_1@@sub_pipe@@sub_y@@sub_1@	**DIAGONAL
-		JPQ SLVAD4
+		JPA SLVAD4
 		JNA SLVAD4
 		LDA {100,}
 		STA@sub_y@@sub_1@K	**PUT FUTURE DIAG IN CONSTANT
@@ -2898,7 +2898,7 @@ SLVAD1.5@arr@	REX@sub_x@@sub_2@K-1	**COUNT COLUMNS
 		RSX@sub_x@@sub_3@SLVT5-1	**MATRIX LOCATION
 		INX@sub_x@@sub_3@(K-1)@times@(K+1)+1
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=68 doc_page=218 type=macros]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=68 doc_page=218 type=macros proof=1]
 [Page header: "HHL APY5 021"]
 
 SLVAD2@arr@	LDA@sub_x@@sub_2@@sub_pipe@@sub_x@@sub_3@	**DIAGONAL
@@ -2908,7 +2908,7 @@ SLVAD2@arr@	LDA@sub_x@@sub_2@@sub_pipe@@sub_x@@sub_3@	**DIAGONAL
 		LDA@sub_x@@sub_1@@sub_S@@sub_pipe@@sub_beta@@sub_x@@sub_3@	**NEXT NON REDUCED TERM
 		MUL@sub_y@@sub_1@K	**FUTURE DIAG IN CONSTANT
 		DIV@sub_x@@sub_2@@sub_pipe@@sub_x@@sub_3@	**DIAGONAL
-		JOV SLVAD9	[really 9?]
+		JOV SLVAD9	[best guess: 9]
 SLVAD3@arr@	STA@sub_x@@sub_2@@sub_pipe@@sub_y@@sub_1@	**EQUATION ENTRY MAY BE ZERO
 		DEX@sub_x@@sub_3@K+1
 		@sup_minus@@sup_1@JPX@sub_x@@sub_2@SLVAD2
@@ -2950,10 +2950,10 @@ SLVAD9@arr@	SCA {-2,}	**OVERFLOW IN FIGURING CONSTANT
 		STB@sub_x@@sub_2@@sub_pipe@@sub_x@@sub_3@
 		@sup_minus@@sup_1@JPX@sub_x@@sub_2@#-3
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=69 doc_page=219 type=macros]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=69 doc_page=219 type=macros proof=1]
 [Page header: "HHL APY5 022"]
 
-		JPQ SLVAD7-8	[really 8?]
+		JPQ SLVAD7-2	[best guess: 2, not particularly legible]
 @hand@@hand@EMD
 
 @hand@@hand@DEF SOLVEM1
@@ -2967,7 +2967,7 @@ SLVAD9@arr@	SCA {-2,}	**OVERFLOW IN FIGURING CONSTANT
 		JPQ #+3
 		ADD@sub_x@@sub_3@#
 		EXA B
-		@sup_minus@@sup_1@JPX@sub_x@@sub_3@#-1
+		@sup_minus@@sup_1@JPX@sub_x@@sub_3@#-2
 		STB C
 		@sup_1@@sup_6@LDB A
 		SCB {-9.,}
@@ -2980,7 +2980,7 @@ SLVAD9@arr@	SCA {-2,}	**OVERFLOW IN FIGURING CONSTANT
 SOLVX@arr@	JPQ #
 @hand@@hand@EMD
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=70 doc_page=220 type=main]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=70 doc_page=220 type=main proof=1]
 [Page header: "HHL APY5 023"]
 
  200060|
