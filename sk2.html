@@ -3065,7 +3065,7 @@ CCFR1&rarr;		hJMP IPCONCOMP
  ORIGIN|
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=71 doc_page=221 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=71 doc_page=221 type=code proof=1]
 [Page header: "HHL APY5 001"; header is getting reused, see doc_page 202]
 
 STARTS&rarr;		<sup>1</sup>STE DONE
@@ -3112,7 +3112,7 @@ RELC&rarr;		RSX <sub>&gamma;</sub> REEQ
 RELC1&rarr;		STA <sub>&gamma;</sub>#	**SET TO REANS-K
 		<sup>-</sup><sup>1</sup>JPX <sub>&gamma;</sub>#-2
 		SOLVE|REEQ&rarr;REANS
-RELC2&rarr;		REX <sub>&gamma;</sub>#	[some handwriting, unintelligible]
+RELC2&rarr;		REX <sub>&gamma;</sub>#	[some handwritten comment, unintelligible]
 		JPQ #+7
 		LDA <sub>&gamma;</sub> REANS+1
 		SUB <sub>&gamma;</sub><sub>|</sub><sub>&alpha;</sub> LIST
@@ -3120,7 +3120,7 @@ RELC2&rarr;		REX <sub>&gamma;</sub>#	[some handwriting, unintelligible]
 		MUL OVERRELAXFAC
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=72 doc_page=222 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=72 doc_page=222 type=code proof=1]
 [Page header: "HHL APY5 002"]
 
 		ADD <sub>&gamma;</sub> REANS+1
@@ -3171,12 +3171,12 @@ ADCON3&rarr;		DPX <sub>T</sub> ADCONT2
 		hJOV BADOV
 		STA *ADVC
 		RSX <sub>&alpha;</sub> ADCVC
-ADCSUB&rarr;		hJPQ #	[Handwritten: "THE <unable to decypher>"]
+ADCSUB&rarr;		hJPQ #	[Something handwritten, only initial "THE" is legible]
 		SUB ADCSE	**STANDARD ERROR
 		SCA {-1,}
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=73 doc_page=223 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=73 doc_page=223 type=code proof=1]
 [Page header: "HHL APY5 003"]
 
 		<sup>1</sup><sup>6</sup>LDB A
@@ -3224,14 +3224,14 @@ FREESUB&rarr;
 		LGORR&equiv;VCON&times;&alpha;=S&rarr;FREESUB1&rarr;FREESUB2
 FREESUB1&rarr;
 		<sup>1</sup>STE FREESUB1X
-		hLDE <sub>&alpha;</sub> LIST+CVTS	[really <sub>&alpha;</sub>?]
+		hLDE <sub>&alpha;</sub> LIST+CVTS
 		h<sup>1</sup>SED { 0}
 		JPQ FREESUB1B
 		<sup>1</sup>SED FREESUB&alpha;
 		JPQ FREESUB1A
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=74 doc_page=224 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=74 doc_page=224 type=code proof=1]
 [Page header: "HHL APY5 004"]
 
 		JPQ FREESUB1X
@@ -3241,7 +3241,7 @@ FREESUB1B&rarr;
 FREESUB1A&rarr;
 		REX <sub>S</sub> 1
 		<sup>1</sup>ADX <sub>S</sub> FRBC
-		S&#9635;NCON&times;TYPE,&alpha;
+		S &#9635; NCON&times;TYPE,&alpha;
 		<sup>1</sup>ADX <sub>S</sub> FRCC
 FREESUB1X&rarr;
 		JPQ #
@@ -3253,7 +3253,7 @@ FREESUBFREE&rarr;
 		SUMM&equiv;{ 1}&rarr;<sup>1</sup> FREESUBX=<sup>1</sup> FREESUBX
 		JPQ FREESUBX
 FREESUB3&rarr;
-		S&#9635;TUPLE&times;TYPE,&alpha;
+		S &#9635; TUPLE&times;TYPE,&alpha;
 FRCC&rarr;		SXL <sub>S</sub>#	**# CONSTRAINTS
 		JPQ FREESUB4
 		JPQ FREESUB7
@@ -3281,12 +3281,12 @@ FREESUB5X&rarr;
 		JPQ #
 FREESUB6&rarr;
 		SOLVE|REEQ&rarr;REANS
-		S&#9635;TYPE,&alpha;
+		S &#9635; TYPE,&alpha;
 		ADD <sub>S</sub> TUPLE+LIST	**K-DEGEN
 		<sup>1</sup><sup>1</sup>SUB FRCC
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=75 doc_page=225 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=75 doc_page=225 type=code proof=1]
 [Page header: "HHL APY5 005"]
 
 		JPA FREESUB7
@@ -3294,8 +3294,8 @@ FREESUB6&rarr;
 		JPQ FREESUBFREE
 FREESUB7&rarr;
 		RSX <sub>&alpha;</sub> FREESUB&alpha;
-		LGORR&equiv;VFLW&times;&alpha;=S&rarr;FREESUB8&rarr;FREESUBX [not necessarily 8? seems likely based on ordering]
-FREESUB8&rarr;	[guessing about 8 again]
+		LGORR&equiv;VFLW&times;&alpha;=S&rarr;FREESUB8&rarr;FREESUBX [best guess: FREESUB8]
+FREESUB8&rarr;	[best guess: FREESUB8]
 		SUBR&equiv;(LTAKE&equiv;CVTS&times;&alpha;)
 FREESUBX&rarr;
 		JPQ #
@@ -3303,7 +3303,7 @@ FREESUBX&rarr;
 FREEDOM&rarr;
 		<sup>1</sup>STE FREEDOMX
 		REX <sub>&beta;</sub> FREEDOMS-LIST
-		MOVEL&equiv;VORD&times;&alpha;&rarr;SPECB&times;&beta; [really &beta;?]
+		MOVEL&equiv;VORD&times;&alpha;&rarr;SPECB&times;&beta;
 		<sup>1</sup>DPX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+VORD
 		REX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> VORD+1	**GO ON AROUND
 FREE1BAC&rarr;
@@ -3314,7 +3314,7 @@ FREE1BAC&rarr;
 		INX <sub>&alpha;</sub><sub>|</sub><sub>S</sub>
 		DEX <sub>&alpha;</sub> 1
 		<sup>1</sup>DPX <sub>S</sub> FREE1A
-FREE1&rarr;		LGORR&equiv;VFLW&times;&alpha;=S&rarr;FREE2	[really 2?]
+FREE1&rarr;		LGORR&equiv;VFLW&times;&alpha;=S&rarr;FREE2
 FREE1A&rarr;		REX <sub>S</sub>#
 		<sup>1</sup><sup>1</sup>RSX <sub>S</sub><sub>|</sub><sub>S</sub> LIST
 		JPQ FREE1BAC
@@ -3341,7 +3341,7 @@ WKR1A&rarr;		<sup>1</sup>STE WRK1AX
 		RSX <sub>S</sub><sub>|</sub><sub>S</sub> LIST+TYPE
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=76 doc_page=226 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=76 doc_page=226 type=code proof=1]
 [Page header: "HHL APY5 006"]
 
 		SXD <sub>S</sub> VARIABLES-LIST
@@ -3369,7 +3369,7 @@ WKR4&rarr;		<sup>1</sup>STE WRK4X
 		hJPQ <sub>&alpha;</sub> FREEDOM	**&alpha; FROR DEBUG ONLY [sic]
 		JPQ WORKER+1
 WRK5&rarr;		REX <sub>&beta;</sub> WORKS-LIST
-		MOVEL&equiv;VORD&times;&alpha;&rarr;SPECB&times;&beta;	[guessing the last &beta;]
+		MOVEL&equiv;VORD&times;&alpha;&rarr;SPECB&times;&beta;	[best guess:  &beta;]
 		<sup>1</sup>DPX <sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub> LIST+VORD
 WRK4X&rarr;		JPQ #
 WORKEX&rarr;		JPQ #
@@ -3390,13 +3390,13 @@ CNST2&rarr;		hJPQ WORKER
 CONSTARTX&rarr;
 		JPQ #
 LPSTART&rarr;
-		<sup>1</sup> LPSTARTX
+		<sup>1</sup>STE LPSTARTX
 		hJPQ WORKER
 		hJPQ ORDSLV
 		hJPQ CLEAN
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=77 doc_page=227 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=77 doc_page=227 type=code proof=1]
 [Page header: "HHL APY5 007"]
 
 LPSTARTX&rarr;
@@ -3405,8 +3405,8 @@ ORDSLV&rarr;		<sup>1</sup>STE ORDSLVX
 		REX <sub>&alpha;</sub> WORKS-LIST
 		LGORL&equiv;SPECB&times;&alpha;=S&rarr;RELA
 		REX <sub>&alpha;</sub> FREEDOMS-LIST
-		LGORL&equiv;SPECB&times;&alpha;=S&rarr;ORDSLV2
-ORDSLV&rarr;
+		LGORL&equiv;SPECB&times;&alpha;=S&rarr;ORDSLV1
+ORDSLVX&rarr;
 		JPQ #
 ORDSLV1&rarr;
 		<sup>1</sup>STE RELX
@@ -3428,7 +3428,7 @@ CLEANEX&rarr;
 		JPQ #
 CLEAN1&rarr;		<sup>1</sup>STE CLEAN1X
 		RSX <sub>S</sub><sub>|</sub><sub>&alpha;</sub> LIST+TYPE
-		RSX <sub>S</sub> LIST+TUPLE
+		RSX <sub>S</sub><sub>|</sub><sub>S</sub> LIST+TUPLE
 		JPX <sub>S</sub>#+2
 CLEAN1X&rarr;
 		JPQ #
@@ -3437,10 +3437,10 @@ CLEAN1X&rarr;
 CLEAN2&rarr;		SUBR&equiv;(LTAKE&equiv;CVTS&times;&alpha;)
 IPCONCOMP&rarr;
 		<sup>1</sup>STE IPCONEX
-		&beta;&#9635;IPCP,&alpha;
-		&gamma;&#9635;IPCI,&alpha;
-		&alpha;&#9635;IPCV,&alpha;
-		&Delta;&#9635;BWHOS,&alpha;
+		&beta; &#9635; IPCP,&alpha;
+		&gamma; &#9635; IPCI,&alpha;
+		&alpha; &#9635; IPCV,&alpha;
+		&Delta; &#9635; BWHOS,&alpha;
 		PROD&equiv;VA<sub>&alpha;</sub>&times;IVAL+LIST<sub>&gamma;</sub>/PSIZE+LIST<sub>&Delta;</sub>=ROTS&rarr;BADOV
 		PROD&equiv;VA+1<sub>&alpha;</sub>&times;IVAL+LIST+1<sub>&gamma;</sub>/PSIZE+LIST<sub>&Delta;</sub>&rarr;BADOV
 		SUMM&rarr;ROTS&rarr;BADOV
@@ -3452,13 +3452,13 @@ IPCONCOMP1&rarr;
 		<sup>1</sup>STE IPCONEX1
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=78 doc_page=228 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=78 doc_page=228 type=code proof=1]
 [Page header: "HHL APY5 010"]
 
-		&beta;&#9635;IPCP,&alpha;
-		&gamma;&#9635;IPCI,&alpha;
-		&alpha;&#9635;IPCV,&alpha;
-		&Delta;&#9635;BWHOS,&alpha;
+		&beta; &#9635; IPCP,&alpha;
+		&gamma; &#9635; IPCI,&alpha;
+		&alpha; &#9635; IPCV,&alpha;
+		&Delta; &#9635; BWHOS,&alpha;
 		PROD&equiv;VA<sub>&alpha;</sub>&times;IVAL+1+LIST<sub>&gamma;</sub>/PSIZE+LIST<sub>&Delta;</sub>=ROTS&rarr;BADOV
 		PROD&equiv;VA+1<sub>&alpha;</sub>&times;IVAL+LIST<sub>&gamma;</sub>/PSIZE+LIST<sub>&Delta;</sub>&rarr;BADOV
 		DIFF&rarr;ROTS&rarr;BADOV
@@ -3466,22 +3466,22 @@ IPCONCOMP1&rarr;
 		HDIF,VA+1<sub>&beta;</sub>
 IPCONEX1&rarr;
 		JPQ #
-RI&rarr;		JPQ 377758	[guessing that last 8]
+RI&rarr;		JPQ 377758	[best guess: last symbol is 8]
 CL&rarr;		JPQ 200000
 ST&rarr;		JPQ 200001
 LAST&rarr;		ZZLAST
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=79 doc_page=229 type=symex]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=79 doc_page=229 type=symex proof=1]
 [Handwritten: "PEN 11 AUG"]
 [Page header: "HHL LYUO 001"]
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=80 doc_page=230 type=symex]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=80 doc_page=230 type=symex proof=1]
 [Page header: "HHL LYUO 002"]
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=81 doc_page=231 type=symex]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=81 doc_page=231 type=symex proof=1]
 [Page header: "HHL LYUO 003"]
 
 <hr>

@@ -2993,7 +2993,7 @@ CCFR1@arr@	hJMP IPCONCOMP
 		hJMP IPCONCOMP1
  ORIGIN|
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=71 doc_page=221 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=71 doc_page=221 type=code proof=1]
 [Page header: "HHL APY5 001"; header is getting reused, see doc_page 202]
 
 STARTS@arr@	@sup_1@STE DONE
@@ -3040,14 +3040,14 @@ RELC@arr@	RSX @sub_gamma@ REEQ
 RELC1@arr@	STA @sub_gamma@#	**SET TO REANS-K
 		@sup_minus@@sup_1@JPX @sub_gamma@#-2
 		SOLVE|REEQ@arr@REANS
-RELC2@arr@	REX @sub_gamma@#	[some handwriting, unintelligible]
+RELC2@arr@	REX @sub_gamma@#	[some handwritten comment, unintelligible]
 		JPQ #+7
 		LDA @sub_gamma@ REANS+1
 		SUB @sub_gamma@@sub_pipe@@sub_alpha@ LIST
 		hJOV BADOV
 		MUL OVERRELAXFAC
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=72 doc_page=222 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=72 doc_page=222 type=code proof=1]
 [Page header: "HHL APY5 002"]
 
 		ADD @sub_gamma@ REANS+1
@@ -3098,11 +3098,11 @@ ADCON3@arr@	DPX @sub_T@ ADCONT2
 		hJOV BADOV
 		STA *ADVC
 		RSX @sub_alpha@ ADCVC
-ADCSUB@arr@	hJPQ #	[Handwritten: "THE <unable to decypher>"]
+ADCSUB@arr@	hJPQ #	[Something handwritten, only initial "THE" is legible]
 		SUB ADCSE	**STANDARD ERROR
 		SCA {-1,}
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=73 doc_page=223 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=73 doc_page=223 type=code proof=1]
 [Page header: "HHL APY5 003"]
 
 		@sup_1@@sup_6@LDB A
@@ -3150,13 +3150,13 @@ FREESUB@arr@
 		LGORR@hamb@VCON@times@@alpha@=S@arr@FREESUB1@arr@FREESUB2
 FREESUB1@arr@
 		@sup_1@STE FREESUB1X
-		hLDE @sub_alpha@ LIST+CVTS	[really @sub_alpha@?]
+		hLDE @sub_alpha@ LIST+CVTS
 		h@sup_1@SED { 0}
 		JPQ FREESUB1B
 		@sup_1@SED FREESUB@alpha@
 		JPQ FREESUB1A
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=74 doc_page=224 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=74 doc_page=224 type=code proof=1]
 [Page header: "HHL APY5 004"]
 
 		JPQ FREESUB1X
@@ -3166,7 +3166,7 @@ FREESUB1B@arr@
 FREESUB1A@arr@
 		REX @sub_S@ 1
 		@sup_1@ADX @sub_S@ FRBC
-		S@rect_dash@NCON@times@TYPE,@alpha@
+		S @rect_dash@ NCON@times@TYPE,@alpha@
 		@sup_1@ADX @sub_S@ FRCC
 FREESUB1X@arr@
 		JPQ #
@@ -3178,7 +3178,7 @@ FREESUBFREE@arr@
 		SUMM@hamb@{ 1}@arr@@sup_1@ FREESUBX=@sup_1@ FREESUBX
 		JPQ FREESUBX
 FREESUB3@arr@
-		S@rect_dash@TUPLE@times@TYPE,@alpha@
+		S @rect_dash@ TUPLE@times@TYPE,@alpha@
 FRCC@arr@	SXL @sub_S@#	**# CONSTRAINTS
 		JPQ FREESUB4
 		JPQ FREESUB7
@@ -3206,11 +3206,11 @@ FREESUB5X@arr@
 		JPQ #
 FREESUB6@arr@
 		SOLVE|REEQ@arr@REANS
-		S@rect_dash@TYPE,@alpha@
+		S @rect_dash@ TYPE,@alpha@
 		ADD @sub_S@ TUPLE+LIST	**K-DEGEN
 		@sup_1@@sup_1@SUB FRCC
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=75 doc_page=225 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=75 doc_page=225 type=code proof=1]
 [Page header: "HHL APY5 005"]
 
 		JPA FREESUB7
@@ -3218,8 +3218,8 @@ FREESUB6@arr@
 		JPQ FREESUBFREE
 FREESUB7@arr@
 		RSX @sub_alpha@ FREESUB@alpha@
-		LGORR@hamb@VFLW@times@@alpha@=S@arr@FREESUB8@arr@FREESUBX [not necessarily 8? seems likely based on ordering]
-FREESUB8@arr@	[guessing about 8 again]
+		LGORR@hamb@VFLW@times@@alpha@=S@arr@FREESUB8@arr@FREESUBX [best guess: FREESUB8]
+FREESUB8@arr@	[best guess: FREESUB8]
 		SUBR@hamb@(LTAKE@hamb@CVTS@times@@alpha@)
 FREESUBX@arr@
 		JPQ #
@@ -3227,7 +3227,7 @@ FREESUBX@arr@
 FREEDOM@arr@
 		@sup_1@STE FREEDOMX
 		REX @sub_beta@ FREEDOMS-LIST
-		MOVEL@hamb@VORD@times@@alpha@@arr@SPECB@times@@beta@ [really @beta@?]
+		MOVEL@hamb@VORD@times@@alpha@@arr@SPECB@times@@beta@
 		@sup_1@DPX @sub_beta@@sub_pipe@@sub_alpha@ LIST+VORD
 		REX @sub_S@@sub_pipe@@sub_alpha@ VORD+1	**GO ON AROUND
 FREE1BAC@arr@
@@ -3238,7 +3238,7 @@ FREE1BAC@arr@
 		INX @sub_alpha@@sub_pipe@@sub_S@
 		DEX @sub_alpha@ 1
 		@sup_1@DPX @sub_S@ FREE1A
-FREE1@arr@	LGORR@hamb@VFLW@times@@alpha@=S@arr@FREE2	[really 2?]
+FREE1@arr@	LGORR@hamb@VFLW@times@@alpha@=S@arr@FREE2
 FREE1A@arr@	REX @sub_S@#
 		@sup_1@@sup_1@RSX @sub_S@@sub_pipe@@sub_S@ LIST
 		JPQ FREE1BAC
@@ -3264,7 +3264,7 @@ WKR1A@arr@	@sup_1@STE WRK1AX
 		RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+TYPE
 		RSX @sub_S@@sub_pipe@@sub_S@ LIST+TYPE
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=76 doc_page=226 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=76 doc_page=226 type=code proof=1]
 [Page header: "HHL APY5 006"]
 
 		SXD @sub_S@ VARIABLES-LIST
@@ -3292,7 +3292,7 @@ WKR4@arr@	@sup_1@STE WRK4X
 		hJPQ @sub_alpha@ FREEDOM	**@alpha@ FROR DEBUG ONLY [sic]
 		JPQ WORKER+1
 WRK5@arr@	REX @sub_beta@ WORKS-LIST
-		MOVEL@hamb@VORD@times@@alpha@@arr@SPECB@times@@beta@	[guessing the last @beta@]
+		MOVEL@hamb@VORD@times@@alpha@@arr@SPECB@times@@beta@	[best guess:  @beta@]
 		@sup_1@DPX @sub_beta@@sub_pipe@@sub_alpha@ LIST+VORD
 WRK4X@arr@	JPQ #
 WORKEX@arr@	JPQ #
@@ -3313,12 +3313,12 @@ CNST2@arr@	hJPQ WORKER
 CONSTARTX@arr@
 		JPQ #
 LPSTART@arr@
-		@sup_1@ LPSTARTX
+		@sup_1@STE LPSTARTX
 		hJPQ WORKER
 		hJPQ ORDSLV
 		hJPQ CLEAN
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=77 doc_page=227 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=77 doc_page=227 type=code proof=1]
 [Page header: "HHL APY5 007"]
 
 LPSTARTX@arr@
@@ -3327,8 +3327,8 @@ ORDSLV@arr@	@sup_1@STE ORDSLVX
 		REX @sub_alpha@ WORKS-LIST
 		LGORL@hamb@SPECB@times@@alpha@=S@arr@RELA
 		REX @sub_alpha@ FREEDOMS-LIST
-		LGORL@hamb@SPECB@times@@alpha@=S@arr@ORDSLV2
-ORDSLV@arr@
+		LGORL@hamb@SPECB@times@@alpha@=S@arr@ORDSLV1
+ORDSLVX@arr@
 		JPQ #
 ORDSLV1@arr@
 		@sup_1@STE RELX
@@ -3350,7 +3350,7 @@ CLEANEX@arr@
 		JPQ #
 CLEAN1@arr@	@sup_1@STE CLEAN1X
 		RSX @sub_S@@sub_pipe@@sub_alpha@ LIST+TYPE
-		RSX @sub_S@ LIST+TUPLE
+		RSX @sub_S@@sub_pipe@@sub_S@ LIST+TUPLE
 		JPX @sub_S@#+2
 CLEAN1X@arr@
 		JPQ #
@@ -3359,10 +3359,10 @@ CLEAN1X@arr@
 CLEAN2@arr@	SUBR@hamb@(LTAKE@hamb@CVTS@times@@alpha@)
 IPCONCOMP@arr@
 		@sup_1@STE IPCONEX
-		@beta@@rect_dash@IPCP,@alpha@
-		@gamma@@rect_dash@IPCI,@alpha@
-		@alpha@@rect_dash@IPCV,@alpha@
-		@delta@@rect_dash@BWHOS,@alpha@
+		@beta@ @rect_dash@ IPCP,@alpha@
+		@gamma@ @rect_dash@ IPCI,@alpha@
+		@alpha@ @rect_dash@ IPCV,@alpha@
+		@delta@ @rect_dash@ BWHOS,@alpha@
 		PROD@hamb@VA@sub_alpha@@times@IVAL+LIST@sub_gamma@/PSIZE+LIST@sub_delta@=ROTS@arr@BADOV
 		PROD@hamb@VA+1@sub_alpha@@times@IVAL+LIST+1@sub_gamma@/PSIZE+LIST@sub_delta@@arr@BADOV
 		SUMM@arr@ROTS@arr@BADOV
@@ -3373,13 +3373,13 @@ IPCONEX@arr@
 IPCONCOMP1@arr@
 		@sup_1@STE IPCONEX1
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=78 doc_page=228 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=78 doc_page=228 type=code proof=1]
 [Page header: "HHL APY5 010"]
 
-		@beta@@rect_dash@IPCP,@alpha@
-		@gamma@@rect_dash@IPCI,@alpha@
-		@alpha@@rect_dash@IPCV,@alpha@
-		@delta@@rect_dash@BWHOS,@alpha@
+		@beta@ @rect_dash@ IPCP,@alpha@
+		@gamma@ @rect_dash@ IPCI,@alpha@
+		@alpha@ @rect_dash@ IPCV,@alpha@
+		@delta@ @rect_dash@ BWHOS,@alpha@
 		PROD@hamb@VA@sub_alpha@@times@IVAL+1+LIST@sub_gamma@/PSIZE+LIST@sub_delta@=ROTS@arr@BADOV
 		PROD@hamb@VA+1@sub_alpha@@times@IVAL+LIST@sub_gamma@/PSIZE+LIST@sub_delta@@arr@BADOV
 		DIFF@arr@ROTS@arr@BADOV
@@ -3387,19 +3387,19 @@ IPCONCOMP1@arr@
 		HDIF,VA+1@sub_beta@
 IPCONEX1@arr@
 		JPQ #
-RI@arr@		JPQ 377758	[guessing that last 8]
+RI@arr@		JPQ 377758	[best guess: last symbol is 8]
 CL@arr@		JPQ 200000
 ST@arr@		JPQ 200001
 LAST@arr@	ZZLAST
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=79 doc_page=229 type=symex]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=79 doc_page=229 type=symex proof=1]
 [Handwritten: "PEN 11 AUG"]
 [Page header: "HHL LYUO 001"]
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=80 doc_page=230 type=symex]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=80 doc_page=230 type=symex proof=1]
 [Page header: "HHL LYUO 002"]
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=81 doc_page=231 type=symex]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=81 doc_page=231 type=symex proof=1]
 [Page header: "HHL LYUO 003"]
 
 [meta file_name=102726903-05-02-acc.pdf pdf_page=82 doc_page=232 type=equalities]
