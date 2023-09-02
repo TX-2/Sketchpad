@@ -3402,7 +3402,7 @@ LAST@arr@	ZZLAST
 [meta file_name=102726903-05-02-acc.pdf pdf_page=81 doc_page=231 type=symex proof=1]
 [Page header: "HHL LYUO 003"]
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=82 doc_page=232 type=equalities]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=82 doc_page=232 type=equalities proof=1]
 [Page header: "HHL LYUO 004"]
 
 47LITEIT= 200050
@@ -3452,12 +3452,12 @@ GETIT= 7        **MASTER FORMATION SUBROUTINE
 
 HOVS= 15@times@MASBL+PICTURES
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=83 doc_page=233 type=equalities]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=83 doc_page=233 type=equalities proof=1]
 [Page header: "HHL LYUO 005"]
 
 HOWBIG= 6       **MASTER SCSZ COMPUTATION
 HOVP1= 10       **FIRST HORIZ OR VERT POINT
-HOVP2= 12       **SECOND HO1IZ OR VERT POINT    [sic, HORIZ]
+HOVP2= 12       **SECOND HO1IZ OR VERT POINT    [sic]
 HOVCODE= 14     **HORIZ=1, VERTICAL=2, EITHER=0
 HOLDERS= 2@times@SMASBL+LIST+1
 
@@ -3496,7 +3496,7 @@ MASBL= 24       **MASTER BLOCK LENGTH
 MOVED=SKM @sub_4@@sub_dot@@sub_1@@sub_0@ 200034
 MASTERS= LIST+1
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=84 doc_page=234 type=equalities]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=84 doc_page=234 type=equalities proof=1]
 [Page header: "HHL LYUO 006"]
 
 MERGERS= 10@times@SMASBL+LIST+1
@@ -3541,10 +3541,10 @@ PINS= 14        **INSTANCES OF THIS PICTURE
 PSIZE= 16       **SIZE OF THIS PICTURE
 PNAME= 17       **NAME OF PICTURE, 36 BITS
 PSAVE= 20       **6 REGISTERS TO SAVE IN PICTURE
-PLS= 14 	**LINES ND CIRCLES ON THIS POINT
+PLS= 14 	**LINES ND CIRCLES ON THIS POINT	[sic]
 PBOCC= 10       **CENTER OF POINT ON CIRCLE
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=85 doc_page=235 type=equalities]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=85 doc_page=235 type=equalities proof=1]
 [Page header: "HHL LYUO 007"]
 
 PBOCS= 12       **START OF POINT ON CIRCLE
@@ -3592,7 +3592,7 @@ VARLOC= 15      **LOCATION OF VARIABLES IN BLOCK
 VORD= 6         **ORDERING OF VARIABLES
 VFLW= 10        **CONSTRAINTS WHICH THIS VARIABLE IS TO SATISFY
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=86 doc_page=236 type=equalities]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=86 doc_page=236 type=equalities proof=1]
 [Page header: "HHL LYUO 010"]
 
 VARIABLES= 1@times@SMASBL+LIST+1
@@ -3602,7 +3602,7 @@ WHERE= 12       **LOCATION OF THING IN PICTURE
 
 @alpha@= 1
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=87 doc_page=237 type=macros]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=87 doc_page=237 type=macros proof=1]
 [Page header: "HHL LYUO 011"]
 
 @hand@@hand@DEF EXAMINE|@alpha@@arr@B
@@ -3614,7 +3614,7 @@ STE B
 @hand@@hand@DEF NORMALIZE|P@arr@C/S@times@F=R@arr@Q
 LDA P	**POINT P AT
 SUB C	**CENTER C TO BE
-SAB {-(F),}	**NORMALIZED TO 2@sup_F@@times@S [F appears to be superscripted?]
+SAB {-(F),}	**NORMALIZED TO 2@sup_F@@times@S
 hJOV Q	**AND IF OUT, GO TO
 DIV S	**Q, LEAVE RESULT
 hJOV Q-(S)+(S)	**IN R
@@ -3657,7 +3657,7 @@ JPA #+2
 COM A
 STA Q
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=88 doc_page=238 type=macros]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=88 doc_page=238 type=macros proof=1]
 [Page header: "HHL LYUO 012"]
 
 @hand@@hand@EMD
@@ -3686,7 +3686,7 @@ hJOV U+(S)-(S)
 STA B+(R)-(R)
 LDA P
 SUB Q
-hJOV U+(Q)-(Q)
+hJOV U-(Q)+(Q)
 hJPQ CACT
 STA T
 @hand@@hand@EMD
@@ -3711,7 +3711,7 @@ STA S
 STB S+1
 @hand@@hand@EMD
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=89 doc_page=239 type=macros]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=89 doc_page=239 type=macros proof=1]
 [Page header: "HHL LYUO 013"]
 
 @hand@@hand@DEF SUMM@hamb@P@arr@Q=R@arr@S
@@ -3765,12 +3765,12 @@ SUB Q+1
 NOA S
 SKN@sub_4@@sub_dot@@sub_9@D
 
-[meta file_name=102726903-05-02-acc.pdf pdf_page=90 doc_page=240 type=macros]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=90 doc_page=240 type=macros proof=1]
 [Page header: "HHL LYUO 014"]
 
 JPQ #+3
 SCA D
-JPQ #+?
+JPQ #+5	[best guess: 5, as it has to be a small digit, for the jump to remain in the macro.]
 EXA R
 COM D
 SCA D
@@ -3790,7 +3790,7 @@ STB R+1
 
 @hand@@hand@DEF LLCROSSP@hamb@P@arr@Q=R@arr@S
 DPX@sub_P@A
-@sup_2@DPX@sub_Q@A	[guessing this @sup_2@ based on previous def]
+@sup_2@DPX@sub_Q@A	[best guess: @sup_2@, based on the previous def.]
 hJPQ INTOL
 hJOV S
 STA R
