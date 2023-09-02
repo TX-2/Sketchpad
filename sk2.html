@@ -3911,7 +3911,7 @@ hJPQ {ERROR1&equiv;&alpha;&rarr;P}
 &#9755;&#9755;EMD
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=91 doc_page=241 type=macros]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=91 doc_page=241 type=macros proof=1]
 [Page header: "HHL LYUO 015"]
 
 &#9755;&#9755;DEF ERROR1&equiv;&alpha;&rarr;P
@@ -3931,12 +3931,12 @@ STA P
 STB P+1
 &#9755;&#9755;EMD
 
-&#9755;&#9755;DEF &beta;&#9635;A,&alpha;
+&#9755;&#9755;DEF &beta; &#9635; A,&alpha;
 	RSX<sub>&beta;</sub><sub>|</sub><sub>&alpha;</sub>LIST+A
 &#9755;&#9755;EMD
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=92 doc_page=242 type=main]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=92 doc_page=242 type=main proof=1]
 [Page header: "HHL LYUO 016"]
 
  200005|
@@ -3956,7 +3956,7 @@ CPNAME&rarr;		0
  ORIGIN|
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=93 doc_page=243 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=93 doc_page=243 type=code proof=1]
 [Page header: "HHL LYUO 001"]
 
 STARTS&rarr;		CSQ<sub>5</sub><sub>4</sub>
@@ -3965,7 +3965,7 @@ STARTS&rarr;		CSQ<sub>5</sub><sub>4</sub>
 		MKZ TRBUSY
 		MKN LPLOST
 		MOVE|SHAFT&rarr;LSHAFT
-		MOVE|PICNUM&rarr;hLPICNUM	[syntax]
+		MOVE|PICNUM&rarr;hLPICNUM
 		STE CPNAME
 		RXF <sub>5</sub><sub>5</sub> LPFIND
 		JPQ INTSTART
@@ -3993,7 +3993,7 @@ LPSEES&rarr;		REX <sub>L</sub><sub>P</sub><sub>&alpha;</sub>*{<sub>6</sub><sub>0
 		hSED LPTT	**SAME POINT AS LAST TIME
 		JPD LPSEES
 		STE LPTT
-		DEX <sub>L</sub><sub>P</sub><sub>&alpha;</sub> DISPLAY FILE	**INVISIBLE POINT?	[syntax, symex with a space?]
+		DEX <sub>L</sub><sub>P</sub><sub>&alpha;</sub> DISPLAY FILE	**INVISIBLE POINT?
 		SXL <sub>L</sub><sub>P</sub><sub>&alpha;</sub>*BASICFILE
 		JPD LPSEES
 		RSX <sub>L</sub><sub>P</sub><sub>&alpha;</sub> LPSEEN
@@ -4010,7 +4010,7 @@ LPSEES2&rarr;
 		JPD LPSEES
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=94 doc_page=244 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=94 doc_page=244 type=code proof=1]
 [Page header: "HHL LYUO 002"]
 
 		MOVE|LPTT&rarr;LPSEE-1<sub>L</sub><sub>P</sub><sub>&alpha;</sub>
@@ -4044,7 +4044,7 @@ TRACK&rarr;		MKN TRBUSY
 		EXAMINE|60&rarr;S1STATE
 		SKN <sub>2</sub><sub>.</sub><sub>6</sub> S1STATE	**CONNECT
 		JPQ TRACK1
-		SKX <sub>2</sub><sub>.</sub><sub>?</sub> S1STATE	[maybe 8?]
+		SKX <sub>2</sub><sub>.</sub><sub>8</sub> S1STATE	[best guess: <sub>8</sub>]
 		JPQ TRACK
 TRACK1&rarr;		DPX <sub>6</sub><sub>0</sub> TR60
 		CSQ<sub>6</sub><sub>0</sub>
@@ -4052,6 +4052,7 @@ TRACK1&rarr;		DPX <sub>6</sub><sub>0</sub> TR60
 		EXAMINE|55&rarr;LPSTATE
 		<sup>1</sup>DPX <sub>5</sub><sub>5</sub> TR55
 		hLDE PREDIC
+		STE TRCENT
 		<sup>1</sup>IOS <sub>5</sub><sub>5</sub> 30000
 		SKZ LPLOST
 		JPQ TRLOST
@@ -4064,7 +4065,7 @@ TRACK2&rarr;		REX <sub>5</sub><sub>5</sub> TRLP
 		hSTE TRPOINT+2
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=95 doc_page=245 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=95 doc_page=245 type=code proof=1]
 [Page header: "HHL LYUO 003"]
 
 		STE TRPOINT+3
@@ -4074,11 +4075,11 @@ TR1A&rarr;		<sup>2</sup>ADX <sub>T</sub><sub>R</sub><sub>&alpha;</sub> TRPOINT
 		TSD TRPOINT
 		<sup>2</sup>ADX <sub>T</sub><sub>R</sub><sub>&beta;</sub> TRCENT
 		<sup>2</sup>ADX <sub>T</sub><sub>R</sub><sub>&alpha;</sub> TRPOINT
-TR1B&rarr;		<sup>1</sup>ADS <sub>T</sub><sub>R</sub><sub>&alpha;</sub> TRPOINT+1
+TR1B&rarr;		<sup>1</sup>ADX <sub>T</sub><sub>R</sub><sub>&alpha;</sub> TRPOINT+1
 		TSD TRPOINT+1
 		<sup>1</sup>ADX <sub>T</sub><sub>R</sub><sub>&beta;</sub> TRCENT
 		<sup>1</sup>ADX <sub>T</sub><sub>R</sub><sub>&alpha;</sub> TRPOINT+1
-TR1C&rarr;		<sup>1</sup>ADX <sub>T</sub><sub>R</sub><sub>&beta;</sub> TRPOINT+2
+TR1C&rarr;		<sup>2</sup>ADX <sub>T</sub><sub>R</sub><sub>&beta;</sub> TRPOINT+2
 		TSD TRPOINT+2
 		<sup>2</sup>ADX <sub>T</sub><sub>R</sub><sub>&alpha;</sub> TRCENT
 		<sup>2</sup>ADX <sub>T</sub><sub>R</sub><sub>&beta;</sub> TRPOINT+2
@@ -4119,7 +4120,7 @@ TR3&rarr;		MKZ LPLOST
 		TSD SCPSPL
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=96 doc_page=246 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=96 doc_page=246 type=code proof=1]
 [Page header: "HHL LYUO 004"]
 
 TR55&rarr;		REX <sub>5</sub><sub>5</sub> 0	[looks more like <sub>3</sub><sub>5</sub>, but 55 is the device address for light pen, so 35 is unlikely]
@@ -4154,7 +4155,7 @@ TRLP2&rarr;		<sup>2</sup>ADX <sub>T</sub><sub>R</sub><sub>&alpha;</sub> TRPOINT
 TRLP2B&rarr;		<sup>1</sup>ADX <sub>T</sub><sub>R</sub><sub>&alpha;</sub> TRPOINT+1
 		RFD <sub>6</sub><sub>0</sub> TR2C
 TRLP2C&rarr;		<sup>2</sup>ADX <sub>T</sub><sub>R</sub><sub>&beta;</sub> TRPOINT+2
-		RDS <sub>6</sub><sub>0</sub> TR2D
+		RFD <sub>6</sub><sub>0</sub> TR2D
 TRLP2D&rarr;		<sup>1</sup>ADX <sub>T</sub><sub>R</sub><sub>&beta;</sub> TRPOINT+3
 		RXF <sub>6</sub><sub>0</sub> TR2E
 		JPD TRLP2
@@ -4172,11 +4173,11 @@ TRSAV&rarr;		STA TRSA
 		<sup>3</sup><sup>0</sup>SCA {-1,-1,,-1,-1}
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=97 doc_page=247 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=97 doc_page=247 type=code proof=1]
 [Page header: "HHL LYUO 005"]
 
 		STA TRSO
-TRAPPED&rarr;
+TRAPRED&rarr;
 		SKZ LPLOST
 		JPQ PERIODIC
 		MKN PSNEED
@@ -4184,6 +4185,7 @@ TRAPPED&rarr;
 		<sup>1</sup>LDB TRPOINT+1
 		LDA TRPOINT+2
 		<sup>1</sup>LDA TRPOINT+3
+		STA TRPOINT
 		<sup>2</sup><sup>0</sup>ADD B
 		<sup>2</sup><sup>0</sup>SCA {-1,0,,-1,0}
 		EXA TRPOINT
@@ -4226,7 +4228,7 @@ TROUT&rarr;		0
 		0
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=98 doc_page=248 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=98 doc_page=248 type=code proof=1]
 [Page header: "HHL LYUO 006"]
 
 		0
@@ -4281,7 +4283,7 @@ SHAFTPOS&rarr;
 		<sup>1</sup><sup>3</sup>LDA DSHAFT
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=99 doc_page=249 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=99 doc_page=249 type=code proof=1]
 [Page header: "HHL LYUO 007"]
 
 		MUL SCSZ
@@ -4296,7 +4298,7 @@ NPOLR&rarr;		<sup>1</sup>STE NPOLX
 		RSX <sub>N</sub><sub>P</sub><sub>&beta;</sub> A
 		RSX <sub>N</sub><sub>P</sub><sub>&alpha;</sub><sub>|</sub><sub>N</sub><sub>P</sub><sub>&beta;</sub> LEP+LIST
 		RSX <sub>N</sub><sub>P</sub><sub>&beta;</sub><sub>|</sub><sub>N</sub><sub>P</sub><sub>&beta;</sub> LSP+LIST
-		SXD <sub>N</sub><sub>P</sub><sub>&alpha;</sub><sub>S</sub><sub>|</sub><sub>N</sub><sub>P</sub><sub>&beta;</sub>
+		SXD <sub>N</sub><sub>P</sub><sub>&alpha;</sub><sub>|</sub><sub>N</sub><sub>P</sub><sub>&beta;</sub>
 		JPQ NPOLDL	**DEGENERATE LINE
 		LDA VA<sub>N</sub><sub>P</sub><sub>&alpha;</sub>
 		SUB VA<sub>N</sub><sub>P</sub><sub>&beta;</sub>
@@ -4336,7 +4338,7 @@ NPOL2&rarr;		<sup>2</sup>RSX <sub>N</sub><sub>P</sub><sub>&alpha;</sub> NPOLS
 		DIV NPDENOM
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=100 doc_page=250 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=100 doc_page=250 type=code proof=1]
 [Page header: "HHL LYUO 010"]
 
 		STA NPYP
@@ -4391,7 +4393,7 @@ PSEUDO&rarr;		<sup>1</sup>STE PSEXIT
 		ADD SCCEN
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=101 doc_page=251 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=101 doc_page=251 type=code proof=1]
 [Page header: "HHL LYUO 011"]
 
 		STA PENLOC
@@ -4415,7 +4417,7 @@ PS1A&rarr;		LDA <sub>P</sub><sub>S</sub><sub>&alpha;</sub> PENSEE
 		CYA {-10.,}
 		ITA { 177777}
 		RSX <sub>P</sub><sub>S</sub><sub>&gamma;</sub> A	**PS&gamma;=SEEN BLOCK
-		PS&beta;&#9635;TYPE,PS&gamma;
+		PS&beta; &#9635; TYPE,PS&gamma;
 		<sup>2</sup>DPX <sub>P</sub><sub>S</sub><sub>&beta;</sub> A
 		STA <sub>P</sub><sub>S</sub><sub>&Delta;</sub> PSNPS+3
 		SXD <sub>P</sub><sub>S</sub><sub>&beta;</sub> CIRCLES-LIST
@@ -4436,14 +4438,14 @@ PS1I&rarr;		MOVE|PENLOC&rarr;PSNPS<sub>P</sub><sub>S</sub><sub>&Delta;</sub>
 PS1TP&rarr;		LDAB&equiv;TPVAL+LIST<sub>P</sub><sub>S</sub><sub>&gamma;</sub>
 		JPQ #+3
 PS1P&rarr;		LDAB&equiv;VA<sub>P</sub><sub>S</sub><sub>&gamma;</sub>
-		STAB&equiv;PSNPS<sub>P</sub><sub>S</sub><sub>&gamma;</sub>
+		STAB&equiv;PSNPS<sub>P</sub><sub>S</sub><sub>&Delta;</sub>
 		DIFF&rarr;PENLOC&rarr;PS1X
 		EXA B
 		DIFF&rarr;PENLOC+1&rarr;PS1X
 		hJPQ PYTHAGORIAN
 		JOV PS1X
 		SUB PSSEESIZE
-		JPQ PS1X
+		JPA PS1X
 
 <hr>
 [meta file_name=102726903-05-02-acc.pdf pdf_page=102 doc_page=252 type=code]
