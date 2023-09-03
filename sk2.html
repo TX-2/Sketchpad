@@ -5306,7 +5306,7 @@ STA R
 &#9755;&#9755;EMD
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=121 doc_page=271 type=macros]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=121 doc_page=271 type=macros proof=1]
 [Page header: "LMH Y3HT 011"]
 
 &#9755;&#9755;DEF SUMM&equiv;P&rarr;Q=R&rarr;S
@@ -5346,11 +5346,11 @@ STB P+1
 &#9755;&#9755;DEF PYTH1&equiv;P&rarr;Q,R&rarr;S=T&rarr;U
 LDA R
 SUB S
-hJOV U+(S)-(S)
-STA B+(R)-(R)
+hJOV U-(S)+(S)
+STA B-(R)+(R)
 LDA P
 SUB Q
-hJOV U+(Q)-(Q)
+hJOV U-(Q)+(Q)
 hJPQ PYTHAGORIAN
 hJOV U
 STA T
@@ -5361,7 +5361,7 @@ hJPQ {FULL1&equiv;&alpha;&rarr;P}
 &#9755;&#9755;EMD
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=122 doc_page=272 type=macros]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=122 doc_page=272 type=macros proof=1]
 [Page header: "LMH Y3HT 012"]
 
 &#9755;&#9755;DEF FULL1&equiv;&alpha;&rarr;P
@@ -5388,7 +5388,7 @@ JPQ P
 &#9755;&#9755;EMD
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=123 doc_page=273 type=main]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=123 doc_page=273 type=main proof=1]
 [Page header: "LMH Y3HT 013"]
 
 		**IES PLOTTER SERVICE PROGRAM
@@ -5435,7 +5435,7 @@ PLCLEANJMP&rarr;
 		hJMP PLCLEAN	**CLEAN PLOTTER PROGRAM
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=124 doc_page=274 type=main]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=124 doc_page=274 type=main proof=1]
 [Page header: "LMH Y3HT 014"]
 
 PLPLOTJMP&rarr;
@@ -5464,11 +5464,13 @@ UNITS&rarr;		<sup>1</sup>STE UNITSX
 		STE CMMASK
 UNITS OFF&rarr;
 		CSQ<sub>4</sub><sub>0</sub>
-		REX <sub>&alpha;</sub> 56	[maybe 36?]
+		REX <sub>&alpha;</sub> 36
 		MOVE|{<sup>1</sup>IOS <sub>7</sub><sub>7</sub> 20000}&rarr;UNITS OFF1
 		hLDE {<sup>1</sup>IOS <sub>7</sub><sub>7</sub> 20000}
 		STE UNITS OFF1
 		MOVE|{<sup>1</sup>IOS <sub>7</sub><sub>7</sub> 40000}&rarr;UNITS OFF2
+		hLDE {<sup>1</sup>IOS <sub>7</sub><sub>7</sub> 40000}
+		STE UNITS OFF2
 UNITS OFF1&rarr;
 		0
 UNITS OFF2&rarr;
@@ -5488,7 +5490,7 @@ CONFIGS&rarr;
 		<sup>2</sup><sup>4</sup>SPG { 605,731,,730,733}
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=125 doc_page=275 type=main]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=125 doc_page=275 type=main proof=1]
 [Page header: "LMH Y3HT 015"]
 
 		<sup>3</sup><sup>0</sup>SPG { 320,670,,750,600}
@@ -5498,7 +5500,7 @@ CONFIGS&rarr;
 UNITSX&rarr;		JPQ #
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=126 doc_page=276 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=126 doc_page=276 type=code proof=1]
 [Page header: "LMH Y3HT 001"]
 
 SQ60A&rarr;		CSQ<sub>6</sub><sub>0</sub>
@@ -5528,8 +5530,7 @@ SQ60IC&rarr;		TSD <sub>S</sub><sub>1</sub><sub>&alpha;</sub> DISPLAY FILE
 		<sup>-</sup><sup>1</sup>JPX <sub>S</sub><sub>1</sub><sub>&alpha;</sub> SQ60IC
 		JPX <sub>S</sub><sub>1</sub><sub>&beta;</sub> SQ60A
 		JPQ SQ60SEE
-SQ60IS&rarr;
-		TSD <sub>S</sub><sub>1</sub><sub>&alpha;</sub> DISPLAY FILE-(0&times;LACE)
+SQ60IS&rarr;		TSD <sub>S</sub><sub>1</sub><sub>&alpha;</sub> DISPLAY FILE-(0&times;LACE)
 		TSD <sub>S</sub><sub>1</sub><sub>&alpha;</sub> DISPLAY FILE-(1&times;LACE)
 		TSD <sub>S</sub><sub>1</sub><sub>&alpha;</sub> DISPLAY FILE-(2&times;LACE)
 		TSD <sub>S</sub><sub>1</sub><sub>&alpha;</sub> DISPLAY FILE-(3&times;LACE)
@@ -5553,7 +5554,7 @@ SQ60IRR&rarr;
 		RSX <sub>S</sub><sub>C</sub><sub>&alpha;</sub> E
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=127 doc_page=277 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=127 doc_page=277 type=code proof=1]
 [Page header: "LMH Y3HT 002"]
 
 		SXL <sub>S</sub><sub>C</sub><sub>&alpha;</sub> LACE
@@ -5566,8 +5567,7 @@ SQ60D&rarr;		<sup>1</sup>DPX <sub>S</sub><sub>1</sub><sub>&alpha;</sub> SQ60D3
 		DEX <sub>S</sub><sub>1</sub><sub>&alpha;</sub> 7
 		<sup>1</sup>DPX <sub>S</sub><sub>1</sub><sub>&alpha;</sub> SQ60D2
 		REX <sub>S</sub><sub>1</sub><sub>&alpha;</sub> 0
-SQ60D1&rarr;
-		TSD <sub>S</sub><sub>1</sub><sub>&alpha;</sub> DISPLAY FILE
+SQ60D1&rarr;		TSD <sub>S</sub><sub>1</sub><sub>&alpha;</sub> DISPLAY FILE
 		TSD <sub>S</sub><sub>1</sub><sub>&alpha;</sub> DISPLAY FILE+1
 		TSD <sub>S</sub><sub>1</sub><sub>&alpha;</sub> DISPLAY FILE+2
 		TSD <sub>S</sub><sub>1</sub><sub>&alpha;</sub> DISPLAY FILE+3
@@ -5603,13 +5603,13 @@ S1NULL1&rarr;
 		MOVE|S1INK+1<sub>S</sub><sub>1</sub><sub>&alpha;</sub>&rarr;S1INC
 		MOVE|S1INK+2<sub>S</sub><sub>1</sub><sub>&alpha;</sub>&rarr;S1STEPS
 		RSX <sub>S</sub><sub>1</sub><sub>&beta;</sub> S1STEPS
-		RSX <sub>S</sub><sub>1</sub><sub>&gamma;</sub> S1INC
+		RSX <sub>S</sub><sub>1</sub><sub>y</sub> S1INC
 		RSX <sub>S</sub><sub>1</sub><sub>x</sub> S1INC<sup>2</sup>	[syntax, superscript at the end]
 		TSD S1DISPLAY
-		<sup>1</sup>ADX <sub>S</sub><sub>1</sub><sub>&gamma;</sub> S1DISPLAY
+		<sup>1</sup>ADX <sub>S</sub><sub>1</sub><sub>y</sub> S1DISPLAY
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=128 doc_page=278 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=128 doc_page=278 type=code proof=1]
 [Page header: "LMH Y3HT 003"]
 
 		<sup>2</sup>ADX <sub>S</sub><sub>1</sub><sub>x</sub> S1DISPLAY
@@ -5622,7 +5622,7 @@ SCRAMBLE&rarr;
 		RSX <sub>S</sub><sub>C</sub><sub>&alpha;</sub> SNDISP
 		RSX <sub>S</sub><sub>C</sub><sub>&beta;</sub> SNDISP
 		JPQ SCRAMX
-SCRAM&rarr;		<sup>-</sup><sup>1</sup>JPX <sub>S</sub><sub>1</sub><sub>&beta;</sub> SCRAMER
+SCRAM&rarr;		<sup>-</sup><sup>1</sup>JPX <sub>S</sub><sub>C</sub><sub>&beta;</sub> SCRAMER
 		AUX <sub>S</sub><sub>C</sub><sub>&beta;</sub> SNDISP
 		JPX <sub>S</sub><sub>C</sub><sub>&beta;</sub> SCRAMER
 		JPD SCRAMBLE
@@ -5665,7 +5665,7 @@ CMAG&rarr;		<sup>1</sup>STE CMEXIT
 		LDA 200034
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=129 doc_page=279 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=129 doc_page=279 type=code proof=1]
 [Page header: "LMH Y3HT 004"]
 
 		STA SCSZ
@@ -5693,7 +5693,7 @@ CMAG2A&rarr;		LDA CMTS	**MAXCEN-R<1.5 SCSZ
 		LDB CMMRCEN
 		SCB {-1,}
 		ADD B
-		JOB CMAG2B
+		JOV CMAG2B
 		LDB CMSCSZ
 		SCB {-1,}
 		ADD B
@@ -5720,7 +5720,7 @@ CMAG3&rarr;		LDA { CMMINRAD}	**IS RAD TINY?
 		MUL CMRAD	**ARCLENGTH/2TH
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=130 doc_page=280 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=130 doc_page=280 type=code proof=1]
 [Page header: "LMH Y3HT 005"]
 
 		STA CMTS
@@ -5740,9 +5740,9 @@ CMGNL&rarr;		REX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 0	**FIND EDGE POINTS
 		REX <sub>C</sub><sub>M</sub><sub>&beta;</sub> 2
 		hJPQ CMGNL1
 		LDA CMXRCEN
-		ADD CMDCSZ	**DIST TO LEFT EDGE
+		ADD CMSCSZ	**DIST TO LEFT EDGE
 		JOV #+3
-		REX <sub>S</sub><sub>1</sub><sub>&beta;</sub> 1
+		REX <sub>C</sub><sub>M</sub><sub>&beta;</sub> 1
 		hJPQ CMGNL1
 		LDA CMYRCEN
 		ADD CMSCSZ	**DIST TO BOT
@@ -5765,7 +5765,7 @@ CMGNL1&rarr;		<sup>1</sup>STE CMGNL1EX
 		SAB { 1,}
 		SQRT
 		STA CMTS	**OFFSET
-		DPX <sub>S</sub><sub>1</sub><sub>&beta;</sub> CMTU
+		DPX <sub>C</sub><sub>M</sub><sub>&beta;</sub> CMTU
 CMGNL1A&rarr;
 		LDB CMYRCEN
 		SKZ <sub>1</sub><sub>.</sub><sub>2</sub> CMTU
@@ -5775,7 +5775,7 @@ CMGNL1B&rarr;
 		JOV CMGNL1D
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=131 doc_page=281 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=131 doc_page=281 type=code proof=1]
 [Page header: "LMH Y3HT 006"]
 
 		STA CMTT	**VARIABLE PART
@@ -5830,7 +5830,7 @@ CMGNL1E&rarr;
 		SKZ <sub>1</sub><sub>.</sub><sub>1</sub> CMTU
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=132 doc_page=282 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=132 doc_page=282 type=code proof=1]
 [Page header: "LMH Y3HT 007"]
 
 		<sup>1</sup>COM A
@@ -5858,7 +5858,7 @@ CMGNL1D&rarr;
 		COM A
 		STA CMTS
 		JPQ CMGNL1A
-		CMGNL2&rarr;SXG <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 0	**CM&alpha;=EDGE PTS
+CMGNL2&rarr;		SXG <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 0	**CM&alpha;=EDGE PTS
 		JPQ CMALLON
 		LDA CMSTART	**IS START ON
 		SUB SCCEN
@@ -5873,7 +5873,7 @@ CMGNL1D&rarr;
 		STA CMTT
 		FABVAL
 		SUB CMSCSZ
-		CMGNL2A&rarr;
+CMGNL2A&rarr;
 		JPA CMGNL3
 		LDA CMTS
 		<sup>1</sup><sup>6</sup>LDB A
@@ -5882,10 +5882,10 @@ CMGNL1D&rarr;
 		STA <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMEDGES
 		<sup>1</sup><sup>2</sup>LDA A
 		MUL SCSZ
-		SAB { 18.,}	[guessing about 8, maybe 0?]
+		SAB { 18.,}	[best guess: 8]
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=133 doc_page=283 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=133 doc_page=283 type=code proof=1]
 [Page header: "LMH Y3HT 010"]
 
 		STA CMTS
@@ -5917,7 +5917,7 @@ CMGNL4B&rarr;
 		<sup>2</sup><sup>0</sup>SUB <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMEDGES
 		<sup>2</sup><sup>0</sup>JPA CMGNL4AX
 		<sup>2</sup><sup>0</sup>JNA CMGNL4AX
-		MKN <sub>2</sub><sub>.</sub><sub>1</sub><sub>|</sub><sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMDIRS [syntax, bit field combined with superscript pipe]
+		MKN <sub>2</sub><sub>.</sub><sub>1</sub><sub>|</sub><sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMDIRS [syntax, bit field combined with subscript pipe]
 		hLDE <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMDIRS
 		<sup>3</sup>SED <sub>C</sub><sub>M</sub><sub>&beta;</sub> CMDIRS
 		JPQ CMGNL4AX
@@ -5931,7 +5931,7 @@ CMGNL4C&rarr;
 		REX <sub>C</sub><sub>M</sub><sub>&beta;</sub> 0
 CMGNL4D&rarr;
 		SXL <sub>C</sub><sub>M</sub><sub>&alpha;</sub>*CMNUMI
-		JPQ CMNGL4E
+		JPQ CMGNL4E
 		LDA CMEDGES<sub>C</sub><sub>M</sub><sub>&alpha;</sub>
 		LDB <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMDIRS
 		STA <sub>C</sub><sub>M</sub><sub>&beta;</sub> CMEDGES
@@ -5939,7 +5939,7 @@ CMGNL4D&rarr;
 		INX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 1
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=134 doc_page=284 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=134 doc_page=284 type=code proof=1]
 [Page header: "LMH Y3HT 011"]
 
 		SKN <sub>2</sub><sub>.</sub><sub>1</sub> B
@@ -5994,7 +5994,7 @@ CMGNL6A&rarr;
 		DPX A
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=135 doc_page=285 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=135 doc_page=285 type=code proof=1]
 [Page header: "LMH Y3HT 012"]
 
 		STA <sub>C</sub><sub>M</sub><sub>&beta;</sub> CMDRAWA-1
@@ -6049,11 +6049,11 @@ CMALLON&rarr;
 		STA CMDRAWA
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=136 doc_page=286 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=136 doc_page=286 type=code proof=1]
 [Page header: "LMH Y3HT 013"]
 
 		REX <sub>C</sub><sub>M</sub><sub>&beta;</sub> 1
-CMDRAW&rarr;		NORMALIZE|CMRAS/SCSZ&times;BSFAC=CMRAD&rarr;CMDAL
+CMDRAW&rarr;		NORMALIZE|CMRAD/SCSZ&times;BSFAC=CMRAD&rarr;CMDAL
 		NORMALIZE|CMCEN&rarr;SCCEN/SCSZ&times;BSFAC=CMMID&rarr;BADOV
 		NORMALIZE|CMCEN+1&rarr;SCCEN+1/SCSZ&times;BSFAC=<sup>2</sup><sup>2</sup> CMMID&rarr;BADOV
 		SXG <sub>C</sub><sub>M</sub><sub>&beta;</sub> 0
@@ -6103,7 +6103,7 @@ PLIESCIRCLE&rarr;
 		LDC <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMDRAWA-1
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=137 doc_page=287 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=137 doc_page=287 type=code proof=1]
 [Page header: "LMH Y3HT 014"]
 
 		LDD CMANG
@@ -6133,7 +6133,7 @@ CMLOOP1&rarr;
 		STA <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 0
 		LDA CMPT1	**Y,X
 		<sup>2</sup><sup>0</sup>MUL CMFAC
-		<sup>+</sup><sup>1</sup>JNX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMLOOPS [syntax, first <sup>+</sup>]
+		<sup>+</sup><sup>1</sup>JNX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMLOOPS [syntax, first time seeing explicit plus in superscript: <sup>+</sup><sup>1</sup>]
 		RSX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> NDISP
 		AUX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> CMSTEPS
 		INX <sub>C</sub><sub>M</sub><sub>&alpha;</sub> 1
@@ -6157,7 +6157,7 @@ CMDRAWS&rarr;
 		0
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=138 doc_page=288 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=138 doc_page=288 type=code proof=1]
 [Page header: "LMH Y3HT 015"]
 
 		0
@@ -6212,7 +6212,7 @@ LMAG1&rarr;		LDA LMDX
 		LDA LMDY
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=139 doc_page=289 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=139 doc_page=289 type=code proof=1]
 [Page header: "LMH Y3HT 016"]
 
 		JPA LMAG1A
@@ -6250,7 +6250,7 @@ LMAG1B&rarr;		SCNORM|LMEND+1&rarr;1=<sup>2</sup><sup>2</sup> LMSEND&rarr;LMAG1N	
 		JPQ LMDRAW
 LMAG1C&rarr;		LDA LMDY	**ST ON END OFF
 		LDB { 377777}
-		JPQ #+2
+		JPA #+2
 		COM B
 		<sup>1</sup>STB LMSEND
 		JPQ LMDRAW
@@ -6266,7 +6266,7 @@ LMAG1N&rarr;		HDIF|SCCEN+1,LMSTART+1&rarr;LMTS	**BOTH OFF
 		COM B
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=140 doc_page=290 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=140 doc_page=290 type=code proof=1]
 [Page header: "LMH Y3HT 017"]
 
 		<sup>1</sup>STB LMSST
@@ -6321,12 +6321,12 @@ LMAG4&rarr;		HDIF|LMSTART+1,SCCEN+1	**X&Delta;Y-Y&Delta;X
 		<sup>1</sup>STA LMSKEY
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=141 doc_page=291 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=141 doc_page=291 type=code proof=1]
 [Page header: "LMH Y3HT 020"]
 
 LMAG5&rarr;		SCNORM|LMSTART=LMSST&rarr;LMAG5A
 		SCNORM|LMSTART+1&rarr;1=<sup>2</sup><sup>2</sup> LMSST-LMAG5A
-		SCNORM|LMENDLMSEND&rarr;LMAG5B
+		SCNORM|LMEND=LMSEND&rarr;LMAG5B
 		SCNORM|LMEND+1&rarr;1=<sup>2</sup><sup>2</sup> LMSEND-LMAG5B
 		JPQ LMDRAW	**BOTH ON
 LMAG5A&rarr;		SCNORM|LMEND=LMSEND&rarr;LMAG5C
@@ -6376,7 +6376,7 @@ LMAG5CC&rarr;
 		JPQ LMAG5CA
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=142 doc_page=292 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=142 doc_page=292 type=code proof=1]
 [Page header: "LMH Y3HT 021"]
 
 		**LINE SLOPE SUBROUTINE
@@ -6431,7 +6431,7 @@ LMDRAW1&rarr;
 		STA LMSL
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=143 doc_page=293 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=143 doc_page=293 type=code proof=1]
 [Page header: "LMH Y3HT 022"]
 
 		<sup>2</sup><sup>0</sup>MUL A
@@ -6439,7 +6439,7 @@ LMDRAW1&rarr;
 		ADD B
 		<sup>1</sup><sup>6</sup>LDB A
 		SCB {-9.,}
-		hJPQ SQRT
+		hJPQ SQRT	[syntax, given that SQRT itself is defined as hJPQ ..., not clear how this would work]
 		STA LMTS
 		<sup>2</sup><sup>2</sup>STA LMTS	**1/4 LENGTH
 		<sup>2</sup><sup>0</sup>SCA {-6,-6}
@@ -6451,7 +6451,7 @@ LMDRAW1A&rarr;
 		<sup>2</sup><sup>0</sup>SCB {-18.,-18.,}
 		<sup>2</sup><sup>0</sup>DIV LMTS
 		<sup>2</sup><sup>0</sup>SAB {-9.,-9.,}
-		<sup>1</sup>JPA #+3
+		<sup>1</sup>JPA #+3	**ROUND
 		<sup>1</sup>JNA #+5
 		JPQ #+6
 		SKZ <sub>2</sub><sub>.</sub><sub>9</sub> B
@@ -6486,7 +6486,7 @@ LMDRAW1B&rarr;
 		INS C
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=144 doc_page=294 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=144 doc_page=294 type=code proof=1]
 [Page header: "LMH Y3HT 023"]
 
 LMDRAWLOOP&rarr;
@@ -6497,25 +6497,25 @@ LMDRAWLOOP&rarr;
 LMAGEXIT&rarr;
 		JPQ #
 SQUARE ROOT BY HPP&rarr;
-		<sup>1</sup>STE #+56	**IN EXIT
+		<sup>1</sup>STE #+56	**IN EXIT	[Handwritten on the right: "20?341"]
 		LDD {-0}
 		AOP 66000	**NAB		[Handwritten at the left margin: "202343 ->"]
-		STD #+61-3	**EXPONENT	[Handwritten at the left margin: "344 ->"]
-		MKZ <sub>3</sub><sub>.</sub><sub>8</sub>#+53-4
+		STD #+61-3	**EXPONENT	[Handwritten at the left margin: "344 ->", on the right: "202422"]
+		MKZ <sub>3</sub><sub>.</sub><sub>8</sub>#+53-4	[Handwritten on the right: "202414"]
 		JPA #+12-5	**N>0
 		MKN <sub>3</sub><sub>.</sub><sub>8</sub>#+53-6	**N≤0
 		COM A
 		JPA #+2	**N<0
 		JPQ #+55-11	**N=0
-		STA #+57-12	**IN N		[Handwritten at the left margin: "202353"]
+		STA #+57-12	**IN N		[Handwritten at the left margin: "202353", on the right: "202428" (uncertainty about the last "8")]
 		SCA {-3,}
 		SUB {19461699408.}	**N/8-.56641
 		MUL #+57-15	**&times;N
 		SKN MKN CYR <sub>4</sub><sub>.</sub><sub>1</sub>#+61-16**HALVE EXPONENT [Handwritten: left margin: "->", right margin: "<-"; syntax, three instruction codes?]
 		JPQ #+24-17**IF EXP ODD	[Handwritten at the rigt margin: arrow pointing right and then down]
-		MUL {-26415202030.}** - .7689	[check the numbers]
+		MUL {-26415202030.}** - .7689	[guessing some digits]
 		SCA { 1,}
-		ADD { 11003700211.}**+.32025	[check the numbers]
+		ADD { 11003700211.}**+.32025	[guessing some digits]
 		JPQ #+30-23** TO ITERATION
 		MUL {-18703036386.}**- .5433	[Handwritten at the left margin: "->"]
 		ADD { 3890553174.}**+.11323
@@ -6541,7 +6541,7 @@ SQUARE ROOT BY HPP&rarr;
 		COM A
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=145 doc_page=295 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=145 doc_page=295 type=code proof=1]
 [Page header: "LMH Y3HT 024"]
 
 		SKU MKZ <sub>4</sub><sub>.</sub><sub>9</sub> A
@@ -6597,7 +6597,7 @@ ACTP3&rarr;		LDA ACTY
 		JPQ #+2
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=146 doc_page=296 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=146 doc_page=296 type=code proof=1]
 [Page header: "LMH Y3HT 025"]
 
 		LDC { 200,}
@@ -6624,7 +6624,7 @@ ACTEQ&rarr;		STA ACTTT
 		LDA ACTTS
 		MUL ACTTT
 		MUL ACTTT
-		MUL { 966975697.}	**.0252323137487638.
+		MUL { 866975697.}	**.0252323137487638.
 		ADD ACTSUM
 		ADD ACTANG
 ACTEX&rarr;		JPQ 0
@@ -6652,7 +6652,7 @@ PYTHAGORIAN2&rarr;
 		SKZ <sub>4</sub><sub>.</sub><sub>9</sub> A
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=147 doc_page=297 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=147 doc_page=297 type=code proof=1]
 [Page header: "LMH Y3HT 026"]
 
 		COM B
@@ -6707,7 +6707,7 @@ S1INK&rarr;		60,0,,60,0
 		** PLOTSVC 904-17
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=148 doc_page=298 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=148 doc_page=298 type=code proof=1]
 [Page header: "LMH Y3HT 027"]
 
 PLCLEAN&rarr;
@@ -6731,7 +6731,7 @@ PLPLX&rarr;		JPQ #
 PLEND&rarr;		<sup>1</sup>STE PLLX
 		SZN PLESW
 		JPQ PLLX*
-		LDA {(56.-31.),0,,30000}	[maybe 21, not 31?]
+		LDA {(56.-31.),0,,30000}	[best guess: 3 in 31]
 		STA <sub>P</sub><sub>L</sub><sub>S</sub> 1	**IOS
 		LDA { 377770,,}	**FINAL TSD
 		STA <sub>P</sub><sub>L</sub><sub>S</sub> 0
@@ -6745,67 +6745,67 @@ PLPURTNE&rarr;
 		MKN PLPBUSY
 		MKZ PLLSW
 		<sup>1</sup>IOS <sub>6</sub><sub>3</sub> 30000	**NORMAL NO 7TH HOLE
-PLPUL&rarr;		<sup>1</sup>SKX <sub>P</sub><sub>L</sub><sub>X</sub> 5
+PLPUL&rarr;		<sup>1</sup>SKX <sub>P</sub><sub>L</sub><sub>U</sub> 5
 		<sup>3</sup>TSD PLEADER	**0
-		h<sup>1</sup>JNX <sub>P</sub><sub>L</sub><sub>X</sub>#-1
+		h<sup>1</sup>JNX <sub>P</sub><sub>L</sub><sub>U</sub>#-1
 		SZN PLLSW
 		JPQ PLPUL2
 		<sup>4</sup>TSD PLEADER	**END MARK
 		<sup>5</sup>TSD PLEADER	**TALLY
-		<sup>1</sup>SKX <sub>P</sub><sub>L</sub><sub>X</sub> 25.**BLKS OF LEADER
-		DPX <sub>P</sub><sub>L</sub><sub>X</sub> PLUWA
+		<sup>1</sup>SKX <sub>P</sub><sub>L</sub><sub>U</sub> 25.**BLKS OF LEADER
+		DPX <sub>P</sub><sub>L</sub><sub>U</sub> PLUWA
 		<sup>1</sup>IOS <sub>6</sub><sub>3</sub> 30004	**NORMAL 7TH HOLE
 		JPQ PLPUL
 PLPUL2&rarr;		<sup>3</sup>TSD PLEADER	**0
 		<sup>6</sup>TSD PLEADER	**TALLY
-		h<sup>1</sup>ADX <sub>P</sub><sub>L</sub><sub>X</sub> PLUWA	**PLU CONTAINS 1
+		h<sup>1</sup>ADX <sub>P</sub><sub>L</sub><sub>U</sub> PLUWA	**PLU CONTAINS 1
 		<sup>1</sup>SED {-0}
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=149 doc_page=299 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=149 doc_page=299 type=code proof=1]
 [Page header: "LMH Y3HT 030"]
 
 		JPQ #+2
 		JPQ PLPUL
-		SKX <sub>P</sub><sub>L</sub><sub>X</sub> PLTABLE-1
+		SKX <sub>P</sub><sub>L</sub><sub>U</sub> PLTABLE-1
 PLPUL3&rarr;		MKN PLPUBUSY
-PLPUL4&rarr;		SXD <sub>P</sub><sub>L</sub><sub>X</sub> PLPLSSAVE*
+PLPUL4&rarr;		SXD <sub>P</sub><sub>L</sub><sub>U</sub> PLPLSSAVE*
 		JPQ PLUSTOP
-		hLDE <sub>P</sub><sub>L</sub><sub>X</sub> 1	**IOS
+		hLDE <sub>P</sub><sub>L</sub><sub>U</sub> 1	**IOS
 		STE PLUWA
-		hLDE <sub>P</sub><sub>L</sub><sub>X</sub> 0	**TSD
+		hLDE <sub>P</sub><sub>L</sub><sub>U</sub> 0	**TSD
 		STE PLUWA2
-		<sup>1</sup>DPX <sub>P</sub><sub>L</sub><sub>X</sub> PLXSAVE	**SAVE CNTR
+		<sup>1</sup>DPX <sub>P</sub><sub>L</sub><sub>U</sub> PLXSAVE	**SAVE CNTR
 PLPUL5&rarr;		<sup>1</sup>IOS <sub>6</sub><sub>3</sub> 30004	**NORMAL, 7TH HOLE
 		<sup>3</sup>TSD PLUWA	**IOS BITS
 		hLDE PLUWA2	**TSD
 		STE PLUWA3
-		SKX <sub>P</sub><sub>L</sub><sub>X</sub> 5
+		SKX <sub>P</sub><sub>L</sub><sub>U</sub> 5
 		<sup>1</sup>IOS <sub>6</sub><sub>3</sub> 30006	**SPLAYED, 7TH HOLE
 		TSD PLUWA3	**TSD + FILTER
-		h<sup>-</sup><sup>1</sup>JPX <sub>P</sub><sub>L</sub><sub>X</sub>#-1
+		h<sup>-</sup><sup>1</sup>JPX <sub>P</sub><sub>L</sub><sub>U</sub>#-1
 		<sup>1</sup>IOS<sub>6</sub><sub>3</sub> 30000	**NORMAL, NO 7TH HOLE
 		<sup>6</sup>TSD PLUWA	**TALLY
-		<sup>1</sup><sup>1</sup>AUX <sub>P</sub><sub>L</sub><sub>X</sub> PLOTBLOCKS2	**PLU CONTAINS-1
-		<sup>1</sup>DPX <sub>P</sub><sub>L</sub><sub>X</sub> PLOTBLOCKS2
-		<sup>1</sup><sup>2</sup>AUX <sub>P</sub><sub>L</sub><sub>X</sub> PLOTBLOCKS
-		<sup>1</sup>DPX <sub>P</sub><sub>L</sub><sub>X</sub> PLOTBLOCKS
-		<sup>1</sup><sup>5</sup>RSX <sub>P</sub><sub>L</sub><sub>X</sub> PLUWA	**BLK CNTR
-		h<sup>-</sup><sup>1</sup>JPX <sub>P</sub><sub>L</sub><sub>X</sub> PLPUL6
-		<sup>1</sup><sup>1</sup>RSX <sub>P</sub><sub>L</sub><sub>X</sub> PLXSAVE	**RESTORE CNTR
-		DEX <sub>P</sub><sub>L</sub><sub>X</sub> 2
+		<sup>1</sup><sup>1</sup>AUX <sub>P</sub><sub>L</sub><sub>U</sub> PLOTBLOCKS2	**PLU CONTAINS-1
+		<sup>1</sup>DPX <sub>P</sub><sub>L</sub><sub>U</sub> PLOTBLOCKS2
+		<sup>1</sup><sup>2</sup>AUX <sub>P</sub><sub>L</sub><sub>U</sub> PLOTBLOCKS
+		<sup>1</sup>DPX <sub>P</sub><sub>L</sub><sub>U</sub> PLOTBLOCKS
+		<sup>1</sup><sup>5</sup>RSX <sub>P</sub><sub>L</sub><sub>U</sub> PLUWA	**BLK CNTR
+		h<sup>-</sup><sup>1</sup>JPX <sub>P</sub><sub>L</sub><sub>U</sub> PLPUL6
+		<sup>1</sup><sup>1</sup>RSX <sub>P</sub><sub>L</sub><sub>U</sub> PLXSAVE	**RESTORE CNTR
+		DEX <sub>P</sub><sub>L</sub><sub>U</sub> 2
 		JPQ PLPUL4
-PLPUL6&rarr;		<sup>5</sup>DPX <sub>P</sub><sub>L</sub><sub>X</sub> PLUWA	**SAVE BLK CNTR
+PLPUL6&rarr;		<sup>5</sup>DPX <sub>P</sub><sub>L</sub><sub>U</sub> PLUWA	**SAVE BLK CNTR
 		JPQ PLPUL5
 PLUSTOP&rarr;
 		SKZ PLESW
 		JPQ PLUEND
 		MKZ PLPUBUSY
 		JPD PLPUL3
-PLUEND&rarr;		<sup>1</sup>SKX <sub>P</sub><sub>L</sub><sub>X</sub> 319.	**TAPE FEEDS
+PLUEND&rarr;		<sup>1</sup>SKX <sub>P</sub><sub>L</sub><sub>U</sub> 319.	**TAPE FEEDS
 		<sup>1</sup>IOS <sub>6</sub><sub>3</sub> 30000	**NORMAL NO 7TH HOLE
 		<sup>3</sup>TSD PLEADER	**0
-		h<sup>1</sup>JNX PLU#-1
+		h<sup>1</sup>JNX <sub>P</sub><sub>L</sub><sub>U</sub>#-1
 		hMKZ PLPUBUSY
 		hMKZ PLUSW
 		<sup>2</sup><sup>1</sup>IOS <sub>6</sub><sub>3</sub> 20000
@@ -6818,7 +6818,7 @@ PLPLRTNE&rarr;
 		[Problem: last line on the page clipped, illegible]
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=150 doc_page=300 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=150 doc_page=300 type=code proof=1]
 [Page header: "LMH Y3HT 031"]
 
 		MKN PLPSW
@@ -6873,7 +6873,7 @@ PLPIT&rarr;		SKN TRBUSY
 		h<sup>-</sup><sup>1</sup>JPX <sub>P</sub><sub>L</sub><sub>P</sub> PLPIT3
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=151 doc_page=301 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=151 doc_page=301 type=code proof=1]
 [Page header: "LMH Y3HT 032"]
 
 		<sup>1</sup><sup>2</sup>RSX <sub>P</sub><sub>L</sub><sub>P</sub> PLXSAVE
@@ -6928,7 +6928,7 @@ PL1A&rarr;		h<sup>2</sup><sup>1</sup>JOV PLOV2
 		JPQ PL2A
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=152 doc_page=302 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=152 doc_page=302 type=code proof=1]
 [Page header: "LMH Y3HT 033"]
 
 		<sup>2</sup><sup>0</sup>STA PLWA2
@@ -6981,7 +6981,7 @@ PLEENTRY&rarr;
 		DEX <sub>P</sub><sub>L</sub><sub>S</sub> 2
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=153 doc_page=303 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=153 doc_page=303 type=code proof=1]
 [Page header: "LMH Y3HT 034"]
 
 		<sup>1</sup>DPX <sub>P</sub><sub>L</sub><sub>S</sub> PLPLSSAVE
@@ -7036,16 +7036,16 @@ PLCB2&rarr;		<sup>3</sup>DPX <sub>P</sub><sub>L</sub><sub>S</sub> PLCWA2	**FILTE
 		JPA #+2		**<1 BLK
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=154 doc_page=304 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=154 doc_page=304 type=code proof=1]
 [Page header: "LMH Y3HT 035"]
 
-		JPQ PLCB4
+		JPQ PLCB5
 		<sup>1</sup><sup>6</sup>ADD {-1,}	**SUB 1
 		<sup>5</sup>STA PLTLYK**NO OF BLKS
 		MKN <sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub> PLCALCBLKS	**BLK DONE
 		JPQ PLCONT2
 PLC2&rarr;		LDA B
-		JPA #+2	**ANY REMINDER?	[remainder?]
+		JPA #+2	**ANY REMINDER?	[sic, remainder?]
 		JPQ PLCB6B
 		2DPX <sub>P</sub><sub>L</sub><sub>S</sub> PLIOSBITS	**SAVE CNTR
 		<sup>1</sup><sup>3</sup>RSX <sub>P</sub><sub>L</sub><sub>S</sub> PLCWA2	**FILTER
@@ -7055,7 +7055,7 @@ PLC2&rarr;		LDA B
 		ITA { 777,770,,777,770}
 		STA PLWA
 		<sup>1</sup><sup>5</sup>LDA PLTLYK	**NO OF BLKS
-		<sup>1</sup><sup>6</sup>SUB {-1,}	**ADD 1	[possibly not <sup>6</sup> in supersript?]
+		<sup>1</sup><sup>6</sup>SUB {-1,}	**ADD 1	[best guess: <sup>6</sup> in <sup>1</sup><sup>6</sup>]
 		MUL <sub>P</sub><sub>L</sub><sub>S</sub> PBITABLE2-PLLOWFILTER	**CIRCLES/BLK
 		[blank line]
 		SAB {-1,}
@@ -7091,7 +7091,7 @@ PLPWA&rarr;		0
 PLWA&rarr;		0
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=155 doc_page=305 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=155 doc_page=305 type=code proof=1]
 [Page header: "LMH Y3HT 036"]
 
 PLWA2&rarr;		0
@@ -7113,7 +7113,7 @@ PLFCK&rarr;		PLCK1,,PLCK1
 		PLCK4,,PLCK4
 		PLCK5,,PLCK5
 		PLCK6,,PLCK6
-		**NO OF PBI BLOCK PER CIRCLE
+		**NO OF PBI BLOCKS PER CIRCLE
 PBITABLE&rarr;
 		PBIK4
 		PBIK5

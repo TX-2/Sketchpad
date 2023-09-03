@@ -33,7 +33,7 @@ SUBS = {
     "@sub_A@": ("ₐ", "<sub>A</sub>"),
     "@sub_I@": ("ᵢ", "<sub>I</sub>"),
     "@sub_X@": ("ₓ", "<sub>X</sub>"),
-    "@sub_U@": ("ᵤ", "<sub>X</sub>"),
+    "@sub_U@": ("ᵤ", "<sub>U</sub>"),
     # Using the same Unicode symbol for lowercase subscript x.
     # TODO: fix, as this will confuse the parser.
     "@sub_x@": ("ₓ", "<sub>x</sub>"),
