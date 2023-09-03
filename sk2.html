@@ -4448,19 +4448,19 @@ PS1P&rarr;		LDAB&equiv;VA<sub>P</sub><sub>S</sub><sub>&gamma;</sub>
 		JPA PS1X
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=102 doc_page=252 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=102 doc_page=252 type=code proof=1]
 [Page header: "HHL LYUO 012"]
 
-		INX <sub>P</sub><sub>S</sub><sub>&gamma;</sub> 4
+		INX <sub>P</sub><sub>S</sub><sub>&Delta;</sub> 4
 		JPQ PS1X
 PENLOC&rarr;		0
 		0
 PS1L&rarr;		RSX <sub>P</sub><sub>S</sub><sub>&beta;</sub>{ PENLOC-VA}
-		NPOL&equiv;PS&beta;&rarr;PS&gamma;=PSNPS<sub>P</sub><sub>S</sub><sub>&gamma;</sub>
-		PYTH&equiv;PSNPS<sub>P</sub><sub>S</sub><sub>&gamma;</sub>&rarr;VA<sub>P</sub><sub>S</sub><sub>&beta;</sub>=PSNPS+2<sub>P</sub><sub>S</sub><sub>&gamma;</sub>&rarr;PS1X
+		NPOL&equiv;PS&beta;&rarr;PS&gamma;=PSNPS<sub>P</sub><sub>S</sub><sub>&Delta;</sub>
+		PYTH&equiv;PSNPS<sub>P</sub><sub>S</sub><sub>&Delta;</sub>&rarr;VA<sub>P</sub><sub>S</sub><sub>&beta;</sub>=PSNPS+2<sub>P</sub><sub>S</sub><sub>&Delta;</sub>&rarr;PS1X
 		SUB PSSEESIZE	**SIZE OF PEN IN 36 BITS
 		JPA PS1X
-		INX <sub>P</sub><sub>S</sub><sub>&gamma;</sub> 4
+		INX <sub>P</sub><sub>S</sub><sub>&Delta;</sub> 4
 		JPQ PS1X
 PS1C&rarr;		RSX <sub>P</sub><sub>S</sub><sub>&beta;</sub><sub>|</sub><sub>P</sub><sub>S</sub><sub>&gamma;</sub> CSP+LIST
 		RSX <sub>P</sub><sub>S</sub><sub>&gamma;</sub><sub>|</sub><sub>P</sub><sub>S</sub><sub>&gamma;</sub> CIRCEN+LIST
@@ -4471,16 +4471,16 @@ PS1C&rarr;		RSX <sub>P</sub><sub>S</sub><sub>&beta;</sub><sub>|</sub><sub>P</sub
 		PYTH1&rarr;&rarr;&rarr;PS1X [peculiar syntax]
 		STA PSTU
 		SUB PSRAD
-		STA <sub>P</sub><sub>S</sub><sub>&gamma;</sub> PSNPS+4	**FOR CENTER
+		STA <sub>P</sub><sub>S</sub><sub>&Delta;</sub> PSNPS+4	**FOR CENTER
 		FABVAL
-		STA <sub>P</sub><sub>S</sub><sub>&gamma;</sub> PSNPS+2
+		STA <sub>P</sub><sub>S</sub><sub>&Delta;</sub> PSNPS+2
 		SUB PSSEESIZE
 		JPA PS1X
 		PROD&equiv;PSTS&times;PSRAD/PSTU&rarr;PS1X
-		SUMM&rarr;VA<sub>P</sub><sub>S</sub><sub>&gamma;</sub>=PSNPS<sub>P</sub><sub>S</sub><sub>&gamma;</sub>&rarr;PS1X
+		SUMM&rarr;VA<sub>P</sub><sub>S</sub><sub>&gamma;</sub>=PSNPS<sub>P</sub><sub>S</sub><sub>&Delta;</sub>&rarr;PS1X
 		PROD&equiv;PSTT&times;PSRAD/PSTU&rarr;PS1X
-		SUMM&rarr;VA+1<sub>P</sub><sub>S</sub><sub>&gamma;</sub>=PSNPS+1<sub>P</sub><sub>S</sub><sub>&gamma;</sub>&rarr;PS1X
-		INX <sub>P</sub><sub>S</sub><sub>&gamma;</sub> 4
+		SUMM&rarr;VA+1<sub>P</sub><sub>S</sub><sub>&gamma;</sub>=PSNPS+1<sub>P</sub><sub>S</sub><sub>&Delta;</sub>&rarr;PS1X
+		INX <sub>P</sub><sub>S</sub><sub>&Delta;</sub> 4
 PS1X&rarr;		<sup>-</sup><sup>1</sup>JPX <sub>P</sub><sub>S</sub><sub>&alpha;</sub> PS1A
 		DPX <sub>P</sub><sub>S</sub><sub>&Delta;</sub> PSNNPS	**# OF NEAR POINTS
 PS2&rarr;		RSX <sub>P</sub><sub>S</sub><sub>&alpha;</sub> PSNNPS
@@ -4493,8 +4493,8 @@ PS2&rarr;		RSX <sub>P</sub><sub>S</sub><sub>&alpha;</sub> PSNNPS
 		STA PSTS
 		DPX PSTT
 		JPQ PS2X
-PS2S&rarr;		<sup>1</sup>PS2SE
-		S&#9635;TYPE,<sub>P</sub><sub>S</sub><sub>&gamma;</sub>
+PS2S&rarr;		<sup>1</sup>STE PS2SE
+		S &#9635; TYPE,<sub>P</sub><sub>S</sub><sub>&gamma;</sub>
 		REX <sub>&alpha;</sub><sub>|</sub><sub>P</sub><sub>S</sub><sub>&gamma;</sub>
 		hBPQ <sub>S</sub> LIST+WHERE
 		STAB&equiv;PS2SLOC
@@ -4503,7 +4503,7 @@ PS2S&rarr;		<sup>1</sup>PS2SE
 		SUB SCSZ
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=103 doc_page=253 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=103 doc_page=253 type=code proof=1]
 [Page header: "HHL LYUO 013"]
 
 		JNA #+2
@@ -4547,18 +4547,18 @@ PS2P&rarr;		REX <sub>P</sub><sub>S</sub><sub>&gamma;</sub><sub>|</sub><sub>P</su
 		JPQ PS2X
 PS2CON&rarr;		INX <sub>P</sub><sub>S</sub><sub>&beta;</sub> LIST+CVTS+2
 		<sup>1</sup>DPX <sub>P</sub><sub>S</sub><sub>&beta;</sub> PS2CON1
-		PS&beta;&#9635;CHVAR,PS&gamma;
+		PS&beta; &#9635; CHVAR,PS&gamma;
 		INX <sub>P</sub><sub>S</sub><sub>&beta;</sub><sub>|</sub><sub>P</sub><sub>S</sub><sub>&beta;</sub>
 		JPQ PS2CON1X
 PS2CON1&rarr;
-		LDA <sub>P</sub><sub>S</sub><sub>&beta;</sub>#
+		LDA <sub>P</sub><sub>S</sub><sub>&beta;</sub>#	** SET TO FIRST VARIABLE
 		RSX <sub>P</sub><sub>S</sub><sub>&gamma;</sub> A
 		hJPQ PS2S
 PS2CON1X&rarr;
 		<sup>-</sup><sup>2</sup>JPX <sub>P</sub><sub>S</sub><sub>&beta;</sub> PS2CON1
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=104 doc_page=254 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=104 doc_page=254 type=code proof=1]
 [Page header: "HHL LYUO 014"]
 
 		JPQ PS2X
@@ -4571,20 +4571,20 @@ PS2I1X&rarr;		JPQ #
 		PS&gamma;&#9635;IPCP,PS&gamma;
 		hJPQ PS2S
 		JPQ PS2I1X
-PS2L&rarr;		PS&gamma;&#9635;LSP,PS&beta;
+PS2L&rarr;		PS&gamma; &#9635; LSP,PS&beta;
 		hJPQ PS2S
-		PS&gamma;&#9635;LEP,PS&beta;
+		PS&gamma; &#9635; LEP,PS&beta;
 		hJPQ PS2S
 		JPQ PS2X
-PS2C&rarr;		PS&gamma;&#9635;CSP,PS&beta;
+PS2C&rarr;		PS&gamma; &#9635; CSP,PS&beta;
 		hJPQ PS2S
-		PS&gamma;&#9635;CEP,PS&beta;
+		PS&gamma; &#9635; CEP,PS&beta;
 		hJPQ PS2S
 PS2X&rarr;		<sup>-</sup><sup>4</sup>JPX <sub>P</sub><sub>S</sub><sub>&alpha;</sub> PS2A
 		SKN <sub>4</sub><sub>.</sub><sub>9</sub> PSTT
 		JPQ PS3
 PSAP&rarr;		RSX <sub>&alpha;</sub> PSTT
-		S&#9635;TYPE,&alpha;
+		S &#9635; TYPE,&alpha;
 		DPX <sub>&alpha;</sub> ATBITS+1
 		<sup>2</sup>DPX <sub>S</sub> ATBITS+1
 		hBPQ <sub>S</sub> LIST+WHERE
@@ -4613,7 +4613,7 @@ PSATCEN&rarr;
 		JPQ PSATPEN1
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=105 doc_page=255 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=105 doc_page=255 type=code proof=1]
 [Page header: "HHL LYUO 015"]
 
 		<sup>2</sup>RSX <sub>P</sub><sub>S</sub><sub>&gamma;</sub> PSNPS+3
@@ -4663,12 +4663,12 @@ PS3I&rarr;		RSX <sub>P</sub><sub>S</sub><sub>&beta;</sub> PSNNPS
 		SXD <sub>P</sub><sub>S</sub><sub>&beta;</sub> 4
 		JPQ PS4
 		JPQ PS3R
-PS3L&rarr;		PS&gamma;&#9635;LSP,PS&beta;
-		PS&Delta;&#9635;LEP,PS&beta;
+PS3L&rarr;		PS&gamma; &#9635; LSP,PS&beta;
+		PS&Delta; &#9635; LEP,PS&beta;
 		HDIF|VA<sub>P</sub><sub>S</sub><sub>&gamma;</sub>,PSNPS<sub>P</sub><sub>S</sub><sub>&alpha;</sub>&rarr;PSTS
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=106 doc_page=256 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=106 doc_page=256 type=code proof=1]
 [Page header: "HHL LYUO 016"]
 
 		HDIF|VA<sub>P</sub><sub>S</sub><sub>&Delta;</sub>,PSNPS<sub>P</sub><sub>S</sub><sub>&alpha;</sub>
@@ -4682,7 +4682,7 @@ PS3L&rarr;		PS&gamma;&#9635;LSP,PS&beta;
 		JPA PS3R
 		JPQ PS3X
 PS3R&rarr;		RSX <sub>P</sub><sub>S</sub><sub>&beta;</sub> PSNNPS
-		DEX <sub>P</sub><sub>S</sub><sub>&beta;</sub> 3
+		DEX <sub>P</sub><sub>S</sub><sub>&beta;</sub> 4
 		SXG <sub>P</sub><sub>S</sub><sub>&beta;</sub> 0
 		JPQ PSATPEN
 		DPX <sub>P</sub><sub>S</sub><sub>&beta;</sub> PSNNPS
@@ -4691,8 +4691,8 @@ PS3R&rarr;		RSX <sub>P</sub><sub>S</sub><sub>&beta;</sub> PSNNPS
 		LDAE&equiv;PSNPS<sub>P</sub><sub>S</sub><sub>&beta;</sub>,1,2,3
 		STAE&equiv;PSNPS<sub>P</sub><sub>S</sub><sub>&alpha;</sub>,1,2,3
 		JPQ PS3X
-PS3C&rarr;		PS&gamma;&#9635;CSP,PS&beta;
-		PS&gamma;&#9635;CIRCEN,PS&beta;
+PS3C&rarr;		PS&gamma; &#9635; CSP,PS&beta;
+		PS&Delta; &#9635; CIRCEN,PS&beta;
 		DIREC&equiv;VA<sub>P</sub><sub>S</sub><sub>&gamma;</sub>&rarr;VA<sub>P</sub><sub>S</sub><sub>&Delta;</sub>=PSTS&rarr;PS3R
 		DIREC&equiv;PSNPS<sub>P</sub><sub>S</sub><sub>&alpha;</sub>&rarr;VA<sub>P</sub><sub>S</sub><sub>&Delta;</sub>=PSTT&rarr;PS3R
 		SUB PSTS
@@ -4723,7 +4723,7 @@ PS5&rarr;		<sup>2</sup>RSX <sub>P</sub><sub>S</sub><sub>&alpha;</sub> PSNPS+3
 		<sup>2</sup>RSX <sub>P</sub><sub>S</sub><sub>&beta;</sub> PSNPS+3+4
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=107 doc_page=257 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=107 doc_page=257 type=code proof=1]
 [Page header: "HHL LYUO 017"]
 
 		SXD <sub>P</sub><sub>S</sub><sub>&alpha;</sub> CIRCLES-LIST
@@ -4778,7 +4778,7 @@ PS5NE&rarr;		STA PSX1
 		hSTA PSPL
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=108 doc_page=258 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=108 doc_page=258 type=code proof=1]
 [Page header: "HHL LYUO 020"]
 
 		STB PSPL+1
@@ -4815,15 +4815,15 @@ INTOC&rarr;		h<sup>1</sup>STE INTOCX
 		<sup>2</sup><sup>2</sup>STE INTOCN	**NO INTERSECTION
 		STA INTCLS	**POINTERS TO CIRCLES
 		RSX <sub>I</sub><sub>N</sub><sub>&alpha;</sub> A
-		IN&beta;&#9635;CSP,IN&alpha;
-		IN&alpha;&#9635;CIRCEN,IN&alpha;
+		IN&beta; &#9635; CSP,IN&alpha;
+		IN&alpha; &#9635; CIRCEN,IN&alpha;
 		PYTH&equiv;VA<sub>I</sub><sub>N</sub><sub>&alpha;</sub>&rarr;VA<sub>I</sub><sub>N</sub><sub>&beta;</sub>=INR1&rarr;INTOCN
 INTOC1&rarr;		<sup>2</sup>RSX <sub>I</sub><sub>N</sub><sub>&alpha;</sub> INTCLS
-		IN&beta;&#9635;CIRCEN,IN&alpha;
-		IN&alpha;&#9635;CSP,IN&alpha;
+		IN&beta; &#9635; CIRCEN,IN&alpha;
+		IN&alpha; &#9635; CSP,IN&alpha;
 		PYTH&equiv;VA<sub>I</sub><sub>N</sub><sub>&alpha;</sub>&rarr;VA<sub>I</sub><sub>N</sub><sub>&beta;</sub>=INR2&rarr;INTOCN
 		RSX <sub>I</sub><sub>N</sub><sub>&alpha;</sub> INTCLS
-		IN&alpha;&#9635;CIRCEN,IN&alpha;
+		IN&alpha; &#9635; CIRCEN,IN&alpha;
 		DIFF&equiv;VA+1<sub>I</sub><sub>N</sub><sub>&beta;</sub>&rarr;VA+1<sub>I</sub><sub>N</sub><sub>&alpha;</sub>=INDY&rarr;INTOCN
 		STA B
 		DIFF&equiv;VA<sub>I</sub><sub>N</sub><sub>&beta;</sub>&rarr;VA<sub>I</sub><sub>N</sub><sub>&alpha;</sub>=INDX&rarr;INTOCN
@@ -4833,7 +4833,7 @@ INTOC2&rarr;		LDA INR1
 		ADD INR2
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=109 doc_page=259 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=109 doc_page=259 type=code proof=1]
 [Page header: "HHL LYUO 021"]
 
 		hJOV #+5	**CIRCES CLOSE ENOUGH [sic]
@@ -4890,7 +4890,7 @@ INTOC8&rarr;		REX <sub>I</sub><sub>N</sub><sub>&beta;</sub> 0
 		JPQ INTOC9	**SWAP
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=110 doc_page=260 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=110 doc_page=260 type=code proof=1]
 [Page header: "HHL LYUO 022"]
 
 		JPQ INTOC10
@@ -4920,15 +4920,15 @@ INTOCL&rarr;		h<sup>1</sup>STE INTOCX
 		STA INXP
 		STB INYP
 		<sup>2</sup>RSX <sub>I</sub><sub>N</sub><sub>&alpha;</sub> INTOCLS
-		IN&beta;&#9635;CIRCEN,IN&alpha;
-		IN&alpha;&#9635;CSP,IN&alpha;
+		IN&beta; &#9635; CIRCEN,IN&alpha;
+		IN&alpha; &#9635; CSP,IN&alpha;
 		SUB VA<sub>I</sub><sub>N</sub><sub>&beta;</sub>
 		hJOV INTOCN
 		EXA B
 		SUB VA+1<sub>I</sub><sub>N</sub><sub>&beta;</sub>
 		hJOV INTOCN
 INTOCL1&rarr;
-		PYTH1
+		PYTH1 [syntax, usually calls to this macro have arguments]
 		hJOV INTOCN
 		STA INDD
 		PYTH&equiv;VA<sub>I</sub><sub>N</sub><sub>&alpha;</sub>&rarr;VA<sub>I</sub><sub>N</sub><sub>&beta;</sub>=INR1&rarr;INTOCN
@@ -4945,11 +4945,11 @@ INTOCL1&rarr;
 INTOCL2&rarr;
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=111 doc_page=261 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=111 doc_page=261 type=code proof=1]
 [Page header: "HHL LYUO 023"]
 
-		IN&beta;&#9635;LSP,IN&alpha;
-		IN&alpha;&#9635;LEP,IN&alpha;
+		IN&beta; &#9635; LSP,IN&alpha;
+		IN&alpha; &#9635; LEP,IN&alpha;
 		DIFF&equiv;VA<sub>I</sub><sub>N</sub><sub>&beta;</sub>&rarr;VA<sub>I</sub><sub>N</sub><sub>&alpha;</sub>=INDX&rarr;INTOCN
 		DIFF&equiv;VA+1<sub>I</sub><sub>N</sub><sub>&beta;</sub>&rarr;VA+1<sub>I</sub><sub>N</sub><sub>&alpha;</sub>=INDY&rarr;INTOCN
 		LDB INDX
@@ -4971,15 +4971,15 @@ INTOCL4&rarr;
 INTOL&rarr;		h<sup>1</sup>STE INTOLX
 		STA INTLINES	**LINES IN QUESTION
 		RSX <sub>I</sub><sub>N</sub><sub>&alpha;</sub> A
-		IN&beta;&#9635;LSP,IN&alpha;
-		IN&alpha;&#9635;LEP,IN&alpha;
+		IN&beta; &#9635; LSP,IN&alpha;
+		IN&alpha; &#9635; LEP,IN&alpha;
 		TWINNORM&equiv;VA<sub>I</sub><sub>N</sub><sub>&alpha;</sub>&rarr;VA<sub>I</sub><sub>N</sub><sub>&beta;</sub>=INDX1,INDY1
 		<sup>2</sup>RSX <sub>I</sub><sub>N</sub><sub>&alpha;</sub> INTLINES
-		IN&beta;&#9635;LSP,IN&alpha;
-		IN&alpha;&#9635;LEP,IN&alpha;
+		IN&beta; &#9635; LSP,IN&alpha;
+		IN&alpha; &#9635; LEP,IN&alpha;
 		TWINNORM&equiv;VA<sub>I</sub><sub>N</sub><sub>&alpha;</sub>&rarr;VA<sub>I</sub><sub>N</sub><sub>&beta;</sub>=INDX2,INDY2
 		RSX <sub>I</sub><sub>N</sub><sub>&alpha;</sub> INTLINES
-		IN&alpha;&#9635;LSP,IN&alpha;
+		IN&alpha; &#9635; LSP,IN&alpha;
 INTOL1&rarr;		PROD&equiv;INDX2&times;INDY1=INX2Y1
 		PROD&equiv;INDX1&times;INDY2=INX1Y2
 		HDIF,INX2Y1&rarr;INDENOM
@@ -4987,11 +4987,11 @@ INTOL1&rarr;		PROD&equiv;INDX2&times;INDY1=INX2Y1
 		PROD&equiv;INX1Y2&times;VA<sub>I</sub><sub>N</sub><sub>&beta;</sub>
 		HDIF,INXP&rarr;INXP
 		HDIF|VA+1<sub>I</sub><sub>N</sub><sub>&alpha;</sub>,VA+1<sub>I</sub><sub>N</sub><sub>&beta;</sub>
-INTOL&rarr;		MUL INDX1
+INTOL2&rarr;		MUL INDX1
 		MUL INDX2
 		ADD INXP
 		hJOV INTOLX	**NO POINT
-		<sup>1</sup><sup>4</sup> LDB A
+		<sup>1</sup><sup>6</sup> LDB A
 		SCB {-9.,}
 		DIV INDENOM
 		hJOV INTOLX
@@ -5000,7 +5000,7 @@ INTOL3&rarr;		PROD&equiv;INX2Y1&times;VA+1<sub>I</sub><sub>N</sub><sub>&beta;</s
 		PROD&equiv;INX1Y2&times;VA+1<sub>I</sub><sub>N</sub><sub>&alpha;</sub>
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=112 doc_page=262 type=code]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=112 doc_page=262 type=code proof=1]
 [Page header: "HHL LYUO 024"]
 
 		HDIF,INYP&rarr;INYP
@@ -5023,20 +5023,20 @@ ST&rarr;		JPQ 200001
 LAST&rarr;		ZZLAST
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=113 doc_page=263 type=symex]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=113 doc_page=263 type=symex proof=1]
 [Handwritten: "SERVICE 15 SEPT 62"]
 [Page header: "LMH Y3HT 001"]
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=114 doc_page=264 type=symex]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=114 doc_page=264 type=symex proof=1]
 [Page header: "LMH Y3HT 002"]
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=115 doc_page=265 type=symex]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=115 doc_page=265 type=symex proof=1]
 [Page header: "LMH Y3HT 003"]
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=116 doc_page=266 type=equalities]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=116 doc_page=266 type=equalities proof=1]
 [Page header: "LMH Y3HT 004"]
 
 ARCTAN=hJPQ CACT
@@ -5090,7 +5090,7 @@ PLLK5= 100000/9.-(PLLK1+PLLK2+PLLK3+PLLK4)
 PLLK6= 100000/3-(PLLK1+PLLK2+PLLK3+PLLK4+PLLK5)
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=117 doc_page=267 type=equalities]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=117 doc_page=267 type=equalities proof=1]
 [Page header: "LMH Y3HT 005"]
 
 PLCK1= PLLK1&times;PLCRATIO/10.
@@ -5140,7 +5140,7 @@ TRBUSY=SKM <sub>4</sub><sub>.</sub><sub>1</sub><sub>0</sub> PLENDJMP+1
 &beta;= S1&beta;
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=118 doc_page=268 type=macros]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=118 doc_page=268 type=macros proof=1]
 [Page header: "LMH Y3HT 006"]
 
 &#9755;&#9755;DEF EXAMINE|&alpha;&rarr;B
@@ -5173,7 +5173,7 @@ LDA P
 STA Q
 &#9755;&#9755;EMD
 
-[some superscripts in this def are pretty smudged, may be wrong]
+[guessing some superscripts in this def as they are pretty smudged, may be wrong]
 &#9755;&#9755;DEF DUALNORM|P&rarr;Q,R&rarr;S=T
 LDA P
 SUB Q
@@ -5185,11 +5185,11 @@ SUB S
 NOA {0}
 <sup>2</sup><sup>2</sup>EXA B
 <sup>3</sup><sup>2</sup>SUB D
-<sup>3</sup><sup>2</sup> JPA #+3
+<sup>3</sup><sup>2</sup>JPA #+3
 <sup>2</sup><sup>1</sup>SCB A
 JPQ #+3
 COM A
-<sup>?</sup>SCB A
+<sup>8</sup>SCB A
 LDA B
 STA T
 &#9755;&#9755;EMD
@@ -5197,12 +5197,12 @@ STA T
 &#9755;&#9755;DEF HDIF|P,Q&rarr;R
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=119 doc_page=269 type=macros]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=119 doc_page=269 type=macros proof=1]
 [Page header: "LMH Y3HT 007"]
 
 LDA P
 SUB Q
-SCA {-1,-1,,-1,-1}+((Q)^(770,))
+SCA {-1,-1,,-1,-1}+(Q^(770,))
 STA R
 &#9755;&#9755;EMD
 
@@ -5252,7 +5252,7 @@ SUB Q
 hJOV S
 
 <hr>
-[meta file_name=102726903-05-02-acc.pdf pdf_page=120 doc_page=270 type=macros]
+[meta file_name=102726903-05-02-acc.pdf pdf_page=120 doc_page=270 type=macros proof=1]
 [Page header: "LMH Y3HT 010"]
 
 STA R
@@ -5265,17 +5265,17 @@ COM A
 STA Q
 &#9755;&#9755;EMD
 
-&#9755;&#9755;DEF &beta;&#9635;A&times;B&times;C&times;D&times;E&times;F&times;G&times;H&times;I,&alpha;
+&#9755;&#9755;DEF &beta; &#9635; A&times;B&times;C&times;D&times;E&times;F&times;G&times;H&times;I,&alpha;
 REX <sub>&beta;</sub>*{0<sub>&alpha;</sub>}
-RSX<sub>&beta;</sub>*{LIST+I<sub>&beta;</sub>}+(I^(370.))
-RSX<sub>&beta;</sub>*{LIST+H<sub>&beta;</sub>}+(H^(370.))
-RSX<sub>&beta;</sub>*{LIST+G<sub>&beta;</sub>}+(G^(370.))
-RSX<sub>&beta;</sub>*{LIST+F<sub>&beta;</sub>}+(F^(370.))
-RSX<sub>&beta;</sub>*{LIST+E<sub>&beta;</sub>}+(E^(370.))
-RSX<sub>&beta;</sub>*{LIST+D<sub>&beta;</sub>}+(D^(370.))
-RSX<sub>&beta;</sub>*{LIST+C<sub>&beta;</sub>}+(C^(370.))
-RSX<sub>&beta;</sub>*{LIST+B<sub>&beta;</sub>}+(B^(370.))
-RSX<sub>&beta;</sub>*{LIST+A<sub>&beta;</sub>}+(A^(370.))
+RSX<sub>&beta;</sub>*{LIST+I<sub>&beta;</sub>}+(I^(370,))
+RSX<sub>&beta;</sub>*{LIST+H<sub>&beta;</sub>}+(H^(370,))
+RSX<sub>&beta;</sub>*{LIST+G<sub>&beta;</sub>}+(G^(370,))
+RSX<sub>&beta;</sub>*{LIST+F<sub>&beta;</sub>}+(F^(370,))
+RSX<sub>&beta;</sub>*{LIST+E<sub>&beta;</sub>}+(E^(370,))
+RSX<sub>&beta;</sub>*{LIST+D<sub>&beta;</sub>}+(D^(370,))
+RSX<sub>&beta;</sub>*{LIST+C<sub>&beta;</sub>}+(C^(370,))
+RSX<sub>&beta;</sub>*{LIST+B<sub>&beta;</sub>}+(B^(370,))
+RSX<sub>&beta;</sub>*{LIST+A<sub>&beta;</sub>}+(A^(370,))
 &#9755;&#9755;EMD
 
 &#9755;&#9755;DEF PYTH&equiv;P&rarr;Q=T&rarr;U
@@ -5285,11 +5285,11 @@ PYTH1&equiv;P&rarr;Q,P+1&rarr;Q+1=T&rarr;U
 &#9755;&#9755;DEF DIREC1&equiv;P&rarr;Q,R&rarr;S=T&rarr;U
 LDA R
 SUB S
-hJOV U+(S)-(S)
+hJOV U-(S)+(S)
 STA B+(R)-(R)
 LDA P
 SUB Q
-hJOV U+(Q)-(Q)
+hJOV U-(Q)+(Q)
 hJPQ CACT
 STA T
 &#9755;&#9755;EMD
