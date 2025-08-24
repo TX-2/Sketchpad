@@ -22,8 +22,9 @@ Museum](https://www.computerhistory.org/collections/catalog/102726903)
 of the program listing supplied by Professor Ivan Sutherland.
 
 This transcription, and the conventions it uses, was created by Jurij
-Smakov.  The conventions are described in [doc/format.md](Listing
-Format).
+Smakov.  The conventions are described in [Listing
+Format](doc/format.md).
+
 
 ## Current Status
 
