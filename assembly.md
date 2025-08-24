@@ -6,19 +6,21 @@ Macro definitions
 
 Two flavours: named macros and composite symbol macros.
 
-First type: definition starts with @hand@@hand@DEFINE (may be shortened
-to DEF), with the macro name and "dummy" parameters specified on the same
-line. Macro name and parameters may be any symex, name and parameters
-are separated from each other using terminator symbols, most commonly
-used are comma, |, =, @arr@, @times@. Complete list can be found in
-HandbookNov63, section 6-4.5 (p. 184).
+First type: definition starts with `@hand@@hand@DEFINE` (`DEFINE` may
+be shortened to `DEF`), with the macro name and "dummy" parameters
+specified on the same line. Macro name and parameters may be any
+symex, name and parameters are separated from each other using
+terminator symbols, most commonly used are comma, |, =, @arr@,
+@times@. Complete list can be found in HandbookNov63, section 6-4.5
+(p. 184).
 
-Second type: definition starts with @hand@@hand@DEFINE (may be shortened
-to DEF), with compound symbol used as macro name. Example can be found
-in HandbookNov63, section 6-4.3 (p. 183). So far, only one instance of
-such macro has been seen in the Sketchpad code (look for @rect_dash@).
-If it remains the only one, it may be easier to rewrite this macro, rather
-than adding support for it to the assembler.
+Second type: definition starts with `@hand@@hand@DEFINE` (may be
+shortened to `DEF`), with compound symbol used as macro name. An
+example can be found in HandbookNov63, section 6-4.3 (p. 183). So far,
+only one instance of such a macro has been seen in the Sketchpad code
+(look for `@rect_dash@`).  If it remains the only one, it may be
+easier to rewrite this macro, rather than adding support for it to the
+assembler.
 
 When invoking the macro, not all parameters need to be specified. If
 a parameter is not specified, then any assembly instructions involving it
@@ -27,38 +29,47 @@ trick allowing to reference parameter in such a way that the corresponding
 instruction will not be omitted, when the parameter is left out. This is
 not something exotic, it is actually used in the code.
 
-Macro definition, in both cases, ends with @hand@@hand@EMD (End Macro
-Definition) on a line of its own.
+Macro definition, in both cases, ends with `@hand@@hand@EMD` (End
+Macro Definition) on a line of its own.
 
 Macro invocations
 -----------------
 
 Examples of macro invocations from the code:
 
+```
 LGORR@hamb@SPECB@times@@alpha@=S@arr@CONSTOUT1
+```
 
-This invokes a named macro LGORR, passing SPECB, @alpha@, S, and CONSTOUT1
-as the parameters.
+This invokes a named macro `LGORR`, passing `SPECB`, `@alpha@`, `S`,
+and `CONSTOUT1` as the parameters.
 
+```
 @alpha@@rect_dash@IWHAT,S
+```
 
-This invokes a macro using a compound character (@rect_dash@, an empty
-rectangle with an overlaid dash in the listing) as the name, passing three
-parameters (@alpha@, IWHAT, S) to it.
+This invokes a macro using a compound character (`@rect_dash@`, an
+empty rectangle with an overlaid dash in the listing) as the name,
+passing three parameters (`@alpha@`, `IWHAT`, `S`) to it.
 
 Macro invocations may be nested. For example, there are statements like
 these in the code:
 
+```
 SUBR@hamb@(LGORR@hamb@PICBLKS@times@@alpha@=S@arr@CONSOUTSUB)
+```
 
-This passes the expression in brackets (representing a macro invocation) as
-a parameter to a macro named SUBR, which is defined like this:
+This passes the expression in brackets (representing a macro
+invocation) as a parameter to a macro named `SUBR`, which is defined
+like this:
 
-@hand@@hand@DEF	SUBR@hamb@A
-		@sup_1@STE SUBR1
-		A
-SUBR1@arr@	JPQ #
+```
+@hand@@hand@DEF SUBR@hamb@A
+        @sup_1@STE SUBR1
+        A
+SUBR1@arr@  JPQ #
 @hand@@hand@EMD
+```
 
 So, the expression passed as the parameter is itself invoked in the macro
 defition.
@@ -66,47 +77,65 @@ defition.
 Parameters passed to macros may also include subscripts and superscripts,
 example from the code:
 
+```
 MOVE|@sup_1@@sup_6@ LIST@sub_beta@@arr@@sup_1@ GARBS
+```
 
-The MOVE macro is defined as follows:
+The `MOVE` macro is defined as follows:
 
+```
 @hand@@hand@DEF MOVE|A@arr@B
 hLDE A
 STE B
 @hand@@hand@EMD
+```
 
 The above macro invocation will result in the first line getting expanded to
 
+```
 hLDE @sup_1@@sup_6@ LIST@sub_beta@
+```
 
 This likely works because subscripts and superscripts may appear anywhere
 in the statement. So the above line is equivalent to this more familiar
 form:
 
+```
 h@sup_1@@sup_6@LDE @sub_beta@ LIST
+```
 
 Another, more complicated example:
 
+```
 PROD@hamb@@sup_1@@sup_1@ 1@sub_C@@sub_M@@sub_alpha@@timesRCOS/{ SIZE}@arr@BADOV
+```
 
-Here @hamb@, @times@, / and @arr@ are separator symbols, so macro will receive
-four arguments: @sup_1@@sup_1@ 1@sub_C@@sub_M@@sub_alpha@, RCOS, { SIZE}, and
-BADOV. The first argument (A) of the macro is used like this:
+Here `@hamb@`, `@times@`, `/` and `@arr@` are separator symbols, so
+the macro will receive four arguments: `@sup_1@@sup_1@
+1@sub_C@@sub_M@@sub_alpha@`, `RCOS`, `{ SIZE}`, and `BADOV`. The first
+argument (`A`) of the macro is used like this:
 
+```
 LDA A
+```
 
 Then the expanded version will look like this, in conventional notation:
 
+```
 @sup_1@@sup_1@LDA @sub_C@@sub_M@@sub_alpha@ 1
+```
 
 Another edge case, a macro may be invoked like this:
 
+```
 PYTH@hamb@DELTA2@arr@@arr@BADOV
+```
 
 In this case macro expects up to 4 arguments:
 
+```
 @hand@@hand@DEF PYTH@hamb@P@arr@Q=T@arr@U
+```
 
 It is not immediately clear how arguments are going to be assigned with this
 syntax.
-
