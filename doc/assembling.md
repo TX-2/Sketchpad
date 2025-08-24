@@ -9,7 +9,6 @@ cross-assembler ("tx2m4as") which runs on modern computer which
 generates binaries suitable for running on the TX-2 (or at least an
 emulator, since the original TX-2 machine no longer exists).
 
-
 To assemble the Sketchpad code, you will need two git repositories
 checked out at the same time: the TX-2-Simulator repository containing
 the assembler and this repository, containing the Sketchpad code.
