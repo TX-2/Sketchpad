@@ -25,6 +25,9 @@ This transcription, and the conventions it uses, was created by Jurij
 Smakov.  The conventions are described in [Listing
 Format](doc/format.md).
 
+## Assembling the Source
+
+See [Assembling the Sketchpad Code](doc/assembling.md).
 
 ## Current Status
 
