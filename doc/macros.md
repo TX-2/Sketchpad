@@ -1,8 +1,6 @@
-Assembly language description
-=============================
+# Macros
 
-Macro definitions
------------------
+## Defining a Macro
 
 Two flavours: named macros and composite symbol macros.
 
@@ -32,8 +30,7 @@ not something exotic, it is actually used in the code.
 Macro definition, in both cases, ends with `@hand@@hand@EMD` (End
 Macro Definition) on a line of its own.
 
-Macro invocations
------------------
+## Invoking a Macro
 
 Examples of macro invocations from the code:
 
