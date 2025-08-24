@@ -7,8 +7,8 @@ This is a transcription of the source code for the
 
 Sketchpad was written by [Ivan
 Sutherland](https://en.wikipedia.org/wiki/Ivan_Sutherland) and ran on
-the [TX-2 computer](https://en.wikipedia.org/wiki/TX-2 at the MIT
-Lincoln Laboratory).
+the [TX-2 computer](https://en.wikipedia.org/wiki/TX-2) at the [MIT
+Lincoln Laboratory](https://www.ll.mit.edu/).
 
 Sketchpad is one of the most influential computer programs ever
 written; please see [The Importance of Sketchpad](doc/importance.md)
