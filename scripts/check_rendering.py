@@ -9,7 +9,6 @@ import render
 
 def show_diff(data, file_name):
     t = tempfile.NamedTemporaryFile(mode="w+t")
-    print(f"Temp file name is {t.name}")
     with open(t.name, "wt") as f:
         f.write(data)
     subprocess.call(["diff", "-u", file_name, t.name])

@@ -20,6 +20,7 @@ def verbose_msg(s):
 
 
 def write_output_if_changed(data, output_file_name):
+    byte_count = len(data)
     changed = True
     try:
         with open(output_file_name, "rt") as f:
@@ -33,7 +34,7 @@ def write_output_if_changed(data, output_file_name):
     if changed:
         with open(output_file_name, "wt") as f:
             f.write(data)
-            verbose_msg(f"Wrote {data.len()} bytes to {output_file_name}")
+            verbose_msg(f"Wrote {byte_count} bytes to {output_file_name}")
     else:
         verbose_msg(f"There is no need to update {output_file_name}")
 
