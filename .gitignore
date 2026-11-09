@@ -1,3 +1,5 @@
 /sk.tape
 /sources/*.pdf
 /tmp/
+*~
+/scripts/__pycache__

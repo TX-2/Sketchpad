@@ -22,7 +22,8 @@ def main(file_name, format_arg):
     else:
         raise ValueError(f"Unsupported output format: {format_arg}")
 
-    gen.Generate()
+    for line in gen.Generate():
+        print(line)
 
 
 if __name__ == "__main__":

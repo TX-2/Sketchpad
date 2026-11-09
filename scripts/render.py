@@ -164,7 +164,7 @@ class TextGenerator(Sub):
             line = line.rstrip()
             text_line = self.SubLine(line, line_num)
             fixed_line = self.FixTabs(line, text_line)
-            print(self.SubLine(fixed_line, line_num))
+            yield self.SubLine(fixed_line, line_num)
             line_num += 1
 
 
@@ -182,16 +182,16 @@ class HTMLGenerator(Sub):
 
     def Generate(self):
         line_num = 1
-        print("<html><body style='font-size:150%'><pre><code>")
+        yield "<html><body style='font-size:150%'><pre><code>"
         for line in open(self.file_name):
             line = line.rstrip()
             if "[meta" in line:
                 # Page break.
-                print("<hr>")
+                yield "<hr>"
             text_line = self.text_generator.SubLine(line, line_num)
             fixed_line = self.FixTabs(line, text_line)
-            print(self.SubLine(fixed_line, line_num))
+            yield self.SubLine(fixed_line, line_num)
             line_num += 1
-        print("</code></pre></body></html>")
+        yield "</code></pre></body></html>"
 
 
