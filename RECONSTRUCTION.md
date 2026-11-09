@@ -47,22 +47,22 @@ At the time Graham Goudeau began the reconstruction work, the
 assembler failed at line 451 of sk.tx2as, but that problem with the
 Sketchpad source was recently solved (in commit
 119d62507ba18d63c043b86c253f985dce73599f), so now assembly fails for a
-different reason, at line 493.
+different reason, at line 656.
 
 ```text
-error in user program: line 493, column 13: found '≡' expected ·, something else, symex syllable, arithmetic operator, '->', ',', instruction hold bit, program instruction, or '}'
+error in user program: line 656, column 33: found '(error: '@circled_v@' is not a recognised glyph name)
 ```
 
-The problem is not that the transscribed program is actually
-incorrect, it is just that the assembler does not yet fully support
-all the needed features.  bad transcription.
+The @circled_v@ symbol should probably be @circle@@or@, the
+exclusive-or operation (see section 6-2.7 "WORD ASSEMBLY" of the TX-2
+Users Handbook.  However, the assembler does not yet support this
+operation.
 
 ## Current Assembly Frontier
 
-Graham Goudeau's mechanical repairs R001, R002, R003 moved the first
-diagnostic to line 493 in the version of the code he was working with.
-However those problems had already been fixed in (upstream) commit
-119d62507ba18d63c043b86c253f985dce73599f.
+Graham Goudeau's mechanical repairs R001-R004 moved the first
+diagnostic to line 657 in the version of the code he was working with.
+However those problems had already been fixed upstream.
 
 Hence the current failure point is still as described under
 "Unmodified Assembly Baseline".
@@ -101,6 +101,7 @@ file marks it clearly and the log records the alternatives.
 | R000 | `sk.tx2as:451` | baseline | Assembler diagnostic and upstream limitation documentation (but this is out-of-date, as mentioned above) | Compound macro glyph blocks parsing. |
 | R002 | `sk.tx2as:453-461`, `2988`, and `3054` | mechanical | Printed logical-AND glyph; Users Handbook section 6-4.5; assembler glyph table (but this is out-of-date, as mentioned above)| Markup `@and@` replaces the unsupported ASCII caret transcription marker. |
 | R003 | `sk.tx2as:484` | verified | Later `GORR` copies at `sk.tx2as:3112` and `sk2.tx2as:691,3809` (but this is out-of-date, as mentioned above) | Explicit zero preserves the printed blank address and satisfies the parser. |
+| R004 | `sk.tx2as:492-504` | mechanical | The source invokes `ERROR1` only after both definitions; validator uses one-pass macro lookup | Obsolete since the assembler now supports calling macros before they are defined. |
 
 ## Publication Gate
 
