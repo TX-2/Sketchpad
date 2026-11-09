@@ -102,6 +102,7 @@ file marks it clearly and the log records the alternatives.
 | R002 | `sk.tx2as:453-461`, `2988`, and `3054` | mechanical | Printed logical-AND glyph; Users Handbook section 6-4.5; assembler glyph table (but this is out-of-date, as mentioned above)| Markup `@and@` replaces the unsupported ASCII caret transcription marker. |
 | R003 | `sk.tx2as:484` | verified | Later `GORR` copies at `sk.tx2as:3112` and `sk2.tx2as:691,3809` (but this is out-of-date, as mentioned above) | Explicit zero preserves the printed blank address and satisfies the parser. |
 | R004 | `sk.tx2as:492-504` | mechanical | The source invokes `ERROR1` only after both definitions; validator uses one-pass macro lookup | Obsolete since the assembler now supports calling macros before they are defined. |
+| R005 | `sk.tx2as:657,678,696,718,3189,4157,4178,4196,4218` | mechanical | Printed compound XOR glyph; Users Handbook section 6-2.7 | Markup `@xor@` replaces the unsupported compound-glyph name `@circled_v@`. |
 
 ## Publication Gate
 
