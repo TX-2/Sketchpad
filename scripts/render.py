@@ -195,3 +195,18 @@ class HTMLGenerator(Sub):
         yield "</code></pre></body></html>"
 
 
+def get_file_body_from_generator(gen):
+    return "\n".join(gen) + "\n"
+
+
+def render_body(verbose, input_file_name, format_arg):
+    del verbose
+    factory = None
+    if format_arg == "text":
+        factory = TextGenerator
+    elif format_arg == "html":
+        factory = HTMLGenerator
+    else:
+        raise ValueError(f"Unsupported output format: {format_arg}")
+    output_generator = factory(input_file_name)
+    return get_file_body_from_generator(output_generator.Generate())

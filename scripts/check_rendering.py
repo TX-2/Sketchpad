@@ -15,15 +15,11 @@ def show_diff(data, file_name):
     subprocess.call(["diff", "-u", file_name, t.name])
 
 
-def get_body_from_generator(gen):
-    return "\n".join(gen) + "\n"
-
-    
 def check_rendering(input_file, generator_factory, in_situ_file_to_check):
         with open(in_situ_file_to_check, "r") as f:
             existing_body = f.read()
         output_generator = generator_factory(input_file)
-        generated_body = get_body_from_generator(output_generator.Generate())
+        generated_body = render.get_file_body_from_generator(output_generator.Generate())
         if existing_body != generated_body:
             print(f"file {in_situ_file_to_check} is out-of-date.", file=sys.stderr)
             show_diff(generated_body, in_situ_file_to_check)
