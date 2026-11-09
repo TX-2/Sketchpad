@@ -94,7 +94,9 @@ SUBS = {
     "@sub_pipe@": ("╷", "<sub>|</sub>"),
     # Rectangle with a horizontal dash, using something similar.
     "@rect_dash@": ("▣ ", "&#9635;"),
-    "@circled_v@": ("Ⓥ", "&#9419;"),
+    "@xor@": ("ⓥ", "&#x24E5;"),
+    "@square@": ("□", "&#x25A1;"), # not actually a combining character
+    "@and@": ("∧", "&#20DE;"),
     "@sup@": ("⊃", "&sup;"),
 }
 

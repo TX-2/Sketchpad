@@ -653,7 +653,7 @@ h@sup_minus@@sup_1@JNX@sub_X@@sub_R@#+2
 @sup_1@SKX@sub_X@@sub_R@1
 INX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@0
 LGORR1@arr@     SXD@sub_X@@sub_R@#      ** MODIFIED
-hJPQ GORREXIT+(GORREXIT/GORREXIT@circled_v@1@times@(LGORREND+1))
+hJPQ GORREXIT+(GORREXIT/GORREXIT@xor@1@times@(LGORREND+1))
 @sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST
 
 [meta file_name=102726903-05-01-acc.pdf pdf_page=20 doc_page=18 type=macros proof=1]
@@ -674,7 +674,7 @@ h@sup_minus@@sup_1@JNX@sub_X@@sub_R@#+2
 @sup_1@SKX@sub_X@@sub_R@1
 INX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@0
 LGORL1@arr@     SXD@sub_X@@sub_R@#      ** MODIFIED
-hJPQ GORLEXIT+(GORLEXIT/GORLEXIT@circled_v@1@times@(LGORLEND+1))
+hJPQ GORLEXIT+(GORLEXIT/GORLEXIT@xor@1@times@(LGORLEND+1))
 @sup_1@@sup_2@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST
 @sup_1@DPX@sub_X@@sub_R@@sub_2@LGORL2
 hJPQ SUBR
@@ -692,7 +692,7 @@ h@sup_minus@@sup_1@JNX@sub_X@@sub_R@#+2
 INX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@0
 LGORRI1@arr@     SXD@sub_X@@sub_R@#      ** MODIFIED
 [Listing has a typo (GGORRIEXIT) on the next line, using correct value]
-hJPQ GORRIEXIT+(GORRIEXIT/GORRIEXIT@circled_v@1@times@(LGORRIEND+1))
+hJPQ GORRIEXIT+(GORRIEXIT/GORRIEXIT@xor@1@times@(LGORRIEND+1))
 @sup_1@DPX@sub_X@@sub_R@@sub_2@LGORRI2
 @sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST       **CURRENT NEXT
 hJPQ SUBR
@@ -714,7 +714,7 @@ INX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@0
 [Page header: "IES 2XMX 017"]
 
 LGORLI1@arr@     SXD@sub_X@@sub_R@#      ** MODIFIED
-hJPQ GORLIEXIT+(GORLIEXIT/GORLIEXIT@circled_v@1@times@(LGORLIEND+1))
+hJPQ GORLIEXIT+(GORLIEXIT/GORLIEXIT@xor@1@times@(LGORLIEND+1))
 @sup_1@DPX@sub_X@@sub_R@@sub_2@LGORLI2
 @sup_1@@sup_2@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST       **CURRENT NXT
 hJPQ SUBR
@@ -3185,7 +3185,7 @@ h@sup_minus@@sup_1@JNX@sub_X@@sub_R@#+2
 @sup_1@SKX@sub_X@@sub_R@1
 INX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@0
 LGORR1@arr@     SXD@sub_X@@sub_R@#      ** MODIFIED
-hJPQ GORREXIT+(GORREXIT/GORREXIT@circled_v@1@times@(LGORREND+1))
+hJPQ GORREXIT+(GORREXIT/GORREXIT@xor@1@times@(LGORREND+1))
 @sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST
 @sup_1@DPX@sub_X@@sub_R@@sub_2@LGORR2
 hJPQ SUBR
@@ -4153,7 +4153,7 @@ LGORR0@arr@     @sup_1@@sup_6@RSX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@LI
         @sup_1@SKX@sub_X@@sub_R@1
         INX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@0
 LGORR1@arr@     SXD@sub_X@@sub_R@#      ** MODIFIED
-        hJPQ GORREXIT+(GORREXIT/GORREXIT@circled_v@1@times@(LGORREND+1))
+        hJPQ GORREXIT+(GORREXIT/GORREXIT@xor@1@times@(LGORREND+1))
         @sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST
         @sup_1@DPX@sub_X@@sub_R@@sub_2@LGORR2
         hJPQ SUBR
@@ -4174,7 +4174,7 @@ LGORL0@arr@     @sup_1@@sup_6@RSX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@LI
         @sup_1@SKX@sub_X@@sub_R@1
         INX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@0
 LGORL1@arr@     SXD@sub_X@@sub_R@#      ** MODIFIED
-        hJPQ GORLEXIT+(GORLEXIT/GORLEXIT@circled_v@1@times@(LGORLEND+1))
+        hJPQ GORLEXIT+(GORLEXIT/GORLEXIT@xor@1@times@(LGORLEND+1))
         @sup_1@@sup_2@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST
         @sup_1@DPX@sub_X@@sub_R@@sub_2@LGORL2
         hJPQ SUBR
@@ -4192,7 +4192,7 @@ LGORRI0@arr@    @sup_1@@sup_6@RSX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@LI
         INX@sub_X@@sub_R@@sub_pipe@@sub_X@@sub_R@@sub_2@0
 LGORRI1@arr@     SXD@sub_X@@sub_R@#      ** MODIFIED
         [GGORIEXIT in listing, typo?]
-        hJPQ GGORRIEXIT+(GORRIEXIT/GORRIEXIT@circled_v@1@times@(LGORRIEND+1))
+        hJPQ GGORRIEXIT+(GORRIEXIT/GORRIEXIT@xor@1@times@(LGORRIEND+1))
         @sup_1@DPX@sub_X@@sub_R@@sub_2@LGORRI2
         @sup_1@@sup_1@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST       **CURRENT NEXT
         hJPQ SUBR
@@ -4214,7 +4214,7 @@ LGORLI1@arr@     SXD@sub_X@@sub_R@#      ** MODIFIED
 [meta file_name=102726903-05-01-acc.pdf pdf_page=96 doc_page=94 type=macros proof=1]
 [Page header: "LMH GX7A 021"]
 
-        hJPQ GORLIEXIT+(GORLIEXIT/GORLIEXIT@circled_v@1@times@(LGORLIEND+1))
+        hJPQ GORLIEXIT+(GORLIEXIT/GORLIEXIT@xor@1@times@(LGORLIEND+1))
         @sup_1@DPX@sub_X@@sub_R@@sub_2@LGORLI2
         @sup_1@@sup_2@RSX@sub_X@@sub_R@@sub_2@@sub_pipe@@sub_X@@sub_R@@sub_2@LIST       **CURRENT NXT
         hJPQ SUBR
