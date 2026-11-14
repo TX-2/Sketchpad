@@ -580,7 +580,7 @@ STE B
 &#9755;&#9755;DEF HDIF|P,Q&rarr;R
 LDA P
 SUB Q
-SCA {-1,-1,,-1,-1}+((Q)&#20DE;(770,))
+SCA {-1,-1,,-1,-1}+((Q)&#x2227;(770,))
 STA R
 &#9755;&#9755;EMD
 
@@ -647,7 +647,7 @@ STB G+1
 &#9755;&#9755;DEF HSUM&equiv;P,Q&rarr;R
 LDA P
 ADD Q
-SCA {-1,-1,,-1,-1}+((Q)&#20DE;(770,))
+SCA {-1,-1,,-1,-1}+((Q)&#x2227;(770,))
 STA R
 &#9755;&#9755;EMD
 
@@ -2590,15 +2590,15 @@ hJPQ ADCONER
 [Page header: "HHL APY5 012"]
 
 REX <sub>&beta;</sub>*{0<sub>&alpha;</sub>}
-RSX<sub>&beta;</sub>*{LIST+I<sub>&beta;</sub>}+(I&#20DE;(370,))
-RSX<sub>&beta;</sub>*{LIST+H<sub>&beta;</sub>}+(H&#20DE;(370,))
-RSX<sub>&beta;</sub>*{LIST+G<sub>&beta;</sub>}+(G&#20DE;(370,))
-RSX<sub>&beta;</sub>*{LIST+F<sub>&beta;</sub>}+(F&#20DE;(370,))
-RSX<sub>&beta;</sub>*{LIST+E<sub>&beta;</sub>}+(E&#20DE;(370,))
-RSX<sub>&beta;</sub>*{LIST+D<sub>&beta;</sub>}+(D&#20DE;(370,))
-RSX<sub>&beta;</sub>*{LIST+C<sub>&beta;</sub>}+(C&#20DE;(370,))
-RSX<sub>&beta;</sub>*{LIST+B<sub>&beta;</sub>}+(B&#20DE;(370,))
-RSX<sub>&beta;</sub>*{LIST+A<sub>&beta;</sub>}+(A&#20DE;(370,))
+RSX<sub>&beta;</sub>*{LIST+I<sub>&beta;</sub>}+(I&#x2227;(370,))
+RSX<sub>&beta;</sub>*{LIST+H<sub>&beta;</sub>}+(H&#x2227;(370,))
+RSX<sub>&beta;</sub>*{LIST+G<sub>&beta;</sub>}+(G&#x2227;(370,))
+RSX<sub>&beta;</sub>*{LIST+F<sub>&beta;</sub>}+(F&#x2227;(370,))
+RSX<sub>&beta;</sub>*{LIST+E<sub>&beta;</sub>}+(E&#x2227;(370,))
+RSX<sub>&beta;</sub>*{LIST+D<sub>&beta;</sub>}+(D&#x2227;(370,))
+RSX<sub>&beta;</sub>*{LIST+C<sub>&beta;</sub>}+(C&#x2227;(370,))
+RSX<sub>&beta;</sub>*{LIST+B<sub>&beta;</sub>}+(B&#x2227;(370,))
+RSX<sub>&beta;</sub>*{LIST+A<sub>&beta;</sub>}+(A&#x2227;(370,))
 &#9755;&#9755;EMD
 
 &#9755;&#9755;DEF LTAKE&equiv;N&times;XR
@@ -3717,7 +3717,7 @@ STE B
 &#9755;&#9755;DEF HDIF|P,Q&rarr;R
 LDA P
 SUB Q
-SCA {-1,-1,,-1,-1}+((Q)&#20DE;(770,))
+SCA {-1,-1,,-1,-1}+((Q)&#x2227;(770,))
 STA R
 &#9755;&#9755;EMD
 
@@ -3787,7 +3787,7 @@ DIREC1&equiv;P&rarr;Q,P+1&rarr;Q+1=T&rarr;U
 &#9755;&#9755;DEF HSUM&equiv;P,Q&rarr;R
 LDA P
 ADD Q
-[Differently from previous version (doc_page 167, for example), this has + instead of ^ (&#20DE;) on the following line, typo?]
+[Differently from previous version (doc_page 167, for example), this has + instead of ^ (&#x2227;) on the following line, typo?]
 SCA {-1,-1,,-1,-1}+((Q)+(770,))
 STA R
 &#9755;&#9755;EMD
@@ -4638,11 +4638,11 @@ PSAL&rarr;       LDA PSNPS
                 LDD { 1}
                 <sup>2</sup>RSX <sub>P</sub><sub>S</sub><sub>&alpha;</sub> PSNPS+3
                 SXD <sub>P</sub><sub>S</sub><sub>&alpha;</sub> CIRCLES-LIST
-                MKN ((ATCIRCLE)&#20DE;(377777,,))+ D
+                MKN ((ATCIRCLE)&#x2227;(377777,,))+ D
                 SXD <sub>P</sub><sub>S</sub><sub>&alpha;</sub> LINES-LIST
-                MKN ((ATLINE)&#20DE;(377777,,))+ D
+                MKN ((ATLINE)&#x2227;(377777,,))+ D
                 SXD <sub>P</sub><sub>S</sub><sub>&alpha;</sub> INSTANCES-LIST
-                MKN ((ATINS)&#20DE;(377777,,))+ D
+                MKN ((ATINS)&#x2227;(377777,,))+ D
                 hSTC ATBITS+1
                 STD ATBITS
                 hSTA PSPL
@@ -5202,7 +5202,7 @@ STA T
 
 LDA P
 SUB Q
-SCA {-1,-1,,-1,-1}+(Q&#20DE;(770,))
+SCA {-1,-1,,-1,-1}+(Q&#x2227;(770,))
 STA R
 &#9755;&#9755;EMD
 
@@ -5267,15 +5267,15 @@ STA Q
 
 &#9755;&#9755;DEF &beta; &#9635; A&times;B&times;C&times;D&times;E&times;F&times;G&times;H&times;I,&alpha;
 REX <sub>&beta;</sub>*{0<sub>&alpha;</sub>}
-RSX<sub>&beta;</sub>*{LIST+I<sub>&beta;</sub>}+(I&#20DE;(370,))
-RSX<sub>&beta;</sub>*{LIST+H<sub>&beta;</sub>}+(H&#20DE;(370,))
-RSX<sub>&beta;</sub>*{LIST+G<sub>&beta;</sub>}+(G&#20DE;(370,))
-RSX<sub>&beta;</sub>*{LIST+F<sub>&beta;</sub>}+(F&#20DE;(370,))
-RSX<sub>&beta;</sub>*{LIST+E<sub>&beta;</sub>}+(E&#20DE;(370,))
-RSX<sub>&beta;</sub>*{LIST+D<sub>&beta;</sub>}+(D&#20DE;(370,))
-RSX<sub>&beta;</sub>*{LIST+C<sub>&beta;</sub>}+(C&#20DE;(370,))
-RSX<sub>&beta;</sub>*{LIST+B<sub>&beta;</sub>}+(B&#20DE;(370,))
-RSX<sub>&beta;</sub>*{LIST+A<sub>&beta;</sub>}+(A&#20DE;(370,))
+RSX<sub>&beta;</sub>*{LIST+I<sub>&beta;</sub>}+(I&#x2227;(370,))
+RSX<sub>&beta;</sub>*{LIST+H<sub>&beta;</sub>}+(H&#x2227;(370,))
+RSX<sub>&beta;</sub>*{LIST+G<sub>&beta;</sub>}+(G&#x2227;(370,))
+RSX<sub>&beta;</sub>*{LIST+F<sub>&beta;</sub>}+(F&#x2227;(370,))
+RSX<sub>&beta;</sub>*{LIST+E<sub>&beta;</sub>}+(E&#x2227;(370,))
+RSX<sub>&beta;</sub>*{LIST+D<sub>&beta;</sub>}+(D&#x2227;(370,))
+RSX<sub>&beta;</sub>*{LIST+C<sub>&beta;</sub>}+(C&#x2227;(370,))
+RSX<sub>&beta;</sub>*{LIST+B<sub>&beta;</sub>}+(B&#x2227;(370,))
+RSX<sub>&beta;</sub>*{LIST+A<sub>&beta;</sub>}+(A&#x2227;(370,))
 &#9755;&#9755;EMD
 
 &#9755;&#9755;DEF PYTH&equiv;P&rarr;Q=T&rarr;U
@@ -5301,7 +5301,7 @@ DIREC1&equiv;P&rarr;Q,P+1&rarr;Q+1=T&rarr;U
 &#9755;&#9755;DEF HSUM&equiv;P,Q&rarr;R
 LDA P
 ADD Q
-SCA {-1,-1,,-1,-1}+((Q)&#20DE;(770,))
+SCA {-1,-1,,-1,-1}+((Q)&#x2227;(770,))
 STA R
 &#9755;&#9755;EMD
 
